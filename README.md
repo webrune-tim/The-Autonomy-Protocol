@@ -25,7 +25,8 @@ To provide a universal code of internal accountability and social integrity for 
 
 | Path | Primary Focus | Industry Target |
 | :--- | :--- | :--- |
-| **Core (Freshman)** | Installation | General Social/Academic Resilience |
+| **Core (Freshman)** | Introduction | General Social/Academic Resilience |
+| **Mentorship (Senior)** | Further Study and mentorship | Preperation for the workforce | 
 | **Computer Science** | Logic & Collaboration | Software Engineering & Tech Teams |
 | **Healthcare** | Clinical Resilience | Nursing, Med-Tech, & Patient Care |
 | **The Trades** | Structural Integrity | Construction, Electrical, & Plumbing |
