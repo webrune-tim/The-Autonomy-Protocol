@@ -4,10 +4,10 @@
 
 ---
 
-## 🛰 Project Vision
+## Project Vision
 To provide a universal code of internal accountability and social integrity for the next generation. The Autonomy Protocol bridges the gap between academic theory and life-readiness by installing a "Human Operating System" that shifts students from external policing to internal self-governance.
 
-## 🏗 System Architecture
+## System Architecture
 
 ### 1. The Accountability Cycle (Internal Engine)
 *Derived from the Generalized 12 Steps*
@@ -21,7 +21,7 @@ To provide a universal code of internal accountability and social integrity for 
 * **Emotional Neutrality:** Developing resilience against external projections and social pressure.
 * **Inquiry-Based Reality:** Actively testing assumptions to reduce conflict and error.
 
-## 🛤 Implementation Paths
+## Implementation Paths
 
 | Path | Primary Focus | Industry Target |
 | :--- | :--- | :--- |
@@ -30,7 +30,7 @@ To provide a universal code of internal accountability and social integrity for 
 | **Healthcare** | Clinical Resilience | Nursing, Med-Tech, & Patient Care |
 | **The Trades** | Structural Integrity | Construction, Electrical, & Plumbing |
 
-## 📅 Deployment Roadmap
+## Deployment Roadmap
 
 - [x] v0.1.0: Concept Architecture & Technical Pitch
 - [ ] **v0.2.0: The Freshman Syllabus (Installation Phase)**
@@ -38,7 +38,7 @@ To provide a universal code of internal accountability and social integrity for 
 - [ ] **v0.4.0: Visual Asset Library & Infographics**
 - [ ] **v1.0.0: Pilot Proposal (Contra Costa District Outreach)**
 
-## 🛠 Usage
+## Usage
 This is an open-source framework designed for integration into CTE (Career Technical Education) and High School Advisory pathways.
 
 ---
