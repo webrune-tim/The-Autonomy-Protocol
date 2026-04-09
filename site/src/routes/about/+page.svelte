@@ -1,10 +1,15 @@
 <script lang="ts">
-	import type { PageProps } from './$types';
-
-	let { data }: PageProps = $props();
+	import HeroImage from '$images/img-2.jpg?enhanced&w=400;800;1600;2400';
 </script>
 
 <div class="hero">
+    <enhanced:img
+        src={HeroImage}
+        sizes="(min-width: 800px) 800px, 100vw"
+        alt="" 
+        aria-hidden="true"
+        class="hero-image"
+    />
 	<div>
 		<h1>About Us</h1>
 		<p>Why This Matters</p>
@@ -81,11 +86,18 @@
 		We don't just teach this in a classroom; we show you how it works in the jobs you actually want:
 	</p>
 
-	In Tech: How being honest about your work makes you a better coder. In Healthcare: How staying
-	calm and neutral helps you save lives without burning out. In the Trades: How your "word" is the
-	most important tool in your toolbox. The Architect The Autonomy Protocol was created by Tim Smith,
-	who has spent years building complex systems. He realized that the same logic used to keep big
-	tech systems running can be used to help people run their own lives better. Does this "translated"
-	version feel like it hits the right note for a student who might be skeptical of a new school
-	program?
+	<ul>
+		<li><strong>In Tech:</strong> How being honest about your work makes you a better coder.</li>
+		<li><strong>In Healthcare:</strong> How staying calm and neutral helps you save lives without burning out.</li>
+		<li><strong>In the Trades:</strong> How your "word" is the most important tool in your toolbox.</li>
+	</ul>
+	
+	<h3>The Architect</h3>
+	<p>
+		The Autonomy Protocol was created by Tim Smith,
+		who has spent years building complex systems. He realized that the same logic used to keep big
+		tech systems running can be used to help people run their own lives better. Does this "translated"
+		version feel like it hits the right note for a student who might be skeptical of a new school
+		program?
+	</p>
 </section>

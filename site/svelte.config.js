@@ -10,7 +10,8 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			$components: 'src/lib/components'
+			$components: 'src/lib/components',
+			$images: 'src/lib/assets/images'
 		}
 	},
 	preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],

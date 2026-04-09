@@ -29,7 +29,7 @@
 		margin: var(--gap-2) auto;
 		min-height: 100svh;
 		display: grid;
-		padding: var(--gap-2);
+		padding: clamp(1rem, 2.75svh, 2rem);
 		grid-template-rows: auto 1fr auto;
 		background-color: var(--blue-60);
 		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);

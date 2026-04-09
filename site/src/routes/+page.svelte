@@ -1,4 +1,15 @@
+<script lang="ts">
+    import HeroImage from '$images/img-6.jpg?enhanced&w=400;800;1600;2400';
+</script>
+
 <section class="hero">
+    <enhanced:img
+		src={HeroImage}
+		sizes="(min-width: 800px) 800px, 100vw"
+		alt="" 
+		aria-hidden="true"
+		class="hero-image"
+	/>
 	<div>
 		<h1>Take Charge of Your Own Life.</h1>
 		<p>

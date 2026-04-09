@@ -12,9 +12,12 @@
 	ul {
 		list-style: none;
 		display: flex;
+		align-items: center;
+		justify-content: center;
 		flex-wrap: wrap;
-		gap: 1rem;
+		gap: var(--gap-2);
 		padding: 0;
 		margin: 0;
+		font-weight: bold;
 	}
 </style>
