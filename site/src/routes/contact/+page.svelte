@@ -13,7 +13,7 @@
 	const createInitialState = () => ({
 		name: '',
 		email: '',
-		isOfferingHelp: false,
+		isOfferingHelp: true,
 		comments: ''
 	})
 
@@ -141,7 +141,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap-2);
-		padding: var(--gap-1);
 	}
 
 	.input-group {
