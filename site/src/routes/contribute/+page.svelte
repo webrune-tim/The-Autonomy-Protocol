@@ -53,7 +53,7 @@
 
 <ul>
 <li><strong>Dark-Theme Optimization: Use clean Markdown with high-contrast hierarchies (Headings, Tables, Blockquotes).</li>
-<li><strong>Academic Tone: Maintain a collegiate, professional, and objective voice.</h1>
+<li><strong>Academic Tone: Maintain a collegiate, professional, and objective voice.</li>
 <li><strong>Visual Clarity: Use bulleted lists and tables to ensure information is scannable for busy administrators and educators.</li>
 </ul>
 
