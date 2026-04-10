@@ -60,7 +60,7 @@ h1 {
 .hero {
     display: grid;
     place-items: center;
-    min-height: 60svh;
+    /*min-height: 60svh;*/
     position: relative;
     overflow: hidden;
 	padding: var(--gap-1);
@@ -87,7 +87,7 @@ h1 {
 
 @media (max-width: 600px) {
 	.hero {
-		min-height: 35svh;
+		/*min-height: 35svh;*/
 
 		div {
 		max-width: 550px;
