@@ -41,12 +41,15 @@
 
 <p>Always utilize the "Human Operating System" terminology established in the GEMINI.md file.</p>
 
-Refer to accountability as: Systems Maintenance or Internal Regulation.
-Refer to interpersonal repair as: The Amends Protocol or Restorative Practice.
-Refer to self-correction as: Real-Time Debugging or Cognitive Inventory.
-2. Formatting & Aesthetic
+<ul>
+<li><strong>Refer to accountability as:</strong> Systems Maintenance or Internal Regulation.</li>
+<li><strong>Refer to interpersonal repair as:</strong> The Amends Protocol or Restorative Practice.</li>
+<li><strong>Refer to self-correction as:</strong> Real-Time Debugging or Cognitive Inventory.</li>
+</ul>
 
-To maintain consistency across our digital and physical assets, follow these formatting rules:
+<h3>2. Formatting & Aesthetic</h3>
+
+<p>To maintain consistency across our digital and physical assets, follow these formatting rules:</p>
 
 Dark-Theme Optimization: Use clean Markdown with high-contrast hierarchies (Headings, Tables, Blockquotes).
 Academic Tone: Maintain a collegiate, professional, and objective voice.
