@@ -13,7 +13,7 @@
 	const createInitialState = () => ({
 		name: '',
 		email: '',
-		isOfferingHelp: true,
+		isOfferingHelp: false,
 		comments: ''
 	})
 
