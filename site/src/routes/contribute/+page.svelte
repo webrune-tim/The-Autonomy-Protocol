@@ -51,10 +51,13 @@
 
 <p>To maintain consistency across our digital and physical assets, follow these formatting rules:</p>
 
-Dark-Theme Optimization: Use clean Markdown with high-contrast hierarchies (Headings, Tables, Blockquotes).
-Academic Tone: Maintain a collegiate, professional, and objective voice.
-Visual Clarity: Use bulleted lists and tables to ensure information is scannable for busy administrators and educators.
-🛤 How to Contribute
+<ul>
+<li><strong>Dark-Theme Optimization: Use clean Markdown with high-contrast hierarchies (Headings, Tables, Blockquotes).</li>
+<li><strong>Academic Tone: Maintain a collegiate, professional, and objective voice.</h1>
+<li><strong>Visual Clarity: Use bulleted lists and tables to ensure information is scannable for busy administrators and educators.</li>
+</ul>
+
+<h2>How to Contribute</h2>
 
 Step 1: Claim or Open an Issue
 
