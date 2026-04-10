@@ -13,7 +13,7 @@
 	const createInitialState = () => ({
 		name: '',
 		email: '',
-		isOfferingHelp: true,
+		isOfferingHelp: false,
 		comments: ''
 	})
 
@@ -99,8 +99,8 @@
 			<button
 				type="button"
 				class="control-option"
-				class:active={formData.isOfferingHelp}
-				onclick={() => (formData.isOfferingHelp = false)}
+				class:active={!formData.isOfferingHelp}
+				onclick={() => (formData.isOfferingHelp = true)}
 			>
 				<LifeBuoy size={18} />
 				<span>I want to help</span>
