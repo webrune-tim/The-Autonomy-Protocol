@@ -13,7 +13,7 @@
 	const createInitialState = () => ({
 		name: '',
 		email: '',
-		isOfferingHelp: false,
+		isOfferingHelp: true,
 		comments: ''
 	})
 
@@ -99,11 +99,11 @@
 			<button
 				type="button"
 				class="control-option"
-				class:active={!formData.isOfferingHelp}
-				onclick={() => (formData.isOfferingHelp = false)}
+				class:active={formData.isOfferingHelp}
+				onclick={() => (!formData.isOfferingHelp = false)}
 			>
 				<LifeBuoy size={18} />
-				<span>I need help</span>
+				<span>I want to help</span>
 			</button>
 
 			<button
@@ -113,7 +113,7 @@
 				onclick={() => (formData.isOfferingHelp = true)}
 			>
 				<HandHelping size={18} />
-				<span>I want to offer help</span>
+				<span>I need help</span>
 			</button>
 
 			<div class="glider" class:shifted={formData.isOfferingHelp}></div>
