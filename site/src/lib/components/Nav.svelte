@@ -5,6 +5,7 @@
 		<li><a href="/curriculum">Curriculum</a></li>
 		<li><a href="/resources">Resources</a></li>
 		<li><a href="/contact">Contact</a></li>
+        <li><a href="/contribute">Contribute</a></li>
 	</ul>
 </nav>
 
