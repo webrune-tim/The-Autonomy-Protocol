@@ -47,7 +47,7 @@
 		<div>
 			<h4>The Integrity Shield</h4>
 			<p>
-				<strong>How You Handle Others:</strong> 4 simple rules to stop drama before it
+				<strong>How You Handle Others:</strong> 4 simple agreements to stop drama before it
 				starts and build a reputation people respect.
 			</p>
 			<p><strong>Block the noise and stay focused.</strong></p>
