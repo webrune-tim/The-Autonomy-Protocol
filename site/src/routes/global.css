@@ -1,21 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-	--blue-80: hsl(213 47% 10%);
-	--blue-60: hsl(208 96% 12%);
-	--blue-40: hsl(202 31% 26%);
-	--blue-20: hsl(202 14% 47%);
-	--white: hsl(0 0% 95%);
-	--pink: hsl(2, 100%, 79%);
-	--yellow: hsl(50 97% 70%);
+	--blue-80: oklch(13.938% 0.02965 257.407);
+	--blue-60: oklch(18% 0.04 257);
+	--blue-40: oklch(28% 0.05 250);
+	--blue-20: oklch(45% 0.04 240);
+	--white: oklch(97% 0.01 200);
+
+	--accent-1: oklch(88.096% 0.1803 95.152);
+	--accent-2: oklch(65% 0.28 5);
+	--accent-3: oklch(75% 0.15 190);
 
 	--bg: var(--blue-80);
 	--fg: var(--white);
-	--accent: var(--yellow);
-	--accent-2: var(--pink);
 
 	--gap-1: 1rem;
-	--gap-2: 2rem;
+	--gap-2: calc(var(--gap-1) * 2);
+}
+
+/* --- High-Vibrancy P3 Override --- */
+@media (color-gamut: p3) {
+	:root {
+		/* P3 allows us to push the Chroma (the middle number) much higher 
+           without the color "clipping" or looking muddy. */
+
+		--accent: oklch(90% 0.22 95); /* "Laser" Yellow */
+		--accent-2: oklch(68% 0.32 5); /* "Hyper" Magenta */
+		--accent-3: oklch(78% 0.18 190); /* "Neon" Cyan */
+	}
 }
 
 *,
@@ -34,10 +46,11 @@ body {
 }
 
 a {
-	color: var(--accent);
+	color: var(--accent-1);
 	text-decoration: none;
 
 	&:hover {
+		color: var(--accent-2);
 		text-decoration: underline;
 	}
 }
@@ -48,7 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--accent);
+	color: var(--accent-1);
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 }
@@ -57,21 +70,59 @@ h1 {
 	color: var(--accent-2);
 }
 
+h3,
+h4,
+h5,
+h6 {
+	color: var(--accent-3);
+}
+
 .hero {
 	display: grid;
 	place-items: center;
-	min-height: 60svh;
+	min-height: 40svh;
+	position: relative;
+	overflow: hidden;
+	padding: var(--gap-1);
 
 	div {
 		max-width: 600px;
 		text-align: center;
+		z-index: 2;
+	}
+
+	.hero-image {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 100%;
+		max-width: 800px;
+		object-fit: cover;
+		z-index: 1;
+		filter: opacity(0.5);
+	}
+}
+
+@media (max-width: 600px) {
+	.hero {
+		/*min-height: 35svh;*/
+
+		div {
+			padding: var(--gap-1);
+		}
 	}
 }
 
 .content {
 	margin: 3rem 0;
 	padding-bottom: 2rem;
-	border-bottom: 2px solid var(--accent);
+	border-bottom: 2px solid var(--accent-1);
+
+	&:last-of-type {
+		border-bottom: none !important;
+	}
 }
 
 .flex {

@@ -7,7 +7,7 @@
 	p {
 		font-size: 2.5em;
 		font-weight: bold;
-		color: var(--accent);
+		color: var(--accent-1);
 		margin: 0;
 		margin-bottom: -10px;
 	}
