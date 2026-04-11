@@ -99,7 +99,7 @@
 			<button
 				type="button"
 				class="control-option"
-				class:active={!formData.isOfferingHelp}
+				class:active={formData.isOfferingHelp}
 				onclick={() => (formData.isOfferingHelp = true)}
 			>
 				<LifeBuoy size={18} />
@@ -109,14 +109,14 @@
 			<button
 				type="button"
 				class="control-option"
-				class:active={formData.isOfferingHelp}
+				class:active={!formData.isOfferingHelp}
 				onclick={() => (formData.isOfferingHelp = false)}
 			>
 				<HandHelping size={18} />
 				<span>I need help</span>
 			</button>
 
-			<div class="glider" class:shifted={formData.isOfferingHelp}></div>
+			<div class="glider" class:shifted={!formData.isOfferingHelp}></div>
 		</div>
 
 		<div class="input-group">
