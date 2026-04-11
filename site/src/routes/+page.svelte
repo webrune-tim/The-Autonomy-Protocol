@@ -56,7 +56,7 @@
               <li><strong>Don't take anything/anyone personaly:</strong></li>
               <li><strong>Don't make any assumptions:</strong></li>
               <li><strong>Always do your best:</strong></li>
-            <\ol>
+            </ol>
 		</div>
 	</div>
 </section>
