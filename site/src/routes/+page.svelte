@@ -43,33 +43,74 @@
 				your mistakes, and keep moving forward.
 			</p>
 			<p><strong>Turn "I messed up" into "I fixed it."</strong></p>
-            <ol>
-               <li>Admited that life gets unmanagable and out of my control</li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
+			<ol>
+				<h5>Phase 1: Realization and Surrender</h5>
+				<li>
+					<strong>Honesty:</strong> Acknowledge that the current situation is out of control
+					and that current methods of managing it are no longer working.
+				</li>
+				<li>
+					<strong>Possibility:</strong> Accept that a solution exists outside of one's
+					own current limited perspective or ego.
+				</li>
+				<li>
+					<strong>Commitment:</strong> Decide to trust a higher principle, a structured
+					process, or a collective wisdom rather than relying solely on self-will.
+				</li>
+				<h5>Phase 2: Self-Analysis and Accountability</h5>
+				<li>
+					<strong>Inventory:</strong> Conduct a rigorous, objective assessment of one's
+					own character, behaviors, and past actions.
+				</li>
+				<li>
+					<strong>Confession:</strong> Verbally acknowledge these findings to oneself and
+					at least one other person to break the cycle of secrecy.
+				</li>
+				<li>
+					<strong>Readiness:</strong> Become mentally and emotionally prepared to let go
+					of old patterns and defensive traits.
+				</li>
+				<li>
+					<strong>Request:</strong> Actively seek the strength or discipline required to
+					change these deep-seated flaws.
+				</li>
+				<h5>Phase 3: Restitution and Integration</h5>
+				<li>
+					<strong>Responsibility:</strong> Identify every individual who has been negatively
+					impacted by one's past actions and commit to fixing those relationships.
+				</li>
+				<li>
+					<strong>Amends:</strong> Take direct action to repair the harm caused, prioritizing
+					the safety and well-being of the other party above one's own comfort.
+				</li>
+				<h5>Phase 4: Maintenance and Growth</h5>
+				<li>
+					<strong>Vigilance:</strong> Maintain a habit of continuous self-reflection, quickly
+					identifying and correcting new mistakes as they occur.
+				</li>
+				<li>
+					<strong>Attunement:</strong> Use regular practice—such as meditation, study,
+					or reflection—to stay aligned with one's core values and purpose.
+				</li>
+				<li>
+					<strong>Service:</strong> Internalize these principles so deeply that they influence
+					every area of life, and offer support to others seeking a similar path of change.
+				</li>
+			</ol>
 		</div>
 		<div>
 			<h4>The Integrity Shield</h4>
 			<p>
-				<strong>How You Handle Others:</strong> 4 simple agreements to stop drama before it
-				starts and build a reputation people respect.
+				<strong>How You Handle Others:</strong> 4 simple agreements to stop drama before
+				it starts and build a reputation people respect.
 			</p>
 			<p><strong>Block the noise and stay focused.</strong></p>
-            <ol>
-              <li><strong>Be impecable with your word:</strong></li>
-              <li><strong>Don't take anything/anyone personaly:</strong></li>
-              <li><strong>Don't make any assumptions:</strong></li>
-              <li><strong>Always do your best:</strong></li>
-            </ol>
+			<ol>
+				<li><strong>Be impecable with your word:</strong></li>
+				<li><strong>Don't take anything/anyone personaly:</strong></li>
+				<li><strong>Don't make any assumptions:</strong></li>
+				<li><strong>Always do your best:</strong></li>
+			</ol>
 		</div>
 	</div>
 </section>
