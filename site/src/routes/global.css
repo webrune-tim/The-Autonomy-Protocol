@@ -106,7 +106,7 @@ ol {
 		height: 100%;
 		top: 0%;
 		left: 50%;
-		tranform: translate(-50%);
+		tranform: translateX(100%);
 		object-fit: cover;
 		z-index: 1;
 		filter: opacity(0.5);
