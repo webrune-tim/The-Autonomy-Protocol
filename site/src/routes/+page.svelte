@@ -113,7 +113,7 @@
 			</p>
 			<p><strong>Block the noise and stay focused.</strong></p>
 			<ol>
-				<li><strong>Be impecable with your word:</strong> Do what you say, and say what you do.  When we go against out own word or lie, we are only warming and going against ourselves. Integraty is not easy, but it the most important agreement we can make with ourselves.</li>
+				<li><strong>Be impecable with your word:</strong> Do what you say, and say what you do.  When we go against out own word or lie, we are only warming and going against ourselves. Being impecable with our word is not easy, but it the most important agreement we can make with ourselves.</li>
 				<li><strong>Don't take anything/anyone personaly:</strong></li>
 				<li><strong>Don't make any assumptions:</strong></li>
 				<li><strong>Always do your best:</strong></li>
