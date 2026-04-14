@@ -11,7 +11,7 @@
 		class="hero-image"
 	/>
 	<div>
-		<h1>Take Charge of Your Own Life.</h1>
+		<h1>The Autonomy Protocol</h1>
 		<p>
 			Stop letting drama and stress run the show. Learn the "Life Skills" you
 			actually need to be your own boss.
