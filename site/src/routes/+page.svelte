@@ -105,6 +105,8 @@
 				</li>
 			</ol>
 		</div>
+	</section>
+	<section class="content">
 		<div class="columns">
 			<h4>The Integrity Shield</h4>
 			<p>
@@ -140,7 +142,7 @@
 					mind and build genuine, reality-based relationships.
 				</li>
 				<li>
-					<strong>Always do your best:</strong>Concurrently, agreeing to always do
+					<strong>Always do your best:</strong> Concurrently, agreeing to always do
 					your best demands the mature realization that your actual capacity will
 					change from day to day. Your highest level of performance on a well-rested
 					morning will look vastly different from your best when you are battling

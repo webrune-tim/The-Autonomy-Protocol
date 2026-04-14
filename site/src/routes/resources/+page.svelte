@@ -1,5 +1,6 @@
 <script lang="ts">
 	import HeroImage from '$images/pic-6.jpg?enhanced&w=400;800;1600;2400'
+	import { Banner } from '$components/Banner.svelte'
 </script>
 
 <section class="hero">
@@ -20,3 +21,7 @@
 		</p>
 	</div>
 </section>
+
+<Banner>
+	Content coming soon! In the meantime, check out our <a href="/curriculum">teacher curriculum</a> for a detailed breakdown of how to implement the Autonomy Protocol in the classroom.
+</Banner>
