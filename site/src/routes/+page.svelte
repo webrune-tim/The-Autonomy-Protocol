@@ -86,7 +86,7 @@
 				</li>
 				<li>
 					<strong>Amends:</strong> Take direct action to repair the harm caused, prioritizing
-					the safety and well-being of the other party above one's own comfort.
+					the safety and well-being of the other party above your own comfort.
 				</li>
              </ol>
 				<h5>Phase 4: Maintenance and Growth</h5>
@@ -97,7 +97,7 @@
 				</li>
 				<li>
 					<strong>Attunement:</strong> Use regular practice—such as meditation, study,
-					or reflection—to stay aligned with one's core values and purpose.
+					or reflection—to stay aligned with your core values and purpose.
 				</li>
 				<li>
 					<strong>Service:</strong> Internalize these principles so deeply that they influence
