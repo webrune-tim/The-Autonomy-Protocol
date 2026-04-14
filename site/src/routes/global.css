@@ -119,7 +119,7 @@ ol {
 	/* column-width: 8em; */
 	/* widows: 3; */
 	/* orphans: 3; */
-	gap: var(--gap-1);
+	gap: var(--gap-2);
 }
 
 @media (max-width: 600px) {
