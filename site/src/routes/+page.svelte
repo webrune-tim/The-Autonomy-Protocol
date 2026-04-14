@@ -60,7 +60,7 @@
 				</li>
             </ol>
             <h5>Phase 2: Self-Analysis and Accountability</h5>
-            <ol start="3">
+            <ol start="4">
 				<li>
 					<strong>Inventory:</strong> Conduct a rigorous, objective assessment of one's
 					own character, behaviors, and past actions.
