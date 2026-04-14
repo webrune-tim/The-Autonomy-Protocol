@@ -23,6 +23,7 @@
 	:root {
 		/* P3 allows us to push the Chroma (the middle number) much higher 
            without the color "clipping" or looking muddy. */
+		
 		--accent: oklch(90% 0.22 95); /* "Laser" Yellow */
 		--accent-2: oklch(68% 0.32 5); /* "Hyper" Magenta */
 		--accent-3: oklch(78% 0.18 190); /* "Neon" Cyan */
