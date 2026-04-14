@@ -122,7 +122,10 @@
 		programs to achieve personal transformation and reconcile his past. Through this
 		journey of sustained recovery, he recognized a profound parallel: the same
 		cognitive frameworks and accountability structures used to maintain sobriety from
-		substances are exceptionally effective tools for student empowerment. By adapting
+		substances are exceptionally effective tools for student empowerment. 
+    </p>
+    <p>
+        By adapting
 		these battle-tested principles of self-regulation and intentionality, Smith has
 		developed a methodology that helps students navigate academic pressures and
 		social complexities with newfound clarity. The protocol shifts the focus from
