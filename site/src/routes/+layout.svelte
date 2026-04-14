@@ -1,5 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg'
+	import OgImg from '$images/og-img.png'
 	import './global.css'
 
 	import { Banner, Footer, Header } from '$components'
@@ -19,7 +20,7 @@
 	<meta property="og:title" content="The Autonomy Protocol" />
 	<meta property="og:type" content="image/png" />
 	<meta property="og:url" content="https://the-autonomy-protocol.vercel.app/" />
-	<meta property="og:image" content="%sveltekit.assets%/og-img.png" />
+	<meta property="og:image" content={OgImg} />
 </svelte:head>
 
 <div class="layout-wrapper">
