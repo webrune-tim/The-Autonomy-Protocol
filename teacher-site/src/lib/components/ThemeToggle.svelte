@@ -1,0 +1,27 @@
+<script>
+    import { themeState } from '$lib/theme.svelte.js';
+  import Moon from '@lucide/svelte/icons/moon';
+  import Sun from '@lucide/svelte/icons/sun';
+</script>
+
+<button 
+    onclick={() => themeState.toggle()} 
+    class="theme-toggle"
+    aria-label="Toggle light/dark mode"
+>
+    {#if themeState.value === 'dark'}
+        <Sun />
+    {:else}
+        <Moon />
+    {/if}
+</button>
+
+<style>
+    .theme-toggle {
+        background-color: none;
+        border: none;
+        outline: none;
+        color: var(--fg);
+        cursor: pointer;
+    }
+</style>
