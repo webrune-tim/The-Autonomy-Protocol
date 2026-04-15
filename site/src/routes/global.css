@@ -5,17 +5,14 @@
     /* Lightness values are kept low to save power and improve contrast */
 
     /* Near-perfect black for maximum battery savings (0% would be pure black) */
-     --blue-80: oklch(5% 0 0);
-
+    --blue-80: oklch(5% 0 0);
     /* Deep charcoal for subtle separation */
     --blue-60: oklch(12% 0 0);
-
     /* Medium-dark grey for UI elements or borders */
+	--black-50: oklch(18% 0 0);
     --blue-40: oklch(25% 0 0);
-
     /* Light grey for secondary text or disabled states */
     --blue-20: oklch(60% 0 0);
-
     /* Soft off-white to reduce eye strain and "blooming" on dark backgrounds */
     --white: oklch(90% 0 0);
 
