@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-	--blue-80: oklch(13.938% 0.02965 257.407);
-	--blue-60: oklch(18% 0.04 257);
-	--blue-40: oklch(28% 0.05 250);
-	--blue-20: oklch(45% 0.04 240);
-	--white: oklch(97% 0.01 200);
+	/* OLED-friendly monochromatic palette */
+/* Lightness values are kept low to save power and improve contrast */
+
+/* Near-perfect black for maximum battery savings (0% would be pure black) */
+--blue-80: oklch(5% 0 0);
+
+/* Deep charcoal for subtle separation */
+--blue-60: oklch(12% 0 0);
+
+/* Medium-dark grey for UI elements or borders */
+--blue-40: oklch(25% 0 0);
+
+/* Light grey for secondary text or disabled states */
+--blue-20: oklch(60% 0 0);
+
+/* Soft off-white to reduce eye strain and "blooming" on dark backgrounds */
+--white: oklch(90% 0 0);
+
 
 	--accent-1: oklch(88.096% 0.1803 95.152);
 	--accent-2: oklch(65% 0.28 5);
