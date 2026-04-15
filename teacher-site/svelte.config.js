@@ -12,7 +12,8 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$components: 'src/lib/components',
-			$images: 'src/lib/assets/images'
+			$images: 'src/lib/assets/images',
+			$stores: 'src/lib/stores'
 		}
 	},
 	preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
