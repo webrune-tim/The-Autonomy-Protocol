@@ -154,7 +154,7 @@
 
 	<ul>
 		<li>
-			<strong>strongNeutrality:</strong> Is it free of partisan or sectarian language?
+			<strong>Neutrality:</strong> Is it free of partisan or sectarian language?
 		</li>
 		<li>
 			<strong>Clarity:</strong> Is the exercise easy for a high school freshman to execute?
