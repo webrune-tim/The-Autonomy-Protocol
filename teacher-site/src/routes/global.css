@@ -26,6 +26,7 @@
 
   --brand-blue: var(--accent-1);
   --brand-orange: var(--accent-2);
+  --text-form: var(--white);
   --text-link: var(--brand-blue);
   --text-link-hover: var(--brand-orange);
   --text-heading: var(--brand-blue);
@@ -51,7 +52,8 @@
   --brand-blue: oklch(50% 0.18 255);   
   --brand-orange: oklch(55% 0.22 45);  
   --accent-3: oklch(50% 0.14 195);
-  
+
+  --text-form: var(--black-80);
   --text-heading: var(--brand-blue);
   --text-heading-alt: var(--brand-orange);
 }
