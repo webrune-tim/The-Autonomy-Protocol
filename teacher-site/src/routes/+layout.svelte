@@ -15,7 +15,7 @@
 		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
 	/>
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
-	<meta name="theme-color" content="#fdd505" />
+	<meta name="theme-color" content="#ff9661" />
 	<link rel="icon" href={favicon} />
 	<meta property="og:title" content="The Autonomy Protocol" />
 	<meta property="og:type" content="image/png" />
