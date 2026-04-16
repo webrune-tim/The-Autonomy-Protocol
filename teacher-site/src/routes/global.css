@@ -124,6 +124,7 @@ strong {
   position: relative;
   overflow: hidden;
   padding: var(--gap-1);
+  border: 2px solid var(--brand-orange);
 }
 
 .hero div { 
