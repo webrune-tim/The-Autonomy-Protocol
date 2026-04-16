@@ -6,7 +6,7 @@
 	footer {
 		display: grid;
 		place-items: center;
-		background-color: var(--surface-1);
+		background: rgb(from var(--brand-blue) r g b / 0.25);
 		padding: var(--gap-1);
 		border: 1px solid var(--brand-orange);
 	}
