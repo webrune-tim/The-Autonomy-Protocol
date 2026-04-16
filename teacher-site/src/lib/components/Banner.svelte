@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
-	import X from '@lucide/svelte/icons/x';
+	import X from '@lucide/svelte/icons/x'
 
 	let { bannerName, children } = $props()
 

@@ -6,10 +6,9 @@
 <Hero {HeroImage}>
 	<h1>We Need Contributers</h1>
 	<p>
-		Would you like to contribute to this project? We need teachers and
-		administrators with experience to help build lesson plans, homework, artwork
-		and other content. You could help shape the future of our students and future
-		leaders!
+		Would you like to contribute to this project? We need teachers and administrators
+		with experience to help build lesson plans, homework, artwork and other content.
+		You could help shape the future of our students and future leaders!
 	</p>
 </Hero>
 
@@ -80,18 +79,16 @@
 
 	<ul>
 		<li>
-			<strong
-				>Dark-Theme Optimization:</strong> Use clean Markdown with high-contrast hierarchies
-				(Headings, Tables, Blockquotes).
+			<strong>Dark-Theme Optimization:</strong> Use clean Markdown with high-contrast hierarchies
+			(Headings, Tables, Blockquotes).
 		</li>
 		<li>
-			<strong
-				>Academic Tone:</strong> Maintain a collegiate, professional, and objective voice.
+			<strong>Academic Tone:</strong> Maintain a collegiate, professional, and objective
+			voice.
 		</li>
 		<li>
-			<strong
-				>Visual Clarity:</strong> Use bulleted lists and tables to ensure information is
-				scannable for busy administrators and educators.
+			<strong>Visual Clarity:</strong> Use bulleted lists and tables to ensure information
+			is scannable for busy administrators and educators.
 		</li>
 	</ul>
 </section>

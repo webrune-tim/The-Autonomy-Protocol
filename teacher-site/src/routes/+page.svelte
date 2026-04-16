@@ -6,8 +6,8 @@
 <Hero {HeroImage}>
 	<h1>The Autonomy Protocol</h1>
 	<p>
-		Stop letting drama and stress run the show. Learn the "Life Skills" you
-		actually need to be your own boss.
+		Stop letting drama and stress run the show. Learn the "Life Skills" you actually
+		need to be your own boss.
 	</p>
 </Hero>
 
@@ -134,16 +134,15 @@
 					mind and build genuine, reality-based relationships.
 				</li>
 				<li>
-					<strong>Always do your best:</strong> Concurrently, agreeing to always do
-					your best demands the mature realization that your actual capacity will
-					change from day to day. Your highest level of performance on a well-rested
-					morning will look vastly different from your best when you are battling
-					burnout, daily academic stress, or low physical energy. The key is
-					extending yourself grace on the days you operate at a deficit while
-					remaining fiercely committed to your personal and academic growth. By
-					dropping the pursuit of flawless perfection and focusing simply on
-					consistent effort, you will cultivate the emotional resilience necessary to
-					thrive through high school and beyond.
+					<strong>Always do your best:</strong> Concurrently, agreeing to always do your
+					best demands the mature realization that your actual capacity will change from
+					day to day. Your highest level of performance on a well-rested morning will look
+					vastly different from your best when you are battling burnout, daily academic
+					stress, or low physical energy. The key is extending yourself grace on the days
+					you operate at a deficit while remaining fiercely committed to your personal
+					and academic growth. By dropping the pursuit of flawless perfection and focusing
+					simply on consistent effort, you will cultivate the emotional resilience necessary
+					to thrive through high school and beyond.
 				</li>
 			</ol>
 		</div>

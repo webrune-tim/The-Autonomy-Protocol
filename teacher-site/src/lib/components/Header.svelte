@@ -2,23 +2,23 @@
 	import Logo from './Logo.svelte'
 	import Nav from './Nav.svelte'
 	import Pill from './Pill.svelte'
-    import ThemeToggle from './ThemeToggle.svelte';
+	import ThemeToggle from './ThemeToggle.svelte'
 </script>
 
 <header>
 	<Logo />
-    <div class="flex">
-	  <Pill>&#945; Alpha</Pill>
-      <ThemeToggle />
-    </div>
+	<div class="flex">
+		<Pill>&#945; Alpha</Pill>
+		<ThemeToggle />
+	</div>
 	<Nav />
 </header>
 
 <style>
-    .flex {
-      display: flex;
-      gap: var(--gap-1);
-    }
+	.flex {
+		display: flex;
+		gap: var(--gap-1);
+	}
 
 	header {
 		display: flex;

@@ -1,168 +1,180 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  /* Default: Dark Theme */
-  color-scheme: dark;
+	/* Default: Dark Theme */
+	color-scheme: dark;
 
-  /* Color Tokens */
-  --black-80: oklch(5% 0 0);
-  --black-60: oklch(15% 0 0);
-  --black-50: oklch(25% 0 0);
-  --black-40: oklch(40% 0 0);
-  --black-20: oklch(60% 0 0);
-  --white: oklch(90% 0 0);
+	/* Color Tokens */
+	--black-80: oklch(5% 0 0);
+	--black-60: oklch(15% 0 0);
+	--black-50: oklch(25% 0 0);
+	--black-40: oklch(40% 0 0);
+	--black-20: oklch(60% 0 0);
+	--white: oklch(90% 0 0);
 
-  --accent-1: oklch(80% 0.12 255);
-  --accent-2: oklch(78% 0.15 45);
-  --accent-3: oklch(82% 0.11 190);
+	--accent-1: oklch(80% 0.12 255);
+	--accent-2: oklch(78% 0.15 45);
+	--accent-3: oklch(82% 0.11 190);
 
-  /* Semantic Variables (Dark Baseline) */
-  --bg: var(--black-80);
-  --fg: var(--white);
-  --surface-1: var(--black-80);
-  --surface-2: var(--black-60);
-  --surface-3: var(--black-50);
-  --ui-border: var(--black-40);
+	/* Semantic Variables (Dark Baseline) */
+	--bg: var(--black-80);
+	--fg: var(--white);
+	--surface-1: var(--black-80);
+	--surface-2: var(--black-60);
+	--surface-3: var(--black-50);
+	--ui-border: var(--black-40);
 
-  --brand-blue: var(--accent-1);
-  --brand-orange: var(--accent-2);
-  --text-form: var(--white);
-  --text-link: var(--brand-orange);
-  --text-link-hover: var(--brand-blue);
-  --text-heading: var(--brand-blue);
-  --text-heading-alt: var(--brand-orange);
+	--brand-blue: var(--accent-1);
+	--brand-orange: var(--accent-2);
+	--text-form: var(--white);
+	--text-link: var(--brand-orange);
+	--text-link-hover: var(--brand-blue);
+	--text-heading: var(--brand-blue);
+	--text-heading-alt: var(--brand-orange);
 
-  --gap-1: 1rem;
-  --gap-2: calc(var(--gap-1) * 2);
-  --border-radius: 4px;
+	--gap-1: 1rem;
+	--gap-2: calc(var(--gap-1) * 2);
+	--border-radius: 4px;
 }
 
 /* --- Light Mode Overrides --- */
-:root[data-theme="light"] {
-  color-scheme: light;
-  
-  --bg: oklch(100% 0 0); /* Pure White */
-  --fg: var(--black-80);
+:root[data-theme='light'] {
+	color-scheme: light;
 
-  --surface-1: oklch(98% 0 0);
-  --surface-2: oklch(80% 0.01 0);
-  --surface-3: oklch(88% 0.01 0);
-  --ui-border: oklch(70% 0.01 0);
+	--bg: oklch(100% 0 0); /* Pure White */
+	--fg: var(--black-80);
 
-  /* Deepened Accents for Light Background Readability */
-  --brand-blue: oklch(50% 0.18 255);   
-  --brand-orange: oklch(55% 0.22 45);  
-  --accent-3: oklch(50% 0.14 195);
+	--surface-1: oklch(98% 0 0);
+	--surface-2: oklch(80% 0.01 0);
+	--surface-3: oklch(88% 0.01 0);
+	--ui-border: oklch(70% 0.01 0);
 
-  --text-form: var(--black-80);
-  --text-heading: var(--brand-blue);
-  --text-heading-alt: var(--brand-orange);
+	/* Deepened Accents for Light Background Readability */
+	--brand-blue: oklch(50% 0.18 255);
+	--brand-orange: oklch(55% 0.22 45);
+	--accent-3: oklch(50% 0.14 195);
+
+	--text-form: var(--black-80);
+	--text-heading: var(--brand-blue);
+	--text-heading-alt: var(--brand-orange);
 }
 
 /* --- P3 Gamut Logic --- */
 @media (color-gamut: p3) {
-  :root {
-    --brand-blue: oklch(72% 0.28 254);
-    --brand-orange: oklch(75% 0.25 45);
-    --accent-3: oklch(78% 0.20 190);
-  }
+	:root {
+		--brand-blue: oklch(72% 0.28 254);
+		--brand-orange: oklch(75% 0.25 45);
+		--accent-3: oklch(78% 0.2 190);
+	}
 
-  :root[data-theme="light"] {
-    --brand-blue: oklch(45% 0.25 254);
-    --brand-orange: oklch(55% 0.22 45);
-    --accent-3: oklch(50% 0.18 190);
-  }
+	:root[data-theme='light'] {
+		--brand-blue: oklch(45% 0.25 254);
+		--brand-orange: oklch(55% 0.22 45);
+		--accent-3: oklch(50% 0.18 190);
+	}
 }
 
 /* --- Base Styles --- */
-*, *::before, *::after { 
-  box-sizing: border-box; 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--fg);
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  /* Smooth transition for theme switching */
-  transition: background-color 0.2s ease, color 0.2s ease;
+	background-color: var(--bg);
+	color: var(--fg);
+	font-family: 'Inter', sans-serif;
+	margin: 0;
+	/* Smooth transition for theme switching */
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text-heading);
-  font-family: 'Poppins', sans-serif;
-  margin-top: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--text-heading);
+	font-family: 'Poppins', sans-serif;
+	margin-top: 0;
 }
 
-h1 { 
-  color: var(--text-heading-alt); 
+h1 {
+	color: var(--text-heading-alt);
 }
 
-h3, h4, h5, h6 { 
-  color: var(--accent-3); 
+h3,
+h4,
+h5,
+h6 {
+	color: var(--accent-3);
 }
 
 a {
-  color: var(--text-link);
-  text-decoration: none;
-  transition: color 0.2s ease;
+	color: var(--text-link);
+	text-decoration: none;
+	transition: color 0.2s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
-strong { 
-  color: var(--brand-orange); 
+strong {
+	color: var(--brand-orange);
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 
 /* --- Layout Classes --- */
 .columns {
-  --column-count: 2;
-  column-count: var(--column-count);
-  gap: var(--gap-2);
+	--column-count: 2;
+	column-count: var(--column-count);
+	gap: var(--gap-2);
 }
 
 @media (max-width: 600px) {
-  .columns {
-    --column-count: 1 !important;
-  }
+	.columns {
+		--column-count: 1 !important;
+	}
 }
 
 .content {
-  margin: 3rem 0;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid var(--brand-blue);
+	margin: 3rem 0;
+	padding-bottom: 2rem;
+	border-bottom: 2px solid var(--brand-blue);
 }
 
 /* Ensure content sections remain visible in light mode */
-[data-theme="light"] .content {
-    background-color: var(--surface-1);
-    border-color: var(--ui-border);
+[data-theme='light'] .content {
+	background-color: var(--surface-1);
+	border-color: var(--ui-border);
 }
 
-.content:last-of-type { 
-  border-bottom: none !important; 
+.content:last-of-type {
+	border-bottom: none !important;
 }
 
 .flex {
-  display: flex;
-  gap: var(--gap-2);
-  flex-wrap: wrap;
+	display: flex;
+	gap: var(--gap-2);
+	flex-wrap: wrap;
 }
 
-.flex > div { 
-  flex: 1 1 300px; 
+.flex > div {
+	flex: 1 1 300px;
 }
