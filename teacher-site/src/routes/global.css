@@ -6,9 +6,9 @@
 
   /* Color Tokens */
   --black-80: oklch(5% 0 0);
-  --black-60: oklch(12% 0 0);
-  --black-50: oklch(18% 0 0);
-  --black-40: oklch(25% 0 0);
+  --black-60: oklch(15% 0 0);
+  --black-50: oklch(25% 0 0);
+  --black-40: oklch(40% 0 0);
   --black-20: oklch(60% 0 0);
   --white: oklch(90% 0 0);
 
@@ -42,8 +42,8 @@
   --fg: var(--black-80);
 
   --surface-1: oklch(98% 0 0);
-  --surface-2: oklch(92% 0.01 0);
-  --ui-border: oklch(85% 0.01 0);
+  --surface-2: oklch(80% 0.01 0);
+  --ui-border: oklch(70% 0.01 0);
 
   /* Deepen colors for contrast on white */
   --brand-blue: oklch(50% 0.18 255);   
