@@ -113,7 +113,7 @@
 				<strong>How You Handle Others:</strong> 4 simple agreements to stop drama before
 				it starts and build a reputation people respect.
 			</p>
-			<p><strong>Block the noise and stay focused.</strong></p>
+
 			<div class="grid">
 				<div class="step-grid">
 					<span>1</span>
