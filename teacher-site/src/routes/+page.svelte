@@ -184,7 +184,9 @@
 	.accountability-cycle,
 	.integrity-cycle {
 		h4 {
+            font-weight: bolder
 			font-size: 2rem;
+            text-align: center;
 			margin: 0;
 		}
 
