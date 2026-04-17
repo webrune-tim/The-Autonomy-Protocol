@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Hero } from '$components'
-	import HeroImage from '$images/pic-4.jpg?enhanced&w=400;1000;1600;2400'
+	import HeroImage from '$images/contribute.jpg?enhanced&w=400;1000;1600;2400'
 </script>
 
 <Hero {HeroImage}>

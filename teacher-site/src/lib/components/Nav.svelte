@@ -1,75 +1,23 @@
 <nav>
 	<ul>
 		<li><a href="/">Home</a></li>
-		<li><a href="/about">About</a></li>
 		<li><a href="/curriculum">Curriculum</a></li>
 		<li><a href="/resources">Resources</a></li>
+		<li><a href="/road-map">Road Map</a></li>
 		<li><a href="/contribute">Contribute</a></li>
+		<li><a href="/about">About</a></li>
 		<li><a href="/contact">Contact</a></li>
 	</ul>
 </nav>
 
 <style>
-	:global(:root) {
-		--nav-bg: var(--brand-orange);
-
-		--shadow: 0 0 12px hsl(from var(--nav-bg) h s 10);
-
-		--timing-speed: 500ms;
-		--timing-function: ease-in-out;
-		/* --timing-function: linear(
-			0,
-			0.402 7.4%,
-			0.711 15.3%,
-			0.929 23.7%,
-			1.008 28.2%,
-			1.067 33%,
-			1.099 36.9%,
-			1.12 41%,
-			1.13 45.4%,
-			1.13 50.1%,
-			1.111 58.5%,
-			1.019 83.2%,
-			1.004 91.3%,
-			1
-		); */
-	}
-
-    :global(:root[data-theme='light']) {
-	    color-scheme: light;
-
-        --shadow: 0 0 12px hsl(from var(--nav-bg) h s 60);
-    }
-
 	nav {
   		anchor-name: --active-link;
 		margin: 0 auto;
 		margin-top: var(--gap-1);
+		margin-bottom: var(--gap-1);
 		width: 100%;
-
-		a:is(:hover, :focus-visible) {
-			anchor-name: --active-link;
-		}
-
-		&::after {
-			content: "";
-			background: rgb(from var(--nav-bg) r g b / 0.5);
-			border: 2px solid var(--nav-bg);
-			box-shadow: inset var(--shadow);
-			border-radius: var(--border-radius);
-			corner-shape: squrcle;
-
-			position: absolute;
-			position-anchor: --active-link;
-			top: anchor(top);
-			left: anchor(left);
-			right: anchor(right);
-			bottom: anchor(bottom);
-
-			z-index: -1;
-
-			transition: inset var(--timing-speed) var(--timing-function);
-		}
+		height: fit-content;
 	}
 
 	ul {
@@ -82,11 +30,29 @@
 		padding: var(--gap-1) 0;
 		margin: 0;
 		font-weight: bold;
+		height: fit-content;
+
+		li {
+			display: grid;
+			place-items: center;
+			margin: 0;
+			padding: 0;
+		}
 	}
 
 	a {
 		color: var(--brand-blue);
 		padding: 8px 16px;
+		border-radius: var(--border-radius);
+		border: 2px solid var(--brand-orange);
+		background: rgb(from var(--brand-orange) r g b / 0.25);
+		text-decoration: none;
+
+		&:hover {
+			color: var(--fb);
+			background: rgb(from var(--brand-orange) r g b / 0.75);
+			text-decoration: none;
+		}
 	}
 
 	@media (max-width: 600px) {

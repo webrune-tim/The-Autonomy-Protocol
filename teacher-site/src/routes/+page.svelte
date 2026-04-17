@@ -2,10 +2,12 @@
 	import { Hero } from '$components'
 	import HeroImage from '$images/pic-1.jpg?enhanced&w=400;1000;1600;2400'
 
+	import ArrowBigRight from '@lucide/svelte/icons/arrow-big-right'
 	import Bug from '@lucide/svelte/icons/bug'
 	import LoaderPinwheel from '@lucide/svelte/icons/loader-pinwheel'
 	import HandFist from '@lucide/svelte/icons/hand-fist'
 	import ShieldPlus from '@lucide/svelte/icons/shield-plus'
+	import Road from '@lucide/svelte/icons/road'
 </script>
 
 <Hero {HeroImage}>
@@ -163,22 +165,9 @@
 </section>
 
 <section class="content">
-	<h2>The High School Roadmap</h2>
-
-	<ol>
-		<li>
-			<strong>Freshman (The Setup):</strong> Learning what you can actually control (hint:
-			it's not other people) and how to be honest with yourself.
-		</li>
-		<li>
-			<strong>Sophomore/Junior (The Practice):</strong> Using these tools in class, in
-			sports, and with your friends.
-		</li>
-		<li>
-			<strong>Senior (The Pro Level):</strong> Taking these skills into the "real world"—whether
-			you're headed to college, a tech job, a hospital, or a job site.
-		</li>
-	</ol>
+	<h2>Own Your Future</h2>
+	<p>We don't just teach rules; we build self-governance. From the first day of freshman year to the first day on the job, see how the protocol evolves with you.</p>
+	<a class="road-map-link" href="/road-map"><Road size={32} /> Explore the High School Journey <ArrowBigRight size={32} /></a>
 </section>
 
 <style>
@@ -212,16 +201,14 @@
 		}
 	}
 
-	
-	.grid {
-		display: grid;
-		gap: var(--gap-2);
-		grid-template-columns: 1fr 1fr;
-	}
-
-	@media (max-width: 600px) {
-		.grid {
-			grid-template-columns: 1fr;
-		}
+	.road-map-link {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--gap-1);
+		font-weight: bold;
+		color: var(--brand-orange);
+		text-decoration: none;
+		font-size: 2rem;
+		margin-top: var(--gap-2);
 	}
 </style>

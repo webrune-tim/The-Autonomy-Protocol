@@ -26,6 +26,8 @@
 
 	--brand-blue: var(--accent-1);
 	--brand-orange: var(--accent-2);
+	--brand-teal: var(--accent-3);
+
 	--text-form: var(--white);
 	--text-link: var(--brand-orange);
 	--text-link-hover: var(--brand-blue);
@@ -60,6 +62,8 @@
 	/* Deepened Accents for Light Background Readability */
 	--brand-blue: oklch(50% 0.18 255);
 	--brand-orange: oklch(55% 0.22 45);
+	--brand-teal: oklch(50% 0.14 195);
+
 	--accent-3: oklch(50% 0.14 195);
 
 	--text-form: var(--black-80);
@@ -136,6 +140,10 @@ strong {
 	color: var(--brand-orange);
 }
 
+li {
+	margin-bottom: 0.5rem;
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -162,7 +170,7 @@ strong {
 }
 
 .content {
-	margin: 3rem 0;
+	margin: var(--gap-2) 0;
 	padding-bottom: 2rem;
 	border-bottom: 2px solid var(--brand-blue);
 }
@@ -195,9 +203,48 @@ strong {
 .trans-blue {
 	background-color: rgb(from var(--brand-blue) r g b / 0.25);
 	border: 2px solid var(--brand-blue);
+
+	h2, h3 {
+		color: var(--brand-orange);
+	}
 }
 
 .trans-orange {
 	background-color: rgb(from var(--brand-orange) r g b / 0.25);
 	border: 2px solid var(--brand-orange);
+
+	h2, h3 {
+		color: var(--brand-blue);
+	}
+}
+
+.trans-teal {
+	background-color: rgb(from var(--brand-teal) r g b / 0.25);
+	border: 2px solid var(--brand-teal);
+
+	h2, h3 {
+		color: var(--brand-orange);
+	}
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap-2);
+	grid-template-columns: 1fr 1fr;
+}
+
+.flex {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+	box {
+		flex: 1 1 300px;
+	}
+}
+
+@media (max-width: 600px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
 }

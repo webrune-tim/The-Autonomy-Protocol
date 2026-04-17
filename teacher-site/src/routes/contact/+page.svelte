@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Hero } from '$components'
 	import toast, { Toaster } from 'svelte-french-toast'
-	import HeroImage from '$images/pic-3.jpg?enhanced&w=400;1000;1600;2400'
+	import HeroImage from '$images/contact.jpg?enhanced&w=400;1000;1600;2400'
 	import {
 		User,
 		Mail,
