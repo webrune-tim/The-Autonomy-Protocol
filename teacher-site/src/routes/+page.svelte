@@ -199,7 +199,7 @@
                 text-align: center;
 				color: var(--brand-blue);
 				font-size: 3rem;
-                font-family: "Special Elite", system-ui;
+                font-family: var(--font-header-serif);
 			}
 		}
 	}
