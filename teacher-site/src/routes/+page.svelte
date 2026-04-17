@@ -184,9 +184,7 @@
 	.accountability-cycle,
 	.integrity-cycle {
 		h4 {
-            font-weight: bolder
 			font-size: 2rem;
-            text-align: center;
 			margin: 0;
 		}
 
@@ -197,6 +195,8 @@
 			grid-template-columns: auto 1fr;
 
 			span {
+                font-weight: bolder;
+                text- align: center;
 				color: var(--brand-blue);
 				font-size: 3rem;
 			}
