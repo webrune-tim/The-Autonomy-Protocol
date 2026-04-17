@@ -108,8 +108,7 @@
 
 	<section class="content">
 		<div class="accountability-cycle">
-			<h4><HandFist size={32} /> The Accountability Cycle</h4>
-			<h4>The Integrity Shield</h4>
+			<h4><HandFist size={32} /> The Integrity Shield</h4>
 			<p>
 				<strong>How You Handle Others:</strong> 4 simple agreements to stop drama before
 				it starts and build a reputation people respect.
