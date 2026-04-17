@@ -34,6 +34,12 @@
 		);
 	}
 
+    :global(:root[data-theme='light']) {
+	    color-scheme: light;
+
+        --shadow: 0 0 12px hsl(from var(--nav-bg) h s 150);
+    }
+
 	nav {
   		anchor-name: --active-link;
 		margin: 0 auto;
