@@ -56,5 +56,6 @@
 		display: grid;
 		padding: clamp(1rem, 2.75svw, 2rem);
 		grid-template-rows: auto 1fr auto;
+        background: var(--surface-3);
 	}
 </style>
