@@ -6,7 +6,7 @@
 	<div class="hero-bg">
 		<enhanced:img
 			src={HeroImage}
-			sizes="(min-width: 800px) 800px, 100vw"
+			sizes="(min-width: 1000px) 1000px, 100vw"
 			alt=""
 			aria-hidden="true"
 		/>

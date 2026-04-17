@@ -16,7 +16,8 @@
 		--shadow: 0 0 12px hsl(from var(--nav-bg) h s 10);
 
 		--timing-speed: 500ms;
-		--timing-function: linear(
+		--timing-function: ease-in-out;
+		/* --timing-function: linear(
 			0,
 			0.402 7.4%,
 			0.711 15.3%,
@@ -31,7 +32,7 @@
 			1.019 83.2%,
 			1.004 91.3%,
 			1
-		);
+		); */
 	}
 
     :global(:root[data-theme='light']) {
