@@ -42,7 +42,7 @@
 
 	a {
 		color: var(--brand-blue);
-		padding: 8px 16px;
+		padding: 4px 8px;
 		border-radius: var(--border-radius);
 		border: 2px solid var(--brand-orange);
 		background: rgb(from var(--brand-orange) r g b / 0.25);
