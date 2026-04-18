@@ -272,6 +272,8 @@ ol {
 	}
 }
 
+.margin-top { margin-top: var(--gap-2); }
+
 @media (max-width: 600px) {
 	.grid {
 		grid-template-columns: 1fr;
