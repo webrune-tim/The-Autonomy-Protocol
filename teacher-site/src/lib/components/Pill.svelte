@@ -8,8 +8,8 @@
 
 <style>
 	.pill {
-        display: grid;
-        place-content: center;
+		display: grid;
+		place-content: center;
 		max-hieght: fit-content;
 		max-width: fit-content;
 		border-radius: 100px;

@@ -19,9 +19,9 @@
 <style>
 	.hero {
 		display: grid;
-        place-content: center;
-		grid-template-areas: "stack";
-	    max-height: 400px;
+		place-content: center;
+		grid-template-areas: 'stack';
+		max-height: 400px;
 		overflow: hidden;
 		border: 2px solid var(--brand-orange);
 		border-radius: var(--border-radius);

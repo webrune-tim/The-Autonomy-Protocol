@@ -35,8 +35,8 @@
 	--text-heading-alt: var(--brand-orange);
 
 	--font-sans-1: 'Poppins', sans-serif;
-    --font-sans-2: 'Inter', sans-serif;
-    --font-serif: "Special Elite", system-ui;
+	--font-sans-2: 'Inter', sans-serif;
+	--font-serif: 'Special Elite', system-ui;
 
 	--font-header-sans-1: var(--font-sans-1);
 	--font-header-sans-2: var(--font-sans-2);
@@ -150,11 +150,11 @@ textarea {
 	caret-shape: block;
 }
 
- ol {
-   list-style: none;
-   counter-reset: item;
+ol {
+	list-style: none;
+	counter-reset: item;
 
-   li {
+	li {
 		counter-increment: item;
 		margin-bottom: 5px;
 	}
@@ -168,8 +168,7 @@ textarea {
 		display: inline-block;
 		font-family: var(--font-serif);
 	}
- }
- 
+}
 
 .sr-only {
 	position: absolute;
@@ -231,7 +230,8 @@ textarea {
 	background-color: rgb(from var(--brand-blue) r g b / 0.25);
 	border: 2px solid var(--brand-blue);
 
-	h2, h3 {
+	h2,
+	h3 {
 		color: var(--brand-orange);
 	}
 }
@@ -240,7 +240,8 @@ textarea {
 	background-color: rgb(from var(--brand-orange) r g b / 0.25);
 	border: 2px solid var(--brand-orange);
 
-	h2, h3 {
+	h2,
+	h3 {
 		color: var(--brand-blue);
 	}
 }
@@ -249,7 +250,8 @@ textarea {
 	background-color: rgb(from var(--brand-teal) r g b / 0.25);
 	border: 2px solid var(--brand-teal);
 
-	h2, h3 {
+	h2,
+	h3 {
 		color: var(--brand-orange);
 	}
 }
@@ -262,8 +264,8 @@ textarea {
 
 .flex {
 	display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+	flex-wrap: wrap;
+	justify-content: center;
 
 	box {
 		flex: 1 1 300px;

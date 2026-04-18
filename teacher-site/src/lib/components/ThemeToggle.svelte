@@ -11,10 +11,10 @@
 >
 	{#if themeState.value === 'dark'}
 		<Sun />
-        <span class="sr-only">Toggle Light</span>
+		<span class="sr-only">Toggle Light</span>
 	{:else}
 		<Moon />
-        <span class="sr-only">Toggle Dark</span>
+		<span class="sr-only">Toggle Dark</span>
 	{/if}
 </button>
 

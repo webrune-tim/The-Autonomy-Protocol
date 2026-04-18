@@ -12,7 +12,7 @@
 
 <style>
 	nav {
-  		anchor-name: --active-link;
+		anchor-name: --active-link;
 		margin: 0 auto;
 		margin-top: var(--gap-1);
 		margin-bottom: var(--gap-1);
