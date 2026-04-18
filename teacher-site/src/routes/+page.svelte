@@ -21,7 +21,7 @@
 	</p>
 </Hero>
 
-<section>
+<section class="margin-top">
 	<div class="grid">
 		<div class="trans-blue box">
 			<h2><Bug /> The Problem: The Limits of External Compliance</h2>
