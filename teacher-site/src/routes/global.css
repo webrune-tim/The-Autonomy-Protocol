@@ -144,6 +144,11 @@ li {
 	margin-bottom: 0.5rem;
 }
 
+input,
+textarea {
+	caret-color: var(--brand-orange);
+	caret-shape: block;
+
 .sr-only {
 	position: absolute;
 	width: 1px;
