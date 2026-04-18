@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Hero } from '$components'
+	import { FourAgreements, Hero, TwelveSteps } from '$components'
 	import HeroImage from '$images/pic-1.jpg?enhanced&w=400;1000;1600;2400'
 
 	import ArrowBigRight from '@lucide/svelte/icons/arrow-big-right'
 	import Bug from '@lucide/svelte/icons/bug'
 	import LoaderPinwheel from '@lucide/svelte/icons/loader-pinwheel'
 	import HandFist from '@lucide/svelte/icons/hand-fist'
-    import Map from '@lucide/svelte/icons/map'
+	import Map from '@lucide/svelte/icons/map'
 	import ShieldPlus from '@lucide/svelte/icons/shield-plus'
 	import Road from '@lucide/svelte/icons/road'
 	import Toolbox from '@lucide/svelte/icons/toolbox'
@@ -80,6 +80,13 @@
 					grace during high stress while remaining committed to academic goals.
 				</li>
 			</ol>
+			<details>
+				<summary
+					><strong>Additional information about the Integrity Shield.</strong
+					></summary
+				>
+				<FourAgreements />
+			</details>
 		</section>
 
 		<section>
@@ -104,24 +111,27 @@
 					and ultimately mentoring struggling peers.
 				</li>
 			</ol>
+			<details>
+				<summary
+					><strong>Additional information about the Accountability Cycle.</strong
+					></summary
+				>
+				<TwelveSteps />
+			</details>
 		</section>
 	</div>
 </section>
 
-<section class="content">
-	<a class="link" href="/curriculum"
-		><Road size={32} /> Curriculum Map <ArrowBigRight size={32} /></a
-	>
-	<a class="link" href="/resources"
-		><Toolbox size={32} /> Other Resources <ArrowBigRight
-			size={32}
-		/></a
-	>
-    <a class="link" href="/road-map"
-		><Map size={32} /> Road Map <ArrowBigRight
-			size={32}
-		/></a
-	>
+<section class="content flex">
+	<a class="link" href="/curriculum">
+		<Road size={32} /> Curriculum Map <ArrowBigRight size={24} />
+	</a>
+	<a class="link" href="/resources">
+		<Toolbox size={32} /> Other Resources <ArrowBigRight size={24} />
+	</a>
+	<a class="link" href="/road-map">
+		<Map size={32} /> Road Map <ArrowBigRight size={24} />
+	</a>
 </section>
 
 <style>

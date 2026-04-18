@@ -25,23 +25,22 @@
 
 	<ul>
 		<li>
-			Weeks 1-2: Impeccability & Self-Trust. Focus on small wins—arriving on time,
-			submitting assignments. Logic: Lying to teachers is actually a form of
-			self-sabotage.
+			<strong>Weeks 1-2:</strong> Impeccability & Self-Trust. Focus on small wins—arriving
+			on time, submitting assignments. Logic: Lying to teachers is actually a form of self-sabotage.
 		</li>
 		<li>
-			Weeks 3-4: The Armor of Non-Personalization. Lessons on the biology of the
-			teenage brain. Understanding that a peer's "meanness" is a reflection of their
+			<strong>Weeks 3-4:</strong> The Armor of Non-Personalization. Lessons on the biology
+			of the teenage brain. Understanding that a peer's "meanness" is a reflection of their
 			own stress, not the student's value.
 		</li>
 		<li>
-			Weeks 5-6: The Clarification Protocol (Assumptions). Role-playing "The
-			Courageous Question." Students practice asking teachers for rubric
-			clarifications instead of guessing and failing.
+			<strong>Weeks 5-6:</strong> The Clarification Protocol (Assumptions). Role-playing
+			"The Courageous Question." Students practice asking teachers for rubric clarifications
+			instead of guessing and failing.
 		</li>
 		<li>
-			Weeks 7-9: Grace & Output (Doing Your Best). Workshop on "Variable Capacity."
-			Mapping out how to maintain a GPA even when physical energy is low.
+			<strong>Weeks 7-9:</strong> Grace & Output (Doing Your Best). Workshop on "Variable
+			Capacity." Mapping out how to maintain a GPA even when physical energy is low.
 		</li>
 	</ul>
 
@@ -49,13 +48,12 @@
 
 	<ul>
 		<li>
-			Weeks 10-13: The Reality Check (Surrender). Identifying "Middle School
-			mindsets" that are failing in a high-school environment.
+			<strong>Weeks 10-13:</strong> The Reality Check (Surrender). Identifying "Middle
+			School mindsets" that are failing in a high-school environment.
 		</li>
 		<li>
-			Weeks 14-18: The Private Inventory. Students create a private "Character Map"
-			identifying their defensive traits (e.g., ghosting assignments, social
-			aggression).
+			<strong>Weeks 14-18:</strong> The Private Inventory. Students create a private "Character
+			Map" identifying their defensive traits (e.g., ghosting assignments, social aggression).
 		</li>
 	</ul>
 
@@ -63,12 +61,12 @@
 
 	<ul>
 		<li>
-			Weeks 19-23: The Impact Audit. Mapping how personal choices affect the
-			classroom environment and family life.
+			<strong>Weeks 19-23:</strong> The Impact Audit. Mapping how personal choices affect
+			the classroom environment and family life.
 		</li>
 		<li>
-			Weeks 24-27: Practical Amends. Small-scale repair. Fixing a group project
-			dynamic or apologizing to a counselor for a missed meeting.
+			<strong>Weeks 24-27:</strong> Practical Amends. Small-scale repair. Fixing a group
+			project dynamic or apologizing to a counselor for a missed meeting.
 		</li>
 	</ul>
 
@@ -76,12 +74,12 @@
 
 	<ul>
 		<li>
-			Weeks 28-32: The Daily 5 (Vigilance). Creating a nightly "head check" habit to
-			identify mistakes before they become "drama."
+			<strong>Weeks 28-32:</strong> The Daily 5 (Vigilance). Creating a nightly "head check"
+			habit to identify mistakes before they become "drama."
 		</li>
 		<li>
-			Weeks 33-36: The Transition Guide. Freshmen create a "What I Wish I Knew"
-			digital guide for incoming 8th graders, practicing the Service phase.
+			<strong>Weeks 33-36:</strong> The Transition Guide. Freshmen create a "What I Wish
+			I Knew" digital guide for incoming 8th graders, practicing the Service phase.
 		</li>
 	</ul>
 </section>
@@ -99,13 +97,13 @@
 	<h3>Quarter 1: The Integrity Shield (Professionalism)</h3>
 	<ul>
 		<li>
-			Weeks 1-2: Radical Integrity. Applying "Impeccable with your word" to college
-			apps and job contracts. The weight of a signature.
+			<strong>Weeks 1-2:</strong> Radical Integrity. Applying "Impeccable with your word"
+			to college apps and job contracts. The weight of a signature.
 		</li>
 		<li>
-			Weeks 3-4: Compassion in Conflict (Non-Personalization). Preparing for the
-			high-stakes rejection of the real world. Handling "No" from a university or
-			boss without losing momentum.
+			<strong>Weeks 3-4:</strong> Compassion in Conflict (Non-Personalization). Preparing
+			for the high-stakes rejection of the real world. Handling "No" from a university
+			or boss without losing momentum.
 		</li>
 		<li>
 			Weeks 5-6: Eliminating Ambiguity (Assumptions). Cold-calling and professional
@@ -113,20 +111,20 @@
 			hiring."
 		</li>
 		<li>
-			Weeks 7-9: Consistent Excellence (Your Best). Fighting "Senioritis." Redefining
-			"Best" as the minimum professional standard required to keep a door open.
+			<strong>Weeks 7-9:</strong> Consistent Excellence (Your Best). Fighting "Senioritis."
+			Redefining "Best" as the minimum professional standard required to keep a door open.
 		</li>
 	</ul>
 
 	<h3>Quarter 2: The Accountability Cycle — Internal (Preparation)</h3>
 	<ul>
 		<li>
-			Weeks 10-13: Ego Surrender. Acknowledging the fear of leaving home. Accepting
-			that they don't have all the answers for "Adulting."
+			<strong>Weeks 10-13:</strong> Ego Surrender. Acknowledging the fear of leaving home.
+			Accepting that they don't have all the answers for "Adulting."
 		</li>
 		<li>
-			Weeks 14-18: The 4-Year Inventory. A rigorous review of their high school
-			career. What worked? What toxic patterns must stay in high school and not
+			<strong>Weeks 14-18:</strong> The 4-Year Inventory. A rigorous review of their high
+			school career. What worked? What toxic patterns must stay in high school and not
 			follow them to college/work?
 		</li>
 	</ul>
@@ -134,26 +132,26 @@
 	<h3>Quarter 3: The Accountability Cycle — External (Legacy)</h3>
 	<ul>
 		<li>
-			Weeks 19-23: The Bridge-Building Phase. Identifying every mentor, teacher, or
-			peer who helped them, and every person they may have harmed in the last 4
-			years.
+			<strong>Weeks 19-23:</strong> The Bridge-Building Phase. Identifying every mentor,
+			teacher, or peer who helped them, and every person they may have harmed in the last
+			4 years.
 		</li>
 		<li>
-			Weeks 24-27: Radical Amends. The "Clean Slate" project. Taking direct action to
-			resolve long-standing feuds or family tensions before moving out.
+			<strong>Weeks 24-27:</strong> Radical Amends. The "Clean Slate" project. Taking direct
+			action to resolve long-standing feuds or family tensions before moving out.
 		</li>
 	</ul>
 
 	<h3>Quarter 4: Maintenance & Service (The Launch)</h3>
 	<ul>
 		<li>
-			Weeks 28-32: The Autonomy Routine (Attunement). Designing a personal system of
-			meditation, reflection, or exercise that they will take with them to their next
-			chapter.
+			<strong>Weeks 28-32:</strong> The Autonomy Routine (Attunement). Designing a personal
+			system of meditation, reflection, or exercise that they will take with them to their
+			next chapter.
 		</li>
 		<li>
-			Weeks 33-36: The Protocol Capstone. Seniors act as "Protocol Consultants" for
-			Freshmen. They present their "Personal Operating System" (POS) to a panel of
+			<strong>Weeks 33-36:</strong> The Protocol Capstone. Seniors act as "Protocol Consultants"
+			for Freshmen. They present their "Personal Operating System" (POS) to a panel of
 			mentors as their final graduation requirement.
 		</li>
 	</ul>

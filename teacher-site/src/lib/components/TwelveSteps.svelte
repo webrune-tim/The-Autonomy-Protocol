@@ -96,26 +96,8 @@
 
 <style>
 	h4 {
-		font-size: 2rem;
-		margin: 0;
+		margin-bottom: 0;
 	}
-
-	.step-grid {
-		padding-top: var(--gap-2);
-		display: grid;
-		gap: var(--gap-2);
-		grid-template-columns: auto 1fr;
-
-		span {
-			font-weight: bolder;
-			text-align: center;
-			color: var(--brand-blue);
-			font-size: 3rem;
-			padding: 0 var(--gap-1);
-			font-family: var(--font-header-serif);
-		}
-	}
-
 	p {
 		margin: 0;
 		padding: 0;
