@@ -112,7 +112,7 @@
 		><Road size={32} /> Explore the Curriculum Map <ArrowBigRight size={32} /></a
 	>
 	<a class="link" href="/resources"
-		><Toolbox size={32} /> Review the Implementation Guide and resources <ArrowBigRight
+		><Toolbox size={32} /> Review the Implementation Guide <ArrowBigRight
 			size={32}
 		/></a
 	>
