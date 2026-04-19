@@ -56,7 +56,13 @@
 <section class="content">
 	<div class="grid">
 		<section>
-			<h4><HandFist size={32} /> The Integrity Shield (Tier 1 & Climate Defense)</h4>
+			<div class='flex'>
+                <HandFist size={32} />
+                <div class='flex-column'>
+                    <h4>The Integrity Shield</h4>
+                    <span>(Tier 1 & Climate Defense)</span>
+                </div>
+            </div>
 			<p>
 				Four core agreements serving as Tier 1 preventative tools, providing staff
 				and students with a shared vocabulary to de-escalate conflicts proactively.
