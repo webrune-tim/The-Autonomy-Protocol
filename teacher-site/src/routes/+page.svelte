@@ -56,10 +56,10 @@
 <section class="content">
 	<div class="grid">
 		<section>
-			<div class='grid'>
+			<div class='title-grid'>
                 <HandFist size={32} />
                 <div class='flex-column'>
-                    <h4>The Integrity Shield</h4>
+                    <h3>The Integrity Shield</h3>
                     <span>(Tier 1 & Climate Defense)</span>
                 </div>
             </div>
@@ -96,9 +96,13 @@
 		</section>
 
 		<section>
-			<h3>
-				<LoaderPinwheel size={32} /> The Accountability Cycle (Tier 2 & Restorative Intervention)
-			</h3>
+			<div class='title-grid'>
+                <LoaderPinwheel size={32} />
+                <div class='flex-column'>
+                    <h3>The Accountability Cycle</h3>
+                    <span>(Tier 2 & Restorative Intervention)</span>
+                </div>
+            </div>
 			<ol>
 				<li>
 					<strong>Honesty & Possibility:</strong> Recognizing disruptive patterns and accepting

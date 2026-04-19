@@ -4,7 +4,12 @@
 
 <section class="content">
 	<div class="accountability-cycle">
-		<h4><LoaderPinwheel size={32} /> The Accountability Cycle</h4>
+		<div class='title-grid'>
+			<LoaderPinwheel size={32} />
+			<div class='flex-column'>
+				<h4>The Accountability Cycle</h4>
+			</div>
+		</div>
 		<div class="grid">
 			<div class="step-grid">
 				<span>1</span>
