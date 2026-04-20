@@ -258,10 +258,10 @@ details strong {
 		text-stroke: 2px var(--fg);
 		-webkit-text-stroke: 2px var(--fb);
 		text-shadow:
-			2px 2px 0px var(--fg),
-			-2px 2px 0px var(--fb),
-			2px -2px 0px var(--fb),
-			-2px -2px 0px var(--fb);
+			2px 2px 0px white,
+			-2px 2px 0px white,
+			2px -2px 0px white,
+			-2px -2px 0px white;
 	}
 }
 
