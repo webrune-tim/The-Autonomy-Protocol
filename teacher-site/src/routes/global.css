@@ -255,7 +255,7 @@ details strong {
 	padding: var(--gap-2);
 
 	g1, h2, h3, h4, strong {
-		text-shaddow:
+		text-shadow:
 			2px 2px 0px var(--fg),
 			-2px 2px 0px var(--fb),
 			2px -2px 0px var(--fb),
