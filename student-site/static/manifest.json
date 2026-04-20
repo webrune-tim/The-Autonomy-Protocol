@@ -1,0 +1,44 @@
+{
+  "name": "The Autonomy Protocol",
+  "short_name": "The Autonomy Protocol",
+  "description": "Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss.",
+  "theme_color": "#ff9661",
+  "background_color": "#88c1ff",
+  "display": "standalone",
+  "orientation": "any",
+  "dir": "auto",
+  "lang": "en-US",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "410x886",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "The Autonomy Protocol on Mobile"
+    },
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1348x932",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "The Autonomy Protocol on Desktop"
+    }
+  ]
+}

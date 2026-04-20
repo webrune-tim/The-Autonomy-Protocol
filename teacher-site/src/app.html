@@ -3,28 +3,31 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, maximum-scale=1"
-		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 		<script>
-			;(function () {
+			(function () {
 				try {
-					const theme = localStorage.getItem('theme')
-					const supportP3 = window.matchMedia('(color-gamut: p3)').matches
-					const systemLight = window.matchMedia(
-						'(prefers-color-scheme: light)'
-					).matches
+					// 1. Get the preference, default to 'system' if nothing is stored
+					const theme = localStorage.getItem('theme') || 'system';
+					const isSystemLight = window.matchMedia('(prefers-color-scheme: light)').matches;
 
-					// Apply theme attribute immediately
-					if (theme === 'light' || (!theme && systemLight)) {
-						document.documentElement.setAttribute('data-theme', 'light')
-					} else {
-						document.documentElement.setAttribute('data-theme', 'dark')
+					// 2. Resolve the actual theme to apply
+					let resolved = 'dark';
+					if (theme === 'light') {
+						resolved = 'light';
+					} else if (theme === 'system' && isSystemLight) {
+						resolved = 'light';
 					}
-				} catch (e) {}
-			})()
+
+					// 3. Apply immediately to prevent the blinding white void
+					document.documentElement.setAttribute('data-theme', resolved);
+					document.documentElement.style.colorScheme = resolved;
+				} catch (e) {
+					// Fallback if localStorage or mediaMatch is unavailable
+					document.documentElement.setAttribute('data-theme', 'dark');
+				}
+			})();
 		</script>
 
 		%sveltekit.head%

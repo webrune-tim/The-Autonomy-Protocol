@@ -10,7 +10,7 @@
 	.pill {
 		display: grid;
 		place-content: center;
-		max-hieght: fit-content;
+		max-height: fit-content;
 		max-width: fit-content;
 		border-radius: 100px;
 		color: var(--brand-blue);

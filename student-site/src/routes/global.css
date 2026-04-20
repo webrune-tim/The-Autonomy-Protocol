@@ -12,9 +12,9 @@
 	--black-20: oklch(60% 0 0);
 	--white: oklch(90% 0 0);
 
-	--accent-1: oklch(80% 0.12 255);
-	--accent-2: oklch(78% 0.15 45);
-	--accent-3: oklch(82% 0.11 190);
+	--accent-1: oklab(0.61 -0.06 -0.22);
+	--accent-2: oklab(0.72 0.16 0.16);
+	--accent-3: oklab(0.8 -0.17 -0.03);
 
 	/* Semantic Variables (Dark Baseline) */
 	--bg: var(--black-80);
@@ -60,11 +60,11 @@
 	--ui-border: oklch(70% 0.01 0);
 
 	/* Deepened Accents for Light Background Readability */
-	--brand-blue: oklch(50% 0.18 255);
-	--brand-orange: oklch(55% 0.22 45);
-	--brand-teal: oklch(50% 0.14 195);
+	--brand-blue: oklab(0.45 -0.05 -0.17);
+	--brand-orange: oklab(0.57 0.13 0.13);
+	--brand-teal: oklab(0.64 -0.14 -0.02);
 
-	--accent-3: oklch(50% 0.14 195);
+	--accent-3: oklab(0.64 -0.14 -0.02);
 
 	--text-form: var(--black-80);
 	--text-heading: var(--brand-blue);
@@ -74,15 +74,15 @@
 /* --- P3 Gamut Logic --- */
 @media (color-gamut: p3) {
 	:root {
-		--brand-blue: oklch(72% 0.28 254);
-		--brand-orange: oklch(75% 0.25 45);
-		--accent-3: oklch(78% 0.2 190);
+		--brand-blue: oklch(0.6132 0.2245 254);
+		--brand-orange: oklch(0.7191 0.2269 45);
+		--accent-3: oklch(0.8015 0.1751 190);
 	}
 
 	:root[data-theme='light'] {
-		--brand-blue: oklch(45% 0.25 254);
-		--brand-orange: oklch(55% 0.22 45);
-		--accent-3: oklch(50% 0.18 190);
+		--brand-blue: oklch(0.4485 0.1751 254.74);
+		--brand-orange: oklch(0.5691 0.1801 45);
+		--accent-3: oklch(0.6397 0.1431 190);
 	}
 }
 
@@ -232,6 +232,22 @@ details strong {
 
 .flex > div {
 	flex: 1 1 300px;
+}
+
+.title-grid {
+	--color: var(--brand-teal);
+	display: grid;
+	align-items: center;
+	color: var(--color);
+	gap: var(--gap-2);
+	grid-template-columns: auto 1fr;
+
+	h2, h3, h4 { margin-bottom: 0; }
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
 }
 
 .box {
