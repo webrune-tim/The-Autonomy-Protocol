@@ -10,11 +10,10 @@
 	.pill {
 		display: grid;
 		place-content: center;
-		max-height: fit-content;
 		max-width: fit-content;
 		border-radius: 100px;
-		color: var(--brand-blue);
-		background-color: rgb(from var(--brand-orange) r g b / 0.25);
+		color: var(--fg);
+		background-color: rgb(from var(--brand-orange) r g b / 0.15);
 		border: 1px solid var(--brand-orange);
 		padding: 0.25rem 0.75rem;
 		font-size: 10px;

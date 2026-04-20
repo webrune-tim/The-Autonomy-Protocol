@@ -33,10 +33,11 @@
 		height: fit-content;
 
 		li {
-			display: grid;
+			display: flex;
 			place-items: center;
 			margin: 0;
 			padding: 0;
+			flex: 1;
 		}
 	}
 
@@ -45,12 +46,15 @@
 		padding: 4px 8px;
 		border-radius: var(--border-radius);
 		border: 2px solid var(--brand-orange);
-		background: rgb(from var(--brand-orange) r g b / 0.25);
+		background: rgb(from var(--brand-orange) r g b / 0.15);
 		text-decoration: none;
+		white-space: nowrap;
+		flex: 1;
+		text-align: center;
 
 		&:hover {
 			color: var(--fb);
-			background: rgb(from var(--brand-orange) r g b / 0.75);
+			background: rgb(from var(--brand-orange) r g b / 0.3);
 			text-decoration: none;
 		}
 	}

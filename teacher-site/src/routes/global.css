@@ -222,6 +222,7 @@ details strong {
 
 .content:last-of-type {
 	border-bottom: none !important;
+	padding-bottom: var(--gap-2)
 }
 
 .flex {
@@ -251,21 +252,16 @@ details strong {
 }
 
 .box {
-	--shadow: rgb(from var(--fg) r g b / 0.5)
 	border-radius: var(--border-radius);
 	padding: var(--gap-2);
 
-	h1, h2, h3, h4, strong {
-		text-shadow:
-			1px 1px 0px var(--shadow),
-			-1px 1px 0px var(--shadow),
-			1px -1px 0px var(--shadow),
-			-1px -1px 0px var(--shadow);
+	span {
+		font-weight: bold;
 	}
 }
 
 .trans-blue {
-	background-color: rgb(from var(--brand-blue) r g b / 0.25);
+	background-color: rgb(from var(--brand-blue) r g b / 0.15);
 	border: 2px solid var(--brand-blue);
 
 	h2,
@@ -275,7 +271,7 @@ details strong {
 }
 
 .trans-orange {
-	background-color: rgb(from var(--brand-orange) r g b / 0.25);
+	background-color: rgb(from var(--brand-orange) r g b / 0.15);
 	border: 2px solid var(--brand-orange);
 
 	h2,
@@ -285,7 +281,7 @@ details strong {
 }
 
 .trans-teal {
-	background-color: rgb(from var(--brand-teal) r g b / 0.25);
+	background-color: rgb(from var(--brand-teal) r g b / 0.15);
 	border: 2px solid var(--brand-teal);
 
 	h2,
