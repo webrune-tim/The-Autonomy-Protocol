@@ -1,7 +1,8 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
-	import './global.css'
+	// import './global.css'
+	import '@autonomy/theme/styles.css';
 
 	import { Banner, Footer, Header } from '$components'
 

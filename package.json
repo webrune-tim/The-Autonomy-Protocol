@@ -1,11 +1,12 @@
 {
-  "name": "temp",
-  "version": "0.0.0",
+  "name": "the-autonomy-protocol",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "ready": "vp check && vp run -r test && vp run -r build",
-    "dev": "vp run website#dev",
+    "dev:teacher-site": "vp run teacher-site#dev",
+    "dev:student-site": "vp run student-site#dev",
     "prepare": "vp config"
   },
   "devDependencies": {
