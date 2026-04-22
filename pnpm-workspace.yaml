@@ -1,5 +1,5 @@
 packages:
-  - apps/*
+  - sites/*
   - packages/**
   - tools/*
   - docs/*
