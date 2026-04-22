@@ -1,0 +1,11 @@
+{
+  "name": "@autonomy/twelve-steps",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "@lucide/svelte": "1.8.0"
+  }
+}

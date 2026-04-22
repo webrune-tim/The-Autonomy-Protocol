@@ -1,5 +1,9 @@
+<script lang="ts">
+	const { children } = props()
+</script>
+
 <footer>
-	<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
+	{@render children()}
 </footer>
 
 <style>

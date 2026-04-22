@@ -1,16 +1,8 @@
 <script lang="ts">
-	import { FourAgreements, TwelveSteps } from '$components'
+	import { FourAgreements } from '@autonomy/four-agreements'
+	import { TwelveSteps } from '@autonomy/twelve-steps'
 	import { Hero } from '@autonomy/hero'
 	import HeroImage from '$images/pic-1.jpg'
-
-	// import ArrowBigRight from '@lucide/svelte/icons/arrow-big-right'
-	// import Bug from '@lucide/svelte/icons/bug'
-	// import LoaderPinwheel from '@lucide/svelte/icons/loader-pinwheel'
-	// import HandFist from '@lucide/svelte/icons/hand-fist'
-	// import Map from '@lucide/svelte/icons/map'
-	// import ShieldPlus from '@lucide/svelte/icons/shield-plus'
-	// import Road from '@lucide/svelte/icons/road'
-	// import Toolbox from '@lucide/svelte/icons/toolbox'
 
 	import {
 		ArrowBigRight,

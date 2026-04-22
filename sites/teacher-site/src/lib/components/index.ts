@@ -1,7 +1,0 @@
-// export { default as Banner } from './Banner.svelte'
-export { default as Footer } from "./Footer.svelte";
-export { default as FourAgreements } from "./FourAgreements.svelte";
-// export { default as Header } from './Header.svelte'
-// export { default as Hero } from "./Hero.svelte";
-// export { default as Pill } from "./Pill.svelte";
-export { default as TwelveSteps } from "./TwelveSteps.svelte";

@@ -47,9 +47,23 @@ importers:
         specifier: 1.8.0
         version: 1.8.0(svelte@5.55.4(@typescript-eslint/types@8.59.0))
 
+  packages/ui/footer: {}
+
+  packages/ui/four-agreements:
+    dependencies:
+      '@lucide/svelte':
+        specifier: 1.8.0
+        version: 1.8.0(svelte@5.55.4(@typescript-eslint/types@8.59.0))
+
   packages/ui/header: {}
 
   packages/ui/hero: {}
+
+  packages/ui/logo:
+    dependencies:
+      '@lucide/svelte':
+        specifier: 1.8.0
+        version: 1.8.0(svelte@5.55.4(@typescript-eslint/types@8.59.0))
 
   packages/ui/nav: {}
 
@@ -60,6 +74,12 @@ importers:
         version: 'link:'
 
   packages/ui/theme: {}
+
+  packages/ui/twelve-steps:
+    dependencies:
+      '@lucide/svelte':
+        specifier: 1.8.0
+        version: 1.8.0(svelte@5.55.4(@typescript-eslint/types@8.59.0))
 
   packages/utils:
     devDependencies:
@@ -163,12 +183,21 @@ importers:
       '@autonomy/banner':
         specifier: workspace:*
         version: link:../../packages/ui/banner
+      '@autonomy/footer':
+        specifier: workspace:*
+        version: link:../../packages/ui/footer
+      '@autonomy/four-agreements':
+        specifier: workspace:*
+        version: link:../../packages/ui/four-agreements
       '@autonomy/header':
         specifier: workspace:*
         version: link:../../packages/ui/header
       '@autonomy/hero':
         specifier: workspace:*
         version: link:../../packages/ui/hero
+      '@autonomy/logo':
+        specifier: workspace:*
+        version: link:../../packages/ui/logo
       '@autonomy/nav':
         specifier: workspace:*
         version: link:../../packages/ui/nav
@@ -178,6 +207,9 @@ importers:
       '@autonomy/theme':
         specifier: workspace:*
         version: link:../../packages/ui/theme
+      '@autonomy/twelve-steps':
+        specifier: workspace:*
+        version: link:../../packages/ui/twelve-steps
       '@lucide/svelte':
         specifier: ^1.8.0
         version: 1.8.0(svelte@5.55.4(@typescript-eslint/types@8.59.0))

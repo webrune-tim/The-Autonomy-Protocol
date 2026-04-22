@@ -5,14 +5,13 @@
 
 	// Import the shared packages
 	import { Banner } from '@autonomy/banner'
+	import { Footer } from '@autonomy/footer'
 	import { Header } from '@autonomy/header'
+	import { Logo } from '@autonomy/logo'
 	import { Nav } from '@autonomy/nav'
 	import { Pill } from '@autonomy/pill'
 
 	// Import local components
-	import { Footer } from '$components'
-	import Logo from '$components/Logo.svelte'
-	// import Pill from '$components/Pill.svelte'
 	import ThemeToggle from '$components/ThemeToggle.svelte'
 
 	import { page } from '$app/stores'
@@ -81,7 +80,9 @@
 		{@render children()}
 	</main>
 
-	<Footer />
+	<Footer>
+		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
+	</Footer>
 </div>
 
 <style>

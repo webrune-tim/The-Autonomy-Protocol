@@ -15,11 +15,15 @@
   },
   "dependencies": {
     "@autonomy/banner": "workspace:*",
+    "@autonomy/footer": "workspace:*",
+    "@autonomy/four-agreements": "workspace:*",
     "@autonomy/header": "workspace:*",
     "@autonomy/hero": "workspace:*",
+    "@autonomy/logo": "workspace:*",
     "@autonomy/nav": "workspace:*",
     "@autonomy/pill": "workspace:*",
     "@autonomy/theme": "workspace:*",
+    "@autonomy/twelve-steps": "workspace:*",
     "@lucide/svelte": "^1.8.0",
     "svelte-french-toast": "^1.2.0"
   },
