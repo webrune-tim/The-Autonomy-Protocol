@@ -1,9 +1,9 @@
 <script lang="ts">
 	// Import the shared packages
 	import { Hero } from '@autonomy/hero'
-	
+
 	import toast, { Toaster } from 'svelte-french-toast'
-	import HeroImage from '$images/contact.jpg'
+	import HeroImage from '$images/contact.avif?enhanced'
 	import {
 		User,
 		Mail,

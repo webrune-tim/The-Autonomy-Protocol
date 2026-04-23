@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Import the shared packages
 	import { Hero } from '@autonomy/hero'
-	import HeroImage from '$images/pic-2.jpg'
+	import HeroImage from '$images/pic-2.avif?enhanced'
 </script>
 
 <Hero {HeroImage}>

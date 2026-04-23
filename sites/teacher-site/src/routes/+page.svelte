@@ -4,7 +4,7 @@
 	import { TwelveSteps } from '@autonomy/twelve-steps'
 	import { Hero } from '@autonomy/hero'
 
-	import HeroImage from '$images/pic-1.jpg'
+	import HeroImage from '$images/pic-1.avif?enhanced'
 
 	import {
 		ArrowBigRight,

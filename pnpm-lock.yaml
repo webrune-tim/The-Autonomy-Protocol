@@ -6,27 +6,12 @@ settings:
 
 catalogs:
   default:
-    '@img/sharp-darwin-arm64':
-      specifier: ^0.34.5
-      version: 0.34.5
-    '@img/sharp-libvips-darwin-arm64':
-      specifier: ^1.2.4
-      version: 1.2.4
     '@lucide/svelte':
       specifier: ^1.9.0
       version: 1.8.0
     '@typescript/native-preview':
       specifier: 7.0.0-dev.20260421.2
       version: 7.0.0-dev.20260421.2
-    '@vitest/browser-playwright':
-      specifier: ^4.1.5
-      version: 4.1.5
-    sharp:
-      specifier: ^0.34.5
-      version: 0.34.5
-    vite-plus:
-      specifier: latest
-      version: 0.1.19
 
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@latest

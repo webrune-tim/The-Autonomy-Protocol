@@ -2,7 +2,7 @@
 	// Import the shared packages
 	import { Hero } from '@autonomy/hero';
 
-	import HeroImage from '$images/pic-1.jpg';
+	import HeroImage from '$images/pic-1.avif?enhanced';
 </script>
 
 <Hero {HeroImage}>

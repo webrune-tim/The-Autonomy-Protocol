@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Banner } from '@autonomy/banner'
 	import { Hero } from '@autonomy/hero'
-	import HeroImage from '$images/road.jpg'
+	import HeroImage from '$images/road.avif?enhanced'
 </script>
 
 <Hero {HeroImage}>

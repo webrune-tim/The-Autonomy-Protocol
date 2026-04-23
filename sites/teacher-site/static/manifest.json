@@ -15,26 +15,26 @@
     {
       "purpose": "maskable",
       "sizes": "512x512",
-      "src": "icon512_maskable.png",
+      "src": "icon512_maskable.avif",
       "type": "image/png"
     },
     {
       "purpose": "any",
       "sizes": "512x512",
-      "src": "icon512_rounded.png",
+      "src": "icon512_rounded.avif",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "screenshot-mobile.png",
+      "src": "screenshot-mobile.avif",
       "sizes": "410x886",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "The Autonomy Protocol on Mobile"
     },
     {
-      "src": "screenshot-desktop.png",
+      "src": "screenshot-desktop.avif",
       "sizes": "1348x932",
       "type": "image/png",
       "form_factor": "wide",

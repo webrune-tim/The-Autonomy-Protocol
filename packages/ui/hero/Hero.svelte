@@ -9,6 +9,8 @@
       sizes="(min-width: 1000px) 1000px, 100vw"
       alt=""
       aria-hidden="true"
+      fetchpriority="high"
+      loading="eager"
     />
   </div>
   <div class="hero-content">
