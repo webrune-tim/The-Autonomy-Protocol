@@ -1,7 +1,9 @@
 <script lang="ts">
+	// Import the shared packages
 	import { FourAgreements } from '@autonomy/four-agreements'
 	import { TwelveSteps } from '@autonomy/twelve-steps'
 	import { Hero } from '@autonomy/hero'
+	
 	import HeroImage from '$images/pic-1.jpg'
 
 	import {

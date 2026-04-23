@@ -1,7 +1,9 @@
 <script lang="ts">
-	import HeroImage from '$images/pic-6.jpg'
-
+	// Import the shared packages
 	import { Banner } from '@autonomy/banner'
+	import { Hero } from '@autonomy/hero'
+
+	import HeroImage from '$images/pic-6.jpg'
 </script>
 
 <Hero {HeroImage}>

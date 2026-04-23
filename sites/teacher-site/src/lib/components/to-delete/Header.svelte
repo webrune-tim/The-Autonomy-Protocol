@@ -1,8 +1,12 @@
 <script lang="ts">
-	import Logo from './Logo.svelte'
+	// Import the shared packages
 	import { Nav } from '@autonomy/nav'
+
+	// Import the shared packages
+	import Logo from './Logo.svelte'
 	import Pill from './Pill.svelte'
 	import ThemeToggle from './ThemeToggle.svelte'
+	
 	import { page } from '$app/stores';
 
     const navLinks = [

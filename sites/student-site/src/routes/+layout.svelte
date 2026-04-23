@@ -1,8 +1,11 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
+
+	// Import the shared packages
 	import '@autonomy/theme/styles.css';
 
+	// Import the local packages
 	import { Banner, Footer, Header } from '$components'
 
 	let { children } = $props()
