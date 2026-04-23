@@ -140,6 +140,10 @@ details strong {
   padding-bottom: var(--gap-2);
 }
 
+.no-bottom-margin {
+  margin-bottom: 0;
+}
+
 .flex {
   display: flex;
   gap: var(--gap-2);

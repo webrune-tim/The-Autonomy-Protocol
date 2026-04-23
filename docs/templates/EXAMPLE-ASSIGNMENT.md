@@ -1,6 +1,6 @@
-# Test Assignment 
+# Test Assignment
 
-Example assignment to build an assignment creator 
+Example assignment to build an assignment creator
 
 ## Section 1
 
@@ -14,8 +14,6 @@ Example assignment to build an assignment creator
 2. Tell me why you like ice cream. What is your favorite flavor, and why?
 
 >
->
->
 
 3. What scares you most about graduating?
 
@@ -25,6 +23,4 @@ Example assignment to build an assignment creator
 
 4. Write a small paragraph about your fears about graduating high school.
 
->
->
 >

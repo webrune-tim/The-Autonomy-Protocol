@@ -6,6 +6,6 @@
     ".": "./index.ts"
   },
   "dependencies": {
-    "@lucide/svelte": "1.8.0"
+    "@lucide/svelte": "catalog:"
   }
 }

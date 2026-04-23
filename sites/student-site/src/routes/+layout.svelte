@@ -1,14 +1,31 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg'
-	import OgImg from '$images/og-img.png'
+	import favicon from '$lib/assets/favicon.svg';
+	import OgImg from '$images/og-img.png';
+	import '@autonomy/theme/index.css';
 
 	// Import the shared packages
-	import '@autonomy/theme/styles.css';
+	import { Banner } from '@autonomy/banner';
+	import { Footer } from '@autonomy/footer';
+	import { Header } from '@autonomy/header';
+	import { Logo } from '@autonomy/logo';
+	import { Nav } from '@autonomy/nav';
+	import { Pill } from '@autonomy/pill';
 
-	// Import the local packages
-	import { Banner, Footer, Header } from '$components'
+	// Import local components
+	import ThemeToggle from '$components/ThemeToggle.svelte';
 
-	let { children } = $props()
+	import { page } from '$app/stores';
+
+	let { children } = $props();
+
+	const navLinks = [
+		{ href: '/', label: 'Home' },
+		{ href: '/assignments', label: 'Assignments' },
+		{ href: '/homework', label: 'Homework' },
+		{ href: '/achievements', label: 'Achievements' },
+		{ href: '/about', label: 'About' },
+		{ href: '/contact', label: 'Contact' }
+	];
 </script>
 
 <svelte:head>
@@ -26,29 +43,40 @@
 	<meta property="og:image" content={OgImg} />
 </svelte:head>
 
+{#snippet headerLogo()}
+	<Logo />
+{/snippet}
+
+{#snippet headerActions()}
+	<Pill>&#945; Alpha</Pill>
+	<ThemeToggle />
+{/snippet}
+
+{#snippet headerNav()}
+	<Nav links={navLinks} currentPath={$page.url.pathname} />
+{/snippet}
+
 <div class="layout-wrapper">
-	<Header />
+	<Header logo={headerLogo} actions={headerActions} nav={headerNav} />
+	<Banner bannerName="site-under-development">
+		<p>This site is still under heavy development. Content may change without notice.</p>
+
+		<p>
+			If you encounter any issues, please report them via our <a href="/contact">contact page</a>
+			or on
+			<a href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues" target="_blank"
+				>GitHub Issues page</a
+			>.
+		</p>
+	</Banner>
 
 	<main>
-		<Banner bannerName="dev-warning">
-			<p>
-				This site is still under heavy development. Content may change without
-				notice.
-			</p>
-			<p>
-				If you encounter any issues, please report them via our <a href="/contact"
-					>contact page</a
-				>
-				or on
-				<a href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
-					>GitHub Issues</a
-				> page.
-			</p>
-		</Banner>
 		{@render children()}
 	</main>
 
-	<Footer />
+	<Footer>
+		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
+	</Footer>
 </div>
 
 <style>
@@ -68,7 +96,7 @@
 		--accent-3: oklab(0.8 -0.17 -0.03);
 	}
 
-	:global(:root[data-theme="light"]) {
+	:global(:root[data-theme='light']) {
 		--brand-blue: oklab(0.45 -0.05 -0.17);
 		--brand-orange: oklab(0.57 0.13 0.13);
 		--brand-teal: oklab(0.64 -0.14 -0.02);
@@ -82,7 +110,7 @@
 			--accent-3: oklch(0.8015 0.1751 190);
 		}
 
-		:global(:root[data-theme="light"]) {
+		:global(:root[data-theme='light']) {
 			--brand-blue: oklch(0.4485 0.1751 254.74);
 			--brand-orange: oklch(0.5691 0.1801 45);
 			--accent-3: oklch(0.6397 0.1431 190);

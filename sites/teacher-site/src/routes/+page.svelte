@@ -3,7 +3,7 @@
 	import { FourAgreements } from '@autonomy/four-agreements'
 	import { TwelveSteps } from '@autonomy/twelve-steps'
 	import { Hero } from '@autonomy/hero'
-	
+
 	import HeroImage from '$images/pic-1.jpg'
 
 	import {
@@ -148,7 +148,7 @@
 	</div>
 </section>
 
-<section class="content flex">
+<section class="content flex no-bottom-margin">
 	<a class="link" href="/curriculum">
 		<Road size={32} /> Curriculum Map <ArrowBigRight size={24} />
 	</a>

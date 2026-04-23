@@ -59,7 +59,7 @@
 
 <div class="layout-wrapper">
 	<Header logo={headerLogo} actions={headerActions} nav={headerNav} />
-	<Banner>
+	<Banner bannerName="site-under-development">
 		<p>
 			This site is still under heavy development. Content may change without notice.
 		</p>

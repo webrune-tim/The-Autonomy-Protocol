@@ -5,31 +5,36 @@
 ---
 
 ## Project Vision
+
 To provide a universal code of internal accountability and social integrity for the next generation. The Autonomy Protocol bridges the gap between academic theory and life-readiness by installing a "Human Operating System" that shifts students from external policing to internal self-governance.
 
 ## System Architecture
 
 ### 1. The Accountability Cycle (Internal Engine)
-*Derived from the Generalized 12 Steps*
-* **Radical Ownership:** Transitioning from reactive to proactive responsibility.
-* **The Amends Protocol:** A formalized system for repairing social and professional friction.
-* **Daily Inventory:** A micro-habit of executive self-correction and alignment.
+
+_Derived from the Generalized 12 Steps_
+
+- **Radical Ownership:** Transitioning from reactive to proactive responsibility.
+- **The Amends Protocol:** A formalized system for repairing social and professional friction.
+- **Daily Inventory:** A micro-habit of executive self-correction and alignment.
 
 ### 2. The Integrity Shield (External Interface)
-*Derived from the Four Agreements*
-* **Precision of Speech:** Eliminating social noise to establish a culture of high-trust.
-* **Emotional Neutrality:** Developing resilience against external projections and social pressure.
-* **Inquiry-Based Reality:** Actively testing assumptions to reduce conflict and error.
+
+_Derived from the Four Agreements_
+
+- **Precision of Speech:** Eliminating social noise to establish a culture of high-trust.
+- **Emotional Neutrality:** Developing resilience against external projections and social pressure.
+- **Inquiry-Based Reality:** Actively testing assumptions to reduce conflict and error.
 
 ## Implementation Paths
 
-| Path | Primary Focus | Industry Target |
-| :--- | :--- | :--- |
-| **Core (Freshman)** | Introduction | General Social/Academic Resilience |
-| **Mentorship (Senior)** | Further Study and mentorship | Preperation for the workforce | 
-| **Computer Science** | Logic & Collaboration | Software Engineering & Tech Teams |
-| **Healthcare** | Clinical Resilience | Nursing, Med-Tech, & Patient Care |
-| **The Trades** | Structural Integrity | Construction, Electrical, & Plumbing |
+| Path                    | Primary Focus                | Industry Target                      |
+| :---------------------- | :--------------------------- | :----------------------------------- |
+| **Core (Freshman)**     | Introduction                 | General Social/Academic Resilience   |
+| **Mentorship (Senior)** | Further Study and mentorship | Preperation for the workforce        |
+| **Computer Science**    | Logic & Collaboration        | Software Engineering & Tech Teams    |
+| **Healthcare**          | Clinical Resilience          | Nursing, Med-Tech, & Patient Care    |
+| **The Trades**          | Structural Integrity         | Construction, Electrical, & Plumbing |
 
 ## Deployment Roadmap
 
@@ -40,7 +45,9 @@ To provide a universal code of internal accountability and social integrity for 
 - [ ] **v1.0.0: Pilot Proposal (Contra Costa District Outreach)**
 
 ## Usage
+
 This is an open-source framework designed for integration into CTE (Career Technical Education) and High School Advisory pathways.
 
 ---
-*Building the infrastructure for a self-governed future.*
+
+_Building the infrastructure for a self-governed future._
