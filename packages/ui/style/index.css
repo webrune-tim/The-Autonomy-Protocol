@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  overflow-x: clip;
+}
+
 body {
   background-color: var(--bg);
   color: var(--fg);
@@ -178,10 +183,6 @@ details strong {
 .flex-column {
   display: flex;
   flex-direction: column;
-}
-
-.no-stretch-flex {
-  flex: 0 1 250px;
 }
 
 .box {

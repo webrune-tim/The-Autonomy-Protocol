@@ -3,7 +3,7 @@
 	import { Hero } from '@autonomy/hero'
 
 	import toast, { Toaster } from 'svelte-french-toast'
-	import HeroImage from '$images/contact.avif?enhanced'
+	import HeroImage from '$images/contact.avif'
 	import {
 		User,
 		Mail,

@@ -23,7 +23,7 @@
     "@autonomy/logo": "workspace:*",
     "@autonomy/nav": "workspace:*",
     "@autonomy/pill": "workspace:*",
-    "@autonomy/theme": "workspace:*",
+    "@autonomy/style": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",
     "@lucide/svelte": "catalog:",
     "svelte-french-toast": "^1.2.0"

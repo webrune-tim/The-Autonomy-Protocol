@@ -14,7 +14,7 @@ catalogs:
       version: 1.2.4
     '@lucide/svelte':
       specifier: ^1.9.0
-      version: 1.9.0
+      version: 1.8.0
     '@typescript/native-preview':
       specifier: 7.0.0-dev.20260421.2
       version: 7.0.0-dev.20260421.2
@@ -80,7 +80,7 @@ importers:
 
   packages/ui/pill: {}
 
-  packages/ui/theme: {}
+  packages/ui/style: {}
 
   packages/ui/twelve-steps:
     dependencies:
@@ -132,9 +132,9 @@ importers:
       '@autonomy/pill':
         specifier: workspace:*
         version: link:../../packages/ui/pill
-      '@autonomy/theme':
+      '@autonomy/style':
         specifier: workspace:*
-        version: link:../../packages/ui/theme
+        version: link:../../packages/ui/style
       '@autonomy/twelve-steps':
         specifier: workspace:*
         version: link:../../packages/ui/twelve-steps
@@ -244,9 +244,9 @@ importers:
       '@autonomy/pill':
         specifier: workspace:*
         version: link:../../packages/ui/pill
-      '@autonomy/theme':
+      '@autonomy/style':
         specifier: workspace:*
-        version: link:../../packages/ui/theme
+        version: link:../../packages/ui/style
       '@autonomy/twelve-steps':
         specifier: workspace:*
         version: link:../../packages/ui/twelve-steps
