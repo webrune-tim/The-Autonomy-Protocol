@@ -41,6 +41,12 @@ h6 {
   color: var(--accent-3);
 }
 
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 a {
   color: var(--text-link);
   text-decoration: none;
