@@ -2,16 +2,14 @@
   import type { Snippet } from 'svelte';
 
   interface Props {
-    cards_content: HTMLAttributes[];
-    title: string;
+    cards_content: string[];
   }
 
-  let { cards_content, title }: Props = $props();
+  let { cards_content }: Props = $props();
 
-  /** * DYNAMIC HEIGHT CALCULATION
-   * 4 cards = 240vh total scroll distance
-   * 12 cards = 720vh total scroll distance
-   * This ensures the "speed" per card remains identical.
+  /** * DYNAMIC HEIGHT
+   * Controls the "scroll duration." 
+   * 60vh per card provides a smooth, readable pace.
    */
   const dynamicHeight = $derived(cards_content.length * 60); 
 </script>
@@ -22,8 +20,7 @@
   </div>
 {/snippet}
 
-<section id="sectionPin" style="height: {dynamicHeight}vh;">
-  <h2>{title}</h2>
+<section id="sectionPin" style="--dynamic-height: {dynamicHeight}vh;">
   <div class="pin-wrap-sticky">
     <div class="pin-wrap">
       {#each cards_content as content, i}
@@ -34,45 +31,54 @@
 </section>
 
 <style>
-  /* 1. KEYFRAME MATH
-     -100% moves the cards entirely to the left.
-     + var(--window-width) pulls the "end" of the strip back into the visible window.
-  */
-  @keyframes move {
-    to {
-      transform: translateX(calc(-100% + var(--window-width)));
-    }
-  }
-
   #sectionPin {
-    margin-top: var(--gap-2);
+    /* The "Window Width" variable ensures the scroll area matches your 
+       site's layout. On mobile, we use 90% to keep a margin on the sides.
+    */
+    --window-width: min(1000px, 90vw);
+    
     width: 100%;
-    overflow: visible; /* Required for sticky child to work */
+    height: var(--dynamic-height);
+    margin-top: var(--gap-2);
+    
+    /* Required for sticky behavior to trigger */
+    overflow: visible; 
     view-timeline-name: --section-pin-tl;
     view-timeline-axis: block;
   }
 
+  @keyframes move {
+    to {
+      /* Moves the wide strip left, but stops so the last card's right edge 
+         aligns with the right edge of the window. */
+      transform: translateX(calc(-100% + var(--window-width)));
+    }
+  }
+
   .pin-wrap-sticky {
-    /* Set the visible window width to match your Hero/Grid */
-    --window-width: min(1000px, 100svw);
-    
     position: sticky;
     top: 0;
-    width: 100%;
-    max-width: var(--window-width);
-    height: 100svh;
-    margin: 0 auto; /* Centers the window */
     
+    /* CRITICAL: This container must NOT be 100vw or it blows out the layout.
+       It should be the "window" through which we see the cards. */
+    width: var(--window-width);
+    max-width: var(--window-width);
+    margin: 0 auto; /* Centers the scroll window on the page */
+    
+    height: 100svh;
     display: flex;
     align-items: center;
-    overflow: hidden; /* Clips the cards that are "waiting" to scroll in */
+    
+    /* CRITICAL: This hides the cards that are waiting to slide in. */
+    overflow: hidden; 
   }
 
   .pin-wrap {
     display: flex;
     flex-wrap: nowrap;
-    width: max-content; /* Container expands to fit all card widths */
-    
+    width: max-content;
+    padding: 0;
+
     will-change: transform;
     animation: linear move forwards;
     animation-timeline: --section-pin-tl;
@@ -80,29 +86,50 @@
   }
 
   .box {
-    /* Rigidity is critical: don't let flexbox squish the cards */
-    flex: 0 0 400px; 
-    width: 400px;
-    margin-right: var(--gap-2); /* Space between cards */
+    /* On mobile, cards are just slightly narrower than the window 
+       so the user can see the next card "peeking" in. */
+    --card-width: calc(var(--window-width) - 2rem);
+    
+    flex: 0 0 var(--card-width);
+    width: var(--card-width);
+    margin-right: var(--gap-1);
     white-space: normal;
     padding: var(--gap-1);
-    border-radius: 8px; /* Optional: matches your site style */
+    border-radius: 12px;
     
-    /* Ensure cards don't have a margin-right on the very last item 
-       to keep the 'end' alignment clean */
+    /* Transition card width for desktop */
+    @media (min-width: 768px) {
+      flex: 0 0 400px;
+      width: 400px;
+      margin-right: var(--gap-2);
+    }
+
     &:last-of-type {
       margin-right: 0;
     }
   }
 
+  /* Internal Card Styling */
+  .box :global(p) {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    .box :global(p) {
+      font-size: 0.85rem;
+    }
+  }
+
   /* Shared classes for alternating colors */
   :global(.trans-blue) {
-    background-color: rgba(0, 100, 255, 0.1);
+    background-color: rgba(0, 100, 255, 0.05);
     border: 1px solid var(--brand-blue);
   }
 
   :global(.trans-orange) {
-    background-color: rgba(255, 100, 0, 0.1);
+    background-color: rgba(255, 100, 0, 0.05);
     border: 1px solid var(--brand-orange);
   }
 </style>
