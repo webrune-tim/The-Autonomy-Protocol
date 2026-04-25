@@ -318,7 +318,7 @@ importers:
         specifier: ^8.59.0
         version: 8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3)
       vite:
-        specifier: npm:@voidzero-dev/vite-plus-core@^0.1.19
+        specifier: npm:@voidzero-dev/vite-plus-core@latest
         version: '@voidzero-dev/vite-plus-core@0.1.19(@types/node@24.12.2)(jiti@2.6.1)(typescript@6.0.3)(yaml@2.8.3)'
       vite-imagetools:
         specifier: ^10.0.0

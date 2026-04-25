@@ -50,6 +50,7 @@
 
     h2 {
       position: absolute;
+      width: max-content;
       top: 3rem;
       left: 50%;
       transform: translateX(-50%);
