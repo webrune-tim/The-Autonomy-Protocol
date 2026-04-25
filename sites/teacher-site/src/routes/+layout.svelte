@@ -1,10 +1,12 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+	import { FooterNav } from '@autonomy/footer-nav'
 
-  // Define the prop type
-  interface Props {
-    children: Snippet;
-  }
+	import type { Snippet } from 'svelte'
+
+	// Define the prop type
+	interface Props {
+		children: Snippet
+	}
 
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
@@ -23,7 +25,7 @@
 
 	import { page } from '$app/stores'
 
-	let { children }:Props = $props()
+	let { children }: Props = $props()
 
 	const navLinks = [
 		{ href: '/', label: 'Home' },
@@ -88,7 +90,8 @@
 	</main>
 
 	<Footer>
-		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
+		<p class="footer-logo">The Autonomy Project &copy; {new Date().getFullYear()}</p>
+		<FooterNav links={navLinks} currentPath={$page.url.pathname} />
 	</Footer>
 </div>
 
@@ -101,6 +104,12 @@
 		padding: var(--gap-2);
 		grid-template-rows: auto 1fr auto;
 		background: var(--surface-4);
+	}
+
+	.footer-logo {
+		color: var(--brand-orange);
+		font-size: 1.2rem;
+		font-weight: bolder;
 	}
 
 	:global(:root) {

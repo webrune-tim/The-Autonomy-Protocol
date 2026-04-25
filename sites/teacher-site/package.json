@@ -16,6 +16,7 @@
   "dependencies": {
     "@autonomy/banner": "workspace:*",
     "@autonomy/footer": "workspace:*",
+    "@autonomy/footer-nav": "workspace:*",
     "@autonomy/four-agreements": "workspace:*",
     "@autonomy/header": "workspace:*",
     "@autonomy/hero": "workspace:*",
