@@ -31,6 +31,8 @@
 		{ href: '/', label: 'Home' },
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
+		{ href: '/quiz-maker', label: 'Quiz Maker' },
+		{ href: '/quizzes', label: 'Quizzes' },
 		{ href: '/road-map', label: 'Road Map' },
 		{ href: '/contribute', label: 'Contribute' },
 		{ href: '/about', label: 'About' },
