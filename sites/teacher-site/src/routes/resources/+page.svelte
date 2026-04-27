@@ -3,7 +3,7 @@
 	import { Banner } from '@autonomy/banner'
 	import { Hero } from '@autonomy/hero'
 
-	import HeroImage from '$images/pic-6.avif?enhanced'
+	import HeroImage from '$images/pic-6.avif'
 </script>
 
 <Hero {HeroImage}>

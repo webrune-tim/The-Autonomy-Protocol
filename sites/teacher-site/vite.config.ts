@@ -13,13 +13,14 @@ export default defineConfig({
     },
   },
   ssr: {
-    // Explicitly group these so the runner handles them as a single unit
-    noExternal: ["@lucide/svelte", "@autonomy/nav", "@autonomy/theme", "svelte-french-toast"],
+    noExternal: ["@lucide/svelte", "@autonomy/nav", "@autonomy/style", "svelte-french-toast"],
   },
   optimizeDeps: {
-    // Keep Lucide excluded to prevent the giant pre-bundle timeout
-    exclude: ["@lucide/svelte"],
-    // But include your internal UI to speed up initial resolution
-    include: ["@autonomy/nav", "@autonomy/theme"],
+    // MOVE Lucide from exclude to include.
+    // This flattens hundreds of icon files into ONE single JS file.
+    include: ["@lucide/svelte", "@autonomy/nav", "@autonomy/theme"],
+    // If the timeout is the main concern, explicitly tell Vite where to look
+    // to speed up the discovery phase.
+    entries: ["./src/routes/**/*.{svelte,ts}"],
   },
 });

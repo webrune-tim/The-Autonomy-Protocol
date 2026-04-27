@@ -1,5 +1,12 @@
 <script lang="ts">
-  let { children } = $props();
+  import type { Snippet } from 'svelte';
+
+  // Define the prop type
+  interface Props {
+    children: Snippet;
+  }
+
+  let { children }: Props = $props();
 </script>
 
 <footer>

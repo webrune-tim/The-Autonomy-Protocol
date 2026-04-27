@@ -1,6 +1,6 @@
 {
-  "name": "@autonomy/theme",
-  "version": "0.1.0",
+  "name": "@autonomy/style",
+  "version": "0.3.0",
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
