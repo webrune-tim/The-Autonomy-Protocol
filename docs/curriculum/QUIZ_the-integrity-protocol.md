@@ -7,7 +7,7 @@
 - [ ] Being the loudest person in a debate
 - [ ] Never making a single mistake in schoolwork
 
-[//]: # B (Goal: Define Integrity as self-alignment)
+<!--  B (Goal: Define Integrity as self-alignment) -->
 
 2. Why is the "Word" considered a creative force?
 
@@ -16,7 +16,7 @@
 - [ ] Because it is a physical object you can hold
 - [ ] Because it is a form of silent communication
 
-[//]: \* A (Goal: Understand the power of influence)
+<!-- A (Goal: Understand the power of influence) -->
 
 3. When the mind is described as "fertile ground," what does this mean for our social interactions?
 
@@ -25,7 +25,7 @@
 - [ ] Ideas, opinions, and comments from others can easily take root and grow in your mind
 - [ ] You need to spend more time outdoors to think clearly
 
-[//]: \* C (Goal: Recognize susceptibility to social influence)
+<!-- C (Goal: Recognize susceptibility to social influence) -->
 
 4. What is the primary danger of "Gossip" or "Emotional Poison"?
 
@@ -34,7 +34,7 @@
 - [ ] It makes you more popular with your peers
 - [ ] It is only harmful if the person hears what you said
 
-[//]: \* B (Goal: Understand the systemic impact of gossip)
+<!-- B (Goal: Understand the systemic impact of gossip) -->
 
 5. How is a "Personal Spell" created?
 
@@ -43,7 +43,7 @@
 - [ ] By reading books about fantasy and mythology
 - [ ] By choosing to ignore your homework assignments
 
-[//]: \* B (Goal: Identify how limiting beliefs are formed)
+<!-- B (Goal: Identify how limiting beliefs are formed) -->
 
 6. What is considered the most harmful act an individual can commit against themselves?
 
@@ -52,7 +52,7 @@
 - [ ] Losing a sports competition
 - [ ] Changing your mind about a hobby
 
-[//]: \* B (Goal: Prioritize self-acceptance)
+<!-- B (Goal: Prioritize self-acceptance) -->
 
 7. If you use your words to attack or belittle someone else, why is it ultimately "going against yourself"?
 
@@ -61,7 +61,7 @@
 - [ ] Because your vocal cords will get tired
 - [ ] Because you will be forced to apologize immediately
 
-[//]: \* B (Goal: Understand the "boomerang effect" of negativity)
+<!-- B (Goal: Understand the "boomerang effect" of negativity) -->
 
 8. What is the most effective way to break a "negative cycle" of communication?
 
@@ -70,7 +70,7 @@
 - [ ] Refusing to speak to anyone for a week
 - [ ] Arguing until you prove you are right
 
-[//]: \* B (Goal: Empower students to take the first step in change)
+<!-- B (Goal: Empower students to take the first step in change) -->
 
 9. How does practicing communication integrity provide "immunity" from the opinions of others?
 
@@ -79,7 +79,7 @@
 - [ ] It guarantees that no one will ever say anything mean to you
 - [ ] It helps you forget what other people have said
 
-[//]: \* A (Goal: Build resilience against peer pressure)
+<!-- A (Goal: Build resilience against peer pressure) -->
 
 10. What is the ultimate goal of following this communication protocol?
 
@@ -88,4 +88,4 @@
 - [ ] To become a professional public speaker
 - [ ] To ensure you never have to work in a group again
 
-[//]: \* B (Goal: Define the long-term benefit of the practice)
+<!-- B (Goal: Define the long-term benefit of the practice) -->
