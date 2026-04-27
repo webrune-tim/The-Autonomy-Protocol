@@ -62,11 +62,7 @@ importers:
         specifier: 'catalog:'
         version: 1.11.0(svelte@5.55.5(@typescript-eslint/types@8.59.0))
 
-  packages/ui/footer:
-    dependencies:
-      '@autonomy/footer-nav':
-        specifier: workspace:*
-        version: link:../footer-nav
+  packages/ui/footer: {}
 
   packages/ui/footer-nav: {}
 
