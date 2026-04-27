@@ -1,4 +1,8 @@
-# Quiz: The Integrity Protocol (Principles of Communication)
+import type { PageServerLoad } from "./$types";
+import { error } from "@sveltejs/kit";
+import { parseQuiz } from "$lib/quiz-parser";
+
+const INTEGRITY_PROTOCOL_MD = `# Quiz: The Integrity Protocol (Principles of Communication)
 
 1. In this system, "Integrity" is defined as:
 
@@ -93,3 +97,20 @@
 11. In you own words, describe what Integraty is and why it is important for you life.
 
 >
+>
+>
+`;
+
+export const load: PageServerLoad = async ({ params }) => {
+  const { slug } = params;
+
+  if (slug === "integrity-protocol") {
+    const quiz = parseQuiz(INTEGRITY_PROTOCOL_MD);
+    return {
+      quiz,
+    };
+  }
+
+  // If no quiz is found, we "fail-safe"
+  throw error(404, { message: "Curriculum module not found in the repository." });
+};

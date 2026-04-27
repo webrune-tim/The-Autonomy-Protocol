@@ -1,6 +1,7 @@
 packages:
   - sites/*
   - packages/ui/*
+  - packages/logic/*
   - packages/utils
 allowBuilds:
   esbuild: true

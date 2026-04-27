@@ -14,6 +14,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@autonomy/assignment-parser": "workspace:*",
     "@autonomy/banner": "workspace:*",
     "@autonomy/footer": "workspace:*",
     "@autonomy/footer-nav": "workspace:*",
@@ -24,6 +25,7 @@
     "@autonomy/logo": "workspace:*",
     "@autonomy/nav": "workspace:*",
     "@autonomy/pill": "workspace:*",
+    "@autonomy/quiz": "workspace:*",
     "@autonomy/style": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",
     "@lucide/svelte": "catalog:",
