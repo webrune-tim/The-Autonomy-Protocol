@@ -16,6 +16,7 @@
   "dependencies": {
     "@autonomy/assignment-parser": "workspace:*",
     "@autonomy/banner": "workspace:*",
+    "@autonomy/db": "workspace:*",
     "@autonomy/footer": "workspace:*",
     "@autonomy/footer-nav": "workspace:*",
     "@autonomy/four-agreements": "workspace:*",
