@@ -33,7 +33,7 @@
     position: relative;
     color: var(--brand-blue);
     background: rgb(from var(--brand-blue) r g b / 0.25);
-    border: 1px solid var(--brand-blue);
+    border: 2px solid var(--brand-blue);
     border-radius: var(--border-radius);
     padding: 10px var(--gap-1);
     margin-bottom: var(--gap-2);

@@ -18,7 +18,7 @@ export default defineConfig({
   optimizeDeps: {
     // MOVE Lucide from exclude to include.
     // This flattens hundreds of icon files into ONE single JS file.
-    include: ["@lucide/svelte", "@autonomy/nav", "@autonomy/style"],
+    include: ["@lucide/svelte", "@autonomy/nav", "@autonomy/theme"],
     // If the timeout is the main concern, explicitly tell Vite where to look
     // to speed up the discovery phase.
     entries: ["./src/routes/**/*.{svelte,ts}"],
