@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { FooterNav } from '@autonomy/footer-nav'
+  import type { Snippet } from 'svelte';
 
-	import type { Snippet } from 'svelte'
-
-	// Define the prop type
-	interface Props {
-		children: Snippet
-	}
+  // Define the prop type
+  interface Props {
+    children: Snippet;
+  }
 
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
@@ -17,7 +15,7 @@
 	import { Footer } from '@autonomy/footer'
 	import { Header } from '@autonomy/header'
 	import { Logo } from '@autonomy/logo'
-	import { Nav } from '@autonomy/nav'
+	import { DropNav, Nav } from '@autonomy/nav'
 	import { Pill } from '@autonomy/pill'
 
 	// Import local components
@@ -25,7 +23,7 @@
 
 	import { page } from '$app/stores'
 
-	let { children }: Props = $props()
+	let { children }:Props = $props()
 
 	const navLinks = [
 		{ href: '/', label: 'Home' },
@@ -63,7 +61,7 @@
 {/snippet}
 
 {#snippet headerNav()}
-	<Nav links={navLinks} currentPath={$page.url.pathname} />
+	<DropNav links={navLinks} currentPath={$page.url.pathname} />
 {/snippet}
 
 <div class="layout-wrapper">
@@ -90,8 +88,7 @@
 	</main>
 
 	<Footer>
-		<p class="footer-logo">The Autonomy Project &copy; {new Date().getFullYear()}</p>
-		<FooterNav links={navLinks} currentPath={$page.url.pathname} />
+		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
 	</Footer>
 </div>
 
@@ -104,12 +101,6 @@
 		padding: var(--gap-2);
 		grid-template-rows: auto 1fr auto;
 		background: var(--surface-4);
-	}
-
-	.footer-logo {
-		color: var(--brand-orange);
-		font-size: 1.2rem;
-		font-weight: bolder;
 	}
 
 	:global(:root) {
