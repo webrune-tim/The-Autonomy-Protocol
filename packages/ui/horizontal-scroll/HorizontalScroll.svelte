@@ -3,9 +3,10 @@
 
   interface Props {
     cards_content: string[];
+    title?: string;
   }
 
-  let { cards_content }: Props = $props();
+  let { cards_content, title }: Props = $props();
 
   /** * DYNAMIC HEIGHT
    * Controls the "scroll duration." 
@@ -22,6 +23,7 @@
 
 <section id="sectionPin" style="--dynamic-height: {dynamicHeight}vh;">
   <div class="pin-wrap-sticky">
+    <h2>{title}</h2>
     <div class="pin-wrap">
       {#each cards_content as content, i}
         {@render card(content, i)}
@@ -36,7 +38,7 @@
        site's layout. On mobile, we use 90% to keep a margin on the sides.
     */
     --window-width: min(1000px, 90vw);
-    
+
     width: 100%;
     height: var(--dynamic-height);
     margin-top: var(--gap-2);
@@ -70,7 +72,14 @@
     align-items: center;
     
     /* CRITICAL: This hides the cards that are waiting to slide in. */
-    overflow: hidden; 
+    overflow: hidden;
+
+    h2 {
+      position: absolute;
+      top: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
+    } 
   }
 
   .pin-wrap {
@@ -78,6 +87,8 @@
     flex-wrap: nowrap;
     width: max-content;
     padding: 0;
+
+    scroll-snap-type: x mandatory;
 
     will-change: transform;
     animation: linear move forwards;
@@ -95,7 +106,10 @@
     margin-right: var(--gap-1);
     white-space: normal;
     padding: var(--gap-1);
+    padding-bottom: var(--gap-2);
     border-radius: 12px;
+
+    scroll-snap-align: start;
     
     /* Transition card width for desktop */
     @media (min-width: 768px) {
