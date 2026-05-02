@@ -22,6 +22,7 @@
     "@autonomy/horizontal-scroll": "workspace:*",
     "@autonomy/logo": "workspace:*",
     "@autonomy/nav": "workspace:*",
+    "@autonomy/new-style": "workspace:*",
     "@autonomy/pill": "workspace:*",
     "@autonomy/style": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",

@@ -82,6 +82,8 @@ importers:
         specifier: 'catalog:'
         version: 1.14.0(svelte@5.55.4(@typescript-eslint/types@8.59.0))
 
+  packages/ui/new-style: {}
+
   packages/ui/pill: {}
 
   packages/ui/style: {}
@@ -245,6 +247,9 @@ importers:
       '@autonomy/nav':
         specifier: workspace:*
         version: link:../../packages/ui/nav
+      '@autonomy/new-style':
+        specifier: workspace:*
+        version: link:../../packages/ui/new-style
       '@autonomy/pill':
         specifier: workspace:*
         version: link:../../packages/ui/pill

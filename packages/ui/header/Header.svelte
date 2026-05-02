@@ -19,9 +19,6 @@
 
     <div class="actions">
         {#if actions}{@render actions()}{/if}
-    </div>
-
-    <div class="navigation">
         {#if nav}{@render nav()}{/if}
     </div>
 </header>

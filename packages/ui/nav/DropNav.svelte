@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { SquareMenu } from '@lucide/svelte';
+    import { Menu } from '@lucide/svelte';
 
     interface NavLink {
         href: string;
@@ -46,7 +46,7 @@
         aria-haspopup="menu" 
         aria-expanded={isOpen}
     >
-        <SquareMenu />
+        <Menu />
     </button>
 
     {#if isOpen}

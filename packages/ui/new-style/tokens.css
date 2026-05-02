@@ -1,0 +1,85 @@
+:root {
+  /* Default: Dark Theme */
+  color-scheme: dark;
+
+  /* Color Tokens */
+  --black-80: oklch(5% 0 0);
+  --black-60: oklch(15% 0 0);
+  --black-50: oklch(25% 0 0);
+  --black-40: oklch(40% 0 0);
+  --black-20: oklch(60% 0 0);
+  --white: oklch(90% 0 0);
+
+  --accent-1: oklab(0.61 -0.06 -0.22);
+  --accent-2: oklab(0.72 0.16 0.16);
+  --accent-3: oklab(0.8 -0.17 -0.03);
+
+  /* Semantic Variables (Dark Baseline) */
+  --bg: var(--black-80);
+  --fg: var(--white);
+  --surface-1: var(--black-80);
+  --surface-2: var(--black-60);
+  --surface-3: var(--black-50);
+  --ui-border: var(--black-40);
+
+  --brand-blue: var(--accent-1);
+  --brand-orange: var(--accent-2);
+  --brand-teal: var(--accent-3);
+
+  --text-form: var(--white);
+  --text-link: var(--brand-orange);
+  --text-link-hover: var(--brand-blue);
+  --text-heading: var(--brand-blue);
+  --text-heading-alt: var(--brand-orange);
+
+  --font-sans-1: "Poppins", sans-serif;
+  --font-sans-2: "Inter", sans-serif;
+  --font-serif: "Special Elite", system-ui;
+
+  --font-header-sans-1: var(--font-sans-1);
+  --font-header-sans-2: var(--font-sans-2);
+  --font-header-serif: var(--font-serif);
+
+  --gap-1: clamp(0.5rem, 1.75svw, 1rem);
+  --gap-2: clamp(1rem, 2.75svw, 2rem);
+  --border-radius: 8px;
+}
+
+/* --- Light Mode Overrides --- */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: oklch(100% 0 0); /* Pure White */
+  --fg: var(--black-80);
+
+  --surface-1: oklch(98% 0 0);
+  --surface-2: oklch(80% 0.01 0);
+  --surface-3: oklch(88% 0.01 0);
+  --ui-border: oklch(70% 0.01 0);
+
+  /* Deepened Accents for Light Background Readability */
+  --brand-blue: oklab(0.45 -0.05 -0.17);
+  --brand-orange: oklab(0.57 0.13 0.13);
+  --brand-teal: oklab(0.64 -0.14 -0.02);
+
+  --accent-3: oklab(0.64 -0.14 -0.02);
+
+  --text-form: var(--black-80);
+  --text-heading: var(--brand-blue);
+  --text-heading-alt: var(--brand-orange);
+}
+
+/* --- P3 Gamut Logic --- */
+@media (color-gamut: p3) {
+  :root {
+    --brand-blue: oklch(0.6132 0.2245 254);
+    --brand-orange: oklch(0.7191 0.2269 45);
+    --accent-3: oklch(0.8015 0.1751 190);
+  }
+
+  :root[data-theme="light"] {
+    --brand-blue: oklch(0.4485 0.1751 254.74);
+    --brand-orange: oklch(0.5691 0.1801 45);
+    --accent-3: oklch(0.6397 0.1431 190);
+  }
+}
