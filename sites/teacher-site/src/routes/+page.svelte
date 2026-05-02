@@ -26,48 +26,38 @@
 	</p>
 </div>
 
-<section class="margin-top">
-	<div class="grid">
-		<div class="trans-blue box">
-			<div class="title-grid" style="--color: var(--brand-orange)">
-				<Bug size={45} />
-				<div class="flex-column">
-					<h2>The Problem:</h2>
-					<span>The Limits of External Compliance</span>
-				</div>
-			</div>
-			<p>
-				Traditional disciplinary models rely heavily on external regulation.
-				Administrators and teachers expend massive amounts of energy intervening in
-				conflicts, enforcing baseline rules, and mediating peer disputes. This
-				top-down approach exhausts administrative resources, accelerates educator
-				burnout, and leaves students dependent on adults to navigate their emotional
-				challenges. When behavioral issues are simply "handled" by the system,
-				students fail to develop the internal mechanisms required for lifelong
-				responsibility.
-			</p>
-		</div>
-
-		<div class="trans-orange box">
-			<div class="title-grid" style="--color: var(--brand-blue)">
-				<ShieldPlus size={45} />
-				<div class="flex-column">
-					<h2>The Opportunity:</h2>
-					<span>Building a Culture of Autonomy and Accountability</span>
-				</div>
-			</div>
-			<p>
-				The Autonomy Protocol equips your staff with a structured, scalable program
-				that shifts the burden of responsibility back to the student. By providing
-				clear, actionable tools for emotional regulation and restorative
-				accountability, the protocol helps schools cultivate a climate of mutual
-				respect and proactive problem-solving. We break this transition into two
-				operational models: <strong>The Accountability Cycle</strong>, and
-				<strong>The Integrity Shield</strong>.
-			</p>
-		</div>
+<div class="angled-top-bottom-box" style="--color: var(--brand-blue)">
+	<div class="title-grid">
+		<h2>The Problem:</h2>
+		<span>The Limits of External Compliance</span>
 	</div>
-</section>
+	<p>
+		Traditional disciplinary models rely heavily on external regulation.
+		Administrators and teachers expend massive amounts of energy intervening in
+		conflicts, enforcing baseline rules, and mediating peer disputes. This top-down
+		approach exhausts administrative resources, accelerates educator burnout, and
+		leaves students dependent on adults to navigate their emotional challenges. When
+		behavioral issues are simply "handled" by the system, students fail to develop
+		the internal mechanisms required for lifelong responsibility.
+	</p>
+</div>
+
+<div class="angled-top-box" style="--color: var(--brand-teal)">
+	<div class="title-grid">
+		<h2>The Opportunity:</h2>
+		<span>Building a Culture of Autonomy and Accountability</span>
+	</div>
+	<p>
+		The Autonomy Protocol equips your staff with a structured, scalable program that
+		shifts the burden of responsibility back to the student. By providing clear,
+		actionable tools for emotional regulation and restorative accountability, the
+		protocol helps schools cultivate a climate of mutual respect and proactive
+		problem-solving. We break this transition into two operational models: <strong
+			>The Accountability Cycle</strong
+		>, and
+		<strong>The Integrity Shield</strong>.
+	</p>
+</div>
 
 <!-- <HorizontalScroll title="Twelve Steps" cards_content={twelve_steps} />
 <HorizontalScroll title="Four Agreements" cards_content={four_agreements} /> -->

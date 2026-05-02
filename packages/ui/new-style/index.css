@@ -123,24 +123,60 @@ details strong {
 }
 
 /* --- Layout Classes --- */
-.angled-bottom-box {
+.angled-top-box,
+.angled-bottom-box,
+.angled-top-bottom-box {
   --color: var(--brand-orange);
   padding: var(--gap-2);
-  padding-bottom: var(--gap-4);
+  padding-bottom: clamp(7rem, 10svw, 8rem);
+  margin-bottom: var(--gap-2);
   background: var(--color); /* Dark theme aesthetic */
   color: contrast-color(var(--color));
 
-  /* The Magic Line */
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
-
-  h1 {
-    color: var(--fg);
-    font-size: clamp(1.5rem, 5svw, 3rem);
+  h1,
+  h2 {
+    color: var(--fg) !important;
+    font-size: clamp(2.5rem, 5svw, 3rem);
   }
 
   p {
-    font-size: clamp(1rem, 3svw, 2rem);
+    font-size: clamp(1.5rem, 3svw, 2rem);
   }
+}
+
+.angled-bottom-box {
+  /* Points: Top-Left, Top-Right, Bottom-Right (at height - angle), Bottom-Left */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
+
+  /* Add padding so text doesn't hit the cut */
+  padding-bottom: calc(var(--angle-height) + var(--angle-width));
+  margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
+}
+
+/* 2. THE BOTTOM BOX (The one with the angled top) */
+.angled-top-box {
+  /* Points: Top-Left (at angle height), Top-Right, Bottom-Right, Bottom-Left */
+  clip-path: polygon(0 var(--angle-height), 100% 0, 100% 100%, 0 100%);
+
+  /* Add padding to protect text at the top */
+  padding-top: calc(var(--angle-height) + var(--angle-width));
+}
+
+.angled-top-bottom-box {
+  --color: var(--brand-orange);
+  background: var(--color); /* Dark theme aesthetic */
+  color: contrast-color(var(--color));
+
+  /* Points: Top-Left (at angle), Top-Right (at 0),
+     Bottom-Right (height - angle), Bottom-Left (at 100%) */
+  clip-path: polygon(0 var(--angle-height), 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
+
+  /* You need padding on BOTH top and bottom to protect the content */
+  padding-top: calc(var(--angle-height) + var(--angle-width));
+  padding-bottom: calc(var(--angle-height) + var(--angle-width));
+
+  /* Maintain the gap by pulling the next box up into the clipped area */
+  margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 
 .columns {
@@ -187,17 +223,21 @@ details strong {
 }
 
 .title-grid {
-  --color: var(--brand-teal);
-  display: grid;
-  align-items: center;
-  color: var(--color);
-  gap: var(--gap-2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  color: var(--fg);
+  /*gap: var(--gap-2);*/
   grid-template-columns: auto 1fr;
 
   h2,
   h3,
   h4 {
     margin-bottom: 0;
+  }
+
+  span {
+    font-size: clamp(1rem, 3svw, 2rem);
   }
 }
 

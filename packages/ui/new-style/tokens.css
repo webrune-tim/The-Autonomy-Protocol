@@ -46,6 +46,8 @@
   --gap-4: clamp(4rem, 11svw, 8rem);
 
   --border-radius: 8px;
+  --angle-height: 10vw;
+  --angle-width: var(--gap-2);
 }
 
 /* --- Light Mode Overrides --- */
