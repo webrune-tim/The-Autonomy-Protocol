@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+	import type { Snippet } from 'svelte'
 
-  // Define the prop type
-  interface Props {
-    children: Snippet;
-  }
+	// Define the prop type
+	interface Props {
+		children: Snippet
+	}
 
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
@@ -23,7 +23,7 @@
 
 	import { page } from '$app/stores'
 
-	let { children }:Props = $props()
+	let { children }: Props = $props()
 
 	const navLinks = [
 		{ href: '/', label: 'Home' },

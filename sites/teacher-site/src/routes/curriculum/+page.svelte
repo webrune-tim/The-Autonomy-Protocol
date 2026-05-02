@@ -1,11 +1,4 @@
-<script lang="ts">
-	// Import the shared packages
-	import { Hero } from '@autonomy/hero'
-
-	import HeroImage from '$images/pic-5.avif'
-</script>
-
-<Hero {HeroImage}>
+<div class="angled-bottom-box" style="--color: var(--brand-blue)">
 	<h1>Curriculum Overview</h1>
 	<p>
 		Our curriculum is designed to be flexible and adaptable to fit the unique needs
@@ -13,7 +6,7 @@
 		activities, and resources to help teachers implement the Autonomy Protocol
 		effectively.
 	</p>
-</Hero>
+</div>
 
 <section class="content">
 	<h2>Freshman Curriculum Map: "The Foundation"</h2>

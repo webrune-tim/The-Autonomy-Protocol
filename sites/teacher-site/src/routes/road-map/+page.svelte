@@ -1,10 +1,4 @@
-<script lang="ts">
-	import { Banner } from '@autonomy/banner'
-	import { Hero } from '@autonomy/hero'
-	import HeroImage from '$images/road.avif'
-</script>
-
-<Hero {HeroImage}>
+<div class="angled-bottom-box">
 	<h1>The Program Roadmap</h1>
 	<p>
 		The Autonomy Protocol is not a one-time seminar or an assembly; it is a
@@ -13,7 +7,7 @@
 		scaffolding them from basic self-awareness to complex, high-stakes professional
 		environments.
 	</p>
-</Hero>
+</div>
 
 <section class="content">
 	<div class="flex">

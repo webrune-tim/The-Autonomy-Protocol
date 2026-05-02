@@ -10,7 +10,6 @@
         <h4>The Integrity Shield</h4>
       </div>
     </div>
-    <h4><HandFist size={32} /></h4>
     <p>
       <strong>How You Handle Others:</strong> 4 simple agreements to stop drama before
       it starts and build a reputation people respect.

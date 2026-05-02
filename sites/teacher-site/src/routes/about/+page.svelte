@@ -1,13 +1,7 @@
-<script lang="ts">
-	// Import the shared packages
-	import { Hero } from '@autonomy/hero'
-	import HeroImage from '$images/pic-2.avif'
-</script>
-
-<Hero {HeroImage}>
+<div class="angled-bottom-box" style="--color: var(--brand-teal)">
 	<h1>Building the Foundation for Self-Governed Futures</h1>
 	<p>Why Pedagogical Autonomy Matters</p>
-</Hero>
+</div>
 
 <section class="grid content">
 	<section>

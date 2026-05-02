@@ -1,12 +1,9 @@
 <script lang="ts">
 	// Import the shared packages
 	import { Banner } from '@autonomy/banner'
-	import { Hero } from '@autonomy/hero'
-
-	import HeroImage from '$images/pic-6.avif'
 </script>
 
-<Hero {HeroImage}>
+<div class="angled-bottom-box" style="--color: var(--brand-teal)">
 	<h1>Additional Resources</h1>
 	<p>
 		Here are some additional resources to help you get started with the Autonomy
@@ -14,7 +11,7 @@
 		give you the tools you need to take charge of your own life and start governing
 		yourself.
 	</p>
-</Hero>
+</div>
 
 <Banner>
 	Content coming soon! In the meantime, check out our <a href="/curriculum"

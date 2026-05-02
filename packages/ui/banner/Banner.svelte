@@ -35,7 +35,7 @@
     background: rgb(from var(--brand-blue) r g b / 0.25);
     border: 2px solid var(--brand-blue);
     border-radius: var(--border-radius);
-    padding: 10px var(--gap-1);
+    padding: 10px var(--gap-2);
     margin-bottom: var(--gap-2);
     height: fit-content;
 
