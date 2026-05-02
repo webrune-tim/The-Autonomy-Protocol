@@ -136,7 +136,7 @@ details strong {
 
 .content {
   margin: var(--gap-2) 0;
-  padding: var(--gap-1);
+  /*padding: var(--gap-1);*/
   border-bottom: 2px solid var(--brand-blue);
 }
 
