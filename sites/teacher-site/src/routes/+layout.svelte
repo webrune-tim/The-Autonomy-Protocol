@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+	import type { Snippet } from 'svelte'
 
-  // Define the prop type
-  interface Props {
-    children: Snippet;
-  }
+	// Define the prop type
+	interface Props {
+		children: Snippet
+	}
 
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
@@ -23,7 +23,7 @@
 
 	import { page } from '$app/stores'
 
-	let { children }:Props = $props()
+	let { children }: Props = $props()
 
 	const navLinks = [
 		{ href: '/', label: 'Home' },
@@ -107,6 +107,10 @@
 		--accent-1: oklab(0.61 -0.06 -0.22);
 		--accent-2: oklab(0.72 0.16 0.16);
 		--accent-3: oklab(0.8 -0.17 -0.03);
+
+		--brand-blue: var(--accent-1);
+		--brand-orange: var(--accent-2);
+		--brand-teal: var(--accent-3);
 	}
 
 	:global(:root[data-theme='light']) {

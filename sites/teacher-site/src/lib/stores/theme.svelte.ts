@@ -19,21 +19,26 @@ class ThemeState {
           const root = document.documentElement;
           const resolvedTheme = this.resolvedValue;
 
-          root.setAttribute("data-theme", resolvedTheme);
-          root.style.colorScheme = resolvedTheme;
+          // Only update if it's different to avoid unnecessary snaps
+          if (root.getAttribute("data-theme") !== resolvedTheme) {
+            root.setAttribute("data-theme", resolvedTheme);
+            root.style.colorScheme = resolvedTheme;
+          }
           localStorage.setItem("theme", this.#value);
         });
 
-        // Listen for OS preference changes if set to system
+        // Listen for OS preference changes
         $effect(() => {
           if (this.#value !== "system") return;
 
           const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
           const handler = () => {
-            // This trigger forces the derived value to re-evaluate
-            // if the OS setting changes while the user is on the site.
             const root = document.documentElement;
-            root.setAttribute("data-theme", mediaQuery.matches ? "dark" : "light");
+            const resolved = mediaQuery.matches ? "dark" : "light";
+            if (root.getAttribute("data-theme") !== resolved) {
+              root.setAttribute("data-theme", resolved);
+              root.style.colorScheme = resolved;
+            }
           };
 
           mediaQuery.addEventListener("change", handler);

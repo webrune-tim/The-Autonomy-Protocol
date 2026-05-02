@@ -27,14 +27,14 @@
   ],
   "screenshots": [
     {
-      "src": "screenshot-mobile.avif",
+      "src": "screenshot-mobile.png",
       "sizes": "410x886",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "The Autonomy Protocol on Mobile"
     },
     {
-      "src": "screenshot-desktop.avif",
+      "src": "screenshot-desktop.png",
       "sizes": "1348x932",
       "type": "image/png",
       "form_factor": "wide",

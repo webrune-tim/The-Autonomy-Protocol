@@ -9,18 +9,25 @@ export default defineConfig({
       timeout: 240000,
     },
     watch: {
-      ignored: ["**/node_modules/**", "**/.svelte-kit/**"],
+      ignored: ["!**/node_modules/@autonomy/**", "**/node_modules/**", "**/.svelte-kit/**"],
     },
   },
   ssr: {
-    noExternal: ["@lucide/svelte", "@autonomy/nav", "@autonomy/style", "svelte-french-toast"],
+    noExternal: ["@lucide/svelte", "@autonomy/**", "svelte-french-toast"],
   },
   optimizeDeps: {
-    // MOVE Lucide from exclude to include.
-    // This flattens hundreds of icon files into ONE single JS file.
-    include: ["@lucide/svelte", "@autonomy/nav", "@autonomy/theme"],
-    // If the timeout is the main concern, explicitly tell Vite where to look
-    // to speed up the discovery phase.
+    // Keep Lucide included for performance, but EXCLUDE workspace packages
+    // so they are treated as source code and support HMR.
+    include: ["@lucide/svelte"],
+    exclude: [
+      "@autonomy/nav",
+      "@autonomy/style",
+      "@autonomy/theme",
+      "@autonomy/header",
+      "@autonomy/footer",
+      "@autonomy/logo",
+      "@autonomy/pill",
+    ],
     entries: ["./src/routes/**/*.{svelte,ts}"],
   },
 });
