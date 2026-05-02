@@ -49,7 +49,7 @@
     aria-haspopup="menu"
     aria-expanded={isOpen}
   >
-    <Menu />
+    <Menu size={32} />
   </button>
 
   {#if isOpen}
@@ -81,20 +81,24 @@
     vertical-align: middle;
   }
 
+  /* High specificity button reset to fight global overrides */
   button.dropdown-toggle {
-    /*all: unset;*/
+    /* Force reset everything */
+    all: unset;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    background-color: transparent;
-    appearance: none;
-    border: none;
-    box-shadow: none;
-    color: var(--brand-orange) !important;
-    font-size: 1.25rem;
+
+    /* Transparent styles */
+    background: transparent !important;
+    background-color: transparent !important;
+    appearance: none !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    /* Custom UI */
+    color: var(--brand-orange);
     cursor: pointer;
-    padding: 4px;
     transition: transform 0.1s ease;
   }
 
@@ -110,7 +114,7 @@
     margin-top: 0.5rem;
 
     /* Transparent Background */
-    background: var(--surface-1) !important;
+    background: var(--surface-1);
 
     /* Visuals */
     border: 2px solid var(--brand-orange);
@@ -124,13 +128,13 @@
   }
 
   ul {
-    list-style: none;
+    list-style: none !important;
     padding: 0.5rem;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    background: transparent;
+    background: transparent !important;
   }
 
   li {
@@ -151,13 +155,13 @@
   /* Transparent hover effect using relative color syntax */
   a:hover,
   a.active {
-    background: rgb(from var(--brand-orange) r g b / 0.15);
+    background: rgb(from var(--brand-orange) r g b / 0.15) !important;
     color: var(--brand-orange);
   }
 
   /* Ensure the icon inside stays the right color */
   .dropdown-toggle :global(svg) {
-    stroke: currentColor !important;
+    stroke: currentColor;
     fill: none;
   }
 </style>

@@ -1,9 +1,5 @@
 <script lang="ts">
-	// Import the shared packages
-	import { Hero } from '@autonomy/hero'
-
 	import toast, { Toaster } from 'svelte-french-toast'
-	import HeroImage from '$images/contact.avif'
 	import {
 		User,
 		Mail,
@@ -55,14 +51,14 @@
 
 <Toaster />
 
-<Hero {HeroImage}>
+<div class="angled-bottom-box">
 	<h1>Contact Us</h1>
 	<p>
 		Have questions or want to learn more about the Autonomy Protocol? Reach out to
 		us! We're here to help you take charge of your own life and start governing
 		yourself.
 	</p>
-</Hero>
+</div>
 
 <section class="content">
 	<form onsubmit={handleSubmit} class="contact-form">

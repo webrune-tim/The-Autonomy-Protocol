@@ -1,18 +1,11 @@
-<script lang="ts">
-	// Import the shared packages
-	import { Hero } from '@autonomy/hero'
-
-	import HeroImage from '$images/contribute.avif'
-</script>
-
-<Hero {HeroImage}>
+<div class="angled-bottom-box" style="--color: var(--brand-blue)">
 	<h1>We Need Contributers</h1>
 	<p>
 		Would you like to contribute to this project? We need teachers and administrators
 		with experience to help build lesson plans, homework, artwork and other content.
 		You could help shape the future of our students and future leaders!
 	</p>
-</Hero>
+</div>
 
 <section class="content">
 	<h1>Contributing to The Autonomy Protocol</h1>
