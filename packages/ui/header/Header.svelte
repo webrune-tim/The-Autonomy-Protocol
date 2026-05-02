@@ -18,11 +18,9 @@
   </div>
 
   <div class="actions">
-    {#if actions}{@render actions()}{/if}
-
-    {#if nav}{@render nav()}{/if}
+      {#if actions}{@render actions()}{/if}
+      {#if nav}{@render nav()}{/if}
   </div>
-</header>
 
 <style>
   header {

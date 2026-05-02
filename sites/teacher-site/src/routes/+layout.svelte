@@ -8,7 +8,7 @@
 
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
-	import '@autonomy/style/index.css'
+	import '@autonomy/new-style/index.css'
 
 	// Import the shared packages
 	import { Banner } from '@autonomy/banner'

@@ -1,0 +1,10 @@
+{
+  "name": "@autonomy/new-style",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./index.css": "./index.css",
+    "./tokens.css": "./tokens.css"
+  }
+}
