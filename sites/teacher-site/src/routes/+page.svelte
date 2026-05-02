@@ -74,8 +74,7 @@
 	]
 
 	const twelve_steps = [
-		`<div class="grid">
-      <div class="step-grid">
+		`<div class="step-grid">
         <span>1</span>
         <p>
           <strong>Honesty:</strong> Acknowledge that the current situation is out
@@ -215,10 +214,12 @@
 	</div>
 </section>
 
+
 <HorizontalScroll title="Twelve Steps" cards_content={twelve_steps} />
+
 <HorizontalScroll title="Four Agreements" cards_content={four_agreements} />
 
-<section class="content">
+<!-- <section class="content">
 	<div class="grid">
 		<section>
 			<div class="title-grid">
@@ -295,7 +296,7 @@
 			</details>
 		</section>
 	</div>
-</section>
+</section> -->
 
 <section class="content flex no-bottom-margin">
 	<a class="link" href="/curriculum">

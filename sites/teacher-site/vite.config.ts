@@ -13,7 +13,13 @@ export default defineConfig({
     },
   },
   ssr: {
-    noExternal: ["@lucide/svelte", "@autonomy/nav", "@autonomy/style", "svelte-french-toast"],
+    noExternal: [
+      "@lucide/svelte",
+      "@autonomy/horizontal-scroll",
+      "@autonomy/nav",
+      "@autonomy/style",
+      "svelte-french-toast",
+    ],
   },
   optimizeDeps: {
     // MOVE Lucide from exclude to include.
