@@ -17,7 +17,7 @@
 	} from '@lucide/svelte'
 </script>
 
-<div class="angled-bottom-box">
+<div class="angled-bottom-box" style="--color: var(--brand-blue)">
 	<h1>Empowering Student Agency. Transforming Campus Culture.</h1>
 	<p>
 		Traditional discipline often drains school resources by relying on external regulation. When administrators and teachers spend their energy constantly "handling" conflicts,
@@ -26,7 +26,7 @@ it leads to burnout and prevents students from developing their own problem-solv
 	</p>
 </div>
 
-<div class="angled-top-bottom-box" style="--color: var(--brand-blue)">
+<div class="angled-top-bottom-box" style="--color: var(--brand-orange)">
 	<div class="title-grid">
 		<h2>The Problem:</h2>
 		<span>The Limits of External Compliance</span>
