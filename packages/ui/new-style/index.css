@@ -136,11 +136,12 @@ details strong {
   h1,
   h2 {
     color: var(--fg) !important;
-    font-size: clamp(2.5rem, 5svw, 3rem);
+    font-size: clamp(2rem, 5svw, 3rem);
   }
 
   p {
-    font-size: clamp(1.5rem, 3svw, 2rem);
+    font-size: clamp(1rem, 3svw, 2rem);
+    margin-bottom: var(--gap-1);
   }
 }
 
