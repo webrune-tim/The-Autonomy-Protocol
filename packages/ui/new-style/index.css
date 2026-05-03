@@ -131,7 +131,7 @@ details strong {
   padding-bottom: clamp(7rem, 10svw, 8rem);
   margin-bottom: var(--gap-2);
   background: var(--color); /* Dark theme aesthetic */
-  color: contrast-color(var(--color));
+  color: var(--bg);
 
   h1,
   h2 {
