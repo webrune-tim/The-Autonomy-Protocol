@@ -20,18 +20,31 @@
 <div class="angled-bottom-box">
 	<h1>Empowering Student Agency. Transforming Campus Culture.</h1>
 	<p>
+<<<<<<< Updated upstream
 		Move beyond reactive discipline. The Autonomy Protocol is a scalable
 		socio-emotional framework designed to build intrinsic accountability, emotional
 		resilience, and authentic self-governance in high school students.
+=======
+		Traditional discipline often drains school resources by relying on external
+		regulation. When administrators and teachers spend their energy constantly
+		"handling" conflicts, it leads to burnout and prevents students from developing
+		their own problem-solving skills.
+	</p>
+	<p>
+		To foster lifelong responsibility, we must move away from top-down enforcement
+		and toward models that help students build their own internal mechanisms for
+		navigating emotional and social challenges.
+>>>>>>> Stashed changes
 	</p>
 </div>
 
 <div class="angled-top-bottom-box" style="--color: var(--brand-blue)">
 	<div class="title-grid">
 		<h2>The Problem:</h2>
-		<span>The Limits of External Compliance</span>
+		<!-- <span>The Limits of External Compliance</span> -->
 	</div>
 	<p>
+<<<<<<< Updated upstream
 		Traditional disciplinary models rely heavily on external regulation.
 		Administrators and teachers expend massive amounts of energy intervening in
 		conflicts, enforcing baseline rules, and mediating peer disputes. This top-down
@@ -39,13 +52,20 @@
 		leaves students dependent on adults to navigate their emotional challenges. When
 		behavioral issues are simply "handled" by the system, students fail to develop
 		the internal mechanisms required for lifelong responsibility.
+=======
+		Traditional discipline relies on <strong>external regulation</strong>, where
+		staff exhaust resources managing conflicts and enforcing rules. This top-down
+		approach fuels educator burnout and leaves students dependent on adults. By
+		simply "handling" behavior, the system prevents students from developing the
+		internal <strong>mechanisms</strong> necessary for lifelong responsibility.
+>>>>>>> Stashed changes
 	</p>
 </div>
 
 <div class="angled-top-box" style="--color: var(--brand-teal)">
 	<div class="title-grid">
 		<h2>The Opportunity:</h2>
-		<span>Building a Culture of Autonomy and Accountability</span>
+		<!-- <span>Building a Culture of Autonomy and Accountability</span> -->
 	</div>
 	<p>
 		The Autonomy Protocol equips your staff with a structured, scalable program that
@@ -94,6 +114,14 @@
 					<strong>Calibrating Effort:</strong> Sustaining consistent growth by extending
 					grace during high stress while remaining committed to academic goals.
 				</li>
+<<<<<<< Updated upstream
+=======
+				<li>
+					<strong>Discernment & Presence:</strong>
+					Practicing healthy skepticism of one's own immediate impulses while remaining
+					open to the perspective of others to find the ultimate truth.
+				</li>
+>>>>>>> Stashed changes
 			</ol>
 			<details>
 				<summary

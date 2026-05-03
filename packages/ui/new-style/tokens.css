@@ -54,20 +54,22 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --bg: oklch(100% 0 0); /* Pure White */
+  /* 1. Soften the background to an elegant, cool off-white */
+  --bg: oklch(98% 0.005 254);
   --fg: var(--black-80);
 
-  --surface-1: oklch(98% 0 0);
-  --surface-2: oklch(80% 0.01 0);
-  --surface-3: oklch(88% 0.01 0);
-  --ui-border: oklch(70% 0.01 0);
+  /* 2. Slightly darken the surfaces so they don't blend into the background */
+  --surface-1: oklch(95% 0.01 254);
+  --surface-2: oklch(90% 0.02 254);
+  --surface-3: oklch(85% 0.02 254);
+  --ui-border: oklch(80% 0.02 254);
 
-  /* Deepened Accents for Light Background Readability */
-  --brand-blue: oklab(0.45 -0.05 -0.17);
-  --brand-orange: oklab(0.57 0.13 0.13);
-  --brand-teal: oklab(0.64 -0.14 -0.02);
+  /* 3. Bring a dark, grounded aesthetic to the accent blocks */
+  --brand-blue: oklch(0.35 0.12 254); /* Deep Navy */
+  --brand-orange: oklch(0.42 0.14 45); /* Rich Rust */
+  --brand-teal: oklch(0.4 0.1 190); /* Deep Pine */
 
-  --accent-3: oklab(0.64 -0.14 -0.02);
+  --accent-3: var(--brand-teal);
 
   --text-form: var(--black-80);
   --text-heading: var(--brand-blue);
@@ -76,15 +78,9 @@
 
 /* --- P3 Gamut Logic --- */
 @media (color-gamut: p3) {
-  :root {
-    --brand-blue: oklch(0.6132 0.2245 254);
-    --brand-orange: oklch(0.7191 0.2269 45);
-    --accent-3: oklch(0.8015 0.1751 190);
-  }
-
   :root[data-theme="light"] {
-    --brand-blue: oklch(0.4485 0.1751 254.74);
-    --brand-orange: oklch(0.5691 0.1801 45);
-    --accent-3: oklch(0.6397 0.1431 190);
+    --brand-blue: oklch(0.35 0.12 254.74);
+    --brand-orange: oklch(0.42 0.14 45);
+    --accent-3: oklch(0.4 0.1 190);
   }
 }
