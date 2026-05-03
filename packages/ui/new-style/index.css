@@ -142,8 +142,13 @@ details strong {
   p {
     font-size: clamp(1rem, 3svw, 2rem);
     margin-bottom: var(--gap-1);
+    font-weight: 500;
+  }
+  span {
+    font-weight: bold;
   }
 }
+
 
 .angled-bottom-box {
   /* Points: Top-Left, Top-Right, Bottom-Right (at height - angle), Bottom-Left */
