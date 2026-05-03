@@ -20,9 +20,9 @@
 <div class="angled-bottom-box">
 	<h1>Empowering Student Agency. Transforming Campus Culture.</h1>
 	<p>
-		Move beyond reactive discipline. The Autonomy Protocol is a scalable
-		socio-emotional framework designed to build intrinsic accountability, emotional
-		resilience, and authentic self-governance in high school students.
+		Traditional discipline often drains school resources by relying on external regulation. When administrators and teachers spend their energy constantly "handling" conflicts,
+it leads to burnout and prevents students from developing their own problem-solving skills.</p>
+<p>To foster lifelong responsibility, we must move away from top-down enforcement and toward models that help students build their own internal mechanisms for navigating emotional and social challenges.
 	</p>
 </div>
 
