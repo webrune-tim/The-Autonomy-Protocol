@@ -88,6 +88,10 @@ it leads to burnout and prevents students from developing their own problem-solv
 					<strong>Calibrating Effort:</strong> Sustaining consistent growth by extending
 					grace during high stress while remaining committed to academic goals.
 				</li>
+                <li>
+                    <strong>Discernment & Presence:</strong>
+                    Practicing healthy skepticism of one's own immediate impulses while remaining open to the perspective of others to find the ultimate truth.
+                </li>
 			</ol>
 			<details>
 				<summary
