@@ -32,13 +32,7 @@ it leads to burnout and prevents students from developing their own problem-solv
 		<span>The Limits of External Compliance</span>
 	</div>
 	<p>
-		Traditional disciplinary models rely heavily on external regulation.
-		Administrators and teachers expend massive amounts of energy intervening in
-		conflicts, enforcing baseline rules, and mediating peer disputes. This top-down
-		approach exhausts administrative resources, accelerates educator burnout, and
-		leaves students dependent on adults to navigate their emotional challenges. When
-		behavioral issues are simply "handled" by the system, students fail to develop
-		the internal mechanisms required for lifelong responsibility.
+		Traditional discipline relies on <strong>external regulation</strong>, where staff exhaust resources managing conflicts and enforcing rules. This top-down approach fuels educator burnout and leaves students dependent on adults. By simply "handling" behavior, the system prevents students from developing the internal <strong>mechanisms</strong> necessary for lifelong responsibility.
 	</p>
 </div>
 
