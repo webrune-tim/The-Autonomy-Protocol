@@ -146,6 +146,7 @@ details strong {
   }
   span {
     font-weight: bold;
+    margin-bottom: var(--gap-1);
   }
 }
 
