@@ -122,44 +122,63 @@ details strong {
   border: 0;
 }
 
-/* --- Layout Classes --- */
+/* --- Consolidated Angled Box Logic --- */
 .angled-top-box,
 .angled-bottom-box,
 .angled-top-bottom-box {
-  --color: var(--brand-orange);
-  padding: var(--gap-2);
-  padding-bottom: clamp(7rem, 10svw, 8rem);
-  margin-bottom: var(--gap-2);
-  background: var(--color); /* Dark theme aesthetic */
-  color: contrast-color(var(--color));
+  --color: var(--brand-blue);
+  background: var(--color);
 
-  h1,
+  /* AAA Logic:
+     If background L > 0.54, result is Black (Light background, Dark Mode).
+     If background L < 0.54, result is White (Dark background, Light Mode). */
+  --contrast-lightness: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
+  --dynamic-text: var(--contrast-lightness);
+
+  color: var(--dynamic-text) !important;
+  padding: var(--gap-2);
+  margin-bottom: var(--gap-2);
+
   h2 {
-    color: var(--fg) !important;
-    font-size: clamp(2.5rem, 5svw, 3rem);
+    font-size: var(--font-size-2);
+  }
+
+  /* Force all content inside these boxes to use the dynamic color */
+  h1,
+  h2,
+  h3,
+  p,
+  strong,
+  span,
+  li {
+    color: var(--dynamic-text) !important;
+    -webkit-text-stroke: 0; /* Remove strokes for clean AAA typography */
   }
 
   p {
-    font-size: clamp(1.5rem, 3svw, 2rem);
+    font-size: clamp(1rem, 3svw, 2rem);
+    margin-bottom: var(--gap-1);
+    font-weight: 500;
   }
 }
 
+/* --- Structural Layout & Clip-Paths --- */
 .angled-bottom-box {
-  /* Points: Top-Left, Top-Right, Bottom-Right (at height - angle), Bottom-Left */
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
-
-  /* Add padding so text doesn't hit the cut */
   padding-bottom: calc(var(--angle-height) + var(--angle-width));
   margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 
-/* 2. THE BOTTOM BOX (The one with the angled top) */
 .angled-top-box {
-  /* Points: Top-Left (at angle height), Top-Right, Bottom-Right, Bottom-Left */
   clip-path: polygon(0 var(--angle-height), 100% 0, 100% 100%, 0 100%);
-
-  /* Add padding to protect text at the top */
   padding-top: calc(var(--angle-height) + var(--angle-width));
+}
+
+.angled-top-bottom-box {
+  clip-path: polygon(0 var(--angle-height), 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
+  padding-top: calc(var(--angle-height) + var(--angle-width));
+  padding-bottom: calc(var(--angle-height) + var(--angle-width));
+  margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 
 .angled-top-bottom-box {
