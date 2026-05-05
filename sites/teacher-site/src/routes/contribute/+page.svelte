@@ -1,4 +1,4 @@
-<div class="angled-bottom-box with-nothing-below" style="--color: var(--brand-blue)">
+<div class="angled-bottom-box" style="--color: var(--brand-blue)">
 	<h1>We Need Contributers</h1>
 	<p>
 		Would you like to contribute to this project? We need teachers and administrators
@@ -7,8 +7,8 @@
 	</p>
 </div>
 
-<section class="content">
-	<h1>Contributing to The Autonomy Protocol</h1>
+<section class="angled-top-bottom-box" style="--color: var(--brand-orange)">
+	<h2>Contributing to The Autonomy Protocol</h2>
 
 	<p>
 		Thank you for your interest in contributing to The Autonomy Protocol. To maintain
@@ -17,7 +17,7 @@
 	</p>
 </section>
 
-<section class="content">
+<section class="angled-top-bottom-box" style="--color: var(--brand-teal)">
 	<h2>Philosophical Alignment</h2>
 
 	<h3>
@@ -25,21 +25,21 @@
 		contributions must avoid:
 	</h3>
 
-	<ul>
-		<li>
-			<strong>Political Bias:</strong> Content must remain neutral and focused on universal
-			cognitive skills rather than specific social or political agendas.
-		</li>
-		<li>
-			<strong>Secular Rigor:</strong> Ensure all frameworks are stripped of religious or
-			therapeutic terminology, focusing instead on observable behavioral executive functions.
-		</li>
-		<li>
-			<strong>Subjectivity:</strong> Prioritize data-driven, observable learning outcomes
-			over subjective emotional states.
-		</li>
-	</ul>
+	<p>
+		<strong>Political Bias:</strong> Content must remain neutral and focused on universal
+		cognitive skills rather than specific social or political agendas.
+	</p>
+	<p>
+		<strong>Secular Rigor:</strong> Ensure all frameworks are stripped of religious or
+		therapeutic terminology, focusing instead on observable behavioral executive functions.
+	</p>
+	<p>
+		<strong>Subjectivity:</strong> Prioritize data-driven, observable learning outcomes
+		over subjective emotional states.
+	</p>
+</section>
 
+<section class="angled-top-box" style="--color: var(--brand-orange)">
 	<h2>Content Standards</h2>
 
 	<p>
@@ -51,19 +51,17 @@
 
 	<p>Always utilize Internal Self-Governance terminology</p>
 
-	<ul>
-		<li>
-			<strong>Refer to accountability as:</strong> Self-Governance or Internal Regulation.
-		</li>
-		<li>
-			<strong>Refer to interpersonal repair as:</strong> The Amends Protocol or Restorative
-			Practice.
-		</li>
-		<li>
-			<strong>Refer to self-correction as:</strong> Real-Time Self-Regulation or Cognitive
-			Inventory.
-		</li>
-	</ul>
+	<p>
+		<strong>Refer to accountability as:</strong> Self-Governance or Internal Regulation.
+	</p>
+	<p>
+		<strong>Refer to interpersonal repair as:</strong> The Amends Protocol or Restorative
+		Practice.
+	</p>
+	<p>
+		<strong>Refer to self-correction as:</strong> Real-Time Self-Regulation or Cognitive
+		Inventory.
+	</p>
 
 	<h3>2. Formatting & Aesthetic</h3>
 
@@ -72,20 +70,18 @@
 		formatting rules:
 	</p>
 
-	<ul>
-		<li>
-			<strong>Dark-Theme Optimization:</strong> Use clean Markdown with high-contrast hierarchies
-			(Headings, Tables, Blockquotes).
-		</li>
-		<li>
-			<strong>Academic Tone:</strong> Maintain a collegiate, professional, and objective
-			voice.
-		</li>
-		<li>
-			<strong>Visual Clarity:</strong> Use bulleted lists and tables to ensure information
-			is scannable for busy administrators and educators.
-		</li>
-	</ul>
+	<p>
+		<strong>Dark-Theme Optimization:</strong> Use clean Markdown with high-contrast hierarchies
+		(Headings, Tables, Blockquotes).
+	</p>
+	<p>
+		<strong>Academic Tone:</strong> Maintain a collegiate, professional, and objective
+		voice.
+	</p>
+	<p>
+		<strong>Visual Clarity:</strong> Use bulleted lists and tables to ensure information
+		is scannable for busy administrators and educators.
+	</p>
 </section>
 
 <section class="content">
