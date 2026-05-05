@@ -1,4 +1,4 @@
-<div class="angled-bottom-box" style="--color: var(--brand-blue)">
+<div class="angled-bottom-box with-nothing-below" style="--color: var(--brand-blue)">
 	<h1>Curriculum Overview</h1>
 	<p>
 		Our curriculum is designed to be flexible and adaptable to fit the unique needs

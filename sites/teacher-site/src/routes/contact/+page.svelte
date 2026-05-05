@@ -60,7 +60,7 @@
 	</p>
 </div>
 
-<section class="content">
+<section class="angled-top-box" style="--color: var(--brand-orange)">
 	<form onsubmit={handleSubmit} class="contact-form">
 		<div class="input-group">
 			<label for="name"><User size={18} /> Name</label>
@@ -143,8 +143,8 @@
 		align-items: center;
 		gap: 0.5rem;
 		font-family: 'Poppins', sans-serif;
-		font-weight: 500;
-		color: var(--brand-blue);
+		font-weight: 700;
+		/*color: var(--brand-blue);*/
 	}
 
 	input,

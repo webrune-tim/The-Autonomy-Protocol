@@ -8,7 +8,7 @@
   --black-50: oklch(25% 0 0);
   --black-40: oklch(40% 0 0);
   --black-20: oklch(60% 0 0);
-  --white: oklch(100% 0 0);
+  --white: oklch(95% 0 0);
 
   --accent-1: oklab(0.61 -0.06 -0.22);
   --accent-2: oklab(0.72 0.16 0.16);
@@ -40,12 +40,21 @@
   --font-header-sans-2: var(--font-sans-2);
   --font-header-serif: var(--font-serif);
 
+  --font-size-1: clamp(2rem, 6svw, 5rem);
+  --font-size-2: clamp(1.5rem, 4svw, 3.5rem);
+  --font-size-3: clamp(1rem, 2.5svw, 2rem);
+  --font-size-4: clamp(0.875rem, 2svw, 1.5rem);
+
   --gap-1: clamp(0.5rem, 1.75svw, 1rem);
   --gap-2: clamp(1rem, 2.75svw, 2rem);
   --gap-3: clamp(2rem, 5.5svw, 4rem);
   --gap-4: clamp(4rem, 11svw, 8rem);
 
   --border-radius: 8px;
+  --border-width: clamp(0.25rem, 2svw, 1rem);
+  --border-color: var(--brand-blue);
+  --border: var(--border-width) solid var(--border-color);
+
   --angle-height: 10vw;
   --angle-width: var(--gap-2);
 }
@@ -54,20 +63,22 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --bg: oklch(100% 0 0); /* Pure White */
+  /* 1. Soften the background to an elegant, cool off-white */
+  --bg: var(--white);
   --fg: var(--black-80);
 
-  --surface-1: oklch(98% 0 0);
-  --surface-2: oklch(80% 0.01 0);
-  --surface-3: oklch(88% 0.01 0);
-  --ui-border: oklch(70% 0.01 0);
+  /* 2. Slightly darken the surfaces so they don't blend into the background */
+  --surface-1: oklch(95% 0.01 254);
+  --surface-2: oklch(90% 0.02 254);
+  --surface-3: oklch(85% 0.02 254);
+  --ui-border: oklch(80% 0.02 254);
 
-  /* Deepened Accents for Light Background Readability */
-  --brand-blue: oklab(0.45 -0.05 -0.17);
-  --brand-orange: oklab(0.57 0.13 0.13);
-  --brand-teal: oklab(0.64 -0.14 -0.02);
+  /* 3. Bring a dark, grounded aesthetic to the accent blocks */
+  --brand-blue: oklch(0.48 0.14 253.11); /* Deep Navy */
+  --brand-orange: oklch(0.52 0.15 49.7); /* Rich Rust */
+  --brand-teal: oklab(0.49 -0.1 -0.02 / 1); /* Deep Pine */
 
-  --accent-3: oklab(0.64 -0.14 -0.02);
+  --accent-3: var(--brand-teal);
 
   --text-form: var(--black-80);
   --text-heading: var(--brand-blue);
@@ -76,15 +87,9 @@
 
 /* --- P3 Gamut Logic --- */
 @media (color-gamut: p3) {
-  :root {
-    --brand-blue: oklch(0.6132 0.2245 254);
-    --brand-orange: oklch(0.7191 0.2269 45);
-    --accent-3: oklch(0.8015 0.1751 190);
-  }
-
   :root[data-theme="light"] {
-    --brand-blue: oklch(0.4485 0.1751 254.74);
-    --brand-orange: oklch(0.5691 0.1801 45);
-    --accent-3: oklch(0.6397 0.1431 190);
+    --brand-blue: oklch(0.35 0.12 254.74);
+    --brand-orange: oklch(0.52 0.15 48.1);
+    --accent-3: oklch(0.4 0.1 190);
   }
 }

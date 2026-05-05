@@ -44,6 +44,19 @@ img {
 
 h1 {
   color: var(--text-heading-alt);
+  font-size: var(--font-size-1);
+}
+
+h2 {
+  font-size: var(--font-size-2);
+}
+
+h3 {
+  font-size: var(--font-size-3);
+}
+
+h4 {
+  font-size: var(--font-size-4);
 }
 
 h3,
@@ -93,6 +106,7 @@ ol {
     color: var(--brand-blue);
     font-size: 2rem;
     width: 1.2em;
+    font-weight: bold;
     text-align: center;
     display: inline-block;
     font-family: var(--font-serif);
@@ -102,7 +116,8 @@ ol {
 details > summary {
   cursor: pointer;
   font-weight: bold;
-  color: var(--brand-orange);
+  font-size: var(--font-size-4);
+  /*color: var(--brand-orange);*/
   margin-bottom: var(--gap-1);
 }
 
@@ -122,51 +137,67 @@ details strong {
   border: 0;
 }
 
-/* --- Layout Classes --- */
+/* --- Consolidated Angled Box Logic --- */
 .angled-top-box,
 .angled-bottom-box,
 .angled-top-bottom-box {
-  --color: var(--brand-orange);
-  padding: var(--gap-2);
-  padding-bottom: clamp(7rem, 10svw, 8rem);
-  margin-bottom: var(--gap-2);
-  background: var(--color); /* Dark theme aesthetic */
-  color: var(--bg);
+  --color: var(--brand-blue);
+  background: var(--color);
 
-  h1,
+  /* AAA Logic:
+     If background L > 0.54, result is Black (Light background, Dark Mode).
+     If background L < 0.54, result is White (Dark background, Light Mode). */
+  --contrast-lightness: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
+  --dynamic-text: var(--contrast-lightness);
+
+  color: var(--dynamic-text) !important;
+  padding: var(--gap-2);
+  margin-bottom: var(--gap-2);
+
+  h1 {
+    font-size: var(--font-size-1);
+    line-height: clamp(35px, 8svw, 90px);
+  }
   h2 {
-    color: var(--fg) !important;
-    font-size: clamp(2rem, 5svw, 3rem);
+    font-size: var(--font-size-2);
+  }
+
+  /* Force all content inside these boxes to use the dynamic color */
+  h1,
+  h2,
+  h3,
+  p,
+  strong,
+  span,
+  li {
+    color: var(--dynamic-text) !important;
   }
 
   p {
     font-size: clamp(1rem, 3svw, 2rem);
     margin-bottom: var(--gap-1);
+    margin-top: var(--gap-1);
     font-weight: 500;
-  }
-  span {
-    font-weight: bold;
-    margin-bottom: var(--gap-1);
   }
 }
 
-
+/* --- Structural Layout & Clip-Paths --- */
 .angled-bottom-box {
-  /* Points: Top-Left, Top-Right, Bottom-Right (at height - angle), Bottom-Left */
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
-
-  /* Add padding so text doesn't hit the cut */
   padding-bottom: calc(var(--angle-height) + var(--angle-width));
   margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 
-/* 2. THE BOTTOM BOX (The one with the angled top) */
 .angled-top-box {
-  /* Points: Top-Left (at angle height), Top-Right, Bottom-Right, Bottom-Left */
   clip-path: polygon(0 var(--angle-height), 100% 0, 100% 100%, 0 100%);
-
-  /* Add padding to protect text at the top */
   padding-top: calc(var(--angle-height) + var(--angle-width));
+}
+
+.angled-top-bottom-box {
+  clip-path: polygon(0 var(--angle-height), 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
+  padding-top: calc(var(--angle-height) + var(--angle-width));
+  padding-bottom: calc(var(--angle-height) + var(--angle-width));
+  margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 
 .angled-top-bottom-box {
@@ -184,6 +215,24 @@ details strong {
 
   /* Maintain the gap by pulling the next box up into the clipped area */
   margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
+}
+
+.with-nothing-below {
+  margin-bottom: calc(var(--angle-height) / 3);
+}
+
+.bold-border-box {
+  --border-color: var(--brand-blue);
+  height: fit-content;
+  border: var(--border-width) solid var(--border-color);
+  padding: var(--gap-2);
+
+  h3,
+  h4,
+  strong,
+  li:before {
+    color: var(--fg);
+  }
 }
 
 .columns {
@@ -215,6 +264,10 @@ details strong {
   padding-bottom: var(--gap-2);
 }
 
+.margin-top {
+  margin-top: var(--gap-1);
+}
+
 .no-bottom-margin {
   margin-bottom: 0;
 }
@@ -244,13 +297,16 @@ details strong {
   }
 
   span {
-    font-size: clamp(1rem, 3svw, 2rem);
+    font-size: clamp(1rem, 2svw, 1.75rem);
   }
 }
 
 .flex-column {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: var(--gap-1);
 }
 
 .box {
@@ -303,6 +359,20 @@ details strong {
   }
 }
 
+.no-top-padding {
+  /* Corrected Syntax: Use the colon before not */
+  & > :not(:first-child) {
+    padding-top: 0;
+  }
+
+  /* This is technically redundant if the top rule
+     only targets items that AREN'T the first child,
+     but safe to keep if you need a hard reset. */
+  & > :first-child {
+    padding-top: var(--gap-2);
+  }
+}
+
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -332,7 +402,7 @@ details strong {
   span {
     font-weight: bolder;
     text-align: center;
-    color: var(--brand-blue);
+    /*color: var(--brand-blue);*/
     font-size: 2rem;
     padding: 0;
     margin: 0;

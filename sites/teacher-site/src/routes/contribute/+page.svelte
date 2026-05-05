@@ -1,4 +1,4 @@
-<div class="angled-bottom-box" style="--color: var(--brand-blue)">
+<div class="angled-bottom-box with-nothing-below" style="--color: var(--brand-blue)">
 	<h1>We Need Contributers</h1>
 	<p>
 		Would you like to contribute to this project? We need teachers and administrators

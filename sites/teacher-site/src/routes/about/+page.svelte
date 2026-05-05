@@ -1,4 +1,4 @@
-<div class="angled-bottom-box" style="--color: var(--brand-teal)">
+<div class="angled-bottom-box with-nothing-below" style="--color: var(--brand-teal)">
 	<h1>Building the Foundation for Self-Governed Futures</h1>
 	<p>Why Pedagogical Autonomy Matters</p>
 </div>

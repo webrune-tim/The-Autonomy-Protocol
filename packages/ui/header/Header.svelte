@@ -34,12 +34,12 @@
     border-bottom: 1px solid var(--color-border);
   }
 
-  .actions {
+  :global(.actions) {
     display: flex;
     gap: var(--gap-1);
   }
 
-  .navigation {
-    width: 100%; /* Forces nav to its own row if desired, or let flex handle it */
+  :global(.navigation) {
+    width: 100%;
   }
 </style>

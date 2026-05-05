@@ -1,9 +1,9 @@
 <script lang="ts">
 	// Import the shared packages
 	import { FourAgreements } from '@autonomy/four-agreements'
-	import { HorizontalScroll } from '@autonomy/horizontal-scroll'
+	// import { HorizontalScroll } from '@autonomy/horizontal-scroll'
 	import { TwelveSteps } from '@autonomy/twelve-steps'
-	import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
+	// import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
 
 	import {
 		ArrowBigRight,
@@ -20,26 +20,34 @@
 <div class="angled-bottom-box" style="--color: var(--brand-blue)">
 	<h1>Empowering Student Agency. Transforming Campus Culture.</h1>
 	<p>
-		Traditional discipline often drains school resources by relying on external regulation. When administrators and teachers spend their energy constantly "handling" conflicts,
-it leads to burnout and prevents students from developing their own problem-solving skills.</p>
-<p>To foster lifelong responsibility, we must move away from top-down enforcement and toward models that help students build their own internal mechanisms for navigating emotional and social challenges.
+		Traditional discipline often drains school resources by relying on external
+		regulation. When administrators and teachers spend their energy constantly
+		"handling" conflicts, it leads to burnout and prevents students from developing
+		their own problem-solving skills.
+	</p>
+	<p>
+		To foster lifelong responsibility, we must move away from top-down enforcement
+		and toward models that help students build their own internal mechanisms for
+		navigating emotional and social challenges.
 	</p>
 </div>
 
 <div class="angled-top-bottom-box" style="--color: var(--brand-orange)">
 	<div class="title-grid">
 		<h2>The Problem:</h2>
-		<span>The Limits of External Compliance</span>
 	</div>
 	<p>
-		Traditional discipline relies on <strong>external regulation</strong>, where staff exhaust resources managing conflicts and enforcing rules. This top-down approach fuels educator burnout and leaves students dependent on adults. By simply "handling" behavior, the system prevents students from developing the internal <strong>mechanisms</strong> necessary for lifelong responsibility.
+		Traditional discipline relies on <strong>external regulation</strong>, where
+		staff exhaust resources managing conflicts and enforcing rules. This top-down
+		approach fuels educator burnout and leaves students dependent on adults. By
+		simply "handling" behavior, the system prevents students from developing the
+		internal <strong>mechanisms</strong> necessary for lifelong responsibility.
 	</p>
 </div>
 
 <div class="angled-top-box" style="--color: var(--brand-teal)">
 	<div class="title-grid">
 		<h2>The Opportunity:</h2>
-		<span>Building a Culture of Autonomy and Accountability</span>
 	</div>
 	<p>
 		The Autonomy Protocol equips your staff with a structured, scalable program that
@@ -56,20 +64,20 @@ it leads to burnout and prevents students from developing their own problem-solv
 <!-- <HorizontalScroll title="Twelve Steps" cards_content={twelve_steps} />
 <HorizontalScroll title="Four Agreements" cards_content={four_agreements} /> -->
 
-<section class="content">
+<section>
 	<div class="grid">
-		<section>
+		<section class="bold-border-box" style="--border-color: var(--brand-orange)">
 			<div class="title-grid">
-				<HandFist size={32} />
+				<!-- <HandFist size={32} /> -->
 				<div class="flex-column">
 					<h3>The Integrity Shield</h3>
 					<span>(Tier 1 & Climate Defense)</span>
 				</div>
 			</div>
-			<p>
+			<!-- <p>
 				Four core agreements serving as Tier 1 preventative tools, providing staff
 				and students with a shared vocabulary to de-escalate conflicts proactively.
-			</p>
+			</p> -->
 
 			<ol>
 				<li>
@@ -102,9 +110,9 @@ it leads to burnout and prevents students from developing their own problem-solv
 			</details>
 		</section>
 
-		<section>
+		<section class="bold-border-box">
 			<div class="title-grid">
-				<LoaderPinwheel size={32} />
+				<!-- <LoaderPinwheel size={32} /> -->
 				<div class="flex-column">
 					<h3>The Accountability Cycle</h3>
 					<span>(Tier 2 & Restorative Intervention)</span>
@@ -127,6 +135,11 @@ it leads to burnout and prevents students from developing their own problem-solv
 					<strong>Vigilance & Service:</strong> Maintaining continuous self-reflection
 					and ultimately mentoring struggling peers.
 				</li>
+				<li>
+					<strong>Discernment & Presence:</strong> Practicing healthy skepticism of one's
+					own immediate impulses while remaining open to the perspective of others to find
+					the ultimate truth.
+				</li>
 			</ol>
 			<details>
 				<summary
@@ -139,7 +152,7 @@ it leads to burnout and prevents students from developing their own problem-solv
 	</div>
 </section>
 
-<section class="content flex no-bottom-margin">
+<section class="bold-border-box margin-top" style="--border-color: var(--fg)">
 	<a class="link" href="/curriculum">
 		<Road size={32} /> Curriculum Map <ArrowBigRight size={24} />
 	</a>

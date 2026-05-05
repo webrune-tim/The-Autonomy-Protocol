@@ -103,7 +103,7 @@
 		background: var(--surface-4);
 	}
 
-	:global(:root) {
+	/*:global(:root) {
 		--accent-1: oklab(0.61 -0.06 -0.22);
 		--accent-2: oklab(0.72 0.16 0.16);
 		--accent-3: oklab(0.8 -0.17 -0.03);
@@ -132,5 +132,5 @@
 			--brand-orange: oklch(0.5691 0.1801 45);
 			--accent-3: oklch(0.6397 0.1431 190);
 		}
-	}
+	}*/
 </style>

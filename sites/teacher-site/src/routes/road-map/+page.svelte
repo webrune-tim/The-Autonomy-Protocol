@@ -1,4 +1,4 @@
-<div class="angled-bottom-box">
+<div class="angled-bottom-box with-nothing-below">
 	<h1>The Program Roadmap</h1>
 	<p>
 		The Autonomy Protocol is not a one-time seminar or an assembly; it is a
