@@ -2,15 +2,15 @@
   import LoaderPinwheel from "@lucide/svelte/icons/loader-pinwheel";
 </script>
 
-<section class="content">
+<section>
   <div class="accountability-cycle">
     <div class="title-grid">
-      <LoaderPinwheel size={32} />
       <div class="flex-column">
+        <LoaderPinwheel size={32} />
         <h4>The Accountability Cycle</h4>
       </div>
     </div>
-    <div class="grid">
+    <div class="grid no-top-padding">
       <div class="step-grid">
         <span>1</span>
         <p>

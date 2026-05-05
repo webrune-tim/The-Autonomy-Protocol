@@ -44,6 +44,19 @@ img {
 
 h1 {
   color: var(--text-heading-alt);
+  font-size: var(--font-size-1);
+}
+
+h2 {
+  font-size: var(--font-size-2);
+}
+
+h3 {
+  font-size: var(--font-size-3);
+}
+
+h4 {
+  font-size: var(--font-size-4);
 }
 
 h3,
@@ -93,6 +106,7 @@ ol {
     color: var(--brand-blue);
     font-size: 2rem;
     width: 1.2em;
+    font-weight: bold;
     text-align: center;
     display: inline-block;
     font-family: var(--font-serif);
@@ -102,7 +116,8 @@ ol {
 details > summary {
   cursor: pointer;
   font-weight: bold;
-  color: var(--brand-orange);
+  font-size: var(--font-size-4);
+  /*color: var(--brand-orange);*/
   margin-bottom: var(--gap-1);
 }
 
@@ -139,6 +154,10 @@ details strong {
   padding: var(--gap-2);
   margin-bottom: var(--gap-2);
 
+  h1 {
+    font-size: var(--font-size-1);
+    line-height: clamp(35px, 8svw, 90px);
+  }
   h2 {
     font-size: var(--font-size-2);
   }
@@ -152,12 +171,12 @@ details strong {
   span,
   li {
     color: var(--dynamic-text) !important;
-    -webkit-text-stroke: 0; /* Remove strokes for clean AAA typography */
   }
 
   p {
     font-size: clamp(1rem, 3svw, 2rem);
     margin-bottom: var(--gap-1);
+    margin-top: var(--gap-1);
     font-weight: 500;
   }
 }
@@ -198,6 +217,24 @@ details strong {
   margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 
+.with-nothing-below {
+  margin-bottom: calc(var(--angle-height) / 3);
+}
+
+.bold-border-box {
+  --border-color: var(--brand-blue);
+  height: fit-content;
+  border: var(--border-width) solid var(--border-color);
+  padding: var(--gap-2);
+
+  h3,
+  h4,
+  strong,
+  li:before {
+    color: var(--fg);
+  }
+}
+
 .columns {
   --column-count: 2;
   column-count: var(--column-count);
@@ -225,6 +262,10 @@ details strong {
 .content:last-of-type {
   border-bottom: none !important;
   padding-bottom: var(--gap-2);
+}
+
+.margin-top {
+  margin-top: var(--gap-1);
 }
 
 .no-bottom-margin {
@@ -256,13 +297,16 @@ details strong {
   }
 
   span {
-    font-size: clamp(1rem, 3svw, 2rem);
+    font-size: clamp(1rem, 2svw, 1.75rem);
   }
 }
 
 .flex-column {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: var(--gap-1);
 }
 
 .box {
@@ -315,6 +359,20 @@ details strong {
   }
 }
 
+.no-top-padding {
+  /* Corrected Syntax: Use the colon before not */
+  & > :not(:first-child) {
+    padding-top: 0;
+  }
+
+  /* This is technically redundant if the top rule
+     only targets items that AREN'T the first child,
+     but safe to keep if you need a hard reset. */
+  & > :first-child {
+    padding-top: var(--gap-2);
+  }
+}
+
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -344,7 +402,7 @@ details strong {
   span {
     font-weight: bolder;
     text-align: center;
-    color: var(--brand-blue);
+    /*color: var(--brand-blue);*/
     font-size: 2rem;
     padding: 0;
     margin: 0;

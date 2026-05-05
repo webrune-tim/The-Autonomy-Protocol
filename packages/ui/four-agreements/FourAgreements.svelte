@@ -2,20 +2,20 @@
   import HandFist from "@lucide/svelte/icons/hand-fist";
 </script>
 
-<section class="content">
+<section>
   <div class="integrity-cycle">
     <div class="title-grid">
-      <HandFist size={32} />
       <div class="flex-column">
+        <HandFist size={32} />
         <h4>The Integrity Shield</h4>
       </div>
     </div>
-    <p>
+    <!-- <p>
       <strong>How You Handle Others:</strong> 4 simple agreements to stop drama before
       it starts and build a reputation people respect.
-    </p>
+    </p> -->
 
-    <div class="grid">
+    <div class="grid no-top-padding">
       <div class="step-grid">
         <span>1</span>
         <p>
@@ -66,6 +66,19 @@
           of flawless perfection and focusing simply on consistent effort, you will
           cultivate the emotional resilience necessary to thrive through high school
           and beyond.
+        </p>
+      </div>
+      <div class="step-grid">
+        <span>5</span>
+        <p>
+          <strong>Be skeptical, but learn to listen:</strong>
+          True discernment requires the power of doubt to challenge your own immediate
+          impulses and the narratives others try to feed you. By practicing healthy
+          skepticism, you ensure you aren't easily manipulated by emotions or misinformation.
+          However, you must remain open to the perspectives of others; listening is
+          not the same as believing, but it is the only way to gather enough evidence
+          to find the ultimate truth. Use the power of doubt to hear what is being
+          said, then use your wisdom to decide what is real.
         </p>
       </div>
     </div>

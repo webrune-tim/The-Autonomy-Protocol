@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
 
   // Define the prop type
   interface Props {
@@ -15,12 +15,16 @@
 
 <style>
   footer {
+    --color: var(--brand-blue);
+    --contrast-lightness: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
+    --dynamic-text: var(--contrast-lightness);
+
     display: grid;
     place-items: center;
-    background: rgb(from var(--brand-blue) r g b / 0.25);
+    color: var(--dynamic-text);
+    background: var(--color);
     padding: var(--gap-2);
-    margin-top: var(--gap-1);
-    border: 2px solid var(--brand-orange);
-    border-radius: var(--border-radius);
+    margin-top: var(--gap-2);
+    font-size: var(--font-size-3);
   }
 </style>

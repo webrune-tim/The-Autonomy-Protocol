@@ -33,24 +33,21 @@
     --color: var(--brand-orange);
     background: var(--color);
 
-    /* AAA Logic:
-       If background L > 0.54, result is Black (Light background, Dark Mode).
-       If background L < 0.54, result is White (Dark background, Light Mode). */
     --contrast-lightness: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
     --dynamic-text: var(--contrast-lightness);
 
     position: relative;
     color: var(--dynamic-text);
-    border-radius: var(--border-radius);
-    padding: 10px var(--gap-2);
+    padding: var(--gap-2);
+    padding-right: calc(var(--gap-2) * 2.5);
     margin-bottom: var(--gap-2);
     height: fit-content;
     font-size: clamp(1rem, 2svw, 1.5rem);
 
     button {
       position: absolute;
-      top: 5px;
-      right: 5px;
+      top: var(--gap-1);
+      right: var(--gap-1);
       background: none;
       border: none;
       color: var(--dynamic-text);

@@ -3,7 +3,7 @@
 	import { Banner } from '@autonomy/banner'
 </script>
 
-<div class="angled-bottom-box" style="--color: var(--brand-teal)">
+<div class="angled-bottom-box with-nothing-below" style="--color: var(--brand-teal)">
 	<h1>Additional Resources</h1>
 	<p>
 		Here are some additional resources to help you get started with the Autonomy

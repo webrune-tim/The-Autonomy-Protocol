@@ -1,9 +1,9 @@
 <script lang="ts">
 	// Import the shared packages
 	import { FourAgreements } from '@autonomy/four-agreements'
-	import { HorizontalScroll } from '@autonomy/horizontal-scroll'
+	// import { HorizontalScroll } from '@autonomy/horizontal-scroll'
 	import { TwelveSteps } from '@autonomy/twelve-steps'
-	import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
+	// import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
 
 	import {
 		ArrowBigRight,
@@ -18,7 +18,7 @@
 </script>
 
 <div class="angled-bottom-box" style="--color: var(--brand-blue)">
-	<h2>Empowering Student Agency. Transforming Campus Culture.</h2>
+	<h1>Empowering Student Agency. Transforming Campus Culture.</h1>
 	<p>
 		Traditional discipline often drains school resources by relying on external
 		regulation. When administrators and teachers spend their energy constantly
@@ -64,20 +64,20 @@
 <!-- <HorizontalScroll title="Twelve Steps" cards_content={twelve_steps} />
 <HorizontalScroll title="Four Agreements" cards_content={four_agreements} /> -->
 
-<section class="content">
+<section>
 	<div class="grid">
-		<section>
+		<section class="bold-border-box" style="--border-color: var(--brand-orange)">
 			<div class="title-grid">
-				<HandFist size={32} />
+				<!-- <HandFist size={32} /> -->
 				<div class="flex-column">
 					<h3>The Integrity Shield</h3>
 					<span>(Tier 1 & Climate Defense)</span>
 				</div>
 			</div>
-			<p>
+			<!-- <p>
 				Four core agreements serving as Tier 1 preventative tools, providing staff
 				and students with a shared vocabulary to de-escalate conflicts proactively.
-			</p>
+			</p> -->
 
 			<ol>
 				<li>
@@ -96,11 +96,6 @@
 					<strong>Calibrating Effort:</strong> Sustaining consistent growth by extending
 					grace during high stress while remaining committed to academic goals.
 				</li>
-				<li>
-					<strong>Discernment & Presence:</strong>
-					Practicing healthy skepticism of one's own immediate impulses while remaining
-					open to the perspective of others to find the ultimate truth.
-				</li>
 			</ol>
 			<details>
 				<summary
@@ -111,9 +106,9 @@
 			</details>
 		</section>
 
-		<section>
+		<section class="bold-border-box">
 			<div class="title-grid">
-				<LoaderPinwheel size={32} />
+				<!-- <LoaderPinwheel size={32} /> -->
 				<div class="flex-column">
 					<h3>The Accountability Cycle</h3>
 					<span>(Tier 2 & Restorative Intervention)</span>
@@ -136,6 +131,11 @@
 					<strong>Vigilance & Service:</strong> Maintaining continuous self-reflection
 					and ultimately mentoring struggling peers.
 				</li>
+				<li>
+					<strong>Discernment & Presence:</strong> Practicing healthy skepticism of one's
+					own immediate impulses while remaining open to the perspective of others to find
+					the ultimate truth.
+				</li>
 			</ol>
 			<details>
 				<summary
@@ -148,7 +148,7 @@
 	</div>
 </section>
 
-<section class="content flex no-bottom-margin">
+<section class="bold-border-box margin-top" style="--border-color: var(--fg)">
 	<a class="link" href="/curriculum">
 		<Road size={32} /> Curriculum Map <ArrowBigRight size={24} />
 	</a>
