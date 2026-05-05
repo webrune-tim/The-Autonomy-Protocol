@@ -227,6 +227,7 @@ details strong {
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
 
+  h2,
   h3,
   h4,
   strong,
@@ -266,6 +267,10 @@ details strong {
 
 .margin-top {
   margin-top: var(--gap-1);
+}
+
+.margin-bottom {
+  margin-bottom: var(--gap-1);
 }
 
 .no-bottom-margin {

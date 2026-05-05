@@ -25,75 +25,71 @@
 	</p>
 </section>
 
-<section class="content">
+<section>
 	<div class="flex">
-		<div>
-			<h2>Methodology: Cognitive & Behavioral Frameworks</h2>
-			<ul>
-				<li>
-					<h3>The Accountability Cycle (Internal Regulation)</h3>
-					<p>
-						Utilizing established cognitive behavioral principles, this 12-step
-						recursive process equips students with the tools to perform "self-audits"
-						on their behavioral choices and academic performance.
-					</p>
+		<div class="bold-border-box" style="--border-color: var(--brand-blue)">
+			<h3>Methodology: Cognitive & Behavioral Frameworks</h3>
+			<h4 class="margin-top margin-bottom">
+				The Accountability Cycle (Internal Regulation)
+			</h4>
+			<p>
+				Utilizing established cognitive behavioral principles, this 12-step recursive
+				process equips students with the tools to perform "self-audits" on their
+				behavioral choices and academic performance.
+			</p>
 
-					<ul>
-						<li>
-							<strong>Locus of Control:</strong> Helping students differentiate between
-							external circumstances and internal responses.
-						</li>
-						<li>
-							<strong>The Character Inventory:</strong> Developing the radical honesty
-							required to identify personal behavioral liabilities and growth areas.
-						</li>
-						<li>
-							<strong>Restorative Repair:</strong> Moving beyond performative apologies
-							to the "Amends Protocol"—a structured process for repairing social trust
-							and campus relationships.
-						</li>
-						<li>
-							<strong>Iterative Reflection:</strong> Establishing a daily habit of self-monitoring
-							to ensure students remain aligned with classroom and personal goals.
-						</li>
-					</ul>
+			<ul class="margin-top">
+				<li>
+					<strong>Locus of Control:</strong> Helping students differentiate between external
+					circumstances and internal responses.
+				</li>
+				<li>
+					<strong>The Character Inventory:</strong> Developing the radical honesty required
+					to identify personal behavioral liabilities and growth areas.
+				</li>
+				<li>
+					<strong>Restorative Repair:</strong> Moving beyond performative apologies to
+					the "Amends Protocol"—a structured process for repairing social trust and campus
+					relationships.
+				</li>
+				<li>
+					<strong>Iterative Reflection:</strong> Establishing a daily habit of self-monitoring
+					to ensure students remain aligned with classroom and personal goals.
 				</li>
 			</ul>
 		</div>
-		<div>
-			<h2>Methodology: Interpersonal Agreements</h2>
-			<ul>
-				<li>
-					<h3>The Integrity Shield (Tier 1 Interpersonal Tools)</h3>
-					<p>
-						These four foundational agreements serve as a proactive behavioral
-						defense system, designed to de-escalate interpersonal conflict and reduce
-						administrative disciplinary referrals.
-					</p>
+		<div class="bold-border-box" style="--border-color: var(--brand-teal)">
+			<h3>Methodology: Interpersonal Agreements</h3>
+			<h4 class="margin-top margin-bottom">
+				The Integrity Shield (Tier 1 Interpersonal Tools)
+			</h4>
+			<p>
+				These four foundational agreements serve as a proactive behavioral defense
+				system, designed to de-escalate interpersonal conflict and reduce
+				administrative disciplinary referrals.
+			</p>
 
-					<ul>
-						<li>
-							<strong>Reliable Communication:</strong> Emphasizing integrity and follow-through
-							as the foundation of a student's academic reputation.
-						</li>
-						<li>
-							<strong>Emotional Neutrality:</strong> Teaching students to depersonalize
-							peer conflict, thereby increasing resilience and decreasing reactive behaviors.
-						</li>
-						<li>
-							<strong>Clarifying Inquiry:</strong> Encouraging direct communication over
-							social assumptions to mitigate campus rumors and interpersonal drama.
-						</li>
-						<li>
-							<strong>Consistent Effort:</strong> Shifting the focus from unattainable
-							perfection to "variable capacity," allowing students to maintain growth even
-							during high-stress periods.
-						</li>
-					</ul>
+			<ul class="margin-top">
+				<li>
+					<strong>Reliable Communication:</strong> Emphasizing integrity and follow-through
+					as the foundation of a student's academic reputation.
+				</li>
+				<li>
+					<strong>Emotional Neutrality:</strong> Teaching students to depersonalize peer
+					conflict, thereby increasing resilience and decreasing reactive behaviors.
+				</li>
+				<li>
+					<strong>Clarifying Inquiry:</strong> Encouraging direct communication over social
+					assumptions to mitigate campus rumors and interpersonal drama.
+				</li>
+				<li>
+					<strong>Consistent Effort:</strong> Shifting the focus from unattainable perfection
+					to "variable capacity," allowing students to maintain growth even during high-stress
+					periods.
 				</li>
 			</ul>
 		</div>
-		<div>
+		<div class="bold-border-box" style="--border-color: var(--brand-orange)">
 			<h2>Cross-Curricular Application & Post-Secondary Outcomes</h2>
 			<p>
 				The Autonomy Protocol is not a theoretical exercise; it is a workforce
@@ -119,8 +115,11 @@
 	</div>
 </section>
 
-<section class="content">
-	<h3>The Developer</h3>
+<section
+	class="bold-border-box margin-top flex-around"
+	style="--border-color: var(--fg)"
+>
+	<h3>The Architect</h3>
 	<p>
 		<strong>The Autonomy Protocol</strong> was designed by
 		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>, a
