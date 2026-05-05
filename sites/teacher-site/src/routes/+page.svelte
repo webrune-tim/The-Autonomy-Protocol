@@ -71,7 +71,7 @@
 				<!-- <HandFist size={32} /> -->
 				<div class="flex-column">
 					<h3>The Integrity Shield</h3>
-					<span>(Tier 1 & Climate Defense)</span>
+					<!-- <span>(Tier 1 & Climate Defense)</span> -->
 				</div>
 			</div>
 			<!-- <p>
@@ -96,10 +96,11 @@
 					<strong>Calibrating Effort:</strong> Sustaining consistent growth by extending
 					grace during high stress while remaining committed to academic goals.
 				</li>
-                <li>
-                    <strong>Discernment & Presence:</strong>
-                    Practicing healthy skepticism of one's own immediate impulses while remaining open to the perspective of others to find the ultimate truth.
-                </li>
+				<li>
+					<strong>Discernment & Presence:</strong>
+					Practicing healthy skepticism of one's own immediate impulses while remaining
+					open to the perspective of others to find the ultimate truth.
+				</li>
 			</ol>
 			<details>
 				<summary
@@ -115,7 +116,7 @@
 				<!-- <LoaderPinwheel size={32} /> -->
 				<div class="flex-column">
 					<h3>The Accountability Cycle</h3>
-					<span>(Tier 2 & Restorative Intervention)</span>
+					<!-- <span>(Tier 2 & Restorative Intervention)</span> -->
 				</div>
 			</div>
 			<ol>
@@ -152,7 +153,10 @@
 	</div>
 </section>
 
-<section class="bold-border-box margin-top" style="--border-color: var(--fg)">
+<section
+	class="bold-border-box margin-top flex-around"
+	style="--border-color: var(--fg)"
+>
 	<a class="link" href="/curriculum">
 		<Road size={32} /> Curriculum Map <ArrowBigRight size={24} />
 	</a>

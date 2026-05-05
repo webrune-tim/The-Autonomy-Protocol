@@ -1,30 +1,28 @@
-<div class="angled-bottom-box with-nothing-below" style="--color: var(--brand-teal)">
+<div class="angled-bottom-box" style="--color: var(--brand-teal)">
 	<h1>Building the Foundation for Self-Governed Futures</h1>
 	<p>Why Pedagogical Autonomy Matters</p>
 </div>
 
-<section class="grid content">
-	<section>
-		<h2>Our Mission</h2>
-		<p>
-			<strong>Our objective is definitive:</strong> to ensure every student graduates with
-			the executive functioning skills required to navigate adult complexities independently.
-			We believe that when students learn to govern themselves, administrative policing
-			becomes obsolete.
-		</p>
-	</section>
+<section class="angled-top-bottom-box" style="--color: var(--brand-blue)">
+	<h2>Our Mission</h2>
+	<p>
+		<strong>Our objective is definitive:</strong> to ensure every student graduates with
+		the executive functioning skills required to navigate adult complexities independently.
+		We believe that when students learn to govern themselves, administrative policing becomes
+		obsolete.
+	</p>
+</section>
 
-	<section>
-		<h2>The Shift: From Punitive to Proactive</h2>
-		<p>
-			Most institutional environments operate on a binary reward-and-punishment
-			system, incentivizing students to simply avoid getting caught. The Autonomy
-			Protocol disrupts this model. We treat personal development as a continuous
-			assessment process. By teaching students to identify and correct their own
-			behavioral liabilities, we shift their motivation from fear of administrative
-			discipline to the intrinsic pursuit of personal and academic excellence.
-		</p>
-	</section>
+<section class="angled-top-box" style="--color: var(--brand-orange)">
+	<h2>The Shift: From Punitive to Proactive</h2>
+	<p>
+		Most institutional environments operate on a binary reward-and-punishment system,
+		incentivizing students to simply avoid getting caught. The Autonomy Protocol
+		disrupts this model. We treat personal development as a continuous assessment
+		process. By teaching students to identify and correct their own behavioral
+		liabilities, we shift their motivation from fear of administrative discipline to
+		the intrinsic pursuit of personal and academic excellence.
+	</p>
 </section>
 
 <section class="content">

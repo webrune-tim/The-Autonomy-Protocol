@@ -104,12 +104,12 @@ ol {
     margin-right: 10px;
     content: counter(item);
     color: var(--brand-blue);
-    font-size: 2rem;
+    font-size: var(--font-size-3);
     width: 1.2em;
     font-weight: bold;
     text-align: center;
     display: inline-block;
-    font-family: var(--font-serif);
+    /*font-family: var(--font-serif);*/
   }
 }
 
@@ -380,6 +380,18 @@ details strong {
 
   box {
     flex: 1 1 300px;
+  }
+}
+
+.flex-around {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-2);
+
+  a {
+    margin-top: 0;
   }
 }
 
