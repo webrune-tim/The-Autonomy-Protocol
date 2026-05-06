@@ -18,38 +18,38 @@
 </script>
 
 <div class="angled-bottom-box" style="--color: var(--brand-blue)">
-	<h1>Empowering Student Agency. Transforming Campus Culture.</h1>
+	<h1>Empowering Student Agency. Transforming Campus Culture</h1>
 	<p>
-		Traditional discipline often drains school resources by relying on external
-		regulation. When administrators and teachers spend their energy constantly
-		"handling" conflicts, it leads to burnout and prevents students from developing
-		their own problem-solving skills.
+		A scalable socio-emotional curriculum designed to build intrinsic accountability and self-governance in high school students.
 	</p>
-	<p>
-		To foster lifelong responsibility, we must move away from top-down enforcement
-		and toward models that help students build their own internal mechanisms for
-		navigating emotional and social challenges.
-	</p>
+	<a class="cta" href="/curriculum">
+		<Road size={32} /> Explore Our Curriculum <ArrowBigRight size={24} />
+	</a>
 </div>
 
 <div class="angled-top-bottom-box" style="--color: var(--brand-orange)">
 	<div class="title-grid">
 		<h2>The Problem:</h2>
 	</div>
-	<p>
+	<!--<p>
 		Traditional discipline relies on <strong>external regulation</strong>, where
 		staff exhaust resources managing conflicts and enforcing rules. This top-down
 		approach fuels educator burnout and leaves students dependent on adults. By
 		simply "handling" behavior, the system prevents students from developing the
 		internal <strong>mechanisms</strong> necessary for lifelong responsibility.
-	</p>
+	</p>-->
+	<ol>
+		<li><strong>Resource Drain:</strong> Traditional discipline relies on external regulation that exhausts staff energy.</li>
+		<li><strong>Educator Burnout:</strong> Top-down enforcement fuels burnout and prevents proactive teaching.</li>
+		<li><strong>Student Dependency:</strong> Current systems often leave students dependent on adults to solve conflicts.</li>
+	</ol>
 </div>
 
 <div class="angled-top-box" style="--color: var(--brand-teal)">
 	<div class="title-grid">
 		<h2>The Opportunity:</h2>
 	</div>
-	<p>
+	<!--<p>
 		The Autonomy Protocol equips your staff with a structured, scalable program that
 		shifts the burden of responsibility back to the student. By providing clear,
 		actionable tools for emotional regulation and restorative accountability, the
@@ -58,7 +58,12 @@
 			>The Accountability Cycle</strong
 		>, and
 		<strong>The Integrity Shield</strong>.
-	</p>
+	</p>-->
+	<ol>
+		<li><strong>Student-Led Accountability:</strong> Shift the burden of responsibility back to the student.</li>
+		<li><strong>Actionable Regulation:</strong> Equip staff with structured tools for emotional and social navigation.</li>
+		<li><strong>Proactive Climate:</strong> Move toward a campus culture of mutual respect and restorative growth.</li>
+	</ol>
 </div>
 
 <!-- <HorizontalScroll title="Twelve Steps" cards_content={twelve_steps} />
@@ -169,6 +174,7 @@
 </section>
 
 <style>
+    .cta,
 	.link {
 		display: inline-flex;
 		align-items: center;

@@ -169,15 +169,24 @@ details strong {
   p,
   strong,
   span,
-  li {
+  li,
+  li:before {
     color: var(--dynamic-text) !important;
   }
 
-  p {
+  p,
+  li {
     font-size: clamp(1rem, 3svw, 2rem);
     margin-bottom: var(--gap-1);
     margin-top: var(--gap-1);
     font-weight: 500;
+  }
+
+  .cta {
+    color: var(--dynamic-text) !important;
+    padding: var(--gap-1) var(--gap-2);
+    border: 4px solid var(--dynamic-text);
+    font-size: var(--font-size-3);
   }
 }
 

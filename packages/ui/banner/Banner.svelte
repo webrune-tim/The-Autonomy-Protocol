@@ -42,7 +42,7 @@
     padding-right: calc(var(--gap-2) * 2.5);
     margin-bottom: var(--gap-2);
     height: fit-content;
-    font-size: clamp(1rem, 2svw, 1.5rem);
+    font-size: clamp(1rem, 2svw, 1.25rem);
 
     button {
       position: absolute;
