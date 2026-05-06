@@ -187,6 +187,7 @@ details strong {
     padding: var(--gap-1) var(--gap-2);
     border: clamp(2px, 4svw, 4px) solid var(--dynamic-text);
     font-size: var(--font-size-3);
+    border-radius: 100px;
 
     &:hover {
       background-color: rgb(from var(--fg) r g b / 0.25);
