@@ -14,7 +14,7 @@ catalogs:
       version: 1.2.4
     '@lucide/svelte':
       specifier: ^1.14.0
-      version: 1.9.0
+      version: 1.14.0
     '@typescript/native-preview':
       specifier: 7.0.0-dev.20260421.2
       version: 7.0.0-dev.20260421.2
@@ -321,7 +321,7 @@ importers:
         specifier: ^8.59.2
         version: 8.59.2(eslint@10.3.0(jiti@2.6.1))(typescript@6.0.3)
       vite:
-        specifier: npm:@voidzero-dev/vite-plus-core@^0.1.20
+        specifier: npm:@voidzero-dev/vite-plus-core@latest
         version: '@voidzero-dev/vite-plus-core@0.1.20(@types/node@24.12.2)(jiti@2.6.1)(typescript@6.0.3)(yaml@2.8.3)'
       vite-imagetools:
         specifier: ^10.0.0
