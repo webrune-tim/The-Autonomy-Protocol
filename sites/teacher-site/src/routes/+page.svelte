@@ -139,7 +139,9 @@
 		font-weight: bold;
 		color: var(--brand-orange);
 		text-decoration: none;
-		font-size: 1.5rem;
 		margin-top: var(--gap-1);
 	}
+    .link {
+        font-size: 1.5rem;
+     } 
 </style>
