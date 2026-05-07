@@ -3,7 +3,7 @@
 	// import { HorizontalScroll } from '@autonomy/horizontal-scroll'
 	// import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
 
-	import { ArrowBigRight, Info, HeartHandshake, Map } from '@lucide/svelte'
+	import { ArrowBigRight, Info, HeartHandshake, Map, Road } from '@lucide/svelte'
 </script>
 
 <section class="angled-bottom-box" style="--color: var(--brand-blue)">
