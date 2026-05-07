@@ -123,7 +123,7 @@
 		<Hammer size={32} /> Contribute <ArrowBigRight size={24} />
 	</a>
 	<a class="link" href="/mission">
-		Shield size={32} /> Our Mission <ArrowBigRight size={24} />
+		<Shield size={32} /> Our Mission <ArrowBigRight size={24} />
 	</a>
 	<a class="link" href="/road-map">
 		<Map size={32} /> Road Map <ArrowBigRight size={24} />
