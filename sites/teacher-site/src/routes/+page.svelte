@@ -75,7 +75,7 @@
 					<strong>Set Boundaries:</strong> Build resilience against negativity.
 				</li>
 				<li>
-					<strong>Seek Clarity:</strong>Seek Clarity: Challenge narratives with
+					<strong>Seek Clarity:</strong> Challenge narratives with
 					facts.
 				</li>
 				<li>
