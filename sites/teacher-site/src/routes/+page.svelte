@@ -10,7 +10,7 @@
 	<h1>Empowering Student Agency. Transforming Campus Culture</h1>
 	<p>
 		A scalable socio-emotional curriculum designed to build intrinsic accountability
-		and self-governance in high school students.
+		and self-governance in high school students based on the transformative power of the 12-Step Reconstructive Process and the Five Agreements.
 	</p>
 	<a class="cta" href="/curriculum">
 		<Road size={32} /> Access Curriculum <ArrowBigRight size={24} />
