@@ -47,7 +47,12 @@
 		<li><strong>Peer Review for Neutrality:</strong> Use your professional eye to ensure our modules remain free of partisan or sectarian language.</li>
 		<li><strong>Vocational Pathing:</strong> Help us apply the Five Agreements to specific career paths (like Law, Arts, or Agriculture) so students see the real-world utility.</li>
 	</ol>
+</section>
 
+<section
+	class="bold-border-box margin-top flex-around"
+	style="--border-color: var(--fg)"
+>
 	<h3>Ready to Build a Self-Governed Future?</h3>
 
 	<p>
