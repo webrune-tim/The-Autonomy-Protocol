@@ -3,7 +3,7 @@
 	// import { HorizontalScroll } from '@autonomy/horizontal-scroll'
 	// import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
 
-	import { ArrowBigRight, Map, Road, Toolbox } from '@lucide/svelte'
+	import { ArrowBigRight, HeartHandshake, Map, Mission, Toolbox } from '@lucide/svelte'
 </script>
 
 <section class="angled-bottom-box" style="--color: var(--brand-blue)">
@@ -119,11 +119,11 @@
 	class="bold-border-box margin-top flex-around"
 	style="--border-color: var(--fg)"
 >
-	<a class="link" href="/curriculum">
-		<Road size={32} /> Curriculum Map <ArrowBigRight size={24} />
+	<a class="link" href="/contribute">
+		<HeartHandshake size={32} /> Contribute <ArrowBigRight size={24} />
 	</a>
-	<a class="link" href="/resources">
-		<Toolbox size={32} /> Other Resources <ArrowBigRight size={24} />
+	<a class="link" href="/mission">
+		<Info size={32} /> Our Mission <ArrowBigRight size={24} />
 	</a>
 	<a class="link" href="/road-map">
 		<Map size={32} /> Road Map <ArrowBigRight size={24} />
