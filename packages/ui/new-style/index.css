@@ -186,7 +186,7 @@ details strong {
     color: var(--dynamic-text) !important;
     padding: var(--gap-1) var(--gap-2);
     border: clamp(2px, 4svw, 4px) solid var(--dynamic-text);
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-4);
     border-radius: 100px;
 
     &:hover {
