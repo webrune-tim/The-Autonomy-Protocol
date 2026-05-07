@@ -10,11 +10,6 @@
 
 <section class="content">
 	<h2>Freshman Curriculum Map: "The Foundation"</h2>
-	<p><strong>Theme:</strong> Stabilizing the Self and Navigating New Systems.</p>
-	<p>
-		<strong>High-Contrast Objective:</strong> Move students from reactive behavior to proactive
-		self-governance.
-	</p>
 
 	<h3>Quarter 1: The Integrity Shield (Defense)</h3>
 
