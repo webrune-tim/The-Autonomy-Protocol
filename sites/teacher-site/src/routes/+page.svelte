@@ -119,8 +119,8 @@
 	class="bold-border-box margin-top flex-around"
 	style="--border-color: var(--fg)"
 >
-	<a class="link" href="/contribute">
-		<Hammer size={32} /> Contribute <ArrowBigRight size={24} />
+	<a class="link" href="/join-us">
+		<Hammer size={32} /> Join Our Team <ArrowBigRight size={24} />
 	</a>
 	<a class="link" href="/mission">
 		<ShieldCog size={32} /> Our Mission <ArrowBigRight size={24} />

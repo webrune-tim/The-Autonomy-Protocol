@@ -30,7 +30,7 @@
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
-		{ href: '/contribute', label: 'Contribute' },
+		{ href: '/join-us', label: 'Join Us' },
 		{ href: '/mission', label: 'Mission' },
 		{ href: '/contact', label: 'Contact' }
 	]
