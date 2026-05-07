@@ -31,7 +31,7 @@
 		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
 		{ href: '/contribute', label: 'Contribute' },
-		{ href: '/about', label: 'About' },
+		{ href: '/mission', label: 'Mission' },
 		{ href: '/contact', label: 'Contact' }
 	]
 </script>
