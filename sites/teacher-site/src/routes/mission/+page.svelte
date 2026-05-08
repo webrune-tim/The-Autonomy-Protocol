@@ -3,7 +3,10 @@
 	<p>Why Pedagogical Autonomy Matters</p>
 </div>
 
-<section class="angled-top-bottom-box" style="--color: var(--brand-blue)">
+<section
+	class="angled-top-bottom-box thick-margins"
+	style="--color: var(--brand-blue)"
+>
 	<h2>Our Mission</h2>
 	<p>
 		<strong>Our objective is definitive:</strong> to ensure every student graduates with
@@ -13,7 +16,7 @@
 	</p>
 </section>
 
-<section class="angled-top-box" style="--color: var(--brand-orange)">
+<section class="angled-top-box thick-margins" style="--color: var(--brand-orange)">
 	<h2>The Shift: From Punitive to Proactive</h2>
 	<p>
 		Most institutional environments operate on a binary reward-and-punishment system,
@@ -121,20 +124,21 @@
 >
 	<h3>The Architect</h3>
 	<p>
-		<strong>The Autonomy Protocol</strong> was designed by
-		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>, a
-		professional who has dedicated years to the study of self-regulation and personal
-		transformation. Through his extensive experience with high-level accountability
-		frameworks, he recognized a profound parallel: the same cognitive structures
-		required for life-long behavioral change are exceptionally effective tools for
-		student empowerment and campus stability.
+		<strong>The Autonomy Protocol</strong> was developed by
+		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>.
+		The framework is born from personal necessity: Smith utilized the structural
+		logic of the 12 Steps and the Four Agreements to navigate his own recovery from
+		substance abuse. This journey revealed a profound truth—that the cognitive
+		structures required for life-saving behavioral change are the same tools needed
+		for student empowerment.
 	</p>
 	<p>
-		By adapting these battle-tested principles of self-governance, Smith has
-		developed a methodology that helps students navigate academic pressures and
-		social complexities with newfound clarity. The protocol shifts the institutional
-		focus from external compliance to internal mastery, teaching students how to
-		manage their lives with the precision and resilience required for long-term
-		personal and professional success.
+		By stripping these principles of their traditional jargon and adapting them for
+		the modern classroom, Smith created a methodology rooted in <strong
+			>internal mastery</strong
+		>
+		rather than external compliance. The result is a battle-tested protocol that equips
+		students to manage academic and social complexities with the resilience required for
+		long-term professional success.
 	</p>
 </section>
