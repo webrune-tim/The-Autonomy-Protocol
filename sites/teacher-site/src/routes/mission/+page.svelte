@@ -155,8 +155,7 @@
 </section>
 
 <style>
-	.cta,
-	.link {
+	.cta {
 		display: inline-flex;
 		align-items: center;
 		gap: var(--gap-1);
@@ -164,8 +163,5 @@
 		color: var(--brand-orange);
 		text-decoration: none;
 		margin-top: var(--gap-1);
-	}
-	.link {
-		font-size: 1.5rem;
 	}
 </style>
