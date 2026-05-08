@@ -1,114 +1,99 @@
-<div class="angled-bottom-box with-nothing-below">
-	<h1>The Program Roadmap</h1>
+<section class="angled-bottom-box">
+	<h1>The Dual-Intervention Roadmap</h1>
 	<p>
-		The Autonomy Protocol is not a one-time seminar or an assembly; it is a
-		progressively structured curriculum of executive functioning skills. Our
-		four-year architecture maps directly to a student's cognitive maturity,
-		scaffolding them from basic self-awareness to complex, high-stakes professional
-		environments.
+		The Autonomy Protocol is an executive functioning framework designed to target
+		the two most critical developmental transitions in a student’s secondary
+		education: entry and exit. By bookending the high school experience, we establish
+		a behavioral baseline early on and solidify professional standards before
+		graduation.
 	</p>
-</div>
+	<p>
+		Our methodology is powered by a high-performance reconstruction of two globally
+		recognized behavioral models—secularized and optimized for the modern classroom:
+	</p>
+	<ul>
+		<li>
+			<strong>The 12-Step Accountability Logic:</strong> A sequential roadmap for self-correction
+			and interpersonal repair.
+		</li>
+		<li>
+			<strong>The Five Pillars of Integrity:</strong> A behavioral code of conduct designed
+			to foster cognitive clarity and emotional neutrality.
+		</li>
+	</ul>
+</section>
 
-<section class="content">
-	<div class="flex">
-		<div class="box trans-blue">
-			<h2>
-				Phase 1: Foundation & Orientation Target: Freshman Year | Focus: The Setup
-			</h2>
-			<p>
-				The transition to high school is notoriously volatile. In Phase 1, the
-				objective is to establish a strict internal locus of control. We strip away
-				the instinct to blame external factors and introduce the foundational
-				"Accountability Cycle."
-			</p>
+<section class="angled-top-bottom-box">
+	<h2>Phase 1: Foundation & Behavioral Baseline</h2>
+	<p><strong>Target: Freshman Year | Focus: The Setup</strong></p>
+
+	<p>
+		Phase 1 serves as a behavioral onboarding during the notoriously volatile
+		transition to high school. We establish a strict internal locus of control,
+		giving students the tools to self-regulate before conflicts escalate.
+	</p>
+
+	<ul>
+		<li>
+			<strong>The Core Objective:</strong> Shifting students from defensive,
+			"external-blame" mindsets to a proactive <string>12-Step Logic</string>.
+			Students learn to take a fearless personal inventory of their behavioral
+			liabilities and master the mechanics of self-governance.
+		</li>
+		<li>
+			<strong>The Practicum:</strong> Introduction to the
+			<strong>Amends Protocol</strong>. Students learn that accountability is not a
+			punishment, but a restorative process to repair social trust and resolve
+			friction independently.
+		</li>
+		<li>
+			<strong>Administrative Outcome:</strong> A measurable reduction in office referrals.
+			Teachers spend less time on disciplinary management and more on instruction, directly
+			addressing the primary cause of educator burnout.
+		</li>
+	</ul>
+</section>
+
+<section class="angled-top-box" style="--color: var(--brand-teal)">
+	<h2>Phase 2: Real-World Application & Career Readiness</h2>
+	<p><strong>Target: Senior Year | Focus: The Pro Level</strong></p>
+
+	<p>
+		The senior capstone transitions the protocol from an internal academic framework
+		into a non-negotiable professional standard. This phase ensures students are
+		"exit-ready" by applying The Five Pillars of Integrity to their specific career
+		or collegiate goals.
+	</p>
+
+	<ul>
+		<li>
+			<strong>The Core Objective:</strong> Solidifying the five essential agreements of
+			professional conduct: being impeccable with one’s word, maintaining emotional neutrality
+			(not taking things personally), avoiding assumptions, and maintaining a consistent
+			standard of excellence.
+		</li>
+		<li>
+			<strong>The Practicum:</strong> Vocational specialization modules:
 			<ul>
 				<li>
-					<strong>The Core Objective:</strong> Learning what is—and what is not—within
-					the student's operational control. (Hint: It is never other people).
+					<strong>The STEM Path:</strong> Applying the Integrity Protocol to peer review
+					and data accuracy.
 				</li>
 				<li>
-					<strong>The Practicum:</strong> Students are introduced to the
-					<strong>Limit Check</strong>
-					and the <strong>Master Log</strong>. They learn the mechanics of objective
-					self-assessment, identifying their own behavioral liabilities without
-					shame, and establishing a baseline of radical honesty.
+					<strong>The Healthcare Path:</strong> Utilizing emotional neutrality to deliver
+					high-quality care without suffering clinical burnout.
 				</li>
 				<li>
-					<strong>The Outcome:</strong> A dramatic reduction in defensive reactions and
-					disciplinary escalation. Students stop fighting their environment because they
-					are learning to govern themselves.
+					<strong>The Trades Path:</strong> Understanding that "Your Word" is the foundational
+					blueprint of structural and professional reliability.
 				</li>
 			</ul>
-		</div>
-		<div class="box trans-orange">
-			<h2>
-				Phase 2: Active Practice & Integration Target: Sophomore & Junior Years |
-				Focus: The Practice
-			</h2>
-			<p>
-				Once the internal framework is established, it must be applied in the real
-				world. Phase 2 moves the protocol out of theory and into the active, daily
-				environments of the student's life.
-			</p>
-			<ul>
-				<li>
-					<strong>The Core Objective:</strong> Utilizing the
-					<strong>Integrity Shield</strong> to navigate complex peer dynamics, academic
-					pressure, and competitive environments.
-				</li>
-				<li>
-					<strong>The Practicum:</strong> Students actively use the tools in
-					high-friction arenas: group projects in class, high-stress moments in
-					athletics, and conflict resolution within friend groups. They practice the
-					<strong>Amends Protocol</strong>—learning that apologizing is not a sign of
-					weakness, but a restorative repair of social trust.
-				</li>
-				<li>
-					<strong>The Outcome:</strong> The development of emotional neutrality. Students
-					learn to absorb constructive criticism without taking it personally and communicate
-					with precision, eliminating the assumptions that cause interpersonal conflict.
-				</li>
-			</ul>
-		</div>
-		<div class="box trans-teal">
-			<h2>
-				Phase 3: Real-World Application Target: Senior Year | Focus: The Pro Level
-			</h2>
-			<p>
-				The senior capstone transitions the protocol from an academic exercise into a
-				professional requirement. We tailor the curriculum to the student's immediate
-				future, proving that these aren't just "school rules"—they are the exact
-				executive skills demanded by the modern workforce.
-			</p>
-			<ul>
-				<li>
-					<strong>The Core Objective:</strong> Solidifying the framework for post-graduate
-					success, utilizing industry-specific Career Technical Education (CTE) pathways.
-				</li>
-				<li>
-					<strong>The Practicum:</strong> The curriculum branches into vocational
-					specialization:
-					<ul>
-						<li>
-							<strong>The STEM Path:</strong> Treating academic integrity and peer reviews
-							as a direct reflection of personal accountability.
-						</li>
-						<li>
-							<strong>The Healthcare Path:</strong> Utilizing emotional neutrality to deliver
-							high-quality care without suffering clinical burnout.
-						</li>
-						<li>
-							<strong>The Trades Path:</strong> Understanding that "Your Word" is the foundational
-							blueprint of structural and professional integrity.
-						</li>
-					</ul>
-				</li>
-				<li>
-					<strong>The Outcome:</strong> The development of emotional neutrality. Students
-					learn to absorb constructive criticism without taking it personally and communicate
-					with precision, eliminating the assumptions that cause interpersonal conflict.
-				</li>
-			</ul>
-		</div>
-	</div>
+		</li>
+		<li>
+			<strong>Administrative Outcome:</strong> A verified graduation cohort capable of
+			independent problem-solving and ethical decision-making. The district produces graduates
+			who do not require constant external management, elevating the institutional reputation
+			for workforce readiness.
+		</li>
+	</ul>
 </section>

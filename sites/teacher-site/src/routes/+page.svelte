@@ -3,21 +3,25 @@
 	// import { HorizontalScroll } from '@autonomy/horizontal-scroll'
 	// import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
 
-	import { ArrowBigRight, Info, Hammer, Map, Road, ShieldCog } from '@lucide/svelte'
+	import { ArrowBigRight, Hammer, Map, Road, ShieldCog } from '@lucide/svelte'
 </script>
 
 <section class="angled-bottom-box" style="--color: var(--brand-blue)">
 	<h1>Empowering Student Agency. Transforming Campus Culture</h1>
 	<p>
 		A scalable socio-emotional curriculum designed to build intrinsic accountability
-		and self-governance in high school students based on the transformative power of the 12-Step Reconstructive Process and the Five Agreements.
+		and self-governance in high school students based on the transformative power of
+		the 12-Step Reconstructive Process and the Five Agreements.
 	</p>
 	<a class="cta" href="/curriculum">
 		<Road size={32} /> Access Curriculum <ArrowBigRight size={24} />
 	</a>
 </section>
 
-<section class="angled-top-bottom-box" style="--color: var(--brand-orange)">
+<section
+	class="angled-top-bottom-box thick-margins"
+	style="--color: var(--brand-orange)"
+>
 	<div class="title-grid">
 		<h2>The Problem:</h2>
 	</div>
@@ -37,7 +41,7 @@
 	</ol>
 </section>
 
-<section class="angled-top-box" style="--color: var(--brand-teal)">
+<section class="angled-top-box thick-margins" style="--color: var(--brand-teal)">
 	<div class="title-grid">
 		<h2>The Opportunity:</h2>
 	</div>
@@ -75,8 +79,7 @@
 					<strong>Set Boundaries:</strong> Build resilience against negativity.
 				</li>
 				<li>
-					<strong>Seek Clarity:</strong> Challenge narratives with
-					facts.
+					<strong>Seek Clarity:</strong> Challenge narratives with facts.
 				</li>
 				<li>
 					<strong>Balance Effort:</strong> Sustain growth through high stress.
@@ -141,7 +144,7 @@
 		text-decoration: none;
 		margin-top: var(--gap-1);
 	}
-    .link {
-        font-size: 1.5rem;
-     } 
+	.link {
+		font-size: 1.5rem;
+	}
 </style>

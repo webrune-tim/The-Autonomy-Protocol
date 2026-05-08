@@ -195,23 +195,40 @@ details strong {
   }
 }
 
-/* --- Structural Layout & Clip-Paths --- */
+/* 2. Set a default offset for full-width boxes */
+.angled-bottom-box,
+.angled-top-box,
+.angled-top-bottom-box {
+  --offset-x: 0px;
+}
+
+/* 3. Apply the margin and map it to the offset variable */
+.thick-margins {
+  margin-left: var(--thick-margin);
+  margin-right: var(--thick-margin);
+  --offset-x: var(--thick-margin);
+}
+
+/* 4. Update polygons to stretch outward by the offset amount */
 .angled-bottom-box {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
+  clip-path: polygon(
+    calc(-1 * var(--offset-x)) 0,
+    calc(100% + var(--offset-x)) 0,
+    calc(100% + var(--offset-x)) calc(100% - var(--angle-height)),
+    calc(-1 * var(--offset-x)) 100%
+  );
   padding-bottom: calc(var(--angle-height) + var(--angle-width));
   margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 
 .angled-top-box {
-  clip-path: polygon(0 var(--angle-height), 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(
+    calc(-1 * var(--offset-x)) var(--angle-height),
+    calc(100% + var(--offset-x)) 0,
+    calc(100% + var(--offset-x)) 100%,
+    calc(-1 * var(--offset-x)) 100%
+  );
   padding-top: calc(var(--angle-height) + var(--angle-width));
-}
-
-.angled-top-bottom-box {
-  clip-path: polygon(0 var(--angle-height), 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
-  padding-top: calc(var(--angle-height) + var(--angle-width));
-  padding-bottom: calc(var(--angle-height) + var(--angle-width));
-  margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 
 .angled-top-bottom-box {
@@ -219,15 +236,15 @@ details strong {
   background: var(--color); /* Dark theme aesthetic */
   color: contrast-color(var(--color));
 
-  /* Points: Top-Left (at angle), Top-Right (at 0),
-     Bottom-Right (height - angle), Bottom-Left (at 100%) */
-  clip-path: polygon(0 var(--angle-height), 100% 0, 100% calc(100% - var(--angle-height)), 0 100%);
+  clip-path: polygon(
+    calc(-1 * var(--offset-x)) var(--angle-height),
+    calc(100% + var(--offset-x)) 0,
+    calc(100% + var(--offset-x)) calc(100% - var(--angle-height)),
+    calc(-1 * var(--offset-x)) 100%
+  );
 
-  /* You need padding on BOTH top and bottom to protect the content */
   padding-top: calc(var(--angle-height) + var(--angle-width));
   padding-bottom: calc(var(--angle-height) + var(--angle-width));
-
-  /* Maintain the gap by pulling the next box up into the clipped area */
   margin-bottom: calc(var(--angle-height) * -1 + var(--angle-width));
 }
 

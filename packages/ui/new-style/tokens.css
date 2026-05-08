@@ -57,6 +57,7 @@
 
   --angle-height: 5vw;
   --angle-width: var(--gap-2);
+  --thick-margin: clamp(3rem, 6svw, 5rem);
 }
 
 /* --- Light Mode Overrides --- */
