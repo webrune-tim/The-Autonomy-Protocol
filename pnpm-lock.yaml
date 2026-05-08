@@ -58,6 +58,12 @@ importers:
 
   packages/ui/footer: {}
 
+  packages/ui/footer-nav:
+    dependencies:
+      '@lucide/svelte':
+        specifier: 'catalog:'
+        version: 1.14.0(svelte@5.55.5(@typescript-eslint/types@8.59.2))
+
   packages/ui/four-agreements:
     dependencies:
       '@lucide/svelte':
@@ -229,6 +235,9 @@ importers:
       '@autonomy/footer':
         specifier: workspace:*
         version: link:../../packages/ui/footer
+      '@autonomy/footer-nav':
+        specifier: workspace:*
+        version: link:../../packages/ui/footer-nav
       '@autonomy/four-agreements':
         specifier: workspace:*
         version: link:../../packages/ui/four-agreements

@@ -33,6 +33,7 @@ export default defineConfig({
       "@autonomy/theme",
       "@autonomy/header",
       "@autonomy/footer",
+      "@autonomy/footer-nav",
       "@autonomy/logo",
       "@autonomy/pill",
     ],

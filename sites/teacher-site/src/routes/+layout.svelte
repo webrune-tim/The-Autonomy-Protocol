@@ -13,9 +13,10 @@
 	// Import the shared packages
 	import { Banner } from '@autonomy/banner'
 	import { Footer } from '@autonomy/footer'
+	import { FooterNav } from '@autonomy/footer-nav'
 	import { Header } from '@autonomy/header'
 	import { Logo } from '@autonomy/logo'
-	import { DropNav, Nav } from '@autonomy/nav'
+	import { DropNav } from '@autonomy/nav'
 	import { Pill } from '@autonomy/pill'
 
 	// Import local components
@@ -89,6 +90,7 @@
 
 	<Footer>
 		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
+		<FooterNav links={navLinks} currentPath={$page.url.pathname} />
 	</Footer>
 </div>
 
