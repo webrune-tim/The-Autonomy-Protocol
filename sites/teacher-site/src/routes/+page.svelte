@@ -3,7 +3,7 @@
 	// import { HorizontalScroll } from '@autonomy/horizontal-scroll'
 	// import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
 
-	import { ArrowBigRight, Hammer, Map, Road, ShieldCog } from '@lucide/svelte'
+	import { ArrowBigRight, Map, Route, ShieldCog } from '@lucide/svelte'
 </script>
 
 <section class="angled-bottom-box" style="--color: var(--brand-blue)">
@@ -14,7 +14,7 @@
 		the 12-Step Reconstructive Process and the Five Agreements.
 	</p>
 	<a class="cta" href="/curriculum">
-		<Road size={32} /> Access Curriculum <ArrowBigRight size={24} />
+		<Route size={32} /> Access Curriculum <ArrowBigRight size={32} />
 	</a>
 </section>
 

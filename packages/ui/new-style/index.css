@@ -254,7 +254,7 @@ details strong {
 
 .bold-border-box {
   --border-color: var(--brand-blue);
-  height: fit-content;
+  /*height: fit-content;*/
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
 

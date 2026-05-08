@@ -1,3 +1,7 @@
+<script>
+	import { ArrowBigRight, Route } from '@lucide/svelte'
+</script>
+
 <div class="angled-bottom-box" style="--color: var(--brand-teal)">
 	<h1>Building the Foundation for Self-Governed Futures</h1>
 	<p>Why Pedagogical Autonomy Matters</p>
@@ -14,6 +18,10 @@
 		We believe that when students learn to govern themselves, administrative policing becomes
 		obsolete.
 	</p>
+
+	<a class="cta" href="/join-us">
+		<Route size={32} /> Join Us <ArrowBigRight size={32} />
+	</a>
 </section>
 
 <section class="angled-top-box thick-margins" style="--color: var(--brand-orange)">
@@ -92,7 +100,10 @@
 				</li>
 			</ul>
 		</div>
-		<div class="bold-border-box" style="--border-color: var(--brand-orange)">
+		<div
+			class="bold-border-box thick-margins"
+			style="--border-color: var(--brand-orange)"
+		>
 			<h2>Cross-Curricular Application & Post-Secondary Outcomes</h2>
 			<p>
 				The Autonomy Protocol is not a theoretical exercise; it is a workforce
@@ -142,3 +153,19 @@
 		long-term professional success.
 	</p>
 </section>
+
+<style>
+	.cta,
+	.link {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--gap-1);
+		font-weight: bold;
+		color: var(--brand-orange);
+		text-decoration: none;
+		margin-top: var(--gap-1);
+	}
+	.link {
+		font-size: 1.5rem;
+	}
+</style>
