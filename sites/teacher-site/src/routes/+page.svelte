@@ -145,6 +145,7 @@
 		margin-top: var(--gap-1);
 	}
 	.link {
+		margin-top: 0;
 		font-size: 1.5rem;
 	}
 </style>

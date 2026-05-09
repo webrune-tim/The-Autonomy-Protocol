@@ -16,12 +16,10 @@
 <style>
   footer {
     --color: var(--brand-blue);
-    --contrast-lightness: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
-    --dynamic-text: var(--contrast-lightness);
 
     display: grid;
     place-items: center;
-    color: var(--dynamic-text);
+    color: --contrast-color(var(--color));
     background: var(--color);
     padding: var(--gap-2);
     margin-top: var(--gap-2);

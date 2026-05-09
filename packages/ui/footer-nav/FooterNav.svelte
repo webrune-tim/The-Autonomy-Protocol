@@ -57,7 +57,7 @@
   }
 
   a {
-    color: var(--bg);
+    color: --contrast-color(var(--brand-blue));
     text-decoration: none;
     white-space: nowrap;
 
@@ -70,15 +70,13 @@
       color 0.2s ease;
 
     &:hover {
-      opacity: 0.7;
-      color: var(--fg);
+      color: var(--brand-orange);
     }
 
     &.active {
       font-weight: 900;
-      color: var(--fg);
       /* Subtle underline to tie back to the structural top-border */
-      border-bottom: 2px solid var(--bg);
+      border-bottom: 2px solid --contrast-color(var(--brand-blue));
     }
   }
 </style>

@@ -146,6 +146,7 @@
     display: block;
     padding: 0.6rem 1rem;
     text-decoration: none;
+    text-transform: uppercase;
     color: var(--brand-blue);
     border-radius: 4px;
     font-weight: 500;

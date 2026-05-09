@@ -33,11 +33,8 @@
     --color: var(--brand-orange);
     background: var(--color);
 
-    --contrast-lightness: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
-    --dynamic-text: var(--contrast-lightness);
-
     position: relative;
-    color: var(--dynamic-text);
+    color: --contrast-color(var(--color));
     padding: var(--gap-2);
     padding-right: calc(var(--gap-2) * 2.5);
     margin-bottom: var(--gap-2);
@@ -50,14 +47,14 @@
       right: var(--gap-1);
       background: none;
       border: none;
-      color: var(--dynamic-text);
+      color: --contrast-color(var(--color));
       font-size: 1.25rem;
       cursor: pointer;
     }
   }
 
   :global(.banner a) {
-    color: var(--dynamic-text);
+    color: --contrast-color(var(--color));
     text-decoration: underline;
     font-weight: bold;
   }
