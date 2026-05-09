@@ -1,3 +1,5 @@
+/* packages/ui/new-style/index.css */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Elite&display=swap");
 @import "./reset.css";
 @import "./tokens.css";
@@ -18,9 +20,8 @@ html {
 body {
   background-color: var(--bg);
   color: var(--fg);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-sans-2);
   margin: 0;
-  /* Smooth transition for theme switching */
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -54,17 +55,11 @@ h2 {
 
 h3 {
   font-size: var(--font-size-3);
+  color: var(--brand-teal);
 }
 
 h4 {
   font-size: var(--font-size-4);
-}
-
-h3,
-h4,
-h5,
-h6 {
-  color: var(--accent-3);
 }
 
 a {
@@ -110,7 +105,6 @@ ol {
     font-weight: bold;
     text-align: center;
     display: inline-block;
-    /*font-family: var(--font-serif);*/
   }
 }
 
@@ -118,7 +112,6 @@ details > summary {
   cursor: pointer;
   font-weight: bold;
   font-size: var(--font-size-4);
-  /*color: var(--brand-orange);*/
   margin-bottom: var(--gap-1);
 }
 
@@ -145,7 +138,10 @@ details strong {
   --color: var(--brand-blue);
   background: var(--color);
 
-  color: --contrast-color(var(--color)) !important;
+  /* SAFARI FIX: Use direct math instead of @function */
+  --safe-contrast: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
+
+  color: var(--safe-contrast) !important;
   padding: var(--gap-2);
   margin-bottom: var(--gap-2);
 
@@ -157,7 +153,13 @@ details strong {
     font-size: var(--font-size-2);
   }
 
-  /* Force all content inside these boxes to use the dynamic color */
+  span {
+    display: inline-block;
+    margin: var(--gap-1) 0;
+    font-size: var(--font-size-3);
+  }
+
+  /* Target all text elements to use the calculated contrast color */
   h1,
   h2,
   h3,
@@ -166,7 +168,7 @@ details strong {
   span,
   li,
   li:before {
-    color: --contrast-color(var(--color)) !important;
+    color: var(--safe-contrast) !important;
   }
 
   h1,
@@ -184,11 +186,12 @@ details strong {
   }
 
   .cta {
-    color: var(--dynamic-text) !important;
+    color: var(--safe-contrast) !important;
     padding: var(--gap-1) var(--gap-2);
-    border: clamp(2px, 4svw, 4px) solid --contrast-color(var(--color));
+    border: clamp(2px, 4svw, 4px) solid var(--safe-contrast);
     font-size: var(--font-size-3);
     border-radius: 100px;
+    display: inline-block;
 
     &:hover {
       background-color: rgb(from var(--fg) r g b / 0.25);
@@ -234,8 +237,11 @@ details strong {
 
 .angled-top-bottom-box {
   --color: var(--brand-orange);
-  background: var(--color); /* Dark theme aesthetic */
-  color: contrast-color(var(--color));
+  background: var(--color);
+
+  /* Apply safe contrast logic for the orange box too */
+  --safe-contrast: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
+  color: var(--safe-contrast) !important;
 
   clip-path: polygon(
     calc(-1 * var(--offset-x)) var(--angle-height),
@@ -255,7 +261,6 @@ details strong {
 
 .bold-border-box {
   --border-color: var(--brand-blue);
-  /*height: fit-content;*/
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
 
@@ -266,6 +271,17 @@ details strong {
   li:before {
     color: var(--fg);
   }
+}
+
+.auto-contrast {
+  --color: var(--brand-blue) /* 1. Extract the lightness from the brand color */ --lightness: from
+    var(--color) l;
+
+  /* 2. Apply your threshold math directly in the property */
+  /* If L > 0.54, this becomes a huge negative number (0% lightness)
+     If L < 0.54, this becomes a huge positive number (100% lightness) */
+  background-color: var(--color);
+  color: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
 }
 
 .columns {
@@ -300,19 +316,18 @@ details strong {
 .margin-top {
   margin-top: var(--gap-1);
 }
-
 .margin-bottom {
   margin-bottom: var(--gap-1);
 }
-
 .no-bottom-margin {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .flex {
   display: flex;
   gap: var(--gap-2);
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .flex > div {
@@ -324,7 +339,6 @@ details strong {
   flex-wrap: wrap;
   align-items: baseline;
   color: var(--fg);
-  /*gap: var(--gap-2);*/
   grid-template-columns: auto 1fr;
 
   h2,
@@ -342,7 +356,6 @@ details strong {
   width: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   padding-bottom: var(--gap-1);
 }
@@ -389,35 +402,15 @@ details strong {
 .grid {
   display: grid;
   gap: var(--gap-2);
-  container-type: inline-size;
-  grid-template-columns: 1fr 1fr;
-
-  @container (min-width: 600px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .no-top-padding {
-  /* Corrected Syntax: Use the colon before not */
   & > :not(:first-child) {
     padding-top: 0;
   }
-
-  /* This is technically redundant if the top rule
-     only targets items that AREN'T the first child,
-     but safe to keep if you need a hard reset. */
   & > :first-child {
     padding-top: var(--gap-2);
-  }
-}
-
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  box {
-    flex: 1 1 300px;
   }
 }
 
@@ -433,16 +426,6 @@ details strong {
   }
 }
 
-.margin-top {
-  margin-top: var(--gap-2);
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .step-grid {
   padding-top: var(--gap-2);
   display: grid;
@@ -452,10 +435,7 @@ details strong {
   span {
     font-weight: bolder;
     text-align: center;
-    /*color: var(--brand-blue);*/
     font-size: 2rem;
-    padding: 0;
-    margin: 0;
     font-family: var(--font-header-serif);
   }
 }

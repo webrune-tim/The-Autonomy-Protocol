@@ -10,13 +10,19 @@
   --black-20: oklch(60% 0 0);
   --white: oklch(95% 0 0);
 
-  --accent-1: oklab(0.61 -0.06 -0.22);
-  --accent-2: oklab(0.72 0.16 0.16);
-  --accent-3: oklab(0.8 -0.17 -0.03);
+  --accent-1: oklab(0.61 -0.06 -0.22); /* brand-blue */
+  --accent-2: oklab(0.72 0.16 0.16); /* brand-orange */
+  --accent-3: oklab(0.8 -0.17 -0.03); /* brand-teal */
 
-  /* Semantic Variables (Dark Baseline) */
-  --bg: var(--black-80);
-  --fg: var(--white);
+  /* --- SMART SURFACE CONTRACT --- */
+  /* Default baseline (Safari/Old Browser Fallback) */
+  --bg-surface: var(--black-80);
+  --fg-surface: var(--white);
+
+  /* Semantic Variables */
+  --bg: var(--bg-surface);
+  --fg: var(--fg-surface);
+
   --surface-1: var(--black-80);
   --surface-2: var(--black-60);
   --surface-3: var(--black-50);
@@ -26,16 +32,25 @@
   --brand-orange: var(--accent-2);
   --brand-teal: var(--accent-3);
 
-  --text-form: var(--white);
+  /* Derived Variants (OKLCH for perceptual accuracy) */
+  --brand-blue-dark: oklch(from var(--brand-blue) calc(l - 0.1) c h);
+  --brand-orange-dark: oklch(from var(--brand-orange) calc(l - 0.1) c h);
+  --brand-teal-dark: oklch(from var(--brand-teal) calc(l - 0.1) c h);
+
+  --brand-blue-light: oklch(from var(--brand-blue) calc(l + 0.1) c h);
+  --brand-orange-light: oklch(from var(--brand-orange) calc(l + 0.1) c h);
+  --brand-teal-light: oklch(from var(--brand-teal) calc(l + 0.1) c h);
+
+  --text-form: var(--fg-surface);
   --text-link: var(--brand-orange);
   --text-link-hover: var(--brand-blue);
   --text-heading: var(--brand-blue);
   --text-heading-alt: var(--brand-orange);
 
+  /* Typography & Layout Tokens */
   --font-sans-1: "Poppins", sans-serif;
   --font-sans-2: "Inter", sans-serif;
   --font-serif: "Special Elite", system-ui;
-
   --font-header-sans-1: var(--font-sans-1);
   --font-header-sans-2: var(--font-sans-2);
   --font-header-serif: var(--font-serif);
@@ -60,30 +75,27 @@
   --thick-margin: clamp(2rem, 5.5svw, 4.5rem);
 }
 
+/* Upgrade contrast logic for modern browsers */
+@supports (color: oklch(from red l c h)) {
+  :root {
+    --fg-surface: oklch(from var(--bg-surface) calc((l - 0.54) * -1000) 0 0);
+  }
+}
+
 /* --- Light Mode Overrides --- */
 :root[data-theme="light"] {
   color-scheme: light;
+  --bg-surface: var(--white);
+  /* --fg-surface will automatically become dark via the @supports logic above */
 
-  /* 1. Soften the background to an elegant, cool off-white */
-  --bg: var(--white);
-  --fg: var(--black-80);
-
-  /* 2. Slightly darken the surfaces so they don't blend into the background */
   --surface-1: oklch(95% 0.01 254);
   --surface-2: oklch(90% 0.02 254);
   --surface-3: oklch(85% 0.02 254);
   --ui-border: oklch(80% 0.02 254);
 
-  /* 3. Bring a dark, grounded aesthetic to the accent blocks */
-  --brand-blue: oklch(0.48 0.14 253.11); /* Deep Navy */
-  --brand-orange: oklch(0.52 0.15 49.7); /* Rich Rust */
-  --brand-teal: oklab(0.49 -0.1 -0.02 / 1); /* Deep Pine */
-
-  --accent-3: var(--brand-teal);
-
-  --text-form: var(--black-80);
-  --text-heading: var(--brand-blue);
-  --text-heading-alt: var(--brand-orange);
+  --brand-blue: oklch(0.48 0.14 253.11);
+  --brand-orange: oklch(0.52 0.15 49.7);
+  --brand-teal: oklab(0.49 -0.1 -0.02 / 1);
 }
 
 /* --- P3 Gamut Logic --- */
@@ -91,6 +103,6 @@
   :root[data-theme="light"] {
     --brand-blue: oklch(0.35 0.12 254.74);
     --brand-orange: oklch(0.52 0.15 48.1);
-    --accent-3: oklch(0.4 0.1 190);
+    --brand-teal: oklch(0.4 0.1 190);
   }
 }

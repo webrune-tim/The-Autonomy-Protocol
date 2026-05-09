@@ -9,7 +9,7 @@
   let { children }: Props = $props();
 </script>
 
-<footer>
+<footer class="auto-contrast">
   {@render children()}
 </footer>
 
@@ -19,7 +19,7 @@
 
     display: grid;
     place-items: center;
-    color: --contrast-color(var(--color));
+    /*color: --contrast-color(var(--color));*/
     background: var(--color);
     padding: var(--gap-2);
     margin-top: var(--gap-2);

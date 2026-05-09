@@ -1,36 +1,38 @@
-<div class="angled-bottom-box with-nothing-below" style="--color: var(--brand-blue)">
+<section class="angled-bottom-box" style="--color: var(--brand-blue)">
 	<h1>Curriculum Overview</h1>
-	<p>
-		Our curriculum is designed to be flexible and adaptable to fit the unique needs
-		of each classroom. We provide a comprehensive guide that includes lesson plans,
-		activities, and resources to help teachers implement the Autonomy Protocol
-		effectively.
-	</p>
-</div>
 
-<section class="content">
-	<h2>Freshman Curriculum Map: "The Foundation"</h2>
+	<span>From Survival to Sovereignty</span>
+	<p>
+		Our curriculum is a dual-intervention strategy designed to bookend the high
+		school experience. We replace reactive "behavior management" with proactive
+		self-governance, providing students with a mental operating system that functions
+		under pressure.
+	</p>
+</section>
+
+<section class="angled-top-bottom-box thick-margins">
+	<h2>Freshman Year | Phase 1: The Foundation</h2>
+
+	<span>
+		The Objective: Establishing an internal locus of control during the transition
+		into high school.
+	</span>
 
 	<h3>Quarter 1: The Integrity Shield (Defense)</h3>
 
 	<ul>
 		<li>
-			<strong>Weeks 1-2:</strong> Impeccability & Self-Trust. Focus on small wins—arriving
-			on time, submitting assignments. Logic: Lying to teachers is actually a form of self-sabotage.
+			<strong>The Armor of Non-Personalization:</strong> Students learn the biology of
+			the teenage brain to understand that a peer’s "meanness" is a reflection of their
+			own stress, not the student’s value.
 		</li>
 		<li>
-			<strong>Weeks 3-4:</strong> The Armor of Non-Personalization. Lessons on the biology
-			of the teenage brain. Understanding that a peer's "meanness" is a reflection of their
-			own stress, not the student's value.
+			<strong>The Clarification Protocol:</strong> Moving from "guessing and failing" to
+			"The Courageous Question"—eliminating assumptions in rubrics and social cues.
 		</li>
 		<li>
-			<strong>Weeks 5-6:</strong> The Clarification Protocol (Assumptions). Role-playing
-			"The Courageous Question." Students practice asking teachers for rubric clarifications
-			instead of guessing and failing.
-		</li>
-		<li>
-			<strong>Weeks 7-9:</strong> Grace & Output (Doing Your Best). Workshop on "Variable
-			Capacity." Mapping out how to maintain a GPA even when physical energy is low.
+			<strong>Variable Capacity Workshop:</strong>Mapping out how to maintain a GPA
+			even when emotional or physical energy is at a seasonal low.
 		</li>
 	</ul>
 
@@ -38,12 +40,12 @@
 
 	<ul>
 		<li>
-			<strong>Weeks 10-13:</strong> The Reality Check (Surrender). Identifying "Middle
-			School mindsets" that are failing in a high-school environment.
+			<strong>The Reality Check:</strong> Identifying "Middle School mindsets" (externalizing
+			blame) that fail in a high-stakes environment.
 		</li>
 		<li>
-			<strong>Weeks 14-18:</strong> The Private Inventory. Students create a private "Character
-			Map" identifying their defensive traits (e.g., ghosting assignments, social aggression).
+			<strong>The Private Inventory:</strong> A clinical, non-judgmental mapping of personal
+			defensive traits (ghosting, social aggression, or avoidance).
 		</li>
 	</ul>
 
@@ -51,12 +53,12 @@
 
 	<ul>
 		<li>
-			<strong>Weeks 19-23:</strong> The Impact Audit. Mapping how personal choices affect
-			the classroom environment and family life.
+			<strong>Impact Auditing:</strong> Mapping how personal choices ripple through the
+			classroom and family ecosystem.
 		</li>
 		<li>
-			<strong>Weeks 24-27:</strong> Practical Amends. Small-scale repair. Fixing a group
-			project dynamic or apologizing to a counselor for a missed meeting.
+			<strong>The Private Inventory:</strong> A clinical, non-judgmental mapping of personal
+			defensive traits (ghosting, social aggression, or avoidance).
 		</li>
 	</ul>
 
@@ -64,90 +66,83 @@
 
 	<ul>
 		<li>
-			<strong>Weeks 28-32:</strong> The Daily 5 (Vigilance). Creating a nightly "head check"
-			habit to identify mistakes before they become "drama."
+			<strong>The Daily 5:</strong> Implementing a nightly "vigilance habit" to identify
+			and course-correct mistakes before they escalate into "drama."
 		</li>
 		<li>
-			<strong>Weeks 33-36:</strong> The Transition Guide. Freshmen create a "What I Wish
-			I Knew" digital guide for incoming 8th graders, practicing the Service phase.
+			<strong>The Service Phase:</strong> Freshmen create the "What I Wish I Knew" digital
+			guide for incoming 8th graders, transitioning from student to guide.
 		</li>
 	</ul>
 </section>
 
-<section class="content">
-	<h2>Senior Curriculum Map: "The Transition"</h2>
-	<p>
-		<strong>Theme:</strong> Legacy, Professionalism, and Post-Secondary Autonomy.
-	</p>
-	<p>
-		<strong>High-Contrast Objective:</strong> Finalizing the adult character before the
-		"Ambiguous Leap."
-	</p>
+<section class="angled-top-box thick-margins">
+	<h2>Senior Year | Phase 2: The Transition</h2>
+
+	<span>
+		The Objective: Transitioning the protocol from an academic framework into a
+		non-negotiable professional standard.
+	</span>
 
 	<h3>Quarter 1: The Integrity Shield (Professionalism)</h3>
 	<ul>
 		<li>
-			<strong>Weeks 1-2:</strong> Radical Integrity. Applying "Impeccable with your word"
-			to college apps and job contracts. The weight of a signature.
+			<strong>Radical Integrity:</strong> Applying "impeccability with your word" to college
+			applications and job contracts. The weight of a signature.
 		</li>
 		<li>
-			<strong>Weeks 3-4:</strong> Compassion in Conflict (Non-Personalization). Preparing
-			for the high-stakes rejection of the real world. Handling "No" from a university
-			or boss without losing momentum.
+			<strong>Compassion in Conflict:</strong> Preparing for the high stakes of the real
+			world. Handling "No" from a university or boss without losing momentum.
 		</li>
 		<li>
-			Weeks 5-6: Eliminating Ambiguity (Assumptions). Cold-calling and professional
-			email etiquette. Moving from "I think they're hiring" to "I asked if they are
-			hiring."
-		</li>
-		<li>
-			<strong>Weeks 7-9:</strong> Consistent Excellence (Your Best). Fighting "Senioritis."
-			Redefining "Best" as the minimum professional standard required to keep a door open.
+			<strong>Eliminating Ambiguity:</strong> Professional email etiquette and moving from
+			"I think they're hiring" to "I asked if they are hiring."
 		</li>
 	</ul>
 
 	<h3>Quarter 2: The Accountability Cycle — Internal (Preparation)</h3>
 	<ul>
 		<li>
-			<strong>Weeks 10-13:</strong> Ego Surrender. Acknowledging the fear of leaving home.
-			Accepting that they don't have all the answers for "Adulting."
+			<strong>Ego Surrender:</strong> Acknowledging the fear of leaving home and accepting
+			the reality of "Adulting" without having all the answers.
 		</li>
 		<li>
-			<strong>Weeks 14-18:</strong> The 4-Year Inventory. A rigorous review of their high
-			school career. What worked? What toxic patterns must stay in high school and not
-			follow them to college/work?
+			<strong>The 4-Year Inventory:</strong> A rigorous review of their high school career.
+			Identifying toxic patterns that must stay in high school and not follow them to college
+			or the workforce.
 		</li>
 	</ul>
 
 	<h3>Quarter 3: The Accountability Cycle — External (Legacy)</h3>
 	<ul>
 		<li>
-			<strong>Weeks 19-23:</strong> The Bridge-Building Phase. Identifying every mentor,
-			teacher, or peer who helped them, and every person they may have harmed in the last
-			4 years.
+			<strong>The Bridge-Building Phase:</strong> Identifying every mentor, teacher, or
+			peer who assisted their journey and offering formal gratitude.
 		</li>
 		<li>
-			<strong>Weeks 24-27:</strong> Radical Amends. The "Clean Slate" project. Taking direct
-			action to resolve long-standing feuds or family tensions before moving out.
+			<strong>The "Clean Slate" Project:</strong> Taking direct action to resolve long-standing
+			feuds or family tensions before the "Ambiguous Leap" into adulthood.
 		</li>
 	</ul>
 
 	<h3>Quarter 4: Maintenance & Service (The Launch)</h3>
 	<ul>
 		<li>
-			<strong>Weeks 28-32:</strong> The Autonomy Routine (Attunement). Designing a personal
-			system of meditation, reflection, or exercise that they will take with them to their
-			next chapter.
+			<strong>The Autonomy Routine:</strong> Designing a personal system of meditation,
+			reflection, and "attunement" that survives outside the school bell system.
 		</li>
 		<li>
-			<strong>Weeks 33-36:</strong> The Protocol Capstone. Seniors act as "Protocol Consultants"
-			for Freshmen. They present their "Personal Operating System" (POS) to a panel of
-			mentors as their final graduation requirement.
+			<strong>The Protocol Capstone:</strong> Seniors act as "Protocol Consultants" for
+			Freshmen, presenting their Personal Operating System (POS) to a panel of mentors
+			as a final graduation requirement.
 		</li>
 	</ul>
 </section>
 
-<section class="content">
+<section
+	class="bold-border-box margin-top flex-around"
+	style="--border-color: var(--fg)"
+>
 	<h2>Summary of Delivery Differences</h2>
 	<p>
 		<strong>Freshman Delivery:</strong> High-frequency, small-stakes exercises. Visual-heavy

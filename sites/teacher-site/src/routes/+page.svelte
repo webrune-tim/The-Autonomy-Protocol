@@ -136,7 +136,7 @@
 <style>
 	.cta,
 	.link {
-		display: inline-flex;
+		display: inline-flex !important;
 		align-items: center;
 		gap: var(--gap-1);
 		font-weight: bold;

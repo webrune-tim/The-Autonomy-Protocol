@@ -51,16 +51,19 @@
 
 <Toaster />
 
-<div class="angled-bottom-box">
+<section class="angled-bottom-box" style="--color: var(--brand-orange)">
 	<h1>Contact Us</h1>
 	<p>
 		Have questions or want to learn more about the Autonomy Protocol? Reach out to
 		us! We're here to help you take charge of your own life and start governing
 		yourself.
 	</p>
-</div>
+</section>
 
-<section class="angled-top-box" style="--color: var(--brand-orange)">
+<section
+	class="angled-top-box thick-margins no-bottom-margin"
+	style="--color: var(--brand-blue-dark)"
+>
 	<form onsubmit={handleSubmit} class="contact-form">
 		<div class="input-group">
 			<label for="name"><User size={18} /> Name</label>
@@ -118,7 +121,7 @@
 			></textarea>
 		</div>
 
-		<button type="submit" class="submit-btn">
+		<button type="submit" class="submit-btn auto-contrast">
 			Submit Message <Send size={18} />
 		</button>
 	</form>
@@ -153,7 +156,6 @@
 		border: 1px solid var(--surface-3);
 		color: var(--text-form);
 		padding: 0.8rem;
-		border-radius: var(--border-radius);
 		font-family: inherit;
 		transition: border-color 0.2s;
 	}
@@ -170,9 +172,13 @@
 		background-color: var(--surface-2);
 		border: 2px solid var(--surface-3);
 		padding: 4px;
-		border-radius: var(--border-radius);
 		width: 100%;
 		overflow: hidden;
+		color: var(--fg);
+
+		span {
+			color: var(--fg) !important;
+		}
 	}
 
 	.control-option {
@@ -195,6 +201,10 @@
 
 	.control-option.active {
 		color: var(--surface-1);
+
+		span {
+			color: var(--surface-1) !important;
+		}
 	}
 
 	/* The sliding highlight */
@@ -204,8 +214,7 @@
 		left: 4px;
 		height: calc(100% - 8px);
 		width: calc(50% - 4px);
-		background-color: var(--brand-blue); /* Yellow from your global.css */
-		border-radius: var(--border-radius);
+		background-color: var(--brand-blue);
 		z-index: 1;
 		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
@@ -230,7 +239,7 @@
 
 	.submit-btn {
 		background: var(--brand-blue);
-		color: var(--black-80);
+		/*color: var(--black-80);*/
 		border: none;
 		padding: 1rem;
 		font-family: 'Poppins', sans-serif;
@@ -241,6 +250,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.5rem;
+		border: 8px solid var(--surface-1);
 		transition:
 			transform 0.1s,
 			filter 0.2s;

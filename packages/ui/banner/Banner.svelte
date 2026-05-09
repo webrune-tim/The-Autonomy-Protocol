@@ -19,7 +19,7 @@
 </script>
 
 {#if showBanner}
-  <div class="banner">
+  <div class="banner auto-contrast">
     <button onclick={dismissBanner}>
       <X />
       <span class="sr-only">Dismiss banner</span>
@@ -34,7 +34,7 @@
     background: var(--color);
 
     position: relative;
-    color: --contrast-color(var(--color));
+    /*color: --contrast-color(var(--color));*/
     padding: var(--gap-2);
     padding-right: calc(var(--gap-2) * 2.5);
     margin-bottom: var(--gap-2);

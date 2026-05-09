@@ -13,7 +13,7 @@ After each task, re-read the markdown to pick up any new Todo items that may hav
 # Page Todos
 
 - [x] Fix Curriculum bug
-- [ ] Curriculum page copy
+- [x] Curriculum page copy
 - [ ] Resouces page copy
 - [x] Road Map page copy
 - [ ] Mission page copy

@@ -13,12 +13,13 @@
   } = $props();
 </script>
 
-<nav>
+<nav class="auto-contrast">
   <ul>
     {#each links as link}
       <li>
         <a
           href={link.href}
+          class="auto-contrast"
           class:active={currentPath === link.href}
           aria-current={currentPath === link.href ? "page" : undefined}
         >
@@ -57,7 +58,8 @@
   }
 
   a {
-    color: --contrast-color(var(--brand-blue));
+    /*color: contrast-color(var(--brand-blue));
+    color: --contrast-color(var(--brand-blue));*/
     text-decoration: none;
     white-space: nowrap;
 

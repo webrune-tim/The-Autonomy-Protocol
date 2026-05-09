@@ -1,11 +1,5 @@
-@function --contrast-color(--color <color>) {
-  /*--color: var(--brand-blue);*/
+@function --contrast-color(--color: <color>) {
+  --contrast-val: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
 
-  /* AAA Logic:
-     If background L > 0.54, result is Black (Light background, Dark Mode).
-     If background L < 0.54, result is White (Dark background, Light Mode). */
-  --contrast-lightness: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
-  --dynamic-text: var(--contrast-lightness);
-
-  result: var(--dynamic-text);
+  result: var(--contrast-val);
 }
