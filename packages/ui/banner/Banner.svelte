@@ -19,7 +19,7 @@
 </script>
 
 {#if showBanner}
-  <div class="banner auto-contrast">
+  <div class="banner auto-contrast" style="--color: var(--brand-orange)">
     <button onclick={dismissBanner}>
       <X />
       <span class="sr-only">Dismiss banner</span>
