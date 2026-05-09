@@ -274,8 +274,8 @@ details strong {
 }
 
 .auto-contrast {
-  --color: var(--brand-blue) /* 1. Extract the lightness from the brand color */ --lightness: from
-    var(--color) l;
+  --color: var(--brand-blue); /* 1. Extract the lightness from the brand color */
+  --lightness: from var(--color) l;
 
   /* 2. Apply your threshold math directly in the property */
   /* If L > 0.54, this becomes a huge negative number (0% lightness)
