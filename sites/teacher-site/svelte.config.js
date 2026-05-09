@@ -14,6 +14,12 @@ const config = {
       $images: "src/lib/assets/images",
       $stores: "src/lib/stores",
     },
+    typescript: {
+      config: (config) => ({
+        ...config,
+        include: [...config.include, "../drizzle.config.ts"],
+      }),
+    },
   },
   preprocess: [mdsvex({ extensions: [".svx", ".md"] })],
   extensions: [".svelte", ".svx", ".md"],
