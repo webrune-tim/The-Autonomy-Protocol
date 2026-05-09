@@ -20,7 +20,7 @@ After each task, re-read the markdown to pick up any new Todo items that may hav
 
 # Design Todos
 
-- [ ] Contact design
+- [x] Contact design
 
 # Functionality Todos
 

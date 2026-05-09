@@ -57,8 +57,8 @@
 			classroom and family ecosystem.
 		</li>
 		<li>
-			<strong>The Private Inventory:</strong> A clinical, non-judgmental mapping of personal
-			defensive traits (ghosting, social aggression, or avoidance).
+			<strong>The Amends Protocol:</strong> Practical training in restorative repair—fixing
+			a group project dynamic or delivering a professional apology to a counselor.
 		</li>
 	</ul>
 
@@ -76,7 +76,7 @@
 	</ul>
 </section>
 
-<section class="angled-top-box thick-margins">
+<section class="angled-top-box thick-margins" style="--color: var(--brand-teal)">
 	<h2>Senior Year | Phase 2: The Transition</h2>
 
 	<span>
