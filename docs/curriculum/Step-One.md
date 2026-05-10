@@ -24,14 +24,14 @@ Right now, it might feel like everything is happening to you. There are countles
 
 In this context, surrendering does not mean giving up. It means being smart enough to drop the tug-of-war rope when you are fighting against things you cannot change. It means letting go of the uncontrollable so you have the energy to focus completely on the things you can control.
 
-Things you CANNOT control (Time to let these go):
+#### Things you CANNOT control (Time to let these go):
 
 - How a teacher decides to grade an assignment.
 - The opinions, gossip, or actions of other students.
 - The expectations your family places on you.
 - Unexpected schedule changes or emergencies.
   
-Things you CAN control (Where your autonomy lives):
+#### Things you CAN control (Where your autonomy lives):
 
 - How much effort and focus you put into your work.
 - How you react when someone is unkind.
