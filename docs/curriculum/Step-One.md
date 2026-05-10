@@ -14,12 +14,14 @@ In reality, it’s impossible to just flip a switch and have it all figured out.
   
 It is completely normal if this feels unmanageable. Don’t worry—it is going to be okay.
 
-The Autonomy Solution: Finding Your Focus
+### The Autonomy Solution: Finding Your Focus
+
 Step One of The Autonomy Protocol directly addresses this feeling of being overwhelmed. By applying this step to your life both inside and outside of school, you can start to see a path forward.
 
 Right now, it might feel like everything is happening to you. There are countless things entirely outside of your control that can, and will, frustrate you. The secret to surviving—and actually thriving—in high school is learning the art of tactical "surrender."
 
-What Does it Mean to "Surrender"?
+### What Does it Mean to "Surrender"?
+
 In this context, surrendering does not mean giving up. It means being smart enough to drop the tug-of-war rope when you are fighting against things you cannot change. It means letting go of the uncontrollable so you have the energy to focus completely on the things you can control.
 
 Things you CANNOT control (Time to let these go):
@@ -28,7 +30,7 @@ Things you CANNOT control (Time to let these go):
 - The opinions, gossip, or actions of other students.
 - The expectations your family places on you.
 - Unexpected schedule changes or emergencies.
-- 
+  
 Things you CAN control (Where your autonomy lives):
 
 - How much effort and focus you put into your work.
