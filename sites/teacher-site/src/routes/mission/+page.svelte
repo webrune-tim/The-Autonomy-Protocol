@@ -130,7 +130,7 @@
 </section>
 
 <section
-	class="bold-border-box margin-top flex-around"
+	class="bold-border-box margin-top-2 flex-around"
 	style="--border-color: var(--fg)"
 >
 	<h3>The Architect</h3>
