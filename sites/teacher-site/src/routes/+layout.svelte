@@ -22,9 +22,16 @@
 	// Import local components
 	import ThemeToggle from '$components/ThemeToggle.svelte'
 
+	import { themeState } from '$lib/stores/theme.svelte'
 	import { page } from '$app/stores'
+	import type { LayoutData } from './$types'
 
-	let { children }: Props = $props()
+	let { data, children }: { data: LayoutData; children: Snippet } = $props()
+
+	// Initialize theme from server data
+	$effect(() => {
+		themeState.init(data.theme)
+	})
 
 	const navLinks = [
 		{ href: '/', label: 'Home' },

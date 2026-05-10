@@ -13,7 +13,7 @@
 	</p>
 </div>
 
-<Banner>
+<Banner bannerName="resources-coming-soon">
 	Content coming soon! In the meantime, check out our <a href="/curriculum"
 		>teacher curriculum</a
 	> for a detailed breakdown of how to implement the Autonomy Protocol in the classroom.

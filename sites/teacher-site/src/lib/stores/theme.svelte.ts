@@ -58,12 +58,41 @@ class ThemeState {
     }
   }
 
+  /**
+   * Initialize theme from server data
+   */
+  init(theme: Theme | null) {
+    if (theme && (theme === "light" || theme === "dark" || theme === "system")) {
+      this.#value = theme;
+    }
+  }
+
+  /**
+   * Sync the current theme to the server if the user is logged in
+   */
+  async syncToServer() {
+    try {
+      await fetch("/api/theme", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ theme: this.#value }),
+      });
+    } catch (e) {
+      console.error("Failed to sync theme to server:", e);
+    }
+  }
+
   // Public accessors for the theme value
   get value() {
     return this.#value;
   }
   set value(v: Theme) {
     this.#value = v;
+    if (browser) {
+      this.syncToServer();
+    }
   }
 }
 
