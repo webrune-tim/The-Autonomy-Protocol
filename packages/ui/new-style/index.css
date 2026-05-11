@@ -313,8 +313,12 @@ details strong {
   padding-bottom: var(--gap-2);
 }
 
-.margin-top {
+.margin-top,
+.margin-top-1 {
   margin-top: var(--gap-1);
+}
+.margin-top-2 {
+  margin-top: var(--gap-2);
 }
 .margin-bottom {
   margin-bottom: var(--gap-1);

@@ -17,6 +17,7 @@ After each task, re-read the markdown to pick up any new Todo items that may hav
 - [ ] Resouces page copy
 - [x] Road Map page copy
 - [ ] Mission page copy
+- [x] --gap-2 above "the architect"
 
 # Design Todos
 
