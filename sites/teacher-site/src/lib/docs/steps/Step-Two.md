@@ -1,6 +1,7 @@
 ---
 title: "Step Two"
 description: "The second step the in The Autonomy Protocol."
+order: 2
 date: "2026-05-11"
 published: true
 ---
