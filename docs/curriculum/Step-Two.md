@@ -9,8 +9,8 @@ Think about the groups you might already belong to. If you are on a sports team,
 ## The Isolation Trap: Ego vs. Insecurity
 Every once in a while, though, you might feel the urge to push people away and go it on your own. This usually happens in one of two ways, and both are dangerous traps:
 
-- Acting Superior (Ego): You might start thinking, “I don’t need these people, I can do this better myself,” or “Nobody else understands what I’m doing.”
-- Acting Inferior (Insecurity): You might start thinking, “I don’t fit in with them,” “I’m dragging the team down,” or “I don’t want to be a burden by asking for help.”
+- **Acting Superior (Ego)**: You might start thinking, “I don’t need these people, I can do this better myself,” or “Nobody else understands what I’m doing.”
+- **Acting Inferior (Insecurity)**: You might start thinking, “I don’t fit in with them,” “I’m dragging the team down,” or “I don’t want to be a burden by asking for help.”
   
 Whether you isolate yourself because you think you are better than everyone else, or because you think you are worse, the result is exactly the same: You end up entirely alone.
 
@@ -23,6 +23,6 @@ You will need help.
 Part of building true autonomy is having the self-awareness to recognize when you are stuck, and the courage to reach out to your team, your friends, or your mentors to say, "I can't do this alone."
 A few quick notes on the expansion:
 
-- Clarifying Superiority/Inferiority: I broke this down into "Ego vs. Insecurity." For a 14-year-old, "inferior" might just sound like a vocabulary word, but "feeling like a burden" is an emotion they understand deeply. Showing that both extremes lead to the exact same negative result (isolation) makes it a very practical lesson.
-- Redefining Independence: It's important to address the contradiction they might feel between Step One ("take control of your actions") and Step Two ("ask for help"). Framing "asking for help" as a deliberate, self-aware choice makes it an act of autonomy, rather than an act of weakness.
+- **Clarifying Superiority/Inferiority**: You can break this down into "Ego vs. Insecurity." When you are a 14-year-old, "inferior" might just sound like a vocabulary word, but "feeling like a burden" is an emotion they understand deeply. Showing that both extremes lead you to the exact same negative result (isolation) makes it a very practical lesson.
+- **Redefining Independence**: It's important to address the contradiction you might feel between Step One ("take control of your actions") and Step Two ("ask for help"). Framing "asking for help" as a deliberate, self-aware choice makes it an act of autonomy, rather than an act of weakness.
 
