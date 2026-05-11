@@ -57,6 +57,7 @@
     "globals": "^17.6.0",
     "mdsvex": "^0.12.7",
     "node-addon-api": "catalog:",
+    "node-gyp": "^11.1.0",
     "prettier": "^3.8.3",
     "prettier-plugin-svelte": "^3.5.1",
     "svelte": "^5.55.5",
