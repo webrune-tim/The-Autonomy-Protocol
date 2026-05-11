@@ -26,3 +26,28 @@ A few quick notes on the expansion:
 - **Clarifying Superiority/Inferiority**: You can break this down into "Ego vs. Insecurity." When you are a 14-year-old, "inferior" might just sound like a vocabulary word, but "feeling like a burden" is an emotion they understand deeply. Showing that both extremes lead you to the exact same negative result (isolation) makes it a very practical lesson.
 - **Redefining Independence**: It's important to address the contradiction you might feel between Step One ("take control of your actions") and Step Two ("ask for help"). Framing "asking for help" as a deliberate, self-aware choice makes it an act of autonomy, rather than an act of weakness.
 
+---
+
+## Activity: Mapping Your Autonomy Network
+
+On a piece of paper (or in your digital notes), draw three concentric circles.
+
+1.	The Inner Circle (The "3 AM" Group): List the 1–3 people you could call if everything went wrong. These are the people who accept you exactly as you are.
+2.	The Middle Circle (The "Teammates"): List the groups or people you interact with weekly—sports teams, clubs, study partners, or teachers. These are the people who help you stay sharp and reach your goals.
+3.	The Outer Circle (The "Mentors"): List adults or older students you respect but don't talk to every day. This could be a coach, a counselor, an aunt, or a boss at a part-time job.
+   
+### The Reflection:
+Look at your map. If you feel "unmanageable" (Step One), which circle are you most likely to cut yourself off from?
+
+"Independence isn't about having no circles; it's about knowing which circle to reach into when the pressure starts to grow."
+
+---
+## Teacher’s Guide: Discussion Starters
+If you are presenting this in person, here are two questions to spark a conversation with the class:
+
+- The "Superior" Trap: "Why is it sometimes harder to ask for help when you’re 'the smart kid' or the 'star athlete' than when you’re struggling?" (This addresses the ego/superiority concept).
+- The "Inferior" Trap: "If a friend came to you asking for help with a math problem, would you think they were 'weak' or 'burdensome'? If not, why do we think that about ourselves when we need help?"
+Why this works for Freshmen:
+- Visualizes the abstract: It moves "support" from a vague idea to a list of actual names.
+- Normalizes the struggle: By discussing the "Superior/Inferior" traps, you're calling out the social anxiety that defines the 9th-grade experience.
+- Low Stakes: It doesn't force them to share their personal names with the class, but it forces them to acknowledge that those names exist.
