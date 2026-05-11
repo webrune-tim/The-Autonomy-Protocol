@@ -30,7 +30,7 @@
 
 
 
-<section class="angled-top-bottom-box" style="--color: var(--brand-teal)">
+<section class="angled-top-bottom-box thick-margins" style="--color: var(--brand-teal)">
 	<h2>Twelve Steps</h2>
 	<p>
 		The Steps are a series of practical guides that walk you through the process of
@@ -53,7 +53,7 @@
 	{/if}
   </section>
 
-  <section class="angled-top-box no-bottom-margin" style="--color: var(--brand-orange)">
+  <section class="angled-top-box thick-margins no-bottom-margin" style="--color: var(--brand-orange)">
 	<h2>Five Aggrements</h2>
 	<p>
 		The Aggrements are a collection of agreements that you can use to govern yourself and
