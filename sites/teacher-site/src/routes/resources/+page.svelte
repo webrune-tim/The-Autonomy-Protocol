@@ -84,10 +84,11 @@
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
 
   .step-container {
-    height: 18ch;
+    height: 22ch;
     column-count: 2;
   }
 </style>
