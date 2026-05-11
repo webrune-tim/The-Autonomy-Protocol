@@ -16,7 +16,7 @@ In these moments, you may need to temporarily or even permanently hand your prob
 
 This means finding a trusted teacher, a counselor, a parent, or a mentor and saying: "I am overwhelmed, and I don't know how to fix this. I am giving this problem to you to help me manage it."
 
-Why This is an Act of Strength
+## Why This is an Act of Strength
 
 To a student, "giving up a problem" might feel like you're failing at being independent. It’s actually the opposite. True autonomy is knowing your own limits.
 
