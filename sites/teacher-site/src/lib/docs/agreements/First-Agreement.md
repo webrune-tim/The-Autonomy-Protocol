@@ -1,4 +1,3 @@
-
 ---
 title: "The First Agreement"
 description: "The first agreement in The Autonomy Protocol."
