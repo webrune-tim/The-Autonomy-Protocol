@@ -1,6 +1,6 @@
 # We made a deliberate choice to lean on the guidance of our support network and trust the process of the protocol to help manage the things we cannot handle alone.
 
-Step three of **The Autonomy Protocol**
+Step three in the **The Autonomy Protocol**
 
 Sometimes, the problems you face in high school—whether it’s a failing grade that feels like a dead end, a falling out with a best friend, or a personal crisis at home—can feel so massive that they seem like a wall you can’t climb over. You might feel like your life is a car spinning out of control.
 
