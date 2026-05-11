@@ -88,7 +88,31 @@
   }
 
   .step-container {
-    height: 22ch;
-    column-count: 2;
-  }
+  display: grid;
+  /* Creates two equal columns */
+  grid-template-columns: repeat(2, 1fr);
+  /* Forces the items to fill the first column before moving to the next */
+  grid-auto-flow: column;
+  /* Calculates the rows based on your 12 steps (6 rows total) */
+  grid-template-rows: repeat(6, auto);
+  /* Adjusts the space between rows and columns */
+  gap: 0.75rem 2rem;
+  
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.step-container li a {
+  color: var(--bg);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* To match the all-caps look in your reference image */
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 </style>
