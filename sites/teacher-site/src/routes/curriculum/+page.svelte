@@ -23,8 +23,8 @@
 	<ul>
 		<li>
 			<strong>The Armor of Non-Personalization:</strong> Students learn the biology of
-			the teenage brain to understand that a peer’s "meanness" is a reflection of their
-			own stress, not the student’s value.
+			the teenage brain to understand that a peer's "meanness" is a reflection of their
+			own stress, not the student's value.
 		</li>
 		<li>
 			<strong>The Clarification Protocol:</strong> Moving from "guessing and failing" to

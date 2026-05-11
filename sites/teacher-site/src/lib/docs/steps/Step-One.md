@@ -1,6 +1,9 @@
-# Step One
-
-The first step the in **The Autonomy Protocol**
+---
+title: "Step One"
+description: "The first step the in The Autonomy Protocol."
+date: "2026-05-11"
+published: true
+---
 
 ## As a student, I realize my life can get out of control, and as a result, it can become unmanagable.
 
@@ -11,7 +14,7 @@ In reality, it’s impossible to just flip a switch and have it all figured out.
 - Shifting friend groups and new social dynamics.
 - The pressure to figure out "what you want to do with your life."
 - Managing your own time without someone constantly looking over your shoulder.
-  
+
 It is completely normal if this feels unmanageable. Don’t worry—it is going to be okay.
 
 ### The Autonomy Solution: Finding Your Focus
@@ -30,7 +33,7 @@ In this context, surrendering does not mean giving up. It means being smart enou
 - The opinions, gossip, or actions of other students.
 - The expectations your family places on you.
 - Unexpected schedule changes or emergencies.
-  
+
 #### Things you CAN control (Where your autonomy lives):
 
 - How much effort and focus you put into your work.

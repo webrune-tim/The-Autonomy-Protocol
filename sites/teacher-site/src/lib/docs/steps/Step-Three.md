@@ -1,4 +1,11 @@
-# We made a deliberate choice to lean on the guidance of our support network and trust the process of the protocol to help manage the things we cannot handle alone.
+---
+title: "Step Three"
+description: "The thrid step the in The Autonomy Protocol."
+date: "2026-05-11"
+published: true
+---
+
+## We made a deliberate choice to lean on the guidance of our support network and trust the process of the protocol to help manage the things we cannot handle alone.
 
 Step three in the **The Autonomy Protocol**
 
@@ -8,7 +15,7 @@ The biggest lie we tell ourselves in those moments is: **"Nothing can be done."*
 
 This is never true. No problem you face at fourteen or fifteen is insurmountable. However, some problems are too heavy for you to carry while you are also trying to navigate the everyday stress of being a student. This is where Step Three of **The Autonomy Protocol** comes in.
 
-## Handing Over the Reins
+### Handing Over the Reins
 
 As you learned in Step Two, we all need help. But Step Three is a level up. Sometimes, simply "asking for advice" isn't enough because your mind is too clouded by stress to even process that advice.
 
@@ -16,7 +23,7 @@ In these moments, you may need to **temporarily or even permanently hand your pr
 
 This means finding a trusted teacher, a counselor, a parent, or a mentor and saying: "I am overwhelmed, and I don't know how to fix this. I am giving this problem to you to help me manage it."
 
-## Why This is an Act of Strength
+### Why This is an Act of Strength
 
 To a student, "giving up a problem" might feel like you're failing at being independent. It’s actually the opposite. True autonomy is knowing your own limits.
 
@@ -24,10 +31,10 @@ Think of it like a professional athlete who gets injured. They don't try to perf
 
 When you trust your support group with your problems, you are doing two things:
 
-1.	Clearing Your Mind: You stop the "mental loop" of worrying, which allows you to focus on your other responsibilities, like your classes and your health.
-2.	Using Better Tools: Your mentors often have resources, experience, and a perspective that you don't have yet. By trusting them, you are using their "tools" to fix a situation that your "tools" couldn't handle alone.
+1. Clearing Your Mind: You stop the "mental loop" of worrying, which allows you to focus on your other responsibilities, like your classes and your health.
+2. Using Better Tools: Your mentors often have resources, experience, and a perspective that you don't have yet. By trusting them, you are using their "tools" to fix a situation that your "tools" couldn't handle alone.
 
-## The Element of Trust
+### The Element of Trust
 
 The hardest part of Step Three is the final piece: Trusting that they will do what is right by you.
 
@@ -39,8 +46,10 @@ When you hand over a problem, you have to let go of the need to control the outc
 
 To help students distinguish between Step Two (Asking for Help) and Step Three (Handing Over the Problem), reflect on this:
 
-1.	Identify a current "Heavy Lift": Is there something in your life right now that feels "insurmountable"? (A grade, a conflict, a secret, a fear?)
-2.	Ask yourself:
+1. Identify a current "Heavy Lift": Is there something in your life right now that feels "insurmountable"? (A grade, a conflict, a secret, a fear?)
+2. Ask yourself:
+
 - Can I solve this if someone just gives me a little advice? (This is Step Two).
--  Or, is this taking up so much space in my head that I can’t focus on anything else? (This is Step Three).
-3.	The Action: If it’s a Step Three problem, who is the one person you trust enough to "hand the reins" to today?
+- Or, is this taking up so much space in my head that I can’t focus on anything else? (This is Step Three).
+
+3. The Action: If it’s a Step Three problem, who is the one person you trust enough to "hand the reins" to today?
