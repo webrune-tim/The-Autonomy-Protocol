@@ -87,7 +87,7 @@
   }
 
   .step-container {
-    height: 8ch;
+    height: 14ch;
     column-count: 2;
     column-rule: 1px solid var(--bg);
   }
