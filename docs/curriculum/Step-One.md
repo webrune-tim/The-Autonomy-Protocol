@@ -16,7 +16,7 @@ It is completely normal if this feels unmanageable. Don’t worry—it is going 
 
 ### The Autonomy Solution: Finding Your Focus
 
-Step One of The Autonomy Protocol directly addresses this feeling of being overwhelmed. By applying this step to your life both inside and outside of school, you can start to see a path forward.
+**Step** One of The Autonomy Protocol directly addresses this feeling of being overwhelmed. By applying this step to your life both inside and outside of school, you can start to see a path forward.
 
 Right now, it might feel like everything is happening to you. There are countless things entirely outside of your control that can, and will, frustrate you. The secret to surviving—and actually thriving—in high school is learning the art of tactical "surrender."
 
