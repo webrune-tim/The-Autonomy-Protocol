@@ -8,14 +8,14 @@
         metadata: file.metadata,
       };
     })
-    // Add the sort function here
+    // Add this sort block:
     .sort((a, b) => {
-      const titleA = a.metadata.title || '';
-      const titleB = b.metadata.title || '';
-      // localeCompare with numeric: true handles "Step 2" vs "Step 10" correctly
-      return titleA.localeCompare(titleB, undefined, { numeric: true, sensitivity: 'base' });
+      const orderA = a.metadata.order ?? 99;
+      const orderB = b.metadata.order ?? 99;
+      return orderA - orderB;
     });
 </script>
+
 
 
 <section class="angled-bottom-box" style="--color: var(--brand-teal)">
