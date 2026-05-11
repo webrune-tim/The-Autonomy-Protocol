@@ -1,6 +1,6 @@
 # Step One
 
-The first step the in the autonomy protocol.
+The first step the in **The Autonomy Protocol**
 
 ## As a student, I realize my life can get out of control, and as a result, it can become unmanagable.
 
