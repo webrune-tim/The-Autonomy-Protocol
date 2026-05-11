@@ -1,13 +1,22 @@
 <script lang="ts">
-	const steps = import.meta.glob('$docs/steps/*.md', { eager: true });
+  const steps = import.meta.glob('$docs/steps/*.md', { eager: true });
 
-	const step_links = Object.entries(steps).map(([path, file]) => {
-    return {
-      slug: path.split('/').at(-1)?.replace('.md', ''),
-      metadata: file.metadata,
-    };
-  });
+  const step_links = Object.entries(steps)
+    .map(([path, file]) => {
+      return {
+        slug: path.split('/').at(-1)?.replace('.md', ''),
+        metadata: file.metadata,
+      };
+    })
+    // Add the sort function here
+    .sort((a, b) => {
+      const titleA = a.metadata.title || '';
+      const titleB = b.metadata.title || '';
+      // localeCompare with numeric: true handles "Step 2" vs "Step 10" correctly
+      return titleA.localeCompare(titleB, undefined, { numeric: true, sensitivity: 'base' });
+    });
 </script>
+
 
 <section class="angled-bottom-box" style="--color: var(--brand-teal)">
 	<h1>Additional Resources</h1>
