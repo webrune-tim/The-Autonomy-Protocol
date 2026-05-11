@@ -4,15 +4,15 @@ Step three in the **The Autonomy Protocol**
 
 Sometimes, the problems you face in high school—whether it’s a failing grade that feels like a dead end, a falling out with a best friend, or a personal crisis at home—can feel so massive that they seem like a wall you can’t climb over. You might feel like your life is a car spinning out of control.
 
-The biggest lie we tell ourselves in those moments is: "Nothing can be done."
+The biggest lie we tell ourselves in those moments is: **"Nothing can be done."**
 
-This is never true. No problem you face at fourteen or fifteen is insurmountable. However, some problems are too heavy for you to carry while you are also trying to navigate the everyday stress of being a student. This is where Step Three of The Autonomy Protocol comes in.
+This is never true. No problem you face at fourteen or fifteen is insurmountable. However, some problems are too heavy for you to carry while you are also trying to navigate the everyday stress of being a student. This is where Step Three of **The Autonomy Protocol** comes in.
 
 ## Handing Over the Reins
 
 As you learned in Step Two, we all need help. But Step Three is a level up. Sometimes, simply "asking for advice" isn't enough because your mind is too clouded by stress to even process that advice.
 
-In these moments, you may need to temporarily or even permanently hand your problem over to your support group.
+In these moments, you may need to **temporarily or even permanently hand your problem over to your support group**.
 
 This means finding a trusted teacher, a counselor, a parent, or a mentor and saying: "I am overwhelmed, and I don't know how to fix this. I am giving this problem to you to help me manage it."
 
