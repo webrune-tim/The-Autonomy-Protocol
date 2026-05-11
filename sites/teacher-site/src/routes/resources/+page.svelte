@@ -28,6 +28,8 @@
 	</p>
 </section>
 
+
+
 <section class="angled-top-box no-bottom-margin" style="--color: var(--brand-orange)">
 	<h2>Twelve Steps</h2>
 	<p>
@@ -37,7 +39,7 @@
 	</p>
 
 	{#if step_links.length > 0}
-		<ul>
+		<ul class="step-container">
 			{#each step_links as { slug, metadata }}
 				<li>
 					<a href="/resources/steps/{slug}">
@@ -58,7 +60,7 @@
 	</p>
 
 	<!-- {#if step_links.length > 0}
-		<ul>
+		<ul >
 			{#each step_links as { slug, metadata }}
 				<li>
 					<a href="/resources/steps/{slug}">
@@ -82,5 +84,11 @@
   ul {
     list-style: none;
     padding: 0;
+  }
+
+  .step-container {
+    height: 8ch;
+    column-count: 2;
+    column-rule: 1px solid var(--bg);
   }
 </style>
