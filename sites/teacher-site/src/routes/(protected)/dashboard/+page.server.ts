@@ -1,13 +1,41 @@
-import { redirect } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 import type { PageServerLoad } from "./$types";
 import { auth } from "$lib/server/auth";
+import { db } from "$lib/server/db";
+import { user } from "$lib/server/db/schema";
+import { eq, like, or } from "drizzle-orm";
 
-export const load: PageServerLoad = (event) => {
-  if (!event.locals.user) {
+export const load: PageServerLoad = async (event) => {
+  const currentUser = event.locals.user;
+  if (!currentUser) {
     return redirect(302, "/login");
   }
-  return { user: event.locals.user };
+
+  const isAdmin = currentUser.role === "admin" || currentUser.role === "superadmin";
+  let searchResults: any[] = [];
+
+  if (isAdmin) {
+    const query = event.url.searchParams.get("q");
+    if (query) {
+      searchResults = await db
+        .select({
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          role: user.role,
+        })
+        .from(user)
+        .where(or(like(user.email, `%${query}%`), like(user.name, `%${query}%`)))
+        .limit(10);
+    }
+  }
+
+  return {
+    user: currentUser,
+    isAdmin,
+    searchResults,
+  };
 };
 
 export const actions: Actions = {
@@ -16,5 +44,32 @@ export const actions: Actions = {
       headers: event.request.headers,
     });
     return redirect(302, "/login");
+  },
+  updateRole: async (event) => {
+    const currentUser = event.locals.user;
+    if (!currentUser || (currentUser.role !== "admin" && currentUser.role !== "superadmin")) {
+      return fail(403, { message: "Unauthorized" });
+    }
+
+    const formData = await event.request.formData();
+    const userId = formData.get("userId")?.toString();
+    const newRole = formData.get("role")?.toString() as "user" | "teacher" | "admin" | "superadmin";
+
+    if (!userId || !newRole) {
+      return fail(400, { message: "Missing userId or role" });
+    }
+
+    // Prevent non-superadmins from promoting to superadmin
+    if (newRole === "superadmin" && currentUser.role !== "superadmin") {
+      return fail(403, { message: "Only superadmins can appoint other superadmins" });
+    }
+
+    try {
+      await db.update(user).set({ role: newRole }).where(eq(user.id, userId));
+      return { success: true };
+    } catch (error) {
+      console.error("Failed to update user role:", error);
+      return fail(500, { message: "Internal server error" });
+    }
   },
 };
