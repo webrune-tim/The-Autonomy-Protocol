@@ -141,31 +141,6 @@
 		gap: 0.5rem;
 	}
 
-	label {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		font-family: 'Poppins', sans-serif;
-		font-weight: 700;
-		/*color: var(--brand-blue);*/
-	}
-
-	input,
-	textarea {
-		background: var(--surface-1);
-		border: 1px solid var(--surface-3);
-		color: var(--text-form);
-		padding: 0.8rem;
-		font-family: inherit;
-		transition: border-color 0.2s;
-	}
-
-	input:focus,
-	textarea:focus {
-		outline: none;
-		border: 2px solid var(--brand-orange);
-	}
-
 	.segmented-control {
 		position: relative;
 		display: flex;

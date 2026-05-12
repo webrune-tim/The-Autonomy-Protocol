@@ -33,7 +33,9 @@
 <style>
   nav {
     /* Using clamp for the border ensures it stays a 'technical line' across devices */
-    border-top: clamp(2px, 0.2svw, 4px) solid var(--bg);
+    border-top: clamp(2px, 0.2svw, 4px) solid var(--fg);
+    color: var(--fg);
+    background: var(--brand-blue-dark);
     margin: 0 auto;
     width: 100%;
     margin-top: var(--gap-1);
@@ -58,10 +60,10 @@
   }
 
   a {
-    /*color: contrast-color(var(--brand-blue));
-    color: --contrast-color(var(--brand-blue));*/
+    background: inherit;
     text-decoration: none;
     white-space: nowrap;
+    color: var(--fg);
 
     /* Technical Index Aesthetic */
     font-size: 0.8rem;
@@ -78,7 +80,7 @@
     &.active {
       font-weight: 900;
       /* Subtle underline to tie back to the structural top-border */
-      border-bottom: 2px solid --contrast-color(var(--brand-blue));
+      border-bottom: 2px solid var(--fg);
     }
   }
 </style>

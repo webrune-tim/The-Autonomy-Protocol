@@ -35,12 +35,13 @@
 
 	const navLinks = [
 		{ href: '/', label: 'Home' },
-        { href: '/mission', label: 'Mission' },
-        { href: '/join-us', label: 'Join Us' },
+		{ href: '/mission', label: 'Mission' },
+		{ href: '/join-us', label: 'Join Us' },
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
-		{ href: '/contact', label: 'Contact' }
+		{ href: '/contact', label: 'Contact' },
+		{ href: 'login', label: 'Login' }
 	]
 </script>
 
