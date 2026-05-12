@@ -1,16 +1,15 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte'
+	import { themeState } from '$lib/stores/theme.svelte'
+	import { page } from '$app/stores'
+	import type { LayoutData } from './$types'
 
-	// Define the prop type
-	interface Props {
-		children: Snippet
-	}
-
+	// Assets
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
 	import '@autonomy/new-style/index.css'
 
-	// Import the shared packages
+	// Shared Components
 	import { Banner } from '@autonomy/banner'
 	import { Footer } from '@autonomy/footer'
 	import { FooterNav } from '@autonomy/footer-nav'
@@ -19,14 +18,15 @@
 	import { DropNav } from '@autonomy/nav'
 	import { Pill } from '@autonomy/pill'
 
-	// Import local components
+	// Local components
 	import ThemeToggle from '$components/ThemeToggle.svelte'
 
-	import { themeState } from '$lib/stores/theme.svelte'
-	import { page } from '$app/stores'
-	import type { LayoutData } from './$types'
+	interface Props {
+		data: LayoutData
+		children: Snippet
+	}
 
-	let { data, children }: { data: LayoutData; children: Snippet } = $props()
+	let { data, children }: Props = $props()
 
 	// Initialize theme from server data
 	$effect(() => {
@@ -41,8 +41,31 @@
 		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
 		{ href: '/contact', label: 'Contact' },
-		{ href: 'login', label: 'Login' }
+		{ href: '/login', label: 'Login' }
 	]
+
+	// Persistent Scroll Position Logic
+	$effect(() => {
+		const localStorageKey = `scroll-y-position-${window.location.href}`;
+
+		// 1. Restore position on mount
+		const savedPosition = localStorage.getItem(localStorageKey);
+		if (savedPosition) {
+			window.scrollTo(0, parseInt(savedPosition, 10));
+		}
+
+		// 2. Track scroll changes
+		const handleScroll = () => {
+			localStorage.setItem(localStorageKey, window.scrollY.toString());
+		};
+
+		window.addEventListener('scroll', handleScroll, { passive: true });
+
+		// 3. Clean up listener on unmount
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 </script>
 
 <svelte:head>
@@ -55,7 +78,7 @@
 	<meta name="theme-color" content="#ff9661" />
 	<link rel="icon" href={favicon} />
 	<meta property="og:title" content="The Autonomy Protocol" />
-	<meta property="og:type" content="image/png" />
+	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://the-autonomy-protocol.vercel.app/" />
 	<meta property="og:image" content={OgImg} />
 </svelte:head>
@@ -75,20 +98,17 @@
 
 <div class="layout-wrapper">
 	<Header logo={headerLogo} actions={headerActions} nav={headerNav} />
+	
 	<Banner bannerName="site-under-development">
 		<p>
 			This site is still under heavy development. Content may change without notice.
 		</p>
-
 		<p>
-			If you encounter any issues, please report them via our <a href="/contact"
-				>contact page</a
-			>
-			or on
-			<a
-				href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
-				target="_blank">GitHub Issues page</a
-			>.
+			If you encounter any issues, please report them via our 
+			<a href="/contact">contact page</a> or on
+			<a href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues" target="_blank">
+				GitHub Issues page
+			</a>.
 		</p>
 	</Banner>
 
@@ -109,38 +129,12 @@
 		min-height: 100svh;
 		display: grid;
 		padding: var(--gap-2);
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: auto auto 1fr auto; /* Adjusted for Banner */
 		background: var(--surface-4);
+		gap: var(--gap-2);
 	}
 
-	/*:global(:root) {
-		--accent-1: oklab(0.61 -0.06 -0.22);
-		--accent-2: oklab(0.72 0.16 0.16);
-		--accent-3: oklab(0.8 -0.17 -0.03);
-
-		--brand-blue: var(--accent-1);
-		--brand-orange: var(--accent-2);
-		--brand-teal: var(--accent-3);
+	main {
+		width: 100%;
 	}
-
-	:global(:root[data-theme='light']) {
-		--brand-blue: oklab(0.45 -0.05 -0.17);
-		--brand-orange: oklab(0.57 0.13 0.13);
-		--brand-teal: oklab(0.64 -0.14 -0.02);
-		--accent-3: oklab(0.64 -0.14 -0.02);
-	}
-
-	@media (color-gamut: p3) {
-		:global(:root) {
-			--brand-blue: oklch(0.6132 0.2245 254);
-			--brand-orange: oklch(0.7191 0.2269 45);
-			--accent-3: oklch(0.8015 0.1751 190);
-		}
-
-		:global(:root[data-theme='light']) {
-			--brand-blue: oklch(0.4485 0.1751 254.74);
-			--brand-orange: oklch(0.5691 0.1801 45);
-			--accent-3: oklch(0.6397 0.1431 190);
-		}
-	}*/
 </style>
