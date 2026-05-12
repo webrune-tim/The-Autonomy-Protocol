@@ -43,6 +43,25 @@
 		{ href: '/contact', label: 'Contact' },
 		{ href: 'login', label: 'Login' }
 	]
+
+    const initScrollPositionSaver = () => {
+      // Define a key for this page
+      const localStorageKey = `scroll-y-position-${window.location.href}`;
+
+      // Get that value or zero
+      const scrollPosition = localStorage.getItem(localStorageKey) || 0;
+
+      // Set the scroll Y position of the screen
+      window.scrollTo(0, scrollPosition);
+
+      // Listen for changes in scroll Y position and save it to localStorage for later use
+      window.addEventListener('scroll', () => {
+      localStorage.setItem(localStorageKey, window.scrollY);
+    });
+  };
+
+  // Run it
+  initScrollPositionSaver();   
 </script>
 
 <svelte:head>
