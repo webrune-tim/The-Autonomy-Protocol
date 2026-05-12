@@ -46,26 +46,26 @@
 
 	// Persistent Scroll Position Logic
 	$effect(() => {
-		const localStorageKey = `scroll-y-position-${window.location.href}`;
+		const localStorageKey = `scroll-y-position-${window.location.href}`
 
 		// 1. Restore position on mount
-		const savedPosition = localStorage.getItem(localStorageKey);
+		const savedPosition = localStorage.getItem(localStorageKey)
 		if (savedPosition) {
-			window.scrollTo(0, parseInt(savedPosition, 10));
+			window.scrollTo(0, parseInt(savedPosition, 10))
 		}
 
 		// 2. Track scroll changes
 		const handleScroll = () => {
-			localStorage.setItem(localStorageKey, window.scrollY.toString());
-		};
+			localStorage.setItem(localStorageKey, window.scrollY.toString())
+		}
 
-		window.addEventListener('scroll', handleScroll, { passive: true });
+		window.addEventListener('scroll', handleScroll, { passive: true })
 
 		// 3. Clean up listener on unmount
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	});
+			window.removeEventListener('scroll', handleScroll)
+		}
+	})
 </script>
 
 <svelte:head>
@@ -98,15 +98,18 @@
 
 <div class="layout-wrapper">
 	<Header logo={headerLogo} actions={headerActions} nav={headerNav} />
-	
+
 	<Banner bannerName="site-under-development">
 		<p>
 			This site is still under heavy development. Content may change without notice.
 		</p>
 		<p>
-			If you encounter any issues, please report them via our 
+			If you encounter any issues, please report them via our
 			<a href="/contact">contact page</a> or on
-			<a href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues" target="_blank">
+			<a
+				href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
+				target="_blank"
+			>
 				GitHub Issues page
 			</a>.
 		</p>
