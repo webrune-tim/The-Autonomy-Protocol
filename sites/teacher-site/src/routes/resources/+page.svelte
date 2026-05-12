@@ -60,7 +60,7 @@
 	</p>
 
 	{#if step_links.length > 0}
-		<ul class="step-container">
+		<ul class="grid-container">
 			{#each step_links as { slug, metadata }}
 				<li>
 					<a href="/resources/steps/{slug}">
@@ -78,18 +78,18 @@
 	class="angled-top-box thick-margins no-bottom-margin"
 	style="--color: var(--brand-orange)"
 >
-	<h2>Five Aggrements</h2>
+	<h2>Five Agreements</h2>
 	<p>
-		The Aggrements are a collection of agreements that you can use to govern yourself
+		The Agreements are a collection of agreements that you can use to govern yourself
 		and your relationships with others. These agreements are designed to be flexible
 		and customizable, so you can adapt them to fit your own needs and circumstances.
 	</p>
 
-	{#if step_links.length > 0}
-		<ul>
+	{#if agreement_links.length > 0}
+		<ul class="grid-container">
 			{#each agreement_links as { slug, metadata }}
 				<li>
-					<a href="/resources/steps/{slug}">
+					<a href="/resources/agreements/{slug}">
 						{metadata.title ?? 'Untitled Resource'}
 					</a>
 				</li>
@@ -112,7 +112,7 @@
 		margin: 0;
 	}
 
-	.step-container {
+	.grid-container {
 		display: grid;
 		/* Creates two equal columns */
 		grid-template-columns: repeat(2, 1fr);

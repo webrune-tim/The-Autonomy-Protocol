@@ -4,8 +4,8 @@ import type { PageLoad } from "./$types";
 // 1. Use the generated PageLoad type for strict typing of 'params'
 export const load: PageLoad = async ({ params }) => {
   try {
-    // Vite will resolve the alias and the dynamic path
-    const post = await import(`$lib/docs/steps/${params.slug}.md`);
+    // Vite will resolve the dynamic path relative to this file
+    const post = await import(`$lib/docs/agreements/${params.slug}.md`);
 
     return {
       content: post.default,

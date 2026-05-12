@@ -22,6 +22,11 @@ body {
   color: var(--fg);
   font-family: var(--font-sans-2);
   margin: 0;
+
+  /* Fix for text flickering during transitions */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -36,6 +41,7 @@ h6 {
   color: var(--text-heading);
   font-family: var(--font-header-sans-1);
   margin-top: 0;
+  text-transform: uppercase;
 }
 
 img {
@@ -134,7 +140,8 @@ details strong {
 /* --- Consolidated Angled Box Logic --- */
 .angled-top-box,
 .angled-bottom-box,
-.angled-top-bottom-box {
+.angled-top-bottom-box,
+.unangled-box {
   --color: var(--brand-blue);
   background: var(--color);
 
