@@ -19,7 +19,7 @@
 	import { Pill } from '@autonomy/pill'
 
 	// Local components
-	import ThemeToggle from '$components/ThemeToggle.svelte'
+	import { ThemeToggle } from '$components'
 
 	interface Props {
 		data: LayoutData
@@ -40,28 +40,23 @@
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
-		{ href: '/contact', label: 'Contact' },
-		{ href: '/login', label: 'Login' }
+		{ href: '/contact', label: 'Contact' }
 	]
 
-	// Persistent Scroll Position Logic
 	$effect(() => {
 		const localStorageKey = `scroll-y-position-${window.location.href}`
 
-		// 1. Restore position on mount
 		const savedPosition = localStorage.getItem(localStorageKey)
 		if (savedPosition) {
 			window.scrollTo(0, parseInt(savedPosition, 10))
 		}
 
-		// 2. Track scroll changes
 		const handleScroll = () => {
 			localStorage.setItem(localStorageKey, window.scrollY.toString())
 		}
 
 		window.addEventListener('scroll', handleScroll, { passive: true })
 
-		// 3. Clean up listener on unmount
 		return () => {
 			window.removeEventListener('scroll', handleScroll)
 		}

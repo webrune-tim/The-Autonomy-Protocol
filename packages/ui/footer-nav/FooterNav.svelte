@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { page } from "$app/state";
+
   interface NavLink {
     href: string;
     label: string;
@@ -27,6 +29,15 @@
         </a>
       </li>
     {/each}
+    {#if page.data.user}
+      <li>
+        <a href="/logout">Logout</a>
+      </li>
+    {:else}
+      <li>
+        <a href="/login">Login</a>
+      </li>
+    {/if}
   </ul>
 </nav>
 

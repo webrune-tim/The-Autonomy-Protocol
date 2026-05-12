@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from "$app/state";
   import { Menu } from "@lucide/svelte";
 
   interface NavLink {
@@ -67,6 +68,15 @@
               </a>
             </li>
           {/each}
+          {#if page.data.user}
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+          {:else}
+            <li>
+              <a href="/login">Login</a>
+            </li>
+          {/if}
         </ul>
       </nav>
     </div>

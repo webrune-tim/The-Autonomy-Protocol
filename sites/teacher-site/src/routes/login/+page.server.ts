@@ -5,8 +5,9 @@ import { auth } from "$lib/server/auth";
 import { APIError } from "better-auth/api";
 
 export const load: PageServerLoad = (event) => {
+  const redirectTo = event.url.searchParams.get("redirectTo") || "/dashboard";
   if (event.locals.user) {
-    return redirect(302, "/dashboard");
+    return redirect(302, redirectTo);
   }
   return {};
 };
@@ -16,6 +17,7 @@ export const actions: Actions = {
     const formData = await event.request.formData();
     const email = formData.get("email")?.toString() ?? "";
     const password = formData.get("password")?.toString() ?? "";
+    const redirectTo = event.url.searchParams.get("redirectTo") || "/dashboard";
 
     try {
       await auth.api.signInEmail({
@@ -32,13 +34,14 @@ export const actions: Actions = {
       return fail(500, { message: "Unexpected error" });
     }
 
-    return redirect(302, "/dashboard");
+    return redirect(302, redirectTo);
   },
   signUpEmail: async (event) => {
     const formData = await event.request.formData();
     const email = formData.get("email")?.toString() ?? "";
     const password = formData.get("password")?.toString() ?? "";
     const name = formData.get("name")?.toString() ?? "";
+    const redirectTo = event.url.searchParams.get("redirectTo") || "/dashboard";
 
     try {
       await auth.api.signUpEmail({
@@ -56,6 +59,6 @@ export const actions: Actions = {
       return fail(500, { message: "Unexpected error" });
     }
 
-    return redirect(302, "/dashboard");
+    return redirect(302, redirectTo);
   },
 };

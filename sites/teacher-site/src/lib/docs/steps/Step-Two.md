@@ -6,6 +6,10 @@ date: "2026-05-11"
 published: true
 ---
 
+<script>
+  import { TeacherOnly } from "$components";
+</script>
+
 ## As students, we all need help sometimes. There is no shame in it
 
 The second step in **The Autonomy Protocol**
@@ -52,15 +56,21 @@ Look at your map. If you feel "unmanageable" (Step One), which circle are you mo
 
 "Independence isn't about having no circles; it's about knowing which circle to reach into when the pressure starts to grow."
 
+<TeacherOnly>
+
 ---
 
 ## Teacher’s Guide: Discussion Starters
 
 If you are presenting this in person, here are two questions to spark a conversation with the class:
 
-- The "Superior" Trap: "Why is it sometimes harder to ask for help when you’re 'the smart kid' or the 'star athlete' than when you’re struggling?" (This addresses the ego/superiority concept).
-- The "Inferior" Trap: "If a friend came to you asking for help with a math problem, would you think they were 'weak' or 'burdensome'? If not, why do we think that about ourselves when we need help?"
-  Why this works for Freshmen:
-- Visualizes the abstract: It moves "support" from a vague idea to a list of actual names.
-- Normalizes the struggle: By discussing the "Superior/Inferior" traps, you're calling out the social anxiety that defines the 9th-grade experience.
-- Low Stakes: It doesn't force them to share their personal names with the class, but it forces them to acknowledge that those names exist.
+- **The "Superior" Trap:** "Why is it sometimes harder to ask for help when you’re 'the smart kid' or the 'star athlete' than when you’re struggling?" (This addresses the ego/superiority concept).
+- **The "Inferior" Trap:** "If a friend came to you asking for help with a math problem, would you think they were 'weak' or 'burdensome'? If not, why do we think that about ourselves when we need help?"
+
+### Why this works for Freshmen:
+
+- **Visualizes the abstract:** It moves "support" from a vague idea to a list of actual names.
+- **Normalizes the struggle:** By discussing the "Superior/Inferior" traps, you're calling out the social anxiety that defines the 9th-grade experience.
+- **Low Stakes:** It doesn't force them to share their personal names with the class, but it forces them to acknowledge that those names exist.
+
+</TeacherOnly>

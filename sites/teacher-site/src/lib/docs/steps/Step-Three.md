@@ -6,6 +6,10 @@ date: "2026-05-11"
 published: true
 ---
 
+<script>
+  import { TeacherOnly } from "$components";
+</script>
+
 ## We made a deliberate choice to lean on the guidance of our support network and trust the process of the protocol to help manage the things we cannot handle alone.
 
 Step three in the **The Autonomy Protocol**
@@ -41,6 +45,8 @@ The hardest part of Step Three is the final piece: Trusting that they will do wh
 
 When you hand over a problem, you have to let go of the need to control the outcome. You have to believe that the people in your support group have your best interests at heart. This doesn't mean you disappear; it means you become a partner in the solution instead of a victim of the problem.
 
+<TeacherOnly>
+
 ---
 
 ## Activity: The "Heavy Lift" Assessment
@@ -49,8 +55,8 @@ To help students distinguish between Step Two (Asking for Help) and Step Three (
 
 1. Identify a current "Heavy Lift": Is there something in your life right now that feels "insurmountable"? (A grade, a conflict, a secret, a fear?)
 2. Ask yourself:
-
-- Can I solve this if someone just gives me a little advice? (This is Step Two).
-- Or, is this taking up so much space in my head that I can’t focus on anything else? (This is Step Three).
-
+   - Can I solve this if someone just gives me a little advice? (This is Step Two).
+   - Or, is this taking up so much space in my head that I can’t focus on anything else? (This is Step Three).
 3. The Action: If it’s a Step Three problem, who is the one person you trust enough to "hand the reins" to today?
+
+</TeacherOnly>
