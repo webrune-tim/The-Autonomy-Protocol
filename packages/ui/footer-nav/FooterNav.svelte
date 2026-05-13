@@ -84,6 +84,7 @@
     text-decoration: none;
     white-space: nowrap;
     color: var(--fg);
+    padding: 0 var(--gap-1);
 
     /* Technical Index Aesthetic */
     font-size: 0.8rem;
