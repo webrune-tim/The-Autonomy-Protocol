@@ -4,6 +4,7 @@ import { sveltekitCookies } from "better-auth/svelte-kit";
 import { admin, createAccessControl } from "better-auth/plugins";
 import { env } from "$env/dynamic/private";
 import { getRequestEvent } from "$app/server";
+import { dev } from "$app/environment";
 import { db } from "$lib/server/db";
 import * as schema from "$lib/server/db/schema";
 
@@ -30,7 +31,8 @@ const userRole = ac.newRole({
 });
 
 export const auth = betterAuth({
-  baseURL: env.ORIGIN || "https://the-autonomy-protocol.vercel.app",
+  baseURL:
+    env.ORIGIN || (dev ? "http://localhost:5173" : "https://the-autonomy-protocol.vercel.app"),
   secret: env.BETTER_AUTH_SECRET,
   trustedOrigins: [
     env.ORIGIN,
