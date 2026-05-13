@@ -52,7 +52,7 @@
     background: var(--brand-blue-dark);
     margin: 0 auto;
     width: 100%;
-    margin-top: var(--gap-1);
+    margin-top: var(--gap-2);
   }
 
   ul {
