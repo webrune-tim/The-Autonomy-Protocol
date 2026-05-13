@@ -73,7 +73,11 @@
               <a href="/dashboard">Dashboard</a>
             </li>
             <li>
-              <button class="link-button" href="/logout">Logout</button>
+              <form method="POST" action="/logout" use:enhance>
+      <button type="submit" class="link-button">
+        Logout
+      </button>
+    </form>
             </li>
           {:else}
             <li>
