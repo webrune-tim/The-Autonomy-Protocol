@@ -30,9 +30,14 @@ const userRole = ac.newRole({
 });
 
 export const auth = betterAuth({
-  baseURL: env.ORIGIN,
+  baseURL: env.ORIGIN || "https://the-autonomy-protocol.vercel.app",
   secret: env.BETTER_AUTH_SECRET,
-  trustedOrigins: [env.ORIGIN, "http://localhost:5173", "http://127.0.0.1:5173"],
+  trustedOrigins: [
+    env.ORIGIN,
+    "https://the-autonomy-protocol.vercel.app",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+  ].filter(Boolean) as string[],
   database: drizzleAdapter(db, {
     provider: "sqlite",
     schema,
@@ -41,7 +46,6 @@ export const auth = betterAuth({
     google: {
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
-      redirectURI: `${env.ORIGIN}/api/auth/callback/google`,
     },
   },
   user: {
