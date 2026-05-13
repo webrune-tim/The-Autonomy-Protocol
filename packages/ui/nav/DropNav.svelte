@@ -70,6 +70,9 @@
           {/each}
           {#if page.data.user}
             <li>
+              <a href="/dashboard">Dashboard</a>
+            </li>
+            <li>
               <a href="/logout">Logout</a>
             </li>
           {:else}
