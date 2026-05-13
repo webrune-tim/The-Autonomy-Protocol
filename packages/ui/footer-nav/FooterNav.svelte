@@ -29,22 +29,6 @@
         </a>
       </li>
     {/each}
-    {#if page.data.user}
-      <li>
-        <a href="/dashboard">Dashboard</a>
-      </li>
-      <li>
-        <form method="POST" action="/logout" use:enhance>
-      <button type="submit" class="link-button">
-        Logout
-      </button>
-    </form>
-      </li>
-    {:else}
-      <li>
-        <a href="/login">Login</a>
-      </li>
-    {/if}
   </ul>
 </nav>
 
