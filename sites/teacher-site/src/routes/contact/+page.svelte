@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import toast, { Toaster } from 'svelte-french-toast';
+	import { enhance } from '$app/forms'
+	import { thickMargins } from '../../../../../packages/core/actions'
+	import toast, { Toaster } from 'svelte-french-toast'
 	import {
 		User,
 		Mail,
@@ -8,30 +9,30 @@
 		HandHelping,
 		LifeBuoy,
 		Send
-	} from '@lucide/svelte';
+	} from '@lucide/svelte'
 
 	const createInitialState = () => ({
 		name: '',
 		email: '',
 		isOfferingHelp: true,
 		comments: ''
-	});
+	})
 
-	let formData = $state(createInitialState());
+	let formData = $state(createInitialState())
 
 	// This function handles the result of the server action
 	const handleEnhance = () => {
 		return async ({ result }: { result: any }) => {
 			if (result.type === 'success') {
-				toast.success('Message sent successfully!');
-				formData = createInitialState();
+				toast.success('Message sent successfully!')
+				formData = createInitialState()
 			} else if (result.type === 'failure') {
-				toast.error(result.data?.error || 'Oops! There was a problem.');
+				toast.error(result.data?.error || 'Oops! There was a problem.')
 			} else {
-				toast.error('An unexpected error occurred.');
+				toast.error('An unexpected error occurred.')
 			}
-		};
-	};
+		}
+	}
 </script>
 
 <Toaster />
@@ -46,14 +47,11 @@
 </section>
 
 <section
-	class="angled-top-box thick-margins no-bottom-margin"
+	class="angled-top-box no-bottom-margin"
+	use:thickMargins
 	style="--color: var(--brand-blue-dark)"
 >
-	<form 
-		method="POST" 
-		use:enhance={handleEnhance} 
-		class="contact-form"
-	>
+	<form method="POST" use:enhance={handleEnhance} class="contact-form">
 		<!-- Hidden input to capture the boolean state in the FormData -->
 		<input type="hidden" name="isOfferingHelp" value={formData.isOfferingHelp} />
 
@@ -85,7 +83,7 @@
 			<label><MessageSquare size={18} /> How can we help?</label>
 			<div class="segmented-control">
 				<div class="glider" class:shifted={!formData.isOfferingHelp}></div>
-				
+
 				<button
 					type="button"
 					class="control-option"
@@ -95,7 +93,7 @@
 					<HandHelping size={20} />
 					<span>I Need Help</span>
 				</button>
-				
+
 				<button
 					type="button"
 					class="control-option"
@@ -149,7 +147,8 @@
 		color: var(--brand-orange);
 	}
 
-	input, textarea {
+	input,
+	textarea {
 		padding: 0.8rem;
 		background: var(--surface-2);
 		border: 2px solid var(--surface-3);
@@ -188,6 +187,10 @@
 
 	.control-option.active {
 		color: var(--surface-1);
+
+		span {
+			color: var(--bg) !important;
+		}
 	}
 
 	.glider {
@@ -219,7 +222,9 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.5rem;
-		transition: transform 0.1s, filter 0.2s;
+		transition:
+			transform 0.1s,
+			filter 0.2s;
 		margin-top: 1rem;
 	}
 

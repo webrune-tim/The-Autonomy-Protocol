@@ -1,7 +1,9 @@
 packages:
-  - sites/*
-  - packages/ui/*
-  - packages/utils
+  - "sites/*"
+  # The recursive wildcard (**) allows pnpm to find nested packages
+  # like packages/core/actions or packages/content/four-agreements
+  - "packages/**"
+
 allowBuilds:
   "@prisma/client": true
   better-sqlite3: false

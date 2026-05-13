@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { page } from "$app/state";
-
   interface NavLink {
     href: string;
     label: string;
@@ -63,7 +61,7 @@
     flex: none;
   }
 
-  a, .link-button {
+  a {
     background: inherit;
     text-decoration: none;
     white-space: nowrap;

@@ -7,10 +7,10 @@
 	// Assets
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
-	import '@autonomy/new-style/index.css'
+	import '@autonomy/style/index.css'
 
 	// Shared Components
-	import { Banner } from '@autonomy/banner'
+	import { Banner } from '../../../../packages/blocks/banner'
 	import { Footer } from '@autonomy/footer'
 	import { FooterNav } from '@autonomy/footer-nav'
 	import { Header } from '@autonomy/header'

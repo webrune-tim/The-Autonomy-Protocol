@@ -5,8 +5,16 @@
 
 	let { form }: { form: ActionData } = $props()
 	const redirectTo = $derived(page.url.searchParams.get('redirectTo'))
-	const actionWithRedirect = $derived(redirectTo ? `?/signInEmail&redirectTo=${encodeURIComponent(redirectTo)}` : '?/signInEmail')
-	const signupWithRedirect = $derived(redirectTo ? `?/signUpEmail&redirectTo=${encodeURIComponent(redirectTo)}` : '?/signUpEmail')
+	const actionWithRedirect = $derived(
+		redirectTo
+			? `?/signInEmail&redirectTo=${encodeURIComponent(redirectTo)}`
+			: '?/signInEmail'
+	)
+	const signupWithRedirect = $derived(
+		redirectTo
+			? `?/signUpEmail&redirectTo=${encodeURIComponent(redirectTo)}`
+			: '?/signUpEmail'
+	)
 </script>
 
 <h1>Login</h1>

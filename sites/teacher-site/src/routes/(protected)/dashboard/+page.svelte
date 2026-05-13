@@ -13,7 +13,10 @@
 	<a href="/settings" class="box trans-blue">Settings</a>
 
 	<form method="post" action="?/signOut" use:enhance>
-		<button class="box trans-orange" style="width: 100%; text-align: left; cursor: pointer;">
+		<button
+			class="box trans-orange"
+			style="width: 100%; text-align: left; cursor: pointer;"
+		>
 			Sign out
 		</button>
 	</form>
@@ -25,10 +28,10 @@
 		<p>Lookup users to adjust authorization levels.</p>
 
 		<form method="get" class="search-form">
-			<input 
-				type="text" 
-				name="q" 
-				placeholder="Search by name or email..." 
+			<input
+				type="text"
+				name="q"
+				placeholder="Search by name or email..."
 				class="search-input"
 			/>
 			<button type="submit" class="search-button">Search</button>
@@ -54,11 +57,20 @@
 								<form method="post" action="?/updateRole" use:enhance>
 									<input type="hidden" name="userId" value={member.id} />
 									<select name="role" class="role-select">
-										<option value="user" selected={member.role === 'user'}>User</option>
-										<option value="teacher" selected={member.role === 'teacher'}>Teacher</option>
-										<option value="admin" selected={member.role === 'admin'}>Admin</option>
+										<option value="user" selected={member.role === 'user'}
+											>User</option
+										>
+										<option value="teacher" selected={member.role === 'teacher'}
+											>Teacher</option
+										>
+										<option value="admin" selected={member.role === 'admin'}
+											>Admin</option
+										>
 										{#if data.user.role === 'superadmin'}
-											<option value="superadmin" selected={member.role === 'superadmin'}>Superadmin</option>
+											<option
+												value="superadmin"
+												selected={member.role === 'superadmin'}>Superadmin</option
+											>
 										{/if}
 									</select>
 									<button type="submit" class="update-button">Update</button>
@@ -113,7 +125,8 @@
 		font-size: 0.9rem;
 	}
 
-	.admin-table th, .admin-table td {
+	.admin-table th,
+	.admin-table td {
 		padding: 0.75rem;
 		text-align: left;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);

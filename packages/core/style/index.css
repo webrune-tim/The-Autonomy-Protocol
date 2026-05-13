@@ -79,7 +79,7 @@ a:hover {
 }
 
 .link-button {
- /* color: var(--text-link);*/
+  /* color: var(--text-link);*/
   text-decoration: none;
   transition: color 0.2s ease;
   outline: none;
@@ -218,7 +218,7 @@ details strong {
   span,
   li,
   li:before {
-    color: var(--safe-contrast) !important;
+    color: var(--safe-contrast);
   }
 
   h1,

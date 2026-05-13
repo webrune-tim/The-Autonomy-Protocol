@@ -1,3 +1,7 @@
+<script>
+	import { thickMargins } from '../../../../../packages/core/actions'
+</script>
+
 <section class="angled-bottom-box" style="--color: var(--brand-blue)">
 	<h1>Curriculum Overview</h1>
 
@@ -10,7 +14,7 @@
 	</p>
 </section>
 
-<section class="angled-top-bottom-box thick-margins">
+<section class="angled-top-bottom-box" use:thickMargins>
 	<h2>Freshman Year | Phase 1: The Foundation</h2>
 
 	<span>
@@ -76,7 +80,7 @@
 	</ul>
 </section>
 
-<section class="angled-top-box thick-margins" style="--color: var(--brand-teal)">
+<section class="angled-top-box" use:thickMargins style="--color: var(--brand-teal)">
 	<h2>Senior Year | Phase 2: The Transition</h2>
 
 	<span>

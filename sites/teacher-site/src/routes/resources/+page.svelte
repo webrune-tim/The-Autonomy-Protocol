@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { thickMargins } from '../../../../../packages/core/actions'
+
 	// Define what a single Markdown module looks like
 	interface MarkdownModule {
 		metadata: {
@@ -49,6 +51,7 @@
 
 <section
 	class="angled-top-bottom-box thick-margins"
+	use:thickMargins
 	style="--color: var(--brand-teal)"
 >
 	<h2>Twelve Steps</h2>
@@ -75,7 +78,8 @@
 </section>
 
 <section
-	class="angled-top-box thick-margins no-bottom-margin"
+	class="angled-top-box no-bottom-margin"
+	use:thickMargins
 	style="--color: var(--brand-orange)"
 >
 	<h2>Five Agreements</h2>
@@ -126,12 +130,6 @@
 		list-style: none;
 		padding: 0;
 		margin: 1.5rem 0;
-	}
-
-	.step-container li a {
-		color: var(--bg);
-		text-decoration: underline;
-		font-weight: 500;
 	}
 
 	/* To match the all-caps look in your reference image */

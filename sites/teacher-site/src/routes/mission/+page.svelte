@@ -1,5 +1,6 @@
 <script>
 	import { ArrowBigRight, Route } from '@lucide/svelte'
+	import { thickMargins } from '../../../../../packages/core/actions'
 </script>
 
 <div class="angled-bottom-box" style="--color: var(--brand-teal)">
@@ -8,7 +9,8 @@
 </div>
 
 <section
-	class="angled-top-bottom-box thick-margins"
+	class="angled-top-bottom-box"
+	use:thickMargins
 	style="--color: var(--brand-blue)"
 >
 	<h2>Our Mission</h2>
@@ -24,7 +26,11 @@
 	</a>
 </section>
 
-<section class="angled-top-box thick-margins" style="--color: var(--brand-orange)">
+<section
+	class="angled-top-box"
+	use:thickMargins
+	style="--color: var(--brand-orange)"
+>
 	<h2>The Shift: From Punitive to Proactive</h2>
 	<p>
 		Most institutional environments operate on a binary reward-and-punishment system,
@@ -101,7 +107,8 @@
 			</ul>
 		</div>
 		<div
-			class="bold-border-box thick-margins"
+			class="bold-border-box"
+			use:thickMargins
 			style="--border-color: var(--brand-orange)"
 		>
 			<h2>Cross-Curricular Application & Post-Secondary Outcomes</h2>

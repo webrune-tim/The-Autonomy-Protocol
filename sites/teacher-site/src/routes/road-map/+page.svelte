@@ -1,3 +1,7 @@
+<script>
+	import { thickMargins } from '../../../../../packages/core/actions'
+</script>
+
 <section class="angled-bottom-box">
 	<h1>The Dual-Intervention Roadmap</h1>
 	<p>
@@ -24,7 +28,8 @@
 </section>
 
 <section
-	class="angled-top-bottom-box thick-margins"
+	class="angled-top-bottom-box"
+	use:thickMargins
 	style="--color: var(--brand-orange-dark)"
 >
 	<h2>Phase 1: Foundation & Behavioral Baseline</h2>
@@ -58,7 +63,8 @@
 </section>
 
 <section
-	class="angled-top-box thick-margins no-bottom-margin"
+	class="angled-top-box no-bottom-margin"
+	use:thickMargins
 	style="--color: var(--brand-teal-dark)"
 >
 	<h2>Phase 2: Real-World Application & Career Readiness</h2>

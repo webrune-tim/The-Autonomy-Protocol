@@ -21,6 +21,7 @@
     "auth:schema": "better-auth generate --config src/lib/server/auth.ts --output src/lib/server/db/auth.schema.ts --yes"
   },
   "dependencies": {
+    "@autonomy/actions": "workspace:*",
     "@autonomy/banner": "workspace:*",
     "@autonomy/footer": "workspace:*",
     "@autonomy/footer-nav": "workspace:*",
@@ -30,7 +31,6 @@
     "@autonomy/horizontal-scroll": "workspace:*",
     "@autonomy/logo": "workspace:*",
     "@autonomy/nav": "workspace:*",
-    "@autonomy/new-style": "workspace:*",
     "@autonomy/pill": "workspace:*",
     "@autonomy/style": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",

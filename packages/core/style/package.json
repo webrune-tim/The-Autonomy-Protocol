@@ -1,0 +1,12 @@
+{
+  "name": "@autonomy/style",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.css",
+    "./index.css": "./index.css",
+    "./tokens.css": "./tokens.css",
+    "./reset.css": "./reset.css",
+    "./functions.css": "./functions.css"
+  }
+}
