@@ -31,8 +31,9 @@ const userRole = ac.newRole({
 });
 
 export const auth = betterAuth({
-  baseURL:
-    env.ORIGIN || (dev ? "http://localhost:5173" : "https://the-autonomy-protocol.vercel.app"),
+  baseURL: (
+    env.ORIGIN || (dev ? "http://localhost:5173" : "https://the-autonomy-protocol.vercel.app")
+  ).replace(/\/$/, ""),
   secret: env.BETTER_AUTH_SECRET,
   trustedOrigins: [
     env.ORIGIN,
