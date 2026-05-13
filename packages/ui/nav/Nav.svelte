@@ -33,7 +33,7 @@
         <a href="/dashboard">Dashboard</a>
       </li>
       <li>
-        <a href="/logout">Logout</a>
+        <button class="link-button" href="/logout">Logout</button>
       </li>
     {:else}
       <li>
