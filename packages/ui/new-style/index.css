@@ -79,14 +79,14 @@ a:hover {
 }
 
 .link-button {
-  color: var(--text-link);
+ /* color: var(--text-link);*/
   text-decoration: none;
   transition: color 0.2s ease;
   outline: none;
   border: none;
   background: none;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 1rem;
 }
 
 .link-button:hover {
