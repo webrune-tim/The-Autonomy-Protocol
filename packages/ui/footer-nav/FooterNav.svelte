@@ -53,6 +53,7 @@
     margin: 0 auto;
     width: 100%;
     margin-top: var(--gap-2);
+    padding-top: var(--gap);
   }
 
   ul {
@@ -64,7 +65,6 @@
     /* Space-between pushes links to the edges of your 'thick-margin' container */
     justify-content: space-around;
     padding: var(--gap-1) 0 0 0;
-    padding-top: var(--gap);
     margin: 0;
   }
 
