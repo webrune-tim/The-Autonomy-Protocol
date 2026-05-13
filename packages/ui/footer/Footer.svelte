@@ -16,7 +16,7 @@
 <style>
   footer {
     --color: var(--brand-blue);
-    max-height: fit-content;
+    height: fit-content;
     display: grid;
     place-items: center;
     /*color: --contrast-color(var(--color));*/
