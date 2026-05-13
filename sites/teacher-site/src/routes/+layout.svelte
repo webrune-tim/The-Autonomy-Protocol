@@ -10,7 +10,7 @@
 	import '@autonomy/style/index.css'
 
 	// Shared Components
-	import { Banner } from '../../../../packages/blocks/banner'
+	import { Banner } from '@autonomy/banner'
 	import { Footer } from '@autonomy/footer'
 	import { FooterNav } from '@autonomy/footer-nav'
 	import { Header } from '@autonomy/header'

@@ -3,7 +3,7 @@ import type { Actions } from "./$types";
 import type { PageServerLoad } from "./$types";
 import { auth } from "$lib/server/auth";
 import { db } from "$lib/server/db";
-import { user } from "$lib/server/db/schema";
+import { user, session as sessionTable } from "$lib/server/db/schema";
 import { eq, like, or } from "drizzle-orm";
 
 export const load: PageServerLoad = async (event) => {
@@ -64,11 +64,23 @@ export const actions: Actions = {
       return fail(403, { message: "Only superadmins can appoint other superadmins" });
     }
 
+    console.log(`[updateRole] Attempting to update user ${userId} to role ${newRole}`);
     try {
+      // 1. Update the user role
       await db.update(user).set({ role: newRole }).where(eq(user.id, userId));
+
+      // 2. Invalidate all sessions for this user
+      await db.delete(sessionTable).where(eq(sessionTable.userId, userId));
+
+      // 3. If the user updated THEMSELVES, force an immediate logout redirect
+      if (userId === currentUser.id) {
+        throw redirect(303, "/login");
+      }
+
       return { success: true };
     } catch (error) {
-      console.error("Failed to update user role:", error);
+      if (error instanceof Response) throw error; // Handle the redirect
+      console.error("[updateRole] Error during role update:", error);
       return fail(500, { message: "Internal server error" });
     }
   },

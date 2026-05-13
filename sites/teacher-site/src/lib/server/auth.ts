@@ -1,10 +1,33 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { sveltekitCookies } from "better-auth/svelte-kit";
+import { admin, createAccessControl } from "better-auth/plugins";
 import { env } from "$env/dynamic/private";
 import { getRequestEvent } from "$app/server";
 import { db } from "$lib/server/db";
 import * as schema from "$lib/server/db/schema";
+
+const adminStatements = {
+  user: [
+    "create",
+    "list",
+    "set-role",
+    "ban",
+    "impersonate",
+    "delete",
+    "set-password",
+    "get",
+    "update",
+  ],
+  session: ["list", "revoke", "delete"],
+} as const;
+
+const ac = createAccessControl(adminStatements);
+const adminRole = ac.newRole(adminStatements);
+const userRole = ac.newRole({
+  user: [],
+  session: [],
+});
 
 export const auth = betterAuth({
   baseURL: env.ORIGIN,
@@ -20,14 +43,17 @@ export const auth = betterAuth({
         type: "string",
         required: false,
       },
-      role: {
-        type: "string",
-        required: false,
-        defaultValue: "user",
-      },
     },
   },
   plugins: [
+    admin({
+      adminRoles: ["admin", "superadmin"],
+      roles: {
+        admin: adminRole,
+        superadmin: adminRole,
+        user: userRole,
+      },
+    }),
     sveltekitCookies(getRequestEvent), // make sure this is the last plugin in the array
   ],
 });
