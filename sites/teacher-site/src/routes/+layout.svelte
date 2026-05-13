@@ -33,15 +33,16 @@
 		themeState.init(data.theme)
 	})
 
-	const navLinks = [
+	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
 		{ href: '/mission', label: 'Mission' },
 		{ href: '/join-us', label: 'Join Us' },
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
-		{ href: '/contact', label: 'Contact' }
-	]
+		{ href: '/contact', label: 'Contact' },
+		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
+	])
 
 	$effect(() => {
 		const localStorageKey = `scroll-y-position-${window.location.href}`
