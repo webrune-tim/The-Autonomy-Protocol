@@ -78,6 +78,19 @@ a:hover {
   text-decoration: underline;
 }
 
+.link-button {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  outline: none;
+  boarder: none;
+  background: none;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
 strong {
   color: var(--brand-orange);
 }
