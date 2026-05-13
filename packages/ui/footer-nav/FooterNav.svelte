@@ -64,6 +64,7 @@
     /* Space-between pushes links to the edges of your 'thick-margin' container */
     justify-content: space-around;
     padding: var(--gap-1) 0 0 0;
+    padding-top: var(--gap);
     margin: 0;
   }
 
