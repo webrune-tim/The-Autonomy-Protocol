@@ -59,9 +59,10 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    gap: var(--gap-1);
     align-items: center;
     /* Space-between pushes links to the edges of your 'thick-margin' container */
-    justify-content: space-between;
+    justify-content: space-around;
     padding: calc(var(--gap-1) * 0.5) 0 0 0;
     margin: 0;
   }
