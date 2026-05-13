@@ -1,6 +1,6 @@
 <script>
 	import { ArrowBigRight, Route } from '@lucide/svelte'
-	import { thickMargins } from '../../../../../packages/core/actions'
+	import { thickMargins } from '@autonomy/actions'
 </script>
 
 <div class="angled-bottom-box" style="--color: var(--brand-teal)">

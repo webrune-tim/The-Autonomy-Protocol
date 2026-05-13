@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { thickMargins } from '../../../../../packages/core/actions'
+	import { thickMargins } from '@autonomy/actions'
 
 	// Define what a single Markdown module looks like
 	interface MarkdownModule {

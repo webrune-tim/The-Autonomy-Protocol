@@ -1,5 +1,5 @@
 <script>
-	import { thickMargins } from '../../../../../packages/core/actions'
+	import { thickMargins } from '@autonomy/actions'
 </script>
 
 <section class="angled-bottom-box">

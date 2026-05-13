@@ -1,8 +1,5 @@
 <script lang="ts">
-	// Import the shared packages
-	// import { HorizontalScroll } from '@autonomy/horizontal-scroll'
-	// import { twelve_steps, four_agreements } from '$lib/assets/steps-agreements'
-
+	import { thickMargins } from '@autonomy/actions'
 	import { ArrowBigRight, Map, Route, ShieldCog } from '@lucide/svelte'
 </script>
 
@@ -41,7 +38,7 @@
 	</ol>
 </section>
 
-<section class="angled-top-box thick-margins" style="--color: var(--brand-teal)">
+<section class="angled-top-box" style="--color: var(--brand-teal)" use:thickMargins>
 	<div class="title-grid">
 		<h2>The Opportunity:</h2>
 	</div>

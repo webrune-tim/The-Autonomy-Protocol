@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
-	import { thickMargins } from '../../../../../packages/core/actions'
+	import { thickMargins } from '@autonomy/actions'
 	import toast, { Toaster } from 'svelte-french-toast'
 	import {
 		User,
