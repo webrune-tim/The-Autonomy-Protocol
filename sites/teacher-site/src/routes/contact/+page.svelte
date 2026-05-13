@@ -1,5 +1,6 @@
 <script lang="ts">
-	import toast, { Toaster } from 'svelte-french-toast'
+	import { enhance } from '$app/forms';
+	import toast, { Toaster } from 'svelte-french-toast';
 	import {
 		User,
 		Mail,
@@ -7,46 +8,30 @@
 		HandHelping,
 		LifeBuoy,
 		Send
-	} from '@lucide/svelte'
+	} from '@lucide/svelte';
 
 	const createInitialState = () => ({
 		name: '',
 		email: '',
 		isOfferingHelp: true,
 		comments: ''
-	})
+	});
 
-	let formData = $state(createInitialState())
+	let formData = $state(createInitialState());
 
-	const handleSubmit = async (e: Event) => {
-		e.preventDefault()
-
-		// Use Formspree's endpoint (or a similar service like Getform.io)
-		// You can replace 'YOUR_FORM_ID' with the ID you get after signing up,
-		// or use the email directly for a quick test (though ID is better for spam)
-		const endpoint = 'https://formspree.io/f/mdkdqygd'
-
-		try {
-			const response = await fetch(endpoint, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json'
-				},
-				body: JSON.stringify($state.snapshot(formData))
-			})
-
-			if (response.ok) {
-				toast.success('Message sent successfully!')
-				formData = createInitialState()
+	// This function handles the result of the server action
+	const handleEnhance = () => {
+		return async ({ result }: { result: any }) => {
+			if (result.type === 'success') {
+				toast.success('Message sent successfully!');
+				formData = createInitialState();
+			} else if (result.type === 'failure') {
+				toast.error(result.data?.error || 'Oops! There was a problem.');
 			} else {
-				toast.error('Oops! There was a problem submitting your form.')
+				toast.error('An unexpected error occurred.');
 			}
-		} catch (error) {
-			console.error('Submission error:', error)
-			toast.error('Failed to send message. Please check your connection.')
-		}
-	}
+		};
+	};
 </script>
 
 <Toaster />
@@ -64,12 +49,20 @@
 	class="angled-top-box thick-margins no-bottom-margin"
 	style="--color: var(--brand-blue-dark)"
 >
-	<form onsubmit={handleSubmit} class="contact-form">
+	<form 
+		method="POST" 
+		use:enhance={handleEnhance} 
+		class="contact-form"
+	>
+		<!-- Hidden input to capture the boolean state in the FormData -->
+		<input type="hidden" name="isOfferingHelp" value={formData.isOfferingHelp} />
+
 		<div class="input-group">
 			<label for="name"><User size={18} /> Name</label>
 			<input
 				type="text"
 				id="name"
+				name="name"
 				bind:value={formData.name}
 				placeholder="Your name"
 				required
@@ -77,68 +70,92 @@
 		</div>
 
 		<div class="input-group">
-			<label for="email"><Mail size={18} /> Email</label>
+			<label for="email"><Mail size={18} /> Email Address</label>
 			<input
 				type="email"
 				id="email"
+				name="email"
 				bind:value={formData.email}
 				placeholder="email@example.com"
 				required
 			/>
 		</div>
 
-		<div class="segmented-control">
-			<button
-				type="button"
-				class="control-option"
-				class:active={formData.isOfferingHelp}
-				onclick={() => (formData.isOfferingHelp = true)}
-			>
-				<LifeBuoy size={18} />
-				<span>I want to help</span>
-			</button>
-
-			<button
-				type="button"
-				class="control-option"
-				class:active={!formData.isOfferingHelp}
-				onclick={() => (formData.isOfferingHelp = false)}
-			>
-				<HandHelping size={18} />
-				<span>I need help</span>
-			</button>
-
-			<div class="glider" class:shifted={!formData.isOfferingHelp}></div>
+		<div class="input-group">
+			<label><MessageSquare size={18} /> How can we help?</label>
+			<div class="segmented-control">
+				<div class="glider" class:shifted={!formData.isOfferingHelp}></div>
+				
+				<button
+					type="button"
+					class="control-option"
+					class:active={formData.isOfferingHelp}
+					onclick={() => (formData.isOfferingHelp = true)}
+				>
+					<HandHelping size={20} />
+					<span>I Need Help</span>
+				</button>
+				
+				<button
+					type="button"
+					class="control-option"
+					class:active={!formData.isOfferingHelp}
+					onclick={() => (formData.isOfferingHelp = false)}
+				>
+					<LifeBuoy size={20} />
+					<span>I Want to Help</span>
+				</button>
+			</div>
 		</div>
 
 		<div class="input-group">
 			<label for="comments"><MessageSquare size={18} /> Comments</label>
 			<textarea
 				id="comments"
+				name="comments"
 				bind:value={formData.comments}
 				rows="5"
-				placeholder="How can we assist you?"
+				placeholder="Tell us more..."
+				required
 			></textarea>
 		</div>
 
-		<button type="submit" class="submit-btn auto-contrast">
-			Submit Message <Send size={18} />
+		<button type="submit" class="submit-btn">
+			<Send size={18} /> Send Message
 		</button>
 	</form>
 </section>
 
 <style>
 	.contact-form {
-		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		gap: var(--gap-2);
+		gap: 1.5rem;
+		max-width: 600px;
+		margin: 0 auto;
 	}
 
 	.input-group {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+	}
+
+	.input-group label {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 600;
+		color: var(--brand-orange);
+	}
+
+	input, textarea {
+		padding: 0.8rem;
+		background: var(--surface-2);
+		border: 2px solid var(--surface-3);
+		color: var(--fg);
+		border-radius: 4px;
+		font-family: inherit;
 	}
 
 	.segmented-control {
@@ -149,11 +166,6 @@
 		padding: 4px;
 		width: 100%;
 		overflow: hidden;
-		color: var(--fg);
-
-		span {
-			color: var(--fg) !important;
-		}
 	}
 
 	.control-option {
@@ -167,7 +179,7 @@
 		padding: 0.8rem;
 		border: none;
 		background: none;
-		color: var(--surface-5);
+		color: var(--fg);
 		font-family: 'Poppins', sans-serif;
 		font-weight: 500;
 		cursor: pointer;
@@ -176,13 +188,8 @@
 
 	.control-option.active {
 		color: var(--surface-1);
-
-		span {
-			color: var(--surface-1) !important;
-		}
 	}
 
-	/* The sliding highlight */
 	.glider {
 		position: absolute;
 		top: 4px;
@@ -196,7 +203,32 @@
 
 	.glider.shifted {
 		transform: translateX(100%);
-		background-color: var(--brand-orange); /* Changes to Pink when "Offering Help" */
+		background-color: var(--brand-orange);
+	}
+
+	.submit-btn {
+		background: var(--brand-blue);
+		color: white;
+		border: none;
+		padding: 1rem;
+		font-family: 'Poppins', sans-serif;
+		font-weight: bold;
+		text-transform: uppercase;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		transition: transform 0.1s, filter 0.2s;
+		margin-top: 1rem;
+	}
+
+	.submit-btn:hover {
+		filter: brightness(1.1);
+	}
+
+	.submit-btn:active {
+		transform: scale(0.98);
 	}
 
 	@media (max-width: 480px) {
@@ -210,32 +242,5 @@
 		.glider.shifted {
 			transform: translateY(100%);
 		}
-	}
-
-	.submit-btn {
-		background: var(--brand-blue);
-		/*color: var(--black-80);*/
-		border: none;
-		padding: 1rem;
-		font-family: 'Poppins', sans-serif;
-		font-weight: bold;
-		text-transform: uppercase;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.5rem;
-		border: 8px solid var(--surface-1);
-		transition:
-			transform 0.1s,
-			filter 0.2s;
-	}
-
-	.submit-btn:hover {
-		filter: brightness(1.1);
-	}
-
-	.submit-btn:active {
-		transform: scale(0.98);
 	}
 </style>
