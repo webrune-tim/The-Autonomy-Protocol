@@ -73,7 +73,7 @@
     flex: none;
   }
 
-  a {
+  a, .link-button {
     background: inherit;
     text-decoration: none;
     white-space: nowrap;
