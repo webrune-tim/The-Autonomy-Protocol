@@ -138,7 +138,7 @@
 	}
 
     .home-link,
-    .hone-link:hover {
+    .home-link:hover {
         text-decoration: none;
     }
 </style>

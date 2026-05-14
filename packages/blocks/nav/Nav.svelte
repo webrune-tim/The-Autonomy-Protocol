@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { enhance } from "$app/forms";
   import { page } from "$app/state";
 
   interface NavLink {
