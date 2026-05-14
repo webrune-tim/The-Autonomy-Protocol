@@ -80,7 +80,7 @@
 </svelte:head>
 
 {#snippet headerLogo()}
-	<Logo />
+	<a class="home-link" href="/"><Logo /></a>
 {/snippet}
 
 {#snippet headerActions()}
@@ -136,4 +136,9 @@
 	main {
 		width: 100%;
 	}
+
+    .home-link,
+    .hone-link:hover {
+        text-decoration: none;
+    }
 </style>

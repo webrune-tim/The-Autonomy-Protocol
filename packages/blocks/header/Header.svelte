@@ -28,7 +28,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-bottom: var(--gap-2);
+    padding-bottom: var(--gap-1);
     justify-content: space-between;
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-border);

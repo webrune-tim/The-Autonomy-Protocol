@@ -16,7 +16,8 @@
 </section>
 
 <section
-	class="angled-top-bottom-box thick-margins"
+	class="angled-top-bottom-box"
+    use:thickMargins
 	style="--color: var(--brand-orange)"
 >
 	<div class="title-grid">

@@ -9,7 +9,7 @@
     font-weight: bold;
     color: var(--brand-blue);
     margin: 0;
-    margin-bottom: -10px;
+    margin-bottom: -22px;
   }
   span {
     font-size: 0.7em;
