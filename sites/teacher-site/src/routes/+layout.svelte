@@ -80,7 +80,7 @@
 </svelte:head>
 
 {#snippet headerLogo()}
-	<Logo />
+	<a href="/"><Logo /></a>
 {/snippet}
 
 {#snippet headerActions()}
