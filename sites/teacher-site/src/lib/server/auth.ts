@@ -30,12 +30,9 @@ const userRole = ac.newRole({
   session: [],
 });
 
+const isLocalOrigin = env.ORIGIN?.includes("localhost") || env.ORIGIN?.includes("127.0.0.1");
 const baseURL =
-  dev && env.ORIGIN
-    ? env.ORIGIN
-    : env.VERCEL_URL
-      ? `https://${env.VERCEL_URL}`
-      : "https://the-autonomy-protocol.vercel.app";
+  env.ORIGIN && (dev || !isLocalOrigin) ? env.ORIGIN : "https://the-autonomy-protocol.vercel.app";
 
 export const auth = betterAuth({
   baseURL: baseURL.replace(/\/$/, ""),
