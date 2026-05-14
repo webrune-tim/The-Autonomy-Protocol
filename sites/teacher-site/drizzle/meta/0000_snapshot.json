@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "f1e4e018-73b4-4379-9d84-2cea171a87df",
+  "id": "0ccbc260-5821-4542-8023-5c9f68a735e7",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "task": {
@@ -303,6 +303,14 @@
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
+        },
+        "role": {
+          "name": "role",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "'user'"
         }
       },
       "indexes": {
