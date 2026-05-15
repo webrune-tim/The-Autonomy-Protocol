@@ -1,0 +1,114 @@
+/* 
+   print.css 
+   Optimized for SvelteKit Teacher-Site
+*/
+
+@media print {
+  /* 1. RESET & FUNDAMENTALS */
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: none !important;
+  }
+
+  body {
+    font-family: "Inter", sans-serif !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    background-color: #fff !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 2. UI CLEANUP */
+  nav, 
+  footer, 
+  header .no-print,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* 3. TYPOGRAPHY (Aligning with your headings) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif !important;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    page-break-after: avoid;
+  }
+
+  h1 { font-size: 24pt; border-bottom: 2pt solid #000; padding-bottom: 5px; }
+  h2 { font-size: 18pt; border-bottom: 1pt solid #ccc; }
+  h3 { font-size: 14pt; }
+
+  /* Handle your Special Elite font for Step numbers if used */
+  .step-grid span {
+    font-family: "Special Elite", serif !important;
+    font-size: 20pt !important;
+    margin-right: 10px;
+  }
+
+  /* 4. UTILITY BOXES (.trans-blue, .trans-orange, etc.) */
+  /* Convert translucent backgrounds to clear boxes with solid borders */
+  .box,
+  .trans-blue,
+  .trans-orange,
+  .trans-teal,
+  .trans-black {
+    background-color: transparent !important;
+    border: 1.5pt solid #000 !important;
+    border-radius: 4px !important;
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    page-break-inside: avoid; /* Keeps content together on one page */
+  }
+
+  /* 5. LAYOUT (Grid to Linear) */
+  /* Your 300px minmax grid can get squished on paper; linear is safer */
+  .grid, 
+  .step-grid,
+  .flex-around {
+    display: block !important;
+    width: 100%;
+  }
+
+  .flex-column {
+    padding-bottom: 0;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+    filter: grayscale(100%); /* Save color ink */
+  }
+
+  /* 6. LINK HANDLING */
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  /* Append the URL next to the link so students can see where it goes */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    font-weight: normal;
+  }
+
+  /* 7. PAGE BREAK HELPERS */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Prevent awkward single lines at bottom of pages */
+  p, blockquote {
+    orphans: 3;
+    widows: 3;
+  }
+}
