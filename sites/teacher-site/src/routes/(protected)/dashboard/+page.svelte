@@ -12,7 +12,7 @@
 <div class="flex">
 	<a href="/settings" class="box trans-blue">Settings</a>
 
-	<form method="post" action="?/signOut" use:enhance>
+	<form method="post" action="/logout">
 		<button
 			class="box trans-orange"
 			style="width: 100%; text-align: left; cursor: pointer;"

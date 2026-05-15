@@ -39,23 +39,6 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
-  signOut: async (event) => {
-    try {
-      await auth.api.signOut({
-        headers: event.request.headers,
-      });
-    } catch (err) {
-      // iOS Safari can drop/rotate session cookies before this fires; if
-      // better-auth can't find the session to revoke it throws. We still want
-      // to clear server-side state and redirect the user to /login regardless.
-      console.warn("[signOut] auth.api.signOut threw; clearing manually", err);
-      const sessionId = event.locals.session?.id;
-      if (sessionId) {
-        await db.delete(sessionTable).where(eq(sessionTable.id, sessionId));
-      }
-    }
-    redirect(303, "/login");
-  },
   updateRole: async (event) => {
     const currentUser = event.locals.user;
     if (!currentUser || (currentUser.role !== "admin" && currentUser.role !== "superadmin")) {
