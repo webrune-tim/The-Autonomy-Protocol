@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import { page } from '$app/stores'
 
   // Define the prop type
   interface Props {
@@ -12,15 +13,14 @@
 	// Import the shared packages
 	import { Banner } from '@autonomy/banner';
 	import { Footer } from '@autonomy/footer';
+	import { FooterNav } from '@autonomy/footer-nav'
 	import { Header } from '@autonomy/header';
 	import { Logo } from '@autonomy/logo';
-	import { Nav } from '@autonomy/nav';
+	import { DropNav } from '@autonomy/nav';
 	import { Pill } from '@autonomy/pill';
 
 	// Import local components
 	import ThemeToggle from '$components/ThemeToggle.svelte';
-
-	import { page } from '$app/stores';
 
   let { children }: Props = $props();
 
@@ -32,6 +32,25 @@
 		{ href: '/about', label: 'About' },
 		{ href: '/contact', label: 'Contact' }
 	];
+
+	$effect(() => {
+		const localStorageKey = `scroll-y-position-${window.location.href}`
+
+		const savedPosition = localStorage.getItem(localStorageKey)
+		if (savedPosition) {
+			window.scrollTo(0, parseInt(savedPosition, 10))
+		}
+
+		const handleScroll = () => {
+			localStorage.setItem(localStorageKey, window.scrollY.toString())
+		}
+
+		window.addEventListener('scroll', handleScroll, { passive: true })
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	})
 </script>
 
 <svelte:head>
@@ -59,7 +78,7 @@
 {/snippet}
 
 {#snippet headerNav()}
-	<Nav links={navLinks} currentPath={$page.url.pathname} />
+	<DropNav links={navLinks} currentPath={$page.url.pathname} />
 {/snippet}
 
 <div class="layout-wrapper">
@@ -82,6 +101,7 @@
 
 	<Footer>
 		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
+		<FooterNav links={navLinks} currentPath={$page.url.pathname} />
 	</Footer>
 </div>
 

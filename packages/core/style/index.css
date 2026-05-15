@@ -230,6 +230,7 @@ details strong {
   .cta {
     color: var(--safe-contrast) !important;
     padding: var(--gap-1) var(--gap-2);
+    margin-right: var(--gap-2);
     border: clamp(2px, 4svw, 4px) solid var(--safe-contrast);
     font-size: var(--font-size-3);
     border-radius: 100px;
