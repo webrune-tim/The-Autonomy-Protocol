@@ -70,6 +70,7 @@
 		name="description"
 		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
 	/>
+    <link rel="stylesheet" href="/print.css" media="print" />
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
 	<meta name="theme-color" content="#ff9661" />
 	<link rel="icon" href={favicon} />
