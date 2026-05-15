@@ -183,4 +183,8 @@
     stroke: currentColor;
     fill: none;
   }
+
+  .link-button {
+    color: var(--brand-blue);
+  }
 </style>
