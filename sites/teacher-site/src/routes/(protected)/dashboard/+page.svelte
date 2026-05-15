@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
+	import { goto } from '$app/navigation'
 	import type { PageServerData } from './$types'
 
 	let { data }: { data: PageServerData } = $props()
@@ -10,10 +11,12 @@
 <p>Current Role: <strong>{data.user.role}</strong></p>
 
 <div class="flex">
-	<a href="/settings" class="link-button">Settings</a>
+	<button type="button" class="link-button" onclick={() => goto('/settings')} style="color: var(--brand-blue);">
+		Settings
+	</button>
 
 	<form method="post" action="/logout">
-		<button class="link-button">
+		<button class="link-button" style="color: var(--brand-orange);">
 			Sign out
 		</button>
 	</form>

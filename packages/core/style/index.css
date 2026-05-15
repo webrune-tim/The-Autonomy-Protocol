@@ -92,8 +92,8 @@ button {
   padding: var(--gap-1) var(--gap-2);
 }
 
-.link-button {
-  /* color: var(--text-link);*/
+/* .link-button {
+  color: var(--text-link);
   text-decoration: none;
   transition: color 0.2s ease;
   outline: none;
@@ -105,7 +105,7 @@ button {
 
 .link-button:hover {
   text-decoration: underline;
-}
+} */
 
 strong {
   color: var(--brand-orange);
