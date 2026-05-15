@@ -151,4 +151,5 @@
 
     nav {
         margin: var(--gap-1) 0;
+    }
 </style>
