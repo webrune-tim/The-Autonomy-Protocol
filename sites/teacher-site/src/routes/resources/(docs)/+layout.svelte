@@ -148,4 +148,7 @@
 		font-weight: 700;
 		text-transform: uppercase;
 	}
+
+    nav {
+        margin: var(--gap-1) 0;
 </style>
