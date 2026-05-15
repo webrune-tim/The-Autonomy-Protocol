@@ -23,6 +23,11 @@
 	</div>
 </article>
 
+<button onclick={() => window.print()} class="no-print">
+  Print Lesson Plan
+</button>
+
+
 <!-- <style>
 	/* Base Layout */
 	.resource-layout {
