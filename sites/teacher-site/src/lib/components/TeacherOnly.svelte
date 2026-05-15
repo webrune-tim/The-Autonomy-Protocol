@@ -33,7 +33,7 @@
 <style>
 	.teacher-header {
 		margin-bottom: var(--gap-1);
-		border-bottom: 1px solid var(--brand-blue);
+		border-bottom: 1px solid var(--bg);
 		padding-bottom: 0.25rem;
 	}
 
@@ -42,7 +42,6 @@
 		font-size: 0.75rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
-		color: var(--brand-orange);
 		font-family: var(--font-header-sans-2);
 	}
 
