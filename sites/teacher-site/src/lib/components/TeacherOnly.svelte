@@ -33,7 +33,6 @@
 <style>
 	.teacher-header {
 		margin-bottom: var(--gap-1);
-		border-bottom: 1px solid var(--bg);
 		padding-bottom: 0.25rem;
 	}
 
