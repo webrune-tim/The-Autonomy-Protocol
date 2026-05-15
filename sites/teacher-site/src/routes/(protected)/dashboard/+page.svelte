@@ -23,7 +23,7 @@
 </div>
 
 {#if data.isAdmin}
-	<section class=".bold-border-box margin-top" style="--border-color: var(--brand-orange);">
+	<section class="bold-border-box margin-top" style="--border-color: var(--brand-orange);">
 		<h2>Administrative Control</h2>
 		<p>Lookup users to adjust authorization levels.</p>
 
