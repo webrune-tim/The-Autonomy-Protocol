@@ -10,13 +10,10 @@
 <p>Current Role: <strong>{data.user.role}</strong></p>
 
 <div class="flex">
-	<a href="/settings" class="box trans-blue">Settings</a>
+	<a href="/settings" class="link-button">Settings</a>
 
 	<form method="post" action="/logout">
-		<button
-			class="box trans-orange"
-			style="width: 100%; text-align: left; cursor: pointer;"
-		>
+		<button class="link-button">
 			Sign out
 		</button>
 	</form>
@@ -38,6 +35,7 @@
 		</form>
 
 		{#if data.searchResults.length > 0}
+			<div class="table-wrapper">
 			<table class="admin-table">
 				<thead>
 					<tr>
@@ -50,11 +48,11 @@
 				<tbody>
 					{#each data.searchResults as member}
 						<tr>
-							<td>{member.name}</td>
-							<td>{member.email}</td>
-							<td><code>{member.role}</code></td>
-							<td>
-								<form method="post" action="?/updateRole" use:enhance>
+							<td data-label="Name">{member.name}</td>
+							<td data-label="Email">{member.email}</td>
+							<td data-label="Current Role"><code>{member.role}</code></td>
+							<td data-label="Actions">
+								<form method="post" action="?/updateRole" use:enhance class="action-form">
 									<input type="hidden" name="userId" value={member.id} />
 									<select name="role" class="role-select">
 										<option value="user" selected={member.role === 'user'}
@@ -80,6 +78,7 @@
 					{/each}
 				</tbody>
 			</table>
+			</div>
 		{:else if data.searchResults.length === 0 && data.user.role !== undefined}
 			<p class="no-results">No members found matching your search.</p>
 		{/if}
@@ -118,11 +117,23 @@
 		cursor: pointer;
 	}
 
+	.table-wrapper {
+		width: 100%;
+		overflow-x: auto;
+		margin-top: 1rem;
+	}
+
 	.admin-table {
 		width: 100%;
 		border-collapse: collapse;
-		margin-top: 1rem;
 		font-size: 0.9rem;
+	}
+
+	.action-form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		align-items: center;
 	}
 
 	.admin-table th,
@@ -166,5 +177,64 @@
 	.no-results {
 		opacity: 0.6;
 		font-style: italic;
+	}
+
+	@media (max-width: 640px) {
+		.search-form {
+			flex-direction: column;
+		}
+
+		.admin-table thead {
+			position: absolute;
+			left: -9999px;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+		}
+
+		.admin-table,
+		.admin-table tbody,
+		.admin-table tr,
+		.admin-table td {
+			display: block;
+			width: 100%;
+		}
+
+		.admin-table tr {
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			border-radius: var(--border-radius);
+			padding: 0.5rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.admin-table td {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1rem;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			padding: 0.6rem 0.5rem;
+			text-align: right;
+			word-break: break-word;
+		}
+
+		.admin-table td:last-child {
+			border-bottom: none;
+		}
+
+		.admin-table td::before {
+			content: attr(data-label);
+			flex: 0 0 auto;
+			color: var(--brand-teal);
+			text-transform: uppercase;
+			font-size: 0.7rem;
+			letter-spacing: 0.05em;
+			font-weight: bold;
+		}
+
+		.role-select {
+			flex: 1;
+			min-width: 0;
+		}
 	}
 </style>
