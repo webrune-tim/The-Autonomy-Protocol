@@ -317,9 +317,10 @@ details strong {
   h2,
   h3,
   h4,
+  h5,
   strong,
   li:before {
-    color: var(--fg);
+    color: var(--bg);
   }
 }
 
