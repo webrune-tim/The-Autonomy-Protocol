@@ -74,7 +74,7 @@
 											>
 										{/if}
 									</select>
-									<button type="submit" class="update-button">Update</button>
+									<button type="submit">Update</button>
 								</form>
 							</td>
 						</tr>
@@ -108,16 +108,6 @@
 		border: 1px solid var(--brand-teal);
 		color: var(--fg);
 		border-radius: var(--border-radius);
-	}
-
-	.search-button {
-		padding: 0.75rem 1.5rem;
-		background: var(--brand-teal);
-		color: var(--bg);
-		border: none;
-		border-radius: var(--border-radius);
-		font-weight: bold;
-		cursor: pointer;
 	}
 
 	.table-wrapper {
@@ -159,22 +149,6 @@
 		color: var(--fg);
 		border: 1px solid var(--brand-teal);
 		border-radius: 4px;
-	}
-
-	.update-button {
-		padding: 0.4rem 0.8rem;
-		background: transparent;
-		color: var(--brand-teal);
-		border: 1px solid var(--brand-teal);
-		border-radius: 4px;
-		cursor: pointer;
-		font-size: 0.8rem;
-		transition: all 0.2s ease;
-	}
-
-	.update-button:hover {
-		background: var(--brand-teal);
-		color: var(--bg);
 	}
 
 	.no-results {
