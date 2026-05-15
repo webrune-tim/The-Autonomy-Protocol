@@ -1,42 +1,149 @@
-# sv
+# Student Site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+> Public-facing student portal for The Autonomy Protocol curriculum and resources.
 
-## Creating a project
+> **⚠️ Status: Not yet under active development**
 
-If you're seeing this, you've probably already done this step. Congrats!
+This site is currently in early development and is not actively being worked on. The teacher-site is the primary focus for curriculum implementation and resource management.
 
-```sh
-# create a new project
-npx sv create my-app
+## Overview
+
+The student site is the public-facing portal for students accessing The Autonomy Protocol curriculum. It provides a simplified interface for students to engage with the curriculum materials without authentication requirements. This SvelteKit application leverages shared component libraries from the monorepo for consistency with the teacher portal.
+
+## Tech Stack
+
+- **Framework:** Svelte 5 (runes mode) + SvelteKit
+- **Build Tool:** vite-plus (custom Vite wrapper)
+- **Language:** TypeScript
+- **Deployment:** Vercel
+- **Markdown:** mdsvex for curriculum content processing
+- **Package Manager:** pnpm
+- **Testing:** Vitest with Playwright browser mode
+
+## Site Structure
+
+```
+sites/student-site/
+├── src/
+│   ├── lib/
+│   │   ├── assets/              # Images and static assets
+│   │   ├── components/          # Student-specific components
+│   │   │   └── ThemeToggle.svelte
+│   │   └── stores/              # Svelte stores
+│   │       └── theme.svelte.js  # Theme preference store
+│   └── routes/                  # SvelteKit routes
+│       ├── +layout.svelte       # Root layout
+│       ├── +page.svelte         # Home page
+│       └── global.css          # Global styles
+├── svelte.config.js            # SvelteKit configuration
+└── vite.config.ts              # Vite configuration
 ```
 
-To recreate this project with the same configuration:
+## Quick Start
 
-```sh
-# recreate this project
-npx sv@0.15.1 create --template minimal --types ts --add prettier eslint vitest="usages:unit,component" sveltekit-adapter="adapter:vercel" drizzle="database:sqlite+sqlite:libsql" better-auth="demo:password" mcp="ide:gemini,vscode,opencode+setup:remote" --no-install ./
+### Prerequisites
+
+- Node.js >=22.12.0
+- pnpm 11.0.9
+
+### Installation
+
+From the monorepo root:
+
+```bash
+vp install
 ```
 
-## Developing
+### Development
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start the development server:
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```bash
+vp dev
 ```
 
-## Building
+Or from the monorepo root:
 
-To create a production version of your app:
-
-```sh
-npm run build
+```bash
+vp run student-site#dev
 ```
 
-You can preview the production build with `npm run preview`.
+### Build
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Build for production:
+
+```bash
+vp build
+```
+
+Preview production build:
+
+```bash
+vp preview
+```
+
+## Package Scripts
+
+- `vp dev` - Start development server
+- `vp build` - Build for production
+- `vp preview` - Preview production build
+- `svelte-kit sync && svelte-check --tsconfig ./tsconfig.json` - Run svelte-check
+- `prettier --check . && eslint .` - Run ESLint and Prettier checks
+- `prettier --write .` - Format code with Prettier
+
+## Key Features
+
+### Curriculum Content
+
+- Public access to curriculum materials
+- The Integrity Shield (Five Agreements) content
+- The Accountability Cycle (Twelve Steps) content
+- Simplified interface optimized for student engagement
+
+### Theme Support
+
+- Dark/light theme toggle
+- Theme preference persisted via local storage
+- Consistent theming with teacher-site
+
+## Shared Packages
+
+The student site imports shared packages from the monorepo:
+
+- `@autonomy/banner` - Banner component
+- `@autonomy/footer` - Footer component
+- `@autonomy/four-agreements` - Four Agreements content
+- `@autonomy/header` - Header component
+- `@autonomy/hero` - Hero component
+- `@autonomy/logo` - Logo component
+- `@autonomy/nav` - Navigation component
+- `@autonomy/pill` - Pill component
+- `@autonomy/style` - Shared CSS (tokens, reset, functions)
+- `@autonomy/twelve-steps` - Twelve Steps content
+
+## Deployment
+
+The student site deploys to Vercel via the SvelteKit adapter. No environment variables are required as the site is public-facing without authentication.
+
+## Development Notes
+
+### Svelte Configuration
+
+- Runes mode forced for all files except node_modules
+- mdsvex preprocessor for `.md` and `.svx` files
+- Path aliases: `$components`, `$images`, `$stores`
+
+### Testing
+
+- Vitest configured with Playwright browser mode for component testing
+- Unit and component test capabilities
+
+## Future Development
+
+Planned features for when active development resumes:
+
+- Interactive curriculum modules
+- Student progress tracking
+- Gamification elements
+- Mobile-responsive design enhancements
+- Accessibility improvements
