@@ -11,12 +11,12 @@
 <p>Current Role: <strong>{data.user.role}</strong></p>
 
 <div class="flex">
-	<button type="button" class="link-button" onclick={() => goto('/settings')} style="color: var(--brand-blue);">
+	<button type="button" class="link-button" onclick={() => goto('/settings')} style="--color: var(--brand-blue);">
 		Settings
 	</button>
 
 	<form method="post" action="/logout">
-		<button class="link-button" style="color: var(--brand-orange);">
+		<button class="link-button" style="--color: var(--brand-orange);">
 			Sign out
 		</button>
 	</form>
