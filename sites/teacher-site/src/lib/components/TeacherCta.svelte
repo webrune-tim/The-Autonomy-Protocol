@@ -5,7 +5,7 @@
 	const loginUrl = $derived(`/login?redirectTo=${encodeURIComponent(currentPath)}`)
 </script>
 
-<aside class="box trans-black margin-top">
+<aside class="bold-border-box margin-top" style="--border-color: var(--bg)">
 	<div class="cta-grid">
 		<div class="cta-content">
 			<h4>Pedagogical Infrastructure Available</h4>
@@ -39,7 +39,7 @@
 		}
 	}
 
-	h4 {
+	/* h4 {
 		margin: 0 0 0.5rem 0;
 		color: var(--brand-orange);
 		text-transform: uppercase;
@@ -52,25 +52,18 @@
 		font-size: 0.95rem;
 		color: var(--fg);
 		opacity: 0.9;
-	}
+	} */
 
 	.login-button {
+		background-color: var(--brand-blue);
+		color: var(--bg);
+		font-weight: bold;
+		outline: none;
+		cursor: pointer;
+		border: none;
 		display: inline-block;
-		padding: 0.75rem 1.5rem;
-		background-color: var(--brand-orange);
-		color: var(--bg) !important;
-		text-decoration: none !important;
-		font-weight: 700;
-		font-size: 0.85rem;
 		text-transform: uppercase;
-		border-radius: var(--border-radius);
-		transition:
-			transform 0.2s ease,
-			filter 0.2s ease;
-	}
-
-	.login-button:hover {
-		transform: translateY(-2px);
-		filter: brightness(1.1);
+		text-decoration: none !important;
+		padding: var(--gap-1) var(--gap-2);
 	}
 </style>

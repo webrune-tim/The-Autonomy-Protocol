@@ -78,6 +78,20 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+  --color: var(--brand-blue);
+  background-color: var(--color);
+  color: var(--bg);
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  padding: var(--gap-1) var(--gap-2);
+}
+
 .link-button {
   /* color: var(--text-link);*/
   text-decoration: none;
