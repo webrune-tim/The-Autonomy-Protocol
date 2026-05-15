@@ -61,6 +61,32 @@
 
 <section>
 	<div class="grid">
+		<section class="bold-border-box">
+			<div class="title-grid">
+				<div class="flex-column">
+					<h3>The Accountability Cycle</h3>
+					<span>(Tier 2: Restoration)</span>
+				</div>
+			</div>
+			<ol>
+				<li>
+					<strong>Acknowledge Patterns:</strong> Identify the problem.
+				</li>
+				<li>
+					<strong>Self-Assess:</strong> Conduct an objective inventory.
+				</li>
+				<li>
+					<strong>Repair Harm:</strong> Take direct action to fix relationships.
+				</li>
+				<li>
+					<strong>Mentor Others:</strong> Reflect and support peers.
+				</li>
+				<li>
+					<strong>Stay Present:</strong> Maintain discernment in action.
+				</li>
+			</ol>
+		</section>
+
 		<section class="bold-border-box" style="--border-color: var(--brand-orange)">
 			<div class="title-grid">
 				<div class="flex-column">
@@ -84,32 +110,6 @@
 				</li>
 				<li>
 					<strong>Practice Presence:</strong> Evaluate impulses, find truth.
-				</li>
-			</ol>
-		</section>
-
-		<section class="bold-border-box">
-			<div class="title-grid">
-				<div class="flex-column">
-					<h3>The Accountability Cycle</h3>
-					<span>(Tier 2: Restoration)</span>
-				</div>
-			</div>
-			<ol>
-				<li>
-					<strong>Acknowledge Patterns:</strong> Identify the problem.
-				</li>
-				<li>
-					<strong>Self-Assess:</strong> Conduct an objective inventory.
-				</li>
-				<li>
-					<strong>Repair Harm:</strong> Take direct action to fix relationships.
-				</li>
-				<li>
-					<strong>Mentor Others:</strong> Reflect and support peers.
-				</li>
-				<li>
-					<strong>Stay Present:</strong> Maintain discernment in action.
 				</li>
 			</ol>
 		</section>

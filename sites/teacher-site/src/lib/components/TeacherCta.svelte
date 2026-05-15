@@ -55,7 +55,7 @@
 	} */
 
 	.login-button {
-		background-color: var(--brand-blue);
+		background-color: var(--alt-color);
 		color: var(--bg);
 		font-weight: bold;
 		outline: none;

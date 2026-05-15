@@ -1,9 +1,20 @@
 <script lang="ts">
 	import { page } from '$app/state'
+	import { derived } from 'svelte/store'
 	let { children } = $props()
 
 	const colors = ['var(--brand-blue)', 'var(--brand-orange)', 'var(--brand-teal)']
 	const color = colors[Math.floor(Math.random() * colors.length)]
+
+	const alt_color = () => {
+		if (color === colors[0]) {
+			return colors[1]
+		} else if (color === colors[1]) {
+			return colors[2]
+		} else {
+			return colors[0]
+		}
+	}
 </script>
 
 <article class="unangled-box no-bottom-margin" style="--color: {color}">
@@ -18,12 +29,12 @@
 		{/if}
 	</header>
 
-	<div class="markdown-body">
+	<div class="markdown-body" style="--alt-color: {alt_color()}">
 		{@render children()}
 	</div>
 </article>
 
-<button onclick={() => window.print()} class="no-print">
+<button onclick={() => window.print()} class="no-print" style="--color: {alt_color()}">
   Print Lesson Plan
 </button>
 
