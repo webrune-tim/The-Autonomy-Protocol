@@ -149,28 +149,6 @@ textarea:focus {
   border: 2px solid var(--brand-orange);
 }
 
-/*ol {
-  list-style: none;
-  counter-reset: item;
-  list-style-position: inside;
-  padding-left: 0.5rem;
-
-  li {
-    counter-increment: item;
-    margin-bottom: 5px;
-  }
-  li:before {
-    margin-right: 10px;
-    content: counter(item);
-    color: var(--brand-blue);
-    font-size: var(--font-size-3);
-    width: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-  }
-}*/
-
 details > summary {
   cursor: pointer;
   font-weight: bold;

@@ -23,7 +23,7 @@
 </div>
 
 {#if data.isAdmin}
-	<section class="box trans-teal margin-top">
+	<section class=".bold-border-box margin-top" style="--border-color: var(--brand-orange);">
 		<h2>Administrative Control</h2>
 		<p>Lookup users to adjust authorization levels.</p>
 
@@ -107,7 +107,6 @@
 		background: rgba(0, 0, 0, 0.2);
 		border: 1px solid var(--brand-teal);
 		color: var(--fg);
-		border-radius: var(--border-radius);
 	}
 
 	.table-wrapper {
@@ -148,7 +147,6 @@
 		background: var(--bg);
 		color: var(--fg);
 		border: 1px solid var(--brand-teal);
-		border-radius: 4px;
 	}
 
 	.no-results {
@@ -179,7 +177,6 @@
 
 		.admin-table tr {
 			border: 1px solid rgba(255, 255, 255, 0.15);
-			border-radius: var(--border-radius);
 			padding: 0.5rem;
 			margin-bottom: 0.75rem;
 		}
