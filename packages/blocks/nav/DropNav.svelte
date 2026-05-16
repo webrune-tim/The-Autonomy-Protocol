@@ -70,9 +70,6 @@
           {/each}
           {#if page.data.user}
             <li>
-              <a href="/dashboard">Dashboard</a>
-            </li>
-            <li>
               <form method="POST" action="/logout">
                 <button type="submit" class="link-button">
                   Logout
