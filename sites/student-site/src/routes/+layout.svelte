@@ -24,14 +24,14 @@
 
 	let { data, children }: Props = $props()
 
-	const navLinks = [
+	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
 		...(data.user ? [{ href: '/assignments', label: 'Assignments' }] : []),
 		...(data.user ? [{ href: '/homework', label: 'Homework' }] : []),
 		...(data.user ? [{ href: '/achievements', label: 'Achievements' }] : []),
 		{ href: '/about', label: 'About' },
 		{ href: '/contact', label: 'Contact' }
-	];
+	]);
 </script>
 
 <svelte:head>
