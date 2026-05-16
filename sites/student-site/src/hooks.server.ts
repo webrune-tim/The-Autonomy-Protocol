@@ -1,4 +1,4 @@
-import type { Handle } from "@sveltejs/kit";
+import { redirect, type Handle } from "@sveltejs/kit";
 import { auth } from "$lib/server/auth";
 import { db } from "$lib/server/db";
 import { session as sessionTable } from "$lib/server/db/schema";
@@ -27,6 +27,14 @@ const handleBetterAuth: Handle = async ({ event, resolve }) => {
     event.locals.session = null;
     event.locals.user = null;
   }
+
+  // --- START PROTECTION LOGIC ---
+  const isProtectedRoute = event.route.id?.includes("(protected)");
+
+  if (isProtectedRoute && !event.locals.session) {
+    redirect(303, "/login");
+  }
+  // --- END PROTECTION LOGIC ---
 
   return resolve(event);
 };

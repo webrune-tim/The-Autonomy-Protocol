@@ -2,10 +2,6 @@
 	import type { Snippet } from 'svelte';
 	import { page } from '$app/stores'
 
-  // Define the prop type
-  interface Props {
-    children: Snippet;
-  }
 	import favicon from '$lib/assets/favicon.svg';
 	import OgImg from '$images/og-img.png';
 	import '@autonomy/style/index.css';
@@ -21,13 +17,18 @@
 	// Import local components
 	import ThemeToggle from '$components/ThemeToggle.svelte';
 
-  let { children }: Props = $props();
+	interface Props {
+		data: LayoutData
+		children: Snippet
+	}
+
+	let { data, children }: Props = $props()
 
 	const navLinks = [
 		{ href: '/', label: 'Home' },
-		{ href: '/assignments', label: 'Assignments' },
-		{ href: '/homework', label: 'Homework' },
-		{ href: '/achievements', label: 'Achievements' },
+		...(data.user ? [{ href: '/assignments', label: 'Assignments' }] : []),
+		...(data.user ? [{ href: '/homework', label: 'Homework' }] : []),
+		...(data.user ? [{ href: '/achievements', label: 'Achievements' }] : []),
 		{ href: '/about', label: 'About' },
 		{ href: '/contact', label: 'Contact' }
 	];
