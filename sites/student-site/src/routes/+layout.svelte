@@ -32,25 +32,6 @@
 		{ href: '/about', label: 'About' },
 		{ href: '/contact', label: 'Contact' }
 	];
-
-	$effect(() => {
-		const localStorageKey = `scroll-y-position-${window.location.href}`
-
-		const savedPosition = localStorage.getItem(localStorageKey)
-		if (savedPosition) {
-			window.scrollTo(0, parseInt(savedPosition, 10))
-		}
-
-		const handleScroll = () => {
-			localStorage.setItem(localStorageKey, window.scrollY.toString())
-		}
-
-		window.addEventListener('scroll', handleScroll, { passive: true })
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
-	})
 </script>
 
 <svelte:head>
