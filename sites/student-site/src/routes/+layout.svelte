@@ -30,7 +30,8 @@
 		...(data.user ? [{ href: '/homework', label: 'Homework' }] : []),
 		...(data.user ? [{ href: '/achievements', label: 'Achievements' }] : []),
 		{ href: '/about', label: 'About' },
-		{ href: '/contact', label: 'Contact' }
+		{ href: '/contact', label: 'Contact' },
+		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	]);
 </script>
 
