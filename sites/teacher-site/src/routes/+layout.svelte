@@ -43,6 +43,16 @@
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	])
 
+	const footerLinks = $derived([
+		{ href: '/', label: 'Home' },
+		{ href: '/mission', label: 'Mission' },
+		{ href: '/join-us', label: 'Join Us' },
+		{ href: '/curriculum', label: 'Curriculum' },
+		{ href: '/resources', label: 'Resources' },
+		{ href: '/road-map', label: 'Road Map' },
+		{ href: '/contact', label: 'Contact' }
+	])
+
 	$effect(() => {
 		const localStorageKey = `scroll-y-position-${window.location.href}`
 
@@ -117,7 +127,7 @@
 
 	<Footer>
 		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
-		<FooterNav links={navLinks} currentPath={$page.url.pathname} />
+		<FooterNav links={footerLinks} currentPath={$page.url.pathname} />
 	</Footer>
 </div>
 

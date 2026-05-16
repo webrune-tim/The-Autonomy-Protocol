@@ -39,7 +39,7 @@
     margin: 0 auto;
     width: 100%;
     margin-top: var(--gap-2);
-    padding-top: var(--gap-2);
+    padding-top: var(--gap-1);
   }
 
   ul {

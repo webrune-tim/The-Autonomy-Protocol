@@ -33,6 +33,15 @@
 		{ href: '/contact', label: 'Contact' },
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	]);
+
+	const footerLinks = $derived([
+		{ href: '/', label: 'Home' },
+		...(data.user ? [{ href: '/assignments', label: 'Assignments' }] : []),
+		...(data.user ? [{ href: '/homework', label: 'Homework' }] : []),
+		...(data.user ? [{ href: '/achievements', label: 'Achievements' }] : []),
+		{ href: '/about', label: 'About' },
+		{ href: '/contact', label: 'Contact' }
+	]);
 </script>
 
 <svelte:head>
@@ -83,7 +92,7 @@
 
 	<Footer>
 		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
-		<FooterNav links={navLinks} currentPath={$page.url.pathname} />
+		<FooterNav links={footerLinks} currentPath={$page.url.pathname} />
 	</Footer>
 </div>
 
