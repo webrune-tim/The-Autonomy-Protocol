@@ -5,12 +5,21 @@ import type { User, Session } from "better-auth/minimal";
 declare global {
   namespace App {
     interface Locals {
-      user?: User;
+      user?: User & {
+        role: "user" | "student" | "teacher" | "admin" | "superadmin";
+        theme?: string;
+      };
       session?: Session;
     }
 
     // interface Error {}
-    // interface PageData {}
+    interface PageData {
+      user?: User & {
+        role: "user" | "student" | "teacher" | "admin" | "superadmin";
+        theme?: string;
+      };
+      session?: Session;
+    }
     // interface PageState {}
     // interface Platform {}
   }

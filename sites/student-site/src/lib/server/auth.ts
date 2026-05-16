@@ -65,6 +65,21 @@ export const auth = betterAuth({
       },
     },
   },
+  databaseHooks: {
+    user: {
+      create: {
+        before: async (user) => {
+          // Users registering through the student-site default to the `student` role.
+          return {
+            data: {
+              ...user,
+              role: (user as { role?: string }).role || "student",
+            },
+          };
+        },
+      },
+    },
+  },
   plugins: [
     admin({
       adminRoles: ["admin", "superadmin"],

@@ -6,7 +6,7 @@ declare global {
   namespace App {
     interface Locals {
       user?: User & {
-        role: "user" | "teacher" | "admin" | "superadmin";
+        role: "user" | "student" | "teacher" | "admin" | "superadmin";
         theme?: string;
       };
       session?: Session;
@@ -15,7 +15,7 @@ declare global {
     // interface Error {}
     interface PageData {
       user?: User & {
-        role: "user" | "teacher" | "admin" | "superadmin";
+        role: "user" | "student" | "teacher" | "admin" | "superadmin";
         theme?: string;
       };
       session?: Session;
