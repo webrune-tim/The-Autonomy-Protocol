@@ -30,7 +30,6 @@
 		...(data.user ? [{ href: '/homework', label: 'Homework' }] : []),
 		...(data.user ? [{ href: '/achievements', label: 'Achievements' }] : []),
 		{ href: '/about', label: 'About' },
-		{ href: '/contact', label: 'Contact' },
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	]);
 
@@ -39,8 +38,7 @@
 		...(data.user ? [{ href: '/assignments', label: 'Assignments' }] : []),
 		...(data.user ? [{ href: '/homework', label: 'Homework' }] : []),
 		...(data.user ? [{ href: '/achievements', label: 'Achievements' }] : []),
-		{ href: '/about', label: 'About' },
-		{ href: '/contact', label: 'Contact' }
+		{ href: '/about', label: 'About' }
 	]);
 </script>
 

@@ -16,7 +16,7 @@
 
 <section class="unangled-box">
 	<div class="login-container">
-		<p>Access the Teacher Portal using your Google account.</p>
+		<p>Access the Teacher Portal</p>
 		<button onclick={loginWithGoogle} class="google-btn">
 			<svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
 				<path
@@ -47,7 +47,6 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
-		padding: 2rem 0;
 	}
 
 	.google-btn {
