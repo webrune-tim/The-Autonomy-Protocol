@@ -75,10 +75,10 @@
             </li>
             <li>
               <form method="POST" action="/logout" use:enhance>
-      <button type="submit" class="link-button">
-        Logout
-      </button>
-    </form>
+                <button type="submit" class="link-button">
+                  Logout
+                </button>
+              </form>
             </li>
           {:else}
             <li>

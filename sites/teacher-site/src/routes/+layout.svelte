@@ -12,10 +12,9 @@
 	// Shared Components
 	import { Banner } from '@autonomy/banner'
 	import { Footer } from '@autonomy/footer'
-	import { FooterNav } from '@autonomy/footer-nav'
 	import { Header } from '@autonomy/header'
 	import { Logo } from '@autonomy/logo'
-	import { DropNav } from '@autonomy/nav'
+	import { DropNav, FooterNav } from '@autonomy/nav'
 	import { Pill } from '@autonomy/pill'
 
 	// Local components
