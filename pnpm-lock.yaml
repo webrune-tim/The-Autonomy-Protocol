@@ -61,12 +61,6 @@ importers:
 
   packages/blocks/footer: {}
 
-  packages/blocks/footer-nav:
-    dependencies:
-      '@lucide/svelte':
-        specifier: 'catalog:'
-        version: 1.14.0(svelte@5.55.5(@typescript-eslint/types@8.59.2))
-
   packages/blocks/header: {}
 
   packages/blocks/hero: {}
@@ -136,9 +130,6 @@ importers:
       '@autonomy/footer':
         specifier: workspace:*
         version: link:../../packages/blocks/footer
-      '@autonomy/footer-nav':
-        specifier: workspace:*
-        version: link:../../packages/blocks/footer-nav
       '@autonomy/four-agreements':
         specifier: workspace:*
         version: link:../../packages/content/four-agreements
@@ -266,9 +257,6 @@ importers:
       '@autonomy/footer':
         specifier: workspace:*
         version: link:../../packages/blocks/footer
-      '@autonomy/footer-nav':
-        specifier: workspace:*
-        version: link:../../packages/blocks/footer-nav
       '@autonomy/four-agreements':
         specifier: workspace:*
         version: link:../../packages/content/four-agreements
