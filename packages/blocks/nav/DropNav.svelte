@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { enhance } from "$app/forms";
   import { page } from "$app/state";
   import { Menu } from "@lucide/svelte";
 
@@ -74,7 +73,7 @@
               <a href="/dashboard">Dashboard</a>
             </li>
             <li>
-              <form method="POST" action="/logout" use:enhance>
+              <form method="POST" action="/logout">
                 <button type="submit" class="link-button">
                   Logout
                 </button>
@@ -185,6 +184,8 @@
   }
 
   .link-button {
+    background: none;
     color: var(--brand-blue);
+    padding: 10px 0 var(--gap-1) var(--gap-1);
   }
 </style>

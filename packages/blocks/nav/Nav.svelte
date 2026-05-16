@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { enhance } from "$app/forms";
   import { page } from "$app/state";
 
   interface NavLink {
@@ -34,7 +33,7 @@
         <a href="/dashboard">Dashboard</a>
       </li>
       <li>
-        <form method="POST" action="/logout" use:enhance>
+        <form method="POST" action="/logout">
       <button type="submit" class="link-button">
         Logout
       </button>
