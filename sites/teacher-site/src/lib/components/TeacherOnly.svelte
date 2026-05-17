@@ -18,7 +18,11 @@
 </script>
 
 {#if isAuthorized}
-	<aside class="bold-border-box margin-top" style="--border-color: var(--bg)" aria-label="Teacher Toolkit">
+	<aside
+		class="bold-border-box margin-top"
+		style="--border-color: var(--bg)"
+		aria-label="Teacher Toolkit"
+	>
 		<div class="teacher-header">
 			<h3>Teacher Toolkit</h3>
 		</div>

@@ -11,7 +11,12 @@
 <p>Current Role: <strong>{data.user.role}</strong></p>
 
 <div class="flex">
-	<button type="button" class="link-button" onclick={() => goto('/settings')} style="--color: var(--brand-blue);">
+	<button
+		type="button"
+		class="link-button"
+		onclick={() => goto('/settings')}
+		style="--color: var(--brand-blue);"
+	>
 		Settings
 	</button>
 
@@ -23,7 +28,10 @@
 </div>
 
 {#if data.isAdmin}
-	<section class="bold-border-box margin-top" style="--border-color: var(--brand-orange);">
+	<section
+		class="bold-border-box margin-top"
+		style="--border-color: var(--brand-orange);"
+	>
 		<h2>Administrative Control</h2>
 		<p>Lookup users to adjust authorization levels.</p>
 
@@ -39,48 +47,53 @@
 
 		{#if data.searchResults.length > 0}
 			<div class="table-wrapper">
-			<table class="admin-table">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Current Role</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					{#each data.searchResults as member}
+				<table class="admin-table">
+					<thead>
 						<tr>
-							<td data-label="Name">{member.name}</td>
-							<td data-label="Email">{member.email}</td>
-							<td data-label="Current Role"><code>{member.role}</code></td>
-							<td data-label="Actions">
-								<form method="post" action="?/updateRole" use:enhance class="action-form">
-									<input type="hidden" name="userId" value={member.id} />
-									<select name="role" class="role-select">
-										<option value="user" selected={member.role === 'user'}
-											>User</option
-										>
-										<option value="teacher" selected={member.role === 'teacher'}
-											>Teacher</option
-										>
-										<option value="admin" selected={member.role === 'admin'}
-											>Admin</option
-										>
-										{#if data.user.role === 'superadmin'}
-											<option
-												value="superadmin"
-												selected={member.role === 'superadmin'}>Superadmin</option
-											>
-										{/if}
-									</select>
-									<button type="submit">Update</button>
-								</form>
-							</td>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Current Role</th>
+							<th>Actions</th>
 						</tr>
-					{/each}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{#each data.searchResults as member}
+							<tr>
+								<td data-label="Name">{member.name}</td>
+								<td data-label="Email">{member.email}</td>
+								<td data-label="Current Role"><code>{member.role}</code></td>
+								<td data-label="Actions">
+									<form
+										method="post"
+										action="?/updateRole"
+										use:enhance
+										class="action-form"
+									>
+										<input type="hidden" name="userId" value={member.id} />
+										<select name="role" class="role-select">
+											<option value="user" selected={member.role === 'user'}
+												>User</option
+											>
+											<option value="teacher" selected={member.role === 'teacher'}
+												>Teacher</option
+											>
+											<option value="admin" selected={member.role === 'admin'}
+												>Admin</option
+											>
+											{#if data.user.role === 'superadmin'}
+												<option
+													value="superadmin"
+													selected={member.role === 'superadmin'}>Superadmin</option
+												>
+											{/if}
+										</select>
+										<button type="submit">Update</button>
+									</form>
+								</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
 			</div>
 		{:else if data.searchResults.length === 0 && data.user.role !== undefined}
 			<p class="no-results">No members found matching your search.</p>

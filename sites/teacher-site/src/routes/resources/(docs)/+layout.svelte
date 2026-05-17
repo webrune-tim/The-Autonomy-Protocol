@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/state'
 	import { ReadingTime } from '@autonomy/reading-time'
-    import { ScrollToTop } from '@autonomy/scroll-to-top'
-	
+	import { ScrollToTop } from '@autonomy/scroll-to-top'
+
 	import { derived } from 'svelte/store'
 	let { children } = $props()
 
@@ -25,8 +25,12 @@
 		<a class="back-link" href="/resources">← Back to Resources</a>
 	</nav>
 
-	<button onclick={() => window.print()} class="no-print" style="--color: {alt_color()}">
-	Print Lesson Plan
+	<button
+		onclick={() => window.print()}
+		class="print"
+		style="--color: {alt_color()}"
+	>
+		Print Lesson Plan
 	</button>
 
 	<header class="doc-header">
@@ -36,8 +40,8 @@
 		{/if}
 	</header>
 
-	<ReadingTime 
-		targetSelector="#doc-content" 
+	<ReadingTime
+		targetSelector="#doc-content"
 		textColor="var(--bg)"
 		iconColor="var(--bg)"
 		fontSize="--font-size-4"
@@ -48,21 +52,25 @@
 	</div>
 </article>
 
-<ScrollToTop
-    threshold={15}
-    ringColor={alt_color()}
-    ringWidth={6}
-/>
+<ScrollToTop threshold={15} ringColor={alt_color()} ringWidth={6} />
 
 <style>
-    article {
+	article {
 		position: relative;
 	}
 
-	.no-print {
+	.print {
 		position: absolute;
 		top: var(--gap-2);
 		right: var(--gap-2);
+
+		@media print {
+			display: none;
+		}
+
+		@media (max-width: 600px) {
+			display: none;
+		}
 	}
 
 	:global(h4) {
@@ -75,7 +83,7 @@
 		text-transform: uppercase;
 	}
 
-    nav {
-        margin: var(--gap-1) 0;
-    }
+	nav {
+		margin: var(--gap-1) 0;
+	}
 </style>
