@@ -1,9 +1,19 @@
 import { sveltekit } from "@sveltejs/kit/vite";
+import { sentrySvelteKit } from "@sentry/sveltekit";
 import { enhancedImages } from "@sveltejs/enhanced-img";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [enhancedImages(), sveltekit()],
+  plugins: [
+    enhancedImages(),
+    // sentrySvelteKit MUST come before sveltekit()
+    sentrySvelteKit({
+      org: process.env.SENTRY_ORG,
+      project: process.env.SENTRY_PROJECT,
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+    }),
+    sveltekit(),
+  ],
 
   server: {
     hmr: {

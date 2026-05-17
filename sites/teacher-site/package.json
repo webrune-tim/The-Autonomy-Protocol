@@ -34,6 +34,7 @@
     "@autonomy/style": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",
     "@lucide/svelte": "catalog:",
+    "@sentry/sveltekit": "catalog:",
     "svelte-french-toast": "^1.2.0"
   },
   "devDependencies": {

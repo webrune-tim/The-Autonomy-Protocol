@@ -21,6 +21,10 @@ const config = {
         include: [...config.include, "../drizzle.config.ts"],
       }),
     },
+    experimental: {
+      instrumentation: { server: true },
+      tracing: { server: true },
+    },
   },
   preprocess: [mdsvex({ extensions: [".svx", ".md"] })],
   extensions: [".svelte", ".svx", ".md"],

@@ -1,4 +1,6 @@
 import { redirect, type Handle } from "@sveltejs/kit";
+import { sequence } from "@sveltejs/kit/hooks";
+import * as Sentry from "@sentry/sveltekit";
 import { auth } from "$lib/server/auth";
 import { db } from "$lib/server/db";
 import { session as sessionTable } from "$lib/server/db/schema";
@@ -39,4 +41,6 @@ const handleBetterAuth: Handle = async ({ event, resolve }) => {
   return resolve(event);
 };
 
-export const handle: Handle = handleBetterAuth;
+export const handle: Handle = sequence(Sentry.sentryHandle(), handleBetterAuth);
+
+export const handleError = Sentry.handleErrorWithSentry();

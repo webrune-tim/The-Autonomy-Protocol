@@ -14,6 +14,10 @@ const config = {
       $images: "src/lib/assets/images",
       $stores: "src/lib/stores",
     },
+    experimental: {
+      instrumentation: { server: true },
+      tracing: { server: true },
+    },
   },
   preprocess: [mdsvex({ extensions: [".svx", ".md"] })],
   extensions: [".svelte", ".svx", ".md"],
