@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Clock } from '@lucide/svelte'
+
 	let {
 		targetSelector = 'main',
 		wordsPerMinute = 225,
@@ -7,7 +9,7 @@
 		dynamicSuffix = 'min left',
 		textColor = '#a3a3a3', // Muted text for dark interfaces
 		iconColor = '#4b5563', // Slightly lighter icon
-		fontSize = '0.875rem'
+		fontSize = 'var(--font-size-4)'
 	} = $props();
 
 	let totalMinutes = $state(0);
@@ -55,27 +57,17 @@
 	style:--icon-color={iconColor}
 	style:--font-size={fontSize}
 >
-	<svg 
-		class="rt-icon" 
-		xmlns="http://www.w3.org/2000/svg" 
-		width="16" 
-		height="16" 
-		viewBox="0 0 24 24" 
-		fill="none" 
-		stroke="currentColor" 
-		stroke-width="2" 
-		stroke-linecap="round" 
-		stroke-linejoin="round"
-	>
-		<circle cx="12" cy="12" r="10"/>
-		<polyline points="12 6 12 12 16 14"/>
-	</svg>
+	<Clock size={32} color={iconColor} />
 	<span class="rt-text">
 		<span class="rt-number">{displayValue}</span> {currentSuffix}
 	</span>
 </div>
 
 <style>
+	span {
+		margin: 0;
+	}
+
 	.reading-time {
 		display: inline-flex;
 		align-items: center;
@@ -85,6 +77,7 @@
 		font-size: var(--font-size);
 		font-weight: 500;
 		user-select: none;
+		margin-bottom: var(--gap-1);
 	}
 
 	.rt-icon {
@@ -95,6 +88,6 @@
 	.rt-number {
 		font-variant-numeric: tabular-nums;
 		font-weight: 600;
-		color: color-mix(in srgb, var(--text-color) 80%, white); /* Pops the number slightly */
+		color: var(--text-color); /* Pops the number slightly */
 	}
 </style>

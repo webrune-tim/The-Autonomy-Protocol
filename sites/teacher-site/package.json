@@ -31,6 +31,7 @@
     "@autonomy/logo": "workspace:*",
     "@autonomy/nav": "workspace:*",
     "@autonomy/pill": "workspace:*",
+    "@autonomy/reading-time": "workspace:*",
     "@autonomy/scroll-to-top": "workspace:*",
     "@autonomy/style": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",

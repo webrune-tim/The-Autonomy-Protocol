@@ -1,0 +1,11 @@
+{
+  "name": "@autonomy/reading-time",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "@lucide/svelte": "^0.546.0"
+  }
+}

@@ -12,8 +12,6 @@ published: true
 
 ## As students, we all need help sometimes. There is no shame in it
 
-The second step in **The Autonomy Protocol**
-
 When you hear that high school is about becoming more independent, it is easy to misunderstand what that actually means. Independence does not mean you have to do everything completely alone. In fact, trying to handle every single problem by yourself is a guaranteed way to burn out. There is absolutely no shame in needing help—it is a mandatory part of growing up.
 
 Think about the groups you might already belong to. If you are on a sports team, in a club, part of a band, or just have a solid group of friends, you already know the value of support. You know what it feels like to have teammates who back you up, or friends who listen when you are having a rough day. That connection is a powerful tool.

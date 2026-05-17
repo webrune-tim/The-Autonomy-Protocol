@@ -119,6 +119,12 @@ importers:
 
   packages/ui/pill: {}
 
+  packages/ui/reading-time:
+    dependencies:
+      '@lucide/svelte':
+        specifier: ^0.546.0
+        version: 0.546.0(svelte@5.55.5(@typescript-eslint/types@8.59.2))
+
   packages/ui/scroll-to-top: {}
 
   sites/student-site:
@@ -280,6 +286,9 @@ importers:
       '@autonomy/pill':
         specifier: workspace:*
         version: link:../../packages/ui/pill
+      '@autonomy/reading-time':
+        specifier: workspace:*
+        version: link:../../packages/ui/reading-time
       '@autonomy/scroll-to-top':
         specifier: workspace:*
         version: link:../../packages/ui/scroll-to-top
@@ -1377,6 +1386,11 @@ packages:
     resolution: {integrity: sha512-4/0CvEdhi6+KjMxMaVbFM2n2Z44escBRoEYpR+gZg64DdetzGnYm8mcNLcoySaDJZNaBd6wz5DNdgRmcI4hXcg==}
     cpu: [x64]
     os: [win32]
+
+  '@lucide/svelte@0.546.0':
+    resolution: {integrity: sha512-qFVQ+BUJH9Swns7cag3Wik7VqKZfN2hwDZ2VazbZJc8VSqI0kgOZCZ2OVwrvNxdkl8Mw9M9H1ROB0BXh/WH/sA==}
+    peerDependencies:
+      svelte: ^5
 
   '@lucide/svelte@1.14.0':
     resolution: {integrity: sha512-MVuP5VRCBQa2OaIpaRbuEV4k5OV2dy9MyxA6Tf4Sz/IN0v3zzUU72ObHc9r2Zn/wSMXDg6lLrHrczqI7w7gCzQ==}
@@ -5385,6 +5399,10 @@ snapshots:
 
   '@libsql/win32-x64-msvc@0.5.29':
     optional: true
+
+  '@lucide/svelte@0.546.0(svelte@5.55.5(@typescript-eslint/types@8.59.2))':
+    dependencies:
+      svelte: 5.55.5(@typescript-eslint/types@8.59.2)
 
   '@lucide/svelte@1.14.0(svelte@5.55.4(@typescript-eslint/types@8.59.2))':
     dependencies:
