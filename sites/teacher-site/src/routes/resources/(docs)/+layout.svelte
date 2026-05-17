@@ -39,7 +39,7 @@
   Print Lesson Plan
 </button>
 
-<ScrollToTop ringColor={alt_color()} />
+<ScrollToTop ringColor={alt_color()} ringWidth={4} />
 
 <style>
 	:global(h4) {
