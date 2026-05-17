@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state'
+    import { ScrollToTop } from '@autonomy/scroll-to-top'
 	import { derived } from 'svelte/store'
 	let { children } = $props()
 
@@ -37,6 +38,8 @@
 <button onclick={() => window.print()} class="no-print" style="--color: {alt_color()}">
   Print Lesson Plan
 </button>
+
+<ScrollToTop />
 
 <style>
 	:global(h4) {
