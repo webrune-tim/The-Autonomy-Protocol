@@ -25,8 +25,8 @@
   }
 
   /* 2. UI CLEANUP */
-  nav, 
-  footer, 
+  nav,
+  footer,
   header .no-print,
   button,
   .no-print {
@@ -34,7 +34,12 @@
   }
 
   /* 3. TYPOGRAPHY (Aligning with your headings) */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Poppins", sans-serif !important;
     text-transform: uppercase;
     margin-top: 1.5rem;
@@ -42,9 +47,22 @@
     page-break-after: avoid;
   }
 
-  h1 { font-size: 24pt; border-bottom: 2pt solid #000; padding-bottom: 5px; }
-  h2 { font-size: 18pt; border-bottom: 1pt solid #ccc; }
-  h3 { font-size: 14pt; }
+  h1 {
+    font-size: 24pt !important;
+    border-bottom: 2pt solid #000;
+    padding-bottom: 5px;
+  }
+  h2 {
+    font-size: 18pt !important;
+    border-bottom: 1pt solid #ccc;
+  }
+  h3 {
+    font-size: 14pt !important;
+  }
+
+  .layout-wrapper > header {
+    display: none !important;
+  }
 
   /* Handle your Special Elite font for Step numbers if used */
   .step-grid span {
@@ -70,7 +88,7 @@
 
   /* 5. LAYOUT (Grid to Linear) */
   /* Your 300px minmax grid can get squished on paper; linear is safer */
-  .grid, 
+  .grid,
   .step-grid,
   .flex-around {
     display: block !important;
@@ -107,8 +125,13 @@
   }
 
   /* Prevent awkward single lines at bottom of pages */
-  p, blockquote {
+  p,
+  blockquote {
     orphans: 3;
     widows: 3;
+  }
+
+  .bold-border-box {
+    border: 2pt solid #000 !important;
   }
 }
