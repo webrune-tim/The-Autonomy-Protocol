@@ -18,6 +18,7 @@
 </script>
 
 {#if isAuthorized}
+	<div class="new-page"></div>
 	<aside
 		class="bold-border-box margin-top"
 		style="--border-color: var(--bg)"

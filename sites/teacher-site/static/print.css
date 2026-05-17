@@ -15,6 +15,12 @@
     transition: none !important;
   }
 
+  .new-page {
+    break-before: page;
+    /* Legacy support */
+    page-break-before: always;
+  }
+
   body {
     font-family: "Inter", sans-serif !important;
     font-size: 12pt;
