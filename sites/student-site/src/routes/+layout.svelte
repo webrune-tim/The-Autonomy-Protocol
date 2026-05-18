@@ -58,7 +58,7 @@
 </svelte:head>
 
 {#snippet headerLogo()}
-	<Logo />
+	<a class="home-link" href="/"><Logo /></a>
 {/snippet}
 
 {#snippet headerActions()}
@@ -103,6 +103,11 @@
 		padding: var(--gap-2);
 		grid-template-rows: auto 1fr auto;
 		background: var(--surface-4);
+	}
+
+	.home-link,
+	.home-link:hover {
+		text-decoration: none;
 	}
 
 	:global(:root) {
