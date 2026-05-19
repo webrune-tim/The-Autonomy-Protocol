@@ -28,6 +28,7 @@
   --font-sans-1: "Poppins", sans-serif;
   --font-sans-2: "Inter", sans-serif;
   --font-serif: "Special Elite", system-ui;
+  --font-thick: "Black Han Sans", sans-serif;
   --font-header-sans-1: var(--font-sans-1);
   --font-header-sans-2: var(--font-sans-2);
   --font-header-serif: var(--font-serif);
@@ -39,7 +40,7 @@
   --gap-2: clamp(1rem, 2.75svw, 2rem);
   --gap-3: clamp(2rem, 5.5svw, 4rem);
   --gap-4: clamp(4rem, 11svw, 8rem);
-  --border-radius: 8px;
+  --border-radius: 1rem;
   --border-width: clamp(0.25rem, 2svw, 1rem);
   --angle-height: 5vw;
   --angle-width: var(--gap-2);
@@ -47,31 +48,49 @@
 }
 
 /* ==========================================================================
-   2. SITE-SPECIFIC ACCENT DEFINITIONS (Dark Theme Baselines)
+   2. SITE-SPECIFIC ACCENT & CONTRAST DEFINITIONS
    ========================================================================== */
 
-/* Student Site / Default Accents */
+/* Student Site / Default Accents (High vibrancy, dark text contrast works beautifully) */
 :root {
   --accent-1: oklab(0.61 -0.05 -0.2);
   --accent-2: oklab(0.72 0.14 0.14);
   --accent-3: oklab(0.8 -0.17 -0.03);
+
+  /* Explicit solid background contrast contracts */
+  --accent-1-contrast: var(--black-80);
+  --accent-2-contrast: var(--black-80);
+  --accent-3-contrast: var(--black-80);
 }
 
-/* Teacher Site Accents (Wins via explicit data attribute matching) */
+/* Teacher Site Accents (Mid-tones, require light text contrast when solid) */
 :root[data-site="teacher"] {
-  --accent-1: oklab(0.5 -0.02 -0.06);
-  --accent-2: oklab(0.54 0.06 0.06);
-  --accent-3: oklab(0.56 0.01 0.02);
+  /* --accent-1: oklab(0.50 -0.02 -0.06); 
+  --accent-2: oklab(0.54 0.06 0.06);   
+  --accent-3: oklab(0.56 0.01 0.02);    */
+
+  --accent-1: #255ea0;
+  --accent-2: #8a5a4a;
+  --accent-3: #8a6e6e;
+
+  /* Explicit solid background contrast contracts */
+  --accent-1-contrast: var(--white);
+  --accent-2-contrast: var(--white);
+  --accent-3-contrast: var(--white);
 }
 
 /* ==========================================================================
-   3. DYNAMIC SEMANTIC MAPPING ENGINE (Applies globally, evaluates accents)
+   3. DYNAMIC SEMANTIC MAPPING ENGINE (Dark Theme Baseline)
    ========================================================================== */
 :root {
   /* Core Mappings */
   --brand-primary: var(--accent-1);
   --brand-secondary: var(--accent-2);
   --brand-tertiary: var(--accent-3);
+
+  --brand-primary-contrast: var(--accent-1-contrast);
+  --brand-secondary-contrast: var(--accent-2-contrast);
+  --brand-tertiary-contrast: var(--accent-3-contrast);
 
   /* Derivations */
   --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.3) c h);
@@ -81,18 +100,23 @@
   --brand-secondary-light: oklch(from var(--brand-secondary) calc(l + 0.3) c h);
   --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l + 0.3) c h);
 
+  /* High-Contrast Typographic Generation Engine (Dark backgrounds) */
+  --text-primary-print: color-mix(in oklab, var(--brand-primary) 25%, var(--white));
+  --text-secondary-print: color-mix(in oklab, var(--brand-secondary) 25%, var(--white));
+  --text-tertiary-print: color-mix(in oklab, var(--brand-tertiary) 25%, var(--white));
+
   /* Semantic Layout Contracts */
   --text-form: var(--fg-surface);
-  --text-link: var(--brand-secondary);
-  --text-link-hover: var(--brand-primary);
-  --text-heading: var(--brand-primary);
-  --text-heading-alt: var(--brand-secondary);
+  --text-link: var(--text-secondary-print);
+  --text-link-hover: var(--text-primary-print);
+  --text-heading: var(--text-primary-print);
+  --text-heading-alt: var(--text-secondary-print);
   --border-color: var(--brand-primary);
   --border: var(--border-width) solid var(--border-color);
 }
 
 /* ==========================================================================
-   4. LIGHT MODE STATE ENGINE (Higher specificity via compounding attributes)
+   4. LIGHT MODE STATE ENGINE
    ========================================================================== */
 :root[data-theme="light"] {
   color-scheme: light;
@@ -102,12 +126,20 @@
   --surface-3: oklch(85% 0.02 254);
   --ui-border: oklch(80% 0.02 254);
 
-  /* Mixes naturally down-spec based on whatever --accent-# values are active */
   --brand-primary: color-mix(in oklab, var(--accent-1) 50%, var(--accent-2) 50%);
   --brand-secondary: color-mix(in oklab, var(--accent-2) 50%, var(--accent-3) 50%);
   --brand-tertiary: color-mix(in oklab, var(--accent-1) 50%, var(--accent-3) 50%);
 
-  /* Invert lightness properties for light-mode readability */
+  /* Light mode blocks favor dark text overlays */
+  --brand-primary-contrast: var(--black-80);
+  --brand-secondary-contrast: var(--black-80);
+  --brand-tertiary-contrast: var(--black-80);
+
+  /* High-Contrast Typographic Generation Engine (Light backgrounds) */
+  --text-primary-print: color-mix(in oklab, var(--brand-primary) 50%, var(--black-80));
+  --text-secondary-print: color-mix(in oklab, var(--brand-secondary) 50%, var(--black-80));
+  --text-tertiary-print: color-mix(in oklab, var(--brand-tertiary) 50%, var(--black-80));
+
   --brand-primary-dark: oklch(from var(--brand-primary) calc(l + 0.3) c h);
   --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l + 0.3) c h);
   --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l + 0.3) c h);

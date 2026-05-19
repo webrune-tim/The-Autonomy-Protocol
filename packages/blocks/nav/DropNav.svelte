@@ -1,6 +1,8 @@
 <script lang="ts">
   import { page } from "$app/state";
   import { Menu } from "@lucide/svelte";
+  import { fly } from "svelte/transition"; //
+  import { cubicOut, cubicIn } from "svelte/easing";
 
   interface NavLink {
     href: string;
@@ -12,7 +14,6 @@
     currentPath = "/",
   }: { links: NavLink[]; currentPath?: string } = $props();
 
-  // UI State
   let isOpen = $state(false);
 
   const toggleMenu = (e: MouseEvent) => {
@@ -24,7 +25,6 @@
     isOpen = false;
   };
 
-  // Close menu when clicking anywhere else on the page
   function clickOutside(node: HTMLElement) {
     const handleClick = (event: MouseEvent) => {
       if (isOpen && !node.contains(event.target as Node)) {
@@ -33,7 +33,6 @@
     };
 
     document.addEventListener("click", handleClick, true);
-
     return {
       destroy() {
         document.removeEventListener("click", handleClick, true);
@@ -54,7 +53,11 @@
   </button>
 
   {#if isOpen}
-    <div class="dropdown-content">
+    <div 
+  class="dropdown-content"
+    in:fly={{ y: -10, duration: 550, easing: cubicOut }}
+    out:fly={{ y: -10, duration: 150, easing: cubicIn }}
+  >
       <nav>
         <ul>
           {#each links as link}
@@ -78,7 +81,7 @@
             </li>
           {:else}
             <li>
-              <a href="/login">Login</a>
+              <a href="/login" onclick={closeMenu}>Login</a>
             </li>
           {/if}
         </ul>
@@ -88,29 +91,17 @@
 </div>
 
 <style>
-  /* Wrapper handles the positioning context */
   .dropdown-wrapper {
     position: relative;
     display: inline-flex;
-    vertical-align: middle;
   }
 
-  /* High specificity button reset to fight global overrides */
   button.dropdown-toggle {
-    /* Force reset everything */
     all: unset;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    /* Transparent styles */
     background: transparent !important;
-    background-color: transparent !important;
-    appearance: none !important;
-    border: none !important;
-    box-shadow: none !important;
-
-    /* Custom UI */
     color: var(--brand-secondary);
     cursor: pointer;
     transition: transform 0.1s ease;
@@ -120,23 +111,16 @@
     transform: scale(0.95);
   }
 
-  /* The Dropdown Menu */
   .dropdown-content {
     position: absolute;
-    top: 100%;
-    left: -400%;
-    margin-top: 0.5rem;
-
-    /* Transparent Background */
-    background: var(--surface-1);
-
-    /* Visuals */
+    top: calc(100% + 0.5rem);
+    right: 0; /* Changed from left -400% to right-align with button */
+    background: rgb(from var(--bg) r g b / 0.95);
     border: 2px solid var(--brand-secondary);
-    border-radius: var(--border-radius, 8px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
+    border-radius: var(--border-radius, 1rem);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     width: max-content;
-    min-width: 160px;
+    min-width: 180px;
     z-index: 100;
     overflow: hidden;
   }
@@ -148,41 +132,41 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    background: transparent !important;
-  }
-
-  li {
-    margin: 0;
-    padding: 0;
   }
 
   a {
     display: block;
-    padding: 0.6rem 1rem;
+    padding: 0.75rem 1.25rem;
     text-decoration: none;
     text-transform: uppercase;
     color: var(--brand-primary);
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: 500;
-    transition: background 0.2s ease;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
   }
 
-  /* Transparent hover effect using relative color syntax */
   a:hover,
   a.active {
     background: rgb(from var(--brand-secondary) r g b / 0.15) !important;
     color: var(--brand-secondary);
   }
 
-  /* Ensure the icon inside stays the right color */
-  .dropdown-toggle :global(svg) {
-    stroke: currentColor;
-    fill: none;
+  .link-button {
+    all: unset;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1.25rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--brand-primary);
+    cursor: pointer;
   }
 
-  .link-button {
-    background: none;
-    color: var(--brand-primary);
-    padding: 10px 0 var(--gap-1) var(--gap-1);
+  .link-button:hover {
+    color: var(--brand-secondary);
+    background: rgb(from var(--brand-secondary) r g b / 0.1) !important;
   }
 </style>

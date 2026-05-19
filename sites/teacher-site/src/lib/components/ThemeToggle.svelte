@@ -43,7 +43,7 @@
 		border: none;
 		padding: 0.25rem;
 		cursor: pointer;
-		color: var(--brand-primary);
+		color: var(--brand-primary-light);
 		opacity: 0.65;
 		transition: all 0.2s ease;
 		border-radius: 50%;
