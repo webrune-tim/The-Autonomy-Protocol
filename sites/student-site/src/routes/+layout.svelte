@@ -117,22 +117,22 @@
 	}
 
 	:global(:root[data-theme='light']) {
-		--brand-blue: oklab(0.45 -0.05 -0.17);
-		--brand-orange: oklab(0.57 0.13 0.13);
-		--brand-teal: oklab(0.64 -0.14 -0.02);
+		--brand-primary: oklab(0.45 -0.05 -0.17);
+		--brand-secondary: oklab(0.57 0.13 0.13);
+		--brand-secondary: oklab(0.64 -0.14 -0.02);
 		--accent-3: oklab(0.64 -0.14 -0.02);
 	}
 
 	@media (color-gamut: p3) {
 		:global(:root) {
-			--brand-blue: oklch(0.6132 0.2245 254);
-			--brand-orange: oklch(0.7191 0.2269 45);
+			--brand-primary: oklch(0.6132 0.2245 254);
+			--brand-secondary: oklch(0.7191 0.2269 45);
 			--accent-3: oklch(0.8015 0.1751 190);
 		}
 
 		:global(:root[data-theme='light']) {
-			--brand-blue: oklch(0.4485 0.1751 254.74);
-			--brand-orange: oklch(0.5691 0.1801 45);
+			--brand-primary: oklch(0.4485 0.1751 254.74);
+			--brand-secondary: oklch(0.5691 0.1801 45);
 			--accent-3: oklch(0.6397 0.1431 190);
 		}
 	}

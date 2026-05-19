@@ -77,12 +77,12 @@
     margin-right: 10px;
   }
 
-  /* 4. UTILITY BOXES (.trans-blue, .trans-orange, etc.) */
+  /* 4. UTILITY BOXES (.trans-primary, .trans-secondary, etc.) */
   /* Convert translucent backgrounds to clear boxes with solid borders */
   .box,
-  .trans-blue,
-  .trans-orange,
-  .trans-teal,
+  .trans-primary,
+  .trans-secondary,
+  .trans-tertiary,
   .trans-black {
     background-color: transparent !important;
     border: 1.5pt solid #000 !important;

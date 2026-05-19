@@ -19,7 +19,7 @@
 </script>
 
 {#if showBanner}
-  <div class="banner auto-contrast" style="--color: var(--brand-orange)">
+  <div class="banner auto-contrast" style="--color: var(--brand-secondary)">
     <button onclick={dismissBanner}>
       <X />
       <span class="sr-only">Dismiss banner</span>
@@ -30,7 +30,7 @@
 
 <style>
   :global(.banner) {
-    --color: var(--brand-orange);
+    --color: var(--brand-secondary);
     background: var(--color);
 
     position: relative;

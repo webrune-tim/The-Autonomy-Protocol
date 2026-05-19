@@ -7,8 +7,8 @@
 		dynamic = false,
 		suffix = 'min read',
 		dynamicSuffix = 'min left',
-		textColor = '#a3a3a3', // Muted text for dark interfaces
-		iconColor = '#4b5563', // Slightly lighter icon
+		textColor = 'var(--fg)',
+		iconColor = 'var(--fg)',
 		fontSize = 'var(--font-size-4)'
 	} = $props();
 
@@ -66,6 +66,7 @@
 <style>
 	span {
 		margin: 0;
+		color: var(--text-color);
 	}
 
 	.reading-time {
@@ -78,11 +79,6 @@
 		font-weight: 500;
 		user-select: none;
 		margin-bottom: var(--gap-1);
-	}
-
-	.rt-icon {
-		color: var(--icon-color);
-		flex-shrink: 0;
 	}
 
 	.rt-number {

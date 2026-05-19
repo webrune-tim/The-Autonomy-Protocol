@@ -22,7 +22,7 @@
     </ul>
 </section>
 
-<section class="angled-top-bottom-box" use:thickMargins style="--color: var(--brand-teal);">
+<section class="angled-top-bottom-box" use:thickMargins style="--color: var(--brand-stertiary);">
     <h2>Our Philosophy</h2>
     
     <p>The world is changing fast, and the ability to adapt and lead yourself is more valuable than ever. We've brought together educators and professionals to create a structured environment where you can experiment, learn from failure, and build a foundation of resilience.</p>

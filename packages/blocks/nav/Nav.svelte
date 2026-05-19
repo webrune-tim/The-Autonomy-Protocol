@@ -79,11 +79,11 @@
   }
 
   a {
-    color: var(--brand-blue);
+    color: var(--brand-primary);
     padding: 4px 8px;
     border-radius: var(--border-radius);
-    border: 2px solid var(--brand-orange);
-    background: rgb(from var(--brand-orange) r g b / 0.15);
+    border: 2px solid var(--brand-secondary);
+    background: rgb(from var(--brand-secondary) r g b / 0.15);
     text-decoration: none;
     white-space: nowrap;
     flex: 1;
@@ -92,13 +92,13 @@
     &:hover,
     &.active {
       color: var(--fb);
-      background: rgb(from var(--brand-orange) r g b / 0.3);
+      background: rgb(from var(--brand-secondary) r g b / 0.3);
     }
 
     &.active {
       /* If you want a specific active indicator via anchor positioning */
       anchor-name: --active-item;
-      border-color: var(--brand-blue);
+      border-color: var(--brand-primary);
     }
   }
 </style>

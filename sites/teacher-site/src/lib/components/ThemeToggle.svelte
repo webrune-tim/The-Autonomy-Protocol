@@ -43,7 +43,7 @@
 		border: none;
 		padding: 0.25rem;
 		cursor: pointer;
-		color: var(--brand-blue);
+		color: var(--brand-primary);
 		opacity: 0.65;
 		transition: all 0.2s ease;
 		border-radius: 50%;
@@ -51,12 +51,12 @@
 
 	.icon-button:hover {
 		opacity: 0.8;
-		background-color: rgb(from var(--brand-orange) r g b / 0.1);
+		background-color: rgb(from var(--brand-secondary) r g b / 0.1);
 	}
 
 	.icon-button.active {
 		opacity: 1;
-		color: var(--brand-orange);
-		background-color: rgb(from var(--brand-orange) r g b / 0.15);
+		color: var(--brand-secondary);
+		background-color: rgb(from var(--brand-secondary) r g b / 0.15);
 	}
 </style>

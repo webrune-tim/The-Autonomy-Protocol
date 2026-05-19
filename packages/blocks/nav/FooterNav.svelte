@@ -35,7 +35,7 @@
     /* Using clamp for the border ensures it stays a 'technical line' across devices */
     border-top: clamp(2px, 0.2svw, 4px) solid var(--fg);
     color: var(--fg);
-    background: var(--brand-blue-dark);
+    background: var(--brand-primary-dark);
     margin: 0 auto;
     width: 100%;
     margin-top: var(--gap-2);
@@ -77,7 +77,7 @@
       color 0.2s ease;
 
     &:hover {
-      color: var(--brand-orange);
+      color: var(--brand-secondary);
     }
 
     &.active {

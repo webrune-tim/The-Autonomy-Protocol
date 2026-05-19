@@ -30,7 +30,7 @@
 <section
 	class="angled-top-bottom-box"
 	use:thickMargins
-	style="--color: var(--brand-orange-dark)"
+	style="--color: var(--brand-secondary-dark)"
 >
 	<h2>Phase 1: Foundation & Behavioral Baseline</h2>
 	<p><strong>Target: Freshman Year | Focus: The Setup</strong></p>
@@ -65,7 +65,7 @@
 <section
 	class="angled-top-box no-bottom-margin"
 	use:thickMargins
-	style="--color: var(--brand-teal-dark)"
+	style="--color: var(--brand-secondary-dark)"
 >
 	<h2>Phase 2: Real-World Application & Career Readiness</h2>
 	<p><strong>Target: Senior Year | Focus: The Pro Level</strong></p>

@@ -15,13 +15,13 @@
 
 <style>
   footer {
-    --color: var(--brand-blue);
+    --color: var(--brand-primary);
     height: fit-content;
     display: grid;
     place-items: center;
     /*color: --contrast-color(var(--color));*/
     color: var(--fg);
-    background: var(--brand-blue-dark);
+    background: var(--brand-primary-dark);
     padding: var(--gap-2);
     margin-top: var(--gap-2);
     font-size: var(--font-size-3);

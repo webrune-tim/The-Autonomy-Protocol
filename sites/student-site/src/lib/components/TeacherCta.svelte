@@ -41,7 +41,7 @@
 
 	/* h4 {
 		margin: 0 0 0.5rem 0;
-		color: var(--brand-orange);
+		color: var(--brand-secondary);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		font-size: 0.9rem;

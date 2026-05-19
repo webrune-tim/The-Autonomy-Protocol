@@ -11,19 +11,19 @@
 <p>Current Role: <strong>{data.user.role}</strong></p>
 
 <div class="flex">
-	<button type="button" class="link-button" onclick={() => goto('/settings')} style="--color: var(--brand-blue);">
+	<button type="button" class="link-button" onclick={() => goto('/settings')} style="--color: var(--brand-primary);">
 		Settings
 	</button>
 
 	<form method="post" action="/logout">
-		<button class="link-button" style="--color: var(--brand-orange);">
+		<button class="link-button" style="--color: var(--brand-secondary);">
 			Sign out
 		</button>
 	</form>
 </div>
 
 {#if data.isAdmin}
-	<section class="bold-border-box margin-top" style="--border-color: var(--brand-orange);">
+	<section class="bold-border-box margin-top" style="--border-color: var(--brand-secondary);">
 		<h2>Administrative Control</h2>
 		<p>Lookup users to adjust authorization levels.</p>
 
@@ -105,7 +105,7 @@
 		flex: 1;
 		padding: 0.75rem;
 		background: rgba(0, 0, 0, 0.2);
-		border: 1px solid var(--brand-teal);
+		border: 1px solid var(--brand-tertiary);
 		color: var(--fg);
 	}
 
@@ -136,7 +136,7 @@
 	}
 
 	.admin-table th {
-		color: var(--brand-teal);
+		color: var(--brand-tertiary);
 		text-transform: uppercase;
 		font-size: 0.75rem;
 		letter-spacing: 0.05em;
@@ -146,7 +146,7 @@
 		padding: 0.4rem;
 		background: var(--bg);
 		color: var(--fg);
-		border: 1px solid var(--brand-teal);
+		border: 1px solid var(--brand-tertiary);
 	}
 
 	.no-results {
@@ -199,7 +199,7 @@
 		.admin-table td::before {
 			content: attr(data-label);
 			flex: 0 0 auto;
-			color: var(--brand-teal);
+			color: var(--brand-tertiary);
 			text-transform: uppercase;
 			font-size: 0.7rem;
 			letter-spacing: 0.05em;

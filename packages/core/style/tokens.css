@@ -1,8 +1,12 @@
+/* packages/core/style/tokens.css */
+
+/* ==========================================================================
+   1. GLOBAL BASELINE & CORE TOKENS (Never changes)
+   ========================================================================== */
 :root {
-  /* Default: Dark Theme */
   color-scheme: dark;
 
-  /* Color Tokens */
+  /* Baseline Gray Palette */
   --black-80: oklch(5% 0 0);
   --black-60: oklch(15% 0 0);
   --black-50: oklch(25% 0 0);
@@ -10,107 +14,113 @@
   --black-20: oklch(60% 0 0);
   --white: oklch(95% 0 0);
 
-  --accent-1: oklab(0.61 -0.05 -0.2); /* brand-blue */
-  --accent-2: oklab(0.72 0.14 0.14); /* brand-orange */
-  --accent-3: oklab(0.8 -0.17 -0.03); /* brand-teal */
-
-  /* --- SMART SURFACE CONTRACT --- */
-  /* Default baseline (Safari/Old Browser Fallback) */
+  /* Shared Structural Variables */
   --bg-surface: var(--black-80);
   --fg-surface: var(--white);
-
-  /* Semantic Variables */
   --bg: var(--bg-surface);
   --fg: var(--fg-surface);
-
   --surface-1: var(--black-80);
   --surface-2: var(--black-60);
   --surface-3: var(--black-50);
   --ui-border: var(--black-40);
 
-  --brand-blue: var(--accent-1);
-  --brand-orange: var(--accent-2);
-  --brand-teal: var(--accent-3);
-
-  /* Derived Variants (OKLCH for perceptual accuracy) */
-  --brand-blue-dark: oklch(from var(--brand-blue) calc(l - 0.3) c h);
-  --brand-orange-dark: oklch(from var(--brand-orange) calc(l - 0.3) c h);
-  --brand-teal-dark: oklch(from var(--brand-teal) calc(l - 0.3) c h);
-
-  --brand-blue-light: oklch(from var(--brand-blue) calc(l + 0.3) c h);
-  --brand-orange-light: oklch(from var(--brand-orange) calc(l + 0.3) c h);
-  --brand-teal-light: oklch(from var(--brand-teal) calc(l + 0.3) c h);
-
-  --text-form: var(--fg-surface);
-  --text-link: var(--brand-orange);
-  --text-link-hover: var(--brand-blue);
-  --text-heading: var(--brand-blue);
-  --text-heading-alt: var(--brand-orange);
-
-  /* Typography & Layout Tokens */
+  /* Typography & Layout Shared Tokens */
   --font-sans-1: "Poppins", sans-serif;
   --font-sans-2: "Inter", sans-serif;
   --font-serif: "Special Elite", system-ui;
   --font-header-sans-1: var(--font-sans-1);
   --font-header-sans-2: var(--font-sans-2);
   --font-header-serif: var(--font-serif);
-
   --font-size-1: clamp(2rem, 5svw, 4rem);
   --font-size-2: clamp(1.5rem, 4svw, 3rem);
   --font-size-3: clamp(1rem, 2.5svw, 2rem);
   --font-size-4: clamp(0.875rem, 2svw, 1.5rem);
-
   --gap-1: clamp(0.5rem, 1.75svw, 1rem);
   --gap-2: clamp(1rem, 2.75svw, 2rem);
   --gap-3: clamp(2rem, 5.5svw, 4rem);
   --gap-4: clamp(4rem, 11svw, 8rem);
-
   --border-radius: 8px;
   --border-width: clamp(0.25rem, 2svw, 1rem);
-  --border-color: var(--brand-blue);
-  --border: var(--border-width) solid var(--border-color);
-
   --angle-height: 5vw;
   --angle-width: var(--gap-2);
   --thick-margin: clamp(2rem, 5.5svw, 4.5rem);
 }
 
-/* Upgrade contrast logic for modern browsers */
-@supports (color: oklch(from red l c h)) {
-  :root {
-    --fg-surface: oklch(from var(--bg-surface) calc((l - 0.54) * -1000) 0 0);
-  }
+/* ==========================================================================
+   2. SITE-SPECIFIC ACCENT DEFINITIONS (Dark Theme Baselines)
+   ========================================================================== */
+
+/* Student Site / Default Accents */
+:root {
+  --accent-1: oklab(0.61 -0.05 -0.2);
+  --accent-2: oklab(0.72 0.14 0.14);
+  --accent-3: oklab(0.8 -0.17 -0.03);
 }
 
-/* --- Light Mode Overrides --- */
+/* Teacher Site Accents (Wins via explicit data attribute matching) */
+:root[data-site="teacher"] {
+  --accent-1: oklab(0.5 -0.02 -0.06);
+  --accent-2: oklab(0.54 0.06 0.06);
+  --accent-3: oklab(0.56 0.01 0.02);
+}
+
+/* ==========================================================================
+   3. DYNAMIC SEMANTIC MAPPING ENGINE (Applies globally, evaluates accents)
+   ========================================================================== */
+:root {
+  /* Core Mappings */
+  --brand-primary: var(--accent-1);
+  --brand-secondary: var(--accent-2);
+  --brand-tertiary: var(--accent-3);
+
+  /* Derivations */
+  --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.3) c h);
+  --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l - 0.3) c h);
+  --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l - 0.3) c h);
+  --brand-primary-light: oklch(from var(--brand-primary) calc(l + 0.3) c h);
+  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l + 0.3) c h);
+  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l + 0.3) c h);
+
+  /* Semantic Layout Contracts */
+  --text-form: var(--fg-surface);
+  --text-link: var(--brand-secondary);
+  --text-link-hover: var(--brand-primary);
+  --text-heading: var(--brand-primary);
+  --text-heading-alt: var(--brand-secondary);
+  --border-color: var(--brand-primary);
+  --border: var(--border-width) solid var(--border-color);
+}
+
+/* ==========================================================================
+   4. LIGHT MODE STATE ENGINE (Higher specificity via compounding attributes)
+   ========================================================================== */
 :root[data-theme="light"] {
   color-scheme: light;
   --bg-surface: var(--white);
-  /* --fg-surface will automatically become dark via the @supports logic above */
-
   --surface-1: oklch(95% 0.01 254);
   --surface-2: oklch(90% 0.02 254);
   --surface-3: oklch(85% 0.02 254);
   --ui-border: oklch(80% 0.02 254);
 
-  --brand-blue: oklch(0.48 0.14 253.11);
-  --brand-orange: oklch(0.52 0.15 49.7);
-  --brand-teal: oklab(0.49 -0.1 -0.02 / 1);
+  /* Mixes naturally down-spec based on whatever --accent-# values are active */
+  --brand-primary: color-mix(in oklab, var(--accent-1) 50%, var(--accent-2) 50%);
+  --brand-secondary: color-mix(in oklab, var(--accent-2) 50%, var(--accent-3) 50%);
+  --brand-tertiary: color-mix(in oklab, var(--accent-1) 50%, var(--accent-3) 50%);
 
-  --brand-blue-dark: oklch(from var(--brand-blue) calc(l + 0.3) c h);
-  --brand-orange-dark: oklch(from var(--brand-orange) calc(l + 0.3) c h);
-  --brand-teal-dark: oklch(from var(--brand-teal) calc(l + 0.3) c h);
-
-  --brand-blue-light: oklch(from var(--brand-blue) calc(l - 0.3) c h);
-  --brand-orange-light: oklch(from var(--brand-orange) calc(l - 0.3) c h);
-  --brand-teal-light: oklch(from var(--brand-teal) calc(l - 0.3) c h);
+  /* Invert lightness properties for light-mode readability */
+  --brand-primary-dark: oklch(from var(--brand-primary) calc(l + 0.3) c h);
+  --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l + 0.3) c h);
+  --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l + 0.3) c h);
+  --brand-primary-light: oklch(from var(--brand-primary) calc(l - 0.3) c h);
+  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l - 0.3) c h);
+  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l - 0.3) c h);
 }
 
-/* --- P3 Gamut Logic --- */
-@media (color-gamut: p3) {
-  :root[data-theme="light"] {
-    --brand-blue: oklch(0.35 0.12 254.74);
-    --brand-orange: oklch(0.52 0.15 48.1);
-    --brand-teal: oklch(0.4 0.1 190);
+/* ==========================================================================
+   5. PROGRESSIVE CONTRAST SCRIPT UPGRADE
+   ========================================================================== */
+@supports (color: oklch(from red l c h)) {
+  :root {
+    --fg-surface: oklch(from var(--bg-surface) calc((l - 0.54) * -1000) 0 0);
   }
 }

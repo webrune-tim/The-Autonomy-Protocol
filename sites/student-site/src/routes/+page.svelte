@@ -23,14 +23,14 @@
 	</p>
 </section>
 
-<section class="angled-top-bottom-box" style="--color: var(--brand-teal);">
+<section class="angled-top-bottom-box" style="--color: var(--brand-tertiary);">
 	<p><strong>Seniors</strong></p>
 	<p>
 		The final stretch. Before you step out on your own, solidify your self-reliance. Master the real-world accountability and life management skills required to transition from student to an independent adult.
 	</p>
 </section>
 
-<section class="angled-top-bottom-box" use:thickMargins style="--color: var(--brand-blue);">
+<section class="angled-top-bottom-box" use:thickMargins style="--color: var(--brand-primary);">
 	<h2>The Autonomy Framework</h2>
 	<ul>
 		<li><strong>Self-Governance:</strong> You are the architect of your own life. Learn how to filter out the noise, make decisions that align with your actual goals, and take control of your daily trajectory.</li>
@@ -39,7 +39,7 @@
 	</ul>
 </section>
 
-<section class="angled-top-box no-bottom-margin" style="--color: var(--brand-orange);">
+<section class="angled-top-box no-bottom-margin" style="--color: var(--brand-secondary);">
 	<h3>Ready to take the wheel?</h3>
 	<p>The tools are here. The choice to use them is yours.</p>
 
@@ -55,7 +55,7 @@
 		align-items: center;
 		gap: var(--gap-1);
 		font-weight: bold;
-		color: var(--brand-orange);
+		color: var(--brand-secondary);
 		text-decoration: none;
 		margin-top: var(--gap-1);
 	}

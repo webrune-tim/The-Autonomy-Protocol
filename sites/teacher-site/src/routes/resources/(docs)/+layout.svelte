@@ -6,7 +6,7 @@
 	import { derived } from 'svelte/store'
 	let { children } = $props()
 
-	const colors = ['var(--brand-blue)', 'var(--brand-orange)', 'var(--brand-teal)']
+	const colors = ['var(--brand-primary)', 'var(--brand-secondary)', 'var(--brand-tertiary)']
 	const color = colors[Math.floor(Math.random() * colors.length)]
 
 	const alt_color = () => {

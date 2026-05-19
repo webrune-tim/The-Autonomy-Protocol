@@ -31,15 +31,15 @@
   --surface-3: var(--black-50);
   --ui-border: var(--black-40);
 
-  --brand-blue: var(--accent-1);
-  --brand-orange: var(--accent-2);
-  --brand-teal: var(--accent-3);
+  --brand-primary: var(--accent-1);
+  --brand-secondary: var(--accent-2);
+  --brand-secondary: var(--accent-3);
 
   --text-form: var(--white);
-  --text-link: var(--brand-orange);
-  --text-link-hover: var(--brand-blue);
-  --text-heading: var(--brand-blue);
-  --text-heading-alt: var(--brand-orange);
+  --text-link: var(--brand-secondary);
+  --text-link-hover: var(--brand-primary);
+  --text-heading: var(--brand-primary);
+  --text-heading-alt: var(--brand-secondary);
 
   --font-sans-1: "Poppins", sans-serif;
   --font-sans-2: "Inter", sans-serif;
@@ -67,28 +67,28 @@
   --ui-border: oklch(70% 0.01 0);
 
   /* Deepened Accents for Light Background Readability */
-  --brand-blue: oklab(0.45 -0.05 -0.17);
-  --brand-orange: oklab(0.57 0.13 0.13);
-  --brand-teal: oklab(0.64 -0.14 -0.02);
+  --brand-primary: oklab(0.45 -0.05 -0.17);
+  --brand-secondary: oklab(0.57 0.13 0.13);
+  --brand-secondary: oklab(0.64 -0.14 -0.02);
 
   --accent-3: oklab(0.64 -0.14 -0.02);
 
   --text-form: var(--black-80);
-  --text-heading: var(--brand-blue);
-  --text-heading-alt: var(--brand-orange);
+  --text-heading: var(--brand-primary);
+  --text-heading-alt: var(--brand-secondary);
 }
 
 /* --- P3 Gamut Logic --- */
 @media (color-gamut: p3) {
   :root {
-    --brand-blue: oklch(0.6132 0.2245 254);
-    --brand-orange: oklch(0.7191 0.2269 45);
+    --brand-primary: oklch(0.6132 0.2245 254);
+    --brand-secondary: oklch(0.7191 0.2269 45);
     --accent-3: oklch(0.8015 0.1751 190);
   }
 
   :root[data-theme="light"] {
-    --brand-blue: oklch(0.4485 0.1751 254.74);
-    --brand-orange: oklch(0.5691 0.1801 45);
+    --brand-primary: oklch(0.4485 0.1751 254.74);
+    --brand-secondary: oklch(0.5691 0.1801 45);
     --accent-3: oklch(0.6397 0.1431 190);
   }
 }
@@ -144,7 +144,7 @@ a:hover {
 }
 
 strong {
-  color: var(--brand-orange);
+  color: var(--brand-secondary);
 }
 
 li {
@@ -153,7 +153,7 @@ li {
 
 input,
 textarea {
-  caret-color: var(--brand-orange);
+  caret-color: var(--brand-secondary);
   caret-shape: block;
 }
 
@@ -170,7 +170,7 @@ ol {
   li:before {
     margin-right: 10px;
     content: counter(item);
-    color: var(--brand-blue);
+    color: var(--brand-primary);
     font-size: 2rem;
     width: 1.2em;
     text-align: center;
@@ -182,12 +182,12 @@ ol {
 details > summary {
   cursor: pointer;
   font-weight: bold;
-  color: var(--brand-orange);
+  color: var(--brand-secondary);
   margin-bottom: var(--gap-1);
 }
 
 details strong {
-  color: var(--brand-blue);
+  color: var(--brand-primary);
 }
 
 .sr-only {
@@ -218,7 +218,7 @@ details strong {
 .content {
   margin: var(--gap-2) 0;
   padding: var(--gap-1);
-  border-bottom: 2px solid var(--brand-blue);
+  border-bottom: 2px solid var(--brand-primary);
 }
 
 /* Ensure content sections remain visible in light mode */
@@ -242,7 +242,7 @@ details strong {
 }
 
 .title-grid {
-  --color: var(--brand-teal);
+  --color: var(--brand-secondary);
   display: grid;
   align-items: center;
   color: var(--color);
@@ -266,33 +266,33 @@ details strong {
   padding: var(--gap-2);
 }
 
-.trans-blue {
-  background-color: rgb(from var(--brand-blue) r g b / 0.25);
-  border: 2px solid var(--brand-blue);
+.trans-primary {
+  background-color: rgb(from var(--brand-primary) r g b / 0.25);
+  border: 2px solid var(--brand-primary);
 
   h2,
   h3 {
-    color: var(--brand-orange);
+    color: var(--brand-secondary);
   }
 }
 
-.trans-orange {
-  background-color: rgb(from var(--brand-orange) r g b / 0.25);
-  border: 2px solid var(--brand-orange);
+.trans-secondary {
+  background-color: rgb(from var(--brand-secondary) r g b / 0.25);
+  border: 2px solid var(--brand-secondary);
 
   h2,
   h3 {
-    color: var(--brand-blue);
+    color: var(--brand-primary);
   }
 }
 
-.trans-teal {
-  background-color: rgb(from var(--brand-teal) r g b / 0.25);
-  border: 2px solid var(--brand-teal);
+.trans-tertiary {
+  background-color: rgb(from var(--brand-secondary) r g b / 0.25);
+  border: 2px solid var(--brand-secondary);
 
   h2,
   h3 {
-    color: var(--brand-orange);
+    color: var(--brand-secondary);
   }
 }
 
@@ -336,7 +336,7 @@ details strong {
   span {
     font-weight: bolder;
     text-align: center;
-    color: var(--brand-blue);
+    color: var(--brand-primary);
     font-size: 2rem;
     padding: 0;
     margin: 0;

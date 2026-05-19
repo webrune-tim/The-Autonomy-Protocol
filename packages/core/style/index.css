@@ -61,7 +61,7 @@ h2 {
 
 h3 {
   font-size: var(--font-size-3);
-  color: var(--brand-teal);
+  color: var(--brand-tertiary);
 }
 
 h4 {
@@ -79,7 +79,7 @@ a:hover {
 }
 
 button {
-  --color: var(--brand-blue);
+  --color: var(--brand-primary);
   background-color: var(--color);
   color: var(--bg);
   font-weight: bold;
@@ -108,7 +108,7 @@ button {
 } */
 
 strong {
-  color: var(--brand-orange);
+  color: var(--brand-secondary);
 }
 
 hr {
@@ -129,7 +129,7 @@ label {
   gap: 0.5rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  /*color: var(--brand-blue);*/
+  /*color: var(--brand-primary);*/
 }
 
 input,
@@ -146,7 +146,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border: 2px solid var(--brand-orange);
+  border: 2px solid var(--brand-secondary);
 }
 
 details > summary {
@@ -157,7 +157,7 @@ details > summary {
 }
 
 details strong {
-  color: var(--brand-blue);
+  color: var(--brand-primary);
 }
 
 .sr-only {
@@ -177,7 +177,7 @@ details strong {
 .angled-bottom-box,
 .angled-top-bottom-box,
 .unangled-box {
-  --color: var(--brand-blue);
+  --color: var(--brand-primary);
   background: var(--color);
 
   /* SAFARI FIX: Use direct math instead of @function */
@@ -279,7 +279,7 @@ details strong {
 }
 
 .angled-top-bottom-box {
-  --color: var(--brand-orange);
+  --color: var(--brand-secondary);
   background: var(--color);
 
   /* Apply safe contrast logic for the orange box too */
@@ -303,7 +303,7 @@ details strong {
 }
 
 .bold-border-box {
-  --border-color: var(--brand-blue);
+  --border-color: var(--brand-primary);
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
 
@@ -318,7 +318,7 @@ details strong {
 }
 
 .auto-contrast {
-  --color: var(--brand-blue); /* 1. Extract the lightness from the brand color */
+  --color: var(--brand-primary); /* 1. Extract the lightness from the brand color */
   --lightness: from var(--color) l;
 
   /* 2. Apply your threshold math directly in the property */
@@ -343,7 +343,7 @@ details strong {
 .content {
   margin: var(--gap-2) 0;
   padding: var(--gap-1);
-  border-bottom: 2px solid var(--brand-blue);
+  border-bottom: 2px solid var(--brand-primary);
 }
 
 /* Ensure content sections remain visible in light mode */
@@ -417,33 +417,33 @@ details strong {
   }
 }
 
-.trans-blue {
-  background-color: rgb(from var(--brand-blue) r g b / 0.15);
-  border: 2px solid var(--brand-blue);
+.trans-primary {
+  background-color: rgb(from var(--brand-primary) r g b / 0.15);
+  border: 2px solid var(--brand-primary);
 
   h2,
   h3 {
-    color: var(--brand-orange);
+    color: var(--brand-secondary);
   }
 }
 
-.trans-orange {
-  background-color: rgb(from var(--brand-orange) r g b / 0.15);
-  border: 2px solid var(--brand-orange);
+.trans-secondary {
+  background-color: rgb(from var(--brand-secondary) r g b / 0.15);
+  border: 2px solid var(--brand-secondary);
 
   h2,
   h3 {
-    color: var(--brand-blue);
+    color: var(--brand-primary);
   }
 }
 
-.trans-teal {
-  background-color: rgb(from var(--brand-teal) r g b / 0.15);
-  border: 2px solid var(--brand-teal);
+.trans-tertiary {
+  background-color: rgb(from var(--brand-tertiary) r g b / 0.15);
+  border: 2px solid var(--brand-tertiary);
 
   h2,
   h3 {
-    color: var(--brand-orange);
+    color: var(--brand-secondary);
   }
 }
 

@@ -61,6 +61,6 @@
 	}
 
 	.teacher-content :global(strong) {
-		color: var(--brand-orange);
+		color: var(--brand-secondary);
 	}
 </style>

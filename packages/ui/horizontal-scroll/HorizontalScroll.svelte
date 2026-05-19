@@ -123,13 +123,13 @@
   }
 
   /* Shared classes for alternating colors */
-  :global(.trans-blue) {
+  :global(.trans-primary) {
     background-color: rgba(0, 100, 255, 0.05);
-    border: 1px solid var(--brand-blue);
+    border: 1px solid var(--brand-primary);
   }
 
-  :global(.trans-orange) {
+  :global(.trans-secondary) {
     background-color: rgba(255, 100, 0, 0.05);
-    border: 1px solid var(--brand-orange);
+    border: 1px solid var(--brand-secondary);
   }
 </style>

@@ -2,7 +2,7 @@
 	import { thickMargins } from '@autonomy/actions'
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-blue)">
+<section class="angled-bottom-box" style="--color: var(--brand-primary)">
 	<h1>Curriculum Overview</h1>
 
 	<span>From Survival to Sovereignty</span>
@@ -80,7 +80,7 @@
 	</ul>
 </section>
 
-<section class="angled-top-box" use:thickMargins style="--color: var(--brand-teal)">
+<section class="angled-top-box" use:thickMargins style="--color: var(--brand-tertiary)">
 	<h2>Senior Year | Phase 2: The Transition</h2>
 
 	<span>

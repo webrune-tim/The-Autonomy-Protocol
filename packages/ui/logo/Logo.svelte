@@ -7,13 +7,13 @@
   p {
     font-size: 2.5em;
     font-weight: bold;
-    color: var(--brand-blue);
+    color: var(--brand-primary);
     margin: 0;
     margin-bottom: -22px;
   }
   span {
     font-size: 0.7em;
-    color: var(--brand-orange);
+    color: var(--brand-secondary);
   }
 
   @media (max-width: 600px) {

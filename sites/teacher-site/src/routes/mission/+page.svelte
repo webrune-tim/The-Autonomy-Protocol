@@ -3,7 +3,7 @@
 	import { thickMargins } from '@autonomy/actions'
 </script>
 
-<div class="angled-bottom-box" style="--color: var(--brand-teal)">
+<div class="angled-bottom-box" style="--color: var(--brand-tertiary)">
 	<h1>Building the Foundation for Self-Governed Futures</h1>
 	<p>Why Pedagogical Autonomy Matters</p>
 </div>
@@ -11,7 +11,7 @@
 <section
 	class="angled-top-bottom-box"
 	use:thickMargins
-	style="--color: var(--brand-blue)"
+	style="--color: var(--brand-primary)"
 >
 	<h2>Our Mission</h2>
 	<p>
@@ -29,7 +29,7 @@
 <section
 	class="angled-top-box"
 	use:thickMargins
-	style="--color: var(--brand-orange)"
+	style="--color: var(--brand-secondary)"
 >
 	<h2>The Shift: From Punitive to Proactive</h2>
 	<p>
@@ -44,7 +44,7 @@
 
 <section>
 	<div class="flex">
-		<div class="bold-border-box" style="--border-color: var(--brand-blue)">
+		<div class="bold-border-box" style="--border-color: var(--brand-primary)">
 			<h3>Methodology: Cognitive & Behavioral Frameworks</h3>
 			<h4 class="margin-top margin-bottom">
 				The Accountability Cycle (Internal Regulation)
@@ -75,7 +75,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="bold-border-box" style="--border-color: var(--brand-teal)">
+		<div class="bold-border-box" style="--border-color: var(--brand-tertiary)">
 			<h3>Methodology: Interpersonal Agreements</h3>
 			<h4 class="margin-top margin-bottom">
 				The Integrity Shield (Tier 1 Interpersonal Tools)
@@ -109,7 +109,7 @@
 		<div
 			class="bold-border-box"
 			use:thickMargins
-			style="--border-color: var(--brand-orange)"
+			style="--border-color: var(--brand-secondary)"
 		>
 			<h2>Cross-Curricular Application & Post-Secondary Outcomes</h2>
 			<p>
@@ -167,7 +167,7 @@
 		align-items: center;
 		gap: var(--gap-1);
 		font-weight: bold;
-		color: var(--brand-orange);
+		color: var(--brand-secondary);
 		text-decoration: none;
 		margin-top: var(--gap-1);
 	}

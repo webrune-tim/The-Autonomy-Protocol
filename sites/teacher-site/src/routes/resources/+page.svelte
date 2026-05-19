@@ -39,7 +39,7 @@
 	const agreement_links = transformGlobToLinks(agreements)
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-blue)">
+<section class="angled-bottom-box" style="--color: var(--brand-primary)">
 	<h1>Additional Resources</h1>
 	<p>
 		Here are some additional resources to help you get started with the Autonomy
@@ -52,7 +52,7 @@
 <section
 	class="angled-top-bottom-box thick-margins"
 	use:thickMargins
-	style="--color: var(--brand-teal)"
+	style="--color: var(--brand-tertiary)"
 >
 	<h2>Twelve Steps</h2>
 	<p>
@@ -80,7 +80,7 @@
 <section
 	class="angled-top-box no-bottom-margin"
 	use:thickMargins
-	style="--color: var(--brand-orange)"
+	style="--color: var(--brand-secondary)"
 >
 	<h2>Five Agreements</h2>
 	<p>

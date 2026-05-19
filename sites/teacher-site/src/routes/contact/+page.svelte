@@ -37,7 +37,7 @@
 
 <Toaster />
 
-<section class="angled-bottom-box" style="--color: var(--brand-orange)">
+<section class="angled-bottom-box" style="--color: var(--brand-secondary)">
 	<h1>Contact Us</h1>
 	<p>
 		Have questions or want to learn more about the Autonomy Protocol? Reach out to
@@ -49,7 +49,7 @@
 <section
 	class="angled-top-box no-bottom-margin"
 	use:thickMargins
-	style="--color: var(--brand-blue-dark)"
+	style="--color: var(--brand-primary-dark)"
 >
 	<form method="POST" use:enhance={handleEnhance} class="contact-form">
 		<!-- Hidden input to capture the boolean state in the FormData -->
@@ -144,7 +144,7 @@
 		align-items: center;
 		gap: 0.5rem;
 		font-weight: 600;
-		color: var(--brand-orange);
+		color: var(--brand-secondary);
 	}
 
 	input,
@@ -199,18 +199,18 @@
 		left: 4px;
 		height: calc(100% - 8px);
 		width: calc(50% - 4px);
-		background-color: var(--brand-blue);
+		background-color: var(--brand-primary);
 		z-index: 1;
 		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	.glider.shifted {
 		transform: translateX(100%);
-		background-color: var(--brand-orange);
+		background-color: var(--brand-secondary);
 	}
 
 	.submit-btn {
-		background: var(--brand-blue);
+		background: var(--brand-primary);
 		color: white;
 		border: none;
 		padding: 1rem;

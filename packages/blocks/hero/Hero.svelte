@@ -25,7 +25,7 @@
     grid-template-areas: "stack";
     max-height: 400px;
     overflow: hidden;
-    border: 2px solid var(--brand-orange);
+    border: 2px solid var(--brand-secondary);
     border-radius: var(--border-radius);
     /* Padding removed from here so background spans edge-to-edge */
   }

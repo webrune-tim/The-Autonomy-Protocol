@@ -3,7 +3,7 @@
 	import { ArrowBigRight, Map, Route, ShieldCog } from '@lucide/svelte'
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-blue)">
+<section class="angled-bottom-box" style="--color: var(--brand-primary)">
 	<h1>Empowering Student Agency. Transforming Campus Culture</h1>
 	<p>
 		A scalable socio-emotional curriculum designed to build intrinsic accountability
@@ -18,7 +18,7 @@
 <section
 	class="angled-top-bottom-box"
 	use:thickMargins
-	style="--color: var(--brand-orange)"
+	style="--color: var(--brand-secondary)"
 >
 	<div class="title-grid">
 		<h2>The Problem:</h2>
@@ -39,7 +39,7 @@
 	</ol>
 </section>
 
-<section class="angled-top-box" style="--color: var(--brand-teal)" use:thickMargins>
+<section class="angled-top-box" style="--color: var(--brand-tertiary)" use:thickMargins>
 	<div class="title-grid">
 		<h2>The Opportunity:</h2>
 	</div>
@@ -87,7 +87,7 @@
 			</ol>
 		</section>
 
-		<section class="bold-border-box" style="--border-color: var(--brand-orange)">
+		<section class="bold-border-box" style="--border-color: var(--brand-secondary)">
 			<div class="title-grid">
 				<div class="flex-column">
 					<h3>The Integrity Shield</h3>
@@ -138,7 +138,7 @@
 		align-items: center;
 		gap: var(--gap-1);
 		font-weight: bold;
-		color: var(--brand-orange);
+		color: var(--brand-secondary);
 		text-decoration: none;
 		margin-top: var(--gap-1);
 	}

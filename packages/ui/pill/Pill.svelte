@@ -20,8 +20,8 @@
     max-width: fit-content;
     border-radius: 100px;
     color: var(--fg);
-    background-color: rgb(from var(--brand-orange) r g b / 0.15);
-    border: 1px solid var(--brand-orange);
+    background-color: rgb(from var(--brand-secondary) r g b / 0.15);
+    border: 1px solid var(--brand-secondary);
     padding: 0.25rem 0.75rem;
     font-size: 10px;
     font-family: "Poppins", sans-serif;

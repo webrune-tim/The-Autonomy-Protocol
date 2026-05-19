@@ -111,7 +111,7 @@
     box-shadow: none !important;
 
     /* Custom UI */
-    color: var(--brand-orange);
+    color: var(--brand-secondary);
     cursor: pointer;
     transition: transform 0.1s ease;
   }
@@ -131,7 +131,7 @@
     background: var(--surface-1);
 
     /* Visuals */
-    border: 2px solid var(--brand-orange);
+    border: 2px solid var(--brand-secondary);
     border-radius: var(--border-radius, 8px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
@@ -161,7 +161,7 @@
     padding: 0.6rem 1rem;
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--brand-blue);
+    color: var(--brand-primary);
     border-radius: 4px;
     font-weight: 500;
     transition: background 0.2s ease;
@@ -170,8 +170,8 @@
   /* Transparent hover effect using relative color syntax */
   a:hover,
   a.active {
-    background: rgb(from var(--brand-orange) r g b / 0.15) !important;
-    color: var(--brand-orange);
+    background: rgb(from var(--brand-secondary) r g b / 0.15) !important;
+    color: var(--brand-secondary);
   }
 
   /* Ensure the icon inside stays the right color */
@@ -182,7 +182,7 @@
 
   .link-button {
     background: none;
-    color: var(--brand-blue);
+    color: var(--brand-primary);
     padding: 10px 0 var(--gap-1) var(--gap-1);
   }
 </style>
