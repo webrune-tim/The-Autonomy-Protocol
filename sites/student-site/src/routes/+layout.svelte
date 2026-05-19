@@ -62,7 +62,7 @@
 {/snippet}
 
 {#snippet headerActions()}
-	<Pill>&#945; Alpha</Pill>
+	<!-- <Pill>&#945; Alpha</Pill> -->
 	<ThemeToggle />
 {/snippet}
 

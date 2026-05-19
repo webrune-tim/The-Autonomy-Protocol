@@ -38,7 +38,7 @@ h4,
 h5,
 h6 {
   color: var(--text-heading);
-  font-family: var(--font-header-sans-1);
+  font-family: var(--font-thick);
   margin-top: 0;
   text-transform: uppercase;
 }

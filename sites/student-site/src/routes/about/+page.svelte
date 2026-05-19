@@ -10,7 +10,7 @@
     <p>Our mission is simple: to provide you with the tools, frameworks, and mindset needed to take full ownership of your future. We believe that true success comes from self-governance and accountability, and we've built this curriculum to give you a head start on mastering both.</p>
 </section>
 
-<section class="angled-top-bottom-box" use:thickMargins>
+<section class="angled-top-bottom-box" use:thickMargins style="--color: var(--brand-secondary-dark);">
     <h2>What You'll Find Here</h2>
 
     <p>We focus on the practical skills that traditional textbooks often skip over. Whether you are a freshman just beginning to navigate your independence or a senior preparing to step out into the world, our roadmap is built to support you at every critical "bookend" of your journey.</p>
@@ -22,7 +22,7 @@
     </ul>
 </section>
 
-<section class="angled-top-bottom-box" use:thickMargins style="--color: var(--brand-stertiary);">
+<section class="angled-top-bottom-box" use:thickMargins style="--color: var(--brand-tertiary);">
     <h2>Our Philosophy</h2>
     
     <p>The world is changing fast, and the ability to adapt and lead yourself is more valuable than ever. We've brought together educators and professionals to create a structured environment where you can experiment, learn from failure, and build a foundation of resilience.</p>
