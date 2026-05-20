@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state'
 	import { ReadingTime } from '@autonomy/reading-time'
-	import { ScrollToTop } from '@autonomy/scroll-to-top'
 
-	import { derived } from 'svelte/store'
 	let { children } = $props()
 
 	const colors = ['var(--brand-primary)', 'var(--brand-secondary)', 'var(--brand-tertiary)']
@@ -51,8 +49,6 @@
 		{@render children()}
 	</div>
 </article>
-
-<ScrollToTop threshold={15} ringColor={alt_color()} ringWidth={6} />
 
 <style>
 	article {

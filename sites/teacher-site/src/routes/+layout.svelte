@@ -124,7 +124,7 @@
 
 	<main>
 		{@render children()}
-		ScrollToTop threshold={15} ringWidth={6} />
+		<ScrollToTop />
 	</main>
 
 	<Footer>
