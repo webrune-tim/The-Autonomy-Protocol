@@ -24,18 +24,7 @@
   --surface-3: var(--black-50);
   --ui-border: var(--black-40);
 
-  /* Typography & Layout Shared Tokens */
-  --font-sans-1: "Poppins", sans-serif;
-  --font-sans-2: "Inter", sans-serif;
-  --font-serif: "Special Elite", system-ui;
-  --font-thick: "Black Han Sans", sans-serif;
-  --font-header-sans-1: var(--font-sans-1);
-  --font-header-sans-2: var(--font-sans-2);
-  --font-header-serif: var(--font-serif);
-  --font-size-1: clamp(2rem, 5svw, 4rem);
-  --font-size-2: clamp(1.5rem, 4svw, 3rem);
-  --font-size-3: clamp(1rem, 2.5svw, 2rem);
-  --font-size-4: clamp(0.875rem, 2svw, 1.5rem);
+  /* Layout Shared Tokens */
   --gap-1: clamp(0.5rem, 1.75svw, 1rem);
   --gap-2: clamp(1rem, 2.75svw, 2rem);
   --gap-3: clamp(2rem, 5.5svw, 4rem);
