@@ -29,7 +29,7 @@
 {/if}
 
 <style>
-  :global(.banner) {
+  .banner {
     --color: var(--brand-secondary);
     background: var(--color);
 
@@ -37,7 +37,7 @@
     /*color: --contrast-color(var(--color));*/
     padding: var(--gap-2);
     padding-right: calc(var(--gap-2) * 2.5);
-    margin-bottom: var(--gap-2);
+    /* margin-bottom: var(--gap-2); */
     height: fit-content;
     font-size: clamp(1rem, 2svw, 1.25rem);
 
