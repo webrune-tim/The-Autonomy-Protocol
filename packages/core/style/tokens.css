@@ -126,9 +126,9 @@
   --surface-3: oklch(85% 0.02 254);
   --ui-border: oklch(80% 0.02 254);
 
-  --brand-primary: color-mix(in oklab, var(--accent-1) 50%, var(--accent-2) 50%);
-  --brand-secondary: color-mix(in oklab, var(--accent-2) 50%, var(--accent-3) 50%);
-  --brand-tertiary: color-mix(in oklab, var(--accent-1) 50%, var(--accent-3) 50%);
+  --brand-primary: oklch(from var(--accent-1) calc(l - 0.15) c h);
+  --brand-secondary: oklch(from var(--accent-2) calc(l - 0.15) c h);
+  --brand-tertiary: oklch(from var(--accent-3) calc(l - 0.15) c h);
 
   /* Light mode blocks favor dark text overlays */
   --brand-primary-contrast: var(--black-80);
