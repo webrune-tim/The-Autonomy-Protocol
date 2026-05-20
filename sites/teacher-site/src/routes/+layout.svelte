@@ -11,11 +11,12 @@
 
 	// Shared Components
 	import { Banner } from '@autonomy/banner'
+	import { BatteryLevel } from '@autonomy/battery-level'
 	import { Footer } from '@autonomy/footer'
 	import { Header } from '@autonomy/header'
 	import { Logo } from '@autonomy/logo'
 	import { DropNav, FooterNav } from '@autonomy/nav'
-	import { Pill } from '@autonomy/pill'
+	// import { Pill } from '@autonomy/pill'
 	import { ScrollToTop } from '@autonomy/scroll-to-top'
 
 	// Local components
@@ -123,6 +124,9 @@
 	</Banner>
 
 	<main>
+		{#if import.meta.env.DEV}
+			<BatteryLevel />
+		{/if}
 		{@render children()}
 		<ScrollToTop />
 	</main>

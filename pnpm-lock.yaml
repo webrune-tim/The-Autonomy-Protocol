@@ -109,6 +109,12 @@ importers:
         specifier: ^0.1.14
         version: 0.1.20(@types/node@25.6.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(typescript@6.0.3)(vite@8.0.9(@types/node@25.6.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.2)(yaml@2.8.3))(yaml@2.8.3)
 
+  packages/ui/battery-level:
+    dependencies:
+      '@lucide/svelte':
+        specifier: 'catalog:'
+        version: 1.16.0(svelte@5.55.8(@typescript-eslint/types@8.59.4))
+
   packages/ui/horizontal-scroll: {}
 
   packages/ui/logo:
@@ -262,6 +268,9 @@ importers:
       '@autonomy/banner':
         specifier: workspace:*
         version: link:../../packages/blocks/banner
+      '@autonomy/battery-level':
+        specifier: workspace:*
+        version: link:../../packages/ui/battery-level
       '@autonomy/footer':
         specifier: workspace:*
         version: link:../../packages/blocks/footer
