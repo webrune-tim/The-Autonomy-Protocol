@@ -16,6 +16,7 @@
 	import { Logo } from '@autonomy/logo'
 	import { DropNav, FooterNav } from '@autonomy/nav'
 	import { Pill } from '@autonomy/pill'
+	import { ScrollToTop } from '@autonomy/scroll-to-top'
 
 	// Local components
 	import { ThemeToggle } from '$components'
@@ -123,6 +124,7 @@
 
 	<main>
 		{@render children()}
+		ScrollToTop threshold={15} ringWidth={6} />
 	</main>
 
 	<Footer>

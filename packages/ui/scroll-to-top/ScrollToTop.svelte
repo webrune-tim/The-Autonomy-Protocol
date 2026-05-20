@@ -3,7 +3,7 @@
 		threshold = 20, // percentage of page scrolled
 		buttonBg = '#111111',
 		textColor = '#ffffff',
-		ringColor = '#3b82f6',
+		ringColor = '#255ea0',
 		ringWidth = 3
 	} = $props();
 
