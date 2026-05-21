@@ -48,6 +48,10 @@
 	<div id="doc-content" class="markdown-body" style="--alt-color: {alt_color()}">
 		{@render children()}
 	</div>
+
+    <footer>
+		<a class="back-link" href="/resources">← Back to Resources</a>
+	</footer>
 </article>
 
 <style>
@@ -79,7 +83,12 @@
 		text-transform: uppercase;
 	}
 
-	nav {
+    strong {
+        color: var(--bg);
+    }
+
+	nav,
+    footer {
 		margin: var(--gap-1) 0;
 	}
 </style>
