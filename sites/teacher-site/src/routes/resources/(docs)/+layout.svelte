@@ -83,10 +83,6 @@
 		text-transform: uppercase;
 	}
 
-    strong {
-        color: var(--bg);
-    }
-
 	nav,
     footer {
 		margin: var(--gap-1) 0;
