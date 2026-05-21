@@ -45,10 +45,10 @@
 <section>
 	<div class="flex">
 		<div class="bold-border-box" style="--border-color: var(--brand-primary)">
-			<h3>Methodology: Cognitive & Behavioral Frameworks</h3>
-			<h4 class="margin-top margin-bottom">
+			<h2>Methodology: Cognitive & Behavioral Frameworks</h2>
+			<h3 class="margin-top margin-bottom">
 				The Accountability Cycle (Internal Regulation)
-			</h4>
+			</h3>
 			<p>
 				Utilizing established cognitive behavioral principles, this 12-step recursive
 				process equips students with the tools to perform "self-audits" on their
@@ -76,10 +76,10 @@
 			</ul>
 		</div>
 		<div class="bold-border-box" style="--border-color: var(--brand-tertiary)">
-			<h3>Methodology: Interpersonal Agreements</h3>
-			<h4 class="margin-top margin-bottom">
+			<h2>Methodology: Interpersonal Agreements</h2>
+			<h3 class="margin-top margin-bottom">
 				The Integrity Shield (Tier 1 Interpersonal Tools)
-			</h4>
+			</h3>
 			<p>
 				These four foundational agreements serve as a proactive behavioral defense
 				system, designed to de-escalate interpersonal conflict and reduce
@@ -140,7 +140,7 @@
 	class="bold-border-box margin-top-2 flex-around"
 	style="--border-color: var(--fg)"
 >
-	<h3>The Architect</h3>
+	<h2>The Architect</h2>
 	<p>
 		<strong>The Autonomy Protocol</strong> was developed by
 		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>.
