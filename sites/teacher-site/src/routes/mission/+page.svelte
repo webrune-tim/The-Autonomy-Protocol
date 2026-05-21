@@ -17,8 +17,7 @@
 	<p>
 		<strong>Our objective is definitive:</strong> to ensure every student graduates with
 		the executive functioning skills required to navigate adult complexities independently.
-		We believe that when students learn to govern themselves, administrative policing becomes
-		obsolete.
+		By internalizing self-governance, we reduce the friction of external regulation—returning hundreds of hours of instructional time to teachers and staff.
 	</p>
 
 	<a class="cta" href="/join-us">
@@ -81,7 +80,7 @@
 				The Integrity Shield (Tier 1 Interpersonal Tools)
 			</h3>
 			<p>
-				These four foundational agreements serve as a proactive behavioral defense
+				These five foundational agreements serve as a proactive behavioral defense
 				system, designed to de-escalate interpersonal conflict and reduce
 				administrative disciplinary referrals.
 			</p>
@@ -103,6 +102,10 @@
 					<strong>Consistent Effort:</strong> Shifting the focus from unattainable perfection
 					to "variable capacity," allowing students to maintain growth even during high-stress
 					periods.
+				</li>
+				<li>
+					<strong>Be Skeptical, But Listen:</strong> Teaching students to question information
+					sources while remaining open to constructive feedback.
 				</li>
 			</ul>
 		</div>
@@ -142,21 +145,20 @@
 >
 	<h2>The Architect</h2>
 	<p>
-		<strong>The Autonomy Protocol</strong> was developed by
-		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>.
-		The framework is born from personal necessity: Smith utilized the structural
-		logic of the 12 Steps and the Four Agreements to navigate his own recovery from
-		substance abuse. This journey revealed a profound truth—that the cognitive
-		structures required for life-saving behavioral change are the same tools needed
-		for student empowerment.
+		<strong>The Autonomy Protocol</strong> was developed by 
+		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>. 
+		The framework is built upon the structural logic of high-stakes behavioral models, 
+		secularized and reconstructed for the secondary education environment. Smith’s 
+		development of the protocol was driven by a fundamental realization: the cognitive 
+		tools required for profound personal transformation are the exact same mechanisms 
+		needed for student empowerment and executive functioning.
 	</p>
 	<p>
-		By stripping these principles of their traditional jargon and adapting them for
-		the modern classroom, Smith created a methodology rooted in <strong
-			>internal mastery</strong
-		>
-		rather than external compliance. The result is a battle-tested protocol that equips
-		students to manage academic and social complexities with the resilience required for
+		By stripping these principles of their traditional jargon and adapting them for 
+		the modern classroom, Smith created a methodology rooted in <strong>internal mastery</strong> 
+		rather than external compliance. This approach—born from the necessity of navigating 
+		complex personal recovery—has been refined into a battle-tested protocol. It equips 
+		students to manage academic and social complexities with the resilience required for 
 		long-term professional success.
 	</p>
 </section>

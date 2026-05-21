@@ -21,8 +21,9 @@
 			and interpersonal repair.
 		</li>
 		<li>
-			<strong>The Five Pillars of Integrity:</strong> A behavioral code of conduct designed
-			to foster cognitive clarity and emotional neutrality.
+			<strong>The Integrity Shield:</strong> A foundational behavioral defense system
+			designed to foster cognitive clarity, emotional neutrality, and internal
+			self-governance.
 		</li>
 	</ul>
 </section>

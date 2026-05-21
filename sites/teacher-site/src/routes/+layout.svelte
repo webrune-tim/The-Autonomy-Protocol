@@ -132,7 +132,7 @@
 	</main>
 
 	<Footer>
-		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
+		<p>The Autonomy Protocol &copy; {new Date().getFullYear()}</p>
 		<FooterNav links={footerLinks} currentPath={$page.url.pathname} />
 	</Footer>
 </div>
