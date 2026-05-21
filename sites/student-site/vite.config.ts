@@ -5,6 +5,9 @@ import { enhancedImages } from "@sveltejs/enhanced-img";
 
 export default defineConfig({
   plugins: [enhancedImages(), sveltekit()],
+  ssr: {
+    noExternal: [/^@autonomy\//],
+  },
   test: {
     expect: { requireAssertions: true },
     projects: [

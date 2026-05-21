@@ -2,7 +2,16 @@
   "name": "@autonomy/scroll-to-top",
   "version": "0.1.0",
   "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
   "exports": {
-    ".": "./index.ts"
+    ".": {
+      "types": "./index.ts",
+      "svelte": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
   }
 }
