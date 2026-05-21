@@ -132,8 +132,9 @@
 	</main>
 
 	<Footer>
-		<p>The Autonomy Protocol &copy; {new Date().getFullYear()}</p>
 		<FooterNav links={footerLinks} currentPath={$page.url.pathname} />
+		<hr class="footer-divider" />
+		<p class="copyright">The Autonomy Protocol &copy; {new Date().getFullYear()}</p>
 	</Footer>
 </div>
 
@@ -156,5 +157,22 @@
 	.home-link,
 	.home-link:hover {
 		text-decoration: none;
+	}
+
+	:global(.footer-divider) {
+		width: 100%;
+		border: none;
+		/* Keeping your cool clamp logic for that technical line aesthetic */
+		border-top: clamp(1px, 0.1svw, 2px) solid var(--fg);
+		opacity: 0.3; /* Softens the line so it doesn't distract from the text */
+		margin: var(--gap-1) 0;
+	}
+
+	:global(.copyright) {
+		font-size: 0.8rem;
+		letter-spacing: 0.05em;
+		opacity: 0.6; /* Mutes the copyright to establish visual hierarchy */
+		margin: 0;
+		text-align: center;
 	}
 </style>
