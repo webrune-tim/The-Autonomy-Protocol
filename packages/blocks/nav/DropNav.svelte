@@ -1,7 +1,8 @@
 <script lang="ts">
   import { page } from "$app/state";
   import { Menu } from "@lucide/svelte";
-  import { fly } from "svelte/transition"; //
+  import { fly } from "svelte/transition";
+  import { ThemeToggle } from "@autonomy/theme-toggle";
   import { cubicOut, cubicIn } from "svelte/easing";
 
   interface NavLink {
@@ -59,6 +60,7 @@
     out:fly={{ y: -10, duration: 150, easing: cubicIn }}
   >
       <nav>
+        <ThemeToggle />
         <ul>
           {#each links as link}
             <li>
