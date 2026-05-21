@@ -59,4 +59,8 @@
 	.teacher-content :global(p) {
 		margin: 0.5rem 0;
 	}
+
+	.teacher-content :global(strong) {
+		color: var(--fg);
+	}
 </style>
