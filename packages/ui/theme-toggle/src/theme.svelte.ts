@@ -1,50 +1,31 @@
-export type Theme = "light" | "dark" | "system";
+export type Theme = "light" | "dark";
 
 class ThemeState {
-  #value = $state<Theme>("system");
-  #systemTheme = $state<"light" | "dark">("dark");
+  #value = $state<Theme>("light");
   #isBrowser = typeof window !== "undefined";
 
-  resolved = $derived.by(() => {
-    if (this.#value === "system") {
-      return this.#systemTheme;
-    }
-    return this.#value as "light" | "dark";
-  });
+  #syncDOM() {
+    document.documentElement.setAttribute("data-theme", this.#value);
+    document.documentElement.style.colorScheme = this.#value;
+    localStorage.setItem("theme", this.#value);
+  }
 
   constructor() {
     if (this.#isBrowser) {
       const stored = localStorage.getItem("theme") as Theme | null;
-      if (stored === "light" || stored === "dark" || stored === "system") {
+      if (stored === "light" || stored === "dark") {
         this.#value = stored;
       }
-
-      $effect.root(() => {
-        $effect(() => {
-          const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-          this.#systemTheme = mediaQuery.matches ? "dark" : "light";
-
-          const handler = (e: MediaQueryListEvent) => {
-            this.#systemTheme = e.matches ? "dark" : "light";
-          };
-
-          mediaQuery.addEventListener("change", handler);
-          return () => mediaQuery.removeEventListener("change", handler);
-        });
-
-        $effect(() => {
-          const theme = this.resolved;
-          document.documentElement.setAttribute("data-theme", theme);
-          document.documentElement.style.colorScheme = theme;
-          localStorage.setItem("theme", this.#value);
-        });
-      });
+      this.#syncDOM();
     }
   }
 
   init(theme: Theme | null) {
-    if (theme && (theme === "light" || theme === "dark" || theme === "system")) {
+    if (theme && (theme === "light" || theme === "dark")) {
       this.#value = theme;
+      if (this.#isBrowser) {
+        this.#syncDOM();
+      }
     }
   }
 
@@ -68,6 +49,7 @@ class ThemeState {
   set value(v: Theme) {
     this.#value = v;
     if (this.#isBrowser) {
+      this.#syncDOM();
       this.syncToServer();
     }
   }

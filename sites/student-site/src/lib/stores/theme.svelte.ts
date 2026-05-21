@@ -1,60 +1,23 @@
 import { browser } from "$app/environment";
 
-export type Theme = "light" | "dark" | "system";
+export type Theme = "light" | "dark";
 
 class ThemeState {
-  #value = $state<Theme>("system");
-  #systemTheme = $state<"light" | "dark">("dark");
+  #value = $state<Theme>("light");
 
-  // Use $derived for the resolved theme to ensure perfect reactivity
-  resolved = $derived.by(() => {
-    if (this.#value === "system") {
-      return this.#systemTheme;
-    }
-    return this.#value as "light" | "dark";
-  });
+  #syncDOM() {
+    document.documentElement.setAttribute("data-theme", this.#value);
+    document.documentElement.style.colorScheme = this.#value;
+    localStorage.setItem("theme", this.#value);
+  }
 
   constructor() {
     if (browser) {
-      // 1. Initialize from localStorage with validation
       const stored = localStorage.getItem("theme") as Theme | null;
-      if (stored === "light" || stored === "dark" || stored === "system") {
+      if (stored === "light" || stored === "dark") {
         this.#value = stored;
       }
-
-      // 2. Use $effect.root for module-level side effects
-      $effect.root(() => {
-        // Manage system theme listener
-        $effect(() => {
-          const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-          // Initial sync
-          this.#systemTheme = mediaQuery.matches ? "dark" : "light";
-
-          const handler = (e: MediaQueryListEvent) => {
-            this.#systemTheme = e.matches ? "dark" : "light";
-          };
-
-          if (mediaQuery.addEventListener) {
-            mediaQuery.addEventListener("change", handler);
-            return () => mediaQuery.removeEventListener("change", handler);
-          } else {
-            // Fallback for older browsers
-            // @ts-ignore
-            mediaQuery.addListener(handler);
-            // @ts-ignore
-            return () => mediaQuery.removeListener(handler);
-          }
-        });
-
-        // Sync to DOM and localStorage
-        $effect(() => {
-          const theme = this.resolved;
-          document.documentElement.setAttribute("data-theme", theme);
-          document.documentElement.style.colorScheme = theme;
-          localStorage.setItem("theme", this.#value);
-        });
-      });
+      this.#syncDOM();
     }
   }
 
@@ -62,8 +25,11 @@ class ThemeState {
    * Initialize theme from server data
    */
   init(theme: Theme | null) {
-    if (theme && (theme === "light" || theme === "dark" || theme === "system")) {
+    if (theme && (theme === "light" || theme === "dark")) {
       this.#value = theme;
+      if (browser) {
+        this.#syncDOM();
+      }
     }
   }
 
@@ -91,6 +57,7 @@ class ThemeState {
   set value(v: Theme) {
     this.#value = v;
     if (browser) {
+      this.#syncDOM();
       this.syncToServer();
     }
   }

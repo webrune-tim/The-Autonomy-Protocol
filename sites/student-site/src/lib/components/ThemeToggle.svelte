@@ -2,14 +2,12 @@
 	import { themeState } from '$stores/theme.svelte'
 	import Sun from '@lucide/svelte/icons/sun'
 	import Moon from '@lucide/svelte/icons/moon'
-	import Monitor from '@lucide/svelte/icons/monitor'
 
 	// Import the shared packages
 	import { Pill } from '@autonomy/pill'
 
 	const options = [
 		{ id: 'light', icon: Sun, label: 'Light' },
-		{ id: 'system', icon: Monitor, label: 'System' },
 		{ id: 'dark', icon: Moon, label: 'Dark' }
 	] as const
 </script>
