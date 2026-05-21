@@ -89,7 +89,7 @@
 	class="bold-border-box margin-top flex-around"
 	style="--border-color: var(--fg)"
 >
-	<h3>Ready to Build a Self-Governed Future?</h3>
+	<h2>Ready to Build a Self-Governed Future?</h2>
 
 	<p>
 		We operate under the <strong>Integrity Protocol:</strong> we are impeccable with our
