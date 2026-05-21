@@ -117,24 +117,45 @@ importers:
       '@lucide/svelte':
         specifier: 'catalog:'
         version: 1.16.0(svelte@5.55.9(@typescript-eslint/types@8.59.4))
+      svelte:
+        specifier: ^5.0.0
+        version: 5.55.9(@typescript-eslint/types@8.59.4)
 
-  packages/ui/horizontal-scroll: {}
+  packages/ui/horizontal-scroll:
+    dependencies:
+      svelte:
+        specifier: ^5.0.0
+        version: 5.55.9(@typescript-eslint/types@8.59.4)
 
   packages/ui/logo:
     dependencies:
       '@lucide/svelte':
         specifier: 'catalog:'
         version: 1.16.0(svelte@5.55.9(@typescript-eslint/types@8.59.4))
+      svelte:
+        specifier: ^5.0.0
+        version: 5.55.9(@typescript-eslint/types@8.59.4)
 
-  packages/ui/pill: {}
+  packages/ui/pill:
+    dependencies:
+      svelte:
+        specifier: ^5.0.0
+        version: 5.55.9(@typescript-eslint/types@8.59.4)
 
   packages/ui/reading-time:
     dependencies:
       '@lucide/svelte':
         specifier: ^0.546.0
         version: 0.546.0(svelte@5.55.9(@typescript-eslint/types@8.59.4))
+      svelte:
+        specifier: ^5.0.0
+        version: 5.55.9(@typescript-eslint/types@8.59.4)
 
-  packages/ui/scroll-to-top: {}
+  packages/ui/scroll-to-top:
+    dependencies:
+      svelte:
+        specifier: ^5.0.0
+        version: 5.55.9(@typescript-eslint/types@8.59.4)
 
   packages/ui/theme-toggle:
     dependencies:
