@@ -60,7 +60,9 @@
     out:fly={{ y: -10, duration: 150, easing: cubicIn }}
   >
       <nav>
-        <ThemeToggle />
+        <section class="theme-toggle-wrapper">
+          <ThemeToggle />
+        </section>
         <ul>
           {#each links as link}
             <li>
@@ -93,6 +95,13 @@
 </div>
 
 <style>
+  .theme-toggle-wrapper {
+    width: 100%;
+    display: flex;
+    place-content: center;
+    padding-top: 0.5rem;
+  }
+
   .dropdown-wrapper {
     position: relative;
     display: inline-flex;
