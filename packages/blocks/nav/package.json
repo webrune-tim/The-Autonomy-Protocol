@@ -6,6 +6,7 @@
     ".": "./index.ts"
   },
   "dependencies": {
-    "@lucide/svelte": "catalog:"
+    "@lucide/svelte": "catalog:",
+    "@autonomy/theme-toggle": "catalog:"
   }
 }
