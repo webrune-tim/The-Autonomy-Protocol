@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { themeState } from '$stores/theme.svelte'
-	import Sun from '@lucide/svelte/icons/sun'
-	import Moon from '@lucide/svelte/icons/moon'
-	import Monitor from '@lucide/svelte/icons/monitor'
+	import { themeState } from './theme.svelte'
+	import { Sun, Moon, Monitor } from '@lucide/svelte'
 
 	// Import the shared packages
 	import { Pill } from '@autonomy/pill'
@@ -16,7 +14,7 @@
 
 <Pill>
 	<div class="toggle-container">
-		{#each options as { id, icon: Icon, label }}
+		{#each options as { id, icon: Icon, label } (id)}
 			<button
 				class="icon-button"
 				class:active={themeState.value === id}

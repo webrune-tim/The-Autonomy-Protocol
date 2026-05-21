@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte'
-	import { themeState } from '$lib/stores/theme.svelte'
+	import { themeState } from '@autonomy/theme-toggle'
 	import { page } from '$app/stores'
 	import type { LayoutData } from './$types'
 

@@ -1,3 +1,3 @@
-export { default as ThemeToggle } from './ThemeToggle.svelte'
-export { default as TeacherOnly } from './TeacherOnly.svelte'
-export { default as TeacherCta } from './TeacherCta.svelte'
+export { ThemeToggle } from "@autonomy/theme-toggle";
+export { default as TeacherOnly } from "./TeacherOnly.svelte";
+export { default as TeacherCta } from "./TeacherCta.svelte";
