@@ -35,6 +35,7 @@
     "@autonomy/reading-time": "workspace:*",
     "@autonomy/scroll-to-top": "workspace:*",
     "@autonomy/style": "workspace:*",
+    "@autonomy/theme-toggle": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",
     "@lucide/svelte": "catalog:",
     "svelte-french-toast": "^1.2.0"
