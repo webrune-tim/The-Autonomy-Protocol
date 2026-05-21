@@ -14,6 +14,7 @@
 
 <style>
   footer {
+    max-height: fit-content;
     --color: var(--brand-primary);
     display: flex;
     flex-direction: column;
