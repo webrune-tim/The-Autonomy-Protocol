@@ -59,6 +59,7 @@
     in:fly={{ y: -10, duration: 550, easing: cubicOut }}
     out:fly={{ y: -10, duration: 150, easing: cubicIn }}
   >
+    <div class="dropdown-content-inner">
       <nav>
         <section class="theme-toggle-wrapper">
           <ThemeToggle />
@@ -90,6 +91,7 @@
           {/if}
         </ul>
       </nav>
+    </div>
     </div>
   {/if}
 </div>
@@ -126,14 +128,19 @@
     position: absolute;
     top: calc(100% + 0.5rem);
     right: 0; /* Changed from left -400% to right-align with button */
-    background: rgb(from var(--bg) r g b / 0.95);
+    background:  var(--bg);
     border: 2px solid var(--brand-secondary);
     border-radius: var(--border-radius, 1rem);
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    background: var(--bg);
     width: max-content;
     min-width: 180px;
     z-index: 100;
     overflow: hidden;
+  }
+
+  .dropdown-content-inner {
+    background: rgb(from var(--fg) r g b / 0.15);
   }
 
   ul {

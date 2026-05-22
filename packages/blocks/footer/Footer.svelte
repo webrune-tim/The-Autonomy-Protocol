@@ -19,11 +19,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-2);
     color: var(--fg);
     background: var(--brand-primary-dark);
     /* Add slightly more padding to the top and bottom to let the footer breathe */
-    padding: var(--gap-3) var(--gap-2) var(--gap-2);
+    padding: var(--gap-2) var(--gap-1);
     font-size: var(--font-size-3);
     width: 100%;
   }

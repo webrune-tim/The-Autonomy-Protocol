@@ -1,21 +1,26 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import type { Snippet } from 'svelte'
 	import { page } from '$app/stores'
+	import type { LayoutData } from './$types'
 
-	import favicon from '$lib/assets/favicon.svg';
-	import OgImg from '$images/og-img.png';
-	import '@autonomy/style/index.css';
+	// Assets
+	import favicon from '$lib/assets/favicon.svg'
+	import OgImg from '$images/og-img.png'
+	import '@autonomy/style/index.css'
 
-	// Import the shared packages
-	import { Banner } from '@autonomy/banner';
-	import { Footer } from '@autonomy/footer';
-	import { Header } from '@autonomy/header';
-	import { Logo } from '@autonomy/logo';
-	import { DropNav, FooterNav } from '@autonomy/nav';
-	import { Pill } from '@autonomy/pill';
+	// Shared Components
+	import { Banner } from '@autonomy/banner'
+	// import { BatteryLevel } from '@autonomy/battery-level'
+	import { Footer } from '@autonomy/footer'
+	import { Header } from '@autonomy/header'
+	import { Logo } from '@autonomy/logo'
+	import { DropNav, FooterNav } from '@autonomy/nav'
+	import { Pill } from '@autonomy/pill'
+	import { ScrollToTop } from '@autonomy/scroll-to-top'
+	import { themeState } from '@autonomy/theme-toggle'
 
-	// Import local components
-	import ThemeToggle from '$components/ThemeToggle.svelte';
+	// Local components
+	// import { ThemeToggle } from '$components'
 
 	interface Props {
 		data: LayoutData
@@ -24,35 +29,64 @@
 
 	let { data, children }: Props = $props()
 
+	// Initialize theme from server data
+	$effect(() => {
+		themeState.init(data.theme)
+	})
+
 	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
-		...(data.user ? [{ href: '/assignments', label: 'Assignments' }] : []),
-		...(data.user ? [{ href: '/homework', label: 'Homework' }] : []),
-		...(data.user ? [{ href: '/achievements', label: 'Achievements' }] : []),
-		{ href: '/about', label: 'About' },
+		{ href: '/mission', label: 'Mission' },
+		{ href: '/join-us', label: 'Join Us' },
+		{ href: '/curriculum', label: 'Curriculum' },
+		{ href: '/resources', label: 'Resources' },
+		{ href: '/road-map', label: 'Road Map' },
+		{ href: '/contact', label: 'Contact' },
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
-	]);
+	])
 
 	const footerLinks = $derived([
 		{ href: '/', label: 'Home' },
-		...(data.user ? [{ href: '/assignments', label: 'Assignments' }] : []),
-		...(data.user ? [{ href: '/homework', label: 'Homework' }] : []),
-		...(data.user ? [{ href: '/achievements', label: 'Achievements' }] : []),
-		{ href: '/about', label: 'About' }
-	]);
+		{ href: '/mission', label: 'Mission' },
+		{ href: '/join-us', label: 'Join Us' },
+		{ href: '/curriculum', label: 'Curriculum' },
+		{ href: '/resources', label: 'Resources' },
+		{ href: '/road-map', label: 'Road Map' },
+		{ href: '/contact', label: 'Contact' }
+	])
+
+	$effect(() => {
+		const localStorageKey = `scroll-y-position-${window.location.href}`
+
+		const savedPosition = localStorage.getItem(localStorageKey)
+		if (savedPosition) {
+			window.scrollTo(0, parseInt(savedPosition, 10))
+		}
+
+		const handleScroll = () => {
+			localStorage.setItem(localStorageKey, window.scrollY.toString())
+		}
+
+		window.addEventListener('scroll', handleScroll, { passive: true })
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	})
 </script>
 
 <svelte:head>
-	<title>The Autonomy Protocol</title>
+	<title>The Autonomy Protocol | Student Portal</title>
 	<meta
 		name="description"
 		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
 	/>
+	<link rel="stylesheet" href="/print.css" media="print" />
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
 	<meta name="theme-color" content="#ff9661" />
 	<link rel="icon" href={favicon} />
 	<meta property="og:title" content="The Autonomy Protocol" />
-	<meta property="og:type" content="image/png" />
+	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://the-autonomy-protocol.vercel.app/" />
 	<meta property="og:image" content={OgImg} />
 </svelte:head>
@@ -62,8 +96,8 @@
 {/snippet}
 
 {#snippet headerActions()}
-	<!-- <Pill>&#945; Alpha</Pill> -->
-	<ThemeToggle />
+	<Pill>&#945; Alpha</Pill>
+	<!-- <ThemeToggle /> -->
 {/snippet}
 
 {#snippet headerNav()}
@@ -72,25 +106,35 @@
 
 <div class="layout-wrapper">
 	<Header logo={headerLogo} actions={headerActions} nav={headerNav} />
-	<Banner bannerName="site-under-development">
-		<p>This site is still under heavy development. Content may change without notice.</p>
 
+	<Banner bannerName="site-under-development">
 		<p>
-			If you encounter any issues, please report them via our <a href="/contact">contact page</a>
-			or on
-			<a href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues" target="_blank"
-				>GitHub Issues page</a
-			>.
+			This site is still under heavy development. Content may change without notice.
+		</p>
+		<p>
+			If you encounter any issues, please report them via our
+			<a href="/contact">contact page</a> or on
+			<a
+				href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
+				target="_blank"
+			>
+				GitHub Issues page
+			</a>.
 		</p>
 	</Banner>
 
 	<main>
+		<!-- {#if import.meta.env.DEV}
+			<BatteryLevel />
+		{/if} -->
 		{@render children()}
+		<ScrollToTop />
 	</main>
 
 	<Footer>
-		<p>The Autonomy Project &copy; {new Date().getFullYear()}</p>
 		<FooterNav links={footerLinks} currentPath={$page.url.pathname} />
+		<hr class="footer-divider" />
+		<p class="copyright">The Autonomy Protocol &copy; {new Date().getFullYear()}</p>
 	</Footer>
 </div>
 
@@ -101,8 +145,17 @@
 		min-height: 100svh;
 		display: grid;
 		padding: var(--gap-2);
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: auto auto 1fr auto; /* Adjusted for Banner */
 		background: var(--surface-4);
+		gap: var(--gap-2);
+
+		p {
+			font-weight: bolder;
+		}
+	}
+
+	main {
+		width: 100%;
 	}
 
 	.home-link,
@@ -110,30 +163,23 @@
 		text-decoration: none;
 	}
 
-	:global(:root) {
-		--accent-1: oklab(0.61 -0.06 -0.22);
-		--accent-2: oklab(0.72 0.16 0.16);
-		--accent-3: oklab(0.8 -0.17 -0.03);
+	:global(.footer-divider) {
+		margin-left: calc(var(--gap-1) * -1);
+		margin-right: calc(var(--gap-1) * -1);
+		width: calc(100% + (var(--gap-1) * 2));
+		
+		/* Base styles */
+		border: none;
+		opacity: 0.4;
+		margin-top: var(--gap-1);
+		margin-bottom: var(--gap-1);
 	}
 
-	:global(:root[data-theme='light']) {
-		--brand-primary: oklab(0.45 -0.05 -0.17);
-		--brand-secondary: oklab(0.57 0.13 0.13);
-		--brand-secondary: oklab(0.64 -0.14 -0.02);
-		--accent-3: oklab(0.64 -0.14 -0.02);
-	}
-
-	@media (color-gamut: p3) {
-		:global(:root) {
-			--brand-primary: oklch(0.6132 0.2245 254);
-			--brand-secondary: oklch(0.7191 0.2269 45);
-			--accent-3: oklch(0.8015 0.1751 190);
-		}
-
-		:global(:root[data-theme='light']) {
-			--brand-primary: oklch(0.4485 0.1751 254.74);
-			--brand-secondary: oklch(0.5691 0.1801 45);
-			--accent-3: oklch(0.6397 0.1431 190);
-		}
+	:global(.copyright) {
+		font-size: 0.8rem;
+		letter-spacing: 0.05em;
+		opacity: 0.7;
+		margin: 0;
+		text-align: center;
 	}
 </style>

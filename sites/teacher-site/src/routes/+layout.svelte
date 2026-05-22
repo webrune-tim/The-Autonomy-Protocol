@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte'
-	import { themeState } from '@autonomy/theme-toggle'
 	import { page } from '$app/stores'
 	import type { LayoutData } from './$types'
 
@@ -18,6 +17,7 @@
 	import { DropNav, FooterNav } from '@autonomy/nav'
 	import { Pill } from '@autonomy/pill'
 	import { ScrollToTop } from '@autonomy/scroll-to-top'
+	import { themeState } from '@autonomy/theme-toggle'
 
 	// Local components
 	// import { ThemeToggle } from '$components'
@@ -148,6 +148,10 @@
 		grid-template-rows: auto auto 1fr auto; /* Adjusted for Banner */
 		background: var(--surface-4);
 		gap: var(--gap-2);
+
+		p {
+			font-weight: bolder;
+		}
 	}
 
 	main {
@@ -160,18 +164,21 @@
 	}
 
 	:global(.footer-divider) {
-		width: 100%;
+		margin-left: calc(var(--gap-1) * -1);
+		margin-right: calc(var(--gap-1) * -1);
+		width: calc(100% + (var(--gap-1) * 2));
+		
+		/* Base styles */
 		border: none;
-		/* Keeping your cool clamp logic for that technical line aesthetic */
-		border-top: clamp(1px, 0.1svw, 2px) solid var(--fg);
-		opacity: 0.3; /* Softens the line so it doesn't distract from the text */
-		margin: var(--gap-1) 0;
+		opacity: 0.4;
+		margin-top: var(--gap-1);
+		margin-bottom: var(--gap-1);
 	}
 
 	:global(.copyright) {
 		font-size: 0.8rem;
 		letter-spacing: 0.05em;
-		opacity: 0.6; /* Mutes the copyright to establish visual hierarchy */
+		opacity: 0.7;
 		margin: 0;
 		text-align: center;
 	}

@@ -61,6 +61,7 @@
     
     /* Technical Index Aesthetic */
     font-size: 0.8rem;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     opacity: 0.8; /* Slightly dim inactive links */
@@ -69,10 +70,11 @@
     &:hover {
       color: var(--brand-secondary);
       opacity: 1;
+      font-weight: bolder;
     }
 
     &.active {
-      font-weight: 900;
+      font-weight: bolder;
       opacity: 1;
       border-bottom: 2px solid var(--fg);
     }

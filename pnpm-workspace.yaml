@@ -16,7 +16,7 @@ catalog:
   "@lucide/svelte": ^1.16.0
   "@types/node": ^25
   "@typescript/native-preview": 7.0.0-dev.20260421.2
-  "@vitest/browser-playwright": ^4.1.6
+  "@vitest/browser-playwright": ^4.1.7
   node-addon-api: ^8.7.0
   sharp: ^0.34.5
   sv-agentation: ^0.2.6

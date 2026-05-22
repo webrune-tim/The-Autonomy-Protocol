@@ -20,21 +20,5 @@
   "engines": {
     "node": ">=22.12.0"
   },
-  "packageManager": "pnpm@11.2.2",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp",
-      "esbuild"
-    ],
-    "supportedArchitectures": {
-      "os": [
-        "darwin",
-        "linux"
-      ],
-      "cpu": [
-        "arm64",
-        "x64"
-      ]
-    }
-  }
+  "packageManager": "pnpm@11.2.2"
 }

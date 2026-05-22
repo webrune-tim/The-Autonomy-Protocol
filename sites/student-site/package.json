@@ -28,7 +28,9 @@
     "@autonomy/logo": "workspace:*",
     "@autonomy/nav": "workspace:*",
     "@autonomy/pill": "workspace:*",
+    "@autonomy/scroll-to-top": "workspace:*",
     "@autonomy/style": "workspace:*",
+    "@autonomy/theme-toggle": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",
     "@lucide/svelte": "catalog:",
     "svelte-french-toast": "^1.2.0"
@@ -55,13 +57,13 @@
     "mdsvex": "^0.12.7",
     "prettier": "^3.8.3",
     "prettier-plugin-svelte": "^3.5.2",
-    "svelte": "^5.55.8",
+    "svelte": "^5.55.9",
     "svelte-check": "^4.4.8",
     "typescript": "npm:@typescript/typescript6@^6.0.1",
     "typescript-eslint": "^8.59.4",
-    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.21",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.22",
     "vite-imagetools": "^10.0.0",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.21"
+    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.22"
   },
   "packageManager": "pnpm@10.33.0"
 }
