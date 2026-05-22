@@ -52,20 +52,28 @@
   --accent-3-contrast: var(--black-80);
 }
 
-/* Teacher Site Accents (Mid-tones, require light text contrast when solid) */
-:root[data-site="teacher"] {
-  /* --accent-1: oklab(0.50 -0.02 -0.06); 
-  --accent-2: oklab(0.54 0.06 0.06);   
-  --accent-3: oklab(0.56 0.01 0.02);    */
+/* ==========================================================================
+   2. SITE-SPECIFIC ACCENT & CONTRAST DEFINITIONS
+   ========================================================================== */
 
-  --accent-1: #255ea0;
-  --accent-2: #8a5a4a;
-  --accent-3: #8a6e6e;
+/* Teacher Site Accents (Mathematically isolated for AAA cross-contrast) */
+/* ==========================================================================
+   2. SITE-SPECIFIC ACCENT & CONTRAST DEFINITIONS
+   ========================================================================== */
+
+/* Teacher Site Accents (Optimized for Dark Theme + High-Print Legibility) */
+:root[data-site="teacher"] {
+  /* A bright, accessible electric sapphire (L=56%) */
+  --accent-1: oklch(56% 0.19 255);
+  /* A clean, vivid safety amber/orange (L=62%) */
+  --accent-2: oklch(62% 0.18 45);
+  /* A soft, high-contrast cream-sage for tertiary text/actions (L=85%) */
+  --accent-3: oklch(85% 0.06 85);
 
   /* Explicit solid background contrast contracts */
   --accent-1-contrast: var(--white);
-  --accent-2-contrast: var(--white);
-  --accent-3-contrast: var(--white);
+  --accent-2-contrast: var(--black-80);
+  --accent-3-contrast: var(--black-80);
 }
 
 /* ==========================================================================

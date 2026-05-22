@@ -236,17 +236,24 @@ details > summary {
 }
 
 .bold-border-box {
+  /* Keep the structural border matching the brand accent */
   --border-color: var(--brand-primary);
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
 
+  /* Fallback body text color inside the card */
+  color: var(--fg);
+
+  /* FIX: Map your headings and highlights to your high-contrast 
+    print engine instead of the raw, dark border color!
+  */
   h2,
   h3,
   h4,
   h5,
   strong,
-  li:before {
-    color: var(--border-color);
+  li::before {
+    color: var(--text-primary-print);
   }
 }
 
