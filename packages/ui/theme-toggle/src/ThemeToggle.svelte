@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Ensure this matches your renamed file name exactly
+	// Use your precise path to the theme file
 	import { themeState } from './theme.svelte'
 	import { Sun, Moon } from '@lucide/svelte'
 	import { Pill } from '@autonomy/pill'
@@ -24,7 +24,6 @@
 		{/each}
 	</div>
 </Pill>
-
 
 <style>
 	.toggle-container {
