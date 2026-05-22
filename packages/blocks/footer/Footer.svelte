@@ -25,5 +25,9 @@
     padding: var(--gap-2) var(--gap-1);
     font-size: var(--font-size-3);
     width: 100%;
+
+    a {
+      color: var(--safe-contrast);
+    }
   }
 </style>

@@ -4316,6 +4316,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.1:
+    resolution: {integrity: sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   set-cookie-parser@2.7.2:
     resolution: {integrity: sha512-oeM1lpU/UvhTxw+g3cIfxXHyJRc/uidd3yK1P242gzHds0udQBYzs3y8j4gCCW+ZJ7ad0yctld8RYO+bdurlvw==}
 
@@ -4987,7 +4992,7 @@ snapshots:
       pg: 8.21.0
       prettier: 3.8.3
       prompts: 2.4.2
-      semver: 7.8.0
+      semver: 7.8.1
       yocto-spinner: 0.2.3
       zod: 4.4.3
     transitivePeerDependencies:
@@ -5059,7 +5064,7 @@ snapshots:
       pg: 8.21.0
       prettier: 3.8.3
       prompts: 2.4.2
-      semver: 7.8.0
+      semver: 7.8.1
       yocto-spinner: 0.2.3
       zod: 4.4.3
     transitivePeerDependencies:
@@ -5684,7 +5689,7 @@ snapshots:
       https-proxy-agent: 7.0.6
       node-fetch: 2.7.0(encoding@0.1.13)
       nopt: 8.1.0
-      semver: 7.8.0
+      semver: 7.8.1
       tar: 7.5.15
     transitivePeerDependencies:
       - encoding
@@ -5720,7 +5725,7 @@ snapshots:
 
   '@npmcli/fs@4.0.0':
     dependencies:
-      semver: 7.8.0
+      semver: 7.8.1
 
   '@oxc-project/runtime@0.127.0': {}
 
@@ -6212,7 +6217,7 @@ snapshots:
 
   '@types/pg@8.20.0':
     dependencies:
-      '@types/node': 24.12.4
+      '@types/node': 22.19.19
       pg-protocol: 1.14.0
       pg-types: 2.2.0
 
@@ -6222,7 +6227,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 24.12.4
+      '@types/node': 22.19.19
 
   '@typescript-eslint/eslint-plugin@8.59.4(@typescript-eslint/parser@8.59.4(@typescript/typescript6@6.0.1)(eslint@10.4.0(jiti@2.7.0)))(@typescript/typescript6@6.0.1)(eslint@10.4.0(jiti@2.7.0))':
     dependencies:
@@ -6345,7 +6350,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.59.4
       debug: 4.4.3
       minimatch: 10.2.5
-      semver: 7.8.0
+      semver: 7.8.1
       tinyglobby: 0.2.16
       ts-api-utils: 2.5.0(@typescript/typescript6@6.0.1)
       typescript: '@typescript/typescript6@6.0.1'
@@ -6360,7 +6365,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.59.4
       debug: 4.4.3
       minimatch: 10.2.5
-      semver: 7.8.0
+      semver: 7.8.1
       tinyglobby: 0.2.16
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
@@ -7230,7 +7235,7 @@ snapshots:
       postcss: 8.5.15
       postcss-load-config: 3.1.4(postcss@8.5.15)
       postcss-safe-parser: 7.0.1(postcss@8.5.15)
-      semver: 7.8.0
+      semver: 7.8.1
       svelte-eslint-parser: 1.6.1(svelte@5.55.9(@typescript-eslint/types@8.59.4))
     optionalDependencies:
       svelte: 5.55.9(@typescript-eslint/types@8.59.4)
@@ -7700,7 +7705,7 @@ snapshots:
 
   node-abi@3.92.0:
     dependencies:
-      semver: 7.8.0
+      semver: 7.8.1
 
   node-addon-api@8.7.0: {}
 
@@ -7720,7 +7725,7 @@ snapshots:
       make-fetch-happen: 14.0.3
       nopt: 8.1.0
       proc-log: 5.0.0
-      semver: 7.8.0
+      semver: 7.8.1
       tar: 7.5.15
       tinyglobby: 0.2.16
       which: 5.0.0
@@ -8115,6 +8120,8 @@ snapshots:
 
   semver@7.8.0: {}
 
+  semver@7.8.1: {}
+
   set-cookie-parser@2.7.2: {}
 
   set-cookie-parser@3.1.0: {}
@@ -8264,7 +8271,7 @@ snapshots:
       postcss: 8.5.15
       postcss-scss: 4.0.9(postcss@8.5.15)
       postcss-selector-parser: 7.1.1
-      semver: 7.8.0
+      semver: 7.8.1
     optionalDependencies:
       svelte: 5.55.9(@typescript-eslint/types@8.59.4)
 

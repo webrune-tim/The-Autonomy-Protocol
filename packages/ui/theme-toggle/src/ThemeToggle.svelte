@@ -52,7 +52,7 @@
 	.toggle-container {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: var(--gap-1);
 	}
 
 	.icon-button {

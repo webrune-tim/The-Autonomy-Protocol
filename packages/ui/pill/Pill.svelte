@@ -22,7 +22,7 @@
     color: var(--fg);
     background-color: rgb(from var(--brand-secondary) r g b / 0.15);
     border: 1px solid var(--brand-secondary);
-    padding: 0.25rem 0.75rem;
+    padding: 0.5rem;
     font-size: 10px;
     font-family: "Poppins", sans-serif;
   }

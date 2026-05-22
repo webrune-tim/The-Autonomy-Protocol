@@ -63,7 +63,7 @@
 	</p>
 
 	{#if step_links.length > 0}
-		<ul class="grid-container">
+		<ul class="grid-container steps">
 			{#each step_links as { slug, metadata }}
 				<li>
 					<a href="/resources/steps/{slug}">
@@ -90,7 +90,7 @@
 	</p>
 
 	{#if agreement_links.length > 0}
-		<ul class="grid-container">
+		<ul class="grid-container agreements">
 			{#each agreement_links as { slug, metadata }}
 				<li>
 					<a href="/resources/agreements/{slug}">
@@ -106,7 +106,7 @@
 
 <style>
 	a {
-		color: var(--bg);
+		/* color: var(--bg); */
 		text-decoration: underline !important;
 	}
 
@@ -118,18 +118,21 @@
 
 	.grid-container {
 		display: grid;
-		/* Creates two equal columns */
 		grid-template-columns: repeat(2, 1fr);
-		/* Forces the items to fill the first column before moving to the next */
 		grid-auto-flow: column;
-		/* Calculates the rows based on your 12 steps (6 rows total) */
-		grid-template-rows: repeat(6, auto);
-		/* Adjusts the space between rows and columns */
 		gap: 0.75rem 2rem;
 
 		list-style: none;
 		padding: 0;
 		margin: 1.5rem 0;
+
+		&.steps {
+			grid-template-rows: repeat(6, auto);
+		}
+
+		&.agreements {
+			grid-template-rows: repeat(3, auto);
+		}
 	}
 
 	/* To match the all-caps look in your reference image */

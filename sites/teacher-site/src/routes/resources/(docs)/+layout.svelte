@@ -33,17 +33,18 @@
 
 	<header class="doc-header">
 		<h1>{page.data.meta?.title}</h1>
+
+		<ReadingTime
+			targetSelector="#doc-content"
+			textColor="var(--bg)"
+			iconColor="var(--bg)"
+			fontSize="--font-size-4"
+		/>
+		
 		{#if page.data.meta?.description}
 			<p class="description">{page.data.meta.description}</p>
 		{/if}
 	</header>
-
-	<ReadingTime
-		targetSelector="#doc-content"
-		textColor="var(--bg)"
-		iconColor="var(--bg)"
-		fontSize="--font-size-4"
-	/>
 
 	<div id="doc-content" class="markdown-body" style="--alt-color: {alt_color()}">
 		{@render children()}
@@ -78,9 +79,22 @@
 	}
 
 	.back-link {
+		display: inline-block;
 		color: var(--bg);
+		font-size: var(--font-size-4);
 		font-weight: 700;
 		text-transform: uppercase;
+		border: 2px solid var(--bg);
+		padding: var(--gap-1);
+		margin: var(--gap-1) 0;
+		border-radius: 1000px;
+
+		&:hover {
+			background-color: rgb(from var(--bg) r g b / 0.1);
+			color: var(--bg);
+			cursor: pointer;
+			text-decoration: none;
+		}
 	}
 
 	nav,
