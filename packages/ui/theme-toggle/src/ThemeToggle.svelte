@@ -1,8 +1,7 @@
 <script lang="ts">
+	// Ensure this matches your renamed file name exactly
 	import { themeState } from './theme.svelte'
 	import { Sun, Moon } from '@lucide/svelte'
-
-	// Import the shared packages
 	import { Pill } from '@autonomy/pill'
 
 	const options = [
@@ -17,7 +16,7 @@
 			<button
 				class="icon-button"
 				class:active={themeState.value === id}
-				onclick={() => (themeState.value = id)}
+				onclick={() => themeState.setTheme(id)}
 				aria-label="Set theme to {label}"
 			>
 				<Icon size={14} strokeWidth={2.5} />
@@ -25,6 +24,7 @@
 		{/each}
 	</div>
 </Pill>
+
 
 <style>
 	.toggle-container {
