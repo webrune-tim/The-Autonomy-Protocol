@@ -173,7 +173,7 @@
     text-transform: uppercase;
     font-weight: 500;
     font-size: 0.9rem;
-    color: var(--brand-primary);
+    /* color: var(--brand-primary); */
     cursor: pointer;
   }
 
