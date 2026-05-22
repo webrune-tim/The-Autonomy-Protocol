@@ -1,4 +1,4 @@
-export export type Theme = "light" | "dark";
+export type Theme = "light" | "dark";
 
 class ThemeState {
   // Use a standard public or trackable property instead of a private hash field
