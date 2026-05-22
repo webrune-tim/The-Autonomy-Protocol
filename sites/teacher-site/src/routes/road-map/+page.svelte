@@ -21,9 +21,8 @@
 			and interpersonal repair.
 		</li>
 		<li>
-			<strong>The Integrity Shield:</strong> A foundational behavioral defense system
-			designed to foster cognitive clarity, emotional neutrality, and internal
-			self-governance.
+			<strong>The Integrity Shield:</strong> A foundational behavioral defense system designed
+			to foster cognitive clarity, emotional neutrality, and internal self-governance.
 		</li>
 	</ul>
 </section>

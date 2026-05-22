@@ -39,7 +39,11 @@
 	</ol>
 </section>
 
-<section class="angled-top-box" style="--color: var(--brand-tertiary)" use:thickMargins>
+<section
+	class="angled-top-box"
+	style="--color: var(--brand-tertiary)"
+	use:thickMargins
+>
 	<div class="title-grid">
 		<h2>The Opportunity:</h2>
 	</div>

@@ -1,10 +1,15 @@
 <script lang="ts">
 	import { page } from '$app/state'
 	import { ReadingTime } from '@autonomy/reading-time'
+	import { ArrowLeft } from '@lucide/svelte'
 
 	let { children } = $props()
 
-	const colors = ['var(--brand-primary)', 'var(--brand-secondary)', 'var(--brand-tertiary)']
+	const colors = [
+		'var(--brand-primary)',
+		'var(--brand-secondary)',
+		'var(--brand-tertiary)'
+	]
 	const color = colors[Math.floor(Math.random() * colors.length)]
 
 	const alt_color = () => {
@@ -20,7 +25,10 @@
 
 <article class="unangled-box no-bottom-margin" style="--color: {color}">
 	<nav>
-		<a class="back-link" href="/resources">← Back to Resources</a>
+		<a class="cta" href="/resources">
+			<ArrowLeft size={32} />
+			Back to Resources
+		</a>
 	</nav>
 
 	<button
@@ -40,7 +48,7 @@
 			iconColor="var(--bg)"
 			fontSize="--font-size-4"
 		/>
-		
+
 		{#if page.data.meta?.description}
 			<p class="description">{page.data.meta.description}</p>
 		{/if}
@@ -50,8 +58,11 @@
 		{@render children()}
 	</div>
 
-    <footer>
-		<a class="back-link" href="/resources">← Back to Resources</a>
+	<footer>
+		<a class="cta" href="/resources">
+			<ArrowLeft size={32} />
+			Back to Resources
+		</a>
 	</footer>
 </article>
 
@@ -78,7 +89,7 @@
 		color: var(--bg);
 	}
 
-	.back-link {
+	/* .back-link {
 		display: inline-block;
 		color: var(--bg);
 		font-size: var(--font-size-4);
@@ -95,10 +106,10 @@
 			cursor: pointer;
 			text-decoration: none;
 		}
-	}
+	} */
 
 	nav,
-    footer {
+	footer {
 		margin: var(--gap-1) 0;
 	}
 </style>

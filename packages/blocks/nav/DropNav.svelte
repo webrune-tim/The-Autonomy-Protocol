@@ -55,11 +55,10 @@
 
   {#if isOpen}
     <div 
-  class="dropdown-content"
-    in:fly={{ y: -10, duration: 550, easing: cubicOut }}
-    out:fly={{ y: -10, duration: 150, easing: cubicIn }}
-  >
-    <div class="dropdown-content-inner">
+      class="dropdown-content"
+      in:fly={{ y: -10, duration: 550, easing: cubicOut }}
+      out:fly={{ y: -10, duration: 150, easing: cubicIn }}
+    >
       <nav>
         <section class="theme-toggle-wrapper">
           <ThemeToggle />
@@ -91,7 +90,6 @@
           {/if}
         </ul>
       </nav>
-    </div>
     </div>
   {/if}
 </div>
@@ -139,10 +137,6 @@
     overflow: hidden;
   }
 
-  .dropdown-content-inner {
-    background: rgb(from var(--fg) r g b / 0.15);
-  }
-
   ul {
     list-style: none !important;
     padding: 0.5rem;
@@ -157,7 +151,7 @@
     padding: 0.75rem 1.25rem;
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--brand-primary);
+    /* color: var(--brand-primary); */
     border-radius: 6px;
     font-weight: 500;
     font-size: 0.9rem;

@@ -167,7 +167,7 @@
 		margin-left: calc(var(--gap-1) * -1);
 		margin-right: calc(var(--gap-1) * -1);
 		width: calc(100% + (var(--gap-1) * 2));
-		
+
 		/* Base styles */
 		border: none;
 		opacity: 0.4;

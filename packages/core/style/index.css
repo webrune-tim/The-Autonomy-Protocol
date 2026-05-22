@@ -162,16 +162,20 @@ details > summary {
   }
 
   .cta {
+    display: inline-flex;
+    max-width: fit-content;
+    gap: 0.5rem;
     color: var(--safe-contrast) !important;
-    padding: 0.5rem 0.7rem;
+    padding: 1rem;
     margin-right: 2rem;
     border: clamp(2px, 4svw, 4px) solid var(--safe-contrast);
     font-size: var(--font-size-3);
     border-radius: 100px;
-    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(from var(--fg) r g b / 0.25);
 
     &:hover {
-      background-color: rgb(from var(--fg) r g b / 0.25);
+      text-decoration: underline;
     }
   }
 }

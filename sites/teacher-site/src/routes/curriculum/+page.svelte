@@ -80,7 +80,11 @@
 	</ul>
 </section>
 
-<section class="angled-top-box" use:thickMargins style="--color: var(--brand-tertiary)">
+<section
+	class="angled-top-box"
+	use:thickMargins
+	style="--color: var(--brand-tertiary)"
+>
 	<h2>Senior Year | Phase 2: The Transition</h2>
 
 	<span>

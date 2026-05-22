@@ -17,7 +17,8 @@
 	<p>
 		<strong>Our objective is definitive:</strong> to ensure every student graduates with
 		the executive functioning skills required to navigate adult complexities independently.
-		By internalizing self-governance, we reduce the friction of external regulation—returning hundreds of hours of instructional time to teachers and staff.
+		By internalizing self-governance, we reduce the friction of external regulation—returning
+		hundreds of hours of instructional time to teachers and staff.
 	</p>
 
 	<a class="cta" href="/join-us">
@@ -145,20 +146,22 @@
 >
 	<h2>The Architect</h2>
 	<p>
-		<strong>The Autonomy Protocol</strong> was developed by 
-		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>. 
-		The framework is built upon the structural logic of high-stakes behavioral models, 
-		secularized and reconstructed for the secondary education environment. Smith’s 
-		development of the protocol was driven by a fundamental realization: the cognitive 
-		tools required for profound personal transformation are the exact same mechanisms 
-		needed for student empowerment and executive functioning.
+		<strong>The Autonomy Protocol</strong> was developed by
+		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>.
+		The framework is built upon the structural logic of high-stakes behavioral
+		models, secularized and reconstructed for the secondary education environment.
+		Smith’s development of the protocol was driven by a fundamental realization: the
+		cognitive tools required for profound personal transformation are the exact same
+		mechanisms needed for student empowerment and executive functioning.
 	</p>
 	<p>
-		By stripping these principles of their traditional jargon and adapting them for 
-		the modern classroom, Smith created a methodology rooted in <strong>internal mastery</strong> 
-		rather than external compliance. This approach—born from the necessity of navigating 
-		complex personal recovery—has been refined into a battle-tested protocol. It equips 
-		students to manage academic and social complexities with the resilience required for 
+		By stripping these principles of their traditional jargon and adapting them for
+		the modern classroom, Smith created a methodology rooted in <strong
+			>internal mastery</strong
+		>
+		rather than external compliance. This approach—born from the necessity of navigating
+		complex personal recovery—has been refined into a battle-tested protocol. It equips
+		students to manage academic and social complexities with the resilience required for
 		long-term professional success.
 	</p>
 </section>
