@@ -61,6 +61,6 @@
 	}
 
 	.teacher-content :global(strong) {
-		color: var(--fg);
+		color: var(--bg);
 	}
 </style>
