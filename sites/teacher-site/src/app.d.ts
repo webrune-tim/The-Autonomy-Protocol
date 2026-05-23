@@ -1,28 +1,47 @@
-import type { User, Session } from 'better-auth/minimal'
+// sites/teacher-site/src/app.d.ts
+import type { User as BetterAuthUser } from "better-auth";
 
-// See https://svelte.dev/docs/kit/types#app.d.ts
-// for information about these interfaces
 declare global {
-	namespace App {
-		interface Locals {
-			user?: User & {
-				role: 'user' | 'student' | 'teacher' | 'admin' | 'superadmin'
-				theme?: string
-			}
-			session?: Session
-		}
+  namespace App {
+    interface Locals {
+      user?: BetterAuthUser & {
+        role: "user" | "student" | "teacher" | "admin" | "superadmin";
+      };
+    }
+    interface PageData {
+      user?: BetterAuthUser & {
+        role: "user" | "student" | "teacher" | "admin" | "superadmin";
+      };
+    }
+  }
+}
+// src/app.d.ts
+import type { Session, User } from "better-auth";
 
-		// interface Error {}
-		interface PageData {
-			user?: User & {
-				role: 'user' | 'student' | 'teacher' | 'admin' | 'superadmin'
-				theme?: string
-			}
-			session?: Session
-		}
-		// interface PageState {}
-		// interface Platform {}
-	}
+declare global {
+  namespace App {
+    interface Locals {
+      session: Session | null;
+      user:
+        | (User & {
+            role?: "user" | "student" | "teacher" | "admin" | "superadmin" | string;
+            theme?: string | null;
+            [key: string]: any;
+          })
+        | null;
+      auth?: any;
+    }
+    interface PageData {
+      session: Session | null;
+      user:
+        | (User & {
+            role?: "user" | "student" | "teacher" | "admin" | "superadmin" | string;
+            theme?: string | null;
+            [key: string]: any;
+          })
+        | null;
+    }
+  }
 }
 
-export {}
+export {};
