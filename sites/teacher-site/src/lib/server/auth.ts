@@ -34,18 +34,20 @@ const studentRole = ac.newRole({
   session: [],
 });
 
-const isLocalOrigin = env.ORIGIN?.includes("localhost") || env.ORIGIN?.includes("127.0.0.1");
-const baseURL =
-  env.ORIGIN && (dev || !isLocalOrigin) ? env.ORIGIN : "https://the-autonomy-protocol.vercel.app";
+const baseURL = env.ORIGIN || (dev ? "http://localhost:8080" : "https://the-autonomy-protocol.vercel.app");
+
+const cleanBaseURL = baseURL.replace(/\/$/, "");
 
 export const auth = betterAuth({
-  baseURL: baseURL.replace(/\/$/, ""),
+  baseURL: cleanBaseURL,
   secret: env.BETTER_AUTH_SECRET,
   trustedOrigins: [
-    env.ORIGIN,
+    cleanBaseURL,
     "https://the-autonomy-protocol.vercel.app",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
   ].filter(Boolean) as string[],
   database: drizzleAdapter(db, {
     provider: "sqlite",
@@ -55,6 +57,7 @@ export const auth = betterAuth({
     google: {
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
+      redirectURI: `${cleanBaseURL}/api/auth/callback/google`,
     },
   },
   user: {

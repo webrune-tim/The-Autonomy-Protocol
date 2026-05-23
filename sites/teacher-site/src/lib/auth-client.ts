@@ -5,5 +5,5 @@ export const authClient = createAuthClient({
   baseURL:
     typeof window !== "undefined"
       ? window.location.origin
-      : env.PUBLIC_ORIGIN || "http://localhost:5173",
+      : env.PUBLIC_ORIGIN || "http://localhost:8080",
 });

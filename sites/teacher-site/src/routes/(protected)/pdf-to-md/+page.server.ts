@@ -1,20 +1,16 @@
 // sites/teacher-site/src/routes/(protected)/pdf-to-md/+page.server.ts
 import { fail, redirect } from "@sveltejs/kit";
-import { eq, or, and, sql } from "drizzle-orm";
+import { eq, or, and, sql, inArray } from "drizzle-orm";
 import { db } from "$lib/server/db";
 import { user, document, documentShare, conversionTask } from "$lib/server/db/schema";
 import type { PageServerLoad, Actions } from "./$types";
 
-export const load: PageServerLoad = async (event) => {
-  // Access your application's session context layer dynamically to bypass strict App.Locals typing bounds
-  const authContext = (event.locals as any).auth;
-  const session = authContext ? await authContext.getSession() : null;
+export const load: PageServerLoad = async ({ locals, request }) => {
+  const currentUser = locals.user;
 
-  if (!session?.user) {
+  if (!currentUser) {
     throw redirect(302, "/login");
   }
-
-  const currentUser = session.user;
 
   // Query both owned assets AND assets explicitly shared with this teacher
   const mySharedLinks = await db
@@ -30,7 +26,7 @@ export const load: PageServerLoad = async (event) => {
     .where(
       or(
         eq(document.ownerId, currentUser.id),
-        sharedDocIds.length > 0 ? sql`${document.id} IN (${sharedDocIds})` : sql`false`,
+        sharedDocIds.length > 0 ? inArray(document.id, sharedDocIds) : sql`false`,
       ),
     );
 
@@ -42,7 +38,7 @@ export const load: PageServerLoad = async (event) => {
     .orderBy(sql`${conversionTask.createdAt} DESC`);
 
   // Maintain your existing search administrative data pipeline state
-  const url = new URL(event.request.url);
+  const url = new URL(request.url);
   const searchQuery = url.searchParams.get("q") || "";
   let searchResults: any[] = [];
 
@@ -70,9 +66,8 @@ export const load: PageServerLoad = async (event) => {
 
 export const actions: Actions = {
   uploadAndConvert: async ({ request, locals }) => {
-    const authContext = (locals as any).auth;
-    const session = authContext ? await authContext.getSession() : null;
-    if (!session?.user) return fail(401, { error: "Unauthorized session" });
+    const sessionUser = locals.user;
+    if (!sessionUser) return fail(401, { error: "Unauthorized session" });
 
     const data = await request.formData();
     const file = data.get("pdf-file") as File;
@@ -85,23 +80,46 @@ export const actions: Actions = {
     const [taskRecord] = await db
       .insert(conversionTask)
       .values({
-        userId: session.user.id,
+        userId: sessionUser.id,
         originalFileName: file.name,
         status: "processing",
       })
       .returning();
 
     try {
-      // Mock parsing engine placeholder for converting layout data structures
-      const fakeConvertedMarkdown = `# Processed Target: ${file.name}\n\nGenerated automatically via legacy layout pipeline extraction on ${new Date().toLocaleDateString()}.\n\n### Core Contents\nThis text acts as raw asset space for structured lesson distribution.`;
+      // Real parsing engine: Integrating with pdf2md.deepdiy.net API
+      const arrayBuffer = await file.arrayBuffer();
+      const response = await fetch("https://pdf2md.deepdiy.net/v1/convert", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/pdf",
+        },
+        body: arrayBuffer,
+      });
+
+      if (response.status === 429) {
+        return fail(429, { error: "Conversion service is busy. Please try again in a moment." });
+      }
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Service responded with status ${response.status}`);
+      }
+
+      const result = await response.json();
+      const convertedMarkdown = result.markdown || "";
+
+      if (!convertedMarkdown) {
+        throw new Error("Conversion service returned empty content.");
+      }
 
       // 2. Persist the generated document body text
       const [newDoc] = await db
         .insert(document)
         .values({
-          title: file.name.replace(/\.[^/.]+$/, ""), // Strip file extension
-          content: fakeConvertedMarkdown,
-          ownerId: session.user.id,
+          title: file.name.replace(/\.[^/.]+$/, ""),
+          content: convertedMarkdown,
+          ownerId: sessionUser.id,
         })
         .returning();
 
@@ -114,7 +132,7 @@ export const actions: Actions = {
         })
         .where(eq(conversionTask.id, taskRecord.id));
 
-      return { success: true };
+      return { success: true, markdown: convertedMarkdown };
     } catch (err: any) {
       await db
         .update(conversionTask)
@@ -129,9 +147,8 @@ export const actions: Actions = {
   },
 
   shareDocument: async ({ request, locals }) => {
-    const authContext = (locals as any).auth;
-    const session = authContext ? await authContext.getSession() : null;
-    if (!session?.user) return fail(401, { error: "Unauthorized session" });
+    const sessionUser = locals.user;
+    if (!sessionUser) return fail(401, { error: "Unauthorized session" });
 
     const data = await request.formData();
     const documentId = data.get("documentId") as string;
@@ -142,6 +159,10 @@ export const actions: Actions = {
 
     if (!targetUser) {
       return fail(404, { error: "Recipient teacher email address not found." });
+    }
+
+    if (targetUser.id === sessionUser.id) {
+      return fail(400, { error: "Cannot share a document with yourself." });
     }
 
     // Ensure sharing permissions don't conflict with existing records
@@ -156,26 +177,32 @@ export const actions: Actions = {
       )
       .limit(1);
 
-    if (!existingShare && targetUser.id !== session.user.id) {
-      await db.insert(documentShare).values({
-        documentId,
-        sharedWithUserId: targetUser.id,
-      });
+    if (existingShare) {
+      return fail(400, { error: "Document is already shared with this user." });
     }
+
+    await db.insert(documentShare).values({
+      documentId,
+      sharedWithUserId: targetUser.id,
+    });
 
     return { success: true };
   },
 
   updateRole: async ({ request, locals }) => {
-    const authContext = (locals as any).auth;
-    const session = authContext ? await authContext.getSession() : null;
-    if (!session?.user || !["admin", "superadmin"].includes(session.user.role || "")) {
+    const sessionUser = locals.user;
+    if (!sessionUser || !["admin", "superadmin"].includes(sessionUser.role || "")) {
       return fail(403, { error: "Forbidden" });
     }
 
     const data = await request.formData();
     const userId = data.get("userId") as string;
     const targetRole = data.get("role") as string;
+
+    const validRoles = ["user", "student", "teacher", "admin", "superadmin"];
+    if (!validRoles.includes(targetRole)) {
+      return fail(400, { error: "Invalid role specified." });
+    }
 
     await db.update(user).set({ role: targetRole }).where(eq(user.id, userId));
 

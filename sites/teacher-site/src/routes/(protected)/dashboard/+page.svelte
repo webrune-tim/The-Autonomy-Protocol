@@ -10,31 +10,69 @@
 	// Explicitly defining the type structure matching the DB schema properties
 	type DocumentItem = { id: string; title: string; content: string; owner_id: string };
 	
-	let selectedDoc = $state<DocumentItem | null>(null);
 	let shareTargetEmail = $state('');
 	let activeShareDocId = $state<string | null>(null);
 	let isSubmittingUpload = $state(false);
+	let isDragging = $state(false);
+	let fileInput = $state<HTMLInputElement | null>(null);
+
+	function handleDragOver(e: DragEvent) {
+		e.preventDefault();
+		isDragging = true;
+	}
+
+	function handleDragLeave() {
+		isDragging = false;
+	}
+
+	function handleDrop(e: DragEvent) {
+		e.preventDefault();
+		isDragging = false;
+		
+		if (e.dataTransfer?.files && e.dataTransfer.files.length > 0) {
+			const file = e.dataTransfer.files[0];
+			if (file.type === 'application/pdf') {
+				if (fileInput) {
+					const dataTransfer = new DataTransfer();
+					dataTransfer.items.add(file);
+					fileInput.files = dataTransfer.files;
+				}
+			}
+		}
+	}
+
+	function downloadAsMarkdown(doc: DocumentItem) {
+		const blob = new Blob([doc.content], { type: 'text/markdown' });
+		const url = URL.createObjectURL(blob);
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = `${doc.title}.md`;
+		a.click();
+		URL.revokeObjectURL(url);
+	}
 </script>
 
-<h1>Hi, {data.user.name}!</h1>
-<p>Your user ID is {data.user.id}.</p>
-<p>Current Role: <strong>{data.user.role}</strong></p>
+<div class="header-section">
+	<div class="user-info">
+		<h1>Hi, {data.user.name}!</h1>
+		<p class="role-badge">Role: <strong>{data.user.role}</strong></p>
+	</div>
 
-<div class="flex">
-	<button
-		type="button"
-		class="link-button"
-		onclick={() => goto('/settings')}
-		style="--color: var(--brand-primary);"
-	>
-		Settings
-	</button>
-
-	<form method="post" action="/logout">
-		<button class="link-button" style="--color: var(--brand-secondary);">
-			Sign out
+	<div class="header-actions">
+		<button
+			type="button"
+			class="action-btn settings-btn"
+			onclick={() => goto('/settings')}
+		>
+			SETTINGS
 		</button>
-	</form>
+
+		<form method="post" action="/logout">
+			<button class="action-btn signout-btn">
+				SIGN OUT
+			</button>
+		</form>
+	</div>
 </div>
 
 <!-- ========================================== -->
@@ -62,62 +100,79 @@
 		}}
 		class="upload-form"
 	>
-		<div class="upload-zone">
-			<input 
-				type="file" 
-				name="pdf-file" 
-				accept="application/pdf" 
-				disabled={isSubmittingUpload}
-				required 
-				class="file-input"
-			/>
+		<div 
+			class="upload-zone" 
+			class:dragging={isDragging}
+			ondragover={handleDragOver}
+			ondragleave={handleDragLeave}
+			ondrop={handleDrop}
+			role="presentation"
+		>
+			<div class="file-input-wrapper">
+				<label for="pdf-upload" class="custom-file-label">
+					<span class="upload-icon">📂</span>
+					<span class="upload-text">
+						{fileInput?.files?.[0]?.name || 'Drag & Drop PDF or Click to Browse'}
+					</span>
+				</label>
+				<input 
+					id="pdf-upload"
+					type="file" 
+					name="pdf-file" 
+					accept="application/pdf" 
+					disabled={isSubmittingUpload}
+					bind:this={fileInput}
+					required 
+					class="file-input-hidden"
+				/>
+			</div>
+			
 			<button type="submit" disabled={isSubmittingUpload} class="upload-submit-btn">
-				{isSubmittingUpload ? 'Converting Legacy Layout...' : 'Upload & Convert to Native MD'}
+				{isSubmittingUpload ? 'CONVERTING...' : 'START CONVERSION'}
 			</button>
+
+			{#if isDragging}
+				<div class="drag-overlay">
+					<span>Drop PDF here</span>
+				</div>
+			{/if}
 		</div>
 	</form>
+
+	{#if form?.success && form?.message}
+		<p class="status success">System Notification: {form.message}</p>
+	{/if}
 
 	{#if form?.error}
 		<p class="status error">System Notification: {form.error}</p>
 	{/if}
 
 	<!-- Live Workspace Management Area -->
-	<div class="layout-grid margin-top">
-		<!-- Left Workspace Column: Resource List -->
-		<div class="doc-list">
-			<h3>Your Available Assets</h3>
-			{#if data.myDocuments && data.myDocuments.length > 0}
-				<ul>
-					{#each data.myDocuments as doc}
-						<li class:active={selectedDoc?.id === doc.id}>
-							<button type="button" class="title-btn" onclick={() => selectedDoc = doc}>
-								📄 {doc.title}
+	<div class="asset-workspace margin-top">
+		<h3>Your Available Assets</h3>
+		{#if data.myDocuments && data.myDocuments.length > 0}
+			<div class="asset-grid">
+				{#each data.myDocuments as doc}
+					<div class="asset-card">
+						<div class="asset-info">
+							<span class="asset-icon">📄</span>
+							<span class="asset-title">{doc.title}</span>
+						</div>
+						
+						<div class="asset-actions">
+							<button type="button" class="icon-btn" onclick={() => downloadAsMarkdown(doc)} title="Download .md">
+								Download .md 📥
 							</button>
-							
 							<button type="button" class="share-btn" onclick={() => activeShareDocId = doc.id}>
 								Share Access 👤
 							</button>
-						</li>
-					{/each}
-				</ul>
-			{:else}
-				<p class="no-results">No converted resources stored. Drop an old PDF above to begin.</p>
-			{/if}
-		</div>
-
-		<!-- Right Workspace Column: Text Preview Engine -->
-		<div class="preview-panel">
-			<h3>Live Document Preview</h3>
-			{#if selectedDoc}
-				<div class="preview-box">
-					<h4>{selectedDoc.title}</h4>
-					<hr class="preview-divider" />
-					<pre class="preview-output"><code>{selectedDoc.content}</code></pre>
-				</div>
-			{:else}
-				<p class="empty-state">Select any document from the registry list to open the live text preview.</p>
-			{/if}
-		</div>
+						</div>
+					</div>
+				{/each}
+			</div>
+		{:else}
+			<p class="no-results">No converted resources stored. Drop an old PDF above to begin.</p>
+		{/if}
 	</div>
 </section>
 
@@ -272,11 +327,83 @@
 		align-items: center;
 		flex-wrap: wrap;
 		gap: 1rem;
+		position: relative;
+		transition: border-color 0.2s, background 0.2s;
 	}
 
-	.file-input {
-		color: var(--fg);
-		font-size: 0.9rem;
+	.upload-zone.dragging {
+		border: 1px solid var(--brand-primary);
+		background: rgba(255, 255, 255, 0.05);
+	}
+
+	.drag-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.85);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+		pointer-events: none;
+		border: 2px dashed var(--brand-primary);
+	}
+
+	.drag-overlay span {
+		color: var(--brand-primary);
+		font-weight: bold;
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.file-input-wrapper {
+		flex: 1;
+		min-width: 200px;
+	}
+
+	.file-input-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.custom-file-label {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		padding: 0.75rem 1rem;
+		cursor: pointer;
+		transition: background 0.2s;
+		border-radius: 4px;
+	}
+
+	.custom-file-label:hover {
+		background: rgba(255, 255, 255, 0.08);
+	}
+
+	.upload-icon {
+		font-size: 1.2rem;
+		opacity: 0.7;
+	}
+
+	.upload-text {
+		font-size: 0.85rem;
+		color: #aaa;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 250px;
 	}
 
 	.upload-submit-btn {
@@ -298,118 +425,123 @@
 		cursor: not-allowed;
 	}
 
-	.status.error {
+	.status.error, .status.success {
 		margin-top: 1rem;
 		padding: 0.75rem;
+		font-size: 0.9rem;
+		border-radius: 4px;
+	}
+
+	.status.error {
 		background: rgba(255, 107, 107, 0.1);
 		border-left: 3px solid #ff6b6b;
 		color: #ff6b6b;
-		font-size: 0.9rem;
 	}
 
-	/* Document Portal Grid layout split */
-	.layout-grid {
-		display: grid;
-		grid-template-columns: 1fr 1.5fr;
-		gap: 1.5rem;
+	.status.success {
+		background: rgba(129, 199, 132, 0.1);
+		border-left: 3px solid #81c784;
+		color: #81c784;
 	}
 
-	.doc-list h3, .preview-panel h3 {
-		font-size: 1rem;
+	/* Asset Workspace Layout */
+	.asset-workspace h3 {
+		font-size: 0.85rem;
 		color: var(--brand-tertiary);
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		margin-bottom: 1rem;
+		letter-spacing: 0.1em;
+		margin-bottom: 1.5rem;
+		opacity: 0.8;
 	}
 
-	.doc-list ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
+	.asset-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
 	}
 
-	.doc-list li {
+	.asset-card {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background: rgba(0, 0, 0, 0.1);
-		margin-bottom: 0.5rem;
-		padding: 0.5rem 0.75rem;
-		border: 1px solid rgba(255, 255, 255, 0.05);
-		gap: 0.5rem;
+		background: rgba(255, 255, 255, 0.03);
+		padding: 1rem 1.25rem;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 4px;
+		transition: border-color 0.2s, background 0.2s;
 	}
 
-	.doc-list li.active {
-		border-color: var(--brand-primary);
-		background: rgba(0, 0, 0, 0.25);
+	.asset-card:hover {
+		border-color: rgba(255, 255, 255, 0.15);
+		background: rgba(255, 255, 255, 0.05);
 	}
 
-	.title-btn {
-		background: none;
-		border: none;
-		color: var(--fg);
-		cursor: pointer;
-		text-align: left;
+	.asset-info {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
 		flex: 1;
-		font-size: 0.95rem;
+		min-width: 0;
+	}
+
+	.asset-icon {
+		font-size: 1.2rem;
+		opacity: 0.7;
+	}
+
+	.asset-title {
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--fg);
+		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		white-space: nowrap;
+	}
+
+	.asset-actions {
+		display: flex;
+		gap: 0.75rem;
+		align-items: center;
 	}
 
 	.share-btn {
-		background: rgba(255, 255, 255, 0.05);
+		background: transparent;
 		border: 1px solid var(--brand-tertiary);
 		color: var(--fg);
-		font-size: 0.75rem;
-		padding: 0.3rem 0.6rem;
+		font-size: 0.8rem;
+		padding: 0.4rem 0.8rem;
 		cursor: pointer;
+		font-weight: 600;
+		transition: background 0.2s;
 	}
 
 	.share-btn:hover {
-		background: rgba(255, 255, 255, 0.12);
+		background: rgba(255, 255, 255, 0.05);
 	}
 
-	.preview-panel {
-		background: rgba(0, 0, 0, 0.1);
-		border: 1px solid rgba(255, 255, 255, 0.05);
-		padding: 1.25rem;
-		min-height: 300px;
+	.icon-btn {
+		background: transparent;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		color: var(--fg);
+		cursor: pointer;
+		padding: 0.4rem 0.8rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+		transition: background 0.2s;
 	}
 
-	.preview-box h4 {
-		margin: 0 0 0.5rem 0;
-		font-size: 1.1rem;
+	.icon-btn:hover {
+		background: rgba(255, 255, 255, 0.05);
+		border-color: rgba(255, 255, 255, 0.3);
 	}
 
-	.preview-divider {
-		border: 0;
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
-		margin-bottom: 1rem;
-	}
-
-	.preview-output {
-		background: rgba(0, 0, 0, 0.3);
-		padding: 1rem;
-		max-height: 400px;
-		overflow-y: auto;
-		white-space: pre-wrap;
-		border: 1px solid rgba(255, 255, 255, 0.05);
-		margin: 0;
-	}
-
-	.preview-output code {
-		font-family: monospace;
-		font-size: 0.9rem;
-		line-height: 1.4;
-	}
-
-	.empty-state {
+	.no-results {
 		opacity: 0.5;
 		font-style: italic;
 		text-align: center;
-		margin-top: 5rem;
-		font-size: 0.9rem;
+		padding: 3rem;
+		background: rgba(0, 0, 0, 0.1);
+		border: 1px dashed rgba(255, 255, 255, 0.1);
 	}
 
 	/* Modal Design Layer */
@@ -533,61 +665,160 @@
 	}
 
 	@media (max-width: 640px) {
-		.search-form, .upload-zone {
-			flex-direction: column;
-			align-items: stretch;
+		.header-section {
+			flex-direction: column !important;
+			align-items: stretch !important;
+			gap: 1rem !important;
 		}
 
-		.admin-table thead {
-			position: absolute;
-			left: -9999px;
-			width: 1px;
-			height: 1px;
-			overflow: hidden;
+		.header-actions {
+			display: grid !important;
+			grid-template-columns: 1fr 1fr !important;
+			gap: 0.5rem !important;
 		}
 
-		.admin-table,
-		.admin-table tbody,
-		.admin-table tr,
+		.action-btn {
+			width: 100% !important;
+			justify-content: center !important;
+			padding: 0.6rem !important;
+			font-size: 0.75rem !important;
+		}
+
+		/* CRITICAL: FORCE CONTAINER WIDTH */
+		:global(.bold-border-box) {
+			padding: 0.75rem !important;
+			margin-left: -0.5rem !important;
+			margin-right: -0.5rem !important;
+			width: calc(100% + 1rem) !important;
+			border-width: 2px !important;
+		}
+
+		.hub-header {
+			flex-direction: column !important;
+			gap: 0.5rem !important;
+		}
+
+		.hub-header h2 {
+			font-size: 1.1rem !important;
+			text-align: center !important;
+		}
+
+		.stat-badge {
+			font-size: 0.7rem !important;
+			padding: 0.4rem !important;
+		}
+
+		.upload-zone {
+			flex-direction: column !important;
+			align-items: stretch !important;
+			padding: 0.75rem !important;
+			gap: 0.75rem !important;
+		}
+
+		.file-input-wrapper {
+			min-width: 0 !important;
+			width: 100% !important;
+		}
+
+		.custom-file-label {
+			padding: 0.6rem !important;
+			gap: 0.5rem !important;
+		}
+
+		.upload-text {
+			font-size: 0.75rem !important;
+			max-width: 180px !important;
+		}
+
+		.upload-submit-btn {
+			width: 100% !important;
+			padding: 0.8rem !important;
+			font-size: 0.8rem !important;
+		}
+
+		.asset-card {
+			flex-direction: column !important;
+			align-items: stretch !important;
+			padding: 0.75rem !important;
+			gap: 0.75rem !important;
+		}
+
+		.asset-info {
+			width: 100% !important;
+			justify-content: flex-start !important;
+		}
+
+		.asset-title {
+			font-size: 0.85rem !important;
+			white-space: normal !important;
+			word-break: break-all !important;
+		}
+
+		.asset-actions {
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 0.4rem !important;
+			width: 100% !important;
+		}
+
+		.asset-actions button {
+			width: 100% !important;
+			justify-content: center !important;
+			padding: 0.5rem !important;
+			font-size: 0.75rem !important;
+		}
+
 		.admin-table td {
-			display: block;
-			width: 100%;
+			padding: 0.5rem !important;
+			font-size: 0.8rem !important;
 		}
+	}
 
-		.admin-table tr {
-			border: 1px solid rgba(255, 255, 255, 0.15);
-			padding: 0.5rem;
-			margin-bottom: 0.75rem;
-		}
+	/* Enhanced Styles */
+	.header-section {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 2rem;
+		gap: 1rem;
+	}
 
-		.admin-table td {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			gap: 1rem;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-			padding: 0.6rem 0.5rem;
-			text-align: right;
-			word-break: break-word;
-		}
+	.role-badge {
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-top: 0.25rem;
+		color: var(--brand-secondary);
+	}
 
-		.admin-table td:last-child {
-			border-bottom: none;
-		}
+	.header-actions {
+		display: flex;
+		gap: 0.75rem;
+	}
 
-		.admin-table td::before {
-			content: attr(data-label);
-			flex: 0 0 auto;
-			color: var(--brand-tertiary);
-			text-transform: uppercase;
-			font-size: 0.7rem;
-			letter-spacing: 0.05em;
-			font-weight: bold;
-		}
+	.action-btn {
+		display: flex;
+		align-items: center;
+		padding: 0.6rem 1.2rem;
+		font-weight: 800;
+		font-size: 0.8rem;
+		letter-spacing: 0.05em;
+		cursor: pointer;
+		border: none;
+		transition: opacity 0.2s;
+	}
 
-		.role-select {
-			flex: 1;
-			min-width: 0;
-		}
+	.settings-btn {
+		background: #357abd;
+		color: white;
+	}
+
+	.signout-btn {
+		background: #d35400;
+		color: white;
+	}
+
+	.action-btn:hover {
+		opacity: 0.9;
 	}
 </style>
