@@ -259,7 +259,7 @@ details > summary {
   h5,
   strong,
   li::before {
-    color: var(--text-primary-print);
+    color: var(--bg);
   }
 }
 
