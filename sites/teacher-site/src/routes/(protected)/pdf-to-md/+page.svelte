@@ -172,106 +172,99 @@
 </div>
 
 <style>
-	:global(body) {
-		background-color: #0f0f0f;
-		color: #e0e0e0;
-		font-family: 'Inter', system-ui, -apple-system, sans-serif;
-		line-height: 1.6;
-	}
-
 	.app-container {
 		max-width: 1100px;
 		margin: 0 auto;
-		padding: 40px 20px;
+		padding: var(--gap-2) var(--gap-1);
 	}
 
 	.page-header {
-		margin-bottom: 40px;
-		border-bottom: 1px solid #222;
-		padding-bottom: 20px;
+		margin-bottom: var(--gap-2);
+		border-bottom: 1px solid var(--ui-border);
+		padding-bottom: var(--gap-1);
 	}
 
 	h1 {
 		font-size: 2rem;
 		font-weight: 700;
-		color: #ffffff;
-		margin-bottom: 8px;
+		color: var(--fg);
+		margin-bottom: var(--gap-05);
 	}
 
 	.subtitle {
-		color: #888;
+		color: var(--black-20);
 		font-size: 1.1rem;
 	}
 
 	h2 {
 		font-size: 1.25rem;
-		color: #ffffff;
-		margin-bottom: 20px;
-		border-left: 4px solid #4a90e2;
-		padding-left: 12px;
+		color: var(--fg);
+		margin-bottom: var(--gap-1);
+		border-left: 4px solid var(--brand-primary);
+		padding-left: var(--gap-1);
 	}
 
 	h3 {
 		font-size: 1.1rem;
-		margin-bottom: 16px;
+		margin-bottom: var(--gap-1);
 	}
 
 	section {
-		margin-bottom: 60px;
+		margin-bottom: 60px; /* Keeping large section margin but could be 3 * var(--gap-2) */
 	}
 
 	.upload-zone {
-		background: #1a1a1a;
-		border: 1px solid #333;
-		padding: 30px;
-		border-radius: 12px;
+		background: var(--surface-2);
+		border: 1px solid var(--ui-border);
+		padding: var(--gap-2);
+		border-radius: var(--border-radius);
 		text-align: center;
 	}
 
 	.file-label {
 		display: block;
-		margin-bottom: 12px;
-		color: #aaa;
+		margin-bottom: var(--gap-05);
+		color: var(--black-20);
 		font-weight: 500;
 	}
 
 	.file-input {
 		display: block;
-		margin: 0 auto 20px auto;
-		background: #222;
-		border: 1px solid #444;
-		padding: 8px;
-		border-radius: 4px;
+		margin: 0 auto var(--gap-1) auto;
+		background: var(--bg);
+		border: 1px solid var(--ui-border);
+		padding: var(--gap-05);
+		border-radius: calc(var(--border-radius) / 2);
 	}
 
 	.primary-btn {
-		background: #4a90e2;
-		color: white;
+		background: var(--brand-primary);
+		color: var(--white);
 		border: none;
 		padding: 10px 24px;
-		border-radius: 6px;
+		border-radius: calc(var(--border-radius) / 2);
 		font-weight: 600;
 		cursor: pointer;
-		transition: background 0.2s;
+		transition: opacity 0.2s;
 	}
 
 	.primary-btn:hover:not(:disabled) {
-		background: #357abd;
+		opacity: 0.9;
 	}
 
 	.secondary-btn {
-		background: #333;
-		color: #ccc;
-		border: 1px solid #444;
+		background: var(--surface-3);
+		color: var(--fg);
+		border: 1px solid var(--ui-border);
 		padding: 6px 12px;
-		border-radius: 4px;
+		border-radius: calc(var(--border-radius) / 2);
 		cursor: pointer;
 		font-size: 0.9rem;
 	}
 
 	.secondary-btn:hover {
-		background: #444;
-		color: white;
+		background: var(--black-40);
+		color: var(--white);
 	}
 
 	button:disabled {
@@ -280,39 +273,39 @@
 	}
 
 	.status.error {
-		margin-top: 20px;
-		padding: 16px;
-		background: #2d1616;
-		border-left: 4px solid #d0021b;
-		color: #ff8888;
-		border-radius: 4px;
+		margin-top: var(--gap-1);
+		padding: var(--gap-1);
+		background: rgb(from var(--error) r g b / 0.1);
+		border-left: 4px solid var(--error);
+		color: var(--error);
+		border-radius: calc(var(--border-radius) / 2);
 	}
 
 	.output-container {
-		margin-top: 30px;
+		margin-top: var(--gap-2);
 	}
 
 	.markdown-preview {
-		background: #0a0a0a;
-		padding: 24px;
-		border: 1px solid #333;
-		border-radius: 8px;
+		background: var(--surface-1);
+		padding: var(--gap-2);
+		border: 1px solid var(--ui-border);
+		border-radius: var(--border-radius);
 		overflow-x: auto;
-		color: #a9dc76;
-		font-family: 'Fira Code', monospace;
+		color: var(--success);
+		font-family: var(--font-header-sans-2); /* Fallback for monospaced need if no code font */
 		font-size: 0.9rem;
 	}
 
 	.dashboard-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 30px;
+		gap: var(--gap-2);
 	}
 
 	.table-wrapper {
-		background: #161616;
-		border: 1px solid #222;
-		border-radius: 8px;
+		background: var(--surface-2);
+		border: 1px solid var(--ui-border);
+		border-radius: var(--border-radius);
 		overflow: hidden;
 	}
 
@@ -324,15 +317,15 @@
 
 	th, td {
 		padding: 14px;
-		border-bottom: 1px solid #222;
+		border-bottom: 1px solid var(--ui-border);
 	}
 
 	th {
-		background: #1e1e1e;
+		background: var(--surface-3);
 		font-size: 0.85rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		color: #666;
+		color: var(--black-20);
 	}
 
 	.badge {
@@ -343,22 +336,22 @@
 		text-transform: uppercase;
 	}
 
-	.badge.completed { background: #1b3a1b; color: #81c784; }
-	.badge.processing { background: #3a3a1b; color: #fff176; }
-	.badge.failed { background: #3a1b1b; color: #e57373; }
-	.badge.pending { background: #222; color: #888; }
+	.badge.completed { background: rgb(from var(--success) r g b / 0.2); color: var(--success); }
+	.badge.processing { background: rgb(from var(--warning) r g b / 0.2); color: var(--warning); }
+	.badge.failed { background: rgb(from var(--error) r g b / 0.2); color: var(--error); }
+	.badge.pending { background: var(--surface-3); color: var(--black-20); }
 
 	.document-list {
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
+		gap: var(--gap-1);
 	}
 
 	.document-card {
-		background: #1a1a1a;
-		border: 1px solid #333;
-		padding: 20px;
-		border-radius: 10px;
+		background: var(--surface-2);
+		border: 1px solid var(--ui-border);
+		padding: var(--gap-1);
+		border-radius: var(--border-radius);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -366,12 +359,12 @@
 
 	.doc-info h4 {
 		margin: 0 0 4px 0;
-		color: #fff;
+		color: var(--fg);
 	}
 
 	.doc-meta {
 		font-size: 0.8rem;
-		color: #666;
+		color: var(--black-20);
 		margin: 0;
 	}
 
@@ -381,9 +374,9 @@
 	}
 
 	.inline-input {
-		background: #0f0f0f;
-		border: 1px solid #333;
-		color: white;
+		background: var(--bg);
+		border: 1px solid var(--ui-border);
+		color: var(--fg);
 		padding: 6px 10px;
 		border-radius: 4px;
 		font-size: 0.9rem;
@@ -391,16 +384,16 @@
 
 	.empty-state {
 		text-align: center;
-		padding: 40px;
-		color: #555;
+		padding: var(--gap-2);
+		color: var(--black-20);
 		font-style: italic;
 	}
 
 	.admin-section {
-		background: #121212;
-		padding: 30px;
-		border: 1px solid #d0021b44;
-		border-radius: 12px;
+		background: var(--surface-2);
+		padding: var(--gap-2);
+		border: 1px solid var(--error);
+		border-radius: var(--border-radius);
 	}
 
 	.search-form {
@@ -411,17 +404,17 @@
 
 	.search-input {
 		flex: 1;
-		background: #1a1a1a;
-		border: 1px solid #333;
-		color: white;
+		background: var(--bg);
+		border: 1px solid var(--ui-border);
+		color: var(--fg);
 		padding: 10px 16px;
-		border-radius: 6px;
+		border-radius: calc(var(--border-radius) / 2);
 	}
 
 	.role-select {
-		background: #1a1a1a;
-		border: 1px solid #333;
-		color: white;
+		background: var(--bg);
+		border: 1px solid var(--ui-border);
+		color: var(--fg);
 		padding: 6px;
 		border-radius: 4px;
 		margin-right: 8px;

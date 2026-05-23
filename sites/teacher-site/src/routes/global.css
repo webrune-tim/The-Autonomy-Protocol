@@ -29,17 +29,24 @@
   --surface-1: var(--black-80);
   --surface-2: var(--black-60);
   --surface-3: var(--black-50);
+  --surface-4: oklch(10% 0 0);
+  --surface-inv: var(--white);
   --ui-border: var(--black-40);
 
   --brand-primary: var(--accent-1);
   --brand-secondary: var(--accent-2);
-  --brand-secondary: var(--accent-3);
+  --brand-tertiary: var(--accent-3);
 
   --text-form: var(--white);
   --text-link: var(--brand-secondary);
   --text-link-hover: var(--brand-primary);
   --text-heading: var(--brand-primary);
   --text-heading-alt: var(--brand-secondary);
+
+  --success: oklch(70% 0.15 145);
+  --error: oklch(60% 0.2 25);
+  --warning: oklch(80% 0.15 85);
+  --info: oklch(70% 0.1 230);
 
   --font-sans-1: "Poppins", sans-serif;
   --font-sans-2: "Inter", sans-serif;
@@ -49,9 +56,17 @@
   --font-header-sans-2: var(--font-sans-2);
   --font-header-serif: var(--font-serif);
 
+  --gap-05: 0.5rem;
   --gap-1: clamp(0.5rem, 1.75svw, 1rem);
   --gap-2: clamp(1rem, 2.75svw, 2rem);
   --border-radius: 8px;
+
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
 }
 
 /* --- Light Mode Overrides --- */
@@ -62,16 +77,20 @@
   --fg: var(--black-80);
 
   --surface-1: oklch(98% 0 0);
-  --surface-2: oklch(80% 0.01 0);
+  --surface-2: oklch(94% 0.01 0);
   --surface-3: oklch(88% 0.01 0);
+  --surface-4: oklch(92% 0.01 0);
   --ui-border: oklch(70% 0.01 0);
 
   /* Deepened Accents for Light Background Readability */
   --brand-primary: oklab(0.45 -0.05 -0.17);
   --brand-secondary: oklab(0.57 0.13 0.13);
-  --brand-secondary: oklab(0.64 -0.14 -0.02);
+  --brand-tertiary: oklab(0.64 -0.14 -0.02);
 
-  --accent-3: oklab(0.64 -0.14 -0.02);
+  --success: oklch(50% 0.15 145);
+  --error: oklch(50% 0.2 25);
+  --warning: oklch(60% 0.15 85);
+  --info: oklch(55% 0.1 230);
 
   --text-form: var(--black-80);
   --text-heading: var(--brand-primary);
@@ -83,13 +102,13 @@
   :root {
     --brand-primary: oklch(0.6132 0.2245 254);
     --brand-secondary: oklch(0.7191 0.2269 45);
-    --accent-3: oklch(0.8015 0.1751 190);
+    --brand-tertiary: oklch(0.8015 0.1751 190);
   }
 
   :root[data-theme="light"] {
     --brand-primary: oklch(0.4485 0.1751 254.74);
     --brand-secondary: oklch(0.5691 0.1801 45);
-    --accent-3: oklch(0.6397 0.1431 190);
+    --brand-tertiary: oklch(0.6397 0.1431 190);
   }
 }
 
@@ -124,13 +143,22 @@ h6 {
 
 h1 {
   color: var(--text-heading-alt);
+  font-size: var(--font-size-3xl);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
 }
 
 h3,
 h4,
 h5,
 h6 {
-  color: var(--accent-3);
+  color: var(--brand-tertiary);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
 }
 
 a {
@@ -148,7 +176,7 @@ strong {
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--gap-05);
 }
 
 input,
@@ -161,17 +189,17 @@ ol {
   list-style: none;
   counter-reset: item;
   list-style-position: inside;
-  padding-left: 0.5rem;
+  padding-left: var(--gap-05);
 
   li {
     counter-increment: item;
-    margin-bottom: 5px;
+    margin-bottom: var(--gap-05);
   }
   li:before {
     margin-right: 10px;
     content: counter(item);
     color: var(--brand-primary);
-    font-size: 2rem;
+    font-size: var(--font-size-3xl);
     width: 1.2em;
     text-align: center;
     display: inline-block;
@@ -342,7 +370,7 @@ details strong {
     font-weight: bolder;
     text-align: center;
     color: var(--brand-primary);
-    font-size: 2rem;
+    font-size: var(--font-size-3xl);
     padding: 0;
     margin: 0;
     font-family: var(--font-header-serif);

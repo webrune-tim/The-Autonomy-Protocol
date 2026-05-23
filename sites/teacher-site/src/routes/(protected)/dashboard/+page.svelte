@@ -288,12 +288,12 @@
 	/* Integration design matching your existing design ecosystem variables */
 	.flex {
 		display: flex;
-		gap: 1rem;
-		margin-bottom: 2rem;
+		gap: var(--gap-1);
+		margin-bottom: var(--gap-2);
 	}
 
 	.margin-top {
-		margin-top: 2rem;
+		margin-top: var(--gap-2);
 	}
 
 	.hub-header {
@@ -301,24 +301,24 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: 1rem;
+		gap: var(--gap-1);
 	}
 
 	.stat-badge {
-		background: rgba(255, 255, 255, 0.07);
-		padding: 0.5rem 1rem;
-		border-radius: 4px;
+		background: rgb(from var(--fg) r g b / 0.07);
+		padding: var(--gap-05) var(--gap-1);
+		border-radius: calc(var(--border-radius) / 2);
 		border: 1px solid var(--brand-tertiary);
 		font-weight: bold;
 		font-size: 0.85rem;
 	}
 
 	.upload-form {
-		margin-top: 1rem;
-		background: rgba(0, 0, 0, 0.15);
+		margin-top: var(--gap-1);
+		background: rgb(from var(--bg) r g b / 0.15);
 		border: 1px dashed var(--brand-tertiary);
 		padding: 1.5rem;
-		border-radius: 4px;
+		border-radius: calc(var(--border-radius) / 2);
 	}
 
 	.upload-zone {
@@ -326,14 +326,14 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: 1rem;
+		gap: var(--gap-1);
 		position: relative;
 		transition: border-color 0.2s, background 0.2s;
 	}
 
 	.upload-zone.dragging {
 		border: 1px solid var(--brand-primary);
-		background: rgba(255, 255, 255, 0.05);
+		background: rgb(from var(--fg) r g b / 0.05);
 	}
 
 	.drag-overlay {
@@ -342,7 +342,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, 0.85);
+		background: rgb(from var(--bg) r g b / 0.85);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -379,17 +379,17 @@
 	.custom-file-label {
 		display: flex;
 		align-items: center;
-		gap: 1rem;
-		background: rgba(255, 255, 255, 0.05);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		padding: 0.75rem 1rem;
+		gap: var(--gap-1);
+		background: rgb(from var(--fg) r g b / 0.05);
+		border: 1px solid rgb(from var(--fg) r g b / 0.1);
+		padding: 0.75rem var(--gap-1);
 		cursor: pointer;
 		transition: background 0.2s;
-		border-radius: 4px;
+		border-radius: calc(var(--border-radius) / 2);
 	}
 
 	.custom-file-label:hover {
-		background: rgba(255, 255, 255, 0.08);
+		background: rgb(from var(--fg) r g b / 0.08);
 	}
 
 	.upload-icon {
@@ -399,7 +399,7 @@
 
 	.upload-text {
 		font-size: 0.85rem;
-		color: #aaa;
+		color: var(--black-20);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -417,7 +417,7 @@
 	}
 
 	.upload-submit-btn:hover:not(:disabled) {
-		background: rgba(255, 255, 255, 0.05);
+		background: rgb(from var(--fg) r g b / 0.05);
 	}
 
 	.upload-submit-btn:disabled {
@@ -426,22 +426,22 @@
 	}
 
 	.status.error, .status.success {
-		margin-top: 1rem;
+		margin-top: var(--gap-1);
 		padding: 0.75rem;
 		font-size: 0.9rem;
-		border-radius: 4px;
+		border-radius: calc(var(--border-radius) / 2);
 	}
 
 	.status.error {
-		background: rgba(255, 107, 107, 0.1);
-		border-left: 3px solid #ff6b6b;
-		color: #ff6b6b;
+		background: rgb(from var(--error) r g b / 0.1);
+		border-left: 3px solid var(--error);
+		color: var(--error);
 	}
 
 	.status.success {
-		background: rgba(129, 199, 132, 0.1);
-		border-left: 3px solid #81c784;
-		color: #81c784;
+		background: rgb(from var(--success) r g b / 0.1);
+		border-left: 3px solid var(--success);
+		color: var(--success);
 	}
 
 	/* Asset Workspace Layout */
@@ -464,22 +464,22 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background: rgba(255, 255, 255, 0.03);
-		padding: 1rem 1.25rem;
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 4px;
+		background: rgb(from var(--fg) r g b / 0.03);
+		padding: var(--gap-1) 1.25rem;
+		border: 1px solid rgb(from var(--fg) r g b / 0.08);
+		border-radius: calc(var(--border-radius) / 2);
 		transition: border-color 0.2s, background 0.2s;
 	}
 
 	.asset-card:hover {
-		border-color: rgba(255, 255, 255, 0.15);
-		background: rgba(255, 255, 255, 0.05);
+		border-color: rgb(from var(--fg) r g b / 0.15);
+		background: rgb(from var(--fg) r g b / 0.05);
 	}
 
 	.asset-info {
 		display: flex;
 		align-items: center;
-		gap: 1rem;
+		gap: var(--gap-1);
 		flex: 1;
 		min-width: 0;
 	}
@@ -516,23 +516,23 @@
 	}
 
 	.share-btn:hover {
-		background: rgba(255, 255, 255, 0.05);
+		background: rgb(from var(--fg) r g b / 0.05);
 	}
 
 	.icon-btn {
 		background: transparent;
-		border: 1px solid rgba(255, 255, 255, 0.15);
+		border: 1px solid rgb(from var(--fg) r g b / 0.15);
 		color: var(--fg);
 		cursor: pointer;
 		padding: 0.4rem 0.8rem;
-		border-radius: 4px;
+		border-radius: calc(var(--border-radius) / 2);
 		font-size: 0.8rem;
 		transition: background 0.2s;
 	}
 
 	.icon-btn:hover {
-		background: rgba(255, 255, 255, 0.05);
-		border-color: rgba(255, 255, 255, 0.3);
+		background: rgb(from var(--fg) r g b / 0.05);
+		border-color: rgb(from var(--fg) r g b / 0.3);
 	}
 
 	.no-results {
@@ -540,8 +540,8 @@
 		font-style: italic;
 		text-align: center;
 		padding: 3rem;
-		background: rgba(0, 0, 0, 0.1);
-		border: 1px dashed rgba(255, 255, 255, 0.1);
+		background: rgb(from var(--bg) r g b / 0.1);
+		border: 1px dashed rgb(from var(--fg) r g b / 0.1);
 	}
 
 	/* Modal Design Layer */
@@ -551,7 +551,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(0, 0, 0, 0.75);
+		background: rgb(from var(--bg) r g b / 0.75);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -559,11 +559,12 @@
 	}
 
 	.modal {
-		background: #1a1a1a;
+		background: var(--surface-2);
 		border: 2px solid var(--brand-tertiary);
-		padding: 2rem;
+		padding: var(--gap-2);
 		width: 90%;
 		max-width: 450px;
+		border-radius: var(--border-radius);
 	}
 
 	.modal h3 {
@@ -574,13 +575,13 @@
 	.modal-desc {
 		font-size: 0.85rem;
 		opacity: 0.7;
-		margin-bottom: 1rem;
+		margin-bottom: var(--gap-1);
 	}
 
 	.modal-actions {
 		display: flex;
 		justify-content: flex-end;
-		gap: 1rem;
+		gap: var(--gap-1);
 		margin-top: 1.5rem;
 	}
 
@@ -588,26 +589,26 @@
 		background: transparent;
 		border: 1px solid var(--brand-primary);
 		color: var(--fg);
-		padding: 0.5rem 1rem;
+		padding: 0.5rem var(--gap-1);
 		font-weight: bold;
 		cursor: pointer;
 	}
 
 	.confirm-btn:hover {
-		background: rgba(255, 255, 255, 0.05);
+		background: rgb(from var(--fg) r g b / 0.05);
 	}
 
 	/* Existing Administrative Table Elements */
 	.search-form {
 		display: flex;
-		gap: 0.5rem;
+		gap: var(--gap-05);
 		margin-bottom: 1.5rem;
 	}
 
 	.search-input {
 		flex: 1;
 		padding: 0.75rem;
-		background: rgba(0, 0, 0, 0.2);
+		background: rgb(from var(--bg) r g b / 0.2);
 		border: 1px solid var(--brand-tertiary);
 		color: var(--fg);
 	}
@@ -615,7 +616,7 @@
 	.table-wrapper {
 		width: 100%;
 		overflow-x: auto;
-		margin-top: 1rem;
+		margin-top: var(--gap-1);
 	}
 
 	.admin-table {
@@ -627,7 +628,7 @@
 	.action-form {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.5rem;
+		gap: var(--gap-05);
 		align-items: center;
 	}
 
@@ -635,7 +636,7 @@
 	.admin-table td {
 		padding: 0.75rem;
 		text-align: left;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		border-bottom: 1px solid rgb(from var(--fg) r g b / 0.1);
 	}
 
 	.admin-table th {
@@ -668,13 +669,13 @@
 		.header-section {
 			flex-direction: column !important;
 			align-items: stretch !important;
-			gap: 1rem !important;
+			gap: var(--gap-1) !important;
 		}
 
 		.header-actions {
 			display: grid !important;
 			grid-template-columns: 1fr 1fr !important;
-			gap: 0.5rem !important;
+			gap: var(--gap-05) !important;
 		}
 
 		.action-btn {
@@ -695,7 +696,7 @@
 
 		.hub-header {
 			flex-direction: column !important;
-			gap: 0.5rem !important;
+			gap: var(--gap-05) !important;
 		}
 
 		.hub-header h2 {
@@ -722,7 +723,7 @@
 
 		.custom-file-label {
 			padding: 0.6rem !important;
-			gap: 0.5rem !important;
+			gap: var(--gap-05) !important;
 		}
 
 		.upload-text {
@@ -769,7 +770,7 @@
 		}
 
 		.admin-table td {
-			padding: 0.5rem !important;
+			padding: var(--gap-05) !important;
 			font-size: 0.8rem !important;
 		}
 	}
@@ -779,8 +780,8 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
-		margin-bottom: 2rem;
-		gap: 1rem;
+		margin-bottom: var(--gap-2);
+		gap: var(--gap-1);
 	}
 
 	.role-badge {
@@ -809,12 +810,12 @@
 	}
 
 	.settings-btn {
-		background: #357abd;
+		background: var(--info);
 		color: white;
 	}
 
 	.signout-btn {
-		background: #d35400;
+		background: var(--brand-secondary);
 		color: white;
 	}
 

@@ -163,6 +163,7 @@ details > summary {
 
   .cta {
     display: inline-flex;
+    align-items: center;
     max-width: fit-content;
     gap: 0.5rem;
     color: var(--safe-contrast) !important;
