@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
 
-    const activeTab = $state('steps');
+    let activeTab = $state('steps');
 
     function setTab(tab: string) {
         activeTab = tab;
