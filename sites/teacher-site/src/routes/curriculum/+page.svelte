@@ -35,7 +35,7 @@
 			"The Courageous Question"—eliminating assumptions in rubrics and social cues.
 		</li>
 		<li>
-			<strong>Variable Capacity Workshop:</strong>Mapping out how to maintain a GPA
+			<strong>Variable Capacity Workshop:</strong> Mapping out how to maintain a GPA
 			even when emotional or physical energy is at a seasonal low.
 		</li>
 	</ul>
