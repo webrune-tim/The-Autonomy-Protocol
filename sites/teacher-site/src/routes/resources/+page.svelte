@@ -1,163 +1,124 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
+	import ResourceSnippets from './ResourceSnippets.svelte'
 
-    let activeTab = $state('steps');
+	type Tab = 'steps' | 'agreements' | 'freshmen' | 'seniors'
+	let activeTab = $state<Tab>('steps')
 
-    function setTab(tab: string) {
-        activeTab = tab;
-    }
+	const tabColors: Record<Tab, string> = {
+		steps: 'var(--brand-tertiary)',
+		agreements: 'var(--brand-secondary)',
+		freshmen: 'var(--brand-tertiary)',
+		seniors: 'var(--brand-secondary)'
+	}
 
-	// Define what a single Markdown module looks like
 	interface MarkdownModule {
-		metadata: {
-			order?: number
-			[key: string]: any
-		}
-		default?: any // The rendered content, if needed
+		metadata: { order?: number; title?: string }
 	}
 
-	/**
-	 * Transforms Vite glob imports into a sorted array of link objects.
-	 */
-	function transformGlobToLinks<T extends Record<string, any>>(files: T) {
+	function transformGlobToLinks(files: Record<string, any>) {
 		return Object.entries(files)
-			.map(([path, module]) => {
-				// Cast the module to our expected structure
-				const file = module as MarkdownModule
-
-				return {
-					slug: path.split('/').at(-1)?.replace('.md', ''),
-					metadata: file.metadata
-				}
-			})
-			.sort((a, b) => {
-				const orderA = a.metadata.order ?? 99
-				const orderB = b.metadata.order ?? 99
-				return orderA - orderB
-			})
+			.map(([path, module]) => ({
+				slug: path.split('/').at(-1)?.replace('.md', ''),
+				metadata: (module as MarkdownModule).metadata
+			}))
+			.sort((a, b) => (a.metadata.order ?? 99) - (b.metadata.order ?? 99))
 	}
 
-	const steps = import.meta.glob('$docs/steps/*.md', { eager: true })
-	const agreements = import.meta.glob('$docs/agreements/*.md', { eager: true })
-
-	// Now it's just one line each
-	const step_links = transformGlobToLinks(steps)
-	const agreement_links = transformGlobToLinks(agreements)
+	// Corrected paths to match your folder tree (removed the 's' from freshman/senior)
+	const step_links = transformGlobToLinks(
+		import.meta.glob('$docs/steps/*.md', { eager: true })
+	)
+	const agreement_links = transformGlobToLinks(
+		import.meta.glob('$docs/agreements/*.md', { eager: true })
+	)
+	const freshman_links = transformGlobToLinks(
+		import.meta.glob('$docs/freshman/*.md', { eager: true })
+	)
+	const senior_links = transformGlobToLinks(
+		import.meta.glob('$docs/senior/*.md', { eager: true })
+	)
 </script>
 
 <section class="angled-bottom-box" style="--color: var(--brand-primary)">
 	<h1>Resources</h1>
-	<p>
-		These resources will help your guide your students through 
-        <strong>The Autonomy Protocol</strong>.
-	</p>
-    <nav>
-        <ul>
-            <li>
-                <button>The Steps</button>
-            </li>
-            <li>
-                <button>The Agreements</button>
-            </li>
-            <li>
-                <button>Freshman Worksheets</button>
-            </li>
-            <li>
-                <button>Senior Worksheets</button>
-            </li>
-        </ul>
-    </nav>
-</section>
-
-<section
-	class="angled-top-bottom-box thick-margins"
-	use:thickMargins
-	style="--color: var(--brand-tertiary)"
->
-	<h2>Twelve Steps</h2>
-	<p>
-		The Steps are a series of practical guides that walk you through the process of
-		taking control of your life and starting to govern yourself. Each Step is
-		designed to be actionable and easy to follow, so you can start making progress
-		right away.
+	<p class="description">
+		A centralized library of worksheets, frameworks, and assessment guides to
+		streamline your delivery of <strong>The Autonomy Protocol</strong> across all grade
+		levels.
 	</p>
 
-	{#if step_links.length > 0}
-		<ul class="grid-container steps">
-			{#each step_links as { slug, metadata }}
+	<nav class="angled-bottom-box bottom-padding">
+		<ul class="tab-list">
+			{#each ['steps', 'agreements', 'freshmen', 'seniors'] as tab}
 				<li>
-					<a href="/resources/steps/{slug}">
-						{metadata.title ?? 'Untitled Resource'}
-					</a>
+					<button
+						class:active={activeTab === tab}
+						onclick={() => (activeTab = tab as Tab)}
+					>
+						{tab}
+					</button>
 				</li>
 			{/each}
 		</ul>
-	{:else}
-		<p>No resources found.</p>
-	{/if}
+	</nav>
 </section>
 
 <section
-	class="angled-top-box no-bottom-margin"
+	class="angled-top-box thick-margins no-bottom-margin"
 	use:thickMargins
-	style="--color: var(--brand-secondary)"
+	style="--color: {tabColors[activeTab]}"
 >
-	<h2>Five Agreements</h2>
-	<p>
-		The Agreements are a collection of agreements that you can use to govern yourself
-		and your relationships with others. These agreements are designed to be flexible
-		and customizable, so you can adapt them to fit your own needs and circumstances.
-	</p>
-
-	{#if agreement_links.length > 0}
-		<ul class="grid-container agreements">
-			{#each agreement_links as { slug, metadata }}
-				<li>
-					<a href="/resources/agreements/{slug}">
-						{metadata.title ?? 'Untitled Resource'}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	{:else}
-		<p>No resources found.</p>
-	{/if}
+	<ResourceSnippets
+		{activeTab}
+		{step_links}
+		{agreement_links}
+		{freshman_links}
+		{senior_links}
+	/>
 </section>
 
 <style>
-	a {
-		/* color: var(--bg); */
-		text-decoration: underline !important;
+	nav {
+		margin-top: var(--gap-2);
+		padding: 1rem;
+		background: var(--brand-primary-dark);
 	}
 
-	ul {
+	.tab-list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		gap: 4px;
+		overflow-x: auto;
 	}
 
-	.grid-container {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-auto-flow: column;
-		gap: 0.75rem 2rem;
-
-		list-style: none;
-		padding: 0;
-		margin: 1.5rem 0;
-
-		&.steps {
-			grid-template-rows: repeat(6, auto);
-		}
-
-		&.agreements {
-			grid-template-rows: repeat(3, auto);
-		}
+	.tab-list li {
+		flex: 1;
+		flex-shrink: 0;
+		margin: 0;
 	}
 
-	/* To match the all-caps look in your reference image */
-	h2 {
+	button {
+		width: 100%;
+		background: transparent;
+		border: none;
+		color: var(--white);
+		opacity: 0.8;
+		padding: 12px 16px;
+		font-family: inherit;
+		font-size: var(--font-size-3);
+		font-weight: 800;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		cursor: pointer;
+	}
+
+	button.active {
+		opacity: 1;
+		background: var(--brand-secondary);
+		color: var(--bg);
 	}
 </style>

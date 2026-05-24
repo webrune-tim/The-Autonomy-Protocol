@@ -250,7 +250,7 @@ details > summary {
   /* Fallback body text color inside the card */
   color: var(--fg);
 
-  /* FIX: Map your headings and highlights to your high-contrast 
+  /* FIX: Map your headings and highlights to your high-contrast
     print engine instead of the raw, dark border color!
   */
   h2,
@@ -315,6 +315,10 @@ details > summary {
 }
 .no-bottom-margin {
   margin-bottom: 0 !important;
+}
+
+.bottom-padding {
+  padding-bottom: var(--gap-4) !important;
 }
 
 .flex {
