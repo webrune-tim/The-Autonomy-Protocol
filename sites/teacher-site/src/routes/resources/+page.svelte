@@ -40,13 +40,27 @@
 </script>
 
 <section class="angled-bottom-box" style="--color: var(--brand-primary)">
-	<h1>Additional Resources</h1>
+	<h1>Resources</h1>
 	<p>
-		Here are some additional resources to help you get started with the Autonomy
-		Protocol. Whether you're a student, a parent, or a teacher, these materials will
-		give you the tools you need to take charge of your own life and start governing
-		yourself.
+		These resources will help your guide your students through 
+        <strong>The Autonomy Protocol</strong>.
 	</p>
+    <nav>
+        <ul>
+            <li>
+                <button>The Steps</button>
+            </li>
+            <li>
+                <button>The Agreements</button>
+            </li>
+            <li>
+                <button>Freshman Worksheets</button>
+            </li>
+            <li>
+                <button>Senior Worksheets</button>
+            </li>
+        </ul>
+    </nav>
 </section>
 
 <section
