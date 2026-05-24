@@ -69,7 +69,7 @@
 			<div class="title-grid">
 				<div class="flex-column">
 					<h3>The Accountability Cycle</h3>
-					<span>(Tier 2: Restoration)</span>
+					<span>(Tier 1: Restoration)</span>
 				</div>
 			</div>
 			<ol>
@@ -95,7 +95,7 @@
 			<div class="title-grid">
 				<div class="flex-column">
 					<h3>The Integrity Shield</h3>
-					<span>(Tier 1: Prevention)</span>
+					<span>(Tier 2: Prevention)</span>
 				</div>
 			</div>
 
