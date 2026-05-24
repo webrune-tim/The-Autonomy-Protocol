@@ -97,6 +97,8 @@
 <style>
   .theme-toggle-wrapper {
     width: 100%;
+    max-height: 80svh;
+    overflow-y: scroll;
     display: flex;
     place-content: center;
     padding-top: 0.5rem;
