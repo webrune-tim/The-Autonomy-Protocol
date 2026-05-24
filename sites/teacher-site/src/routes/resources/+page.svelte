@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
 
-    const activeTab: <'steps' || 'agreements' || 'freshman' || 'senior'> = $state('steps');
+    const activeTab = $state('steps');
 
     function setTab(tab: string) {
         activeTab = tab;
