@@ -62,7 +62,7 @@
 		</li>
 		<li>
 			<strong>The Amends Protocol:</strong> Practical training in restorative repair—fixing
-			a group project dynamic or delivering a professional apology to a counselor.
+			a group project dynamic or delivering a professional apology to a teacher or administrator.
 		</li>
 	</ul>
 
