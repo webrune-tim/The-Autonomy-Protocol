@@ -25,19 +25,20 @@
 			.sort((a, b) => (a.metadata.order ?? 99) - (b.metadata.order ?? 99))
 	}
 
-	// Corrected paths to match your folder tree (removed the 's' from freshman/senior)
-	const step_links = transformGlobToLinks(
-		import.meta.glob('$docs/steps/*.md', { eager: true })
-	)
-	const agreement_links = transformGlobToLinks(
-		import.meta.glob('$docs/agreements/*.md', { eager: true })
-	)
-	const freshman_links = transformGlobToLinks(
-		import.meta.glob('$docs/freshman/*.md', { eager: true })
-	)
-	const senior_links = transformGlobToLinks(
-		import.meta.glob('$docs/senior/*.md', { eager: true })
-	)
+	const allLinks = {
+		steps: transformGlobToLinks(
+			import.meta.glob('$docs/steps/*.md', { eager: true })
+		),
+		agreements: transformGlobToLinks(
+			import.meta.glob('$docs/agreements/*.md', { eager: true })
+		),
+		freshmen: transformGlobToLinks(
+			import.meta.glob('$docs/freshman/*.md', { eager: true })
+		),
+		seniors: transformGlobToLinks(
+			import.meta.glob('$docs/senior/*.md', { eager: true })
+		)
+	}
 </script>
 
 <section class="angled-bottom-box" style="--color: var(--brand-primary)">
@@ -69,13 +70,7 @@
 	use:thickMargins
 	style="--color: {tabColors[activeTab]}"
 >
-	<ResourceSnippets
-		{activeTab}
-		{step_links}
-		{agreement_links}
-		{freshman_links}
-		{senior_links}
-	/>
+	<ResourceSnippets {activeTab} {allLinks} />
 </section>
 
 <style>

@@ -1,59 +1,56 @@
 <script lang="ts">
 	import { base } from '$app/paths'
 
-	let { activeTab, step_links, agreement_links, freshman_links, senior_links } =
-		$props()
+	let { activeTab, allLinks } = $props()
+
+	// Define the text content for each tab in one place
+	const contentMap = {
+		steps: {
+			title: 'Twelve Steps',
+			desc: 'Practical guides for governing self.',
+			path: 'steps'
+		},
+		agreements: {
+			title: 'Five Agreements',
+			desc: 'Flexible agreements for community governance.',
+			path: 'agreements'
+		},
+		freshmen: {
+			title: 'Freshman Worksheets',
+			desc: 'Foundational materials for new students.',
+			path: 'freshman'
+		},
+		seniors: {
+			title: 'Senior Worksheets',
+			desc: 'Advanced synthesis and governance materials.',
+			path: 'senior'
+		}
+	}
+
+	// Use $derived to fix the {@const} invalid placement error
+	let current = $derived(contentMap[activeTab])
 </script>
 
+{#snippet ResourceGrid(links, path)}
+	<ul class="grid-container {path}">
+		{#each links as { slug, metadata } (slug)}
+			<li>
+				<a href="{base}/resources/{path}/{slug}">
+					{metadata.title ?? 'Untitled Resource'}
+				</a>
+			</li>
+		{/each}
+	</ul>
+{/snippet}
+
 <div class="tab-content-wrapper">
-	{#if activeTab === 'steps'}
-		<h2>Twelve Steps</h2>
-		<p>Practical guides for governing self and starting the protocol.</p>
-		<ul class="grid-container steps">
-			{#each step_links as { slug, metadata } (slug)}
-				<li>
-					<a href="{base}/resources/steps/{slug}">
-						{metadata.title ?? 'Untitled Resource'}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	{:else if activeTab === 'agreements'}
-		<h2>Five Agreements</h2>
-		<p>Flexible agreements for relationships and community governance.</p>
-		<ul class="grid-container agreements">
-			{#each agreement_links as { slug, metadata } (slug)}
-				<li>
-					<a href="{base}/resources/agreements/{slug}">
-						{metadata.title ?? 'Untitled Resource'}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	{:else if activeTab === 'freshmen'}
-		<h2>Freshman Worksheets</h2>
-		<p>Foundational materials for new students.</p>
-		<ul class="grid-container freshman">
-			{#each freshman_links as { slug, metadata } (slug)}
-				<li>
-					<a href="{base}/resources/freshman/{slug}">
-						{metadata.title ?? 'Untitled Resource'}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	{:else if activeTab === 'seniors'}
-		<h2>Senior Worksheets</h2>
-		<p>Advanced synthesis and governance materials.</p>
-		<ul class="grid-container senior">
-			{#each senior_links as { slug, metadata } (slug)}
-				<li>
-					<a href="{base}/resources/senior/{slug}">
-						{metadata.title ?? 'Untitled Resource'}
-					</a>
-				</li>
-			{/each}
-		</ul>
+	<h2>{current.title}</h2>
+	<p>{current.desc}</p>
+
+	{#if allLinks[activeTab].length > 0}
+		{@render ResourceGrid(allLinks[activeTab], current.path)}
+	{:else}
+		<p>No resources found for this section.</p>
 	{/if}
 </div>
 
@@ -61,12 +58,10 @@
 	.tab-content-wrapper {
 		color: var(--black-80);
 	}
-
 	h2 {
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
 		font-weight: 900;
-		margin: 0 0 1rem 0;
+		margin-bottom: 1rem;
 	}
 
 	.grid-container {
@@ -79,14 +74,11 @@
 		padding: 0;
 	}
 
+	/* Row heights based on the content type */
 	.grid-container.steps {
 		grid-template-rows: repeat(6, auto);
 	}
-
-	/* Adding classes for freshman/senior to ensure the grid behaves if needed */
-	.grid-container.agreements,
-	.grid-container.freshman,
-	.grid-container.senior {
+	.grid-container:not(.steps) {
 		grid-template-rows: repeat(3, auto);
 	}
 
@@ -95,7 +87,6 @@
 		align-items: center;
 		font-size: 1.1rem;
 	}
-
 	.grid-container li::before {
 		content: '';
 		display: inline-block;
@@ -103,7 +94,6 @@
 		height: 6px;
 		background: currentColor;
 		margin-right: 12px;
-		flex-shrink: 0;
 	}
 
 	.grid-container a {
