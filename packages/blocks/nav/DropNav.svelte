@@ -133,7 +133,7 @@
     background: var(--bg);
     width: max-content;
     min-width: 180px;
-    max-height: 80svh;
+    max-height: 80vh;
     overflow-y: scroll;
     z-index: 100;
     overflow: hidden;
