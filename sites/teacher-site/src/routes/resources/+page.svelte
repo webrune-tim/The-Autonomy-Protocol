@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
 
+    const activeTab<'steps' || 'agreements' || 'freshman' || 'senior'> = $state('steps');
+
+    function setTab(tab: string) {
+        activeTab = tab;
+    }
+
 	// Define what a single Markdown module looks like
 	interface MarkdownModule {
 		metadata: {
