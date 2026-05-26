@@ -77,9 +77,9 @@ a:hover {
   text-decoration: underline;
 }
 
-strong {
+/*strong {
   color: var(--brand-secondary);
-}
+}*/
 
 label {
   font-family: "Poppins", sans-serif;

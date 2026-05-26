@@ -47,7 +47,7 @@
     "@libsql/client": "^0.17.3",
     "@sveltejs/adapter-vercel": "^6.3.3",
     "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.60.1",
+    "@sveltejs/kit": "^2.61.1",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@types/node": "^22.19.19",
     "@typescript/native-preview": "catalog:",
@@ -65,7 +65,7 @@
     "prettier-plugin-svelte": "^3.5.2",
     "svelte": "^5.55.9",
     "svelte-check": "^4.4.8",
-    "typescript-eslint": "^8.59.4",
+    "typescript-eslint": "^8.60.0",
     "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.22",
     "vite-imagetools": "^10.0.0"
   },

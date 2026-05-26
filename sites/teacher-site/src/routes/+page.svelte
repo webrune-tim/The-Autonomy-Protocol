@@ -3,7 +3,10 @@
 	import { ArrowBigRight, Map, Route, ShieldCog } from '@lucide/svelte'
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-primary)">
+<section
+	class="angled-bottom-box"
+	style="--color: var(--brand-primary); color: var(--brand-primary-contrast);"
+>
 	<h1>Empowering Student Agency. Transforming Campus Culture</h1>
 	<p>
 		A scalable socio-emotional curriculum designed to build intrinsic accountability
@@ -18,7 +21,7 @@
 <section
 	class="angled-top-bottom-box"
 	use:thickMargins
-	style="--color: var(--brand-secondary)"
+	style="--color: var(--brand-secondary); color: var(--brand-secondary-contrast);"
 >
 	<div class="title-grid">
 		<h2>The Problem:</h2>
@@ -41,7 +44,7 @@
 
 <section
 	class="angled-top-box"
-	style="--color: var(--brand-tertiary)"
+	style="--color: var(--brand-tertiary); color: var(--brand-tertiary-contrast);"
 	use:thickMargins
 >
 	<div class="title-grid">
@@ -65,14 +68,17 @@
 
 <section>
 	<div class="grid">
-		<section class="bold-border-box">
+		<section
+			class="bold-border-box"
+			style="--border-color: var(--brand-primary); --title-color: var(--text-primary-print);"
+		>
 			<div class="title-grid">
 				<div class="flex-column">
 					<h3>The Accountability Cycle</h3>
-					<span>(Tier 1: Restoration)</span>
+					<span class="tier-label">(Tier 1: Restoration)</span>
 				</div>
 			</div>
-			<ol>
+			<ol class="colored-list">
 				<li>
 					<strong>Acknowledge Patterns:</strong> Identify the problem.
 				</li>
@@ -91,15 +97,18 @@
 			</ol>
 		</section>
 
-		<section class="bold-border-box" style="--border-color: var(--brand-secondary)">
+		<section
+			class="bold-border-box"
+			style="--border-color: var(--brand-secondary); --title-color: var(--text-secondary-print);"
+		>
 			<div class="title-grid">
 				<div class="flex-column">
 					<h3>The Integrity Shield</h3>
-					<span>(Tier 2: Prevention)</span>
+					<span class="tier-label">(Tier 2: Prevention)</span>
 				</div>
 			</div>
 
-			<ol>
+			<ol class="colored-list" style="--list-accent: var(--text-secondary-print);">
 				<li>
 					<strong>Communicate Clearly:</strong> Replace rumors with honesty.
 				</li>
@@ -142,12 +151,49 @@
 		align-items: center;
 		gap: var(--gap-1);
 		font-weight: bold;
-		color: var(--brand-secondary);
 		text-decoration: none;
-		margin-top: var(--gap-1);
 	}
+
+	.cta {
+		margin-top: var(--gap-1);
+		color: inherit;
+	}
+
 	.link {
 		margin-top: 0;
 		font-size: 1.5rem;
+		/* Use a reliable theme foreground fallback so link arrays remain high contrast */
+		color: var(--text-link);
+		transition: color 0.2s ease;
+	}
+
+	.link:hover {
+		color: var(--text-link-hover);
+	}
+
+	/* Card Header Context Enforcement */
+	h3 {
+		color: var(--title-color, var(--fg));
+		margin: 0;
+	}
+
+	.tier-label {
+		color: var(--fg);
+		opacity: 0.85;
+		font-size: 0.95rem;
+	}
+
+	/* Fix card body list item accessibility in dark and light views */
+	.colored-list {
+		color: var(--fg);
+
+		li {
+			margin-bottom: 0.5rem;
+
+			strong {
+				/* Uses the localized variable or falls back directly to the primary mix token */
+				color: var(--list-accent, var(--text-primary-print));
+			}
+		}
 	}
 </style>

@@ -37,10 +37,8 @@
 }
 
 /* ==========================================================================
-   2. SITE-SPECIFIC ACCENT & CONTRAST DEFINITIONS
+   2. SITE-SPECIFIC ACCENT & CONTRAST DEFINITIONS (BASE/STUDENT)
    ========================================================================== */
-
-/* Student Site / Default Accents (High vibrancy, dark text contrast works beautifully) */
 :root {
   --accent-1: oklab(0.61 -0.05 -0.2);
   --accent-2: oklab(58.74700000000001% 0.10983 0.11325);
@@ -53,21 +51,13 @@
 }
 
 /* ==========================================================================
-   2. SITE-SPECIFIC ACCENT & CONTRAST DEFINITIONS
+   2B. SITE-SPECIFIC ACCENT & CONTRAST DEFINITIONS (TEACHER)
    ========================================================================== */
-
-/* Teacher Site Accents (Mathematically isolated for AAA cross-contrast) */
-/* ==========================================================================
-   2. SITE-SPECIFIC ACCENT & CONTRAST DEFINITIONS
-   ========================================================================== */
-
-/* Teacher Site Accents (Optimized for Dark Theme + High-Print Legibility) */
 :root[data-site="teacher"] {
   --accent-1: var(--nord11);
   --accent-2: var(--nord13);
   --accent-3: var(--nord15);
 
-  /* Explicit solid background contrast contracts */
   --accent-1-contrast: var(--nord4);
   --accent-2-contrast: var(--nord0);
   --accent-3-contrast: var(--nord0);
@@ -86,13 +76,13 @@
   --brand-secondary-contrast: var(--accent-2-contrast);
   --brand-tertiary-contrast: var(--accent-3-contrast);
 
-  /* Derivations */
+  /* Dark Mode Color Derivations (Clean contrast scaling) */
   --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.3) c h);
   --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l - 0.3) c h);
   --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l - 0.3) c h);
-  --brand-primary-light: oklch(from var(--brand-primary) calc(l + 0.3) c h);
-  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l + 0.3) c h);
-  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l + 0.3) c h);
+  --brand-primary-light: oklch(from var(--brand-primary) calc(l + 0.15) c h);
+  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l + 0.15) c h);
+  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l + 0.15) c h);
 
   /* High-Contrast Typographic Generation Engine (Dark backgrounds) */
   --text-primary-print: color-mix(in oklab, var(--brand-primary) 25%, var(--nord4));
@@ -120,26 +110,30 @@
   --surface-3: oklch(85% 0.02 254);
   --ui-border: oklch(80% 0.02 254);
 
-  --brand-primary: oklch(from var(--accent-1) calc(l - 0.15) c h);
-  --brand-secondary: oklch(from var(--accent-2) calc(l - 0.15) c h);
+  /* Legible Core Mappings for Light Surfaces */
+  --brand-primary: oklch(from var(--accent-1) calc(l - 0.12) c h);
+  --brand-secondary: oklch(from var(--accent-2) calc(l - 0.05) c h);
   --brand-tertiary: oklch(from var(--accent-3) calc(l - 0.15) c h);
 
-  /* Light mode blocks favor dark text overlays */
-  --brand-primary-contrast: var(--nord0);
+  /* Explicit Layout Contrast Contracts */
+  --brand-primary-contrast: var(--nord6);
   --brand-secondary-contrast: var(--nord0);
   --brand-tertiary-contrast: var(--nord0);
 
-  /* High-Contrast Typographic Generation Engine (Light backgrounds) */
-  --text-primary-print: color-mix(in oklab, var(--brand-primary) 50%, var(--nord0));
-  --text-secondary-print: color-mix(in oklab, var(--brand-secondary) 50%, var(--nord0));
-  --text-tertiary-print: color-mix(in oklab, var(--brand-tertiary) 50%, var(--nord0));
+  /* High-Contrast Typographic Print Engine */
+  --text-primary-print: color-mix(in oklab, var(--brand-primary) 20%, var(--nord0));
+  --text-secondary-print: color-mix(in oklab, var(--brand-secondary) 20%, var(--nord0));
+  --text-tertiary-print: color-mix(in oklab, var(--brand-tertiary) 20%, var(--nord0));
 
-  --brand-primary-dark: oklch(from var(--brand-primary) calc(l + 0.3) c h);
-  --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l + 0.3) c h);
-  --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l + 0.3) c h);
-  --brand-primary-light: oklch(from var(--brand-primary) calc(l - 0.3) c h);
-  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l - 0.3) c h);
-  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l - 0.3) c h);
+  /* Light Mode Derivations (Inverted math to keep light elements readable) */
+  --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.15) c h);
+  --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l - 0.15) c h);
+  --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l - 0.15) c h);
+
+  /* Fixes the wash-out bug: lightened tokens in light mode must scale DOWN in lightness */
+  --brand-primary-light: oklch(from var(--brand-primary) calc(l - 0.05) c h);
+  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l - 0.05) c h);
+  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l - 0.05) c h);
 }
 
 /* ==========================================================================

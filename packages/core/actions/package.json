@@ -1,11 +1,12 @@
 {
   "name": "@autonomy/actions",
   "version": "0.1.0",
+  "description": "Global Svelte Actions",
   "type": "module",
   "exports": {
     ".": "./index.ts"
   },
   "dependencies": {
-    "@lucide/svelte": "catalog:"
+    "@autonomy/utils": "workspace:*"
   }
 }

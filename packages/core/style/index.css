@@ -136,14 +136,14 @@ details > summary {
 
   /* Target all text elements to use the calculated contrast color */
   h1,
-  h2,
-  h3,
-  p,
-  a,
-  strong,
-  span,
-  li,
-  li:before {
+	h2,
+	h3,
+	p,
+	a,
+	/*strong,*/
+	span,
+	li,
+	li:before {
     color: var(--safe-contrast);
   }
 
@@ -244,6 +244,7 @@ details > summary {
 .bold-border-box {
   /* Keep the structural border matching the brand accent */
   --border-color: var(--brand-primary);
+  --color: oklch(from var(--border-color) calc(l - 0.3) c h);
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
 
@@ -259,7 +260,7 @@ details > summary {
   h5,
   strong,
   li::before {
-    color: var(--border-color);
+    color: var(--color);
   }
 }
 
