@@ -6,7 +6,13 @@
 	// Assets
 	import favicon from '$lib/assets/favicon.svg'
 	import OgImg from '$images/og-img.png'
+
+	// Styles
 	import '@autonomy/style/index.css'
+
+	// Neither work
+	// import 'nord/src/nord.css'
+	// import 'node_modules/nord/src/nord.css'
 
 	// Shared Components
 	import { Banner } from '@autonomy/banner'
@@ -18,9 +24,6 @@
 	import { Pill } from '@autonomy/pill'
 	import { ScrollToTop } from '@autonomy/scroll-to-top'
 	import { themeState } from '@autonomy/theme-toggle'
-
-	// Local components
-	// import { ThemeToggle } from '$components'
 
 	interface Props {
 		data: LayoutData

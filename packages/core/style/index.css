@@ -1,8 +1,8 @@
 /* packages/ui/new-style/index.css */
+@import "./nord.css";
 @import "./reset.css";
 @import "./tokens.css";
 @import "./typography.css";
-/*@import "./functions.css";*/
 
 /* --- Base Styles --- */
 *,

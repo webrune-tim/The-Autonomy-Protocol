@@ -1,0 +1,33 @@
+:root {
+  /* ==========================================================================
+     Polar Night (Dark Theme Backgrounds & Structural Elements)
+     ========================================================================== */
+  --nord0: #2e3440; /* Darkest Slate: Primary application background */
+  --nord1: #3b4252; /* Dark Slate: Secondary background (sidebars, cards, panel backgrounds) */
+  --nord2: #434c5e; /* Medium Slate: Text selection, active items, and structural borders */
+  --nord3: #4c566a; /* Light Slate: Code comments, disabled elements, and subtle iconography */
+
+  /* ==========================================================================
+     Snow Storm (Typography & Foreground Elements)
+     ========================================================================== */
+  --nord4: #d8dee9; /* Off-White: Primary body text for crisp, comfortable reading contrast */
+  --nord5: #e5e9f0; /* Clear White: Secondary text, labels, and minor headings */
+  --nord6: #eceff4; /* Radiant White: Major page titles, active links, and hovered text states */
+
+  /* ==========================================================================
+     Frost (Primary Brand Accents & Interactive Elements)
+     ========================================================================== */
+  --nord7: #8fbcbb; /* Calm Turquoise: Focus rings, toggles, and primary interactive indicators */
+  --nord8: #88c0d0; /* Glacial Blue: Primary call-to-action buttons and main brand highlights */
+  --nord9: #81a1c1; /* Ice Blue: Secondary buttons, active navigation items, and hyperlinks */
+  --nord10: #5e81ac; /* Deep Arctic Blue: Subdued interactive states and low-contrast metadata tags */
+
+  /* ==========================================================================
+     Aurora (UI Status, Notifications, & Semantic States)
+     ========================================================================== */
+  --nord11: #bf616a; /* Aurora Red: Critical errors, destructive actions, and git deletions */
+  --nord12: #d08770; /* Aurora Orange: System warnings, pending actions, and active notifications */
+  --nord13: #ebcb8b; /* Aurora Yellow: Cautions, search term highlights, and minor alerts */
+  --nord14: #a3be8c; /* Aurora Green: Success states, validation passes, and git additions */
+  --nord15: #b48ead; /* Aurora Purple: Special premium callouts, badge indicators, and highlights */
+}
