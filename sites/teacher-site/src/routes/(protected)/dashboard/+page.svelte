@@ -306,7 +306,7 @@
 
 	.stat-badge {
 		background: rgb(from var(--fg) r g b / 0.07);
-		padding: var(--gap-3) var(--gap-1);
+		padding: var(--gap-1);
 		border-radius: calc(var(--border-radius) / 2);
 		border: 1px solid var(--brand-tertiary);
 		font-weight: bold;
@@ -811,12 +811,12 @@
 
 	.settings-btn {
 		background: var(--brand-tertiary);
-		color: var(--fg);
+		color: var(--bg);
 	}
 
 	.signout-btn {
 		background: var(--brand-secondary);
-		color: var(--fg);
+		color: var(--bg);
 	}
 
 	.action-btn:hover {
