@@ -32,7 +32,6 @@
 
 <style>
   nav {
-    color: var(--fg);
     width: 100%;
   }
 
@@ -76,7 +75,7 @@
     &.active {
       font-weight: bolder;
       opacity: 1;
-      border-bottom: 2px solid var(--fg);
+      border-bottom: 2px solid var(--bg);
     }
   }
 </style>
