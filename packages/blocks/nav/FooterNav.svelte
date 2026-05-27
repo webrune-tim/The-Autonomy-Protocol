@@ -75,7 +75,7 @@
     &.active {
       font-weight: bolder;
       opacity: 1;
-      border-bottom: 2px solid var(--bg);
+      border-bottom: 2px solid;
     }
   }
 </style>
