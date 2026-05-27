@@ -150,7 +150,7 @@
 		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>.
 		The framework is built upon the structural logic of high-stakes behavioral
 		models, secularized and reconstructed for the secondary education environment.
-		Smith’s development of the protocol was driven by a fundamental realization: the
+		Smith's development of the protocol was driven by a fundamental realization: the
 		cognitive tools required for profound personal transformation are the exact same
 		mechanisms needed for student empowerment and executive functioning.
 	</p>

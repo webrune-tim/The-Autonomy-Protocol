@@ -7,10 +7,10 @@
   	<h1>Own Your Future. Master the Protocol.</h1>
 	<p>High school isn't just about academics; it's about building the foundation for the rest of your life. Step into a system designed to teach you real-world life management, self-governance, and absolute accountability.</p>
 
-	<a class="cta"href="/assignments">
+	<a class="cta" href="/assignments">
 		<Star size={32} /> Begin the Protocol <ArrowBigRight size={32} />
 	</a>
-	<a class="cta"href="/homework">
+	<a class="cta" href="/homework">
 		<Route size={32} /> View the Roadmap <ArrowBigRight size={32} />
 	</a>
 </section>
@@ -19,7 +19,7 @@
 	<h2>Built for Where You Are. Designed for Where You're Going.</h2>
 	<p><strong>Freahman</strong></p>
 	<p>
-		Start your high school career with a blueprint. Don't wait until graduation to figure out how to manage your time, navigate challenges, or set boundaries. Build the habits now that will put you in the driver’s seat for the next four years.
+		Start your high school career with a blueprint. Don't wait until graduation to figure out how to manage your time, navigate challenges, or set boundaries. Build the habits now that will put you in the driver's seat for the next four years.
 	</p>
 </section>
 

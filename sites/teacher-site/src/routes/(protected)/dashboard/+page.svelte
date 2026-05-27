@@ -1,4 +1,4 @@
-<script lang="ts">
+cd sites<script lang="ts">
 	import { enhance } from '$app/forms';
 	import { goto } from '$app/navigation';
 	import type { PageServerData, ActionData } from './$types';

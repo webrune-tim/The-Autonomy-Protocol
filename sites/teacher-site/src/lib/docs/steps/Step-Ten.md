@@ -22,7 +22,7 @@ Most major high school disasters start as tiny mistakes. A small misunderstandin
 
 ### **Living Responsibly**
 
-Practicing a daily inventory keeps you firmly in the driver’s seat of your high school experience. You don't have to live in fear of getting "caught" or falling behind, because you are constantly making small, honest adjustments every single day. This is how true, lasting autonomy is protected.
+Practicing a daily inventory keeps you firmly in the driver's seat of your high school experience. You don't have to live in fear of getting "caught" or falling behind, because you are constantly making small, honest adjustments every single day. This is how true, lasting autonomy is protected.
 
 <TeacherOnly>
 

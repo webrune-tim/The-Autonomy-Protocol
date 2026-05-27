@@ -1,6 +1,6 @@
 ---
 title: "Third Agreement"
-description: "Don’t Make Assumptions"
+description: "Don't Make Assumptions"
 order: 3
 date: "2026-05-11"
 published: true

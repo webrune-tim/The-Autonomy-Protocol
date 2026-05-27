@@ -14,7 +14,7 @@ published: true
 
 ### **Clearing the Social Static**
 
-When your life feels out of control, it’s rarely just because of your grades—it’s usually because of your relationships. Walking into a classroom knowing someone is mad at you, or avoiding a hallway because of text-group drama, creates **social static**. It drains your mental energy. Step Eight is about preparing to clear that static so you can have your peace of mind back.
+When your life feels out of control, it's rarely just because of your grades—it's usually because of your relationships. Walking into a classroom knowing someone is mad at you, or avoiding a hallway because of text-group drama, creates **social static**. It drains your mental energy. Step Eight is about preparing to clear that static so you can have your peace of mind back.
 
 ### **The Pride Trap**
 

@@ -75,6 +75,7 @@
 		position: absolute;
 		top: var(--gap-2);
 		right: var(--gap-2);
+		color: var(--fg);
 
 		@media print {
 			display: none;

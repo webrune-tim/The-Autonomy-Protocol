@@ -14,7 +14,7 @@ published: true
 
 ### **The "Comfortable Cage"**
 
-By now, you’ve named your bad habits. But here is the hard truth: **Sometimes we hold onto bad habits because they are comfortable.** Whether it's the "rush" of a last-minute deadline or the protection of an excuse, we often cling to the very things that keep us stuck. Step Six is about realizing that these "comforts" are actually a cage. To have autonomy, you have to be _entirely ready_ to walk out the door.
+By now, you've named your bad habits. But here is the hard truth: **Sometimes we hold onto bad habits because they are comfortable.** Whether it's the "rush" of a last-minute deadline or the protection of an excuse, we often cling to the very things that keep us stuck. Step Six is about realizing that these "comforts" are actually a cage. To have autonomy, you have to be _entirely ready_ to walk out the door.
 
 ### **Willingness vs. Wishing**
 
@@ -25,7 +25,7 @@ There is a big difference between _wishing_ a problem would go away and being _w
 
 ### **Preparing for Change**
 
-Step Six is the "mental prep." It’s the deep breath before the work starts. It’s you telling yourself: _"I am done with the old version of me. I am ready for the version that actually functions."_
+Step Six is the "mental prep." It's the deep breath before the work starts. It's you telling yourself: _"I am done with the old version of me. I am ready for the version that actually functions."_
 
 <TeacherOnly>
 

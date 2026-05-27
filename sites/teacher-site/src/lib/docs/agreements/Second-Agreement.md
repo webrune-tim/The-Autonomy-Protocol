@@ -1,6 +1,6 @@
 ---
 title: "Second Agreement"
-description: "Don’t Take Anything Personally"
+description: "Don't Take Anything Personally"
 order: 2
 date: "2026-05-11"
 published: true

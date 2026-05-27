@@ -57,7 +57,7 @@
 	style:--icon-color={iconColor}
 	style:--font-size={fontSize}
 >
-	<Clock size={32} color={iconColor} />
+	<Clock size={32} />
 	<span class="rt-text">
 		<span class="rt-number">{displayValue}</span> {currentSuffix}
 	</span>
@@ -73,7 +73,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.375rem;
-		color: var(--text-color);
+		/* color: var(--text-color); */
 		font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 		font-size: var(--font-size);
 		font-weight: 500;
@@ -84,6 +84,6 @@
 	.rt-number {
 		font-variant-numeric: tabular-nums;
 		font-weight: 600;
-		color: var(--text-color); /* Pops the number slightly */
+		/* color: var(--text-color); */
 	}
 </style>

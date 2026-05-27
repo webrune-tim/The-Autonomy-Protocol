@@ -6,7 +6,7 @@
 	<h1>The Dual-Intervention Roadmap</h1>
 	<p>
 		The Autonomy Protocol is an executive functioning framework designed to target
-		the two most critical developmental transitions in a student’s secondary
+		the two most critical developmental transitions in a student's secondary
 		education: entry and exit. By bookending the high school experience, we establish
 		a behavioral baseline early on and solidify professional standards before
 		graduation.
@@ -80,7 +80,7 @@
 	<ul>
 		<li>
 			<strong>The Core Objective:</strong> Solidifying the five essential agreements of
-			professional conduct: being impeccable with one’s word, maintaining emotional neutrality
+			professional conduct: being impeccable with one's word, maintaining emotional neutrality
 			(not taking things personally), avoiding assumptions, and maintaining a consistent
 			standard of excellence.
 		</li>

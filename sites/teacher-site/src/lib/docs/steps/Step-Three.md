@@ -12,7 +12,7 @@ published: true
 
 ## We made a deliberate choice to lean on the guidance of our support network and trust the process of the protocol to help manage the things we cannot handle alone.
 
-Sometimes, the problems you face in high school—whether it’s a failing grade that feels like a dead end, a falling out with a best friend, or a personal crisis at home—can feel so massive that they seem like a wall you can’t climb over. You might feel like your life is a car spinning out of control.
+Sometimes, the problems you face in high school—whether it's a failing grade that feels like a dead end, a falling out with a best friend, or a personal crisis at home—can feel so massive that they seem like a wall you can't climb over. You might feel like your life is a car spinning out of control.
 
 The biggest lie we tell ourselves in those moments is: **"Nothing can be done."**
 
@@ -28,7 +28,7 @@ This means finding a trusted teacher, a counselor, a parent, or a mentor and say
 
 ### Why This is an Act of Strength
 
-To a student, "giving up a problem" might feel like you're failing at being independent. It’s actually the opposite. True autonomy is knowing your own limits.
+To a student, "giving up a problem" might feel like you're failing at being independent. It's actually the opposite. True autonomy is knowing your own limits.
 
 Think of it like a professional athlete who gets injured. They don't try to perform surgery on themselves; they trust the team doctor to handle the medical side so they can focus on recovery.
 
@@ -54,7 +54,7 @@ To help students distinguish between Step Two (Asking for Help) and Step Three (
 1. Identify a current "Heavy Lift": Is there something in your life right now that feels "insurmountable"? (A grade, a conflict, a secret, a fear?)
 2. Ask yourself:
    - Can I solve this if someone just gives me a little advice? (This is Step Two).
-   - Or, is this taking up so much space in my head that I can’t focus on anything else? (This is Step Three).
-3. The Action: If it’s a Step Three problem, who is the one person you trust enough to "hand the reins" to today?
+   - Or, is this taking up so much space in my head that I can't focus on anything else? (This is Step Three).
+3. The Action: If it's a Step Three problem, who is the one person you trust enough to "hand the reins" to today?
 
 </TeacherOnly>

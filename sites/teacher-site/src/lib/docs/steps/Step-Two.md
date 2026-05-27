@@ -20,8 +20,8 @@ Think about the groups you might already belong to. If you are on a sports team,
 
 Every once in a while, though, you might feel the urge to push people away and go it on your own. This usually happens in one of two ways, and both are dangerous traps:
 
-- **Acting Superior (Ego)**: You might start thinking, “I don’t need these people, I can do this better myself,” or “Nobody else understands what I’m doing.”
-- **Acting Inferior (Insecurity)**: You might start thinking, “I don’t fit in with them,” “I’m dragging the team down,” or “I don’t want to be a burden by asking for help.”
+- **Acting Superior (Ego)**: You might start thinking, “I don't need these people, I can do this better myself,” or “Nobody else understands what I'm doing.”
+- **Acting Inferior (Insecurity)**: You might start thinking, “I don't fit in with them,” “I'm dragging the team down,” or “I don't want to be a burden by asking for help.”
 
 Whether you isolate yourself because you think you are better than everyone else, or because you think you are worse, the result is exactly the same: You end up entirely alone.
 
@@ -52,11 +52,11 @@ Look at your map. If you feel "unmanageable" (Step One), which circle are you mo
 
 ---
 
-## Teacher’s Guide: Discussion Starters
+## Teacher's Guide: Discussion Starters
 
 If you are presenting this in person, here are two questions to spark a conversation with the class:
 
-- **The "Superior" Trap:** "Why is it sometimes harder to ask for help when you’re 'the smart kid' or the 'star athlete' than when you’re struggling?" (This addresses the ego/superiority concept).
+- **The "Superior" Trap:** "Why is it sometimes harder to ask for help when you're 'the smart kid' or the 'star athlete' than when you're struggling?" (This addresses the ego/superiority concept).
 - **The "Inferior" Trap:** "If a friend came to you asking for help with a math problem, would you think they were 'weak' or 'burdensome'? If not, why do we think that about ourselves when we need help?"
 
 ### Why this works for Freshmen:

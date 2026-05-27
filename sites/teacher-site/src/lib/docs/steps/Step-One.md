@@ -9,14 +9,14 @@ published: true
 ## As a student, I realize my life can get out of control, and as a result, it can become unmanagable.
 
 The transition from middle school into high school can be a jarring experience. Almost overnight, the expectations placed on you by teachers, parents, and even your peers drastically change. High school is a massive step closer to being an independent person and, eventually, an adult. Whether your goal is college, a trade, or jumping straight into the workforce, the adults in your life suddenly expect you to have a higher maturity level and intense self-discipline.
-In reality, it’s impossible to just flip a switch and have it all figured out. But even so, the external pressure begins to grow. You might suddenly be dealing with:
+In reality, it's impossible to just flip a switch and have it all figured out. But even so, the external pressure begins to grow. You might suddenly be dealing with:
 
 - A heavier, faster-paced workload.
 - Shifting friend groups and new social dynamics.
 - The pressure to figure out "what you want to do with your life."
 - Managing your own time without someone constantly looking over your shoulder.
 
-It is completely normal if this feels unmanageable. Don’t worry—it is going to be okay.
+It is completely normal if this feels unmanageable. Don't worry—it is going to be okay.
 
 ### The Autonomy Solution: Finding Your Focus
 

@@ -113,8 +113,14 @@ details > summary {
   --color: var(--brand-primary);
   background: var(--color);
 
-  /* SAFARI FIX: Use direct math instead of @function */
-  --safe-contrast: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
+  /* 1. DEFAULT/LIGHT THEME: Mix with a very deep ink tint of your brand hue */
+  --safe-contrast: color-mix(in oklch, var(--color), oklch(0.15 0.02 290) 90%);
+
+  /* 2. DARK THEME OVERRIDE: Mix with a soft, glowing cream tint of your brand hue */
+  /* Adjust ':root.dark &' or 'html[data-theme="dark"] &' to match your theme setup */
+  :root.dark & {
+    --safe-contrast: color-mix(in oklch, var(--color), oklch(0.96 0.01 290) 85%);
+  }
 
   color: var(--safe-contrast) !important;
   padding: var(--gap-2);
@@ -136,14 +142,17 @@ details > summary {
 
   /* Target all text elements to use the calculated contrast color */
   h1,
-	h2,
-	h3,
-	p,
-	a,
-	/*strong,*/
-	span,
-	li,
-	li:before {
+  h2,
+  h3,
+  h4,
+  p,
+  a,
+  /*strong,*/
+  span,
+  li,
+  li:before,
+  .reading-time,
+  .rt-number {
     color: var(--safe-contrast);
   }
 
@@ -173,7 +182,7 @@ details > summary {
     font-size: var(--font-size-3);
     border-radius: 100px;
     text-decoration: none;
-    background-color: rgb(from var(--fg) r g b / 0.25);
+    background-color: rgb(from var(--safe-contrast) r g b / 0.25);
 
     &:hover {
       text-decoration: underline;

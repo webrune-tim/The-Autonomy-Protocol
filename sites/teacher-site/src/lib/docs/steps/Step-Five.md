@@ -26,7 +26,7 @@ When you speak the truth to someone in your **Support Network**, the "ghost" of 
 
 #### **Autonomy Through Honesty**
 
-This isn't a confession for punishment—it’s a release for freedom. An autonomous person is a person who is free. By being honest with one person, you are deciding that your past choices no longer get to define your future.
+This isn't a confession for punishment—it's a release for freedom. An autonomous person is a person who is free. By being honest with one person, you are deciding that your past choices no longer get to define your future.
 
 <TeacherOnly>
 
@@ -36,6 +36,6 @@ This isn't a confession for punishment—it’s a release for freedom. An autono
 
 1. Select the Partner: Look at your Support Map from Step Two. Who is the person you feel safest with?
 2. Pick One Item: Look at your Accountability Audit from Step Four. Pick the one habit or choice that feels the heaviest.
-3. The Script: Use these words: "I’m working on the Autonomy Protocol, and I need to voice something from my inventory. I made a choice to [X], and it’s been weighing on me. I’m telling you because I want to be accountable for it."
+3. The Script: Use these words: "I'm working on the Autonomy Protocol, and I need to voice something from my inventory. I made a choice to [X], and it's been weighing on me. I'm telling you because I want to be accountable for it."
 
 </TeacherOnly>

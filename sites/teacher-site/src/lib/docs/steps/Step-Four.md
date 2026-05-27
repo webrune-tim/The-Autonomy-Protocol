@@ -8,13 +8,13 @@ published: true
 
 ## We conducted a fearless and honest inventory of our habits, choices, and how our actions impact ourselves and others.
 
-In **Step One**, we talked about things you _can’t_ control. In **Step Four**, we look at the one thing you **can** control: **You.** Most of the time, when things go wrong in high school, it’s easier to blame the "mean" teacher, the "annoying" parent, or the "fake" friend. While those people might actually be difficult, Step Four asks you to stop looking at them and start looking at your own **"inventory."**
+In **Step One**, we talked about things you _can't_ control. In **Step Four**, we look at the one thing you **can** control: **You.** Most of the time, when things go wrong in high school, it's easier to blame the "mean" teacher, the "annoying" parent, or the "fake" friend. While those people might actually be difficult, Step Four asks you to stop looking at them and start looking at your own **"inventory."**
 
-> **The Analogy:** Think of an inventory like a store manager checking the shelves. They don’t get emotional about a broken jar of pickles; they just write it down so they can fix the order next time. You are doing the same with your life.
+> **The Analogy:** Think of an inventory like a store manager checking the shelves. They don't get emotional about a broken jar of pickles; they just write it down so they can fix the order next time. You are doing the same with your life.
 
 ### **The "Fearless" Part**
 
-Why do we use the word **"fearless"**? Because looking at your own mistakes is scary. It’s much easier to hide behind excuses.
+Why do we use the word **"fearless"**? Because looking at your own mistakes is scary. It's much easier to hide behind excuses.
 
 Being fearless means being brave enough to say:
 
@@ -26,7 +26,7 @@ Being fearless means being brave enough to say:
 The most important part of this step is understanding that **you are not your inventory.**
 
 - **The Habit:** If your inventory shows you are lazy with homework, that doesn't mean _you_ are a lazy person. It means you have a **habit of procrastination**.
-- **The Choice:** If your inventory shows you’ve been mean to your siblings, it doesn't mean you are a "bad kid." It means you made a **choice** to take your stress out on them.
+- **The Choice:** If your inventory shows you've been mean to your siblings, it doesn't mean you are a "bad kid." It means you made a **choice** to take your stress out on them.
 
 **Inventory = Facts.** Once you have the facts, you can change the habits.
 
