@@ -159,7 +159,7 @@
 	a:hover,
 	a.active {
 		background: rgb(from var(--brand-secondary) r g b / 0.3);
-		color: oklch(from var(--brand-primary) calc(l - 0.3) c h);
+		color: var(--fg);
 	}
 
 	.link-button {

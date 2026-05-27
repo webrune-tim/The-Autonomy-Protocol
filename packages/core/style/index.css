@@ -114,12 +114,12 @@ details > summary {
   background: var(--color);
 
   /* 1. DEFAULT/LIGHT THEME: Mix with a very deep ink tint of your brand hue */
-  --safe-contrast: color-mix(in oklch, var(--color), oklch(0.15 0.02 290) 90%);
+  --safe-contrast: color-mix(in oklch, var(--color), oklch(0.96 0.01 290) 85%);
 
   /* 2. DARK THEME OVERRIDE: Mix with a soft, glowing cream tint of your brand hue */
   /* Adjust ':root.dark &' or 'html[data-theme="dark"] &' to match your theme setup */
   :root.dark & {
-    --safe-contrast: color-mix(in oklch, var(--color), oklch(0.96 0.01 290) 85%);
+    --safe-contrast: color-mix(in oklch, var(--color), oklch(0.15 0.02 290) 90%);
   }
 
   color: var(--safe-contrast) !important;
