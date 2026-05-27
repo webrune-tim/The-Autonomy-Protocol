@@ -2,7 +2,7 @@
 	import { thickMargins } from '@autonomy/actions'
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-primary)">
+<section class="angled-bottom-box" style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)">
 	<h1>Shape the Future of Student Sovereignty: Join Our Team</h1>
 	<p>
 		<strong>The Autonomy Protocol</strong> is more than just a curriculum; it is a
@@ -17,7 +17,7 @@
 	</p>
 </section>
 
-<section class="angled-top-bottom-box" style="--color: var(--brand-secondary)">
+<section class="angled-top-bottom-box" style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)">
 	<h2>Our Core Framework</h2>
 
 	<p>
@@ -39,7 +39,7 @@
 <section
 	class="angled-top-bottom-box"
 	use:thickMargins
-	style="--color: var(--brand-tertiary)"
+	style="--color: var(--brand-tertiary); "--text_color: var(--brand-tertiary-contrast)
 >
 	<h2>Why Your Expertise is Critical</h2>
 
