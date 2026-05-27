@@ -6,24 +6,24 @@
 	let { children } = $props()
 
 	const colors = [
-		'var(--brand-primary)',
-		'var(--brand-secondary)',
-		'var(--brand-tertiary)'
+		{bg: 'var(--brand-primary)', fg: 'var(--brand-primary-contrast)'},
+		{bg: 'var(--brand-secondary)', fg: 'var(--brand-secondary-contrast)'},
+		{bg: 'var(--brand-tertiary)', fg: 'var(--brand-tertiary-contrast)'}
 	]
 	const color = colors[Math.floor(Math.random() * colors.length)]
 
 	const alt_color = () => {
-		if (color === colors[0]) {
-			return colors[1]
-		} else if (color === colors[1]) {
-			return colors[2]
+		if (color.bg === colors[0].bg) {
+			return colors[1].bg
+		} else if (color.bg === colors[1].bg) {
+			return colors[2].bg
 		} else {
-			return colors[0]
+			return colors[0].bg
 		}
 	}
 </script>
 
-<article class="unangled-box no-bottom-margin" style="--color: {color}">
+<article class="unangled-box no-bottom-margin" style="--color: {color.bg}; --text_color: {color.fg} !important;">
 	<nav>
 		<a class="cta" href="/resources">
 			<ArrowLeft size={32} />
@@ -86,27 +86,8 @@
 		}
 	}
 
-	:global(h4) {
+	/* :global(h4) {
 		color: var(--bg);
-	}
-
-	/* .back-link {
-		display: inline-block;
-		color: var(--bg);
-		font-size: var(--font-size-4);
-		font-weight: 700;
-		text-transform: uppercase;
-		border: 2px solid var(--bg);
-		padding: var(--gap-1);
-		margin: var(--gap-1) 0;
-		border-radius: 1000px;
-
-		&:hover {
-			background-color: rgb(from var(--bg) r g b / 0.1);
-			color: var(--bg);
-			cursor: pointer;
-			text-decoration: none;
-		}
 	} */
 
 	nav,

@@ -110,19 +110,21 @@ details > summary {
 .angled-bottom-box,
 .angled-top-bottom-box,
 .unangled-box {
+  /* 1. Configuration Fallbacks: Prioritize inline properties */
   --color: var(--brand-primary);
+  --local-text: var(--text_color, var(--border-color-contrast));
   background: var(--color);
 
-  /* 1. DEFAULT/LIGHT THEME: Mix with a very deep ink tint of your brand hue */
+  /* 2. DEFAULT/LIGHT THEME FALLBACK */
   --safe-contrast: color-mix(in oklch, var(--color), oklch(0.96 0.01 290) 85%);
 
-  /* 2. DARK THEME OVERRIDE: Mix with a soft, glowing cream tint of your brand hue */
-  /* Adjust ':root.dark &' or 'html[data-theme="dark"] &' to match your theme setup */
+  /* 3. DARK THEME OVERRIDE */
   :root.dark & {
     --safe-contrast: color-mix(in oklch, var(--color), oklch(0.15 0.02 290) 90%);
   }
 
-  color: var(--safe-contrast) !important;
+  /* 4. Apply configured variables to current element block */
+  color: var(--local-text);
   padding: var(--gap-2);
   margin-bottom: var(--gap-2);
 
@@ -140,20 +142,21 @@ details > summary {
     font-size: var(--font-size-3);
   }
 
-  /* Target all text elements to use the calculated contrast color */
+  /* Target all internal layout text elements explicitly */
   h1,
   h2,
   h3,
   h4,
   p,
   a,
-  /*strong,*/
+  strong,
   span,
   li,
   li:before,
   .reading-time,
-  .rt-number {
-    color: var(--safe-contrast);
+  .rt-number,
+  .rt-text {
+    color: var(--local-text);
   }
 
   h1,
@@ -175,14 +178,14 @@ details > summary {
     align-items: center;
     max-width: fit-content;
     gap: 0.5rem;
-    color: var(--safe-contrast) !important;
+    color: var(--local-text) !important;
     padding: 1rem;
     margin-right: 2rem;
-    border: clamp(2px, 4svw, 4px) solid var(--safe-contrast);
+    border: clamp(2px, 4svw, 4px) solid var(--local-text);
     font-size: var(--font-size-3);
     border-radius: 100px;
     text-decoration: none;
-    background-color: rgb(from var(--safe-contrast) r g b / 0.25);
+    background-color: rgb(from var(--local-text) r g b / 0.25);
 
     &:hover {
       text-decoration: underline;
@@ -190,21 +193,21 @@ details > summary {
   }
 }
 
-/* 2. Set a default offset for full-width boxes */
+/* Set a default offset for full-width boxes */
 .angled-bottom-box,
 .angled-top-box,
 .angled-top-bottom-box {
   --offset-x: 0px;
 }
 
-/* 3. Apply the margin and map it to the offset variable */
+/* Apply the margin and map it to the offset variable */
 .thick-margins {
   margin-left: var(--thick-margin);
   margin-right: var(--thick-margin);
   --offset-x: var(--thick-margin);
 }
 
-/* 4. Update polygons to stretch outward by the offset amount */
+/* Update polygons to stretch outward by the offset amount */
 .angled-bottom-box {
   clip-path: polygon(
     calc(-1 * var(--offset-x)) 0,
@@ -227,12 +230,14 @@ details > summary {
 }
 
 .angled-top-bottom-box {
+  /* Let inline variables override these initial assignments dynamically */
   --color: var(--brand-secondary);
   background: var(--color);
 
-  /* Apply safe contrast logic for the orange box too */
+  /* Fallback safe contrast calculations if no style token is assigned inline */
   --safe-contrast: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
-  color: var(--safe-contrast) !important;
+  --local-text: var(--text_color, var(--safe-contrast));
+  color: var(--local-text);
 
   clip-path: polygon(
     calc(-1 * var(--offset-x)) var(--angle-height),
@@ -251,35 +256,28 @@ details > summary {
 }
 
 .bold-border-box {
-  /* Keep the structural border matching the brand accent */
   --border-color: var(--brand-primary);
   --color: oklch(from var(--border-color) calc(l - 0.3) c h);
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
 
-  /* Fallback body text color inside the card */
-  color: var(--fg);
+  /* Let inline --text_color specify text value inside the layout block, fallback to global foreground */
+  --local-text: var(--text_color, var(--fg));
+  color: var(--local-text);
 
-  /* FIX: Map your headings and highlights to your high-contrast
-    print engine instead of the raw, dark border color!
-  */
   h2,
   h3,
   h4,
   h5,
   strong,
   li::before {
-    color: var(--safe-contrast);
+    color: var(--safe-contrast, var(--local-text));
   }
 }
 
 .auto-contrast {
-  --color: var(--brand-primary); /* 1. Extract the lightness from the brand color */
+  --color: var(--brand-primary);
   --lightness: from var(--color) l;
-
-  /* 2. Apply your threshold math directly in the property */
-  /* If L > 0.54, this becomes a huge negative number (0% lightness)
-     If L < 0.54, this becomes a huge positive number (100% lightness) */
   background-color: var(--color);
   color: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
 }

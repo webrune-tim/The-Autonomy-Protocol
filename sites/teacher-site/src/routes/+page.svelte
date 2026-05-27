@@ -1,199 +1,195 @@
 <script lang="ts">
-	import { thickMargins } from '@autonomy/actions'
-	import { ArrowBigRight, Map, Route, ShieldCog } from '@lucide/svelte'
+    import { thickMargins } from '@autonomy/actions'
+    import { ArrowBigRight, Map, Route, ShieldCog } from '@lucide/svelte'
 </script>
 
 <section
-	class="angled-bottom-box"
-	style="--color: var(--brand-primary); color: var(--brand-primary-contrast);"
+    class="angled-bottom-box"
+    style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast);"
 >
-	<h1>Empowering Student Agency. Transforming Campus Culture</h1>
-	<p>
-		A scalable socio-emotional curriculum designed to build intrinsic accountability
-		and self-governance in high school students based on the transformative power of
-		the 12-Step Reconstructive Process and the Five Agreements.
-	</p>
-	<a class="cta" href="/curriculum">
-		<Route size={32} /> Access Curriculum <ArrowBigRight size={32} />
-	</a>
+    <h1>Empowering Student Agency. Transforming Campus Culture</h1>
+    <p>
+        A scalable socio-emotional curriculum designed to build intrinsic accountability
+        and self-governance in high school students based on the transformative power of
+        the 12-Step Reconstructive Process and the Five Agreements.
+    </p>
+    <a class="cta" href="/curriculum">
+        <Route size={32} /> Access Curriculum <ArrowBigRight size={32} />
+    </a>
 </section>
 
 <section
-	class="angled-top-bottom-box"
-	use:thickMargins
-	style="--color: var(--brand-secondary); color: var(--brand-secondary-contrast);"
+    class="angled-top-bottom-box"
+    use:thickMargins
+    style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast);"
 >
-	<div class="title-grid">
-		<h2>The Problem:</h2>
-	</div>
-	<ol>
-		<li>
-			<strong>Resource Drain:</strong> Traditional discipline relies on external regulation
-			that exhausts staff energy.
-		</li>
-		<li>
-			<strong>Educator Burnout:</strong> Top-down enforcement fuels burnout and prevents
-			proactive teaching.
-		</li>
-		<li>
-			<strong>Student Dependency:</strong> Current systems often leave students dependent
-			on adults to solve conflicts.
-		</li>
-	</ol>
+    <div class="title-grid">
+        <h2>The Problem:</h2>
+    </div>
+    <ol>
+        <li>
+            <strong>Resource Drain:</strong> Traditional discipline relies on external regulation
+            that exhausts staff energy.
+        </li>
+        <li>
+            <strong>Educator Burnout:</strong> Top-down enforcement fuels burnout and prevents
+            proactive teaching.
+        </li>
+        <li>
+            <strong>Student Dependency:</strong> Current systems often leave students dependent
+            on adults to solve conflicts.
+        </li>
+    </ol>
 </section>
 
 <section
-	class="angled-top-box"
-	style="--color: var(--brand-tertiary); color: var(--brand-tertiary-contrast);"
-	use:thickMargins
+    class="angled-top-box"
+    style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast);"
+    use:thickMargins
 >
-	<div class="title-grid">
-		<h2>The Opportunity:</h2>
-	</div>
-	<ol>
-		<li>
-			<strong>Student-Led Accountability:</strong> Shift the burden of responsibility back
-			to the student.
-		</li>
-		<li>
-			<strong>Actionable Regulation:</strong> Equip staff with structured tools for emotional
-			and social navigation.
-		</li>
-		<li>
-			<strong>Proactive Climate:</strong> Move toward a campus culture of mutual respect
-			and restorative growth.
-		</li>
-	</ol>
+    <div class="title-grid">
+        <h2>The Opportunity:</h2>
+    </div>
+    <ol>
+        <li>
+            <strong>Student-Led Accountability:</strong> Shift the burden of responsibility back
+            to the student.
+        </li>
+        <li>
+            <strong>Actionable Regulation:</strong> Equip staff with structured tools for emotional
+            and social navigation.
+        </li>
+        <li>
+            <strong>Proactive Climate:</strong> Move toward a campus culture of mutual respect
+            and restorative growth.
+        </li>
+    </ol>
 </section>
 
 <section>
-	<div class="grid">
-		<section
-			class="bold-border-box"
-			style="--border-color: var(--brand-primary); --title-color: var(--text-primary-print);"
-		>
-			<div class="title-grid">
-				<div class="flex-column">
-					<h3>The Accountability Cycle</h3>
-					<span class="tier-label">(Tier 1: Restoration)</span>
-				</div>
-			</div>
-			<ol class="colored-list">
-				<li>
-					<strong>Acknowledge Patterns:</strong> Identify the problem.
-				</li>
-				<li>
-					<strong>Self-Assess:</strong> Conduct an objective inventory.
-				</li>
-				<li>
-					<strong>Repair Harm:</strong> Take direct action to fix relationships.
-				</li>
-				<li>
-					<strong>Mentor Others:</strong> Reflect and support peers.
-				</li>
-				<li>
-					<strong>Stay Present:</strong> Maintain discernment in action.
-				</li>
-			</ol>
-		</section>
+    <div class="grid">
+        <section
+            class="bold-border-box"
+            style="--border-color: var(--brand-primary); --title-color: var(--text-primary-print); --text_color: var(--brand-primary-contrast);"
+        >
+            <div class="title-grid">
+                <div class="flex-column">
+                    <h3>The Accountability Cycle</h3>
+                    <span class="tier-label">(Tier 1: Restoration)</span>
+                </div>
+            </div>
+            <ol class="colored-list">
+                <li>
+                    <strong>Acknowledge Patterns:</strong> Identify the problem.
+                </li>
+                <li>
+                    <strong>Self-Assess:</strong> Conduct an objective inventory.
+                </li>
+                <li>
+                    <strong>Repair Harm:</strong> Take direct action to fix relationships.
+                </li>
+                <li>
+                    <strong>Mentor Others:</strong> Reflect and support peers.
+                </li>
+                <li>
+                    <strong>Stay Present:</strong> Maintain discernment in action.
+                </li>
+            </ol>
+        </section>
 
-		<section
-			class="bold-border-box"
-			style="--border-color: var(--brand-secondary); --title-color: var(--text-secondary-print);"
-		>
-			<div class="title-grid">
-				<div class="flex-column">
-					<h3>The Integrity Shield</h3>
-					<span class="tier-label">(Tier 2: Prevention)</span>
-				</div>
-			</div>
+        <section
+            class="bold-border-box"
+            style="--border-color: var(--brand-secondary); --title-color: var(--text-secondary-print);"
+        >
+            <div class="title-grid">
+                <div class="flex-column">
+                    <h3>The Integrity Shield</h3>
+                    <span class="tier-label">(Tier 2: Prevention)</span>
+                </div>
+            </div>
 
-			<ol class="colored-list" style="--list-accent: var(--text-secondary-print);">
-				<li>
-					<strong>Communicate Clearly:</strong> Replace rumors with honesty.
-				</li>
-				<li>
-					<strong>Set Boundaries:</strong> Build resilience against negativity.
-				</li>
-				<li>
-					<strong>Seek Clarity:</strong> Challenge narratives with facts.
-				</li>
-				<li>
-					<strong>Balance Effort:</strong> Sustain growth through high stress.
-				</li>
-				<li>
-					<strong>Practice Presence:</strong> Evaluate impulses, find truth.
-				</li>
-			</ol>
-		</section>
-	</div>
+            <ol class="colored-list" style="--list-accent: var(--text-secondary-print);">
+                <li>
+                    <strong>Communicate Clearly:</strong> Replace rumors with honesty.
+                </li>
+                <li>
+                    <strong>Set Boundaries:</strong> Build resilience against negativity.
+                </li>
+                <li>
+                    <strong>Seek Clarity:</strong> Challenge narratives with facts.
+                </li>
+                <li>
+                    <strong>Balance Effort:</strong> Sustain growth through high stress.
+                </li>
+                <li>
+                    <strong>Practice Presence:</strong> Evaluate impulses, find truth.
+                </li>
+            </ol>
+        </section>
+    </div>
 </section>
 
 <section
-	class="bold-border-box margin-top flex-around"
-	style="--border-color: var(--fg)"
+    class="bold-border-box margin-top flex-around"
+    style="--border-color: var(--fg);"
 >
-	<a class="link" href="/join-us">
-		<Route size={32} /> Join Our Team <ArrowBigRight size={24} />
-	</a>
-	<a class="link" href="/mission">
-		<ShieldCog size={32} /> Our Mission <ArrowBigRight size={24} />
-	</a>
-	<a class="link" href="/road-map">
-		<Map size={32} /> Road Map <ArrowBigRight size={24} />
-	</a>
+    <a class="link" href="/join-us">
+        <Route size={32} /> Join Our Team <ArrowBigRight size={24} />
+    </a>
+    <a class="link" href="/mission">
+        <ShieldCog size={32} /> Our Mission <ArrowBigRight size={24} />
+    </a>
+    <a class="link" href="/road-map">
+        <Map size={32} /> Road Map <ArrowBigRight size={24} />
+    </a>
 </section>
 
 <style>
-	.cta,
-	.link {
-		display: inline-flex !important;
-		align-items: center;
-		gap: var(--gap-1);
-		font-weight: bold;
-		text-decoration: none;
-	}
+    .cta,
+    .link {
+        display: inline-flex !important;
+        align-items: center;
+        gap: var(--gap-1);
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-	.cta {
-		margin-top: var(--gap-1);
-		color: inherit;
-	}
+    .cta {
+        margin-top: var(--gap-1);
+        color: inherit;
+    }
 
-	.link {
-		margin-top: 0;
-		font-size: 1.5rem;
-		/* Use a reliable theme foreground fallback so link arrays remain high contrast */
-		color: var(--text-link);
-		transition: color 0.2s ease;
-	}
+    .link {
+        margin-top: 0;
+        font-size: 1.5rem;
+        color: var(--text-link);
+        transition: color 0.2s ease;
+    }
 
-	.link:hover {
-		color: var(--text-link-hover);
-	}
+    .link:hover {
+        color: var(--text-link-hover);
+    }
 
-	/* Card Header Context Enforcement */
-	h3 {
-		color: var(--title-color, var(--fg));
-		margin: 0;
-	}
+    h3 {
+        color: var(--title-color, var(--fg));
+        margin: 0;
+    }
 
-	.tier-label {
-		color: var(--fg);
-		opacity: 0.85;
-		font-size: 0.95rem;
-	}
+    .tier-label {
+        color: var(--fg);
+        opacity: 0.85;
+        font-size: 0.95rem;
+    }
 
-	/* Fix card body list item accessibility in dark and light views */
-	.colored-list {
-		color: var(--fg);
+    .colored-list {
+        color: var(--fg);
 
-		li {
-			margin-bottom: 0.5rem;
+        li {
+            margin-bottom: 0.5rem;
 
-			strong {
-				/* Uses the localized variable or falls back directly to the primary mix token */
-				color: var(--list-accent, var(--text-primary-print));
-			}
-		}
-	}
+            strong {
+                color: var(--list-accent, var(--text-primary-print));
+            }
+        }
+    }
 </style>

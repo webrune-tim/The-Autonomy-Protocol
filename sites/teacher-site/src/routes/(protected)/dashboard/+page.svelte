@@ -810,7 +810,7 @@
 	}
 
 	.settings-btn {
-		background: var(--brand-tertiary);
+		background: var(--brand-primary);
 		color: var(--bg);
 	}
 
