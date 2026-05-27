@@ -260,7 +260,7 @@ details > summary {
   h5,
   strong,
   li::before {
-    color: var(--color);
+    color: var(--safe-contrast);
   }
 }
 
