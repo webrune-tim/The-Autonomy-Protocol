@@ -41,7 +41,7 @@
 	}
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-primary)">
+<section class="angled-bottom-box" style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)">
 	<h1>Resources</h1>
 	<p class="description">
 		A centralized library of worksheets, frameworks, and assessment guides to
