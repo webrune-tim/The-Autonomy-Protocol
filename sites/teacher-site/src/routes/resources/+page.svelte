@@ -11,7 +11,7 @@
 		freshmen: 'var(--brand-tertiary)',
 		seniors: 'var(--brand-secondary)'
 	}
-    const tabColors: Record<Tab, string> = {
+    const tabContrastColors: Record<Tab, string> = {
 		steps: 'var(--brand-tertiary-contrast)',
 		agreements: 'var(--brand-secondary-contrast)',
 		freshmen: 'var(--brand-tertiary-contrast)',
