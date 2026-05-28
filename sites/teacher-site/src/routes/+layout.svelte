@@ -21,6 +21,7 @@
 	import { Pill } from '@autonomy/pill'
 	import { ScrollToTop } from '@autonomy/scroll-to-top'
 	import { themeState } from '@autonomy/theme-toggle'
+	import { motionState } from '$lib/motion.svelte'
 
 	interface Props {
 		data: LayoutData
@@ -77,7 +78,7 @@
 	})
 
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return
+		if (!document.startViewTransition || motionState.reduced) return
 
 		return new Promise((resolve) => {
 			// Determine if we are going "back"
@@ -163,6 +164,13 @@
 </div>
 
 <style>
+	@media (prefers-reduced-motion: reduce) {
+		:global(*) {
+			transition: none !important;
+			animation: none !important;
+		}
+	}
+
 	/* --- Default (Forward) Transitions --- */
 	:global(::view-transition-group(root)) {
 		animation-duration: 200ms;

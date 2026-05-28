@@ -1,6 +1,6 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
-	import { ArrowBigRight, Route } from '@lucide/svelte'
+	import { Layers, Milestone, Route, ShieldCheck, Wrench } from '@lucide/svelte'
 </script>
 
 <section
@@ -23,7 +23,7 @@
 		to the districts and educators who need it most.
 	</p>
 	<a class="cta" href="#how-you-can-help">
-		<Route /> Browse Opportunities <ArrowBigRight />
+		<Route /> Browse Opportunities
 	</a>
 </section>
 
@@ -63,19 +63,17 @@
 	<h2>Choose your Impact</h2>
 
 	<section class="donations-list">
-		<a class="cta" href="/#">
-			<Route /> $25 - The Individual Inventory <ArrowBigRight />
+		<a class="cta-donate" href="#">
+			<Layers /> $25 - The Individual Inventory
 		</a>
-		<a class="cta" href="/#">
-			<Route /> $100 - The Integrity Shield <ArrowBigRight />
+		<a class="cta-donate" href="#">
+			<ShieldCheck /> $100 - The Integrity Shield
 		</a>
-		<a class="cta" href="/#">
-			<Route /> $500 - The Foundation Pillar <ArrowBigRight />
+		<a class="cta-donate" href="#">
+			<Milestone /> $500 - The Foundation Pillar
 		</a>
-		<a class="cta" href="/#">
-			<Route /> <strong>Custom Amount</strong> - Build the Future <ArrowBigRight
-				size={24}
-			/>
+		<a class="cta-donate" href="#">
+			<Wrench /> <strong>Custom Amount</strong> - Build the Future
 		</a>
 	</section>
 </section>

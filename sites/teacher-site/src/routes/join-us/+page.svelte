@@ -1,6 +1,6 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
-	import { ArrowBigRight, Route } from '@lucide/svelte'
+	import { Route } from '@lucide/svelte'
 </script>
 
 <section
@@ -20,7 +20,7 @@
 		profound principles into actionable, secular, and high-impact curriculum modules.
 	</p>
 	<a class="cta" href="#how-you-can-help">
-		<Route /> Browse Opportunities <ArrowBigRight />
+		<Route /> Browse Opportunities
 	</a>
 </section>
 
@@ -94,7 +94,7 @@
 		</li>
 	</ol>
 	<a class="cta" href="/contact">
-		<Route /> Submit Your Interest <ArrowBigRight />
+		<Route /> Submit Your Interest
 	</a>
 </section>
 

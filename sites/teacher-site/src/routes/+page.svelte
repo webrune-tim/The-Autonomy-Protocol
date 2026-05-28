@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
-	import { ArrowBigRight, Route } from '@lucide/svelte'
+	import { Route } from '@lucide/svelte'
 </script>
 
 <section
@@ -14,10 +14,10 @@
 		the 12-Step Reconstructive Process and the Five Agreements.
 	</p>
 	<a class="cta" href="/mission">
-		<Route /> Explore the Framework <ArrowBigRight />
+		<Route /> Explore the Framework
 	</a>
 	<a class="cta" href="/curriculum">
-		<Route /> View Curriculum <ArrowBigRight />
+		<Route /> View Curriculum
 	</a>
 </section>
 
@@ -45,7 +45,7 @@
 	</ol>
 
 	<a class="cta" href="/road-map">
-		<Route /> See the Roadmap <ArrowBigRight />
+		<Route /> See the Roadmap
 	</a>
 </section>
 
@@ -73,7 +73,7 @@
 	</ol>
 
 	<a class="cta" href="/road-map">
-		<Route /> See the Roadmap <ArrowBigRight />
+		<Route /> See the Roadmap
 	</a>
 </section>
 

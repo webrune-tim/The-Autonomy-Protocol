@@ -1,5 +1,5 @@
 <script>
-	import { ArrowBigRight, Route } from '@lucide/svelte'
+	import { Route } from '@lucide/svelte'
 	import { thickMargins } from '@autonomy/actions'
 </script>
 
@@ -25,7 +25,7 @@
 	</p>
 
 	<a class="cta" href="/join-us">
-		<Route /> Join Us <ArrowBigRight />
+		<Route /> Join Us
 	</a>
 </section>
 
@@ -45,7 +45,7 @@
 	</p>
 
 	<a class="cta" href="/road-map">
-		<Route /> View the Strategy <ArrowBigRight />
+		<Route /> View the Strategy
 	</a>
 </section>
 
@@ -118,7 +118,7 @@
 			</ul>
 
 			<a class="cta" href="/curriculum">
-				<Route /> Explore the Curriculum <ArrowBigRight />
+				<Route /> Explore the Curriculum
 			</a>
 		</div>
 		<div

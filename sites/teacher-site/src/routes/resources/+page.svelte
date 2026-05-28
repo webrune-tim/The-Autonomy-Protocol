@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
-	import { ArrowBigRight, Route } from '@lucide/svelte'
+	import { Route } from '@lucide/svelte'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
 	type Tab = 'steps' | 'agreements' | 'freshmen' | 'seniors'
@@ -59,7 +59,7 @@
 		levels.
 	</p>
 	<a class="cta" href="/contact">
-		<Route /> Need Custom Support? <ArrowBigRight />
+		<Route /> Need Custom Support?
 	</a>
 
 	<nav class="angled-bottom-box bottom-padding">
