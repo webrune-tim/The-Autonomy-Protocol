@@ -39,7 +39,7 @@
 <section
 	class="angled-top-bottom-box"
 	use:thickMargins
-	style="--color: var(--brand-tertiary); "--text_color: var(--brand-tertiary-contrast)
+	style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast)"
 >
 	<h2>Why Your Expertise is Critical</h2>
 
