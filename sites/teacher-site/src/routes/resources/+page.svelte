@@ -74,7 +74,7 @@
 <section
 	class="angled-top-box thick-margins no-bottom-margin"
 	use:thickMargins
-	style="--color: {tabColors[activeTab]}; --text-color: {{tabContrastColor[activeTab]}}"
+	style="--color: {tabColors[activeTab]}; --text-color: {tabContrastColor[activeTab]}"
 >
 	<ResourceSnippets {activeTab} {allLinks} />
 </section>
