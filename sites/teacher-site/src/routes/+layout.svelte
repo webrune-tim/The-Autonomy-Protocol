@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte'
 	import { page } from '$app/stores'
+	import { onNavigate } from '$app/navigation'
 	import type { LayoutData } from './$types'
 
 	// Assets
@@ -72,6 +73,29 @@
 			window.removeEventListener('scroll', handleScroll)
 		}
 	})
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return
+
+		return new Promise((resolve) => {
+			// Determine if we are going "back"
+			const isBack = navigation.type === 'popstate'
+
+			if (isBack) {
+				document.documentElement.classList.add('back-transition')
+			}
+
+			const transition = document.startViewTransition(async () => {
+				resolve()
+				await navigation.complete
+			})
+
+			// Clean up the class after the transition finishes
+			transition.finished.finally(() => {
+				document.documentElement.classList.remove('back-transition')
+			})
+		})
+	})
 </script>
 
 <svelte:head>
@@ -137,6 +161,51 @@
 </div>
 
 <style>
+	/* --- Default (Forward) Transitions --- */
+	:global(::view-transition-group(root)) {
+		animation-duration: 200ms;
+	}
+
+	:global(::view-transition-old(root)) {
+		animation-name: slide-out-to-left;
+	}
+
+	:global(::view-transition-new(root)) {
+		animation-name: slide-in-from-right;
+	}
+
+	/* --- Backwards Transitions --- */
+	:global(.back-transition::view-transition-old(root)) {
+		animation-name: slide-out-to-right;
+	}
+
+	:global(.back-transition::view-transition-new(root)) {
+		animation-name: slide-in-from-left;
+	}
+
+	/* --- Keyframes --- */
+	@keyframes -global-slide-out-to-left {
+		to {
+			transform: translateX(-100%);
+		}
+	}
+	@keyframes -global-slide-in-from-right {
+		from {
+			transform: translateX(100%);
+		}
+	}
+
+	@keyframes -global-slide-out-to-right {
+		to {
+			transform: translateX(100%);
+		}
+	}
+	@keyframes -global-slide-in-from-left {
+		from {
+			transform: translateX(-100%);
+		}
+	}
+
 	.layout-wrapper {
 		max-width: 1000px;
 		margin: var(--gap-2) auto;
