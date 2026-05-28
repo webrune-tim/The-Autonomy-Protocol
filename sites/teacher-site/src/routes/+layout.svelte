@@ -42,6 +42,7 @@
 		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
 		{ href: '/contact', label: 'Contact' },
+		{ href: '/donate', label: 'Donate' },
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	])
 
@@ -52,7 +53,8 @@
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
-		{ href: '/contact', label: 'Contact' }
+		{ href: '/contact', label: 'Contact' },
+		{ href: '/donate', label: 'Donate' }
 	])
 
 	$effect(() => {

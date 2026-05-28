@@ -1,5 +1,6 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
+	import { ArrowBigRight, Route } from '@lucide/svelte'
 </script>
 
 <section
@@ -28,6 +29,10 @@
 			to foster cognitive clarity, emotional neutrality, and internal self-governance.
 		</li>
 	</ul>
+
+	<a class="cta" href="/resource">
+		<Route size={24} /> See Freshman Materials <ArrowBigRight size={24} />
+	</a>
 </section>
 
 <section
@@ -63,6 +68,10 @@
 			addressing the primary cause of educator burnout.
 		</li>
 	</ul>
+
+	<a class="cta" href="/curriculum">
+		<Route size={24} /> Review Senior Modules <ArrowBigRight size={24} />
+	</a>
 </section>
 
 <section
@@ -111,4 +120,8 @@
 			for workforce readiness.
 		</li>
 	</ul>
+
+	<a class="cta" href="/join-us">
+		<Route size={24} /> Get Involved <ArrowBigRight size={24} />
+	</a>
 </section>

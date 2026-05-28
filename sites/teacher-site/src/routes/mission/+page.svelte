@@ -3,7 +3,10 @@
 	import { thickMargins } from '@autonomy/actions'
 </script>
 
-<div class="angled-bottom-box" style="--color: var(--brand-tertiary)">
+<div
+	class="angled-bottom-box"
+	style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast)"
+>
 	<h1>Building the Foundation for Self-Governed Futures</h1>
 	<p>Why Pedagogical Autonomy Matters</p>
 </div>
@@ -11,7 +14,7 @@
 <section
 	class="angled-top-bottom-box"
 	use:thickMargins
-	style="--color: var(--brand-primary)"
+	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
 >
 	<h2>Our Mission</h2>
 	<p>
@@ -22,14 +25,14 @@
 	</p>
 
 	<a class="cta" href="/join-us">
-		<Route size={32} /> Join Us <ArrowBigRight size={32} />
+		<Route size={24} /> Join Us <ArrowBigRight size={24} />
 	</a>
 </section>
 
 <section
 	class="angled-top-box"
 	use:thickMargins
-	style="--color: var(--brand-secondary)"
+	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
 >
 	<h2>The Shift: From Punitive to Proactive</h2>
 	<p>
@@ -40,6 +43,10 @@
 		liabilities, we shift their motivation from fear of administrative discipline to
 		the intrinsic pursuit of personal and academic excellence.
 	</p>
+
+	<a class="cta" href="/road-map">
+		<Route size={24} /> View the Strategy <ArrowBigRight size={24} />
+	</a>
 </section>
 
 <section>
@@ -109,6 +116,10 @@
 					sources while remaining open to constructive feedback.
 				</li>
 			</ul>
+
+			<a class="cta" href="/curriculum">
+				<Route size={24} /> Explore the Curriculum <ArrowBigRight size={24} />
+			</a>
 		</div>
 		<div
 			class="bold-border-box"

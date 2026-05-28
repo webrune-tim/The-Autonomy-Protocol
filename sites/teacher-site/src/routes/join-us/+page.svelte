@@ -1,8 +1,12 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
+	import { ArrowBigRight, Route } from '@lucide/svelte'
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)">
+<section
+	class="angled-bottom-box"
+	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
+>
 	<h1>Shape the Future of Student Sovereignty: Join Our Team</h1>
 	<p>
 		<strong>The Autonomy Protocol</strong> is more than just a curriculum; it is a
@@ -15,9 +19,15 @@
 		We are looking for educators and mental health experts to help us translate these
 		profound principles into actionable, secular, and high-impact curriculum modules.
 	</p>
+	<a class="cta" href="#how-you-can-help">
+		<Route size={24} /> Browse Opportunities <ArrowBigRight size={24} />
+	</a>
 </section>
 
-<section class="angled-top-bottom-box" style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)">
+<section
+	class="angled-top-bottom-box"
+	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
+>
 	<h2>Our Core Framework</h2>
 
 	<p>
@@ -65,7 +75,7 @@
 	use:thickMargins
 	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
 >
-	<h2>How You Can Help</h2>
+	<h2 id="how-you-can-help">How You Can Help</h2>
 
 	<p>Instead of technical tasks, we invite you to own a piece of the philosophy:</p>
 
@@ -83,6 +93,9 @@
 			career paths (like Law, Arts, or Agriculture) so students see the real-world utility.
 		</li>
 	</ol>
+	<a class="cta" href="/contact">
+		<Route size={24} /> Submit Your Interest <ArrowBigRight size={24} />
+	</a>
 </section>
 
 <section

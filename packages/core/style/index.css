@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 html {
   overflow-x: clip;
@@ -105,6 +109,13 @@ details > summary {
   border: 0;
 }
 
+ul.donations-list {
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* --- Consolidated Angled Box Logic --- */
 .angled-top-box,
 .angled-bottom-box,
@@ -179,16 +190,20 @@ details > summary {
     max-width: fit-content;
     gap: 0.5rem;
     color: var(--local-text) !important;
-    padding: 1rem;
-    margin-right: 2rem;
+    padding: var(--gap-1);
+    margin-right: var(--gap-1);
     border: clamp(2px, 4svw, 4px) solid var(--local-text);
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-4);
     border-radius: 100px;
     text-decoration: none;
-    background-color: rgb(from var(--local-text) r g b / 0.25);
+    background-color: rgb(from var(--local-text) r g b / 0.15);
+
+    @media (max-width: 600px) {
+      margin-bottom: var(--gap-1);
+    }
 
     &:hover {
-      text-decoration: underline;
+      background-color: rgb(from var(--local-text) r g b / 0.25);
     }
   }
 }

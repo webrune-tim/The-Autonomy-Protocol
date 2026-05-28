@@ -1,8 +1,12 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
+	import { ArrowBigRight, Route } from '@lucide/svelte'
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)">
+<section
+	class="angled-bottom-box"
+	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
+>
 	<h1>Curriculum Overview</h1>
 
 	<span>From Survival to Sovereignty</span>
@@ -12,6 +16,9 @@
 		self-governance, providing students with a mental operating system that functions
 		under pressure.
 	</p>
+	<a class="cta" href="/resources">
+		<Route size={24} /> Download Lesson Guides <ArrowBigRight size={24} />
+	</a>
 </section>
 
 <section class="angled-top-bottom-box" use:thickMargins>
@@ -35,8 +42,8 @@
 			"The Courageous Question"—eliminating assumptions in rubrics and social cues.
 		</li>
 		<li>
-			<strong>Variable Capacity Workshop:</strong> Mapping out how to maintain a GPA
-			even when emotional or physical energy is at a seasonal low.
+			<strong>Variable Capacity Workshop:</strong> Mapping out how to maintain a GPA even
+			when emotional or physical energy is at a seasonal low.
 		</li>
 	</ul>
 
@@ -145,6 +152,9 @@
 			as a final graduation requirement.
 		</li>
 	</ul>
+	<a class="cta" href="/contact">
+		<Route size={24} /> Ready to Implement? <ArrowBigRight size={24} />
+	</a>
 </section>
 
 <section
