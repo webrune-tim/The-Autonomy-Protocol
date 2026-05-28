@@ -25,7 +25,7 @@
 	</p>
 
 	<a class="cta" href="/join-us">
-		<Route size={24} /> Join Us <ArrowBigRight size={24} />
+		<Route /> Join Us <ArrowBigRight />
 	</a>
 </section>
 
@@ -45,7 +45,7 @@
 	</p>
 
 	<a class="cta" href="/road-map">
-		<Route size={24} /> View the Strategy <ArrowBigRight size={24} />
+		<Route /> View the Strategy <ArrowBigRight />
 	</a>
 </section>
 
@@ -118,7 +118,7 @@
 			</ul>
 
 			<a class="cta" href="/curriculum">
-				<Route size={24} /> Explore the Curriculum <ArrowBigRight size={24} />
+				<Route /> Explore the Curriculum <ArrowBigRight />
 			</a>
 		</div>
 		<div

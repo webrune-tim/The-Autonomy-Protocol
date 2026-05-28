@@ -17,7 +17,7 @@
 		under pressure.
 	</p>
 	<a class="cta" href="/resources">
-		<Route size={24} /> Download Lesson Guides <ArrowBigRight size={24} />
+		<Route /> Download Lesson Guides <ArrowBigRight />
 	</a>
 </section>
 
@@ -153,7 +153,7 @@
 		</li>
 	</ul>
 	<a class="cta" href="/contact">
-		<Route size={24} /> Ready to Implement? <ArrowBigRight size={24} />
+		<Route /> Ready to Implement? <ArrowBigRight />
 	</a>
 </section>
 

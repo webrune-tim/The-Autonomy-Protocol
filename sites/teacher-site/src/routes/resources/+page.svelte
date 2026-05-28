@@ -59,7 +59,7 @@
 		levels.
 	</p>
 	<a class="cta" href="/contact">
-		<Route size={24} /> Need Custom Support? <ArrowBigRight size={24} />
+		<Route /> Need Custom Support? <ArrowBigRight />
 	</a>
 
 	<nav class="angled-bottom-box bottom-padding">
@@ -120,7 +120,7 @@
 		opacity: 0.8;
 		/* padding: 12px 16px; */
 		font-family: inherit;
-		font-size: var(--font-size-3);
+		font-size: var(--font-size-4);
 		font-weight: 800;
 		text-transform: uppercase;
 		cursor: pointer;

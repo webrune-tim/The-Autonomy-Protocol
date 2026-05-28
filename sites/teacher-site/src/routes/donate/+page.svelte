@@ -9,19 +9,21 @@
 >
 	<h1>Invest in Sovereignty</h1>
 	<p>
-		<strong>Your contribution converts theory into agency.</strong><br />
+		<strong class="larger-text"
+			>Your contribution converts theory into agency.</strong
+		><br /><br />
 		The Autonomy Protocol is more than a curriculum—it is a social infrastructure project.
 		We are building the tools that allow high school students to transition from being
 		managed by systems to governing themselves.
 	</p>
 
 	<p>
-		Financial support allows us to maintain Secular Rigor, expand our Digital
-		Resource Library, and keep the protocol accessible to the districts and educators
-		who need it most.
+		Financial support allows us to maintain <strong>Secular Rigor</strong>, expand
+		our <strong>Digital Resource Library</strong>, and keep the protocol accessible
+		to the districts and educators who need it most.
 	</p>
 	<a class="cta" href="#how-you-can-help">
-		<Route size={24} /> Browse Opportunities <ArrowBigRight size={24} />
+		<Route /> Browse Opportunities <ArrowBigRight />
 	</a>
 </section>
 
@@ -60,32 +62,22 @@
 >
 	<h2>Choose your Impact</h2>
 
-	<ul class="donations-list">
-		<li>
-			<a class="cta" href="/#">
-				<Route size={24} /> $25 - The Individual Inventory <ArrowBigRight
-					size={24}
-				/>
-			</a>
-		</li>
-		<li>
-			<a class="cta" href="/#">
-				<Route size={24} /> $100 - The Integrity Shield <ArrowBigRight size={24} />
-			</a>
-		</li>
-		<li>
-			<a class="cta" href="/#">
-				<Route size={24} /> $500 - The Foundation Pillar <ArrowBigRight size={24} />
-			</a>
-		</li>
-		<li>
-			<a class="cta" href="/#">
-				<Route size={24} /> <strong>Custom Amount</strong> - Build the Future <ArrowBigRight
-					size={24}
-				/>
-			</a>
-		</li>
-	</ul>
+	<section class="donations-list">
+		<a class="cta" href="/#">
+			<Route /> $25 - The Individual Inventory <ArrowBigRight />
+		</a>
+		<a class="cta" href="/#">
+			<Route /> $100 - The Integrity Shield <ArrowBigRight />
+		</a>
+		<a class="cta" href="/#">
+			<Route /> $500 - The Foundation Pillar <ArrowBigRight />
+		</a>
+		<a class="cta" href="/#">
+			<Route /> <strong>Custom Amount</strong> - Build the Future <ArrowBigRight
+				size={24}
+			/>
+		</a>
+	</section>
 </section>
 
 <section

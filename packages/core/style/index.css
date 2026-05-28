@@ -110,6 +110,9 @@ details > summary {
 }
 
 ul.donations-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
   list-style: none;
   list-style-type: none;
   padding: 0;
@@ -197,6 +200,12 @@ ul.donations-list {
     border-radius: 100px;
     text-decoration: none;
     background-color: rgb(from var(--local-text) r g b / 0.15);
+
+    svg {
+      width: 1.2em;
+      height: 1.2em;
+      flex-shrink: 0;
+    }
 
     @media (max-width: 600px) {
       margin-bottom: var(--gap-1);

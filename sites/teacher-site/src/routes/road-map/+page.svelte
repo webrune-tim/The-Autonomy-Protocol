@@ -31,7 +31,7 @@
 	</ul>
 
 	<a class="cta" href="/resource">
-		<Route size={24} /> See Freshman Materials <ArrowBigRight size={24} />
+		<Route /> See Freshman Materials <ArrowBigRight />
 	</a>
 </section>
 
@@ -70,7 +70,7 @@
 	</ul>
 
 	<a class="cta" href="/curriculum">
-		<Route size={24} /> Review Senior Modules <ArrowBigRight size={24} />
+		<Route /> Review Senior Modules <ArrowBigRight />
 	</a>
 </section>
 
@@ -122,6 +122,6 @@
 	</ul>
 
 	<a class="cta" href="/join-us">
-		<Route size={24} /> Get Involved <ArrowBigRight size={24} />
+		<Route /> Get Involved <ArrowBigRight />
 	</a>
 </section>

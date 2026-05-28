@@ -20,7 +20,7 @@
 		profound principles into actionable, secular, and high-impact curriculum modules.
 	</p>
 	<a class="cta" href="#how-you-can-help">
-		<Route size={24} /> Browse Opportunities <ArrowBigRight size={24} />
+		<Route /> Browse Opportunities <ArrowBigRight />
 	</a>
 </section>
 
@@ -94,7 +94,7 @@
 		</li>
 	</ol>
 	<a class="cta" href="/contact">
-		<Route size={24} /> Submit Your Interest <ArrowBigRight size={24} />
+		<Route /> Submit Your Interest <ArrowBigRight />
 	</a>
 </section>
 

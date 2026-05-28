@@ -14,10 +14,10 @@
 		the 12-Step Reconstructive Process and the Five Agreements.
 	</p>
 	<a class="cta" href="/mission">
-		<Route size={24} /> Explore the Framework <ArrowBigRight size={24} />
+		<Route /> Explore the Framework <ArrowBigRight />
 	</a>
 	<a class="cta" href="/curriculum">
-		<Route size={24} /> View Curriculum <ArrowBigRight size={24} />
+		<Route /> View Curriculum <ArrowBigRight />
 	</a>
 </section>
 
@@ -45,7 +45,7 @@
 	</ol>
 
 	<a class="cta" href="/road-map">
-		<Route size={24} /> See the Roadmap <ArrowBigRight size={24} />
+		<Route /> See the Roadmap <ArrowBigRight />
 	</a>
 </section>
 
@@ -73,7 +73,7 @@
 	</ol>
 
 	<a class="cta" href="/road-map">
-		<Route size={24} /> See the Roadmap <ArrowBigRight size={24} />
+		<Route /> See the Roadmap <ArrowBigRight />
 	</a>
 </section>
 
