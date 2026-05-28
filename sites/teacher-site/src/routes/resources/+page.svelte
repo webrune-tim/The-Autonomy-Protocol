@@ -11,6 +11,12 @@
 		freshmen: 'var(--brand-tertiary)',
 		seniors: 'var(--brand-secondary)'
 	}
+    const tabColors: Record<Tab, string> = {
+		steps: 'var(--brand-tertiary-contrast)',
+		agreements: 'var(--brand-secondary-contrast)',
+		freshmen: 'var(--brand-tertiary-contrast)',
+		seniors: 'var(--brand-secondary-contrast)'
+	}
 
 	interface MarkdownModule {
 		metadata: { order?: number; title?: string }
@@ -68,7 +74,7 @@
 <section
 	class="angled-top-box thick-margins no-bottom-margin"
 	use:thickMargins
-	style="--color: {tabColors[activeTab]}"
+	style="--color: {tabColors[activeTab]}; --text-color: {{tabContrastColor[activeTab]}}"
 >
 	<ResourceSnippets {activeTab} {allLinks} />
 </section>
