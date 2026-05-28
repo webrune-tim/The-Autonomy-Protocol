@@ -1,54 +1,59 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import { goto } from '$app/navigation';
-	import type { PageServerData, ActionData } from './$types';
+	import { enhance } from '$app/forms'
+	import { goto } from '$app/navigation'
+	import type { PageServerData, ActionData } from './$types'
 
 	// Svelte 5 structure matching your exact data wrapper
-	let { data, form }: { data: PageServerData; form: ActionData } = $props();
+	let { data, form }: { data: PageServerData; form: ActionData } = $props()
 
 	// Local UI Runes for Tracking, Previews, and Modals
 	// Explicitly defining the type structure matching the DB schema properties
-	type DocumentItem = { id: string; title: string; content: string; owner_id: string };
-	
-	let shareTargetEmail = $state('');
-	let activeShareDocId = $state<string | null>(null);
-	let isSubmittingUpload = $state(false);
-	let isDragging = $state(false);
-	let fileInput = $state<HTMLInputElement | null>(null);
+	type DocumentItem = {
+		id: string
+		title: string
+		content: string
+		owner_id: string
+	}
+
+	let shareTargetEmail = $state('')
+	let activeShareDocId = $state<string | null>(null)
+	let isSubmittingUpload = $state(false)
+	let isDragging = $state(false)
+	let fileInput = $state<HTMLInputElement | null>(null)
 
 	function handleDragOver(e: DragEvent) {
-		e.preventDefault();
-		isDragging = true;
+		e.preventDefault()
+		isDragging = true
 	}
 
 	function handleDragLeave() {
-		isDragging = false;
+		isDragging = false
 	}
 
 	function handleDrop(e: DragEvent) {
-		e.preventDefault();
-		isDragging = false;
-		
+		e.preventDefault()
+		isDragging = false
+
 		if (e.dataTransfer?.files && e.dataTransfer.files.length > 0) {
-			const file = e.dataTransfer.files[0];
+			const file = e.dataTransfer.files[0]
 			if (file.type === 'application/pdf') {
 				if (fileInput) {
-					const dataTransfer = new DataTransfer();
-					dataTransfer.items.add(file);
-					fileInput.files = dataTransfer.files;
+					const dataTransfer = new DataTransfer()
+					dataTransfer.items.add(file)
+					fileInput.files = dataTransfer.files
 				}
 			}
 		}
 	}
 
 	function downloadAsMarkdown(doc: DocumentItem) {
-		const blob = new Blob([doc.content], { type: 'text/markdown' });
-		const url = URL.createObjectURL(blob);
-		const a = document.createElement('a');
-		a.href = url;
-		a.download = `${doc.title}.md`;
-		a.click();
-		URL.revokeObjectURL(url);
+		const blob = new Blob([doc.content], { type: 'text/markdown' })
+		const url = URL.createObjectURL(blob)
+		const a = document.createElement('a')
+		a.href = url
+		a.download = `${doc.title}.md`
+		a.click()
+		URL.revokeObjectURL(url)
 	}
 </script>
 
@@ -68,9 +73,7 @@
 		</button>
 
 		<form method="post" action="/logout">
-			<button class="action-btn signout-btn">
-				SIGN OUT
-			</button>
+			<button class="action-btn signout-btn"> SIGN OUT </button>
 		</form>
 	</div>
 </div>
@@ -78,30 +81,37 @@
 <!-- ========================================== -->
 <!-- NEW: DOCUMENT PIPELINE & COLLABORATION HUB -->
 <!-- ========================================== -->
-<section class="bold-border-box margin-top" style="--border-color: var(--brand-primary);">
+<section
+	class="bold-border-box margin-top"
+	style="--border-color: var(--brand-primary);"
+>
 	<header class="hub-header">
 		<h2>Resource Pipeline & Document Hub</h2>
-		<div class="stat-badge">Total Resources Available: {data.myDocuments?.length ?? 0}</div>
+		<div class="stat-badge">
+			Total Resources Available: {data.myDocuments?.length ?? 0}
+		</div>
 	</header>
-	
-	<p>Upload legacy PDFs to convert them immediately to structured Markdown resources.</p>
+
+	<p>
+		Upload legacy PDFs to convert them immediately to structured Markdown resources.
+	</p>
 
 	<!-- Conversion Upload Form Trigger -->
-	<form 
-		method="POST" 
-		action="?/uploadAndConvert" 
-		enctype="multipart/form-data" 
+	<form
+		method="POST"
+		action="?/uploadAndConvert"
+		enctype="multipart/form-data"
 		use:enhance={() => {
-			isSubmittingUpload = true;
+			isSubmittingUpload = true
 			return async ({ update }) => {
-				await update();
-				isSubmittingUpload = false;
-			};
+				await update()
+				isSubmittingUpload = false
+			}
 		}}
 		class="upload-form"
 	>
-		<div 
-			class="upload-zone" 
+		<div
+			class="upload-zone"
 			class:dragging={isDragging}
 			ondragover={handleDragOver}
 			ondragleave={handleDragLeave}
@@ -115,18 +125,18 @@
 						{fileInput?.files?.[0]?.name || 'Drag & Drop PDF or Click to Browse'}
 					</span>
 				</label>
-				<input 
+				<input
 					id="pdf-upload"
-					type="file" 
-					name="pdf-file" 
-					accept="application/pdf" 
+					type="file"
+					name="pdf-file"
+					accept="application/pdf"
 					disabled={isSubmittingUpload}
 					bind:this={fileInput}
-					required 
+					required
 					class="file-input-hidden"
 				/>
 			</div>
-			
+
 			<button type="submit" disabled={isSubmittingUpload} class="upload-submit-btn">
 				{isSubmittingUpload ? 'CONVERTING...' : 'START CONVERSION'}
 			</button>
@@ -152,18 +162,27 @@
 		<h3>Your Available Assets</h3>
 		{#if data.myDocuments && data.myDocuments.length > 0}
 			<div class="asset-grid">
-				{#each data.myDocuments as doc}
+				{#each data.myDocuments as doc (doc)}
 					<div class="asset-card">
 						<div class="asset-info">
 							<span class="asset-icon">📄</span>
 							<span class="asset-title">{doc.title}</span>
 						</div>
-						
+
 						<div class="asset-actions">
-							<button type="button" class="icon-btn" onclick={() => downloadAsMarkdown(doc)} title="Download .md">
+							<button
+								type="button"
+								class="icon-btn"
+								onclick={() => downloadAsMarkdown(doc)}
+								title="Download .md"
+							>
 								Download .md 📥
 							</button>
-							<button type="button" class="share-btn" onclick={() => activeShareDocId = doc.id}>
+							<button
+								type="button"
+								class="share-btn"
+								onclick={() => (activeShareDocId = doc.id)}
+							>
 								Share Access 👤
 							</button>
 						</div>
@@ -171,7 +190,9 @@
 				{/each}
 			</div>
 		{:else}
-			<p class="no-results">No converted resources stored. Drop an old PDF above to begin.</p>
+			<p class="no-results">
+				No converted resources stored. Drop an old PDF above to begin.
+			</p>
 		{/if}
 	</div>
 </section>
@@ -209,7 +230,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{#each data.searchResults as member}
+						{#each data.searchResults as member (member.id)}
 							<tr>
 								<td data-label="Name">{member.name}</td>
 								<td data-label="Email">{member.email}</td>
@@ -258,25 +279,36 @@
 	<div class="modal-overlay">
 		<div class="modal">
 			<h3>Share Ownership Rights</h3>
-			<p class="modal-desc">This gives another teacher full access rights to see and work with this asset.</p>
-			<form method="POST" action="?/shareDocument" use:enhance={() => {
-				return async ({ update }) => {
-					await update();
-					activeShareDocId = null;
-					shareTargetEmail = '';
-				};
-			}}>
+			<p class="modal-desc">
+				This gives another teacher full access rights to see and work with this
+				asset.
+			</p>
+			<form
+				method="POST"
+				action="?/shareDocument"
+				use:enhance={() => {
+					return async ({ update }) => {
+						await update()
+						activeShareDocId = null
+						shareTargetEmail = ''
+					}
+				}}
+			>
 				<input type="hidden" name="documentId" value={activeShareDocId} />
-				<input 
-					type="email" 
-					name="teacherEmail" 
-					bind:value={shareTargetEmail} 
-					placeholder="colleague@school.edu" 
-					required 
+				<input
+					type="email"
+					name="teacherEmail"
+					bind:value={shareTargetEmail}
+					placeholder="colleague@school.edu"
+					required
 					class="search-input"
 				/>
 				<div class="modal-actions">
-					<button type="button" class="link-button" onclick={() => activeShareDocId = null}>Cancel</button>
+					<button
+						type="button"
+						class="link-button"
+						onclick={() => (activeShareDocId = null)}>Cancel</button
+					>
 					<button type="submit" class="confirm-btn">Delegate Access</button>
 				</div>
 			</form>
@@ -285,11 +317,8 @@
 {/if}
 
 <style>
-	/* Integration design matching your existing design ecosystem variables */
-	.flex {
-		display: flex;
-		gap: var(--gap-1);
-		margin-bottom: var(--gap-2);
+	.user-info .role-badge {
+		color: var(--fg);
 	}
 
 	.margin-top {
@@ -306,7 +335,7 @@
 
 	.stat-badge {
 		background: rgb(from var(--fg) r g b / 0.07);
-		padding: var(--gap-1);
+		padding: 0.4rem 0.8rem;
 		border-radius: calc(var(--border-radius) / 2);
 		border: 1px solid var(--brand-tertiary);
 		font-weight: bold;
@@ -328,7 +357,9 @@
 		flex-wrap: wrap;
 		gap: var(--gap-1);
 		position: relative;
-		transition: border-color 0.2s, background 0.2s;
+		transition:
+			border-color 0.2s,
+			background 0.2s;
 	}
 
 	.upload-zone.dragging {
@@ -425,7 +456,8 @@
 		cursor: not-allowed;
 	}
 
-	.status.error, .status.success {
+	.status.error,
+	.status.success {
 		margin-top: var(--gap-1);
 		padding: 0.75rem;
 		font-size: 0.9rem;
@@ -468,7 +500,9 @@
 		padding: var(--gap-1) 1.25rem;
 		border: 1px solid rgb(from var(--fg) r g b / 0.08);
 		border-radius: calc(var(--border-radius) / 2);
-		transition: border-color 0.2s, background 0.2s;
+		transition:
+			border-color 0.2s,
+			background 0.2s;
 	}
 
 	.asset-card:hover {
@@ -667,111 +701,109 @@
 
 	@media (max-width: 640px) {
 		.header-section {
-			flex-direction: column !important;
-			align-items: stretch !important;
-			gap: var(--gap-1) !important;
+			flex-direction: column;
+			align-items: stretch;
+			gap: var(--gap-1);
 		}
 
 		.header-actions {
-			display: grid !important;
-			grid-template-columns: 1fr 1fr !important;
-			gap: var(--gap-3) !important;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--gap-3);
 		}
 
 		.action-btn {
-			width: 100% !important;
-			justify-content: center !important;
-			padding: 0.6rem !important;
-			font-size: 0.75rem !important;
+			width: 100%;
+			justify-content: center;
+			font-size: 0.75rem;
 		}
 
 		/* CRITICAL: FORCE CONTAINER WIDTH */
 		:global(.bold-border-box) {
-			padding: 0.75rem !important;
-			margin-left: -0.5rem !important;
-			margin-right: -0.5rem !important;
-			width: calc(100% + 1rem) !important;
-			border-width: 2px !important;
+			padding: 0.75rem;
+			margin-left: -0.5rem;
+			margin-right: -0.5rem;
+			border-width: 2px;
 		}
 
 		.hub-header {
-			flex-direction: column !important;
-			gap: var(--gap-3) !important;
+			flex-direction: column;
+			gap: var(--gap-3);
 		}
 
 		.hub-header h2 {
-			font-size: 1.1rem !important;
-			text-align: center !important;
+			font-size: 1.1rem;
+			text-align: center;
 		}
 
 		.stat-badge {
-			font-size: 0.7rem !important;
-			padding: 0.4rem !important;
+			font-size: 0.7rem;
+			padding: 0.4rem;
 		}
 
 		.upload-zone {
-			flex-direction: column !important;
-			align-items: stretch !important;
-			padding: 0.75rem !important;
-			gap: 0.75rem !important;
+			flex-direction: column;
+			align-items: stretch;
+			padding: 0.75rem;
+			gap: 0.75rem;
 		}
 
 		.file-input-wrapper {
-			min-width: 0 !important;
-			width: 100% !important;
+			min-width: 0;
+			width: 100%;
 		}
 
 		.custom-file-label {
-			padding: 0.6rem !important;
-			gap: var(--gap-3) !important;
+			padding: 0.6rem;
+			gap: var(--gap-3);
 		}
 
 		.upload-text {
-			font-size: 0.75rem !important;
-			max-width: 180px !important;
+			font-size: 0.75rem;
+			max-width: 180px;
 		}
 
 		.upload-submit-btn {
-			width: 100% !important;
-			padding: 0.8rem !important;
-			font-size: 0.8rem !important;
+			width: 100%;
+			padding: 0.8rem;
+			font-size: 0.8rem;
 		}
 
 		.asset-card {
-			flex-direction: column !important;
-			align-items: stretch !important;
-			padding: 0.75rem !important;
-			gap: 0.75rem !important;
+			flex-direction: column;
+			align-items: stretch;
+			padding: 0.75rem;
+			gap: 0.75rem;
 		}
 
 		.asset-info {
-			width: 100% !important;
-			justify-content: flex-start !important;
+			width: 100%;
+			justify-content: flex-start;
 		}
 
 		.asset-title {
-			font-size: 0.85rem !important;
-			white-space: normal !important;
-			word-break: break-all !important;
+			font-size: 0.85rem;
+			white-space: normal;
+			word-break: break-all;
 		}
 
 		.asset-actions {
-			display: flex !important;
-			flex-direction: column !important;
-			gap: 0.4rem !important;
-			width: 100% !important;
+			display: flex;
+			flex-direction: column;
+			gap: 0.4rem;
+			width: 100%;
 		}
 
 		.asset-actions button {
-			width: 100% !important;
-			justify-content: center !important;
-			padding: 0.5rem !important;
-			font-size: 0.75rem !important;
+			width: 100%;
+			justify-content: center;
+			padding: 0.5rem;
+			font-size: 0.75rem;
 		}
 
 		.admin-table td {
-			padding: var(--gap-3) !important;
-			font-size: 0.8rem !important;
+			padding: var(--gap-3);
+			font-size: 0.8rem;
 		}
 	}
 
@@ -811,12 +843,17 @@
 
 	.settings-btn {
 		background: var(--brand-primary);
+		color: var(--brand-primary-contrast);
+	}
+
+	.settings-btn:hover {
+		opacity: 0.9;
 		color: var(--bg);
 	}
 
 	.signout-btn {
 		background: var(--brand-secondary);
-		color: var(--bg);
+		color: var(--brand-secondary-contrast);
 	}
 
 	.action-btn:hover {

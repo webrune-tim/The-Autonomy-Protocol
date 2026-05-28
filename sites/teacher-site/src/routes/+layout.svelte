@@ -10,13 +10,9 @@
 	// Styles
 	import '@autonomy/style/index.css'
 
-	// Neither work
-	// import 'nord/src/nord.css'
-	// import 'node_modules/nord/src/nord.css'
-
 	// Shared Components
 	import { Banner } from '@autonomy/banner'
-	import { BatteryLevel } from '@autonomy/battery-level'
+	// import { BatteryLevel } from '@autonomy/battery-level'
 	import { Footer } from '@autonomy/footer'
 	import { Header } from '@autonomy/header'
 	import { Logo } from '@autonomy/logo'
@@ -126,9 +122,9 @@
 	</Banner>
 
 	<main>
-		{#if import.meta.env.DEV}
+		<!-- {#if import.meta.env.DEV}
 			<BatteryLevel />
-		{/if}
+		{/if} -->
 		{@render children()}
 		<ScrollToTop />
 	</main>

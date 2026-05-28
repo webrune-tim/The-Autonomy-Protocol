@@ -69,7 +69,7 @@
 		grid-template-columns: repeat(2, 1fr);
 		grid-auto-flow: column;
 		gap: 0.75rem 2rem;
-		margin: 2rem 0;
+		/* margin: 2rem 0; */
 		list-style: none;
 		padding: 0;
 	}

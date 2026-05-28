@@ -37,7 +37,10 @@
 
 <Toaster />
 
-<section class="angled-bottom-box" style="--color: var(--brand-secondary)">
+<section
+	class="angled-bottom-box"
+	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
+>
 	<h1>Contact Us</h1>
 	<p>
 		Have questions or want to learn more about the Autonomy Protocol? Reach out to
@@ -86,7 +89,7 @@
 
 				<button
 					type="button"
-					class="control-option"
+					class="control-option default"
 					class:active={formData.isOfferingHelp}
 					onclick={() => (formData.isOfferingHelp = true)}
 				>
@@ -144,7 +147,7 @@
 		align-items: center;
 		gap: 0.5rem;
 		font-weight: 600;
-		color: var(--brand-secondary);
+		color: var(--brand-primary-contrast);
 	}
 
 	input,
@@ -162,8 +165,8 @@
 		display: flex;
 		background-color: var(--surface-2);
 		border: 2px solid var(--surface-3);
-		padding: 4px;
-		width: 100%;
+		/* padding: 4px; */
+		/* width: 100%; */
 		overflow: hidden;
 	}
 
@@ -183,13 +186,24 @@
 		font-weight: 500;
 		cursor: pointer;
 		transition: color 0.3s ease;
-	}
-
-	.control-option.active {
-		color: var(--surface-1);
 
 		span {
-			color: var(--bg) !important;
+			margin: 0;
+		}
+	}
+
+	.control-option.default.active {
+		color: var(--brand-primary-contrast);
+
+		span {
+			color: var(--brand-primary-contrast);
+		}
+	}
+	.control-option.active {
+		color: var(--brand-secondary-contrast);
+
+		span {
+			color: var(--brand-secondary-contrast);
 		}
 	}
 

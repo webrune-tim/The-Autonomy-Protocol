@@ -11,7 +11,7 @@
 		freshmen: 'var(--brand-tertiary)',
 		seniors: 'var(--brand-secondary)'
 	}
-    const tabContrastColors: Record<Tab, string> = {
+	const tabContrastColors: Record<Tab, string> = {
 		steps: 'var(--brand-tertiary-contrast)',
 		agreements: 'var(--brand-secondary-contrast)',
 		freshmen: 'var(--brand-tertiary-contrast)',
@@ -47,7 +47,10 @@
 	}
 </script>
 
-<section class="angled-bottom-box" style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)">
+<section
+	class="angled-bottom-box"
+	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
+>
 	<h1>Resources</h1>
 	<p class="description">
 		A centralized library of worksheets, frameworks, and assessment guides to
@@ -57,7 +60,7 @@
 
 	<nav class="angled-bottom-box bottom-padding">
 		<ul class="tab-list">
-			{#each ['steps', 'agreements', 'freshmen', 'seniors'] as tab}
+			{#each ['steps', 'agreements', 'freshmen', 'seniors'] as tab (tab)}
 				<li>
 					<button
 						class:active={activeTab === tab}
@@ -74,7 +77,9 @@
 <section
 	class="angled-top-box thick-margins no-bottom-margin"
 	use:thickMargins
-	style="--color: {tabColors[activeTab]}; --text_color: {tabContrastColor[activeTab]}"
+	style="--color: {tabColors[activeTab]}; --text_color: {tabContrastColors[
+		activeTab
+	]}"
 >
 	<ResourceSnippets {activeTab} {allLinks} />
 </section>
@@ -109,7 +114,7 @@
 		border: none;
 		color: var(--white);
 		opacity: 0.8;
-		padding: 12px 16px;
+		/* padding: 12px 16px; */
 		font-family: inherit;
 		font-size: var(--font-size-3);
 		font-weight: 800;

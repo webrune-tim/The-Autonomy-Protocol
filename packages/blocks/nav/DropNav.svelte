@@ -108,8 +108,8 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		background: transparent !important;
-		color: var(--brand-secondary);
+		background: transparent;
+		color: var(--fg);
 		cursor: pointer;
 		transition: transform 0.1s ease;
 	}
