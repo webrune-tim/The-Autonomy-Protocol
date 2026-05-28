@@ -63,7 +63,7 @@
 <section
 	class="angled-top-box"
 	use:thickMargins
-	style="--color: var(--brand-secondary)"
+	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
 >
 	<h2>How You Can Help</h2>
 
