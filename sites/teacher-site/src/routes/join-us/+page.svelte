@@ -1,6 +1,6 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
-	import { Route } from '@lucide/svelte'
+	import { BookImage, Send } from '@lucide/svelte'
 </script>
 
 <section
@@ -20,7 +20,7 @@
 		profound principles into actionable, secular, and high-impact curriculum modules.
 	</p>
 	<a class="cta" href="#how-you-can-help">
-		<Route /> Browse Opportunities
+		<BookImage /> Browse Opportunities
 	</a>
 </section>
 
@@ -94,7 +94,7 @@
 		</li>
 	</ol>
 	<a class="cta" href="/contact">
-		<Route /> Submit Your Interest
+		<Send /> Submit Your Interest
 	</a>
 </section>
 
@@ -110,96 +110,3 @@
 		resonate with you, we would love to have your voice in the project.
 	</p>
 </section>
-
-<!-- <section class="content">
-	<h2>How to Contribute</h2>
-
-	<h3>Step 1: Claim or Open an Issue</h3>
-
-	<p>
-		Before starting work, browse the current <a
-			href="https://github.com/users/webrune-tim/projects/1"
-			target="_blank">Kanban Boards</a
-		>
-		or
-		<a
-			href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
-			target="_blank">Issues</a
-		>. If you have a new idea for a vocational path (e.g., Law, Arts, or
-		Agriculture), open a new Issue for "System Architecture Review" first.
-	</p>
-
-	<h3>Step 2: Drafting Modules</h3>
-
-	<p>
-		When drafting a new module, use the <a
-			href="https://github.com/webrune-tim/The-Autonomy-Protocol/blob/main/docs/templates/LESSON_PLAN_TEMPLATE.md"
-			target="_blank">LESSON_PLAN_TEMPLATE.md</a
-		>. Every contribution must include:
-	</p>
-
-	<ul>
-		<li>
-			<strong>Objective:</strong> What specific behavioral shift is being addressed?
-		</li>
-		<li>
-			<strong>Pedagogical Logic:</strong> Why does this specific exercise result in that
-			shift?
-		</li>
-		<li>
-			<strong>The Practicum:</strong> A concrete, applied learning exercise for students.
-		</li>
-		<li><strong>Assessment:</strong> How will an educator measure success?</li>
-	</ul>
-
-	<h3>Step 3: Peer Review</h3>
-
-	<p>
-		Submit your contribution via a Pull Request. Every module must be reviewed by at
-		least one peer to ensure it meets our standards for:
-	</p>
-
-	<ul>
-		<li>
-			<strong>Neutrality:</strong> Is it free of partisan or sectarian language?
-		</li>
-		<li>
-			<strong>Clarity:</strong> Is the exercise easy for a high school freshman to execute?
-		</li>
-		<li>
-			<strong>Utility:</strong> Does it solve a real-world problem for a graduating senior?
-		</li>
-	</ul>
-</section>
-
-<section class="content">
-	<h2>Community Code of Conduct</h2>
-
-	<p>
-		We practice what we teach. All contributors are expected to operate under the
-		Integrity Protocol:
-	</p>
-
-	<ul>
-		<li>
-			<strong>Be Impeccable With Your Word:</strong> Follow through on your commits and
-			maintain high standards of accuracy.
-		</li>
-		<li>
-			<strong>Don't Take Feedback Personally:</strong> Reviews are intended to optimize
-			the system, not critique the individual.
-		</li>
-		<li>
-			<strong>Don't Make Assumptions:</strong> If a task or standard is unclear, ask for
-			clarification immediately.
-		</li>
-		<li>
-			<strong>Always Do Your Best:</strong> Contribute high-quality work that honors the
-			project's mission.
-		</li>
-	</ul>
-
-	<p>
-		Thank you for helping us build the infrastructure for a self-governed future.
-	</p>
-</section> -->

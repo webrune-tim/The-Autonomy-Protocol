@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
-	import { Route } from '@lucide/svelte'
+	import { HeartPlus } from '@lucide/svelte'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
 	type Tab = 'steps' | 'agreements' | 'freshmen' | 'seniors'
@@ -59,7 +59,7 @@
 		levels.
 	</p>
 	<a class="cta" href="/contact">
-		<Route /> Need Custom Support?
+		<HeartPlus /> Need Custom Support?
 	</a>
 
 	<nav class="angled-bottom-box bottom-padding">

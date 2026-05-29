@@ -1,5 +1,5 @@
 <script>
-	import { Route } from '@lucide/svelte'
+	import { Ampersand, Eye, Telescope } from '@lucide/svelte'
 	import { thickMargins } from '@autonomy/actions'
 </script>
 
@@ -25,7 +25,7 @@
 	</p>
 
 	<a class="cta" href="/join-us">
-		<Route /> Join Us
+		<Ampersand /> Join Us
 	</a>
 </section>
 
@@ -45,7 +45,7 @@
 	</p>
 
 	<a class="cta" href="/road-map">
-		<Route /> View the Strategy
+		<Eye /> View the Strategy
 	</a>
 </section>
 
@@ -145,7 +145,7 @@
 			</ul>
 
 			<a class="cta" href="/curriculum">
-				<Route /> Explore the Curriculum
+				<Telescope /> Explore the Curriculum
 			</a>
 		</div>
 	</div>
@@ -176,15 +176,3 @@
 		long-term professional success.
 	</p>
 </section>
-
-<style>
-	.cta {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--gap-1);
-		font-weight: bold;
-		color: var(--brand-secondary);
-		text-decoration: none;
-		margin-top: var(--gap-1);
-	}
-</style>

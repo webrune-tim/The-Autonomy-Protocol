@@ -1,6 +1,6 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
-	import { Route } from '@lucide/svelte'
+	import { BrickWall, HardHat, Puzzle } from '@lucide/svelte'
 </script>
 
 <section
@@ -31,7 +31,7 @@
 	</ul>
 
 	<a class="cta" href="/resource">
-		<Route /> See Freshman Materials
+		<BrickWall /> See Freshman Materials
 	</a>
 </section>
 
@@ -70,7 +70,7 @@
 	</ul>
 
 	<a class="cta" href="/curriculum">
-		<Route /> Review Senior Modules
+		<Puzzle /> Review Senior Modules
 	</a>
 </section>
 
@@ -122,6 +122,6 @@
 	</ul>
 
 	<a class="cta" href="/join-us">
-		<Route /> Get Involved
+		<HardHat /> Get Involved
 	</a>
 </section>

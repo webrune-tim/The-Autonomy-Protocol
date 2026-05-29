@@ -1,6 +1,6 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
-	import { Route } from '@lucide/svelte'
+	import { Download, ShieldQuestionMark } from '@lucide/svelte'
 </script>
 
 <section
@@ -17,7 +17,7 @@
 		under pressure.
 	</p>
 	<a class="cta" href="/resources">
-		<Route /> Download Lesson Guides
+		<Download /> Download Lesson Guides
 	</a>
 </section>
 
@@ -153,7 +153,7 @@
 		</li>
 	</ul>
 	<a class="cta" href="/contact">
-		<Route /> Ready to Implement?
+		<ShieldQuestionMark /> Ready to Implement?
 	</a>
 </section>
 

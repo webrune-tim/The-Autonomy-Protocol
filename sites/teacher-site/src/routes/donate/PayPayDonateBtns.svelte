@@ -9,14 +9,12 @@
 	} from '@lucide/svelte'
 	import { enhance } from '$app/forms'
 
-	// 1. Accept the form action result as a prop
+	// 1. Props & State
 	let { form } = $props()
-
-	// 2. Reactive state
 	let custom_amount = $state('')
 	let dismissed = $state(false)
 
-	// 3. Logic for the playful/witty button text
+	// 2. Reactive text logic
 	let dynamicText = $derived.by(() => {
 		const val = Number(custom_amount)
 		if (!custom_amount || val <= 0) return 'Build the Future'
@@ -25,15 +23,9 @@
 		return `Invest $${val} in the Protocol`
 	})
 
-	// 4. Effects: Reset dismissal when a new error arrives, or handle analytics
+	// 3. Reset error visibility on new form results
 	$effect(() => {
 		if (form) dismissed = false
-	})
-
-	$effect(() => {
-		if (Number(custom_amount) > 0 && Number(custom_amount) < 25) {
-			console.log('Nudge active: Calibrating logic for $25 threshold.')
-		}
 	})
 </script>
 
@@ -52,23 +44,26 @@
 		<Milestone /> $500 - The Foundation Pillar
 	</button>
 
-	<button type="submit" name="amount" value={custom_amount} class="cta-donate">
+	<div class="cta-donate custom-container">
 		<Wrench />
 		<input
 			type="number"
 			class="custom-amount"
 			bind:value={custom_amount}
-			placeholder="0.00"
+			placeholder="1"
 			min="1"
-			onclick={(e) => e.stopPropagation()}
 			onkeydown={(e) => {
+				// Allow natural submission on Enter key
 				if (e.key === 'Enter' && (!custom_amount || Number(custom_amount) <= 0)) {
 					e.preventDefault()
 				}
 			}}
 		/>
-		- <span class="dynamic-text">{dynamicText}</span>
-	</button>
+
+		<button type="submit" name="amount" value={custom_amount} class="submit-trigger">
+			-&nbsp;<span class="dynamic-text">{dynamicText}</span>
+		</button>
+	</div>
 
 	{#if form?.error && !dismissed}
 		<div class="system-error">
@@ -93,6 +88,7 @@
 		gap: var(--gap-1, 1rem);
 	}
 
+	/* Inherit existing cta-donate styles */
 	.cta-donate {
 		display: inline-flex;
 		align-items: center;
@@ -102,7 +98,6 @@
 		margin-right: var(--gap-1);
 		font-size: var(--font-size-4);
 		border-radius: 100px;
-		text-decoration: none;
 		border: clamp(2px, 4svw, 4px) solid var(--brand-secondary);
 		background-color: var(--brand-secondary);
 		color: var(--brand-secondary-contrast) !important;
@@ -111,6 +106,7 @@
 		transition:
 			transform 100ms ease,
 			box-shadow 100ms ease;
+		cursor: pointer;
 
 		@media (max-width: 600px) {
 			margin-bottom: var(--gap-1);
@@ -118,7 +114,8 @@
 			justify-content: center;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus-within {
 			background-color: oklch(from var(--brand-secondary) calc(l + 0.3) c h);
 			border-color: oklch(from var(--brand-secondary) calc(l + 0.3) c h);
 			transform: translateY(-2px);
@@ -129,6 +126,22 @@
 			transform: translateY(2px);
 			box-shadow: 0 2px 0px oklch(from var(--brand-secondary) calc(l - 0.2) c h);
 		}
+	}
+
+	/* Specific fixes for the div-based custom button */
+	.custom-container {
+		cursor: default; /* Arrow cursor for the container, pointer for the submit part */
+	}
+
+	.submit-trigger {
+		background: transparent;
+		border: none;
+		color: inherit;
+		font: inherit;
+		padding: 0;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
 	}
 
 	.custom-amount {
