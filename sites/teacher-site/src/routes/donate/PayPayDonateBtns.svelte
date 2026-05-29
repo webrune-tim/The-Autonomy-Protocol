@@ -48,6 +48,7 @@
 		<Wrench />
 		<input
 			type="number"
+			inputmode="numeric"
 			class="custom-amount"
 			bind:value={custom_amount}
 			placeholder="1"
