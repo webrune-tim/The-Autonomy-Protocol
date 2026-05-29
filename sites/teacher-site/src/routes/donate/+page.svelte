@@ -1,7 +1,7 @@
 <script>
 	import PayPayDonateBtns from './PayPayDonateBtns.svelte'
 	import { thickMargins } from '@autonomy/actions'
-	import { Route } from '@lucide/svelte'
+	import { Eye } from '@lucide/svelte'
 
 	let { form } = $props()
 </script>
@@ -26,7 +26,7 @@
 		to the districts and educators who need it most.
 	</p>
 	<a class="cta" href="#how-you-can-help">
-		<Route /> Browse Opportunities
+		<Eye /> Browse Opportunities
 	</a>
 </section>
 
