@@ -1,10 +1,12 @@
 /* packages/ui/new-style/index.css */
+
+/* --- 1. External Imports --- */
 @import "./nord.css";
 @import "./reset.css";
 @import "./tokens.css";
 @import "./typography.css";
 
-/* --- Base Styles --- */
+/* --- 2. Global Base Styles --- */
 *,
 *::before,
 *::after {
@@ -29,6 +31,7 @@ body {
     color 0.2s ease;
 }
 
+/* --- 3. Element-Specific Resets & Styles --- */
 h1,
 h2,
 h3,
@@ -44,6 +47,24 @@ img {
   object-fit: cover;
 }
 
+hr {
+  height: 4px;
+  background: var(--bg);
+  margin: var(--gap-1) 0;
+  border: none;
+  outline: none;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+details > summary {
+  cursor: pointer;
+  margin-bottom: var(--gap-1);
+}
+
+/* --- 4. Forms & Interactive Elements --- */
 button {
   --color: var(--brand-primary);
   background-color: var(--color);
@@ -56,18 +77,6 @@ button {
   text-transform: uppercase;
   text-decoration: none !important;
   padding: var(--gap-1) var(--gap-2);
-}
-
-hr {
-  height: 4px;
-  background: var(--bg);
-  margin: var(--gap-1) 0;
-  border: none;
-  outline: none;
-}
-
-li {
-  margin-bottom: 0.5rem;
 }
 
 label {
@@ -92,39 +101,12 @@ textarea:focus {
   border: 2px solid var(--brand-secondary);
 }
 
-details > summary {
-  cursor: pointer;
-  margin-bottom: var(--gap-1);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.donations-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-1);
-  list-style: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* --- Consolidated Angled Box Logic --- */
+/* --- 5. Angled Box Components --- */
 .angled-top-box,
 .angled-bottom-box,
 .angled-top-bottom-box,
 .unangled-box {
-  /* 1. Configuration Fallbacks: Prioritize inline properties */
+  /* 1. Configuration Fallbacks */
   --color: var(--brand-primary);
   --local-text: var(--text_color, var(--border-color-contrast));
   background: var(--color);
@@ -137,7 +119,7 @@ details > summary {
     --safe-contrast: color-mix(in oklch, var(--color), oklch(0.15 0.02 290) 90%);
   }
 
-  /* 4. Apply configured variables to current element block */
+  /* 4. Apply configured variables */
   color: var(--local-text);
   padding: var(--gap-2);
   margin-bottom: var(--gap-2);
@@ -149,14 +131,13 @@ details > summary {
   h2 {
     font-size: var(--font-size-2);
   }
-
   span {
     display: inline-block;
     margin: var(--gap-1) 0;
     font-size: var(--font-size-3);
   }
 
-  /* Target all internal layout text elements explicitly */
+  /* Shared text color logic */
   h1,
   h2,
   h3,
@@ -200,13 +181,13 @@ details > summary {
     font-weight: bold;
     border-radius: 100px;
     text-decoration: none;
-    /* background-color: rgb(from var(--local-text) r g b / 0.15); */
     background-color: hsl(from var(--color) h s calc(l + 6));
 
     svg {
       width: 1.2em;
       height: 1.2em;
       flex-shrink: 0;
+      stroke-width: 2px;
     }
 
     @media (max-width: 600px) {
@@ -219,21 +200,19 @@ details > summary {
   }
 }
 
-/* Set a default offset for full-width boxes */
+/* Specific Angle Configurations */
 .angled-bottom-box,
 .angled-top-box,
 .angled-top-bottom-box {
   --offset-x: 0px;
 }
 
-/* Apply the margin and map it to the offset variable */
 .thick-margins {
   margin-left: var(--thick-margin);
   margin-right: var(--thick-margin);
   --offset-x: var(--thick-margin);
 }
 
-/* Update polygons to stretch outward by the offset amount */
 .angled-bottom-box {
   clip-path: polygon(
     calc(-1 * var(--offset-x)) 0,
@@ -256,11 +235,8 @@ details > summary {
 }
 
 .angled-top-bottom-box {
-  /* Let inline variables override these initial assignments dynamically */
   --color: var(--brand-secondary);
   background: var(--color);
-
-  /* Fallback safe contrast calculations if no style token is assigned inline */
   --safe-contrast: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
   --local-text: var(--text_color, var(--safe-contrast));
   color: var(--local-text);
@@ -281,14 +257,12 @@ details > summary {
   margin-bottom: calc(var(--angle-height) / 3);
 }
 
+/* --- 6. Special Container Components --- */
 .bold-border-box {
   --border-color: var(--brand-primary);
   --color: oklch(from var(--border-color) calc(l - 0.3) c h);
-  --local-text: var(--text_color, var(--border-color-contrast));
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
-
-  /* Let inline --text_color specify text value inside the layout block, fallback to global foreground */
   --local-text: var(--text_color, var(--fg));
   color: var(--local-text);
 
@@ -314,13 +288,13 @@ details > summary {
     font-weight: bold;
     border-radius: 100px;
     text-decoration: none;
-    /* background-color: rgb(from var(--local-text) r g b / 0.15); */
     background-color: hsl(from var(--color) h s calc(l + 6));
 
     svg {
       width: 1.2em;
       height: 1.2em;
       flex-shrink: 0;
+      stroke-width: 2px;
     }
 
     @media (max-width: 600px) {
@@ -333,11 +307,73 @@ details > summary {
   }
 }
 
-.auto-contrast {
-  --color: var(--brand-primary);
-  --lightness: from var(--color) l;
-  background-color: var(--color);
-  color: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
+.box {
+  border-radius: var(--border-radius);
+  padding: var(--gap-2);
+  span {
+    font-weight: bold;
+  }
+}
+
+.content {
+  margin: var(--gap-2) 0;
+  padding: var(--gap-1);
+  border-bottom: 2px solid var(--brand-primary);
+}
+
+[data-theme="light"] .content {
+  background-color: var(--surface-1);
+  border-color: var(--ui-border);
+}
+
+.content:last-of-type {
+  border-bottom: none !important;
+  padding-bottom: var(--gap-2);
+}
+
+/* --- 7. Transparent Variant Boxes --- */
+.trans-primary {
+  background-color: rgb(from var(--brand-primary) r g b / 0.15);
+  border: 2px solid var(--brand-primary);
+  h2,
+  h3 {
+    color: var(--brand-secondary);
+  }
+}
+
+.trans-secondary {
+  background-color: rgb(from var(--brand-secondary) r g b / 0.15);
+  border: 2px solid var(--brand-secondary);
+  h2,
+  h3 {
+    color: var(--brand-primary);
+  }
+}
+
+.trans-tertiary {
+  background-color: rgb(from var(--brand-tertiary) r g b / 0.15);
+  border: 2px solid var(--brand-tertiary);
+  h2,
+  h3 {
+    color: var(--brand-secondary);
+  }
+}
+
+.trans-black {
+  background-color: rgb(from var(--bg) r g b / 0.15);
+  border: 2px solid var(--bg);
+  h2,
+  h3,
+  h4 {
+    color: var(--bg);
+  }
+}
+
+/* --- 8. Layout Grids & Flex Containers --- */
+.grid {
+  display: grid;
+  gap: var(--gap-2);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .columns {
@@ -352,21 +388,93 @@ details > summary {
   }
 }
 
-.content {
-  margin: var(--gap-2) 0;
-  padding: var(--gap-1);
-  border-bottom: 2px solid var(--brand-primary);
+.flex {
+  display: flex;
+  gap: var(--gap-2);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Ensure content sections remain visible in light mode */
-[data-theme="light"] .content {
-  background-color: var(--surface-1);
-  border-color: var(--ui-border);
+.flex > div {
+  flex: 1 1 300px;
 }
 
-.content:last-of-type {
-  border-bottom: none !important;
-  padding-bottom: var(--gap-2);
+.flex-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: var(--gap-1);
+}
+
+.flex-around {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap-2);
+  a {
+    margin-top: 0;
+  }
+}
+
+.title-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  color: var(--fg);
+  grid-template-columns: auto 1fr;
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 0;
+  }
+  span {
+    font-size: clamp(1rem, 2svw, 1.75rem);
+  }
+}
+
+.step-grid {
+  padding-top: var(--gap-2);
+  display: grid;
+  gap: var(--gap-2);
+  grid-template-columns: auto 1fr;
+  span {
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--font-header-serif);
+  }
+}
+
+.donations-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* --- 9. Utility Classes --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.auto-contrast {
+  --color: var(--brand-primary);
+  --lightness: from var(--color) l;
+  background-color: var(--color);
+  color: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
 }
 
 .margin-top,
@@ -382,102 +490,8 @@ details > summary {
 .no-bottom-margin {
   margin-bottom: 0 !important;
 }
-
 .bottom-padding {
   padding-bottom: var(--gap-4) !important;
-}
-
-.flex {
-  display: flex;
-  gap: var(--gap-2);
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.flex > div {
-  flex: 1 1 300px;
-}
-
-.title-grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  color: var(--fg);
-  grid-template-columns: auto 1fr;
-
-  h2,
-  h3,
-  h4 {
-    margin-bottom: 0;
-  }
-
-  span {
-    font-size: clamp(1rem, 2svw, 1.75rem);
-  }
-}
-
-.flex-column {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding-bottom: var(--gap-1);
-}
-
-.box {
-  border-radius: var(--border-radius);
-  padding: var(--gap-2);
-
-  span {
-    font-weight: bold;
-  }
-}
-
-.trans-primary {
-  background-color: rgb(from var(--brand-primary) r g b / 0.15);
-  border: 2px solid var(--brand-primary);
-
-  h2,
-  h3 {
-    color: var(--brand-secondary);
-  }
-}
-
-.trans-secondary {
-  background-color: rgb(from var(--brand-secondary) r g b / 0.15);
-  border: 2px solid var(--brand-secondary);
-
-  h2,
-  h3 {
-    color: var(--brand-primary);
-  }
-}
-
-.trans-tertiary {
-  background-color: rgb(from var(--brand-tertiary) r g b / 0.15);
-  border: 2px solid var(--brand-tertiary);
-
-  h2,
-  h3 {
-    color: var(--brand-secondary);
-  }
-}
-
-.trans-black {
-  background-color: rgb(from var(--bg) r g b / 0.15);
-  border: 2px solid var(--bg);
-
-  h2,
-  h3,
-  h4 {
-    color: var(--bg);
-  }
-}
-
-.grid {
-  display: grid;
-  gap: var(--gap-2);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .no-top-padding {
@@ -486,31 +500,5 @@ details > summary {
   }
   & > :first-child {
     padding-top: var(--gap-2);
-  }
-}
-
-.flex-around {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  gap: var(--gap-2);
-
-  a {
-    margin-top: 0;
-  }
-}
-
-.step-grid {
-  padding-top: var(--gap-2);
-  display: grid;
-  gap: var(--gap-2);
-  grid-template-columns: auto 1fr;
-
-  span {
-    font-weight: bolder;
-    text-align: center;
-    font-size: 2rem;
-    font-family: var(--font-header-serif);
   }
 }

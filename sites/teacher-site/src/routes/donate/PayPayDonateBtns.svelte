@@ -1,10 +1,10 @@
 <script lang="ts">
 	import {
 		CircleAlert,
+		DollarSign,
 		Layers,
 		Milestone,
 		ShieldCheck,
-		Wrench,
 		X
 	} from '@lucide/svelte'
 	import { enhance } from '$app/forms'
@@ -45,7 +45,7 @@
 	</button>
 
 	<div class="cta-donate custom-container">
-		<Wrench />
+		<DollarSign />
 		<input
 			type="number"
 			inputmode="numeric"
