@@ -124,8 +124,8 @@
 		right: 0;
 		background: var(--bg);
 		border: 2px solid var(--brand-primary);
-		border-radius: var(--border-radius, 1rem);
 		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+		border-radius: var(--border-radius);
 		background: var(--bg);
 		width: max-content;
 		min-width: 180px;
@@ -150,16 +150,21 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		color: var(--fg);
-		border-radius: 6px;
 		font-weight: 500;
 		font-size: 0.9rem;
 		transition: all 0.2s ease;
 	}
 
-	a:hover,
+	a.active,
+	a:hover {
+		color: var(--fg);
+		border-radius: var(--border-radius);
+	}
 	a.active {
 		background: rgb(from var(--brand-secondary) r g b / 0.3);
-		color: var(--fg);
+	}
+	a:hover {
+		background: rgb(from var(--brand-tertiary) r g b / 0.3);
 	}
 
 	.link-button {
@@ -171,12 +176,13 @@
 		text-transform: uppercase;
 		font-weight: 500;
 		font-size: 0.9rem;
-		color: var(--brand-primary);
+		color: var(--fg);
 		cursor: pointer;
 	}
 
 	.link-button:hover {
-		color: oklch(from var(--brand-primary) calc(l - 0.3) c h);
-		background: rgb(from var(--brand-secondary) r g b / 0.3) !important;
+		color: var(--fg);
+		border-radius: var(--border-radius);
+		background: rgb(from var(--brand-tertiary) r g b / 0.3) !important;
 	}
 </style>
