@@ -116,10 +116,6 @@
 					sources while remaining open to constructive feedback.
 				</li>
 			</ul>
-
-			<a class="cta" href="/curriculum">
-				<Route /> Explore the Curriculum
-			</a>
 		</div>
 		<div
 			class="bold-border-box"
@@ -147,6 +143,10 @@
 					integrity are the most valuable tools for professional advancement.
 				</li>
 			</ul>
+
+			<a class="cta" href="/curriculum">
+				<Route /> Explore the Curriculum
+			</a>
 		</div>
 	</div>
 </section>

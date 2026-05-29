@@ -217,61 +217,6 @@ details > summary {
   }
 }
 
-.cta-donate {
-  /* Inherit layout and structure from base .cta, override properties below */
-  display: inline-flex;
-  align-items: center;
-  max-width: fit-content;
-  gap: 0.5rem;
-  padding: var(--gap-1);
-  margin-right: var(--gap-1);
-  font-size: var(--font-size-4);
-  border-radius: 100px;
-  text-decoration: none;
-
-  /* Use the thick structural border from your design system */
-  border: clamp(2px, 4svw, 4px) solid var(--brand-secondary);
-
-  /* Invert colors: high-impact solid fill using the engine's built-in contrast system */
-  background-color: var(--brand-secondary);
-  color: var(--brand-secondary-contrast) !important;
-  font-weight: 700; /* Gives it psychological weight */
-
-  /* Hard shadow to match the blocky, architectural layout of the site layers */
-  box-shadow: 0 4px 0px oklch(from var(--brand-secondary) calc(l - 0.25) c h);
-  transition:
-    transform 100ms ease,
-    box-shadow 100ms ease;
-
-  svg {
-    width: 1.2em;
-    height: 1.2em;
-    flex-shrink: 0;
-    /* Keeps the SVG icon matching the crisp contrasting text */
-    fill: currentColor;
-  }
-
-  @media (max-width: 600px) {
-    margin-bottom: var(--gap-1);
-    width: 100%; /* Stretch on mobile for higher touch-target conversion */
-    justify-content: center;
-  }
-
-  &:hover {
-    /* Scale up to the dynamic lighter token for an interactive shine effect */
-    background-color: var(--brand-secondary-light);
-    border-color: var(--brand-secondary-light);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0px oklch(from var(--brand-secondary) calc(l - 0.3) c h);
-  }
-
-  &:active {
-    /* Push down on click to mimic structural tactile feedback */
-    transform: translateY(2px);
-    box-shadow: 0 2px 0px oklch(from var(--brand-secondary) calc(l - 0.2) c h);
-  }
-}
-
 /* Set a default offset for full-width boxes */
 .angled-bottom-box,
 .angled-top-box,
@@ -337,6 +282,7 @@ details > summary {
 .bold-border-box {
   --border-color: var(--brand-primary);
   --color: oklch(from var(--border-color) calc(l - 0.3) c h);
+  --local-text: var(--text_color, var(--border-color-contrast));
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
 
@@ -351,6 +297,35 @@ details > summary {
   strong,
   li::before {
     color: var(--safe-contrast, var(--local-text));
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    max-width: fit-content;
+    gap: 0.5rem;
+    color: var(--local-text) !important;
+    padding: var(--gap-1);
+    margin-right: var(--gap-1);
+    border: clamp(2px, 4svw, 4px) solid var(--local-text);
+    font-size: var(--font-size-4);
+    border-radius: 100px;
+    text-decoration: none;
+    background-color: rgb(from var(--local-text) r g b / 0.15);
+
+    svg {
+      width: 1.2em;
+      height: 1.2em;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      margin-bottom: var(--gap-1);
+    }
+
+    &:hover {
+      background-color: rgb(from var(--local-text) r g b / 0.25);
+    }
   }
 }
 

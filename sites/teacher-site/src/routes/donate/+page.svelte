@@ -1,6 +1,7 @@
 <script>
+	import PayPayDonateBtns  from './PayPayDonateBtns.svelte'
 	import { thickMargins } from '@autonomy/actions'
-	import { Layers, Milestone, Route, ShieldCheck, Wrench } from '@lucide/svelte'
+	import { Route } from '@lucide/svelte'
 </script>
 
 <section
@@ -60,22 +61,7 @@
 	use:thickMargins
 	style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast)"
 >
-	<h2>Choose your Impact</h2>
-
-	<section class="donations-list">
-		<a class="cta-donate" href="#">
-			<Layers /> $25 - The Individual Inventory
-		</a>
-		<a class="cta-donate" href="#">
-			<ShieldCheck /> $100 - The Integrity Shield
-		</a>
-		<a class="cta-donate" href="#">
-			<Milestone /> $500 - The Foundation Pillar
-		</a>
-		<a class="cta-donate" href="#">
-			<Wrench /> <strong>Custom Amount</strong> - Build the Future
-		</a>
-	</section>
+	<PayPayDonateBtns />
 </section>
 
 <section
