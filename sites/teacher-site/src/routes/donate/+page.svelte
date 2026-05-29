@@ -1,7 +1,9 @@
 <script>
-	import PayPayDonateBtns  from './PayPayDonateBtns.svelte'
+	import PayPayDonateBtns from './PayPayDonateBtns.svelte'
 	import { thickMargins } from '@autonomy/actions'
 	import { Route } from '@lucide/svelte'
+
+	let { form } = $props()
 </script>
 
 <section
@@ -61,7 +63,7 @@
 	use:thickMargins
 	style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast)"
 >
-	<PayPayDonateBtns />
+	<PayPayDonateBtns {form} />
 </section>
 
 <section

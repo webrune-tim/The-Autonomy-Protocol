@@ -6,30 +6,21 @@ settings:
 
 catalogs:
   default:
-    '@img/sharp-darwin-arm64':
-      specifier: ^0.34.5
-      version: 0.34.5
-    '@img/sharp-libvips-darwin-arm64':
-      specifier: ^1.2.4
-      version: 1.2.4
     '@lucide/svelte':
       specifier: ^1.16.0
       version: 1.16.0
+    '@types/canvas-confetti':
+      specifier: ^1.9.0
+      version: 1.9.0
     '@typescript/native-preview':
       specifier: 7.0.0-dev.20260421.2
       version: 7.0.0-dev.20260421.2
-    '@vitest/browser-playwright':
-      specifier: ^4.1.7
-      version: 4.1.7
+    canvas-confetti:
+      specifier: ^1.9.4
+      version: 1.9.4
     node-addon-api:
       specifier: ^8.8.0
       version: 8.8.0
-    sharp:
-      specifier: ^0.34.5
-      version: 0.34.5
-    vite-plus:
-      specifier: ^0.1.22
-      version: 0.1.22
 
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@latest
@@ -339,6 +330,9 @@ importers:
       '@lucide/svelte':
         specifier: 'catalog:'
         version: 1.16.0(svelte@5.55.9(@typescript-eslint/types@8.60.0))
+      canvas-confetti:
+        specifier: 'catalog:'
+        version: 1.9.4
       svelte-french-toast:
         specifier: ^1.2.0
         version: 1.2.0(svelte@5.55.9(@typescript-eslint/types@8.60.0))
@@ -367,6 +361,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.1.2
         version: 7.1.2(@voidzero-dev/vite-plus-core@0.1.22(@types/node@22.19.19)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)(typescript@6.0.3))(svelte@5.55.9(@typescript-eslint/types@8.60.0))
+      '@types/canvas-confetti':
+        specifier: 'catalog:'
+        version: 1.9.0
       '@types/node':
         specifier: ^22.19.19
         version: 22.19.19
@@ -1934,6 +1931,9 @@ packages:
   '@tybys/wasm-util@0.10.2':
     resolution: {integrity: sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==}
 
+  '@types/canvas-confetti@1.9.0':
+    resolution: {integrity: sha512-aBGj/dULrimR1XDZLtG9JwxX1b4HPRF6CX9Yfwh3NvstZEm1ZL7RBnel4keCPSqs1ANRu1u2Aoz9R+VmtjYuTg==}
+
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
 
@@ -2566,6 +2566,9 @@ packages:
 
   caniuse-lite@1.0.30001793:
     resolution: {integrity: sha512-iwSsYWaCOoh26cV8NwNRViHlrfUvYsHDfRVcbtmw0Kg6PJIZZXwMkj1442FYLBGkeUf1juAsU3DTfxW579mrPA==}
+
+  canvas-confetti@1.9.4:
+    resolution: {integrity: sha512-yxQbJkAVrFXWNbTUjPqjF7G+g6pDotOUHGbkZq2NELZUMDpiJ85rIEazVb8GTaAptNW2miJAXbs1BtioA251Pw==}
 
   chalk@5.6.2:
     resolution: {integrity: sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==}
@@ -5489,6 +5492,8 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
+  '@types/canvas-confetti@1.9.0': {}
+
   '@types/chai@5.2.3':
     dependencies:
       '@types/deep-eql': 4.0.2
@@ -6185,6 +6190,8 @@ snapshots:
       unique-filename: 4.0.0
 
   caniuse-lite@1.0.30001793: {}
+
+  canvas-confetti@1.9.4: {}
 
   chalk@5.6.2: {}
 

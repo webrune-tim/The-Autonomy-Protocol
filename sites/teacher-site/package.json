@@ -38,6 +38,7 @@
     "@autonomy/theme-toggle": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",
     "@lucide/svelte": "catalog:",
+    "canvas-confetti": "catalog:",
     "svelte-french-toast": "^1.2.0"
   },
   "devDependencies": {
@@ -49,6 +50,7 @@
     "@sveltejs/enhanced-img": "^0.10.4",
     "@sveltejs/kit": "^2.61.1",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@types/canvas-confetti": "catalog:",
     "@types/node": "^22.19.19",
     "@typescript/native-preview": "catalog:",
     "better-auth": "~1.4.22",

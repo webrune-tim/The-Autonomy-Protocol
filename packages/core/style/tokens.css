@@ -24,6 +24,13 @@
   --surface-3: var(--nord2);
   --ui-border: var(--nord4);
 
+  --error-bg: oklch(25.266% 0.09964 26.822);
+  --error-fg: var(--white);
+  --error-border: #f35b5b;
+  --success-bg: oklch(37.703% 0.10871 146.769);
+  --success-fg: var(--white);
+  --success-border: #5bf35b;
+
   /* Layout Shared Tokens */
   --gap-1: clamp(0.5rem, 1.75svw, 1rem);
   --gap-2: clamp(1rem, 2.75svw, 2rem);
