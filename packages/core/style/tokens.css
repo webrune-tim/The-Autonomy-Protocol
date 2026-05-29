@@ -65,9 +65,9 @@
   --accent-2: var(--nord13);
   --accent-3: var(--nord15);
 
-  --accent-1-contrast: var(--nord4);
-  --accent-2-contrast: var(--nord0);
-  --accent-3-contrast: var(--nord0);
+  --accent-1-contrast: lsh(from var(--nord0) calc(l + 10) s h);
+  --accent-2-contrast: lsh(from var(--nord0) calc(l - 10) s h);
+  --accent-3-contrast: lsh(from var(--nord0) calc(l - 10) s h);
 }
 
 /* ==========================================================================

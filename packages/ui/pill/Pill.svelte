@@ -1,29 +1,29 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+	import type { Snippet } from 'svelte'
 
-  // Define the prop type
-  interface Props {
-    children: Snippet;
-  }
+	// Define the prop type
+	interface Props {
+		children: Snippet
+	}
 
-  let { children }: Props = $props();
+	let { children }: Props = $props()
 </script>
 
 <div class="pill">
-  {@render children()}
+	{@render children()}
 </div>
 
 <style>
-  .pill {
-    display: grid;
-    place-content: center;
-    max-width: fit-content;
-    border-radius: 100px;
-    color: var(--fg);
-    background-color: rgb(from var(--brand-secondary) r g b / 0.15);
-    border: 1px solid var(--brand-secondary);
-    padding: 0.5rem;
-    font-size: 10px;
-    font-family: "Poppins", sans-serif;
-  }
+	.pill {
+		display: grid;
+		place-content: center;
+		max-width: fit-content;
+		border-radius: 100px;
+		color: var(--fg);
+		background-color: rgb(from var(--brand-primary) r g b / 0.15);
+		border: 1px solid var(--brand-primary);
+		padding: 0.5rem;
+		font-size: 10px;
+		font-family: 'Poppins', sans-serif;
+	}
 </style>
