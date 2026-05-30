@@ -133,24 +133,11 @@
 </section>
 
 <style>
-	.cta,
-	.link {
+	.cta {
 		display: inline-flex !important;
 		align-items: center;
 		font-weight: bold;
 		text-decoration: none;
-	}
-
-	.link {
-		margin-top: 0;
-		font-size: 1.5rem;
-		gap: var(--gap-1);
-		color: var(--text-link);
-		transition: color 0.2s ease;
-	}
-
-	.link:hover {
-		color: var(--text-link-hover);
 	}
 
 	h3 {

@@ -694,9 +694,6 @@
 
 	/* Responsive break points collapsing workspace grid */
 	@media (max-width: 768px) {
-		.layout-grid {
-			grid-template-columns: 1fr;
-		}
 	}
 
 	@media (max-width: 640px) {
