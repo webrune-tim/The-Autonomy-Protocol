@@ -26,9 +26,7 @@
 	use:thickMargins
 	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast);"
 >
-	<div class="title-grid">
-		<h2>The Problem:</h2>
-	</div>
+	<h2 class="reveal-header">The Problem:</h2>
 	<ol>
 		<li>
 			<strong>Resource Drain:</strong> Traditional discipline relies on external regulation
@@ -54,9 +52,7 @@
 	style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast);"
 	use:thickMargins
 >
-	<div class="title-grid">
-		<h2>The Opportunity:</h2>
-	</div>
+	<h2 class="reveal-header">The Opportunity:</h2>
 	<ol>
 		<li>
 			<strong>Student-Led Accountability:</strong> Shift the burden of responsibility back
@@ -83,11 +79,9 @@
 			class="bold-border-box"
 			style="--border-color: var(--brand-primary); --title-color: var(--text-primary-print); --text_color: var(--brand-primary-contrast);"
 		>
-			<div class="title-grid">
-				<div class="flex-column">
-					<h3>The Accountability Cycle</h3>
-					<span class="tier-label">(Tier 1: Restoration)</span>
-				</div>
+			<div class="flex-column">
+				<h3 class="reveal-header">The Accountability Cycle</h3>
+				<span class="tier-label">(Tier 1: Restoration)</span>
 			</div>
 			<ol class="colored-list">
 				<li>
@@ -112,11 +106,9 @@
 			class="bold-border-box"
 			style="--border-color: var(--brand-secondary); --title-color: var(--text-secondary-print);"
 		>
-			<div class="title-grid">
-				<div class="flex-column">
-					<h3>The Integrity Shield</h3>
-					<span class="tier-label">(Tier 2: Prevention)</span>
-				</div>
+			<div class="flex-column">
+				<h3 class="reveal-header">The Integrity Shield</h3>
+				<span class="tier-label">(Tier 2: Prevention)</span>
 			</div>
 
 			<ol class="colored-list" style="--list-accent: var(--text-secondary-print);">

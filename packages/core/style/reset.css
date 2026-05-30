@@ -6,7 +6,7 @@
 }
 
 /* 2. Remove default margin */
-*:not(dialog) {
+*:not(dialog, ul) {
   margin: 0;
 }
 

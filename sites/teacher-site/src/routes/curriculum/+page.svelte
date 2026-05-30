@@ -22,14 +22,14 @@
 </section>
 
 <section class="angled-top-bottom-box" use:thickMargins>
-	<h2>Freshman Year | Phase 1: The Foundation</h2>
+	<h2 class="reveal-header">Freshman Year | Phase 1: The Foundation</h2>
 
 	<span>
 		The Objective: Establishing an internal locus of control during the transition
 		into high school.
 	</span>
 
-	<h3>Quarter 1: The Integrity Shield (Defense)</h3>
+	<h3 class="reveal-header">Quarter 1: The Integrity Shield (Defense)</h3>
 
 	<ul>
 		<li>
@@ -47,7 +47,9 @@
 		</li>
 	</ul>
 
-	<h3>Quarter 2: The Accountability Cycle — Internal (Insight)</h3>
+	<h3 class="reveal-header">
+		Quarter 2: The Accountability Cycle — Internal (Insight)
+	</h3>
 
 	<ul>
 		<li>
@@ -60,7 +62,9 @@
 		</li>
 	</ul>
 
-	<h3>Quarter 3: The Accountability Cycle — External (Restitution)</h3>
+	<h3 class="reveal-header">
+		Quarter 3: The Accountability Cycle — External (Restitution)
+	</h3>
 
 	<ul>
 		<li>
@@ -73,7 +77,7 @@
 		</li>
 	</ul>
 
-	<h3>Quarter 4: Maintenance & Mentorship (Integration)</h3>
+	<h3 class="reveal-header">Quarter 4: Maintenance & Mentorship (Integration)</h3>
 
 	<ul>
 		<li>
@@ -92,14 +96,14 @@
 	use:thickMargins
 	style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast)"
 >
-	<h2>Senior Year | Phase 2: The Transition</h2>
+	<h2 class="reveal-header">Senior Year | Phase 2: The Transition</h2>
 
 	<span>
 		The Objective: Transitioning the protocol from an academic framework into a
 		non-negotiable professional standard.
 	</span>
 
-	<h3>Quarter 1: The Integrity Shield (Professionalism)</h3>
+	<h3 class="reveal-header">Quarter 1: The Integrity Shield (Professionalism)</h3>
 	<ul>
 		<li>
 			<strong>Radical Integrity:</strong> Applying "impeccability with your word" to college
@@ -115,7 +119,9 @@
 		</li>
 	</ul>
 
-	<h3>Quarter 2: The Accountability Cycle — Internal (Preparation)</h3>
+	<h3 class="reveal-header">
+		Quarter 2: The Accountability Cycle — Internal (Preparation)
+	</h3>
 	<ul>
 		<li>
 			<strong>Ego Surrender:</strong> Acknowledging the fear of leaving home and accepting
@@ -128,7 +134,9 @@
 		</li>
 	</ul>
 
-	<h3>Quarter 3: The Accountability Cycle — External (Legacy)</h3>
+	<h3 class="reveal-header">
+		Quarter 3: The Accountability Cycle — External (Legacy)
+	</h3>
 	<ul>
 		<li>
 			<strong>The Bridge-Building Phase:</strong> Identifying every mentor, teacher, or
@@ -140,7 +148,7 @@
 		</li>
 	</ul>
 
-	<h3>Quarter 4: Maintenance & Service (The Launch)</h3>
+	<h3 class="reveal-header">Quarter 4: Maintenance & Service (The Launch)</h3>
 	<ul>
 		<li>
 			<strong>The Autonomy Routine:</strong> Designing a personal system of meditation,
@@ -161,7 +169,7 @@
 	class="bold-border-box margin-top flex-around"
 	style="--border-color: var(--fg)"
 >
-	<h2>Summary of Delivery Differences</h2>
+	<h2 class="reveal-header">Summary of Delivery Differences</h2>
 	<p>
 		<strong>Freshman Delivery:</strong> High-frequency, small-stakes exercises. Visual-heavy
 		and focused on immediate social survival.

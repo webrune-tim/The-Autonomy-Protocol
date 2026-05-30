@@ -40,7 +40,7 @@
 	use:thickMargins
 	style="--color: var(--brand-primary-dark); --text_color: var(--brand-primary-contrast)"
 >
-	<h2>Phase 1: Foundation & Behavioral Baseline</h2>
+	<h2 class="reveal-header">Phase 1: Foundation & Behavioral Baseline</h2>
 	<p><strong>Target: Freshman Year | Focus: The Setup</strong></p>
 
 	<p>
@@ -79,7 +79,7 @@
 	use:thickMargins
 	style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast)"
 >
-	<h2>Phase 2: Real-World Application & Career Readiness</h2>
+	<h2 class="reveal-header">Phase 2: Real-World Application & Career Readiness</h2>
 	<p><strong>Target: Senior Year | Focus: The Pro Level</strong></p>
 
 	<p>

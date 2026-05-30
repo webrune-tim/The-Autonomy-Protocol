@@ -33,7 +33,7 @@
 			use:enhance={handleEnhance}
 		>
 			<div class="upload-zone">
-				<h3>New Pipeline Track</h3>
+				<h3 class="reveal-header">New Pipeline Track</h3>
 				<label for="pdf-file" class="file-label">
 					{isSubmitting ? 'Processing Document...' : 'Select PDF Asset'}
 				</label>
@@ -57,7 +57,7 @@
 
 		{#if form?.success && form?.markdown}
 			<div class="output-container">
-				<h3>Conversion Preview:</h3>
+				<h3 class="reveal-header">Conversion Preview:</h3>
 				<pre class="markdown-preview"><code>{form.markdown}</code></pre>
 			</div>
 		{/if}
@@ -65,7 +65,7 @@
 
 	<div class="dashboard-grid">
 		<section class="data-section">
-			<h2>Active & Historical Pipelines</h2>
+			<h2 class="reveal-header">Active & Historical Pipelines</h2>
 			<div class="table-wrapper">
 				<table>
 					<thead>
@@ -96,7 +96,7 @@
 		</section>
 
 		<section class="data-section">
-			<h2>My Curriculum Assets</h2>
+			<h2 class="reveal-header">My Curriculum Assets</h2>
 			<div class="document-list">
 				{#each data.myDocuments as doc (doc.id)}
 					<div class="document-card">
@@ -131,7 +131,7 @@
 
 	{#if data.isAdmin}
 		<section class="admin-section">
-			<h2>Administrative Control: User Directory</h2>
+			<h2 class="reveal-header">Administrative Control: User Directory</h2>
 			<form method="GET" class="search-form">
 				<input
 					type="text"

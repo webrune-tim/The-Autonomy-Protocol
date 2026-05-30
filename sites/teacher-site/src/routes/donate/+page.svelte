@@ -34,7 +34,7 @@
 	class="angled-top-bottom-box"
 	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
 >
-	<h2>Where your investment goes</h2>
+	<h2 class="reveal-header">Where your investment goes</h2>
 
 	<ul>
 		<li>

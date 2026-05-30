@@ -25,7 +25,7 @@
 		aria-label="Teacher Toolkit"
 	>
 		<div class="teacher-header">
-			<h3>Teacher Toolkit</h3>
+			<h3 class="reveal-header">Teacher Toolkit</h3>
 		</div>
 		<div class="teacher-content">
 			{@render children()}
@@ -43,7 +43,8 @@
 
 	.teacher-header h3 {
 		margin: 0;
-		font-size: 0.75rem;
+		font-size: 1.25rem;
+		font-weight: bold;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		font-family: var(--font-header-sans-2);
@@ -61,6 +62,7 @@
 	}
 
 	.teacher-content :global(strong) {
-		color: var(--bg);
+		/* color: var(--bg); */
+		font-weight: bold;
 	}
 </style>

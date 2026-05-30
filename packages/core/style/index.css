@@ -32,8 +32,39 @@ body {
 }
 
 /* --- 3. Element-Specific Resets & Styles --- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
+}
+
+h1.reveal-header,
+h2.reveal-header,
+h3.reveal-header {
+  display: block;
+  overflow-x: clip;
+
+  view-timeline-name: --revealing-header;
+  view-timeline-axis: block;
+
+  animation: linear reveal-header both;
+  animation-timeline: --revealing-header;
+
+  animation-range: entry 5% cover 30%;
+}
+
+@keyframes reveal-header {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0);
+  }
 }
 
 img {
@@ -44,7 +75,7 @@ img {
 
 hr {
   height: 4px;
-  background: var(--fg);
+  background: var(--nord6);
   margin: var(--gap-1) 0;
   border: none;
   outline: none;
@@ -70,7 +101,7 @@ button {
   border: none;
   display: inline-block;
   text-transform: uppercase;
-  text-decoration: none !important;
+  text-decoration: none;
   padding: var(--gap-1) var(--gap-2);
 }
 
@@ -133,20 +164,33 @@ textarea:focus {
   }
 
   /* Shared text color logic */
-  h1, h2, h3, h4, p, a, strong, span, li, li:before,
-  .reading-time, .rt-number, .rt-text {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a,
+  strong,
+  span,
+  li,
+  li:before,
+  .reading-time,
+  .rt-number,
+  .rt-text {
     color: var(--local-text);
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     text-transform: uppercase;
   }
 
-  p, li {
-    font-size: clamp(1rem, 3svw, 2rem);
+  p,
+  li {
+    /* font-size: clamp(1rem, 3svw, 2rem); */
     margin-bottom: var(--gap-1);
     margin-top: var(--gap-1);
-    font-weight: 500;
   }
 
   .cta {
@@ -241,13 +285,18 @@ textarea:focus {
 /* --- 6. Special Container Components --- */
 .bold-border-box {
   --border-color: var(--brand-primary);
-  --color: oklch(from var(--border-color) calc(l - 0.3) c h);
+  --color: var(--border-color);
   border: var(--border-width) solid var(--border-color);
   padding: var(--gap-2);
   --local-text: var(--text_color, var(--fg));
   color: var(--local-text);
 
-  h2, h3, h4, h5, strong, li::before {
+  h2,
+  h3,
+  h4,
+  h5,
+  strong,
+  li::before {
     color: var(--safe-contrast, var(--local-text));
   }
 
@@ -256,10 +305,9 @@ textarea:focus {
     align-items: center;
     max-width: fit-content;
     gap: 5px;
-    color: var(--local-text) !important;
+    color: var(--nord0);
     padding: var(--gap-1);
-    margin-right: var(--gap-1);
-    border: clamp(2px, 4svw, 4px) solid var(--local-text);
+    margin-right: calc(var(--gap-1) + clamp(2px, 4svw, 4px));
     font-size: var(--font-size-4);
     font-weight: bold;
     border-radius: 100px;
@@ -286,7 +334,9 @@ textarea:focus {
 .box {
   border-radius: var(--border-radius);
   padding: var(--gap-2);
-  span { font-weight: bold; }
+  span {
+    font-weight: bold;
+  }
 }
 
 .content {
@@ -309,25 +359,38 @@ textarea:focus {
 .trans-primary {
   background-color: rgb(from var(--brand-primary) r g b / 0.15);
   border: 2px solid var(--brand-primary);
-  h2, h3 { color: var(--brand-secondary); }
+  h2,
+  h3 {
+    color: var(--brand-secondary);
+  }
 }
 
 .trans-secondary {
   background-color: rgb(from var(--brand-secondary) r g b / 0.15);
   border: 2px solid var(--brand-secondary);
-  h2, h3 { color: var(--brand-primary); }
+  h2,
+  h3 {
+    color: var(--brand-primary);
+  }
 }
 
 .trans-tertiary {
   background-color: rgb(from var(--brand-tertiary) r g b / 0.15);
   border: 2px solid var(--brand-tertiary);
-  h2, h3 { color: var(--brand-secondary); }
+  h2,
+  h3 {
+    color: var(--brand-secondary);
+  }
 }
 
 .trans-black {
   background-color: rgb(from var(--bg) r g b / 0.15);
   border: 2px solid var(--bg);
-  h2, h3, h4 { color: var(--bg); }
+  h2,
+  h3,
+  h4 {
+    color: var(--bg);
+  }
 }
 
 /* --- 8. Layout Grids & Flex Containers --- */
@@ -373,8 +436,10 @@ textarea:focus {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  gap: var(--gap-2);
-  a { margin-top: 0; }
+  gap: var(--gap-1);
+  a {
+    margin-top: 0;
+  }
 }
 
 .title-grid {
@@ -383,8 +448,14 @@ textarea:focus {
   align-items: baseline;
   color: var(--fg);
   grid-template-columns: auto 1fr;
-  h2, h3, h4 { margin-bottom: 0; }
-  span { font-size: clamp(1rem, 2svw, 1.75rem); }
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 0;
+  }
+  span {
+    font-size: clamp(1rem, 2svw, 1.75rem);
+  }
 }
 
 .step-grid {
@@ -430,13 +501,28 @@ textarea:focus {
   color: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
 }
 
-.margin-top, .margin-top-1 { margin-top: var(--gap-1); }
-.margin-top-2 { margin-top: var(--gap-2); }
-.margin-bottom { margin-bottom: var(--gap-1); }
-.no-bottom-margin { margin-bottom: 0 !important; }
-.bottom-padding { padding-bottom: var(--gap-4) !important; }
+.margin-top,
+.margin-top-1 {
+  margin-top: var(--gap-1);
+}
+.margin-top-2 {
+  margin-top: var(--gap-2);
+}
+.margin-bottom {
+  margin-bottom: var(--gap-1);
+}
+.no-bottom-margin {
+  margin-bottom: 0 !important;
+}
+.bottom-padding {
+  padding-bottom: var(--gap-4) !important;
+}
 
 .no-top-padding {
-  & > :not(:first-child) { padding-top: 0; }
-  & > :first-child { padding-top: var(--gap-2); }
+  & > :not(:first-child) {
+    padding-top: 0;
+  }
+  & > :first-child {
+    padding-top: var(--gap-2);
+  }
 }

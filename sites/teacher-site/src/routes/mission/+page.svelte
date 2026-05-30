@@ -16,7 +16,7 @@
 	use:thickMargins
 	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
 >
-	<h2>Our Mission</h2>
+	<h2 class="reveal-header">Our Mission</h2>
 	<p>
 		<strong>Our objective is definitive:</strong> to ensure every student graduates with
 		the executive functioning skills required to navigate adult complexities independently.
@@ -34,7 +34,7 @@
 	use:thickMargins
 	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
 >
-	<h2>The Shift: From Punitive to Proactive</h2>
+	<h2 class="reveal-header">The Shift: From Punitive to Proactive</h2>
 	<p>
 		Most institutional environments operate on a binary reward-and-punishment system,
 		incentivizing students to simply avoid getting caught. The Autonomy Protocol
@@ -52,7 +52,7 @@
 <section>
 	<div class="flex">
 		<div class="bold-border-box" style="--border-color: var(--brand-primary)">
-			<h2>Methodology: Cognitive & Behavioral Frameworks</h2>
+			<h2 class="reveal-header">Methodology: Cognitive & Behavioral Frameworks</h2>
 			<h3 class="margin-top margin-bottom">
 				The Accountability Cycle (Internal Regulation)
 			</h3>
@@ -83,7 +83,7 @@
 			</ul>
 		</div>
 		<div class="bold-border-box" style="--border-color: var(--brand-tertiary)">
-			<h2>Methodology: Interpersonal Agreements</h2>
+			<h2 class="reveal-header">Methodology: Interpersonal Agreements</h2>
 			<h3 class="margin-top margin-bottom">
 				The Integrity Shield (Tier 1 Interpersonal Tools)
 			</h3>
@@ -122,7 +122,9 @@
 			use:thickMargins
 			style="--border-color: var(--brand-secondary)"
 		>
-			<h2>Cross-Curricular Application & Post-Secondary Outcomes</h2>
+			<h2 class="reveal-header">
+				Cross-Curricular Application & Post-Secondary Outcomes
+			</h2>
 			<p>
 				The Autonomy Protocol is not a theoretical exercise; it is a workforce
 				readiness initiative. We demonstrate how these self-governance skills
@@ -155,7 +157,7 @@
 	class="bold-border-box margin-top-2 flex-around"
 	style="--border-color: var(--fg)"
 >
-	<h2>The Architect</h2>
+	<h2 class="reveal-header">The Architect</h2>
 	<p>
 		<strong>The Autonomy Protocol</strong> was developed by
 		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>.

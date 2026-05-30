@@ -253,10 +253,10 @@
 	}
 
 	:global(.copyright) {
-		color: var(--fg);
+		color: var(--nord4);
 		font-size: var(--font-size-4);
 		letter-spacing: 0.05em;
-		opacity: 0.7;
+		opacity: 0.8;
 		margin: 0;
 		text-align: center;
 	}

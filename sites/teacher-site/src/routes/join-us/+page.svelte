@@ -28,7 +28,7 @@
 	class="angled-top-bottom-box"
 	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
 >
-	<h2>Our Core Framework</h2>
+	<h2 class="reveal-header">Our Core Framework</h2>
 
 	<p>
 		To reach students effectively, we focus our contributions around two pillars:
@@ -51,7 +51,7 @@
 	use:thickMargins
 	style="--color: var(--brand-tertiary); --text_color: var(--brand-tertiary-contrast)"
 >
-	<h2>Why Your Expertise is Critical</h2>
+	<h2 class="reveal-header">Why Your Expertise is Critical</h2>
 
 	<p>
 		We need professionals who can bridge the gap between deep psychological work and
@@ -102,7 +102,7 @@
 	class="bold-border-box margin-top flex-around"
 	style="--border-color: var(--fg)"
 >
-	<h2>Ready to Build a Self-Governed Future?</h2>
+	<h2 class="reveal-header">Ready to Build a Self-Governed Future?</h2>
 
 	<p>
 		We operate under the <strong>Integrity Protocol:</strong> we are impeccable with our

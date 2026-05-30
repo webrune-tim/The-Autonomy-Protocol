@@ -29,7 +29,7 @@
 	})
 </script>
 
-<h2>Choose your Impact</h2>
+<h2 class="reveal-header">Choose your Impact</h2>
 
 <form
 	method="POST"

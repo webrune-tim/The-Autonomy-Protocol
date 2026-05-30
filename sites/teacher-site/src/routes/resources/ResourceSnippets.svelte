@@ -44,7 +44,7 @@
 {/snippet}
 
 <div class="tab-content-wrapper">
-	<h2>{current.title}</h2>
+	<h2 class="reveal-header">{current.title}</h2>
 	<p>{current.desc}</p>
 
 	{#if allLinks[activeTab].length > 0}

@@ -20,7 +20,9 @@
 </section>
 
 <section class="angled-top-bottom-box">
-	<h2>Built for Where You Are. Designed for Where You're Going.</h2>
+	<h2 class="reveal-header">
+		Built for Where You Are. Designed for Where You're Going.
+	</h2>
 	<p><strong>Freahman</strong></p>
 	<p>
 		Start your high school career with a blueprint. Don't wait until graduation to
@@ -43,7 +45,7 @@
 	use:thickMargins
 	style="--color: var(--brand-primary);"
 >
-	<h2>The Autonomy Framework</h2>
+	<h2 class="reveal-header">The Autonomy Framework</h2>
 	<ul>
 		<li>
 			<strong>Self-Governance:</strong> You are the architect of your own life. Learn how
@@ -67,7 +69,7 @@
 	class="angled-top-box no-bottom-margin"
 	style="--color: var(--brand-secondary);"
 >
-	<h3>Ready to take the wheel?</h3>
+	<h3 class="reveal-header">Ready to take the wheel?</h3>
 	<p>The tools are here. The choice to use them is yours.</p>
 
 	<a class="cta" href="/assignments">

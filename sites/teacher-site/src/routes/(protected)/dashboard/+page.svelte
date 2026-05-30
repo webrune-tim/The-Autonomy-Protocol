@@ -86,7 +86,7 @@
 	style="--border-color: var(--brand-primary);"
 >
 	<header class="hub-header">
-		<h2>Resource Pipeline & Document Hub</h2>
+		<h2 class="reveal-header">Resource Pipeline & Document Hub</h2>
 		<div class="stat-badge">
 			Total Resources Available: {data.myDocuments?.length ?? 0}
 		</div>
@@ -159,7 +159,7 @@
 
 	<!-- Live Workspace Management Area -->
 	<div class="asset-workspace margin-top">
-		<h3>Your Available Assets</h3>
+		<h3 class="reveal-header">Your Available Assets</h3>
 		{#if data.myDocuments && data.myDocuments.length > 0}
 			<div class="asset-grid">
 				{#each data.myDocuments as doc (doc)}
@@ -205,7 +205,7 @@
 		class="bold-border-box margin-top"
 		style="--border-color: var(--brand-secondary);"
 	>
-		<h2>Administrative Control</h2>
+		<h2 class="reveal-header">Administrative Control</h2>
 		<p>Lookup users to adjust authorization levels.</p>
 
 		<form method="get" class="search-form">
@@ -278,7 +278,7 @@
 {#if activeShareDocId}
 	<div class="modal-overlay">
 		<div class="modal">
-			<h3>Share Ownership Rights</h3>
+			<h3 class="reveal-header">Share Ownership Rights</h3>
 			<p class="modal-desc">
 				This gives another teacher full access rights to see and work with this
 				asset.
