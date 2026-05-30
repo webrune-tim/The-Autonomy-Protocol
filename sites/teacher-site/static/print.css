@@ -17,12 +17,13 @@
 
   .new-page {
     break-before: page;
+
     /* Legacy support */
-    page-break-before: always;
+    break-before: page;
   }
 
   body {
-    font-family: "Inter", sans-serif !important;
+    font-family: Inter, sans-serif !important;
     font-size: 12pt;
     line-height: 1.5;
     background-color: #fff !important;
@@ -46,11 +47,11 @@
   h4,
   h5,
   h6 {
-    font-family: "Poppins", sans-serif !important;
+    font-family: Poppins, sans-serif !important;
     text-transform: uppercase;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    page-break-after: avoid;
+    break-after: avoid;
   }
 
   h1 {
@@ -58,10 +59,12 @@
     border-bottom: 2pt solid #000;
     padding-bottom: 5px;
   }
+
   h2 {
     font-size: 18pt !important;
     border-bottom: 1pt solid #ccc;
   }
+
   h3 {
     font-size: 14pt !important;
   }
@@ -78,6 +81,7 @@
   }
 
   /* 4. UTILITY BOXES (.trans-primary, .trans-secondary, etc.) */
+
   /* Convert translucent backgrounds to clear boxes with solid borders */
   .box,
   .trans-primary,
@@ -89,10 +93,11 @@
     border-radius: 4px !important;
     padding: 1rem !important;
     margin-bottom: 1.5rem !important;
-    page-break-inside: avoid; /* Keeps content together on one page */
+    break-inside: avoid; /* Keeps content together on one page */
   }
 
   /* 5. LAYOUT (Grid to Linear) */
+
   /* Your 300px minmax grid can get squished on paper; linear is safer */
   .grid,
   .step-grid,
@@ -108,7 +113,7 @@
   img {
     max-width: 100% !important;
     height: auto !important;
-    page-break-inside: avoid;
+    break-inside: avoid;
     filter: grayscale(100%); /* Save color ink */
   }
 
@@ -119,7 +124,7 @@
   }
 
   /* Append the URL next to the link so students can see where it goes */
-  a[href^="http"]:after {
+  a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 10pt;
     font-weight: normal;
@@ -127,7 +132,7 @@
 
   /* 7. PAGE BREAK HELPERS */
   .page-break {
-    page-break-before: always;
+    break-before: page;
   }
 
   /* Prevent awkward single lines at bottom of pages */

@@ -28,7 +28,11 @@
 	}
 
 	// Use $derived to fix the {@const} invalid placement error
-	let current = $derived(contentMap[activeTab])
+	let current = $derived(
+		activeTab in contentMap
+			? contentMap[activeTab as keyof typeof contentMap]
+			: contentMap.steps // Default fallback
+	)
 </script>
 
 {#snippet ResourceGrid(links, path)}
