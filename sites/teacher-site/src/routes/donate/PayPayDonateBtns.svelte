@@ -19,7 +19,7 @@
 		const val = Number(custom_amount)
 		if (!custom_amount || val <= 0) return 'Build the Future'
 		if (val < 25) return 'Scale your impact to $25?'
-		if (val > 500) return 'Our server just high-fived itself.'
+		if (val > 500) return 'Our server just high-fived itself'
 		return `Invest $${val} in the Protocol`
 	})
 
