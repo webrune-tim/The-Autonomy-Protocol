@@ -6,9 +6,9 @@
 	let { children } = $props()
 
 	const colors = [
-		{bg: 'var(--brand-primary)', fg: 'var(--brand-primary-contrast)'},
-		{bg: 'var(--brand-secondary)', fg: 'var(--brand-secondary-contrast)'},
-		{bg: 'var(--brand-tertiary)', fg: 'var(--brand-tertiary-contrast)'}
+		{ bg: 'var(--brand-primary)', fg: 'var(--brand-primary-contrast)' },
+		{ bg: 'var(--brand-secondary)', fg: 'var(--brand-secondary-contrast)' },
+		{ bg: 'var(--brand-tertiary)', fg: 'var(--brand-tertiary-contrast)' }
 	]
 	const color = colors[Math.floor(Math.random() * colors.length)]
 
@@ -23,7 +23,10 @@
 	}
 </script>
 
-<article class="unangled-box no-bottom-margin" style="--color: {color.bg}; --text_color: {color.fg} !important;">
+<article
+	class="unangled-box no-bottom-margin"
+	style="--color: {color.bg}; --text_color: {color.fg} !important;"
+>
 	<nav>
 		<a class="cta" href="/resources">
 			<ArrowLeft size={32} />

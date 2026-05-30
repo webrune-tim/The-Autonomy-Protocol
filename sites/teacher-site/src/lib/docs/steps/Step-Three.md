@@ -1,8 +1,8 @@
 ---
-title: "Step Three"
-description: "The thrid step the in The Autonomy Protocol."
+title: 'Step Three'
+description: 'The thrid step the in The Autonomy Protocol.'
 order: 3
-date: "2026-05-11"
+date: '2026-05-11'
 published: true
 ---
 

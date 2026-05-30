@@ -21,21 +21,11 @@
 		align-items: center;
 
 		/* Force the footer base text to high contrast */
-		color: var(--brand-primary-contrast) !important;
+		color: var(--brand-primary-contrast);
 		background: var(--brand-primary-dark);
 
 		/* Padding & Typography Layout */
 		padding: var(--gap-2) var(--gap-1);
 		font-size: var(--font-size-3);
-		width: 100%;
-
-		/* DEEP GLOBAL SELECTOR FORCE:
-		   Because your navigation items are passed via {@render children()},
-		   they retain styling from the parent scope. This global combinator
-		   intercepts everything inside the footer element.
-		*/
-		:global(& *) {
-			color: var(--brand-primary-contrast) !important;
-		}
 	}
 </style>

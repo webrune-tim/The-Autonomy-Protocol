@@ -1,40 +1,48 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
+	import { enhance } from '$app/forms'
 
-	let { data, form } = $props();
+	let { data, form } = $props()
 
 	// Local reactive state for UI transitions
-	let isSubmitting = $state(false);
-	let shareTargetEmail = $state('');
+	let isSubmitting = $state(false)
+	let shareTargetEmail = $state('')
 
 	function handleEnhance() {
-		isSubmitting = true;
+		isSubmitting = true
 		return async ({ update }) => {
-			await update();
-			isSubmitting = false;
-		};
+			await update()
+			isSubmitting = false
+		}
 	}
 </script>
 
 <div class="app-container">
 	<header class="page-header">
 		<h1>Document Ingestion & Conversion</h1>
-		<p class="subtitle">Transitioning legacy PDF curriculum to structured Markdown for the Autonomy Protocol.</p>
+		<p class="subtitle">
+			Transitioning legacy PDF curriculum to structured Markdown for the Autonomy
+			Protocol.
+		</p>
 	</header>
 
 	<section class="ingestion-section">
-		<form method="POST" action="/pdf-to-md?/uploadAndConvert" enctype="multipart/form-data" use:enhance={handleEnhance}>
+		<form
+			method="POST"
+			action="/pdf-to-md?/uploadAndConvert"
+			enctype="multipart/form-data"
+			use:enhance={handleEnhance}
+		>
 			<div class="upload-zone">
 				<h3>New Pipeline Track</h3>
 				<label for="pdf-file" class="file-label">
 					{isSubmitting ? 'Processing Document...' : 'Select PDF Asset'}
 				</label>
-				<input 
-					id="pdf-file" 
-					name="pdf-file" 
-					type="file" 
-					accept="application/pdf" 
-					disabled={isSubmitting} 
+				<input
+					id="pdf-file"
+					name="pdf-file"
+					type="file"
+					accept="application/pdf"
+					disabled={isSubmitting}
 					class="file-input"
 				/>
 				<button type="submit" disabled={isSubmitting} class="primary-btn">
@@ -78,7 +86,8 @@
 							</tr>
 						{:else}
 							<tr>
-								<td colspan="3" class="empty-state">No ingestion tracks recorded.</td>
+								<td colspan="3" class="empty-state">No ingestion tracks recorded.</td
+								>
 							</tr>
 						{/each}
 					</tbody>
@@ -93,17 +102,19 @@
 					<div class="document-card">
 						<div class="doc-info">
 							<h4>{doc.title}</h4>
-							<p class="doc-meta">Last Updated: {new Date(doc.updatedAt).toLocaleDateString()}</p>
+							<p class="doc-meta">
+								Last Updated: {new Date(doc.updatedAt).toLocaleDateString()}
+							</p>
 						</div>
 						<div class="doc-actions">
 							<form method="POST" action="/pdf-to-md?/shareDocument" use:enhance>
 								<input type="hidden" name="documentId" value={doc.id} />
 								<div class="share-group">
-									<input 
-										type="email" 
-										name="teacherEmail" 
-										placeholder="Colleague Email" 
-										required 
+									<input
+										type="email"
+										name="teacherEmail"
+										placeholder="Colleague Email"
+										required
 										class="inline-input"
 									/>
 									<button type="submit" class="secondary-btn">Share</button>
@@ -122,11 +133,11 @@
 		<section class="admin-section">
 			<h2>Administrative Control: User Directory</h2>
 			<form method="GET" class="search-form">
-				<input 
-					type="text" 
-					name="q" 
-					placeholder="Search by Name or Email..." 
-					class="search-input" 
+				<input
+					type="text"
+					name="q"
+					placeholder="Search by Name or Email..."
+					class="search-input"
 				/>
 				<button type="submit" class="primary-btn">Search</button>
 			</form>
@@ -152,11 +163,22 @@
 										<form method="POST" action="/pdf-to-md?/updateRole" use:enhance>
 											<input type="hidden" name="userId" value={user.id} />
 											<select name="role" class="role-select">
-												<option value="user" selected={user.role === 'user'}>User</option>
-												<option value="student" selected={user.role === 'student'}>Student</option>
-												<option value="teacher" selected={user.role === 'teacher'}>Teacher</option>
-												<option value="admin" selected={user.role === 'admin'}>Admin</option>
-												<option value="superadmin" selected={user.role === 'superadmin'}>Superadmin</option>
+												<option value="user" selected={user.role === 'user'}
+													>User</option
+												>
+												<option value="student" selected={user.role === 'student'}
+													>Student</option
+												>
+												<option value="teacher" selected={user.role === 'teacher'}
+													>Teacher</option
+												>
+												<option value="admin" selected={user.role === 'admin'}
+													>Admin</option
+												>
+												<option
+													value="superadmin"
+													selected={user.role === 'superadmin'}>Superadmin</option
+												>
 											</select>
 											<button type="submit" class="secondary-btn">Update</button>
 										</form>
@@ -292,7 +314,9 @@
 		border-radius: var(--border-radius);
 		overflow-x: auto;
 		color: var(--success);
-		font-family: var(--font-header-sans-2); /* Fallback for monospaced need if no code font */
+		font-family: var(
+			--font-header-sans-2
+		); /* Fallback for monospaced need if no code font */
 		font-size: 0.9rem;
 	}
 
@@ -315,7 +339,8 @@
 		text-align: left;
 	}
 
-	th, td {
+	th,
+	td {
 		padding: 14px;
 		border-bottom: 1px solid var(--ui-border);
 	}
@@ -336,10 +361,22 @@
 		text-transform: uppercase;
 	}
 
-	.badge.completed { background: rgb(from var(--success) r g b / 0.2); color: var(--success); }
-	.badge.processing { background: rgb(from var(--warning) r g b / 0.2); color: var(--warning); }
-	.badge.failed { background: rgb(from var(--error) r g b / 0.2); color: var(--error); }
-	.badge.pending { background: var(--surface-3); color: var(--black-20); }
+	.badge.completed {
+		background: rgb(from var(--success) r g b / 0.2);
+		color: var(--success);
+	}
+	.badge.processing {
+		background: rgb(from var(--warning) r g b / 0.2);
+		color: var(--warning);
+	}
+	.badge.failed {
+		background: rgb(from var(--error) r g b / 0.2);
+		color: var(--error);
+	}
+	.badge.pending {
+		background: var(--surface-3);
+		color: var(--black-20);
+	}
 
 	.document-list {
 		display: flex;

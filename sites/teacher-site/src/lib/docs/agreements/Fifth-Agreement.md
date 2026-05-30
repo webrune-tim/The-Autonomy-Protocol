@@ -1,8 +1,8 @@
 ---
-title: "Fifth Agreement"
-description: "Be Skeptical, But Learn to Listen"
+title: 'Fifth Agreement'
+description: 'Be Skeptical, But Learn to Listen'
 order: 5
-date: "2026-05-11"
+date: '2026-05-11'
 published: true
 ---
 

@@ -31,7 +31,13 @@
 
 <h2>Choose your Impact</h2>
 
-<form method="POST" action="?/donate" use:enhance class="donations-list">
+<form
+	method="POST"
+	action="?/donate"
+	use:enhance
+	class="donations-list"
+	id="donate-form"
+>
 	<button type="submit" name="amount" value="25" class="cta-donate">
 		<Layers /> $25 - The Individual Inventory
 	</button>
@@ -47,6 +53,7 @@
 	<div class="cta-donate custom-container">
 		<DollarSign />
 		<input
+			id="custom-amount"
 			type="number"
 			inputmode="numeric"
 			class="custom-amount"

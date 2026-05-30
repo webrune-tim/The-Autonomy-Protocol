@@ -32,12 +32,7 @@ body {
 }
 
 /* --- 3. Element-Specific Resets & Styles --- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
@@ -49,7 +44,7 @@ img {
 
 hr {
   height: 4px;
-  background: var(--bg);
+  background: var(--fg);
   margin: var(--gap-1) 0;
   border: none;
   outline: none;
@@ -138,30 +133,16 @@ textarea:focus {
   }
 
   /* Shared text color logic */
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  a,
-  strong,
-  span,
-  li,
-  li:before,
-  .reading-time,
-  .rt-number,
-  .rt-text {
+  h1, h2, h3, h4, p, a, strong, span, li, li:before,
+  .reading-time, .rt-number, .rt-text {
     color: var(--local-text);
   }
 
-  h1,
-  h2,
-  h3 {
+  h1, h2, h3 {
     text-transform: uppercase;
   }
 
-  p,
-  li {
+  p, li {
     font-size: clamp(1rem, 3svw, 2rem);
     margin-bottom: var(--gap-1);
     margin-top: var(--gap-1);
@@ -266,12 +247,7 @@ textarea:focus {
   --local-text: var(--text_color, var(--fg));
   color: var(--local-text);
 
-  h2,
-  h3,
-  h4,
-  h5,
-  strong,
-  li::before {
+  h2, h3, h4, h5, strong, li::before {
     color: var(--safe-contrast, var(--local-text));
   }
 
@@ -310,9 +286,7 @@ textarea:focus {
 .box {
   border-radius: var(--border-radius);
   padding: var(--gap-2);
-  span {
-    font-weight: bold;
-  }
+  span { font-weight: bold; }
 }
 
 .content {
@@ -335,38 +309,25 @@ textarea:focus {
 .trans-primary {
   background-color: rgb(from var(--brand-primary) r g b / 0.15);
   border: 2px solid var(--brand-primary);
-  h2,
-  h3 {
-    color: var(--brand-secondary);
-  }
+  h2, h3 { color: var(--brand-secondary); }
 }
 
 .trans-secondary {
   background-color: rgb(from var(--brand-secondary) r g b / 0.15);
   border: 2px solid var(--brand-secondary);
-  h2,
-  h3 {
-    color: var(--brand-primary);
-  }
+  h2, h3 { color: var(--brand-primary); }
 }
 
 .trans-tertiary {
   background-color: rgb(from var(--brand-tertiary) r g b / 0.15);
   border: 2px solid var(--brand-tertiary);
-  h2,
-  h3 {
-    color: var(--brand-secondary);
-  }
+  h2, h3 { color: var(--brand-secondary); }
 }
 
 .trans-black {
   background-color: rgb(from var(--bg) r g b / 0.15);
   border: 2px solid var(--bg);
-  h2,
-  h3,
-  h4 {
-    color: var(--bg);
-  }
+  h2, h3, h4 { color: var(--bg); }
 }
 
 /* --- 8. Layout Grids & Flex Containers --- */
@@ -413,9 +374,7 @@ textarea:focus {
   align-items: center;
   justify-content: space-around;
   gap: var(--gap-2);
-  a {
-    margin-top: 0;
-  }
+  a { margin-top: 0; }
 }
 
 .title-grid {
@@ -424,14 +383,8 @@ textarea:focus {
   align-items: baseline;
   color: var(--fg);
   grid-template-columns: auto 1fr;
-  h2,
-  h3,
-  h4 {
-    margin-bottom: 0;
-  }
-  span {
-    font-size: clamp(1rem, 2svw, 1.75rem);
-  }
+  h2, h3, h4 { margin-bottom: 0; }
+  span { font-size: clamp(1rem, 2svw, 1.75rem); }
 }
 
 .step-grid {
@@ -477,28 +430,13 @@ textarea:focus {
   color: oklch(from var(--color) calc((l - 0.54) * -1000) 0 0);
 }
 
-.margin-top,
-.margin-top-1 {
-  margin-top: var(--gap-1);
-}
-.margin-top-2 {
-  margin-top: var(--gap-2);
-}
-.margin-bottom {
-  margin-bottom: var(--gap-1);
-}
-.no-bottom-margin {
-  margin-bottom: 0 !important;
-}
-.bottom-padding {
-  padding-bottom: var(--gap-4) !important;
-}
+.margin-top, .margin-top-1 { margin-top: var(--gap-1); }
+.margin-top-2 { margin-top: var(--gap-2); }
+.margin-bottom { margin-bottom: var(--gap-1); }
+.no-bottom-margin { margin-bottom: 0 !important; }
+.bottom-padding { padding-bottom: var(--gap-4) !important; }
 
 .no-top-padding {
-  & > :not(:first-child) {
-    padding-top: 0;
-  }
-  & > :first-child {
-    padding-top: var(--gap-2);
-  }
+  & > :not(:first-child) { padding-top: 0; }
+  & > :first-child { padding-top: var(--gap-2); }
 }
