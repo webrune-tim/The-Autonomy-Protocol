@@ -54,7 +54,7 @@
   /* Explicit solid background contrast contracts */
   --accent-1-contrast: var(--nord4);
   --accent-2-contrast: var(--nord0);
-  --accent-3-contrast: var(--nord4);
+  --accent-3-contrast: var(--nord0);
 }
 
 /* ==========================================================================
