@@ -4,20 +4,20 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "NODE_OPTIONS='--max-old-space-size=4096' vp dev",
-    "build": "vp build",
-    "preview": "vp preview",
+    "dev": "NODE_OPTIONS='--max-old-space-size=4096' vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
-    "db:push": "vp exec drizzle-kit push",
-    "db:generate": "vp exec drizzle-kit generate",
-    "db:migrate": "vp exec drizzle-kit migrate",
-    "db:studio": "vp exec drizzle-kit studio",
-    "db:seed": "vp node --experimental-strip-types --env-file .env src/lib/server/db/seed.ts",
-    "db:setup": "vp run db:migrate && vp run db:seed",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "node --experimental-strip-types --env-file .env src/lib/server/db/seed.ts",
+    "db:setup": "pnpm run db:migrate && pnpm run db:seed",
     "auth:schema": "better-auth generate --config src/lib/server/auth.ts --output src/lib/server/db/auth.schema.ts --yes"
   },
   "dependencies": {
@@ -70,7 +70,7 @@
     "svelte": "^5.55.10",
     "svelte-check": "^4.4.8",
     "typescript-eslint": "^8.60.0",
-    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.23",
+    "vite": "^8.0.14",
     "vite-imagetools": "^10.0.0"
   },
   "packageManager": "pnpm@10.33.0"

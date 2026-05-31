@@ -4,18 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "ready": "vp check && vp run -r test && vp run -r build",
-    "dev:teacher-site": "vp run teacher-site#dev",
-    "dev:student-site": "vp run student-site#dev",
-    "prepare": "vp config"
+    "ready": "pnpm -r check && pnpm -r test && pnpm -r build",
+    "dev:teacher-site": "pnpm --filter teacher-site dev",
+    "dev:student-site": "pnpm --filter student-site dev"
   },
   "dependencies": {
     "@img/sharp-darwin-arm64": "catalog:",
     "@img/sharp-libvips-darwin-arm64": "catalog:",
     "sharp": "catalog:"
-  },
-  "devDependencies": {
-    "vite-plus": "catalog:"
   },
   "engines": {
     "node": ">=22.12.0"

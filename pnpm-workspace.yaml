@@ -1,7 +1,5 @@
 packages:
   - "sites/*"
-  # The recursive wildcard (**) allows pnpm to find nested packages
-  # like packages/core/actions or packages/content/four-agreements
   - "packages/**"
 
 allowBuilds:
@@ -15,7 +13,7 @@ catalog:
   "@img/sharp-libvips-darwin-arm64": ^1.2.4
   "@lucide/svelte": ^1.17.0
   "@types/canvas-confetti": ^1.9.0
-  "@types/node": ^25
+  "@types/node": ^25.0.0
   "@typescript/native-preview": 7.0.0-dev.20260421.2
   "@vitest/browser-playwright": ^4.1.7
   canvas-confetti: ^1.9.4
@@ -25,19 +23,19 @@ catalog:
   stylelint: ^17.12.0
   stylelint-config-standard: ^40.0.0
   sv-agentation: ^0.2.6
-  typescript: ^5
-  vite: npm:@voidzero-dev/vite-plus-core@latest
-  vite-plus: ^0.1.22
-  vitest: npm:@voidzero-dev/vite-plus-test@^0.1.19
+  typescript: ^5.0.0
+  # Standard stable versions:
+  vite: ^8.0.14
+  vitest: ^3.0.0
 
 catalogMode: prefer
-overrides:
-  vite: "catalog:"
-  vitest: "catalog:"
+
+# 'overrides' are removed so that dependencies resolve normally 
+# based on their versions in package.json or the catalog.
+
 peerDependencyRules:
-  allowAny:
-    - vite
-    - vitest
+  # Removed the blanket allowAny for vite/vitest 
+  # to encourage standard version alignment.
   allowedVersions:
-    vite: "*"
-    vitest: "*"
+    vite: "^8.0.14"
+    vitest: "^3.0.0"
