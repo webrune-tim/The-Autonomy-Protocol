@@ -1,8 +1,8 @@
 ---
-title: 'Step Eight'
-description: 'The eigth step the in The Autonomy Protocol.'
+title: "Step Eight"
+description: "The eigth step the in The Autonomy Protocol."
 order: 8
-date: '2026-05-11'
+date: "2026-05-11"
 published: true
 ---
 
@@ -22,7 +22,7 @@ The biggest obstacle in high school is the fear of looking weak. Your brain will
 
 ### **Focusing on Willingness**
 
-This step doesn't force you to rush out and make awkward apologies today. It asks you to do the internal prep work. Being willing means dropping your defensive walls, looking honestly at who your habits have hurt, and deciding that you are mature enough to build a bridge instead of burning one.
+This step doesn't force you to rush out and make awkward apologies today. It asks you to do the internal prep work. Being willing means dropping your defensive walls, looking honestly at who your habits have hurt, and deciding that you are mature enough to build a bridge instead of burning one
 
 <TeacherOnly>
 
