@@ -9,6 +9,7 @@ allowBuilds:
   sharp: true
 
 catalog:
+  '@better-auth/infra': ^0.2.11
   "@img/sharp-darwin-arm64": ^0.34.5
   "@img/sharp-libvips-darwin-arm64": ^1.2.4
   "@lucide/svelte": ^1.17.0
@@ -24,18 +25,12 @@ catalog:
   stylelint-config-standard: ^40.0.0
   sv-agentation: ^0.2.6
   typescript: ^5.0.0
-  # Standard stable versions:
-  vite: ^8.0.14
+  vite: ^6.2.0
   vitest: ^3.0.0
 
 catalogMode: prefer
 
-# 'overrides' are removed so that dependencies resolve normally 
-# based on their versions in package.json or the catalog.
-
 peerDependencyRules:
-  # Removed the blanket allowAny for vite/vitest 
-  # to encourage standard version alignment.
   allowedVersions:
-    vite: "^8.0.14"
+    vite: "^6.2.0"
     vitest: "^3.0.0"

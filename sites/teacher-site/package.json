@@ -37,6 +37,7 @@
     "@autonomy/style": "workspace:*",
     "@autonomy/theme-toggle": "workspace:*",
     "@autonomy/twelve-steps": "workspace:*",
+    "@better-auth/infra": "catalog:",
     "@lucide/svelte": "catalog:",
     "canvas-confetti": "catalog:",
     "svelte-french-toast": "^1.2.0"
