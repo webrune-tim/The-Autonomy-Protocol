@@ -4,18 +4,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vp dev",
-    "build": "vp build",
-    "preview": "vp preview",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
-    "db:push": "vp exec drizzle-kit push",
-    "db:generate": "vp exec drizzle-kit generate",
-    "db:migrate": "vp exec drizzle-kit migrate",
-    "db:studio": "vp exec drizzle-kit studio",
+    "db:push": "vite exec drizzle-kit push",
+    "db:generate": "vite exec drizzle-kit generate",
+    "db:migrate": "vite exec drizzle-kit migrate",
+    "db:studio": "vite exec drizzle-kit studio",
     "auth:schema": "better-auth generate --config src/lib/server/auth.ts --output src/lib/server/db/auth.schema.ts --yes"
   },
   "dependencies": {
@@ -61,9 +61,9 @@
     "svelte-check": "^4.4.8",
     "typescript": "npm:@typescript/typescript6@^6.0.1",
     "typescript-eslint": "^8.59.4",
-    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.22",
+    "vite": "^8.0.14",
     "vite-imagetools": "^10.0.0",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.22"
+    "vitest": "^4.1.8"
   },
   "packageManager": "pnpm@10.33.0"
 }
