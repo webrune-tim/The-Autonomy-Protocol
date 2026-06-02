@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
 	import { BookOpen, Compass, Milestone } from '@lucide/svelte'
+	import HeroImage from '$images/hero-image-alt.png?enhanced'
 </script>
 
 <section
@@ -13,6 +14,13 @@
 		and self-governance in high school students based on the transformative power of
 		the 12-Step Reconstructive Process and the Five Agreements.
 	</p>
+
+	<enhanced:img
+		class="margin-bottom"
+		src={HeroImage}
+		alt="Students engaging with the curriculum"
+	/>
+
 	<a class="cta" href="/mission">
 		<Compass /> Explore the Framework
 	</a>

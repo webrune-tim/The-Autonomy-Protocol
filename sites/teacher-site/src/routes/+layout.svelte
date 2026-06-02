@@ -218,12 +218,10 @@
 
 	.layout-wrapper {
 		max-width: 1000px;
-		margin: var(--gap-2) auto;
 		min-height: 100svh;
 		display: grid;
 		padding: var(--gap-2);
-		grid-template-rows: auto auto 1fr auto; /* Adjusted for Banner */
-		background: var(--surface-4);
+		grid-template-rows: auto auto 1fr auto;
 		gap: var(--gap-2);
 
 		p {
