@@ -13,6 +13,7 @@ catalog:
   "@img/sharp-darwin-arm64": ^0.34.5
   "@img/sharp-libvips-darwin-arm64": ^1.2.4
   "@lucide/svelte": ^1.17.0
+  '@sveltejs/enhanced-img': ^0.10.4
   "@types/canvas-confetti": ^1.9.0
   "@types/node": ^25.0.0
   "@typescript/native-preview": 7.0.0-dev.20260421.2

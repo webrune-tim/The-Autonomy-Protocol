@@ -1,10 +1,7 @@
 <script>
 	import { Eye, Handshake, Telescope } from '@lucide/svelte'
 	import { thickMargins } from '@autonomy/actions'
-	import { RevealingImage } from '@autonomy/revealing_image'
-
-	import MissionImage from '$images/mission-image.png?enhanced'
-	import ShiftImage from '$images/shift-image.png?enhanced'
+	import MissionImage from '$images/make_a_moble_friendly_verion_202606021036.jpeg?enhanced'
 </script>
 
 <div
@@ -21,6 +18,8 @@
 	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
 >
 	<h2 class="reveal-header">Our Mission</h2>
+
+	<enhanced:img src={MissionImage} alt="Our mission" />
 
 	<p>
 		<strong>Our objective is definitive:</strong> to ensure every student graduates with
