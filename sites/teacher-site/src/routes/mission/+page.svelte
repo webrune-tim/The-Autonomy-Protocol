@@ -1,6 +1,8 @@
 <script>
 	import { Ampersand, Eye, Telescope } from '@lucide/svelte'
 	import { thickMargins } from '@autonomy/actions'
+	import MissionImage from '$images/mission-image.png?enhanced'
+	import ShiftImage from '$images/shift-image.png?enhanced'
 </script>
 
 <div
@@ -17,12 +19,15 @@
 	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
 >
 	<h2 class="reveal-header">Our Mission</h2>
+
 	<p>
 		<strong>Our objective is definitive:</strong> to ensure every student graduates with
 		the executive functioning skills required to navigate adult complexities independently.
 		By internalizing self-governance, we reduce the friction of external regulation—returning
 		hundreds of hours of instructional time to teachers and staff.
 	</p>
+
+	<enhanced:img class="padding-bottom" src={MissionImage} alt="Our mission" />
 
 	<a class="cta" href="/join-us">
 		<Ampersand /> Join Us
@@ -43,6 +48,8 @@
 		liabilities, we shift their motivation from fear of administrative discipline to
 		the intrinsic pursuit of personal and academic excellence.
 	</p>
+
+	<enhanced:img class="padding-bottom" src={ShiftImage} alt="The shift" />
 
 	<a class="cta" href="/road-map">
 		<Eye /> View the Strategy

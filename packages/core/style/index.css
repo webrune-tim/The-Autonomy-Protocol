@@ -71,6 +71,10 @@ img {
   width: 100%;
   height: auto;
   object-fit: cover;
+
+  &.padding-bottom {
+    padding-bottom: var(--gap-1);
+  }
 }
 
 hr {
