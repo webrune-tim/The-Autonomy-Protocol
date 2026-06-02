@@ -27,7 +27,11 @@
 		hundreds of hours of instructional time to teachers and staff.
 	</p>
 
-	<enhanced:img class="padding-bottom" src={MissionImage} alt="Our mission" />
+	<enhanced:img
+		class="revealing-image margin-bottom"
+		src={MissionImage}
+		alt="Our mission"
+	/>
 
 	<a class="cta" href="/join-us">
 		<Ampersand /> Join Us
@@ -49,7 +53,11 @@
 		the intrinsic pursuit of personal and academic excellence.
 	</p>
 
-	<enhanced:img class="padding-bottom" src={ShiftImage} alt="The shift" />
+	<enhanced:img
+		class="revealing-image margin-bottom"
+		src={ShiftImage}
+		alt="The shift"
+	/>
 
 	<a class="cta" href="/road-map">
 		<Eye /> View the Strategy
@@ -160,10 +168,7 @@
 	</div>
 </section>
 
-<section
-	class="bold-border-box margin-top-2 flex-around"
-	style="--border-color: var(--fg)"
->
+<section class="bold-border-box margin-top-2" style="--border-color: var(--fg)">
 	<h2 class="reveal-header">The Architect</h2>
 	<p>
 		<strong>The Autonomy Protocol</strong> was developed by

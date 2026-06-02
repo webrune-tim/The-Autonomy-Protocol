@@ -6,7 +6,7 @@
 
 	// Assets
 	import favicon from '$lib/assets/favicon.svg'
-	import OgImg from '$images/og-img.png'
+	import OgImg from '$images/og-image.png'
 
 	// Styles
 	import '@autonomy/style/index.css'
@@ -109,7 +109,7 @@
 	/>
 	<link rel="stylesheet" href="/print.css" media="print" />
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
-	<meta name="theme-color" content="#ff9661" />
+	<meta name="theme-color" content="#bf616a" />
 	<link rel="icon" href={favicon} />
 	<meta property="og:title" content="The Autonomy Protocol" />
 	<meta property="og:type" content="website" />

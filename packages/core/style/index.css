@@ -53,7 +53,7 @@ h3.reveal-header {
   animation: linear reveal-header both;
   animation-timeline: --revealing-header;
 
-  animation-range: entry 5% cover 30%;
+  animation-range: entry 25% cover 50%;
 }
 
 @keyframes reveal-header {
@@ -72,9 +72,33 @@ img {
   height: auto;
   object-fit: cover;
 
-  &.padding-bottom {
-    padding-bottom: var(--gap-1);
+  &.margin-bottom {
+    margin-bottom: var(--gap-1);
   }
+}
+
+.revealing-image {
+	/* Create View Timeline */
+	view-timeline-name: --revealing-image;
+	view-timeline-axis: block;
+
+	/* Attach animation, linked to the  View Timeline */
+	animation: linear img-reveal both;
+	animation-timeline: --revealing-image;
+
+	/* Tweak range when effect should run*/
+	animation-range: entry 25% cover 50%;
+}
+
+@keyframes img-reveal {
+	from {
+		opacity: 0;
+		clip-path: inset(45% 20% 45% 20%);
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(0% 0% 0% 0%);
+	}
 }
 
 hr {
@@ -154,6 +178,13 @@ textarea:focus {
   padding: var(--gap-2);
   margin-bottom: var(--gap-2);
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-transform: uppercase;
+  }
+
   h1 {
     font-size: var(--font-size-1);
     line-height: clamp(35px, 8svw, 90px);
@@ -182,6 +213,7 @@ textarea:focus {
   .rt-number,
   .rt-text {
     color: var(--local-text);
+    font-weight: bold;
   }
 
   h1,
@@ -195,6 +227,10 @@ textarea:focus {
     /* font-size: clamp(1rem, 3svw, 2rem); */
     margin-bottom: var(--gap-1);
     margin-top: var(--gap-1);
+  }
+
+  img {
+    border: var(--gap-1) solid var(--local-text);
   }
 
   .cta {
