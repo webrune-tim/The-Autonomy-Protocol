@@ -1,6 +1,7 @@
 <script>
-	import { Ampersand, Eye, Telescope } from '@lucide/svelte'
+	import { Eye, Handshake, Telescope } from '@lucide/svelte'
 	import { thickMargins } from '@autonomy/actions'
+
 	import MissionImage from '$images/mission-image.png?enhanced'
 	import ShiftImage from '$images/shift-image.png?enhanced'
 </script>
@@ -34,7 +35,7 @@
 	/>
 
 	<a class="cta" href="/join-us">
-		<Ampersand /> Join Us
+		<Handshake /> Join Us
 	</a>
 </section>
 

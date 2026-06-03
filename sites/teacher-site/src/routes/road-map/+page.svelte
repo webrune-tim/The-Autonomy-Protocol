@@ -1,6 +1,8 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
 	import { BrickWall, HardHat, Puzzle } from '@lucide/svelte'
+
+	import RoadMapImage from '$images/road-map.png'
 </script>
 
 <section
@@ -29,6 +31,12 @@
 			to foster cognitive clarity, emotional neutrality, and internal self-governance.
 		</li>
 	</ul>
+
+	<enhanced:img
+		class="revealing-image margin-bottom"
+		src={RoadMapImage}
+		alt="The Road Map"
+	/>
 
 	<a class="cta" href="/resource">
 		<BrickWall /> See Freshman Materials

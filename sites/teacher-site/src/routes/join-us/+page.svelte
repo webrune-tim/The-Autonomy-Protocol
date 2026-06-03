@@ -1,6 +1,8 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
 	import { BookImage, Send } from '@lucide/svelte'
+
+	import JoinUsImage from '$images/join-us.png?enhanced'
 </script>
 
 <section
@@ -19,6 +21,13 @@
 		We are looking for educators and mental health experts to help us translate these
 		profound principles into actionable, secular, and high-impact curriculum modules.
 	</p>
+
+	<enhanced:img
+		class="revealing-image margin-bottom"
+		src={JoinUsImage}
+		alt="Join Us!"
+	/>
+
 	<a class="cta" href="#how-you-can-help">
 		<BookImage /> Browse Opportunities
 	</a>
@@ -75,7 +84,7 @@
 	use:thickMargins
 	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast)"
 >
-	<h2 id="how-you-can-help">How You Can Help</h2>
+	<h2 id="how-you-can-help" class="reveal-header">How You Can Help</h2>
 
 	<p>Instead of technical tasks, we invite you to own a piece of the philosophy:</p>
 

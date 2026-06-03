@@ -3,6 +3,8 @@
 	import { HeartPlus } from '@lucide/svelte'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
+	import ResourcesImage from '$images/resources.png?enhanced'
+
 	type Tab = 'steps' | 'agreements' | 'freshmen' | 'seniors'
 	let activeTab = $state<Tab>('steps')
 
@@ -58,6 +60,9 @@
 		streamline your delivery of <strong>The Autonomy Protocol</strong> across all grade
 		levels.
 	</p>
+
+	<enhanced:img class="margin-bottom" src={ResourcesImage} alt="The Resourses" />
+
 	<a class="cta" href="/contact">
 		<HeartPlus /> Need Custom Support?
 	</a>

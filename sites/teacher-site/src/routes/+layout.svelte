@@ -217,8 +217,9 @@
 	}
 
 	.layout-wrapper {
-		max-width: 1000px;
+		max-width: 1200px;
 		min-height: 100svh;
+		margin: 0 auto;
 		display: grid;
 		padding: var(--gap-2);
 		grid-template-rows: auto auto 1fr auto;

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
 	import { BookOpen, Compass, Milestone } from '@lucide/svelte'
+
 	import HeroImage from '$images/hero-image-alt.png?enhanced'
 </script>
 

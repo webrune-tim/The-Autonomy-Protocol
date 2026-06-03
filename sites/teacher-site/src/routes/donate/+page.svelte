@@ -3,6 +3,8 @@
 	import { thickMargins } from '@autonomy/actions'
 	import { Eye } from '@lucide/svelte'
 
+	import DonationImage from '$images/donation.png?enhanced'
+
 	let { form } = $props()
 </script>
 
@@ -25,6 +27,9 @@
 		our <strong>Digital Resource Library</strong>, and keep the protocol accessible
 		to the districts and educators who need it most.
 	</p>
+
+	<enhanced:img class="margin-bottom" src={DonationImage} alt="Donate Now" />
+
 	<a class="cta" href="#how-you-can-help">
 		<Eye /> Browse Opportunities
 	</a>

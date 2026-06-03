@@ -1,6 +1,8 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
 	import { Download, ShieldQuestionMark } from '@lucide/svelte'
+
+	import CurriculumImage from '$images/curriculum.png?enhanced'
 </script>
 
 <section
@@ -16,6 +18,9 @@
 		self-governance, providing students with a mental operating system that functions
 		under pressure.
 	</p>
+
+	<enhanced:img class="margin-bottom" src={CurriculumImage} alt="Our Curriculum" />
+
 	<a class="cta" href="/resources">
 		<Download /> Download Lesson Guides
 	</a>
