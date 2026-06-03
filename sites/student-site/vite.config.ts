@@ -1,39 +1,47 @@
-import { defineConfig } from "vitest/config";
-import { playwright } from "@vitest/browser-playwright";
-import { sveltekit } from "@sveltejs/kit/vite";
-import { enhancedImages } from "@sveltejs/enhanced-img";
+import { sveltekit } from '@sveltejs/kit/vite'
+import { enhancedImages } from '@sveltejs/enhanced-img'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [enhancedImages(), sveltekit()],
-  ssr: {
-    noExternal: [/^@autonomy\//],
-  },
-  test: {
-    expect: { requireAssertions: true },
-    projects: [
-      {
-        extends: "./vite.config.ts",
-        test: {
-          name: "client",
-          browser: {
-            enabled: true,
-            provider: playwright(),
-            instances: [{ browser: "chromium", headless: true }],
-          },
-          include: ["src/**/*.svelte.{test,spec}.{js,ts}"],
-          exclude: ["src/lib/server/**"],
-        },
-      },
+	plugins: [enhancedImages(), sveltekit()],
 
-      {
-        extends: "./vite.config.ts",
-        test: {
-          name: "server",
-          environment: "node",
-          include: ["src/**/*.{test,spec}.{js,ts}"],
-          exclude: ["src/**/*.svelte.{test,spec}.{js,ts}"],
-        },
-      },
-    ],
-  },
-});
+	server: {
+		hmr: {
+			// High timeout for complex monorepo graphs
+			timeout: 240000
+		},
+		fs: {
+			// Allow Vite to serve files from the workspace root (packages/ui, etc.)
+			allow: ['../../']
+		},
+		watch: {
+			ignored: [
+				'!**/node_modules/@autonomy/**',
+				'**/node_modules/**',
+				'**/.svelte-kit/**'
+			]
+		}
+	},
+
+	ssr: {
+		noExternal: ['@lucide/svelte', '@autonomy/**', 'svelte-french-toast']
+	},
+
+	optimizeDeps: {
+		// Keep Lucide included for performance, but EXCLUDE workspace packages
+		// so they are treated as source code and support HMR.
+		include: ['@lucide/svelte'],
+		exclude: [
+			'@autonomy/nav',
+			'@autonomy/style',
+			'@autonomy/theme',
+			'@autonomy/header',
+			'@autonomy/footer',
+			'@autonomy/footer-nav',
+			'@autonomy/logo',
+			'@autonomy/pill',
+			'@autonomy/theme-toggle'
+		],
+		entries: ['./src/routes/**/*.{svelte,ts}']
+	}
+})

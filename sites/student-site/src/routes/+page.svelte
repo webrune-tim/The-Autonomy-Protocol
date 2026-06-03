@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
-	import { Route, ShipWheel, Star } from '@lucide/svelte'
+	import { ArrowBigRight, Route, ShipWheel, Star } from '@lucide/svelte'
 </script>
 
 <section class="angled-bottom-box">
