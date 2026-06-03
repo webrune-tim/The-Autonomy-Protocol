@@ -219,7 +219,7 @@
 		position: absolute;
 		top: 0;
 		left: 4px;
-		height: calc(100% + 4px);
+		height: calc(100% + 6px);
 		width: calc(50% - 4px);
 		background-color: var(--brand-primary-dark);
 		z-index: 1;
@@ -232,7 +232,7 @@
 	}
 
 	.submit-btn {
-		background: var(--brand-primary);
+		background: var(--brand-primary-dark);
 		color: white;
 		border: none;
 		padding: 1rem;
@@ -263,11 +263,11 @@
 			flex-direction: column;
 		}
 		.glider {
-			width: calc(100% - 8px);
-			height: calc(50% - 4px);
+			width: calc(100% - 2px);
+			height: calc(50% - 1px);
 		}
 		.glider.shifted {
-			transform: translateY(100%);
+			transform: translateY(100%) translateX(-3px);
 		}
 	}
 </style>
