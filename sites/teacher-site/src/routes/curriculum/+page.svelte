@@ -1,5 +1,6 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
+	import { RevealingImage } from '@autonomy/revealing_image'
 	import { Download, ShieldQuestionMark } from '@lucide/svelte'
 
 	import CurriculumImage from '$images/curriculum.png?enhanced'
@@ -19,7 +20,7 @@
 		under pressure.
 	</p>
 
-	<enhanced:img class="margin-bottom" src={CurriculumImage} alt="Our Curriculum" />
+	<RevealingImage src={CurriculumImage} alt="Our Curriculum" />
 
 	<a class="cta" href="/resources">
 		<Download /> Download Lesson Guides

@@ -29,7 +29,6 @@
 		to the districts and educators who need it most.
 	</p>
 
-	<!-- <enhanced:img class="margin-bottom" src={DonationImage} alt="Donate Now" /> -->
 	<RevealingImage src={DonationImage} alt="Donate Now" />
 
 	<a class="cta" href="#how-you-can-help">
@@ -74,7 +73,7 @@
 </section>
 
 <section
-	class="angled-top-box"
+	class="angled-top-box no-bottom-margin"
 	use:thickMargins
 	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
 >

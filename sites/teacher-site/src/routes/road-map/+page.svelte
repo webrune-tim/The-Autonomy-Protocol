@@ -1,5 +1,6 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
+	import { RevealingImage } from '@autonomy/revealing_image'
 	import { BrickWall, HardHat, Puzzle } from '@lucide/svelte'
 
 	import RoadMapImage from '$images/road-map.png'
@@ -32,11 +33,7 @@
 		</li>
 	</ul>
 
-	<enhanced:img
-		class="revealing-image margin-bottom"
-		src={RoadMapImage}
-		alt="The Road Map"
-	/>
+	<RevealingImage src={RoadMapImage} alt="The Road Map" />
 
 	<a class="cta" href="/resource">
 		<BrickWall /> See Freshman Materials

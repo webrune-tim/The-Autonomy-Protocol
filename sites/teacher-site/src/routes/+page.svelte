@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
 	import { BookOpen, Compass, Milestone } from '@lucide/svelte'
+	import { RevealingImage } from '@autonomy/revealing_image'
 
 	import HeroImage from '$images/hero-image-alt.png?enhanced'
 </script>
@@ -16,11 +17,7 @@
 		the 12-Step Reconstructive Process and the Five Agreements.
 	</p>
 
-	<enhanced:img
-		class="margin-bottom"
-		src={HeroImage}
-		alt="Students engaging with the curriculum"
-	/>
+	<RevealingImage src={HeroImage} alt="Students engaging with the curriculum" />
 
 	<a class="cta" href="/mission">
 		<Compass /> Explore the Framework

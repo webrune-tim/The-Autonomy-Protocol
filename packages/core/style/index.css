@@ -79,6 +79,30 @@ img {
   }
 }
 
+.revealing-image {
+	/* Create View Timeline */
+	view-timeline-name: --revealing-image;
+	view-timeline-axis: block;
+
+	/* Attach animation, linked to the  View Timeline */
+	animation: linear img-reveal both;
+	animation-timeline: --revealing-image;
+
+	/* Tweak range when effect should run*/
+	animation-range: entry 25% cover 50%;
+}
+
+@keyframes img-reveal {
+	from {
+		opacity: 0;
+		clip-path: inset(45% 20% 45% 20%);
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(0% 0% 0% 0%);
+	}
+}
+
 hr {
   height: 4px;
   background: var(--nord6);
@@ -198,6 +222,10 @@ textarea:focus {
   h2,
   h3 {
     text-transform: uppercase;
+  }
+
+  span {
+    font-weight: 400;
   }
 
   p,

@@ -1,6 +1,7 @@
 <script>
 	import { Eye, Handshake, Telescope } from '@lucide/svelte'
 	import { thickMargins } from '@autonomy/actions'
+	import { RevealingImage } from '@autonomy/revealing_image'
 
 	import MissionImage from '$images/mission-image.png?enhanced'
 	import ShiftImage from '$images/shift-image.png?enhanced'
@@ -28,11 +29,7 @@
 		hundreds of hours of instructional time to teachers and staff.
 	</p>
 
-	<enhanced:img
-		class="revealing-image margin-bottom"
-		src={MissionImage}
-		alt="Our mission"
-	/>
+	<RevealingImage src={MissionImage} alt="Our mission" />
 
 	<a class="cta" href="/join-us">
 		<Handshake /> Join Us
@@ -54,11 +51,7 @@
 		the intrinsic pursuit of personal and academic excellence.
 	</p>
 
-	<enhanced:img
-		class="revealing-image margin-bottom"
-		src={ShiftImage}
-		alt="The shift"
-	/>
+	<RevealingImage src={ShiftImage} alt="The shift" />
 
 	<a class="cta" href="/road-map">
 		<Eye /> View the Strategy

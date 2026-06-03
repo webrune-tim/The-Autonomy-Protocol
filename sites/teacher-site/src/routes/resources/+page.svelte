@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
+	import { RevealingImage } from '@autonomy/revealing_image'
 	import { HeartPlus } from '@lucide/svelte'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
@@ -61,7 +62,7 @@
 		levels.
 	</p>
 
-	<enhanced:img class="margin-bottom" src={ResourcesImage} alt="The Resourses" />
+	<RevealingImage src={ResourcesImage} alt="The Recourses" />
 
 	<a class="cta" href="/contact">
 		<HeartPlus /> Need Custom Support?

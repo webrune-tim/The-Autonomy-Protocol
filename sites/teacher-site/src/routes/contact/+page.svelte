@@ -52,7 +52,7 @@
 <section
 	class="angled-top-box no-bottom-margin"
 	use:thickMargins
-	style="--color: var(--brand-primary-dark)"
+	style="--color: var(--brand-primary)"
 >
 	<form method="POST" use:enhance={handleEnhance} class="contact-form">
 		<!-- Hidden input to capture the boolean state in the FormData -->
@@ -134,6 +134,10 @@
 		gap: 1.5rem;
 		max-width: 600px;
 		margin: 0 auto;
+
+		& *::placeholder {
+			color: rgb(156, 156, 156);
+		}
 	}
 
 	.input-group {
@@ -189,14 +193,17 @@
 
 		span {
 			margin: 0;
+			font-size: var(--font-size-4);
 		}
 	}
 
 	.control-option.default.active {
 		color: var(--brand-primary-contrast);
+		background: var(--brand-primary-dark);
 
 		span {
 			color: var(--brand-primary-contrast);
+			font-size: var(--font-size-4);
 		}
 	}
 	.control-option.active {
@@ -204,16 +211,17 @@
 
 		span {
 			color: var(--brand-secondary-contrast);
+			font-size: var(--font-size-4);
 		}
 	}
 
 	.glider {
 		position: absolute;
-		top: 4px;
+		top: 0;
 		left: 4px;
-		height: calc(100% - 8px);
+		height: calc(100% + 4px);
 		width: calc(50% - 4px);
-		background-color: var(--brand-primary);
+		background-color: var(--brand-primary-dark);
 		z-index: 1;
 		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}

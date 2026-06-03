@@ -1,6 +1,7 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
 	import { BookImage, Send } from '@lucide/svelte'
+	import { RevealingImage } from '@autonomy/revealing_image'
 
 	import JoinUsImage from '$images/join-us.png?enhanced'
 </script>
@@ -22,11 +23,7 @@
 		profound principles into actionable, secular, and high-impact curriculum modules.
 	</p>
 
-	<enhanced:img
-		class="revealing-image margin-bottom"
-		src={JoinUsImage}
-		alt="Join Us!"
-	/>
+	<RevealingImage src={JoinUsImage} alt="Join Us!" />
 
 	<a class="cta" href="#how-you-can-help">
 		<BookImage /> Browse Opportunities
@@ -107,10 +104,7 @@
 	</a>
 </section>
 
-<section
-	class="bold-border-box margin-top flex-around"
-	style="--border-color: var(--fg)"
->
+<section class="bold-border-box margin-top" style="--border-color: var(--fg)">
 	<h2 class="reveal-header">Ready to Build a Self-Governed Future?</h2>
 
 	<p>
