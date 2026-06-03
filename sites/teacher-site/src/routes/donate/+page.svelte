@@ -1,6 +1,7 @@
 <script>
 	import PayPayDonateBtns from './PayPayDonateBtns.svelte'
 	import { thickMargins } from '@autonomy/actions'
+	import { RevealingImage } from '@autonomy/revealing_image'
 	import { Eye } from '@lucide/svelte'
 
 	import DonationImage from '$images/donation.png?enhanced'
@@ -28,7 +29,8 @@
 		to the districts and educators who need it most.
 	</p>
 
-	<enhanced:img class="margin-bottom" src={DonationImage} alt="Donate Now" />
+	<!-- <enhanced:img class="margin-bottom" src={DonationImage} alt="Donate Now" /> -->
+	<RevealingImage src={DonationImage} alt="Donate Now" />
 
 	<a class="cta" href="#how-you-can-help">
 		<Eye /> Browse Opportunities
