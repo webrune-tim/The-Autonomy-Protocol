@@ -41,6 +41,7 @@
     "@better-auth/infra": "catalog:",
     "@lucide/svelte": "catalog:",
     "canvas-confetti": "catalog:",
+    "motion": "catalog:",
     "svelte-french-toast": "^1.2.0"
   },
   "devDependencies": {
