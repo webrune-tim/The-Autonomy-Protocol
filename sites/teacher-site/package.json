@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "NODE_OPTIONS='--max-old-space-size=4096' vp dev",
+    "dev": "vp dev",
     "build": "vp build",
     "preview": "vp preview",
     "prepare": "svelte-kit sync || echo ''",
