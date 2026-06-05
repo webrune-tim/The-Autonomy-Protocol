@@ -8,6 +8,9 @@ import { session as sessionTable } from '$lib/server/db/schema'
 import { eq } from 'drizzle-orm'
 
 const handleBetterAuth: Handle = async ({ event, resolve }) => {
+	// Skip auth and DB checks during the build/prerendering phase
+	if (building) return resolve(event)
+
 	// Populate locals.user and locals.session for use in load functions and actions
 	const session = await auth.api.getSession({ headers: event.request.headers })
 

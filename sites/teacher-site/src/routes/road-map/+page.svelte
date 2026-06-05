@@ -35,7 +35,7 @@
 
 	<RevealingImage src={RoadMapImage} alt="The Road Map" />
 
-	<a class="cta" href="/resource">
+	<a class="cta" href="/resources">
 		<BrickWall /> See Freshman Materials
 	</a>
 </section>

@@ -91,7 +91,7 @@
 
 <hr class="sg-divider" />
 
-<section class="sg-section">
+<section class="sg-section" id="typography">
 	<h2>1. Typographic Print Engine</h2>
 	<div class="sg-grid typography-showcase">
 		<div class="sg-card layout-flow">
@@ -108,7 +108,7 @@
 			</p>
 			<p>
 				This is basic body paragraph styling. It automatically leverages your
-				anti-aliasing optimizations. Inside it, you can view an <a href="#links"
+				anti-aliasing optimizations. Inside it, you can view an <a href="#typography"
 					>inline text hyperlink</a
 				> demonstrating automatic high-contrast print transitions.
 			</p>

@@ -1,7 +1,10 @@
 <script>
 	import { Eye, Handshake, Telescope } from '@lucide/svelte'
 	import { thickMargins } from '@autonomy/actions'
-	import MissionImage from '$images/make_a_moble_friendly_verion_202606021036.jpeg?enhanced'
+	import { RevealingImage } from '@autonomy/revealing_image'
+
+	import MissionImage from '$images/cycle.png?enhanced'
+	import ShiftImage from '$images/shift-image.png?enhanced'
 </script>
 
 <div
