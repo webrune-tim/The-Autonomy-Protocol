@@ -62,210 +62,205 @@
 	]
 </script>
 
-<div class="styleguide-container">
-	<header class="sg-control-panel">
-		<div>
-			<h1>System Style Guide</h1>
-			<p class="subtitle">
-				Validating runtime token interpolation and layout contracts
-			</p>
-		</div>
-
-		<div class="sg-controls">
-			<div class="control-group">
-				<label for="theme-select">Theme Mode</label>
-				<select id="theme-select" bind:value={currentTheme}>
-					<option value="dark">Dark Theme (Baseline)</option>
-					<option value="light">Light Theme (Engine Inversion)</option>
-				</select>
-			</div>
-
-			<div class="control-group">
-				<label for="site-select">Site Context</label>
-				<select id="site-select" bind:value={currentSite}>
-					<option value="student">Student Portal (Base Accents)</option>
-					<option value="teacher">Teacher Portal (Aurora Overrides)</option>
-				</select>
-			</div>
-		</div>
-	</header>
-
-	<hr class="sg-divider" />
-
-	<section class="sg-section">
-		<h2>1. Typographic Print Engine</h2>
-		<div class="sg-grid typography-showcase">
-			<div class="sg-card layout-flow">
-				<h1>Heading 1 (Passion One)</h1>
-				<h2>Heading 2 (Passion One)</h2>
-				<h3>Heading 3 (Passion One)</h3>
-				<h4>Heading 4 (Passion One)</h4>
-			</div>
-
-			<div class="sg-card layout-flow">
-				<p class="larger-text">
-					This is larger paragraph text styled with <code>.larger-text</code> using Inter
-					or Poppins.
-				</p>
-				<p>
-					This is basic body paragraph styling. It automatically leverages your
-					anti-aliasing optimizations. Inside it, you can view an <a href="#links"
-						>inline text hyperlink</a
-					> demonstrating automatic high-contrast print transitions.
-				</p>
-
-				<details>
-					<summary>Details Accordion Summary Element</summary>
-					<p>
-						Collapsible block text content including <strong
-							>strongly emphasized brand-highlighted callouts</strong
-						>.
-					</p>
-				</details>
-			</div>
-		</div>
-	</section>
-
-	<section class="sg-section">
-		<h2>2. Dynamic Color & Swatch Engines</h2>
-
-		<h3>Polar Night & Snow Storm (Structural & Canvas Bases)</h3>
-		<div class="swatch-grid">
-			{#each nordBases as token}
-				<div class="swatch-card">
-					<div class="swatch-preview" style:background="var({token.name})"></div>
-					<div class="swatch-info">
-						<span class="token-name">{token.name}</span>
-						<span class="token-desc">{token.desc}</span>
-					</div>
-				</div>
-			{/each}
-		</div>
-
-		<h3>Frost & Aurora (Interactive Accents & Semantic States)</h3>
-		<div class="swatch-grid">
-			{#each nordBrand as token}
-				<div class="swatch-card">
-					<div class="swatch-preview" style:background="var({token.name})"></div>
-					<div class="swatch-info">
-						<span class="token-name">{token.name}</span>
-						<span class="token-desc">{token.desc}</span>
-					</div>
-				</div>
-			{/each}
-			{#each nordAurora as token}
-				<div class="swatch-card">
-					<div class="swatch-preview" style:background="var({token.name})"></div>
-					<div class="swatch-info">
-						<span class="token-name">{token.name}</span>
-						<span class="token-desc">{token.desc}</span>
-					</div>
-				</div>
-			{/each}
-		</div>
-
-		<h3>Dynamic Resolution Mapping Engine</h3>
-		<p class="section-desc">
-			These chips track shifts dynamically between the Student and Teacher palettes.
+<header class="sg-control-panel">
+	<div>
+		<h1>System Style Guide</h1>
+		<p class="subtitle">
+			Validating runtime token interpolation and layout contracts
 		</p>
-		<div class="swatch-grid resolved-grid">
-			{#each semanticTokens as token}
-				<div class="swatch-card compact">
-					<div class="swatch-preview" style:background="var({token})"></div>
-					<div class="swatch-info">
-						<span class="token-name">{token}</span>
-					</div>
-				</div>
-			{/each}
+	</div>
+
+	<div class="sg-controls">
+		<div class="control-group">
+			<label for="theme-select">Theme Mode</label>
+			<select id="theme-select" bind:value={currentTheme}>
+				<option value="dark">Dark Theme (Baseline)</option>
+				<option value="light">Light Theme (Engine Inversion)</option>
+			</select>
 		</div>
-	</section>
 
-	<section class="sg-section">
-		<h2>3. Fluid Layout Clamps & Spacing</h2>
-		<div class="sg-card spacing-showcase">
-			<div class="spacing-strip">
-				<span class="label">Gap 1 (Small Base)</span>
-				<div class="spacing-bar bar-1" style:height="var(--gap-1)"></div>
+		<div class="control-group">
+			<label for="site-select">Site Context</label>
+			<select id="site-select" bind:value={currentSite}>
+				<option value="student">Student Portal (Base Accents)</option>
+				<option value="teacher">Teacher Portal (Aurora Overrides)</option>
+			</select>
+		</div>
+	</div>
+</header>
+
+<hr class="sg-divider" />
+
+<section class="sg-section">
+	<h2>1. Typographic Print Engine</h2>
+	<div class="sg-grid typography-showcase">
+		<div class="sg-card layout-flow">
+			<h1>Heading 1 (Passion One)</h1>
+			<h2>Heading 2 (Passion One)</h2>
+			<h3>Heading 3 (Passion One)</h3>
+			<h4>Heading 4 (Passion One)</h4>
+		</div>
+
+		<div class="sg-card layout-flow">
+			<p class="larger-text">
+				This is larger paragraph text styled with <code>.larger-text</code> using Inter
+				or Poppins.
+			</p>
+			<p>
+				This is basic body paragraph styling. It automatically leverages your
+				anti-aliasing optimizations. Inside it, you can view an <a href="#links"
+					>inline text hyperlink</a
+				> demonstrating automatic high-contrast print transitions.
+			</p>
+
+			<details>
+				<summary>Details Accordion Summary Element</summary>
+				<p>
+					Collapsible block text content including <strong
+						>strongly emphasized brand-highlighted callouts</strong
+					>.
+				</p>
+			</details>
+		</div>
+	</div>
+</section>
+
+<section class="sg-section">
+	<h2>2. Dynamic Color & Swatch Engines</h2>
+
+	<h3>Polar Night & Snow Storm (Structural & Canvas Bases)</h3>
+	<div class="swatch-grid">
+		{#each nordBases as token}
+			<div class="swatch-card">
+				<div class="swatch-preview" style:background="var({token.name})"></div>
+				<div class="swatch-info">
+					<span class="token-name">{token.name}</span>
+					<span class="token-desc">{token.desc}</span>
+				</div>
 			</div>
-			<div class="spacing-strip">
-				<span class="label">Gap 2 (Standard Flow)</span>
-				<div class="spacing-bar bar-2" style:height="var(--gap-2)"></div>
+		{/each}
+	</div>
+
+	<h3>Frost & Aurora (Interactive Accents & Semantic States)</h3>
+	<div class="swatch-grid">
+		{#each nordBrand as token}
+			<div class="swatch-card">
+				<div class="swatch-preview" style:background="var({token.name})"></div>
+				<div class="swatch-info">
+					<span class="token-name">{token.name}</span>
+					<span class="token-desc">{token.desc}</span>
+				</div>
 			</div>
-			<div class="spacing-strip">
-				<span class="label">Gap 3 (Section Layout)</span>
-				<div class="spacing-bar bar-3" style:height="var(--gap-3)"></div>
+		{/each}
+		{#each nordAurora as token}
+			<div class="swatch-card">
+				<div class="swatch-preview" style:background="var({token.name})"></div>
+				<div class="swatch-info">
+					<span class="token-name">{token.name}</span>
+					<span class="token-desc">{token.desc}</span>
+				</div>
 			</div>
-			<div class="spacing-strip">
-				<span class="label">Gap 4 (Hero Layout)</span>
-				<div class="spacing-bar bar-4" style:height="var(--gap-4)"></div>
+		{/each}
+	</div>
+
+	<h3>Dynamic Resolution Mapping Engine</h3>
+	<p class="section-desc">
+		These chips track shifts dynamically between the Student and Teacher palettes.
+	</p>
+	<div class="swatch-grid resolved-grid">
+		{#each semanticTokens as token}
+			<div class="swatch-card compact">
+				<div class="swatch-preview" style:background="var({token})"></div>
+				<div class="swatch-info">
+					<span class="token-name">{token}</span>
+				</div>
+			</div>
+		{/each}
+	</div>
+</section>
+
+<section class="sg-section">
+	<h2>3. Fluid Layout Clamps & Spacing</h2>
+	<div class="sg-card spacing-showcase">
+		<div class="spacing-strip">
+			<span class="label">Gap 1 (Small Base)</span>
+			<div class="spacing-bar bar-1" style:height="var(--gap-1)"></div>
+		</div>
+		<div class="spacing-strip">
+			<span class="label">Gap 2 (Standard Flow)</span>
+			<div class="spacing-bar bar-2" style:height="var(--gap-2)"></div>
+		</div>
+		<div class="spacing-strip">
+			<span class="label">Gap 3 (Section Layout)</span>
+			<div class="spacing-bar bar-3" style:height="var(--gap-3)"></div>
+		</div>
+		<div class="spacing-strip">
+			<span class="label">Gap 4 (Hero Layout)</span>
+			<div class="spacing-bar bar-4" style:height="var(--gap-4)"></div>
+		</div>
+	</div>
+</section>
+
+<section class="sg-section">
+	<h2>4. Interactive & Micro-Animation Runtime</h2>
+	<div class="sg-grid interaction-showcase">
+		<div class="sg-card flex-center layout-flow">
+			<span class="component-label">Original Component Animation Demo</span>
+			<div class="interactive-container">
+				<button
+					type="button"
+					onmouseenter={() => (isHovered = true)}
+					onmouseleave={() => (isHovered = false)}
+					onfocus={() => (isFocused = true)}
+					onblur={() => (isFocused = false)}
+					use:motion={() => ({
+						keyframes: {
+							scale: isActive ? 1.15 : 1,
+							rotate: isActive ? 8 : 0,
+							backgroundColor: isActive ? '#313244' : '#1e1e2e'
+						},
+						options: {
+							type: 'spring',
+							stiffness: 260,
+							damping: 20
+						}
+					})}
+					class="card"
+				>
+					Interact With Me
+				</button>
 			</div>
 		</div>
-	</section>
 
-	<section class="sg-section">
-		<h2 use:matrixStagger>4. Interactive & Micro-Animation Runtime</h2>
-		<div class="sg-grid interaction-showcase">
-			<div class="sg-card flex-center layout-flow">
-				<span class="component-label">Original Component Animation Demo</span>
-				<div class="interactive-container">
-					<button
-						type="button"
-						onmouseenter={() => (isHovered = true)}
-						onmouseleave={() => (isHovered = false)}
-						onfocus={() => (isFocused = true)}
-						onblur={() => (isFocused = false)}
-						use:motion={() => ({
-							keyframes: {
-								scale: isActive ? 1.15 : 1,
-								rotate: isActive ? 8 : 0,
-								backgroundColor: isActive ? '#313244' : '#1e1e2e'
-							},
-							options: {
-								type: 'spring',
-								stiffness: 260,
-								damping: 20
-							}
-						})}
-						class="card"
-					>
-						Interact With Me
-					</button>
-				</div>
-			</div>
-
-			<div class="sg-card layout-flow alert-showcase">
-				<span class="component-label">System Structural Semantics</span>
-
-				<div class="alert-box success-alert">
-					<strong>Success State Banner</strong>
-					<p>Derived via OKLCH baseline transformations.</p>
-				</div>
-
-				<div class="alert-box error-alert">
-					<strong>Critical Failure Banner</strong>
-					<p>Enforced using hard token bounds.</p>
-				</div>
+		<div class="sg-card flex-center layout-flow">
+			<span class="component-label">Matrix Stagger</span>
+			<div
+				class="interactive-container"
+				style="flex-direction: column; gap: var(--gap-1)"
+			>
+				<h1 use:matrixStagger>Staggered Heading</h1>
+				<h2 use:matrixStagger>Animating Into View</h2>
+				<h3 use:matrixStagger>With a Cascading Effect</h3>
 			</div>
 		</div>
-	</section>
-</div>
+
+		<div class="sg-card layout-flow alert-showcase">
+			<span class="component-label">System Structural Semantics</span>
+
+			<div class="alert-box success-alert">
+				<strong>Success State Banner</strong>
+				<p>Derived via OKLCH baseline transformations.</p>
+			</div>
+
+			<div class="alert-box error-alert">
+				<strong>Critical Failure Banner</strong>
+				<p>Enforced using hard token bounds.</p>
+			</div>
+		</div>
+	</div>
+</section>
 
 <style>
-	/* Local Style Guide Scaffold Styles */
-	.styleguide-container {
-		padding: var(--thick-margin);
-		background-color: var(--bg);
-		color: var(--fg);
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		gap: var(--gap-3);
-		box-sizing: border-box;
-		transition:
-			background-color 0.3s ease,
-			color 0.3s ease;
-	}
-
 	.sg-control-panel {
 		display: flex;
 		justify-content: space-between;
@@ -475,10 +470,6 @@
 
 	/* --- Responsive Viewport Adjustments --- */
 	@media (max-width: 768px) {
-		.styleguide-container {
-			padding: var(--gap-2);
-			gap: var(--gap-2);
-		}
 		.sg-control-panel {
 			flex-direction: column;
 			align-items: stretch;
@@ -492,9 +483,6 @@
 	}
 
 	@media (max-width: 480px) {
-		.styleguide-container {
-			padding: var(--gap-1);
-		}
 		.spacing-strip {
 			flex-direction: column;
 			align-items: flex-start;
