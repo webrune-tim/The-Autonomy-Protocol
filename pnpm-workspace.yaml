@@ -17,7 +17,6 @@ catalog:
   "@types/canvas-confetti": ^1.9.0
   "@types/node": ^25.0.0
   "@typescript/native-preview": 7.0.0-dev.20260421.2
-  "@vitest/browser-playwright": ^4.1.7
   canvas-confetti: ^1.9.4
   install: ^0.13.0
   motion: ^12.40.0
@@ -27,12 +26,19 @@ catalog:
   stylelint-config-standard: ^40.0.0
   sv-agentation: ^0.2.6
   typescript: ^5.0.0
-  vite: ^6.2.0
-  vitest: ^3.0.0
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  vite-plus: latest
 
 catalogMode: prefer
 
 peerDependencyRules:
   allowedVersions:
-    vite: "^6.2.0"
-    vitest: "^3.0.0"
+    vite: '*'
+    vitest: '*'
+  allowAny:
+    - vite
+    - vitest
+overrides:
+  vite: 'catalog:'
+  vitest: 'catalog:'

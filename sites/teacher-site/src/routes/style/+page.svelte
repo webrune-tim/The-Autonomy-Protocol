@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { motion } from '$actions'
+	import { matrixStagger, motion } from '$actions'
 
 	// State for dynamic theme engine testing
 	let currentTheme = $state('dark')
@@ -203,7 +203,7 @@
 	</section>
 
 	<section class="sg-section">
-		<h2>4. Interactive & Micro-Animation Runtime</h2>
+		<h2 use:matrixStagger>4. Interactive & Micro-Animation Runtime</h2>
 		<div class="sg-grid interaction-showcase">
 			<div class="sg-card flex-center layout-flow">
 				<span class="component-label">Original Component Animation Demo</span>
