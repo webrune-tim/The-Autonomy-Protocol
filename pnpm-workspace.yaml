@@ -9,7 +9,7 @@ allowBuilds:
   sharp: true
 
 catalog:
-  '@better-auth/infra': ^0.2.11
+  '@better-auth/infra': ^0.2.12
   "@img/sharp-darwin-arm64": ^0.34.5
   "@img/sharp-libvips-darwin-arm64": ^1.2.4
   "@lucide/svelte": ^1.17.0
@@ -22,6 +22,7 @@ catalog:
   install: ^0.13.0
   motion: ^12.40.0
   node-addon-api: ^8.8.0
+  prism: ^4.1.2
   sharp: ^0.34.5
   stylelint: ^17.12.0
   stylelint-config-standard: ^40.0.0
