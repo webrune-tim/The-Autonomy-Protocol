@@ -9,11 +9,11 @@ allowBuilds:
   sharp: true
 
 catalog:
-  '@better-auth/infra': ^0.2.11
+  "@better-auth/infra": ^0.2.13
   "@img/sharp-darwin-arm64": ^0.34.5
   "@img/sharp-libvips-darwin-arm64": ^1.2.4
   "@lucide/svelte": ^1.17.0
-  '@sveltejs/enhanced-img': ^0.10.4
+  "@sveltejs/enhanced-img": ^0.10.4
   "@types/canvas-confetti": ^1.9.0
   "@types/node": ^25.0.0
   "@typescript/native-preview": 7.0.0-dev.20260421.2
@@ -22,23 +22,24 @@ catalog:
   motion: ^12.40.0
   node-addon-api: ^8.8.0
   sharp: ^0.34.5
-  stylelint: ^17.12.0
+  stylelint: ^17.13.0
   stylelint-config-standard: ^40.0.0
   sv-agentation: ^0.2.6
   typescript: ^5.0.0
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
-  vite-plus: latest
+  vite-plus: ^0.1.24
+  mdsvex: ^0.12.7
 
 catalogMode: prefer
 
 peerDependencyRules:
   allowedVersions:
-    vite: '*'
-    vitest: '*'
+    vite: "*"
+    vitest: "*"
   allowAny:
     - vite
     - vitest
 overrides:
-  vite: 'catalog:'
-  vitest: 'catalog:'
+  vite: "catalog:"
+  vitest: "catalog:"
