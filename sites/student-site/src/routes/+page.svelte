@@ -3,7 +3,10 @@
 	import { ArrowBigRight, Route, ShipWheel, Star } from '@lucide/svelte'
 </script>
 
-<section class="angled-bottom-box">
+<section
+	class="angled-bottom-box"
+	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast);"
+>
 	<h1>Own Your Future. Master the Protocol.</h1>
 	<p>
 		High school isn't just about academics; it's about building the foundation for
@@ -67,7 +70,8 @@
 
 <section
 	class="angled-top-box no-bottom-margin"
-	style="--color: var(--brand-secondary);"
+	style="--color: var(--brand-secondary); --text_color: var(--brand-secondary-contrast);"
+	use:thickMargins
 >
 	<h3 class="reveal-header">Ready to take the wheel?</h3>
 	<p>The tools are here. The choice to use them is yours.</p>
@@ -77,7 +81,7 @@
 	</a>
 </section>
 
-<style>
+<!-- <style>
 	.cta,
 	.link {
 		display: inline-flex !important;
@@ -92,4 +96,4 @@
 		margin-top: 0;
 		font-size: 1.5rem;
 	}
-</style>
+</style> -->

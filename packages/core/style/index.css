@@ -80,27 +80,27 @@ img {
 }
 
 .revealing-image {
-	/* Create View Timeline */
-	view-timeline-name: --revealing-image;
-	view-timeline-axis: block;
+  /* Create View Timeline */
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
 
-	/* Attach animation, linked to the  View Timeline */
-	animation: linear img-reveal both;
-	animation-timeline: --revealing-image;
+  /* Attach animation, linked to the  View Timeline */
+  animation: linear img-reveal both;
+  animation-timeline: --revealing-image;
 
-	/* Tweak range when effect should run*/
-	animation-range: entry 25% cover 50%;
+  /* Tweak range when effect should run*/
+  animation-range: entry 25% cover 50%;
 }
 
 @keyframes img-reveal {
-	from {
-		opacity: 0;
-		clip-path: inset(45% 20% 45% 20%);
-	}
-	to {
-		opacity: 1;
-		clip-path: inset(0% 0% 0% 0%);
-	}
+  from {
+    opacity: 0;
+    clip-path: inset(45% 20% 45% 20%);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
 }
 
 hr {
@@ -230,7 +230,7 @@ textarea:focus {
 
   p,
   li {
-    /* font-size: clamp(1rem, 3svw, 2rem); */
+    font-size: clamp(1rem, 2svw, 1.75rem);
     margin-bottom: var(--gap-1);
     margin-top: var(--gap-1);
   }

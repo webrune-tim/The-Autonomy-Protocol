@@ -54,7 +54,7 @@
     "@sveltejs/kit": "^2.63.0",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@types/canvas-confetti": "catalog:",
-    "@types/node": "^22.19.19",
+    "@types/node": "^22.19.20",
     "@typescript/native-preview": "catalog:",
     "better-auth": "~1.4.22",
     "drizzle-kit": "^0.31.10",
@@ -63,7 +63,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.19.0",
     "globals": "^17.6.0",
-    "mdsvex": "^0.12.7",
+    "mdsvex": "catalog:",
     "node-addon-api": "catalog:",
     "node-gyp": "^11.5.0",
     "stylelint": "catalog:",
@@ -75,5 +75,5 @@
     "vite-imagetools": "^10.0.0",
     "vite-plus": "catalog:"
   },
-  "packageManager": "pnpm@10.33.0"
+  "packageManager": "pnpm@11.5.2"
 }

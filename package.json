@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "ready": "pnpm -r check && pnpm -r test && pnpm -r build",
+    "ready": "turbo check test build",
+    "build": "turbo build",
     "dev:teacher-site": "pnpm --filter teacher-site dev",
     "dev:student-site": "pnpm --filter student-site dev",
     "prepare": "vp config"
@@ -14,11 +15,12 @@
     "@img/sharp-libvips-darwin-arm64": "catalog:",
     "sharp": "catalog:"
   },
+  "devDependencies": {
+    "turbo": "^2.9.18",
+    "vite-plus": "catalog:"
+  },
   "engines": {
     "node": ">=22.12.0"
   },
-  "packageManager": "pnpm@11.5.1",
-  "devDependencies": {
-    "vite-plus": "catalog:"
-  }
+  "packageManager": "pnpm@11.5.2"
 }
