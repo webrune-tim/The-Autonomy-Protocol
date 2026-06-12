@@ -16,7 +16,6 @@
     "sharp": "catalog:"
   },
   "devDependencies": {
-    "turbo": "^2.9.18",
     "vite-plus": "catalog:"
   },
   "engines": {
