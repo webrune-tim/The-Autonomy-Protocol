@@ -42,9 +42,9 @@
     "@libsql/client": "^0.17.3",
     "@sveltejs/adapter-vercel": "^6.3.3",
     "@sveltejs/enhanced-img": "catalog:",
-    "@sveltejs/kit": "^2.63.0",
+    "@sveltejs/kit": "^2.65.0",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
-    "@types/node": "^22.19.20",
+    "@types/node": "^22.19.21",
     "@typescript/native-preview": "catalog:",
     "better-auth": "~1.4.22",
     "drizzle-kit": "^0.31.10",
@@ -54,14 +54,14 @@
     "eslint-plugin-svelte": "^3.19.0",
     "globals": "^17.6.0",
     "mdsvex": "catalog:",
-    "playwright": "*",
-    "svelte": "^5.56.2",
+    "playwright": "^1.60.0",
+    "svelte": "^5.56.3",
     "svelte-check": "^4.6.0",
     "typescript": "catalog:",
-    "typescript-eslint": "^8.59.4",
-    "vite": "catalog:",
+    "typescript-eslint": "^8.61.0",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.24",
     "vite-imagetools": "^10.0.0",
     "vite-plus": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.24"
   }
 }
