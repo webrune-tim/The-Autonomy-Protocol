@@ -1,7 +1,6 @@
 import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 import type { PageServerLoad } from "./$types";
-import { auth } from "$lib/server/auth";
 import { db } from "$lib/server/db";
 import { user, session as sessionTable } from "$lib/server/db/schema";
 import { eq, like, or } from "drizzle-orm";
@@ -46,12 +45,15 @@ export const actions: Actions = {
     }
 
     const formData = await event.request.formData();
-    const userId = formData.get("userId")?.toString();
-    const newRole = formData.get("role")?.toString() as "user" | "teacher" | "admin" | "superadmin";
+    const userIdVal = formData.get("userId");
+    const roleVal = formData.get("role");
 
-    if (!userId || !newRole) {
+    if (typeof userIdVal !== "string" || typeof roleVal !== "string") {
       return fail(400, { message: "Missing userId or role" });
     }
+
+    const userId = userIdVal;
+    const newRole = roleVal as "user" | "teacher" | "admin" | "superadmin";
 
     // Prevent non-superadmins from promoting to superadmin
     if (newRole === "superadmin" && currentUser.role !== "superadmin") {

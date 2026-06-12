@@ -1,8 +1,8 @@
 ---
-title: 'First Agreement'
-description: 'Be Impeccable with Your Word'
+title: "First Agreement"
+description: "Be Impeccable with Your Word"
 order: 1
-date: '2026-05-11'
+date: "2026-05-11"
 published: true
 ---
 

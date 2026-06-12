@@ -1,8 +1,8 @@
 ---
-title: 'Second Agreement'
+title: "Second Agreement"
 description: "Don't Take Anything Personally"
 order: 2
-date: '2026-05-11'
+date: "2026-05-11"
 published: true
 ---
 

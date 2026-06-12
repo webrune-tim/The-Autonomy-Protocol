@@ -6,5 +6,8 @@ export const load: PageServerLoad = (event) => {
   if (event.locals.user) {
     return redirect(302, redirectTo);
   }
-  return {};
+  return {
+    session: null,
+    user: null,
+  };
 };

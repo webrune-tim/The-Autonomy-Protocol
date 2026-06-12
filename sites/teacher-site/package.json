@@ -58,6 +58,7 @@
     "@types/node": "^22.19.21",
     "@typescript/native-preview": "catalog:",
     "better-auth": "~1.4.22",
+    "dotenv": "catalog:",
     "drizzle-kit": "^0.31.10",
     "drizzle-orm": "^0.45.2",
     "eslint": "^10.4.1",

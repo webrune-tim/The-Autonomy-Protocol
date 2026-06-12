@@ -16,6 +16,8 @@
     "sharp": "catalog:"
   },
   "devDependencies": {
+    "@sveltejs/kit": "catalog:",
+    "@types/node": "catalog:",
     "vite-plus": "catalog:"
   },
   "engines": {

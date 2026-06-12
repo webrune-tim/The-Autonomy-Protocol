@@ -1,8 +1,8 @@
 ---
-title: 'Fourth Agreement'
-description: 'Always Do Your Best'
+title: "Fourth Agreement"
+description: "Always Do Your Best"
 order: 4
-date: '2026-05-11'
+date: "2026-05-11"
 published: true
 ---
 

@@ -58,7 +58,7 @@ class ThemeState {
     this.#value = v;
     if (browser) {
       this.#syncDOM();
-      this.syncToServer();
+      void this.syncToServer();
     }
   }
 }

@@ -1,8 +1,8 @@
 ---
-title: 'Step One'
-description: 'The first step the in The Autonomy Protocol.'
+title: "Step One"
+description: "The first step the in The Autonomy Protocol."
 order: 1
-date: '2026-05-11'
+date: "2026-05-11"
 published: true
 ---
 
