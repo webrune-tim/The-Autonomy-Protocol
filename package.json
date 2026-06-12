@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "ready": "pnpm -r check && pnpm -r test && pnpm -r build",
+    "ready": "turbo check test build",
+    "build": "turbo build",
     "dev:teacher-site": "pnpm --filter teacher-site dev",
     "dev:student-site": "pnpm --filter student-site dev",
     "prepare": "vp config"
@@ -15,6 +16,7 @@
     "sharp": "catalog:"
   },
   "devDependencies": {
+    "turbo": "^2.4.2",
     "vite-plus": "catalog:"
   },
   "engines": {
