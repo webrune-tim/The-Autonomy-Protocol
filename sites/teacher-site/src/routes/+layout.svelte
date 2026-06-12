@@ -6,7 +6,6 @@
 
 	// Assets
 	import favicon from '$lib/assets/favicon.svg'
-	import OgImg from '$images/og-image.png'
 
 	// Styles
 	import '@autonomy/style/index.css'
@@ -114,7 +113,7 @@
 	<meta property="og:title" content="The Autonomy Protocol" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://the-autonomy-protocol.vercel.app/" />
-	<meta property="og:image" content={OgImg} />
+	<meta property="og:image" content="og-image.png" />
 </svelte:head>
 
 {#snippet headerLogo()}
