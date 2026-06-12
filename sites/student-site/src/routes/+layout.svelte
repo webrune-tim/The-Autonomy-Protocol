@@ -36,23 +36,13 @@
 
 	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
-		{ href: '/mission', label: 'Mission' },
-		{ href: '/join-us', label: 'Join Us' },
-		{ href: '/curriculum', label: 'Curriculum' },
-		{ href: '/resources', label: 'Resources' },
 		{ href: '/road-map', label: 'Road Map' },
-		{ href: '/contact', label: 'Contact' },
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	])
 
 	const footerLinks = $derived([
 		{ href: '/', label: 'Home' },
-		{ href: '/mission', label: 'Mission' },
-		{ href: '/join-us', label: 'Join Us' },
-		{ href: '/curriculum', label: 'Curriculum' },
-		{ href: '/resources', label: 'Resources' },
-		{ href: '/road-map', label: 'Road Map' },
-		{ href: '/contact', label: 'Contact' }
+		{ href: '/road-map', label: 'Road Map' }
 	])
 
 	$effect(() => {
@@ -176,9 +166,10 @@
 	}
 
 	:global(.copyright) {
-		font-size: 0.8rem;
+		color: var(--nord4);
+		font-size: var(--font-size-4);
 		letter-spacing: 0.05em;
-		opacity: 0.7;
+		opacity: 0.8;
 		margin: 0;
 		text-align: center;
 	}
