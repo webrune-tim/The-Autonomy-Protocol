@@ -15,7 +15,6 @@ const config = {
         minimumCacheTTL: 300,
         domains: [],
       },
-      external: ["@libsql/client", "bufferutil", "utf-8-validate"],
     }),
     alias: {
       $actions: "src/lib/actions",

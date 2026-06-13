@@ -21,6 +21,7 @@ export default defineConfig({
 
   ssr: {
     noExternal: ["@lucide/svelte", "@autonomy/**", "svelte-french-toast"],
+    external: ["@libsql/client", "@neon-rs/load", "ws", "bufferutil", "utf-8-validate"],
   },
 
   optimizeDeps: {
