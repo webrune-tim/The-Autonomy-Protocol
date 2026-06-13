@@ -11,13 +11,12 @@
     "prepare": "vp config"
   },
   "dependencies": {
-    "@img/sharp-darwin-arm64": "catalog:",
-    "@img/sharp-libvips-darwin-arm64": "catalog:",
     "sharp": "catalog:"
   },
   "devDependencies": {
     "@sveltejs/kit": "catalog:",
     "@types/node": "catalog:",
+    "turbo": "catalog:",
     "vite-plus": "catalog:"
   },
   "engines": {
