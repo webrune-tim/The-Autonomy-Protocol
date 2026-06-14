@@ -2,7 +2,7 @@
     import { moduleState, getModuleProgress } from '$stores/moduleStore.svelte.ts';
 
     // Set which module this page represents
-    const moduleId = 'module-1';
+    const moduleId = 'module-5';
 
     // Mock data for the 5 sections
     const sections = [
@@ -19,7 +19,7 @@
 
 <div class="module-container">
     <header class="angled-bottom-box">
-        <h1 class="reveal-header">Module 1: Getting Started</h1>
+        <h1 class="reveal-header">Module 5: Being A Sponsor</h1>
 
         <div class="progress-wrapper">
             <div class="progress-bar" style="width: {progress}%;"></div>

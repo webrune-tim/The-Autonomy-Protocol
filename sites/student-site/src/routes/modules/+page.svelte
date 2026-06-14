@@ -4,39 +4,39 @@
 
 	const cards = [
 		{
-			moduleId: 'module-1',
+			moduleId: '1',
 			cardColor: 'primary',
 			moduleName: 'Introduction to TAP',
 			description: 'Learn the foundational principles of The Autonomy Protocol.',
-			href: '/modules/welcome'
+			href: '/modules/introduction'
 		},
 		{
-			moduleId: 'module-2',
+			moduleId: '2',
 			cardColor: 'secondary',
 			moduleName: '12 Steps',
 			description: 'The Accountability Cycle for internal regulation and behavioral alignment.',
-			href: '#'
+			href: 'modules/twelve-steps'
 		},
 		{
-			moduleId: 'module-3',
+			moduleId: '3',
 			cardColor: 'tertiary',
 			moduleName: '5 Agreements',
 			description: 'The Integrity Protocol for maintaining professional and interpersonal excellence.',
-			href: '#'
+			href: 'modules/five-agreements'
 		},
 		{
-			moduleId: 'module-4',
+			moduleId: '4',
 			cardColor: 'primary',
 			moduleName: 'Finding A Sponsor',
 			description: 'Identifying and engaging with peer leadership for objective guidance.',
-			href: '#'
+			href: 'modules/finding-a-sponsor'
 		},
 		{
-			moduleId: 'module-5',
+			moduleId: '5',
 			cardColor: 'secondary',
 			moduleName: 'Being A Sponsor',
 			description: 'Transitioning to mentorship and sustaining collective wisdom.',
-			href: '#'
+			href: 'modules/being-a-sponsor'
 		}
 	];
 </script>

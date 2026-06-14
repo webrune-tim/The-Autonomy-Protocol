@@ -76,7 +76,7 @@
 >
   <header class="card-header">
     <div class="header-glare"></div>
-    <p class="subtitle">Module</p>
+    <p class="subtitle">Module {moduleId}</p>
     <h1>{moduleName}</h1>
   </header>
 
