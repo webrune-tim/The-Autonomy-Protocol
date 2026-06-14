@@ -101,6 +101,24 @@
 	</section>
 {/if}
 
+{#if data.user.role === 'teacher' || data.isAdmin}
+	<section
+		class="bold-border-box margin-top"
+		style="--border-color: var(--brand-primary);"
+	>
+		<h2 class="reveal-header">Curriculum Management</h2>
+		<p>Create, update, and manage student educational modules.</p>
+		<button
+			type="button"
+			class="link-button"
+			onclick={() => goto('/teacher/modules')}
+			style="--color: var(--brand-primary); margin-top: 1rem;"
+		>
+			Manage Modules
+		</button>
+	</section>
+{/if}
+
 <style>
 	.flex {
 		display: flex;

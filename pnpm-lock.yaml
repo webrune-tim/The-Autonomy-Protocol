@@ -266,6 +266,9 @@ importers:
       better-auth:
         specifier: ~1.4.22
         version: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.65.0(@sveltejs/vite-plugin-svelte@7.1.2(@voidzero-dev/vite-plus-core@0.1.24(@types/node@22.19.21)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@5.9.3))(svelte@5.56.3(@typescript-eslint/types@8.61.0)))(@voidzero-dev/vite-plus-core@0.1.24(@types/node@22.19.21)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@5.9.3))(svelte@5.56.3(@typescript-eslint/types@8.61.0))(typescript@5.9.3))(@voidzero-dev/vite-plus-test@0.1.24(@types/node@22.19.21)(@voidzero-dev/vite-plus-core@0.1.24(@types/node@22.19.21)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@5.9.3))(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@5.9.3))(better-sqlite3@12.10.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.3)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.10.0)(kysely@0.28.17)(pg@8.21.0))(pg@8.21.0)(svelte@5.56.3(@typescript-eslint/types@8.61.0))
+      dotenv:
+        specifier: 'catalog:'
+        version: 17.4.2
       drizzle-kit:
         specifier: ^0.31.10
         version: 0.31.10
