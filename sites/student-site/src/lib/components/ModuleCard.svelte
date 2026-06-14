@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getModuleStats } from '$stores/moduleStore.svelte.ts';
+  import { getModuleStats } from '$stores/moduleStore.svelte';
 
   interface Props {
     cardColor?: string;
@@ -17,18 +17,22 @@
     cardColor = "primary",
     moduleName = "System Override",
     totalSteps: manualTotalSteps = 12,
-    completedSteps: manualCompletedSteps = 3,
+    completedSteps: manualCompletedSteps = 0,
     moduleId = null,
     description = "Initiate the sequence to synchronize network nodes. Ensure all biometric safety parameters are engaged before proceeding with the core data transfer.",
     showProgressBar = true,
     href = "#",
-    onclick = null
+    onclick = undefined
   }: Props = $props();
 
   // Reactive Stats from store if moduleId is provided
   const stats = $derived(moduleId ? getModuleStats(moduleId) : null);
-  const effectiveTotalSteps = $derived(stats ? stats.total : manualTotalSteps);
-  const effectiveCompletedSteps = $derived(stats ? stats.completed : manualCompletedSteps);
+  
+  // Total steps should preferably come from the store if the module has been initialized
+  const effectiveTotalSteps = $derived(stats && stats.total > 0 ? stats.total : manualTotalSteps);
+  
+  // Completed steps comes from the store, or defaults to the prop (usually 0)
+  const effectiveCompletedSteps = $derived(stats && stats.total > 0 ? stats.completed : manualCompletedSteps);
 
   // Reactive State for animations
   let displayCount = $state(0);
@@ -39,7 +43,9 @@
     // Skip animation logic if the progress bar isn't being shown
     if (!showProgressBar) return;
 
-    const targetPercentage = (effectiveCompletedSteps / effectiveTotalSteps) * 100;
+    // Use a small threshold to avoid division by zero or NaN
+    const total = effectiveTotalSteps || 1;
+    const targetPercentage = (effectiveCompletedSteps / total) * 100;
 
     // We use a slight delay for the initial pop-in effect
     const timeout = setTimeout(() => {

@@ -1,53 +1,22 @@
 <script lang="ts">
 	import { ModuleCard } from '$components';
-	import { getModuleStats } from '$stores/moduleStore.svelte.ts';
+	import { getModuleStats } from '$stores/moduleStore.svelte';
+	import type { PageData } from './$types';
 
-	const cards = [
-		{
-			moduleId: '1',
-			cardColor: 'primary',
-			moduleName: 'Introduction to TAP',
-			description: 'Learn the foundational principles of The Autonomy Protocol.',
-			href: '/modules/introduction'
-		},
-		{
-			moduleId: '2',
-			cardColor: 'secondary',
-			moduleName: '12 Steps',
-			description: 'The Accountability Cycle for internal regulation and behavioral alignment.',
-			href: 'modules/twelve-steps'
-		},
-		{
-			moduleId: '3',
-			cardColor: 'tertiary',
-			moduleName: '5 Agreements',
-			description: 'The Integrity Protocol for maintaining professional and interpersonal excellence.',
-			href: 'modules/five-agreements'
-		},
-		{
-			moduleId: '4',
-			cardColor: 'primary',
-			moduleName: 'Finding A Sponsor',
-			description: 'Identifying and engaging with peer leadership for objective guidance.',
-			href: 'modules/finding-a-sponsor'
-		},
-		{
-			moduleId: '5',
-			cardColor: 'secondary',
-			moduleName: 'Being A Sponsor',
-			description: 'Transitioning to mentorship and sustaining collective wisdom.',
-			href: 'modules/being-a-sponsor'
-		}
-	];
+	let { data }: { data: PageData } = $props();
 </script>
 
 <div class="card-grid">
-	{#each cards as card (card.moduleId)}
-		{@const stats = getModuleStats(card.moduleId)}
+	{#each data.modules as module (module.id)}
+		{@const stats = getModuleStats(module.id)}
 		<ModuleCard
-			{...card}
+			moduleId={module.id}
+			cardColor={module.cardColor}
+			moduleName={module.title}
+			description={module.description}
+			href={`/modules/${module.slug}`}
 			completedSteps={stats.completed}
-			totalSteps={stats.total}
+			totalSteps={module.totalSections}
 		/>
 	{/each}
 </div>

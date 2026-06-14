@@ -1,67 +1,37 @@
-// src/lib/moduleStore.svelte.ts
+// src/lib/stores/moduleStore.svelte.ts
+import { browser } from "$app/environment";
 
-export const moduleState = $state({
-  "module-1": {
-    section1: true,
-    section2: false,
-    section3: false,
-    section4: false,
-    section5: false,
-  },
-  "module-2": {
-    step1: false,
-    step2: false,
-    step3: false,
-    step4: false,
-    step5: false,
-    step6: false,
-    step7: false,
-    step8: false,
-    step9: false,
-    step10: false,
-    step11: false,
-    step12: false,
-  },
-  "module-3": {
-    agreement1: false,
-    agreement2: false,
-    agreement3: false,
-    agreement4: false,
-    agreement5: false,
-  },
-  "module-4": {
-    task1: false,
-    task2: false,
-    task3: false,
-    task4: false,
-    task5: false,
-    task6: false,
-    task7: false,
-    task8: false,
-    task9: false,
-    task10: false,
-  },
-  "module-5": {
-    task1: false,
-    task2: false,
-    task3: false,
-    task4: false,
-    task5: false,
-    task6: false,
-    task7: false,
-    task8: false,
-    task9: false,
-    task10: false,
-  },
-});
+// Persistent State using Svelte 5 runes
+const STORAGE_KEY = "tap_module_progress";
 
-// Extract the valid keys from the state object
-export type ModuleId = keyof typeof moduleState;
+function loadInitialState(): Record<string, Record<string, boolean>> {
+  if (!browser) return {};
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored ? JSON.parse(stored) : {};
+  } catch (e) {
+    console.error("Failed to load module progress:", e);
+    return {};
+  }
+}
+
+export const moduleState = $state<Record<string, Record<string, boolean>>>(loadInitialState());
+
+/**
+ * Persist state to localStorage on every change
+ */
+if (browser) {
+  $effect.root(() => {
+    $effect(() => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(moduleState));
+    });
+  });
+}
 
 /**
  * Returns statistics for a specific module
  */
-export function getModuleStats(moduleId: ModuleId) {
+export function getModuleStats(moduleId: string) {
   const mod = moduleState[moduleId];
   if (!mod) return { completed: 0, total: 0, percent: 0 };
 
@@ -73,7 +43,31 @@ export function getModuleStats(moduleId: ModuleId) {
   return { completed, total, percent };
 }
 
-// Keep the old helper for backward compatibility if needed, or just use getModuleStats
-export function getModuleProgress(moduleId: ModuleId) {
+/**
+ * Ensures a module and its sections exist in the store without overwriting progress
+ */
+export function initModuleState(moduleId: string, sectionIds: string[]) {
+  if (!moduleState[moduleId]) {
+    moduleState[moduleId] = {};
+  }
+
+  sectionIds.forEach((id) => {
+    if (moduleState[moduleId][id] === undefined) {
+      moduleState[moduleId][id] = false;
+    }
+  });
+}
+
+/**
+ * Updates a single section's state
+ */
+export function toggleSection(moduleId: string, sectionId: string, completed: boolean) {
+  if (!moduleState[moduleId]) {
+    moduleState[moduleId] = {};
+  }
+  moduleState[moduleId][sectionId] = completed;
+}
+
+export function getModuleProgress(moduleId: string) {
   return getModuleStats(moduleId).percent;
 }
