@@ -172,7 +172,7 @@
 </section>
 
 <section
-	class="bold-border-box margin-top flex-around"
+	class="bold-border-box margin-top"
 	style="--border-color: var(--fg)"
 >
 	<h2 class="reveal-header">Summary of Delivery Differences</h2>

@@ -1,10 +1,4 @@
 <script lang="ts">
-	import type { SvelteHTMLElements } from 'svelte/elements'
-
-	// Extract the strict typings natively mapped for enhanced images
-	// type EnhancedImgProps = SvelteHTMLElements['enhanced:img']
-
-	// Accept the complete src object structure along with alt and any fallback classes
 	const {
 		src,
 		alt,
@@ -16,12 +10,13 @@
 	} = $props()
 
 	function initRevealingImage(node: HTMLElement): void {
+		// Correct way to pass options to IntersectionObserver
 		const observer = new IntersectionObserver(([entry]) => {
 			if (!entry.isIntersecting) {
 				node.classList.add('revealing-image')
 			}
 			observer.disconnect()
-		})
+		}, { rootMargin: `150px`}) // Pass options as the second argument
 
 		setTimeout(() => {
 			if (node) observer.observe(node)
