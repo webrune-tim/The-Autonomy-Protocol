@@ -3,7 +3,7 @@
 	import { BookOpen, Compass, Milestone } from '@lucide/svelte'
 	import { RevealingImage } from '@autonomy/revealing_image'
 
-	import HeroImage from '$images/hero-image-alt.png?enhanced'
+	import HeroImage from '$images/hero-image-alt.png'
 </script>
 
 <section

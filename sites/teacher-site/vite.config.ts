@@ -1,9 +1,10 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import { enhancedImages } from "@sveltejs/enhanced-img";
+// import { enhancedImages } from "@sveltejs/enhanced-img";
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
-  plugins: [enhancedImages(), sveltekit()],
+  // plugins: [enhancedImages(), sveltekit()],
+  plugins: [sveltekit()],
 
   server: {
     hmr: {

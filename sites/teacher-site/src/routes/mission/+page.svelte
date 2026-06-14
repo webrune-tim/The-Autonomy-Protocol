@@ -3,8 +3,8 @@
 	import { thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
 
-	import MissionImage from '$images/cycle.png?enhanced'
-	import ShiftImage from '$images/shift-image.png?enhanced'
+	import MissionImage from '$images/cycle.png'
+	import ShiftImage from '$images/shift-image.png'
 </script>
 
 <div

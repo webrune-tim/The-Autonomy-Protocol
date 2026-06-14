@@ -3,7 +3,7 @@
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { Download, ShieldQuestionMark } from '@lucide/svelte'
 
-	import CurriculumImage from '$images/curriculum.png?enhanced'
+	import CurriculumImage from '$images/curriculum.png'
 </script>
 
 <section

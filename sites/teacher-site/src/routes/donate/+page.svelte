@@ -4,7 +4,7 @@
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { Eye } from '@lucide/svelte'
 
-	import DonationImage from '$images/donation.png?enhanced'
+	import DonationImage from '$images/donation.png'
 
 	let { form } = $props()
 </script>

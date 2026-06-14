@@ -2,7 +2,7 @@
 	import type { SvelteHTMLElements } from 'svelte/elements'
 
 	// Extract the strict typings natively mapped for enhanced images
-	type EnhancedImgProps = SvelteHTMLElements['enhanced:img']
+	// type EnhancedImgProps = SvelteHTMLElements['enhanced:img']
 
 	// Accept the complete src object structure along with alt and any fallback classes
 	const {
@@ -10,7 +10,7 @@
 		alt,
 		class: className = ''
 	}: {
-		src: EnhancedImgProps['src'];
+		src: string;
 		alt: string;
 		class?: string
 	} = $props()
@@ -29,7 +29,7 @@
 	}
 </script>
 
-<enhanced:img
+<img
 	use:initRevealingImage
 	class="margin-bottom {className}"
 	{src}

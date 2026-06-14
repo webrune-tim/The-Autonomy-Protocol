@@ -4,7 +4,7 @@
 	import { HeartPlus } from '@lucide/svelte'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
-	import ResourcesImage from '$images/resources.png?enhanced'
+	import ResourcesImage from '$images/resources.png'
 
 	type Tab = 'steps' | 'agreements' | 'freshmen' | 'seniors'
 	let activeTab = $state<Tab>('steps')

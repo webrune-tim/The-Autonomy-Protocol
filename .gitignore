@@ -29,3 +29,4 @@ dist-ssr
 .claude/worktrees/
 .vercel
 .env*
+.aider*

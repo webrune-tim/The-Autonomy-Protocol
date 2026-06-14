@@ -3,7 +3,7 @@
 	import { BookImage, Send } from '@lucide/svelte'
 	import { RevealingImage } from '@autonomy/revealing_image'
 
-	import JoinUsImage from '$images/join-us.png?enhanced'
+	import JoinUsImage from '$images/join-us.png'
 </script>
 
 <section
