@@ -36,12 +36,14 @@
 	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
 		{ href: '/road-map', label: 'Road Map' },
+		...(data.user ? [{ href: '/modules', label: 'Modules' }] : []),
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	])
 
 	const footerLinks = $derived([
 		{ href: '/', label: 'Home' },
-		{ href: '/road-map', label: 'Road Map' }
+		{ href: '/road-map', label: 'Road Map' },
+		...(data.user ? [{ href: '/modules', label: 'Modules' }] : [])
 	])
 
 	$effect(() => {
