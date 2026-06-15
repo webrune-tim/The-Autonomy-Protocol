@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { moduleState, getModuleProgress, initModuleState, toggleSection } from '$stores/moduleStore.svelte';
+	import { ArrowBigLeft } from '@lucide/svelte'
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -10,7 +11,11 @@
 	// Initialize the module state when the page loads
 	$effect(() => {
 		if (moduleId) {
-			initModuleState(moduleId, data.module.sections.map(s => s.id));
+			initModuleState(
+				moduleId,
+				data.module.sections.map(s => s.id),
+				data.userProgress
+			);
 		}
 	});
 
@@ -32,6 +37,7 @@
 			<div class="progress-bar" style="width: {progress}%;"></div>
 		</div>
 		<p class="larger-text">{progress}% Completed</p>
+		<a href="/modules" class="cta"><ArrowBigLeft /> Back to Modules</a>
 	</header>
 
 	<main class="margin-top-2">

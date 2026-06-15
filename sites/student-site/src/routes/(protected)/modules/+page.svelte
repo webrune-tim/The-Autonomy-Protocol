@@ -1,9 +1,19 @@
 <script lang="ts">
 	import { ModuleCard } from '$components';
-	import { getModuleStats } from '$stores/moduleStore.svelte';
+	import { initModuleState, getModuleStats } from '$stores/moduleStore.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
+
+	// Initialize all modules into the store for accurate progress bars
+	$effect(() => {
+		data.modules.forEach(m => {
+			const moduleProgress = data.userProgress.filter(p => 
+				m.sections.some(s => s.id === p.sectionId)
+			);
+			initModuleState(m.id, m.sections.map(s => s.id), moduleProgress);
+		});
+	});
 </script>
 
 <div class="card-grid">

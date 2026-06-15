@@ -1,9 +1,11 @@
 import { db } from "$lib/server/db";
-import { modules } from "$lib/server/db/schema";
-import { asc } from "drizzle-orm";
+import { modules, userProgress } from "$lib/server/db/schema";
+import { asc, eq } from "drizzle-orm";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ locals }) => {
+  const userId = locals.user!.id;
+
   const allModules = await db.query.modules.findMany({
     orderBy: [asc(modules.order)],
     with: {
@@ -15,10 +17,15 @@ export const load: PageServerLoad = async () => {
     },
   });
 
+  const progress = await db.query.userProgress.findMany({
+    where: eq(userProgress.userId, userId),
+  });
+
   return {
     modules: allModules.map((m) => ({
       ...m,
       totalSections: m.sections.length,
     })),
+    userProgress: progress,
   };
 };

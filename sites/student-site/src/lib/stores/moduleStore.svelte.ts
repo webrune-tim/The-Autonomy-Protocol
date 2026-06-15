@@ -2,31 +2,7 @@
 import { browser } from "$app/environment";
 
 // Persistent State using Svelte 5 runes
-const STORAGE_KEY = "tap_module_progress";
-
-function loadInitialState(): Record<string, Record<string, boolean>> {
-  if (!browser) return {};
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return stored ? JSON.parse(stored) : {};
-  } catch (e) {
-    console.error("Failed to load module progress:", e);
-    return {};
-  }
-}
-
-export const moduleState = $state<Record<string, Record<string, boolean>>>(loadInitialState());
-
-/**
- * Persist state to localStorage on every change
- */
-if (browser) {
-  $effect.root(() => {
-    $effect(() => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(moduleState));
-    });
-  });
-}
+export const moduleState = $state<Record<string, Record<string, boolean>>>({});
 
 /**
  * Returns statistics for a specific module
@@ -44,9 +20,14 @@ export function getModuleStats(moduleId: string) {
 }
 
 /**
- * Ensures a module and its sections exist in the store without overwriting progress
+ * Ensures a module and its sections exist in the store without overwriting progress.
+ * Optionally hydrates with initial progress from the database.
  */
-export function initModuleState(moduleId: string, sectionIds: string[]) {
+export function initModuleState(
+  moduleId: string,
+  sectionIds: string[],
+  initialProgress: { sectionId: string; completed: boolean }[] = [],
+) {
   if (!moduleState[moduleId]) {
     moduleState[moduleId] = {};
   }
@@ -56,16 +37,43 @@ export function initModuleState(moduleId: string, sectionIds: string[]) {
       moduleState[moduleId][id] = false;
     }
   });
+
+  initialProgress.forEach((p) => {
+    moduleState[moduleId][p.sectionId] = p.completed;
+  });
 }
 
 /**
- * Updates a single section's state
+ * Updates a single section's state and persists to server
  */
-export function toggleSection(moduleId: string, sectionId: string, completed: boolean) {
+export async function toggleSection(moduleId: string, sectionId: string, completed: boolean) {
+  // Optimistic update
   if (!moduleState[moduleId]) {
     moduleState[moduleId] = {};
   }
+  const previousValue = moduleState[moduleId][sectionId];
   moduleState[moduleId][sectionId] = completed;
+
+  if (browser) {
+    try {
+      const formData = new FormData();
+      formData.append("sectionId", sectionId);
+      formData.append("completed", String(completed));
+
+      const response = await fetch("?/toggleSection", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to sync with server");
+      }
+    } catch (e) {
+      console.error("Failed to sync module progress:", e);
+      // Rollback on failure
+      moduleState[moduleId][sectionId] = previousValue;
+    }
+  }
 }
 
 export function getModuleProgress(moduleId: string) {
