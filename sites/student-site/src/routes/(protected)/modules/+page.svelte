@@ -35,7 +35,7 @@
 	.card-grid {
 		display: grid;
 		gap: var(--gap-2);
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		padding: var(--gap-1);
 	}
 </style>
