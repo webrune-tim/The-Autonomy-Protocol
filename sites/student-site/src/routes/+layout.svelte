@@ -37,6 +37,10 @@
 		{ href: '/', label: 'Home' },
 		{ href: '/road-map', label: 'Road Map' },
 		...(data.user ? [{ href: '/modules', label: 'Modules' }] : []),
+		...(data.user && ['teacher', 'admin', 'superadmin'].includes(data.user.role)
+      ? [{ href: '/teacher-modules', label: 'Modules Configuration' }]
+      : []
+    ),
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	])
 

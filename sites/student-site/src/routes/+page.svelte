@@ -14,7 +14,7 @@
 		management, self-governance, and absolute accountability.
 	</p>
 
-	<a class="cta" href="/assignments">
+	<a class="cta" href="/modules">
 		<Star size={32} /> Begin the Protocol <ArrowBigRight size={32} />
 	</a>
 	<a class="cta" href="/homework">
@@ -76,7 +76,7 @@
 	<h3 class="reveal-header">Ready to take the wheel?</h3>
 	<p>The tools are here. The choice to use them is yours.</p>
 
-	<a class="cta" href="/assignments">
+	<a class="cta" href="/modules">
 		<ShipWheel size={32} /> Start Your First Module <ArrowBigRight size={32} />
 	</a>
 </section>
