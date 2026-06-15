@@ -29,8 +29,12 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-background);
+    background-color: oklch(from var(--bg-surface) l c h / 50%);
     border-bottom: 1px solid var(--color-border);
+
+    position: sticky;
+    top: 0;
+    z-index: 3;
   }
 
   :global(.actions) {
