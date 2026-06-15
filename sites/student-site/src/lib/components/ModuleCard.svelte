@@ -2,7 +2,6 @@
   import { getModuleStats } from '$stores/moduleStore.svelte';
 
   interface Props {
-    cardColor?: string;
     moduleName?: string;
     totalSteps?: number;
     completedSteps?: number;
@@ -14,7 +13,6 @@
   }
 
   let {
-    cardColor = "primary",
     moduleName = "System Override",
     totalSteps: manualTotalSteps = 12,
     completedSteps: manualCompletedSteps = 0,
@@ -27,10 +25,10 @@
 
   // Reactive Stats from store if moduleId is provided
   const stats = $derived(moduleId ? getModuleStats(moduleId) : null);
-  
+
   // Total steps should preferably come from the store if the module has been initialized
   const effectiveTotalSteps = $derived(stats && stats.total > 0 ? stats.total : manualTotalSteps);
-  
+
   // Completed steps comes from the store, or defaults to the prop (usually 0)
   const effectiveCompletedSteps = $derived(stats && stats.total > 0 ? stats.completed : manualCompletedSteps);
 
@@ -40,19 +38,14 @@
 
   // Client-side effect for the initialization animation
   $effect(() => {
-    // Skip animation logic if the progress bar isn't being shown
     if (!showProgressBar) return;
 
-    // Use a small threshold to avoid division by zero or NaN
     const total = effectiveTotalSteps || 1;
     const targetPercentage = (effectiveCompletedSteps / total) * 100;
 
-    // We use a slight delay for the initial pop-in effect
     const timeout = setTimeout(() => {
       progressWidth = targetPercentage;
 
-      // Animate the number counting up
-      // If we are already at the count, don't re-animate from 0
       if (displayCount === effectiveCompletedSteps) return;
 
       let count = 0;
@@ -76,10 +69,7 @@
   });
 </script>
 
-<article
-  class="card"
-  style={`--card-color: var(--brand-${cardColor}); --subtitle-text: color-mix(in oklch, var(--brand-${cardColor}), oklch(0.96 0.01 290) var(--opacity));`}
->
+<article class="card">
   <header class="card-header">
     <div class="header-glare"></div>
     <p class="subtitle">Module {moduleId}</p>
@@ -118,6 +108,27 @@
 </article>
 
 <style>
+  /* ---------------------------------------------------- */
+  /* Nth-Child Pattern Injecting Brand Tokens             */
+  /* ---------------------------------------------------- */
+
+  /* Pattern 1: Brand Primary */
+  :global(.card:nth-child(3n + 1)) {
+    --card-color: var(--brand-primary);
+  }
+
+  /* Pattern 2: Brand Secondary */
+  :global(.card:nth-child(3n + 2)) {
+    --card-color: var(--brand-secondary);
+  }
+
+  /* Pattern 3: Brand Tertiary */
+  :global(.card:nth-child(3n)) {
+    --card-color: var(--brand-tertiary);
+  }
+
+  /* ---------------------------------------------------- */
+
   .card {
     --opacity: 65%;
 
@@ -180,7 +191,7 @@
   .card-header .subtitle {
     font-family: monospace;
     font-size: 1.25rem;
-    color: var(--subtitle-text);
+    color: color-mix(in oklch, var(--card-color), oklch(0.96 0.01 290) var(--opacity));
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0 0 0.5rem 0;
@@ -190,7 +201,6 @@
 
   .card-header h1 {
     margin: 0;
-    /*color: var(--text-heading);*/
     font-family: var(--font-thick);
     font-size: 2rem;
     text-transform: uppercase;
@@ -292,7 +302,7 @@
 
   .action-btn:hover {
     background-color: var(--card-color);
-    color: var(--card-color-contrast, #fff); /* Added fallback contrast color */
+    color: var(--card-color-contrast, #fff);
     box-shadow: 0 4px 15px hsl(from var(--card-color) h s calc(l - 5) / 75%);
     transform: translateY(-2px);
   }

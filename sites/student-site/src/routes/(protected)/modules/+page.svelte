@@ -8,7 +8,7 @@
 	// Initialize all modules into the store for accurate progress bars
 	$effect(() => {
 		data.modules.forEach(m => {
-			const moduleProgress = data.userProgress.filter(p => 
+			const moduleProgress = data.userProgress.filter(p =>
 				m.sections.some(s => s.id === p.sectionId)
 			);
 			initModuleState(m.id, m.sections.map(s => s.id), moduleProgress);
@@ -20,7 +20,7 @@
 	{#each data.modules as module (module.id)}
 		{@const stats = getModuleStats(module.id)}
 		<ModuleCard
-			moduleId={module.id}
+			moduleId={module.order}
 			cardColor={module.cardColor}
 			moduleName={module.title}
 			description={module.description}
