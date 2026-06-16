@@ -1,4 +1,7 @@
 <script lang="ts">
+    import { page } from '$app/state'
+    import { getPortalToggle } from './portal-toggle.svelte.ts'
+
 	interface NavLink {
 		href: string
 		label: string
@@ -27,6 +30,12 @@
 				</a>
 			</li>
 		{/each}
+
+		<li>
+			<a href={getPortalToggle(page.url.pathname).href}>
+				{getPortalToggle(page.url.pathname).label}
+			</a>
+		</li>
 	</ul>
 </nav>
 

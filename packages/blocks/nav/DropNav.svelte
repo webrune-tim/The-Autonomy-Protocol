@@ -4,6 +4,7 @@
     import { fly } from 'svelte/transition'
     import { ThemeToggle } from '@autonomy/theme-toggle'
     import { cubicOut, cubicIn } from 'svelte/easing'
+    import { getPortalToggle } from './portal-toggle.svelte.ts'
 
     interface NavLink {
         href: string
@@ -14,15 +15,6 @@
         $props()
 
     let isOpen = $state(false)
-
-    // Computes target portal and text reactively whenever the SvelteKit path changes
-    const portalToggle = $derived.by(() => {
-        const isTeacher = page.url.pathname.startsWith('/teacher')
-        return {
-            href: isTeacher ? '/student' : '/teacher',
-            label: isTeacher ? 'Student Site' : 'Teacher Site'
-        }
-    })
 
     const toggleMenu = (e: MouseEvent) => {
         e.stopPropagation()
@@ -83,10 +75,9 @@
                         </li>
                     {/each}
 
-                    <!-- Dynamic Portal Link -->
                     <li>
-                        <a href={portalToggle.href} onclick={closeMenu}>
-                            {portalToggle.label}
+                        <a href={getPortalToggle(page.url.pathname).href} onclick={closeMenu}>
+                            {getPortalToggle(page.url.pathname).label}
                         </a>
                     </li>
 
