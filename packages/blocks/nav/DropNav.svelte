@@ -1,188 +1,205 @@
 <script lang="ts">
-	import { page } from '$app/state'
-	import { Menu } from '@lucide/svelte'
-	import { fly } from 'svelte/transition'
-	import { ThemeToggle } from '@autonomy/theme-toggle'
-	import { cubicOut, cubicIn } from 'svelte/easing'
+    import { page } from '$app/state'
+    import { Menu } from '@lucide/svelte'
+    import { fly } from 'svelte/transition'
+    import { ThemeToggle } from '@autonomy/theme-toggle'
+    import { cubicOut, cubicIn } from 'svelte/easing'
 
-	interface NavLink {
-		href: string
-		label: string
-	}
+    interface NavLink {
+        href: string
+        label: string
+    }
 
-	let { links = [], currentPath = '/' }: { links: NavLink[]; currentPath?: string } =
-		$props()
+    let { links = [], currentPath = '/' }: { links: NavLink[]; currentPath?: string } =
+        $props()
 
-	let isOpen = $state(false)
+    let isOpen = $state(false)
 
-	const toggleMenu = (e: MouseEvent) => {
-		e.stopPropagation()
-		isOpen = !isOpen
-	}
+    // Computes target portal and text reactively whenever the SvelteKit path changes
+    const portalToggle = $derived.by(() => {
+        const isTeacher = page.url.pathname.startsWith('/teacher')
+        return {
+            href: isTeacher ? '/student' : '/teacher',
+            label: isTeacher ? 'Student Site' : 'Teacher Site'
+        }
+    })
 
-	const closeMenu = () => {
-		isOpen = false
-	}
+    const toggleMenu = (e: MouseEvent) => {
+        e.stopPropagation()
+        isOpen = !isOpen
+    }
 
-	function clickOutside(node: HTMLElement) {
-		const handleClick = (event: MouseEvent) => {
-			if (isOpen && !node.contains(event.target as Node)) {
-				closeMenu()
-			}
-		}
+    const closeMenu = () => {
+        isOpen = false
+    }
 
-		document.addEventListener('click', handleClick, true)
-		return {
-			destroy() {
-				document.removeEventListener('click', handleClick, true)
-			}
-		}
-	}
+    function clickOutside(node: HTMLElement) {
+        const handleClick = (event: MouseEvent) => {
+            if (isOpen && !node.contains(event.target as Node)) {
+                closeMenu()
+            }
+        }
+
+        document.addEventListener('click', handleClick, true)
+        return {
+            destroy() {
+                document.removeEventListener('click', handleClick, true)
+            }
+        }
+    }
 </script>
 
 <div class="dropdown-wrapper" use:clickOutside>
-	<button
-		class="dropdown-toggle"
-		type="button"
-		onclick={toggleMenu}
-		aria-haspopup="menu"
-		aria-expanded={isOpen}
-	>
-		<Menu size={32} />
-	</button>
+    <button
+        class="dropdown-toggle"
+        type="button"
+        onclick={toggleMenu}
+        aria-haspopup="menu"
+        aria-expanded={isOpen}
+    >
+        <Menu size={32} />
+    </button>
 
-	{#if isOpen}
-		<div
-			class="dropdown-content"
-			in:fly={{ y: -10, duration: 550, easing: cubicOut }}
-			out:fly={{ y: -10, duration: 150, easing: cubicIn }}
-		>
-			<nav>
-				<section class="theme-toggle-wrapper">
-					<ThemeToggle />
-				</section>
-				<ul>
-					{#each links as link}
-						<li>
-							<a
-								href={link.href}
-								class:active={currentPath === link.href}
-								onclick={closeMenu}
-							>
-								{link.label}
-							</a>
-						</li>
-					{/each}
-					{#if page.data.user}
-						<li>
-							<form method="POST" action="/logout">
-								<button type="submit" class="link-button"> Logout </button>
-							</form>
-						</li>
-					{:else}
-						<li>
-							<a href="/login" onclick={closeMenu}>Login</a>
-						</li>
-					{/if}
-				</ul>
-			</nav>
-		</div>
-	{/if}
+    {#if isOpen}
+        <div
+            class="dropdown-content"
+            in:fly={{ y: -10, duration: 550, easing: cubicOut }}
+            out:fly={{ y: -10, duration: 150, easing: cubicIn }}
+        >
+            <nav>
+                <section class="theme-toggle-wrapper">
+                    <ThemeToggle />
+                </section>
+                <ul>
+                    {#each links as link}
+                        <li>
+                            <a
+                                href={link.href}
+                                class:active={currentPath === link.href}
+                                onclick={closeMenu}
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    {/each}
+
+                    <!-- Dynamic Portal Link -->
+                    <li>
+                        <a href={portalToggle.href} onclick={closeMenu}>
+                            {portalToggle.label}
+                        </a>
+                    </li>
+
+                    {#if page.data.user}
+                        <li>
+                            <form method="POST" action="/logout">
+                                <button type="submit" class="link-button"> Logout </button>
+                            </form>
+                        </li>
+                    {:else}
+                        <li>
+                            <a href="/login" onclick={closeMenu}>Login</a>
+                        </li>
+                    {/if}
+                </ul>
+            </nav>
+        </div>
+    {/if}
 </div>
 
 <style>
-	.theme-toggle-wrapper {
-		width: 100%;
-		display: flex;
-		place-content: center;
-		padding-top: 0.5rem;
-	}
+    .theme-toggle-wrapper {
+        width: 100%;
+        display: flex;
+        place-content: center;
+        padding-top: 0.5rem;
+    }
 
-	.dropdown-wrapper {
-		position: relative;
-		display: inline-flex;
-	}
+    .dropdown-wrapper {
+        position: relative;
+        display: inline-flex;
+    }
 
-	button.dropdown-toggle {
-		all: unset;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		background: transparent;
-		color: var(--fg);
-		cursor: pointer;
-		transition: transform 0.1s ease;
-	}
+    button.dropdown-toggle {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        color: var(--fg);
+        cursor: pointer;
+        transition: transform 0.1s ease;
+    }
 
-	button.dropdown-toggle:active {
-		transform: scale(0.95);
-	}
+    button.dropdown-toggle:active {
+        transform: scale(0.95);
+    }
 
-	.dropdown-content {
-		position: absolute;
-		top: calc(100% + 0.5rem);
-		right: 0;
-		background: var(--bg);
-		border: 2px solid var(--brand-primary);
-		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-		border-radius: var(--border-radius);
-		background: var(--bg);
-		width: max-content;
-		min-width: 180px;
-		max-height: 80vh;
-		overflow-y: scroll;
-		z-index: 100;
-		overflow: hidden;
-	}
+    .dropdown-content {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 0;
+        background: var(--bg);
+        border: 2px solid var(--brand-primary);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        border-radius: var(--border-radius);
+        background: var(--bg);
+        width: max-content;
+        min-width: 180px;
+        max-height: 80vh;
+        overflow-y: scroll;
+        z-index: 100;
+        overflow: hidden;
+    }
 
-	ul {
-		list-style: none !important;
-		padding: 0.5rem;
-		margin: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
-	}
+    ul {
+        list-style: none !important;
+        padding: 0.5rem;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
 
-	a {
-		display: block;
-		padding: 0.75rem 1.25rem;
-		text-decoration: none;
-		text-transform: uppercase;
-		color: var(--fg);
-		font-weight: 500;
-		font-size: 0.9rem;
-		transition: all 0.2s ease;
-	}
+    a {
+        display: block;
+        padding: 0.75rem 1.25rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--fg);
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+    }
 
-	a.active,
-	a:hover {
-		color: var(--fg);
-		border-radius: var(--border-radius);
-	}
-	a.active {
-		background: rgb(from var(--brand-secondary) r g b / 0.3);
-	}
-	a:hover {
-		background: rgb(from var(--brand-tertiary) r g b / 0.3);
-	}
+    a.active,
+    a:hover {
+        color: var(--fg);
+        border-radius: var(--border-radius);
+    }
+    a.active {
+        background: rgb(from var(--brand-secondary) r g b / 0.3);
+    }
+    a:hover {
+        background: rgb(from var(--brand-tertiary) r g b / 0.3);
+    }
 
-	.link-button {
-		all: unset;
-		display: block;
-		width: 100%;
-		box-sizing: border-box;
-		padding: 0.75rem 1.25rem;
-		text-transform: uppercase;
-		font-weight: 500;
-		font-size: 0.9rem;
-		color: var(--fg);
-		cursor: pointer;
-	}
+    .link-button {
+        all: unset;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.75rem 1.25rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: var(--fg);
+        cursor: pointer;
+    }
 
-	.link-button:hover {
-		color: var(--fg);
-		border-radius: var(--border-radius);
-		background: rgb(from var(--brand-tertiary) r g b / 0.3) !important;
-	}
+    .link-button:hover {
+        color: var(--fg);
+        border-radius: var(--border-radius);
+        background: rgb(from var(--brand-tertiary) r g b / 0.3) !important;
+    }
 </style>
