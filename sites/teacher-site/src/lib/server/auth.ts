@@ -35,9 +35,13 @@ const studentRole = ac.newRole({
 });
 const baseURL =
   env.TEACHER_ORIGIN ||
+  env.ORIGIN ||
   (dev ? "http://localhost:8080" : "https://the-autonomy-protocol.vercel.app");
 
 const cleanBaseURL = baseURL.replace(/\/$/, "");
+console.log(
+  `[Teacher Auth] Resolving baseURL to: ${cleanBaseURL} (dev: ${dev}, env.TEACHER_ORIGIN: ${env.TEACHER_ORIGIN}, env.ORIGIN: ${env.ORIGIN})`,
+);
 
 export const auth = betterAuth({
   baseURL: cleanBaseURL,
@@ -60,7 +64,6 @@ export const auth = betterAuth({
           google: {
             clientId: env.TEACHER_GOOGLE_CLIENT_ID,
             clientSecret: env.TEACHER_GOOGLE_CLIENT_SECRET,
-            redirectURI: `${cleanBaseURL}/api/auth/callback/google`,
           },
         }
       : {},
