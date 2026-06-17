@@ -34,16 +34,14 @@ const studentRole = ac.newRole({
 	session: []
 })
 
-const isLocalOrigin =
-	env.STUDENT_ORIGIN?.includes('localhost') ||
-	env.STUDENT_ORIGIN?.includes('127.0.0.1')
 const baseURL =
-	env.STUDENT_ORIGIN && (dev || !isLocalOrigin)
-		? env.STUDENT_ORIGIN
-		: 'https://the-autonomy-protocol.vercel.app'
+	env.STUDENT_ORIGIN ||
+	(dev ? 'http://localhost:5173' : 'https://the-autonomy-protocol.vercel.app')
+
+const cleanBaseURL = baseURL.replace(/\/$/, '')
 
 export const auth = betterAuth({
-	baseURL: baseURL.replace(/\/$/, ''),
+	baseURL: cleanBaseURL,
 	secret: env.BETTER_AUTH_SECRET,
 	trustedOrigins: [
 		env.STUDENT_ORIGIN,
