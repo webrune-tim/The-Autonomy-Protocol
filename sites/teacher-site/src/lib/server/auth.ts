@@ -33,15 +33,9 @@ const studentRole = ac.newRole({
   user: [],
   session: [],
 });
-
-const isLocalOrigin =
-  env.TEACHER_ORIGIN?.includes("localhost") || env.TEACHER_ORIGIN?.includes("127.0.0.1");
 const baseURL =
-  env.TEACHER_ORIGIN && (dev || !isLocalOrigin)
-    ? env.TEACHER_ORIGIN
-    : dev
-      ? "http://localhost:8080"
-      : "https://the-autonomy-protocol.vercel.app";
+  env.TEACHER_ORIGIN ||
+  (dev ? "http://localhost:8080" : "https://the-autonomy-protocol.vercel.app");
 
 const cleanBaseURL = baseURL.replace(/\/$/, "");
 
