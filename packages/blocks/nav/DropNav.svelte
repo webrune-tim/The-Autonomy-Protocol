@@ -141,12 +141,6 @@
         overflow: hidden;
     }
 
-    @media (max-height: 800px) {
-      .dropdown-content {
-        max-height: 80vh;
-      }
-    }
-
     ul {
         list-style: none !important;
         padding: 0.5rem;
@@ -154,14 +148,6 @@
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
-    }
-
-    @media (max-height: 800px) {
-      ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--gap-1);
-      }
     }
 
     a {
