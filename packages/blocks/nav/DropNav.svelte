@@ -135,9 +135,7 @@
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         border-radius: var(--border-radius);
         width: max-content;
-        min-width: 180px;
-        max-height: 80vh;
-        z-index: 100;
+        z-index: 10;
         overflow: hidden;
     }
 
