@@ -30,7 +30,7 @@ catalog:
   mdsvex: ^0.12.7
   "@libsql/linux-x64-gnu": ^0.5.29
   dotenv: ^17.4.2
-  "@sveltejs/kit": ^2.65.0
+  "@sveltejs/kit": ^2.65.2
   turbo: ^2.9.18
 
 catalogMode: prefer
