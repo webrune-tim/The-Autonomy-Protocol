@@ -2,6 +2,7 @@ import { db } from "$lib/server/db";
 import { modules, userProgress } from "$lib/server/db/schema";
 import { asc, eq } from "drizzle-orm";
 import type { PageServerLoad } from "./$types";
+import { lutimes } from "node:fs/promises";
 
 export const load: PageServerLoad = async ({ locals }) => {
   const userId = locals.user!.id;
@@ -27,5 +28,6 @@ export const load: PageServerLoad = async ({ locals }) => {
       totalSections: m.sections.length,
     })),
     userProgress: progress,
+    user: locals.user,
   };
 };

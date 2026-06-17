@@ -135,6 +135,7 @@
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         border-radius: var(--border-radius);
         width: max-content;
+        max-height: 80dvh;
         z-index: 10;
         overflow: hidden;
     }
@@ -146,6 +147,18 @@
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
+    }
+
+    @media (max-width: 600px) {
+        ul {
+          display: grid;
+          grid-template-columns: auto auto;
+          gap: 0.25rem;
+          max-width: 50ch;
+        }
+        a {
+          word-break: break-all;
+        }
     }
 
     a {

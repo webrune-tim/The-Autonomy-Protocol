@@ -3,7 +3,7 @@
 	import { initModuleState, getModuleStats } from '$stores/moduleStore.svelte';
 	import type { PageData } from './$types';
 
-	let { data }: { data: PageData } = $props();
+	let { data, user }: { data: PageData; user: typeof data.user } = $props();
 
 	// Initialize all modules into the store for accurate progress bars
 	$effect(() => {
@@ -15,6 +15,10 @@
 		});
 	});
 </script>
+
+{#if data.user && ['teacher', 'admin', 'superadmin'].includes(data.user.role)}
+  <a href="/teacher/modules" class="cta">Modules Configuration</a>
+{/if}
 
 <div class="card-grid">
 	{#each data.modules as module (module.id)}
