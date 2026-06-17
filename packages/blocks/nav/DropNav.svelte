@@ -130,17 +130,21 @@
         position: absolute;
         top: calc(100% + 0.5rem);
         right: 0;
-        background: var(--bg);
+        background: oklch(from var(--bg) l c h / 0.9);
         border: 2px solid var(--brand-primary);
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         border-radius: var(--border-radius);
-        background: var(--bg);
         width: max-content;
         min-width: 180px;
         max-height: 80vh;
-        overflow-y: scroll;
         z-index: 100;
         overflow: hidden;
+    }
+
+    @media (max-height: 800px) {
+      .dropdown-content {
+        max-height: 80vh;
+      }
     }
 
     ul {
@@ -150,6 +154,14 @@
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
+    }
+
+    @media (max-height: 800px) {
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap-1);
+      }
     }
 
     a {
