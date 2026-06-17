@@ -56,10 +56,14 @@ export const auth = betterAuth({
 		schema
 	}),
 	socialProviders: {
-		google: {
-			clientId: env.STUDENT_GOOGLE_CLIENT_ID,
-			clientSecret: env.STUDENT_GOOGLE_CLIENT_SECRET
-		}
+		...(env.STUDENT_GOOGLE_CLIENT_ID && env.STUDENT_GOOGLE_CLIENT_SECRET
+			? {
+					google: {
+						clientId: env.STUDENT_GOOGLE_CLIENT_ID,
+						clientSecret: env.STUDENT_GOOGLE_CLIENT_SECRET
+					}
+				}
+			: {})
 	},
 	user: {
 		additionalFields: {

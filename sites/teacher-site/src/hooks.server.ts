@@ -14,16 +14,17 @@ const handleBetterAuth: Handle = async ({ event, resolve }) => {
   const session = await auth.api.getSession({ headers: event.request.headers });
 
   if (session) {
-    // FRESHNESS CHECK: Verify the session still exists in Turso
-    const activeSession = await db
-      .select()
-      .from(sessionTable)
-      .where(eq(sessionTable.id, session.session.id))
-      .get();
+    // FRESHNESS CHECK: Verify the session still exists in Turso and get the latest user data
+    const activeSession = await db.query.session.findFirst({
+      where: eq(sessionTable.id, session.session.id),
+      with: {
+        user: true,
+      },
+    });
 
     if (activeSession) {
-      event.locals.session = session.session;
-      event.locals.user = session.user;
+      event.locals.session = activeSession;
+      event.locals.user = activeSession.user;
     } else {
       event.locals.session = null;
       event.locals.user = null;
