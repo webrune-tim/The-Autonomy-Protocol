@@ -39,9 +39,6 @@ const baseURL =
   (dev ? "http://localhost:8080" : "https://the-autonomy-protocol.vercel.app");
 
 const cleanBaseURL = baseURL.replace(/\/$/, "");
-console.log(
-  `[Teacher Auth] Resolving baseURL to: ${cleanBaseURL} (dev: ${dev}, env.TEACHER_ORIGIN: ${env.TEACHER_ORIGIN}, env.ORIGIN: ${env.ORIGIN})`,
-);
 
 export const auth = betterAuth({
   baseURL: cleanBaseURL,
