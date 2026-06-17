@@ -34,9 +34,13 @@ const studentRole = ac.newRole({
 	session: []
 })
 
+const isLocalOrigin =
+	env.TEACHER_ORIGIN?.includes('localhost') ||
+	env.TEACHER_ORIGIN?.includes('127.0.0.1')
 const baseURL =
-	env.TEACHER_ORIGIN ||
-	(dev ? 'http://localhost:8080' : 'https://the-autonomy-protocol.vercel.app')
+	env.TEACHER_ORIGIN && (dev || !isLocalOrigin)
+		? env.TEACHER_ORIGIN
+		: 'https://the-autonomy-protocol.vercel.app'
 
 const cleanBaseURL = baseURL.replace(/\/$/, '')
 
@@ -44,7 +48,7 @@ export const auth = betterAuth({
 	baseURL: cleanBaseURL,
 	secret: env.BETTER_AUTH_SECRET,
 	trustedOrigins: [
-		cleanBaseURL,
+		env.TEACHER_ORIGIN,
 		'https://the-autonomy-protocol.vercel.app',
 		'http://localhost:5173',
 		'http://127.0.0.1:5173',
@@ -56,11 +60,15 @@ export const auth = betterAuth({
 		schema
 	}),
 	socialProviders: {
-		google: {
-			clientId: env.TEACHER_GOOGLE_CLIENT_ID,
-			clientSecret: env.TEACHER_GOOGLE_CLIENT_SECRET,
-			redirectURI: `${cleanBaseURL}/api/auth/callback/google`
-		}
+		...(env.TEACHER_GOOGLE_CLIENT_ID && env.TEACHER_GOOGLE_CLIENT_SECRET
+			? {
+					google: {
+						clientId: env.TEACHER_GOOGLE_CLIENT_ID,
+						clientSecret: env.TEACHER_GOOGLE_CLIENT_SECRET,
+						redirectURI: `${cleanBaseURL}/api/auth/callback/google`
+					}
+				}
+			: {})
 	},
 	user: {
 		additionalFields: {
