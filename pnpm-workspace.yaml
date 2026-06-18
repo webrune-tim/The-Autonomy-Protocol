@@ -14,7 +14,6 @@ catalog:
   "@sveltejs/enhanced-img": ^0.10.4
   "@types/canvas-confetti": ^1.9.0
   "@types/node": ^25.9.3
-  "@typescript/native-preview": 7.0.0-dev.20260421.2
   canvas-confetti: ^1.9.4
   install: ^0.13.0
   motion: ^12.40.0
@@ -23,7 +22,7 @@ catalog:
   stylelint: ^17.13.0
   stylelint-config-standard: ^40.0.0
   sv-agentation: ^0.2.6
-  typescript: ^5.9.3
+  typescript: ^7.0.1-rc
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
   vite-plus: ^0.1.24
@@ -46,24 +45,24 @@ overrides:
   vite: "catalog:"
   vitest: "catalog:"
 minimumReleaseAgeExclude:
-  - '@typescript/typescript-aix-ppc64@7.0.1-rc'
-  - '@typescript/typescript-darwin-arm64@7.0.1-rc'
-  - '@typescript/typescript-darwin-x64@7.0.1-rc'
-  - '@typescript/typescript-freebsd-arm64@7.0.1-rc'
-  - '@typescript/typescript-freebsd-x64@7.0.1-rc'
-  - '@typescript/typescript-linux-arm64@7.0.1-rc'
-  - '@typescript/typescript-linux-arm@7.0.1-rc'
-  - '@typescript/typescript-linux-loong64@7.0.1-rc'
-  - '@typescript/typescript-linux-mips64el@7.0.1-rc'
-  - '@typescript/typescript-linux-ppc64@7.0.1-rc'
-  - '@typescript/typescript-linux-riscv64@7.0.1-rc'
-  - '@typescript/typescript-linux-s390x@7.0.1-rc'
-  - '@typescript/typescript-linux-x64@7.0.1-rc'
-  - '@typescript/typescript-netbsd-arm64@7.0.1-rc'
-  - '@typescript/typescript-netbsd-x64@7.0.1-rc'
-  - '@typescript/typescript-openbsd-arm64@7.0.1-rc'
-  - '@typescript/typescript-openbsd-x64@7.0.1-rc'
-  - '@typescript/typescript-sunos-x64@7.0.1-rc'
-  - '@typescript/typescript-win32-arm64@7.0.1-rc'
-  - '@typescript/typescript-win32-x64@7.0.1-rc'
+  - "@typescript/typescript-aix-ppc64@7.0.1-rc"
+  - "@typescript/typescript-darwin-arm64@7.0.1-rc"
+  - "@typescript/typescript-darwin-x64@7.0.1-rc"
+  - "@typescript/typescript-freebsd-arm64@7.0.1-rc"
+  - "@typescript/typescript-freebsd-x64@7.0.1-rc"
+  - "@typescript/typescript-linux-arm64@7.0.1-rc"
+  - "@typescript/typescript-linux-arm@7.0.1-rc"
+  - "@typescript/typescript-linux-loong64@7.0.1-rc"
+  - "@typescript/typescript-linux-mips64el@7.0.1-rc"
+  - "@typescript/typescript-linux-ppc64@7.0.1-rc"
+  - "@typescript/typescript-linux-riscv64@7.0.1-rc"
+  - "@typescript/typescript-linux-s390x@7.0.1-rc"
+  - "@typescript/typescript-linux-x64@7.0.1-rc"
+  - "@typescript/typescript-netbsd-arm64@7.0.1-rc"
+  - "@typescript/typescript-netbsd-x64@7.0.1-rc"
+  - "@typescript/typescript-openbsd-arm64@7.0.1-rc"
+  - "@typescript/typescript-openbsd-x64@7.0.1-rc"
+  - "@typescript/typescript-sunos-x64@7.0.1-rc"
+  - "@typescript/typescript-win32-arm64@7.0.1-rc"
+  - "@typescript/typescript-win32-x64@7.0.1-rc"
   - typescript@7.0.1-rc

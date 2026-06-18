@@ -24,9 +24,6 @@ catalogs:
     '@types/node':
       specifier: ^25.9.3
       version: 25.9.3
-    '@typescript/native-preview':
-      specifier: 7.0.0-dev.20260421.2
-      version: 7.0.0-dev.20260421.2
     canvas-confetti:
       specifier: ^1.9.4
       version: 1.9.4
@@ -51,6 +48,9 @@ catalogs:
     turbo:
       specifier: ^2.9.18
       version: 2.9.18
+    typescript:
+      specifier: ^7.0.1-rc
+      version: 7.0.1-rc
     vite-plus:
       specifier: ^0.1.24
       version: 0.1.24
@@ -257,9 +257,6 @@ importers:
       '@types/node':
         specifier: ^22.19.21
         version: 22.19.21
-      '@typescript/native-preview':
-        specifier: 'catalog:'
-        version: 7.0.0-dev.20260421.2
       better-auth:
         specifier: ~1.4.22
         version: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.65.2(@sveltejs/vite-plugin-svelte@7.1.2(@voidzero-dev/vite-plus-core@0.2.0(@types/node@22.19.21)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@7.0.1-rc))(svelte@5.56.3(@typescript-eslint/types@8.61.1)))(@voidzero-dev/vite-plus-core@0.2.0(@types/node@22.19.21)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@7.0.1-rc))(svelte@5.56.3(@typescript-eslint/types@8.61.1))(typescript@7.0.1-rc))(@voidzero-dev/vite-plus-test@0.1.24(@types/node@22.19.21)(@voidzero-dev/vite-plus-core@0.2.0(@types/node@22.19.21)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@7.0.1-rc))(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@7.0.1-rc))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.21.0))(pg@8.21.0)(svelte@5.56.3(@typescript-eslint/types@8.61.1))
@@ -297,7 +294,7 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0(picomatch@4.0.4)(svelte@5.56.3(@typescript-eslint/types@8.61.1))(typescript@7.0.1-rc)
       typescript:
-        specifier: 7.0.1-rc
+        specifier: 'catalog:'
         version: 7.0.1-rc
       typescript-eslint:
         specifier: ^8.61.1
@@ -414,9 +411,6 @@ importers:
       '@types/node':
         specifier: ^22.19.21
         version: 22.19.21
-      '@typescript/native-preview':
-        specifier: 'catalog:'
-        version: 7.0.0-dev.20260421.2
       better-auth:
         specifier: ~1.4.22
         version: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.65.0(@sveltejs/vite-plugin-svelte@7.1.2(@voidzero-dev/vite-plus-core@0.2.0(@types/node@22.19.21)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@7.0.1-rc))(svelte@5.56.3(@typescript-eslint/types@8.61.1)))(@voidzero-dev/vite-plus-core@0.2.0(@types/node@22.19.21)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4)(typescript@7.0.1-rc))(svelte@5.56.3(@typescript-eslint/types@8.61.1))(typescript@7.0.1-rc))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.3)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.21.0))(pg@8.21.0)(svelte@5.56.3(@typescript-eslint/types@8.61.1))
@@ -457,7 +451,7 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0(picomatch@4.0.4)(svelte@5.56.3(@typescript-eslint/types@8.61.1))(typescript@7.0.1-rc)
       typescript:
-        specifier: 7.0.1-rc
+        specifier: 'catalog:'
         version: 7.0.1-rc
       typescript-eslint:
         specifier: ^8.61.0
@@ -2450,45 +2444,6 @@ packages:
   '@typescript-eslint/visitor-keys@8.61.1':
     resolution: {integrity: sha512-6fJ9MHWtK14C1DSkiMlHUSOmrVebL7150xZJBlJiL62jjhIA4JmOq6flwBgDxIdBKKdoiZRel+dfPD5MLfny3w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@typescript/native-preview-darwin-arm64@7.0.0-dev.20260421.2':
-    resolution: {integrity: sha512-fHv1r3ZmVo6zxuAIFmuX3w9QxbcauoG0SsWhmDwm6VmRubLlOJIcmTtlmV3JAb9oOnq8LuzZljzT7Q39fSMQDw==}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@typescript/native-preview-darwin-x64@7.0.0-dev.20260421.2':
-    resolution: {integrity: sha512-KWTR6xbW9t+JS7D5DQIzo75pqVXVWUxF9PMv/+S6xsnOjCVd6g0ixHcFpFMJMKSUQpGPr8Z5f7b8ks6LHW01jg==}
-    cpu: [x64]
-    os: [darwin]
-
-  '@typescript/native-preview-linux-arm64@7.0.0-dev.20260421.2':
-    resolution: {integrity: sha512-VLMEuml3BhUb+jaL0TXQ4xvVODxJF+RhkI+tBWvlynsJI4khTXEiwWh+wPOJrsfBRYFRMXEu28Odl/HXkYze8w==}
-    cpu: [arm64]
-    os: [linux]
-
-  '@typescript/native-preview-linux-arm@7.0.0-dev.20260421.2':
-    resolution: {integrity: sha512-BWLQO3nemLDSV5PoE5GPHe1dU9Dth77Kv8/cle9Ujcp4LhPo0KincdPqFH/qKeU/xvW25mgFueflZ1nc4rKuww==}
-    cpu: [arm]
-    os: [linux]
-
-  '@typescript/native-preview-linux-x64@7.0.0-dev.20260421.2':
-    resolution: {integrity: sha512-qUrJWTB5/wv4wnRG0TRXElAxc2kykNiRNyEIEqBbLmzDlrcvAW7RRy8MXoY1ZyTiKGMu14itZ3x9oW6+blFpRw==}
-    cpu: [x64]
-    os: [linux]
-
-  '@typescript/native-preview-win32-arm64@7.0.0-dev.20260421.2':
-    resolution: {integrity: sha512-Rc6NsWlZmCs5YUKVzKgwoBOoRUGsPzct4BDMRX0csD1devLBBc4AbUXWKsJRbpwIAnqMO1ld4sNHEb+wXgfNHQ==}
-    cpu: [arm64]
-    os: [win32]
-
-  '@typescript/native-preview-win32-x64@7.0.0-dev.20260421.2':
-    resolution: {integrity: sha512-GQv1+dya1t6EqF2Cpsb+xoozovdX10JUSf6Kl/8xNkTapzmlHd+uMr+8ku3jIASTxoRGn0Mklgjj3MDKrOTuLg==}
-    cpu: [x64]
-    os: [win32]
-
-  '@typescript/native-preview@7.0.0-dev.20260421.2':
-    resolution: {integrity: sha512-CmajHI25HpVWE9R1XFoxr+cphJPxoYD3eFioQtAvXYkMFKnLdICMS9pXre9Pybizb75ejRxjKD5/CVG055rEIg==}
-    hasBin: true
 
   '@typescript/typescript-aix-ppc64@7.0.1-rc':
     resolution: {integrity: sha512-oqq2ZfEJ7BQuufcC3QBQndZLPNyamYNHLao8lKRBeeSkZKypBqxPSgkzrcFZtbYcIaBvpiyUnQP9MT7DEYHWbw==}
@@ -6678,37 +6633,6 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.61.1
       eslint-visitor-keys: 5.0.1
-
-  '@typescript/native-preview-darwin-arm64@7.0.0-dev.20260421.2':
-    optional: true
-
-  '@typescript/native-preview-darwin-x64@7.0.0-dev.20260421.2':
-    optional: true
-
-  '@typescript/native-preview-linux-arm64@7.0.0-dev.20260421.2':
-    optional: true
-
-  '@typescript/native-preview-linux-arm@7.0.0-dev.20260421.2':
-    optional: true
-
-  '@typescript/native-preview-linux-x64@7.0.0-dev.20260421.2':
-    optional: true
-
-  '@typescript/native-preview-win32-arm64@7.0.0-dev.20260421.2':
-    optional: true
-
-  '@typescript/native-preview-win32-x64@7.0.0-dev.20260421.2':
-    optional: true
-
-  '@typescript/native-preview@7.0.0-dev.20260421.2':
-    optionalDependencies:
-      '@typescript/native-preview-darwin-arm64': 7.0.0-dev.20260421.2
-      '@typescript/native-preview-darwin-x64': 7.0.0-dev.20260421.2
-      '@typescript/native-preview-linux-arm': 7.0.0-dev.20260421.2
-      '@typescript/native-preview-linux-arm64': 7.0.0-dev.20260421.2
-      '@typescript/native-preview-linux-x64': 7.0.0-dev.20260421.2
-      '@typescript/native-preview-win32-arm64': 7.0.0-dev.20260421.2
-      '@typescript/native-preview-win32-x64': 7.0.0-dev.20260421.2
 
   '@typescript/typescript-aix-ppc64@7.0.1-rc':
     optional: true
