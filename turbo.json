@@ -8,9 +8,12 @@
         "DATABASE_URL",
         "DATABASE_AUTH_TOKEN",
         "BETTER_AUTH_SECRET",
+        "ORIGIN",
         "GOOGLE_CLIENT_ID",
         "GOOGLE_CLIENT_SECRET",
-        "ORIGIN"
+        "STUDENT_ORIGIN",
+        "STUDENT_GOOGLE_CLIENT_ID",
+        "STUDENT_GOOGLE_CLIENT_SECRET"
       ]
     },
     "check": {
