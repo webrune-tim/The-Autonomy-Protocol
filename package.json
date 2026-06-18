@@ -22,5 +22,10 @@
   "engines": {
     "node": ">=22.12.0"
   },
+  "pnpm": {
+    "overrides": {
+      "typescript": "^5.9.3"
+    }
+  }
   "packageManager": "pnpm@11.8.0"
 }
