@@ -10,7 +10,7 @@ allowBuilds:
 
 catalog:
   "@better-auth/infra": ^0.2.14
-  "@lucide/svelte": ^1.18.0
+  "@lucide/svelte": ^1.20.0
   "@sveltejs/enhanced-img": ^0.10.4
   "@types/canvas-confetti": ^1.9.0
   "@types/node": ^25.9.3
