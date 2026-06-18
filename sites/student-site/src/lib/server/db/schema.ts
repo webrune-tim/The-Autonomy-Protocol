@@ -10,6 +10,7 @@ export const modules = sqliteTable("modules", {
   description: text("description").notNull(),
   cardColor: text("card_color").notNull().default("primary"),
   order: integer("order").notNull().default(0),
+  started: integer("started", { mode: "boolean" }).notNull().default(false),
 });
 
 export const sections = sqliteTable("sections", {

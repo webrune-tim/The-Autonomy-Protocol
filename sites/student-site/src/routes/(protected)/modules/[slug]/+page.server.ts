@@ -1,3 +1,4 @@
+// sites/student-site/src/routes/(protected)/modules/[slug]/+page.server.ts
 import { db } from "$lib/server/db";
 import { modules, sections, userProgress } from "$lib/server/db/schema";
 import { error } from "@sveltejs/kit";
@@ -17,6 +18,19 @@ export const load: PageServerLoad = async ({ params, locals }) => {
   if (!module) {
     throw error(404, "Module not found");
   }
+
+  // --- START: MARK MODULE AS STARTED ---
+  // If the module hasn't been started yet, mark it as true
+  if (!module.started) {
+    await db
+      .update(modules)
+      .set({ started: true })
+      .where(eq(modules.id, module.id));
+    
+    // Mutate the local object so the UI immediately gets the updated truth
+    module.started = true;
+  }
+  // --- END: MARK MODULE AS STARTED ---
 
   const userId = locals.user!.id;
   const sectionIds = module.sections.map((s) => s.id);

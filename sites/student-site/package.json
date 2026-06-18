@@ -58,7 +58,7 @@
     "playwright": "^1.61.0",
     "svelte": "^5.56.3",
     "svelte-check": "^4.6.0",
-    "typescript": "catalog:",
+    "typescript": "7.0.1-rc",
     "typescript-eslint": "^8.61.1",
     "vite": "npm:@voidzero-dev/vite-plus-core@^0.2.0",
     "vite-imagetools": "^10.0.1",

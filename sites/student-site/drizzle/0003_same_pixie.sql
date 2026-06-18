@@ -1,0 +1,1 @@
+ALTER TABLE `modules` ADD `started` integer DEFAULT false NOT NULL;
