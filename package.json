@@ -10,9 +10,6 @@
     "dev:student-site": "pnpm --filter student-site dev",
     "prepare": "vp config"
   },
-  "dependencies": {
-    "sharp": "catalog:"
-  },
   "devDependencies": {
     "@sveltejs/kit": "catalog:",
     "@types/node": "catalog:",

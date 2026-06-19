@@ -1,9 +1,8 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import { enhancedImages } from "@sveltejs/enhanced-img";
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
-  plugins: [enhancedImages(), sveltekit()],
+  plugins: [sveltekit()],
 
   server: {
     hmr: {
@@ -25,8 +24,6 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    // Keep Lucide included for performance, but EXCLUDE workspace packages
-    // so they are treated as source code and support HMR.
     include: ["@lucide/svelte"],
     exclude: [
       "@autonomy/nav",
