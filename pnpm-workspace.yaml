@@ -6,6 +6,7 @@ allowBuilds:
   "@prisma/client": true
   better-sqlite3: false
   esbuild: true
+  "sharp": true
 
 catalog:
   "@better-auth/infra": ^0.2.14
