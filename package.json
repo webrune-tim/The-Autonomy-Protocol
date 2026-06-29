@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "ready": "turbo check test build",
-    "build": "turbo build",
+    "build": "DEBUG=vite:* turbo build",
     "dev:teacher-site": "pnpm --filter teacher-site dev",
     "dev:student-site": "pnpm --filter student-site dev",
     "prepare": "vp config"
