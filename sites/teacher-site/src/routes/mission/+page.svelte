@@ -1,6 +1,6 @@
 <script>
 	import { Eye, Handshake, Telescope } from '@lucide/svelte'
-	import { thickMargins } from '@autonomy/actions'
+	import { foresight, thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
 
 	import MissionImage from '$images/cycle.png'
@@ -33,7 +33,7 @@
 
 	<RevealingImage src={MissionImage} alt="Our mission" />
 
-	<a class="cta" href="/join-us">
+	<a class="cta" href="/join-us" use:foresight>
 		<Handshake /> Join Us
 	</a>
 </section>
@@ -55,7 +55,7 @@
 
 	<RevealingImage src={ShiftImage} alt="The shift" />
 
-	<a class="cta" href="/road-map">
+	<a class="cta" href="/road-map" use:foresight>
 		<Eye /> View the Strategy
 	</a>
 </section>
@@ -157,7 +157,7 @@
 				</li>
 			</ul>
 
-			<a class="cta" href="/curriculum">
+			<a class="cta" href="/curriculum" use:foresight>
 				<Telescope /> Explore the Curriculum
 			</a>
 		</div>
@@ -168,8 +168,9 @@
 	<h2 class="reveal-header">The Architect</h2>
 	<p>
 		<strong>The Autonomy Protocol</strong> was developed by
-		<a href="https://www.tim-smith-solutions.tech/" target="_blank">Tim Smith</a>.
-		The framework is built upon the structural logic of high-stakes behavioral
+		<a href="https://design-tim.vercel.app/" target="_blank" use:foresight
+			>Tim Smith</a
+		>. The framework is built upon the structural logic of high-stakes behavioral
 		models, secularized and reconstructed for the secondary education environment.
 		Smith's development of the protocol was driven by a fundamental realization: the
 		cognitive tools required for profound personal transformation are the exact same

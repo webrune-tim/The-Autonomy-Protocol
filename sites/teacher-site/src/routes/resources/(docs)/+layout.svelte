@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state'
+	import { foresight } from '@autonomy/actions'
 	import { ReadingTime } from '@autonomy/reading-time'
 	import { ArrowLeft } from '@lucide/svelte'
 
@@ -28,7 +29,7 @@
 	style="--color: {color.bg}; --text_color: {color.fg} !important;"
 >
 	<nav>
-		<a class="cta" href="/resources">
+		<a class="cta" href="/resources" use:foresight>
 			<ArrowLeft size={32} />
 			Back to Resources
 		</a>
@@ -62,7 +63,7 @@
 	</div>
 
 	<footer>
-		<a class="cta" href="/resources">
+		<a class="cta" href="/resources" use:foresight>
 			<ArrowLeft size={32} />
 			Back to Resources
 		</a>

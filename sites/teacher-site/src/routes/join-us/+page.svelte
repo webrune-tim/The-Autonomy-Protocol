@@ -1,5 +1,5 @@
 <script>
-	import { thickMargins } from '@autonomy/actions'
+	import { foresight, thickMargins } from '@autonomy/actions'
 	import { BookImage, Send } from '@lucide/svelte'
 	import { RevealingImage } from '@autonomy/revealing_image'
 
@@ -66,12 +66,13 @@
 
 	<ul>
 		<li>
-			<strong>Educators & Degree Candidates:</strong> Help us ensure these principles meet
-			academic standards and are "digestible" for a high school freshman.
+			<strong>Educators & Degree Candidates:</strong> Help us ensure these principles
+			meet academic standards and are "digestible" for a high school freshman.
 		</li>
 		<li>
-			<strong>Mental Health Professionals:</strong> Help us maintain the integrity of the
-			12-step logic while ensuring the "Secular Rigor" required for public school implementation.
+			<strong>Mental Health Professionals:</strong> Help us maintain the integrity of
+			the 12-step logic while ensuring the "Secular Rigor" required for public school
+			implementation.
 		</li>
 	</ul>
 </section>
@@ -87,8 +88,8 @@
 
 	<ol>
 		<li>
-			<strong>Draft a "Practicum":</strong> Create a concrete classroom exercise that brings
-			one of the 12 Steps to life without using religious or therapeutic jargon.
+			<strong>Draft a "Practicum":</strong> Create a concrete classroom exercise that
+			brings one of the 12 Steps to life without using religious or therapeutic jargon.
 		</li>
 		<li>
 			<strong>Peer Review for Neutrality:</strong> Use your professional eye to ensure
@@ -99,7 +100,7 @@
 			career paths (like Law, Arts, or Agriculture) so students see the real-world utility.
 		</li>
 	</ol>
-	<a class="cta" href="/contact">
+	<a class="cta" href="/contact" use:foresight>
 		<Send /> Submit Your Interest
 	</a>
 </section>

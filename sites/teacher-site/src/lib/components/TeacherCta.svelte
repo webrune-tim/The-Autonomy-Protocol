@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state'
+	import { foresight } from '@autonomy/actions'
 
 	const currentPath = $derived(page.url.pathname + page.url.search)
 	const loginUrl = $derived(`/login?redirectTo=${encodeURIComponent(currentPath)}`)
@@ -15,7 +16,9 @@
 			</p>
 		</div>
 		<div class="cta-action">
-			<a href={loginUrl} class="login-button"> Access Teacher Toolkit </a>
+			<a href={loginUrl} class="login-button" use:foresight>
+				Access Teacher Toolkit
+			</a>
 		</div>
 	</div>
 </aside>

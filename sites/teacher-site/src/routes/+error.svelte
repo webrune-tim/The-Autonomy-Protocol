@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state'
 	import { RevealingImage } from '@autonomy/revealing_image'
+	import { foresight } from '@autonomy/actions'
 
 	import ErrorImage from '$images/error.png'
 </script>
@@ -14,7 +15,7 @@
 	<h1>There was an ERROR!!!</h1>
 	<h2>{page.status}: {page.error?.message}</h2>
 
-	<a class="cta" href="/">Home</a>
+	<a class="cta" href="/" use:foresight>Home</a>
 </section>
 
 <style>

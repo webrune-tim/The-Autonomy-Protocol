@@ -1,6 +1,6 @@
 <script>
 	import PayPayDonateBtns from './PayPayDonateBtns.svelte'
-	import { thickMargins } from '@autonomy/actions'
+	import { foresight, thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { Eye } from '@lucide/svelte'
 
@@ -31,7 +31,7 @@
 
 	<RevealingImage src={DonationImage} alt="Donate Now" />
 
-	<a class="cta" href="#how-you-can-help">
+	<a class="cta" href="#how-you-can-help" use:foresight>
 		<Eye /> Browse Opportunities
 	</a>
 </section>
@@ -45,8 +45,8 @@
 	<ul>
 		<li>
 			<strong>Development of "The Practicum":</strong> Funding the creation of concrete,
-			real-world classroom exercises that translate the 12-Step Logic into actionable life
-			skills.
+			real-world classroom exercises that translate the 12-Step Logic into actionable
+			life skills.
 		</li>
 		<li>
 			<strong>The Resource Vault:</strong> Maintaining a centralized, free-to-access library
@@ -58,8 +58,8 @@
 			experts.
 		</li>
 		<li>
-			<strong>Scalability:</strong> Moving the protocol from a localized framework to a
-			digital platform capable of supporting students nationwide.
+			<strong>Scalability:</strong> Moving the protocol from a localized framework to
+			a digital platform capable of supporting students nationwide.
 		</li>
 	</ul>
 </section>

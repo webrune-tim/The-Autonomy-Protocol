@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { thickMargins } from '@autonomy/actions'
+	import { foresight, thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { HeartPlus } from '@lucide/svelte'
 	import ResourceSnippets from './ResourceSnippets.svelte'
@@ -64,7 +64,7 @@
 
 	<RevealingImage src={ResourcesImage} alt="The Recourses" />
 
-	<a class="cta" href="/contact">
+	<a class="cta" href="/contact" use:foresight>
 		<HeartPlus /> Need Custom Support?
 	</a>
 

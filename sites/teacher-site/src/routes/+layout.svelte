@@ -3,6 +3,7 @@
 	import { page } from '$app/stores'
 	import { onNavigate } from '$app/navigation'
 	import type { LayoutData } from './$types'
+	import { foresight } from '@autonomy/actions'
 
 	// Assets
 	import favicon from '$lib/assets/favicon.svg'
@@ -117,7 +118,7 @@
 </svelte:head>
 
 {#snippet headerLogo()}
-	<a class="home-link" href="/"><Logo /></a>
+	<a class="home-link" href="/" use:foresight><Logo /></a>
 {/snippet}
 
 {#snippet headerActions()}
@@ -137,7 +138,7 @@
 		</p>
 		<p>
 			If you encounter any issues, please report them via our
-			<a href="/contact">contact page</a> or on
+			<a href="/contact" use:foresight>contact page</a> or on
 			<a
 				href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
 				target="_blank"

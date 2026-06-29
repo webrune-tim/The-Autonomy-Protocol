@@ -9,13 +9,13 @@ allowBuilds:
 
 catalog:
   "@better-auth/infra": ^0.2.14
-  "@lucide/svelte": ^1.20.0
+  "@lucide/svelte": ^1.22.0
   "@types/canvas-confetti": ^1.9.0
   "@types/node": ^25.9.3
   canvas-confetti: ^1.9.4
   install: ^0.13.0
-  motion: ^12.40.0
-  stylelint: ^17.13.0
+  motion: ^12.42.0
+  stylelint: ^17.14.0
   stylelint-config-standard: ^40.0.0
   sv-agentation: ^0.2.6
   typescript: ^6.0.3
@@ -27,6 +27,7 @@ catalog:
   dotenv: ^17.4.2
   "@sveltejs/kit": ^2.65.2
   turbo: ^2.9.18
+  js.foresight: ^4.2.0
 
 catalogMode: prefer
 

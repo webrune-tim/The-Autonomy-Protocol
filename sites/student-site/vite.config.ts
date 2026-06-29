@@ -1,18 +1,12 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import { defineConfig } from "vite-plus";
+import { defineConfig } from "vite"; // ⚡️ Back to clean, vanilla vite imports
 
 export default defineConfig({
   plugins: [sveltekit()],
 
   server: {
-    hmr: {
-      // High timeout for complex monorepo graphs
-      timeout: 240000,
-    },
-    fs: {
-      // Allow Vite to serve files from the workspace root (packages/ui, etc.)
-      allow: ["../../"],
-    },
+    hmr: { timeout: 240000 },
+    fs: { allow: ["../../"] },
     watch: {
       ignored: ["!**/node_modules/@autonomy/**", "**/node_modules/**", "**/.svelte-kit/**"],
     },
@@ -24,8 +18,8 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    include: ["@lucide/svelte"],
     exclude: [
+      "@lucide/svelte",
       "@autonomy/nav",
       "@autonomy/style",
       "@autonomy/theme",

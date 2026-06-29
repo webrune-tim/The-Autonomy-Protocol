@@ -1,8 +1,8 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import { defineConfig } from "vite-plus";
+import { defineConfig } from "vite"; // ⚡️ Back to clean, vanilla vite imports
 
 export default defineConfig({
-  plugins: [sveltekit()], // Keep it clean
+  plugins: [sveltekit()],
 
   server: {
     hmr: { timeout: 240000 },

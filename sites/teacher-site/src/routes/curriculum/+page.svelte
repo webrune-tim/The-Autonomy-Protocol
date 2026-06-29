@@ -1,6 +1,7 @@
 <script>
 	import { thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
+	import { foresight } from '@autonomy/actions'
 	import { Download, ShieldQuestionMark } from '@lucide/svelte'
 
 	import CurriculumImage from '$images/curriculum.png'
@@ -22,7 +23,7 @@
 
 	<RevealingImage src={CurriculumImage} alt="Our Curriculum" />
 
-	<a class="cta" href="/resources">
+	<a class="cta" href="/resources" use:foresight>
 		<Download /> Download Lesson Guides
 	</a>
 </section>
@@ -44,8 +45,8 @@
 			own stress, not the student's value.
 		</li>
 		<li>
-			<strong>The Clarification Protocol:</strong> Moving from "guessing and failing" to
-			"The Courageous Question"—eliminating assumptions in rubrics and social cues.
+			<strong>The Clarification Protocol:</strong> Moving from "guessing and failing"
+			to "The Courageous Question"—eliminating assumptions in rubrics and social cues.
 		</li>
 		<li>
 			<strong>Variable Capacity Workshop:</strong> Mapping out how to maintain a GPA even
@@ -120,8 +121,8 @@
 			world. Handling "No" from a university or boss without losing momentum.
 		</li>
 		<li>
-			<strong>Eliminating Ambiguity:</strong> Professional email etiquette and moving from
-			"I think they're hiring" to "I asked if they are hiring."
+			<strong>Eliminating Ambiguity:</strong> Professional email etiquette and moving
+			from "I think they're hiring" to "I asked if they are hiring."
 		</li>
 	</ul>
 
@@ -135,8 +136,8 @@
 		</li>
 		<li>
 			<strong>The 4-Year Inventory:</strong> A rigorous review of their high school career.
-			Identifying toxic patterns that must stay in high school and not follow them to college
-			or the workforce.
+			Identifying toxic patterns that must stay in high school and not follow them to
+			college or the workforce.
 		</li>
 	</ul>
 
@@ -166,15 +167,12 @@
 			as a final graduation requirement.
 		</li>
 	</ul>
-	<a class="cta" href="/contact">
+	<a class="cta" href="/contact" use:foresight>
 		<ShieldQuestionMark /> Ready to Implement?
 	</a>
 </section>
 
-<section
-	class="bold-border-box margin-top"
-	style="--border-color: var(--fg)"
->
+<section class="bold-border-box margin-top" style="--border-color: var(--fg)">
 	<h2 class="reveal-header">Summary of Delivery Differences</h2>
 	<p>
 		<strong>Freshman Delivery:</strong> High-frequency, small-stakes exercises. Visual-heavy

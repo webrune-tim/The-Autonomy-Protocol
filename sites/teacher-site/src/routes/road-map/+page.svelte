@@ -1,5 +1,5 @@
 <script>
-	import { thickMargins } from '@autonomy/actions'
+	import { foresight, thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { BrickWall, HardHat, Puzzle } from '@lucide/svelte'
 
@@ -28,14 +28,14 @@
 			and interpersonal repair.
 		</li>
 		<li>
-			<strong>The Integrity Shield:</strong> A foundational behavioral defense system designed
-			to foster cognitive clarity, emotional neutrality, and internal self-governance.
+			<strong>The Integrity Shield:</strong> A foundational behavioral defense system
+			designed to foster cognitive clarity, emotional neutrality, and internal self-governance.
 		</li>
 	</ul>
 
 	<RevealingImage src={RoadMapImage} alt="The Road Map" />
 
-	<a class="cta" href="/resources">
+	<a class="cta" href="/resources" use:foresight>
 		<BrickWall /> See Freshman Materials
 	</a>
 </section>
@@ -74,7 +74,7 @@
 		</li>
 	</ul>
 
-	<a class="cta" href="/curriculum">
+	<a class="cta" href="/curriculum" use:foresight>
 		<Puzzle /> Review Senior Modules
 	</a>
 </section>
@@ -126,7 +126,7 @@
 		</li>
 	</ul>
 
-	<a class="cta" href="/join-us">
+	<a class="cta" href="/join-us" use:foresight>
 		<HardHat /> Get Involved
 	</a>
 </section>

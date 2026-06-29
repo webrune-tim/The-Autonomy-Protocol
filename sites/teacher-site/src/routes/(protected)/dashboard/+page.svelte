@@ -197,9 +197,6 @@
 	</div>
 </section>
 
-<!-- ========================================== -->
-<!-- EXISTING: ADMINISTRATIVE CONTROLS ZONE     -->
-<!-- ========================================== -->
 {#if data.isAdmin}
 	<section
 		class="bold-border-box margin-top"

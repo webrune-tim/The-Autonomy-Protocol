@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { thickMargins } from '@autonomy/actions'
+	import { foresight, thickMargins } from '@autonomy/actions'
 	import { BookOpen, Compass, Milestone } from '@lucide/svelte'
 	import { RevealingImage } from '@autonomy/revealing_image'
 
@@ -19,10 +19,10 @@
 
 	<RevealingImage src={HeroImage} alt="Students engaging with the curriculum" />
 
-	<a class="cta" href="/mission">
+	<a class="cta" href="/mission" use:foresight>
 		<Compass /> Explore the Framework
 	</a>
-	<a class="cta" href="/curriculum">
+	<a class="cta" href="/curriculum" use:foresight>
 		<BookOpen /> View Curriculum
 	</a>
 </section>
@@ -48,7 +48,7 @@
 		</li>
 	</ol>
 
-	<a class="cta" href="/road-map">
+	<a class="cta" href="/road-map" use:foresight>
 		<Milestone /> See the Roadmap
 	</a>
 </section>
@@ -61,8 +61,8 @@
 	<h2 class="reveal-header">The Opportunity:</h2>
 	<ol>
 		<li>
-			<strong>Student-Led Accountability:</strong> Shift the burden of responsibility back
-			to the student.
+			<strong>Student-Led Accountability:</strong> Shift the burden of responsibility
+			back to the student.
 		</li>
 		<li>
 			<strong>Actionable Regulation:</strong> Equip staff with structured tools for emotional
@@ -74,7 +74,7 @@
 		</li>
 	</ol>
 
-	<a class="cta" href="/road-map">
+	<a class="cta" href="/road-map" use:foresight>
 		<Milestone /> See the Roadmap
 	</a>
 </section>
