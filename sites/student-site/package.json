@@ -58,10 +58,10 @@
     "svelte-check": "^4.6.0",
     "typescript": "catalog:",
     "typescript-eslint": "^8.61.1",
-    "vite": "npm:@voidzero-dev/vite-plus-core@^0.2.0",
+    "vite": "catalog:",
     "vite-imagetools": "^10.0.1",
     "vite-plus": "catalog:",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.24"
+    "vitest": "catalog:"
   },
   "packageManager": "pnpm@11.9.0"
 }

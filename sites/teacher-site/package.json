@@ -65,13 +65,14 @@
     "mdsvex": "catalog:",
     "stylelint": "catalog:",
     "stylelint-config-standard": "catalog:",
-    "svelte": "^5.56.4",
-    "svelte-check": "^4.7.1",
+    "svelte": "^5.56.3",
+    "svelte-check": "^4.6.0",
     "typescript": "catalog:",
-    "typescript-eslint": "^8.62.0",
-    "vite": "npm:@voidzero-dev/vite-plus-core@^0.2.1",
+    "typescript-eslint": "^8.61.1",
+    "vite": "catalog:",
     "vite-imagetools": "^10.0.1",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   },
   "packageManager": "pnpm@11.9.0"
 }
