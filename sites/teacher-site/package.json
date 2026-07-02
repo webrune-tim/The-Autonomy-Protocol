@@ -24,6 +24,7 @@
     "@autonomy/actions": "workspace:*",
     "@autonomy/banner": "workspace:*",
     "@autonomy/battery-level": "workspace:*",
+    "@autonomy/external_links": "workspace:*",
     "@autonomy/footer": "workspace:*",
     "@autonomy/four-agreements": "workspace:*",
     "@autonomy/header": "workspace:*",

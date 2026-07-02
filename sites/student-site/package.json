@@ -21,6 +21,7 @@
   "dependencies": {
     "@autonomy/actions": "workspace:*",
     "@autonomy/banner": "workspace:*",
+    "@autonomy/external_links": "workspace:*",
     "@autonomy/footer": "workspace:*",
     "@autonomy/four-agreements": "workspace:*",
     "@autonomy/header": "workspace:*",
@@ -28,6 +29,8 @@
     "@autonomy/logo": "workspace:*",
     "@autonomy/nav": "workspace:*",
     "@autonomy/pill": "workspace:*",
+    "@autonomy/reading-time": "workspace:*",
+    "@autonomy/revealing_image": "workspace:*",
     "@autonomy/scroll-to-top": "workspace:*",
     "@autonomy/style": "workspace:*",
     "@autonomy/theme-toggle": "workspace:*",

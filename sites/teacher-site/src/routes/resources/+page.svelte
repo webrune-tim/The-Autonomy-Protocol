@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { foresight, thickMargins } from '@autonomy/actions'
+	import { ExternalLinks } from '@autonomy/external_links'
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { HeartPlus } from '@lucide/svelte'
 	import ResourceSnippets from './ResourceSnippets.svelte'
@@ -93,6 +94,8 @@
 >
 	<ResourceSnippets {activeTab} {allLinks} />
 </section>
+
+<ExternalLinks />
 
 <style>
 	nav {
