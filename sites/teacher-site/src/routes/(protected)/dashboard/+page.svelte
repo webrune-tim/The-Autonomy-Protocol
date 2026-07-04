@@ -67,6 +67,13 @@
 		<button
 			type="button"
 			class="action-btn settings-btn"
+			onclick={() => goto('/modules')}
+		>
+			CURRICULUM
+		</button>
+		<button
+			type="button"
+			class="action-btn settings-btn"
 			onclick={() => goto('/settings')}
 		>
 			SETTINGS

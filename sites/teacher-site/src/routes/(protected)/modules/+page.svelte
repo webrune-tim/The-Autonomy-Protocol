@@ -46,7 +46,7 @@
 								<td><strong>{module.title}</strong></td>
 								<td>{module.sections.length}</td>
 								<td class="actions-cell">
-									<a href="/teacher/modules/{module.id}" class="edit-link">Edit Content</a>
+									<a href="/modules/{module.id}" class="edit-link">Edit Content</a>
 									<form method="POST" action="?/delete" use:enhance>
 										<input type="hidden" name="id" value={module.id} />
 										<button type="submit" class="delete-btn" onclick={(e) => { if (!confirm('Are you sure you want to delete this module and all its sections?')) e.preventDefault(); }}>Delete</button>

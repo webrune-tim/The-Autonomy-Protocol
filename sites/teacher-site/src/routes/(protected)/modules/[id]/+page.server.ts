@@ -7,7 +7,7 @@ import type { PageServerLoad, Actions } from "./$types";
 export const load: PageServerLoad = async ({ params, locals }) => {
   const user = locals.user;
 
-  if (!user || !["teacher", "admin", "superadmin"].includes(user.role as string)) {
+  if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
     throw error(403, "Forbidden");
   }
 
@@ -33,7 +33,7 @@ export const actions: Actions = {
   updateModule: async ({ request, params, locals }) => {
     const user = locals.user;
 
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role as string)) {
+    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
       throw error(403, "Forbidden");
     }
 
@@ -50,7 +50,7 @@ export const actions: Actions = {
   upsertSection: async ({ request, params, locals }) => {
     const user = locals.user;
 
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role as string)) {
+    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
       throw error(403, "Forbidden");
     }
 
@@ -78,7 +78,7 @@ export const actions: Actions = {
   deleteSection: async ({ request, locals }) => {
     const user = locals.user;
 
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role as string)) {
+    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
       throw error(403, "Forbidden");
     }
 

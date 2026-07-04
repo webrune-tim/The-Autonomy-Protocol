@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "quality": {
+      "source": "qualitymd/quality.md",
+      "sourceType": "github",
+      "skillPath": "skills/quality/SKILL.md",
+      "computedHash": "2d82acf8b7b922ff45fa763654222a415762729920b1ec4d69f1710e86739359"
+    }
+  }
+}

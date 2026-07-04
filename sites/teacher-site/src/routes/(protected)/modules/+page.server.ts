@@ -7,7 +7,7 @@ import type { PageServerLoad, Actions } from "./$types";
 export const load: PageServerLoad = async ({ locals }) => {
   const user = locals.user;
 
-  if (!user || !["teacher", "admin", "superadmin"].includes(user.role as string)) {
+  if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
     throw error(403, "Forbidden");
   }
 
@@ -31,7 +31,7 @@ export const actions: Actions = {
   create: async ({ request, locals }) => {
     const user = locals.user;
 
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role as string)) {
+    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
       throw error(403, "Forbidden");
     }
 
@@ -53,13 +53,13 @@ export const actions: Actions = {
       order: 0,
     });
 
-    throw redirect(303, `/teacher/modules/${id}`);
+    throw redirect(303, `/modules/${id}`);
   },
 
   delete: async ({ request, locals }) => {
     const user = locals.user;
 
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role as string)) {
+    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
       throw error(403, "Forbidden");
     }
 

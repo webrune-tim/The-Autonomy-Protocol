@@ -19,7 +19,7 @@
 <div class="teacher-container">
 	<header class="angled-bottom-box" style="--color: var(--brand-secondary);">
 		<h1 class="reveal-header">Edit Module: {data.module.title}</h1>
-		<a href="/teacher/modules" class="back-link">← Back to Modules</a>
+		<a href="/modules" class="back-link">← Back to Modules</a>
 	</header>
 
 	<main class="margin-top-2">
