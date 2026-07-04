@@ -21,18 +21,27 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 
   // --- START: MARK MODULE AS STARTED ---
   // If the module hasn't been started yet, mark it as true
-  if (!module.started) {
+  const userId = locals.user!.id;
+  const userModuleProgress = await db.query.userProgress.findFirst({
+    where: and(eq(userProgress.userId, userId), eq(userProgress.moduleId, module.id)),
+  });
+
+  if (!userModuleProgress?.started) {
     await db
-      .update(modules)
-      .set({ started: true })
-      .where(eq(modules.id, module.id));
-    
-    // Mutate the local object so the UI immediately gets the updated truth
-    module.started = true;
+      .insert(userProgress)
+      .values({
+        userId,
+        moduleId: module.id,
+        started: true,
+        sectionId: module.sections[0]?.id || 'system-module-start',
+      })
+      .onConflictDoUpdate({
+        target: [userProgress.userId, userProgress.sectionId],
+        set: { started: true },
+      });
   }
   // --- END: MARK MODULE AS STARTED ---
 
-  const userId = locals.user!.id;
   const sectionIds = module.sections.map((s) => s.id);
 
   let progress: (typeof userProgress.$inferSelect)[] = [];

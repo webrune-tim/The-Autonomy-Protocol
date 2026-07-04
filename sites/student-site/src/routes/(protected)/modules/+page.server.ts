@@ -23,10 +23,14 @@ export const load: PageServerLoad = async ({ locals }) => {
   });
 
   return {
-    modules: allModules.map((m) => ({
-      ...m,
-      totalSections: m.sections.length,
-    })),
+    modules: allModules.map((m) => {
+      const moduleProgress = progress.find(p => p.moduleId === m.id);
+      return {
+        ...m,
+        totalSections: m.sections.length,
+        started: moduleProgress?.started ?? false,
+      };
+    }),
     userProgress: progress,
     user: locals.user,
   };
