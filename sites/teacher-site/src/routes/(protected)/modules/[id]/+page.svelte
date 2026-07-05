@@ -1,23 +1,23 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import type { PageData } from './$types';
+	import { enhance } from '$app/forms'
+	import type { PageData } from './$types'
 
-	let { data }: { data: PageData } = $props();
+	let { data }: { data: PageData } = $props()
 
-	let editingSectionId = $state<string | null>(null);
+	let editingSectionId = $state<string | null>(null)
 
 	function editSection(section: any) {
-		editingSectionId = section.id;
+		editingSectionId = section.id
 		// Scroll to form or handle UI focus
 	}
 
 	function cancelEdit() {
-		editingSectionId = null;
+		editingSectionId = null
 	}
 </script>
 
 <div class="teacher-container">
-	<header class="angled-bottom-box" style="--color: var(--brand-secondary);">
+	<header class="bold-border-box" style="--color: var(--brand-secondary);">
 		<h1 class="reveal-header">Edit Module: {data.module.title}</h1>
 		<a href="/modules" class="back-link">← Back to Modules</a>
 	</header>
@@ -30,16 +30,30 @@
 				<div class="form-row">
 					<div class="form-group flex-2">
 						<label for="title">Module Title</label>
-						<input type="text" id="title" name="title" value={data.module.title} required />
+						<input
+							type="text"
+							id="title"
+							name="title"
+							value={data.module.title}
+							required
+						/>
 					</div>
 					<div class="form-group flex-1">
 						<label for="order">Display Order</label>
-						<input type="number" id="order" name="order" value={data.module.order} required />
+						<input
+							type="number"
+							id="order"
+							name="order"
+							value={data.module.order}
+							required
+						/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="description">Description</label>
-					<textarea id="description" name="description" required>{data.module.description}</textarea>
+					<textarea id="description" name="description" required
+						>{data.module.description}</textarea
+					>
 				</div>
 				<button type="submit" class="action-btn">Update Configuration</button>
 			</form>
@@ -54,15 +68,25 @@
 						<div class="section-header">
 							<h3>{section.title}</h3>
 							<div class="section-actions">
-								<button class="small-btn" onclick={() => editSection(section)}>Edit</button>
+								<button class="small-btn" onclick={() => editSection(section)}
+									>Edit</button
+								>
 								<form method="POST" action="?/deleteSection" use:enhance>
 									<input type="hidden" name="sectionId" value={section.id} />
-									<button type="submit" class="delete-btn-small" onclick={(e) => { if (!confirm('Delete this section?')) e.preventDefault(); }}>Delete</button>
+									<button
+										type="submit"
+										class="delete-btn-small"
+										onclick={(e) => {
+											if (!confirm('Delete this section?')) e.preventDefault()
+										}}>Delete</button
+									>
 								</form>
 							</div>
 						</div>
 						<div class="section-preview">
-							{section.content.substring(0, 150)}{section.content.length > 150 ? '...' : ''}
+							{section.content.substring(0, 150)}{section.content.length > 150
+								? '...'
+								: ''}
 						</div>
 					</div>
 				{/each}
@@ -72,32 +96,61 @@
 		<!-- Upsert Section Form -->
 		<section class="bold-border-box">
 			<h2>{editingSectionId ? 'Edit Section' : 'Add New Section'}</h2>
-			<form method="POST" action="?/upsertSection" use:enhance={() => {
-				return async ({ update }) => {
-					await update();
-					editingSectionId = null;
-				};
-			}} class="edit-form">
+			<form
+				method="POST"
+				action="?/upsertSection"
+				use:enhance={() => {
+					return async ({ update }) => {
+						await update()
+						editingSectionId = null
+					}
+				}}
+				class="edit-form"
+			>
 				{#if true}
-					{@const editingSection = data.module.sections.find(s => s.id === editingSectionId)}
+					{@const editingSection = data.module.sections.find(
+						(s) => s.id === editingSectionId
+					)}
 					<input type="hidden" name="sectionId" value={editingSectionId || ''} />
 					<div class="form-row">
 						<div class="form-group flex-2">
 							<label for="sec-title">Section Title</label>
-							<input type="text" id="sec-title" name="title" value={editingSection?.title || ''} required placeholder="e.g. 1. Introduction" />
+							<input
+								type="text"
+								id="sec-title"
+								name="title"
+								value={editingSection?.title || ''}
+								required
+								placeholder="e.g. 1. Introduction"
+							/>
 						</div>
 						<div class="form-group flex-1">
 							<label for="sec-order">Order</label>
-							<input type="number" id="sec-order" name="order" value={editingSection?.order || data.module.sections.length + 1} required />
+							<input
+								type="number"
+								id="sec-order"
+								name="order"
+								value={editingSection?.order || data.module.sections.length + 1}
+								required
+							/>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="content">Section Content (Markdown Supported)</label>
-						<textarea id="content" name="content" required placeholder="Detailed lesson content...">{editingSection?.content || ''}</textarea>
+						<textarea
+							id="content"
+							name="content"
+							required
+							placeholder="Detailed lesson content..."
+							>{editingSection?.content || ''}</textarea
+						>
 					</div>
 				{/if}
 				<div class="form-actions">
-					<button type="submit" class="action-btn">{editingSectionId ? 'Update Section' : 'Add Section'}</button>
+					<button type="submit" class="action-btn">Save Section</button>
+					{#if !editingSectionId}
+						<button type="submit" class="action-btn" style="background-color: var(--surface-3); color: var(--fg);">Add Section</button>
+					{/if}
 					{#if editingSectionId}
 						<button type="button" class="cancel-btn" onclick={cancelEdit}>Cancel</button>
 					{/if}
@@ -135,8 +188,12 @@
 		gap: 1rem;
 	}
 
-	.flex-1 { flex: 1; }
-	.flex-2 { flex: 2; }
+	.flex-1 {
+		flex: 1;
+	}
+	.flex-2 {
+		flex: 2;
+	}
 
 	.form-group {
 		display: flex;
@@ -151,7 +208,8 @@
 		color: var(--brand-secondary);
 	}
 
-	input, textarea {
+	input,
+	textarea {
 		padding: 0.75rem;
 		background: var(--surface-1);
 		border: 1px solid var(--surface-3);

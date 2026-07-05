@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import type { PageData } from './$types';
+	import { enhance } from '$app/forms'
+	import type { PageData } from './$types'
 
-	let { data }: { data: PageData } = $props();
+	let { data }: { data: PageData } = $props()
 </script>
 
 <div class="teacher-container">
-	<header class="angled-bottom-box" style="--color: var(--brand-primary);">
+	<header class="bold-border-box" style="--color: var(--brand-primary);">
 		<h1 class="reveal-header">Curriculum Management</h1>
 		<p>Create and edit educational modules for The Autonomy Protocol.</p>
 	</header>
@@ -17,11 +17,22 @@
 			<form method="POST" action="?/create" use:enhance class="create-form">
 				<div class="form-group">
 					<label for="title">Module Title</label>
-					<input type="text" id="title" name="title" required placeholder="e.g. Advanced Executive Functioning" />
+					<input
+						type="text"
+						id="title"
+						name="title"
+						required
+						placeholder="e.g. Advanced Executive Functioning"
+					/>
 				</div>
 				<div class="form-group">
 					<label for="description">Brief Description</label>
-					<textarea id="description" name="description" required placeholder="What will students learn?"></textarea>
+					<textarea
+						id="description"
+						name="description"
+						required
+						placeholder="What will students learn?"
+					></textarea>
 				</div>
 				<button type="submit" class="action-btn">Initialize Module</button>
 			</form>
@@ -49,7 +60,18 @@
 									<a href="/modules/{module.id}" class="edit-link">Edit Content</a>
 									<form method="POST" action="?/delete" use:enhance>
 										<input type="hidden" name="id" value={module.id} />
-										<button type="submit" class="delete-btn" onclick={(e) => { if (!confirm('Are you sure you want to delete this module and all its sections?')) e.preventDefault(); }}>Delete</button>
+										<button
+											type="submit"
+											class="delete-btn"
+											onclick={(e) => {
+												if (
+													!confirm(
+														'Are you sure you want to delete this module and all its sections?'
+													)
+												)
+													e.preventDefault()
+											}}>Delete</button
+										>
 									</form>
 								</td>
 							</tr>
@@ -87,7 +109,8 @@
 		color: var(--brand-secondary);
 	}
 
-	input, textarea {
+	input,
+	textarea {
 		padding: 0.75rem;
 		background: var(--surface-1);
 		border: 1px solid var(--surface-3);
@@ -117,7 +140,8 @@
 		margin-top: var(--gap-1);
 	}
 
-	.admin-table th, .admin-table td {
+	.admin-table th,
+	.admin-table td {
 		padding: 1rem;
 		text-align: left;
 		border-bottom: 1px solid var(--surface-3);
