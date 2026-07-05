@@ -4,13 +4,7 @@ import { error } from "@sveltejs/kit";
 import { eq, asc } from "drizzle-orm";
 import type { PageServerLoad, Actions } from "./$types";
 
-export const load: PageServerLoad = async ({ params, locals }) => {
-  const user = locals.user;
-
-  if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
-    throw error(403, "Forbidden");
-  }
-
+export const load: PageServerLoad = async ({ params }) => {
   const module = await db.query.modules.findFirst({
     where: eq(modules.id, params.id),
     with: {
@@ -30,13 +24,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 };
 
 export const actions: Actions = {
-  updateModule: async ({ request, params, locals }) => {
-    const user = locals.user;
-
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
-      throw error(403, "Forbidden");
-    }
-
+  updateModule: async ({ request, params }) => {
     const data = await request.formData();
     const title = data.get("title") as string;
     const description = data.get("description") as string;
@@ -47,13 +35,7 @@ export const actions: Actions = {
     return { success: true };
   },
 
-  upsertSection: async ({ request, params, locals }) => {
-    const user = locals.user;
-
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
-      throw error(403, "Forbidden");
-    }
-
+  upsertSection: async ({ request, params }) => {
     const data = await request.formData();
     const sectionId = data.get("sectionId") as string;
     const title = data.get("title") as string;
@@ -75,13 +57,7 @@ export const actions: Actions = {
     return { success: true };
   },
 
-  deleteSection: async ({ request, locals }) => {
-    const user = locals.user;
-
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
-      throw error(403, "Forbidden");
-    }
-
+  deleteSection: async ({ request }) => {
     const data = await request.formData();
     const sectionId = data.get("sectionId") as string;
 

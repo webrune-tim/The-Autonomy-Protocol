@@ -1,16 +1,10 @@
 import { db } from "$lib/server/db";
 import { modules } from "$lib/server/db/schema";
-import { error, redirect } from "@sveltejs/kit";
+import { redirect } from "@sveltejs/kit";
 import { asc, eq } from "drizzle-orm";
 import type { PageServerLoad, Actions } from "./$types";
 
-export const load: PageServerLoad = async ({ locals }) => {
-  const user = locals.user;
-
-  if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
-    throw error(403, "Forbidden");
-  }
-
+export const load: PageServerLoad = async () => {
   const allModules = await db.query.modules.findMany({
     orderBy: [asc(modules.order)],
     with: {
@@ -28,13 +22,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 };
 
 export const actions: Actions = {
-  create: async ({ request, locals }) => {
-    const user = locals.user;
-
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
-      throw error(403, "Forbidden");
-    }
-
+  create: async ({ request }) => {
     const data = await request.formData();
     const title = data.get("title") as string;
     const description = data.get("description") as string;
@@ -56,13 +44,7 @@ export const actions: Actions = {
     throw redirect(303, `/modules/${id}`);
   },
 
-  delete: async ({ request, locals }) => {
-    const user = locals.user;
-
-    if (!user || !["teacher", "admin", "superadmin"].includes(user.role || "")) {
-      throw error(403, "Forbidden");
-    }
-
+  delete: async ({ request }) => {
     const data = await request.formData();
     const id = data.get("id") as string;
 
