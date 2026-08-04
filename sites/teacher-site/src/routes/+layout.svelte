@@ -37,14 +37,15 @@
 
 	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
-		{ href: '/mission', label: 'Mission' },
-		{ href: '/join-us', label: 'Join Us' },
+		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : []),
+		{ href: '/modules', label: 'Create Module' },
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
+		{ href: '/mission', label: 'Mission' },
 		{ href: '/road-map', label: 'Road Map' },
+		{ href: '/join-us', label: 'Join Us' },
 		{ href: '/contact', label: 'Contact' },
-		{ href: '/donate', label: 'Donate' },
-		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
+		{ href: '/donate', label: 'Donate' }
 	])
 
 	const footerLinks = $derived([

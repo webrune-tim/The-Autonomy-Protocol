@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
+	import { parseMarkdown } from '$lib/utils/markdown'
 	import type { PageData } from './$types'
 
 	let { data }: { data: PageData } = $props()
@@ -83,10 +84,8 @@
 								</form>
 							</div>
 						</div>
-						<div class="section-preview">
-							{section.content.substring(0, 150)}{section.content.length > 150
-								? '...'
-								: ''}
+						<div class="section-preview markdown-preview">
+							{@html parseMarkdown(section.content)}
 						</div>
 					</div>
 				{/each}
@@ -154,6 +153,7 @@
 					{#if editingSectionId}
 						<button type="button" class="cancel-btn" onclick={cancelEdit}>Cancel</button>
 					{/if}
+					<a href="/modules" class="cancel-btn">Back to Modules</a>
 				</div>
 			</form>
 		</section>
@@ -284,8 +284,20 @@
 
 	.section-preview {
 		font-size: 0.9rem;
-		opacity: 0.8;
-		line-height: 1.4;
+		opacity: 0.85;
+		line-height: 1.5;
+	}
+
+	.section-preview :global(p) {
+		margin-bottom: 0.5rem;
+	}
+
+	.section-preview :global(p:last-child) {
+		margin-bottom: 0;
+	}
+
+	.section-preview :global(strong) {
+		color: var(--brand-secondary);
 	}
 
 	.form-actions {
@@ -295,6 +307,10 @@
 	}
 
 	.cancel-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
 		background: none;
 		border: 1px solid var(--surface-3);
 		color: var(--fg);

@@ -7,8 +7,8 @@
 ### 🛠️ Bugs
 
 - [ ] **OAuth Session Invalidation**  
-       _Task:_ Invalidate user session after X minutes.  
-       _Gemini Action:_ Ask for the exact duration (X), token refresh strategies, and expected UI behavior upon session expiry before implementing.
+      _Task:_ Invalidate user session after X minutes.  
+      _Gemini Action:_ Ask for the exact duration (X), token refresh strategies, and expected UI behavior upon session expiry before implementing.
 
 ---
 

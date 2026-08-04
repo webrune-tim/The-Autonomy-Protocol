@@ -103,7 +103,8 @@
         width: 100%;
         display: flex;
         place-content: center;
-        padding-top: 0.5rem;
+        padding: 0.75rem 0.5rem 0.5rem;
+        border-bottom: 1px solid rgb(from var(--fg) r g b / 0.1);
     }
 
     .dropdown-wrapper {
@@ -119,7 +120,13 @@
         background: transparent;
         color: var(--fg);
         cursor: pointer;
-        transition: transform 0.1s ease;
+        padding: 0.25rem;
+        border-radius: var(--border-radius);
+        transition: transform 0.15 ease, background-color 0.2s ease;
+    }
+
+    button.dropdown-toggle:hover {
+        background: rgb(from var(--fg) r g b / 0.1);
     }
 
     button.dropdown-toggle:active {
@@ -130,14 +137,18 @@
         position: absolute;
         top: calc(100% + 0.5rem);
         right: 0;
-        background: oklch(from var(--bg) l c h / 0.9);
+        background: oklch(from var(--bg) l c h / 0.92);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         border: 2px solid var(--brand-primary);
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgb(from var(--brand-primary) r g b / 0.25);
         border-radius: var(--border-radius);
         width: max-content;
+        min-width: 210px;
         max-height: 80dvh;
-        z-index: 10;
-        overflow: hidden;
+        z-index: 100;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     ul {
@@ -149,57 +160,51 @@
         gap: 0.25rem;
     }
 
-    @media (max-width: 600px) {
-        ul {
-          display: grid;
-          grid-template-columns: auto auto;
-          gap: 0.25rem;
-          max-width: 50ch;
-        }
-        a {
-          word-break: break-all;
-        }
-    }
-
     a {
-        display: block;
-        padding: 0.75rem 1.25rem;
+        display: flex;
+        align-items: center;
+        padding: 0.65rem 1rem;
         text-decoration: none;
         text-transform: uppercase;
         color: var(--fg);
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: all 0.2s ease;
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        border-radius: var(--border-radius);
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
     }
 
-    a.active,
+    a.active {
+        color: var(--brand-primary);
+        background: rgb(from var(--brand-primary) r g b / 0.15);
+        border-left: 3px solid var(--brand-primary);
+    }
+
     a:hover {
         color: var(--fg);
-        border-radius: var(--border-radius);
-    }
-    a.active {
-        background: rgb(from var(--brand-secondary) r g b / 0.3);
-    }
-    a:hover {
-        background: rgb(from var(--brand-tertiary) r g b / 0.3);
+        background: rgb(from var(--brand-secondary) r g b / 0.2);
     }
 
     .link-button {
         all: unset;
-        display: block;
+        display: flex;
+        align-items: center;
         width: 100%;
         box-sizing: border-box;
-        padding: 0.75rem 1.25rem;
+        padding: 0.65rem 1rem;
         text-transform: uppercase;
-        font-weight: 500;
-        font-size: 0.9rem;
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.03em;
         color: var(--fg);
         cursor: pointer;
+        border-radius: var(--border-radius);
+        transition: background-color 0.2s ease;
     }
 
     .link-button:hover {
         color: var(--fg);
-        border-radius: var(--border-radius);
-        background: rgb(from var(--brand-tertiary) r g b / 0.3) !important;
+        background: rgb(from var(--brand-secondary) r g b / 0.2);
     }
 </style>
