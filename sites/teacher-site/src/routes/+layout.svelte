@@ -20,6 +20,7 @@
 	import { DropNav, FooterNav } from '@autonomy/nav'
 	import { Pill } from '@autonomy/pill'
 	import { ScrollToTop } from '@autonomy/scroll-to-top'
+	import { SessionWarning } from '@autonomy/session-warning'
 	import { themeState } from '@autonomy/theme-toggle'
 	import { motionState } from '$lib/motion.svelte'
 
@@ -156,6 +157,8 @@
 		{@render children()}
 		<ScrollToTop />
 	</main>
+
+	<SessionWarning user={data.user} />
 
 	<Footer>
 		<FooterNav links={footerLinks} currentPath={$page.url.pathname} />

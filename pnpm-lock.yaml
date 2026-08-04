@@ -178,6 +178,15 @@ importers:
         specifier: ^5.0.0
         version: 5.56.3(@typescript-eslint/types@8.66.0)
 
+  packages/ui/session-warning:
+    dependencies:
+      '@lucide/svelte':
+        specifier: 'catalog:'
+        version: 1.28.0(svelte@5.56.8(@typescript-eslint/types@8.66.0))
+      svelte:
+        specifier: ^5.0.0
+        version: 5.56.8(@typescript-eslint/types@8.66.0)
+
   packages/ui/theme-toggle:
     dependencies:
       '@autonomy/pill':
@@ -231,6 +240,9 @@ importers:
       '@autonomy/scroll-to-top':
         specifier: workspace:*
         version: link:../../packages/ui/scroll-to-top
+      '@autonomy/session-warning':
+        specifier: workspace:*
+        version: link:../../packages/ui/session-warning
       '@autonomy/style':
         specifier: workspace:*
         version: link:../../packages/core/style
@@ -379,6 +391,9 @@ importers:
       '@autonomy/scroll-to-top':
         specifier: workspace:*
         version: link:../../packages/ui/scroll-to-top
+      '@autonomy/session-warning':
+        specifier: workspace:*
+        version: link:../../packages/ui/session-warning
       '@autonomy/style':
         specifier: workspace:*
         version: link:../../packages/core/style
@@ -390,7 +405,7 @@ importers:
         version: link:../../packages/content/twelve-steps
       '@better-auth/infra':
         specifier: 'catalog:'
-        version: 0.2.14(dd77f978757a9d733022a172c87131b4)
+        version: 0.2.14(beec8b3ac28ffb54fe6c1dd91a232205)
       '@lucide/svelte':
         specifier: 'catalog:'
         version: 1.28.0(svelte@5.56.8(@typescript-eslint/types@8.66.0))
@@ -5136,10 +5151,10 @@ snapshots:
       nanostores: 1.4.2
       zod: 4.4.3
 
-  '@better-auth/infra@0.2.14(dd77f978757a9d733022a172c87131b4)':
+  '@better-auth/infra@0.2.14(beec8b3ac28ffb54fe6c1dd91a232205)':
     dependencies:
       '@better-auth/core': 1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
-      '@better-auth/sso': 1.6.19(471bd6fa3ae14ee5efbb7a2d0476f6b9)
+      '@better-auth/sso': 1.6.19(62352b1d7f0a9cf7ec33665013f5603e)
       '@better-auth/utils': 0.4.3
       '@better-fetch/fetch': 1.3.1
       better-auth: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.2.0(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(@voidzero-dev/vite-plus-test@0.1.24(@types/node@22.20.1)(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.20.3)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))
@@ -5148,10 +5163,9 @@ snapshots:
       libphonenumber-js: 1.13.10
       zod: 4.4.3
 
-  '@better-auth/sso@1.6.19(471bd6fa3ae14ee5efbb7a2d0476f6b9)':
+  '@better-auth/sso@1.6.19(62352b1d7f0a9cf7ec33665013f5603e)':
     dependencies:
       '@better-auth/core': 1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
-      '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.21
       better-auth: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.2.0(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(@voidzero-dev/vite-plus-test@0.1.24(@types/node@22.20.1)(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.20.3)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))
       better-call: 1.1.8(zod@4.4.3)
@@ -5167,7 +5181,7 @@ snapshots:
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.21
 
-  '@better-auth/telemetry@1.4.22(@better-auth/core@1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))':
+  '@better-auth/telemetry@1.4.22(@better-auth/core@1.4.22(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))':
     dependencies:
       '@better-auth/core': 1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
       '@better-auth/utils': 0.3.0
@@ -6741,7 +6755,7 @@ snapshots:
   better-auth@1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.2.0(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(@voidzero-dev/vite-plus-test@0.1.24(@types/node@22.20.1)(@voidzero-dev/vite-plus-core@0.2.7(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.5)(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.20.3)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0)):
     dependencies:
       '@better-auth/core': 1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
-      '@better-auth/telemetry': 1.4.22(@better-auth/core@1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))
+      '@better-auth/telemetry': 1.4.22(@better-auth/core@1.4.22(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.21
       '@noble/ciphers': 2.2.0
