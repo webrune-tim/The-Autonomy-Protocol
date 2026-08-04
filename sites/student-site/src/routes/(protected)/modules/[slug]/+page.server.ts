@@ -33,7 +33,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
         userId,
         moduleId: module.id,
         started: true,
-        sectionId: module.sections[0]?.id || 'system-module-start',
+        sectionId: module.sections[0]?.id || "system-module-start",
       })
       .onConflictDoUpdate({
         target: [userProgress.userId, userProgress.sectionId],

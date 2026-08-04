@@ -36,8 +36,7 @@ export const userProgress = sqliteTable(
     sectionId: text("section_id")
       .notNull()
       .references(() => sections.id, { onDelete: "cascade" }),
-    moduleId: text("module_id")
-      .references(() => modules.id, { onDelete: "cascade" }),
+    moduleId: text("module_id").references(() => modules.id, { onDelete: "cascade" }),
     started: integer("started", { mode: "boolean" }).notNull().default(false),
     completed: integer("completed", { mode: "boolean" }).notNull().default(false),
     updatedAt: integer("updated_at", { mode: "timestamp_ms" })

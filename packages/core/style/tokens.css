@@ -36,7 +36,7 @@
    2. THEME SURFACES (Dark vs. Light)
    ========================================================================== */
 /* Default: Dark Mode */
-:root {
+/*:root {
   color-scheme: dark;
   --bg-surface: var(--black-80);
   --fg-surface: var(--white);
@@ -48,18 +48,18 @@
   --ui-border: var(--nord4);
 }
 
-/* Light Mode Overrides */
+
 :root[data-theme="light"] {
   color-scheme: light;
   --bg-surface: var(--nord4);
-  --fg-surface: var(--nord0); /* Added explicitly for safety */
+  --fg-surface: var(--nord0);
   --bg: var(--bg-surface);
   --fg: var(--fg-surface);
   --surface-1: var(--nord4);
   --surface-2: var(--nord5);
   --surface-3: var(--nord6);
   --ui-border: var(--nord4);
-}
+}*/
 
 /* ==========================================================================
    3. SITE ACCENTS (Student vs. Teacher)

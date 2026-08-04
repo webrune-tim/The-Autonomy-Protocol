@@ -1,88 +1,142 @@
 <script lang="ts">
-	import { themeState } from './theme.svelte'
-	import { Sun, Moon } from '@lucide/svelte'
-	import { Pill } from '@autonomy/pill'
+  import { Sun, Moon } from '@lucide/svelte'
+  import { Pill } from '@autonomy/pill'
 
-	const options = [
-		{ id: 'light', icon: Sun, label: 'Light' },
-		{ id: 'dark', icon: Moon, label: 'Dark' }
-	] as const
+  let isMobile = $state(false)
+  let mode = $state(localStorage.getItem('mode') ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 
-	// 1. Initialize a reactive state variable for the view mode
-	let isMobile = $state(false)
+  $effect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 699px)')
+    isMobile = mediaQuery.matches
 
-	// 2. Set up the effect to handle the media query listener safely on the client
-	$effect(() => {
-		const mediaQuery = window.matchMedia('(max-width: 699px)')
+    document.documentElement.setAttribute('data-mode', mode);
+    localStorage.setItem('mode', mode);
+  })
 
-		// Set the initial value correctly on mount
-		isMobile = mediaQuery.matches
-
-		// Listener function to catch updates on resize/orientation change
-		const handler = (event: MediaQueryListEvent) => {
-			isMobile = event.matches
-		}
-
-		mediaQuery.addEventListener('change', handler)
-
-		// Return a cleanup function to prevent memory leaks if the component unmounts
-		return () => {
-			mediaQuery.removeEventListener('change', handler)
-		}
-	})
+  function toggleMode(newMode: string) {
+    mode = newMode;
+  }
 </script>
 
 <Pill>
-	<div class="toggle-container">
-		{#each options as { id, icon: Icon, label } (id)}
-			<button
-				class="icon-button"
-				class:active={themeState.value === id}
-				onclick={() => themeState.setTheme(id)}
-				aria-label="Set theme to {label}"
-			>
-				<!-- 3. Reactively swap the icon size based on the state -->
-				<Icon size={isMobile ? 20 : 14} strokeWidth={2.5} />
-			</button>
-		{/each}
-	</div>
+  <div class="theme-toggle">
+    <input type="radio" id="mode_dark" name="mode" value="dark" checked={mode === 'dark'} onchange={() => toggleMode('dark')}>
+    <label for="mode_dark" aria-label="Switch to dark mode">
+      Theme <Moon size={isMobile ? 20 : 14} />
+    </label>
+    <input type="radio" id="mode_light" name="mode" value="light" checked={mode === 'light'} onchange={() => toggleMode('light')}>
+    <label for="mode_light" aria-label="Switch to light mode">
+      Theme <Sun size={isMobile ? 20 : 14} />
+    </label>
+  </div>
 </Pill>
 
 <style>
-	.toggle-container {
-		display: flex;
-		align-items: center;
-		gap: var(--gap-1);
-	}
+  @media (prefers-color-scheme: dark) {
+    :global(:root) {
+      /* dark mode variables */
+      color-scheme: dark;
+      --bg-surface: var(--black-80);
+      --fg-surface: var(--white);
+      --bg: var(--bg-surface);
+      --fg: var(--fg-surface);
+      --surface-1: var(--nord0);
+      --surface-2: var(--nord1);
+      --surface-3: var(--nord2);
+      --ui-border: var(--nord4);
+    }
+  }
+  :global(:root:has(#mode_dark:checked)) {
+    /* dark mode variables */
+    color-scheme: dark;
+    --bg-surface: var(--black-80);
+    --fg-surface: var(--white);
+    --bg: var(--bg-surface);
+    --fg: var(--fg-surface);
+    --surface-1: var(--nord0);
+    --surface-2: var(--nord1);
+    --surface-3: var(--nord2);
+    --ui-border: var(--nord4);
+  }
+  :global(:root:has(#mode_light:checked)) {
+    /* light mode variables */
+    color-scheme: light;
+    --bg-surface: var(--nord4);
+    --fg-surface: var(--nord0);
+    --bg: var(--bg-surface);
+    --fg: var(--fg-surface);
+    --surface-1: var(--nord4);
+    --surface-2: var(--nord5);
+    --surface-3: var(--nord6);
+    --ui-border: var(--nord4);
+  }
 
-	.icon-button {
-		display: grid;
-		place-content: center;
-		background: none;
-		border: none;
-		padding: 0.25rem;
-		cursor: pointer;
-		color: var(--fg);
-		opacity: 0.65;
-		transition: all 0.2s ease;
-		border-radius: 50%;
-	}
+  :global(html:has(#mode_dark:checked)) p,
+  :global(html:has(#mode_dark:checked)) a {
+    /* update variables */
+    background: var(--bg);
+    color: var(--fg);
+  }
 
-	/* 4. Optional: Increase target padding on mobile for an even better touch target */
-	@media (max-width: 699px) {
-		.icon-button {
-			padding: 0.5rem;
-		}
-	}
+  a {
+    text-decoration: none;
 
-	.icon-button:hover {
-		opacity: 0.8;
-		background-color: rgb(from var(--fg) r g b / 0.1);
-	}
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
-	.icon-button.active {
-		opacity: 1;
-		color: var(--fg);
-		background-color: rgb(from var(--fg) r g b / 0.1);
-	}
+  /* style of the toggle */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-left: auto;
+  }
+
+  /* hide the input */
+  .theme-toggle input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .theme-toggle label {
+    width: fit-content;
+    height: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: center;
+    cursor: pointer;
+  }
+
+  /* icon visibility
+   *
+   * default light with system and radio button overwrite
+   */
+  label[for="mode_light"] { display: none; }
+  label[for="mode_dark"] { display: grid; }
+
+  @media (prefers-color-scheme: dark) {
+    label[for="mode_light"] { display: grid; }
+    label[for="mode_dark"] { display: none; }
+  }
+  :root:has(#mode_dark:checked) label[for="mode_light"] {
+     display: grid;
+  }
+  :root:has(#mode_dark:checked) label[for="mode_dark"] {
+     display: none;
+  }
+  :root:has(#mode_light:checked) label[for="mode_light"] {
+     display: none;
+  }
+  :root:has(#mode_light:checked) label[for="mode_dark"] {
+     display: grid;
+  }
+
+  .author-link {
+    margin-top: auto;
+  }
 </style>

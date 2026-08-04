@@ -2,7 +2,6 @@ import { db } from "$lib/server/db";
 import { modules, userProgress } from "$lib/server/db/schema";
 import { asc, eq } from "drizzle-orm";
 import type { PageServerLoad } from "./$types";
-import { lutimes } from "node:fs/promises";
 
 export const load: PageServerLoad = async ({ locals }) => {
   const userId = locals.user!.id;
@@ -24,7 +23,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 
   return {
     modules: allModules.map((m) => {
-      const moduleProgress = progress.find(p => p.moduleId === m.id);
+      const moduleProgress = progress.find((p) => p.moduleId === m.id);
       return {
         ...m,
         totalSections: m.sections.length,
