@@ -10,7 +10,7 @@ allowBuilds:
 
 catalog:
   "@better-auth/infra": ^0.2.14
-  "@lucide/svelte": ^1.28.0
+  "@lucide/svelte": ^1.30.0
   "@types/canvas-confetti": ^1.9.0
   "@types/node": ^25.9.3
   canvas-confetti: ^1.9.4
@@ -22,14 +22,14 @@ catalog:
   typescript: ^6.0.3
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
-  vite-plus: ^0.2.7
+  vite-plus: ^0.2.8
   mdsvex: ^0.12.8
   "@libsql/linux-x64-gnu": ^0.5.29
   dotenv: ^17.4.2
   "@sveltejs/kit": ^2.65.2
   turbo: ^2.9.18
   js.foresight: ^4.2.0
-  marked: ^18.0.7
+  marked: ^18.0.9
   "@types/marked": ^6.0.0
 
 catalogMode: prefer

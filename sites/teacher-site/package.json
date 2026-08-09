@@ -55,14 +55,14 @@
     "@libsql/client": "^0.17.4",
     "@sveltejs/adapter-vercel": "^6.3.4",
     "@sveltejs/kit": "^2.70.2",
-    "@sveltejs/vite-plugin-svelte": "^7.2.0",
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@types/canvas-confetti": "catalog:",
     "@types/node": "^22.20.1",
     "better-auth": "~1.4.22",
     "dotenv": "catalog:",
     "drizzle-kit": "^0.31.10",
     "drizzle-orm": "^0.45.2",
-    "eslint": "^10.8.0",
+    "eslint": "^10.8.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.22.0",
     "globals": "^17.9.0",
@@ -70,13 +70,12 @@
     "stylelint": "catalog:",
     "stylelint-config-standard": "catalog:",
     "svelte": "^5.56.8",
-    "svelte-check": "^4.7.4",
+    "svelte-check": "^4.7.5",
     "typescript": "catalog:",
     "typescript-eslint": "^8.66.0",
-    "vite": "npm:@voidzero-dev/vite-plus-core@^0.2.7",
+    "vite": "catalog:",
     "vite-imagetools": "^10.0.1",
-    "vite-plus": "catalog:",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.24"
+    "vite-plus": "catalog:"
   },
-  "packageManager": "pnpm@11.9.0"
+  "packageManager": "pnpm@11.10.0"
 }
