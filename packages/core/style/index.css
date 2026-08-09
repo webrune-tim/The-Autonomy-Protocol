@@ -141,6 +141,12 @@ label {
   gap: 0.5rem;
 }
 
+textarea {
+  field-sizing: content;
+  max-width: 100ch;
+  min-width: 50ch;
+}
+
 input,
 textarea {
   background: var(--surface-1);

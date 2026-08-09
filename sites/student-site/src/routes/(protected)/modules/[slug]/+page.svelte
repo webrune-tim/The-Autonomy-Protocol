@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { moduleState, getModuleProgress, initModuleState, toggleSection } from '$stores/moduleStore.svelte';
+	import {
+		moduleState,
+		getModuleProgress,
+		initModuleState,
+		toggleSection,
+		saveSectionResponse
+	} from '$stores/moduleStore.svelte';
 	import { ArrowBigLeft } from '@lucide/svelte';
 	import { parseMarkdown } from '$lib/utils/markdown';
 	import type { PageData } from './$types';
@@ -13,14 +19,22 @@
 	let answers = $state<Record<string, string>>({});
 	const MIN_CHARS = 100;
 
-	// Initialize the module state when the page loads
+	// Initialize the module state and hydrate responses when the page loads
 	$effect(() => {
 		if (moduleId) {
 			initModuleState(
 				moduleId,
-				data.module.sections.map(s => s.id),
+				data.module.sections.map((s) => s.id),
 				data.userProgress
 			);
+
+			if (data.userProgress) {
+				data.userProgress.forEach((p) => {
+					if (p.response && answers[p.sectionId] === undefined) {
+						answers[p.sectionId] = p.response;
+					}
+				});
+			}
 		}
 	});
 
@@ -62,6 +76,7 @@
 					<textarea
 						id="answer-{section.id}"
 						bind:value={answers[section.id]}
+						onblur={() => saveSectionResponse(moduleId, section.id, answers[section.id] || '')}
 						placeholder="Type your response to the section question here (minimum 100 characters required)..."
 						rows="4"
 						class="response-textarea"
@@ -86,7 +101,13 @@
 						type="checkbox"
 						disabled={!isEligible}
 						checked={getSectionState(section.id)}
-						onchange={(e) => toggleSection(moduleId, section.id, e.currentTarget.checked)}
+						onchange={(e) =>
+							toggleSection(
+								moduleId,
+								section.id,
+								e.currentTarget.checked,
+								answers[section.id] || ''
+							)}
 					/>
 					<span>Mark "{section.title}" as complete</span>
 				</label>

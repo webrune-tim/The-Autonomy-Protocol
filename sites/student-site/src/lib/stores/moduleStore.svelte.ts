@@ -46,7 +46,12 @@ export function initModuleState(
 /**
  * Updates a single section's state and persists to server
  */
-export async function toggleSection(moduleId: string, sectionId: string, completed: boolean) {
+export async function toggleSection(
+  moduleId: string,
+  sectionId: string,
+  completed: boolean,
+  response?: string,
+) {
   // Optimistic update
   if (!moduleState[moduleId]) {
     moduleState[moduleId] = {};
@@ -59,19 +64,48 @@ export async function toggleSection(moduleId: string, sectionId: string, complet
       const formData = new FormData();
       formData.append("sectionId", sectionId);
       formData.append("completed", String(completed));
+      formData.append("moduleId", moduleId);
+      if (response !== undefined && response !== null) {
+        formData.append("response", response);
+      }
 
-      const response = await fetch("?/toggleSection", {
+      const res = await fetch("?/toggleSection", {
         method: "POST",
         body: formData,
       });
 
-      if (!response.ok) {
+      if (!res.ok) {
         throw new Error("Failed to sync with server");
       }
     } catch (e) {
       console.error("Failed to sync module progress:", e);
       // Rollback on failure
       moduleState[moduleId][sectionId] = previousValue;
+    }
+  }
+}
+
+/**
+ * Saves a student's answer text without altering completion state
+ */
+export async function saveSectionResponse(moduleId: string, sectionId: string, response: string) {
+  if (browser) {
+    try {
+      const formData = new FormData();
+      formData.append("sectionId", sectionId);
+      formData.append("response", response);
+      formData.append("moduleId", moduleId);
+
+      const res = await fetch("?/saveResponse", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to save response text");
+      }
+    } catch (e) {
+      console.error("Failed to save section response:", e);
     }
   }
 }

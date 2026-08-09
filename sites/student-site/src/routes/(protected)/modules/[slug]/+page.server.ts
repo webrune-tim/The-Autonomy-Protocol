@@ -63,9 +63,22 @@ export const actions: Actions = {
     const formData = await request.formData();
     const sectionId = formData.get("sectionId") as string;
     const completed = formData.get("completed") === "true";
+    const response = formData.get("response") as string | null;
+    const moduleId = formData.get("moduleId") as string | null;
 
     if (!sectionId) {
       return { success: false, error: "Missing sectionId" };
+    }
+
+    const updateSet: Record<string, any> = {
+      completed,
+      updatedAt: new Date(),
+    };
+    if (response !== null) {
+      updateSet.response = response;
+    }
+    if (moduleId) {
+      updateSet.moduleId = moduleId;
     }
 
     await db
@@ -74,10 +87,47 @@ export const actions: Actions = {
         userId,
         sectionId,
         completed,
+        ...(response !== null ? { response } : {}),
+        ...(moduleId ? { moduleId } : {}),
       })
       .onConflictDoUpdate({
         target: [userProgress.userId, userProgress.sectionId],
-        set: { completed, updatedAt: new Date() },
+        set: updateSet,
+      });
+
+    return { success: true };
+  },
+
+  saveResponse: async ({ request, locals }) => {
+    const userId = locals.user!.id;
+    const formData = await request.formData();
+    const sectionId = formData.get("sectionId") as string;
+    const response = formData.get("response") as string | null;
+    const moduleId = formData.get("moduleId") as string | null;
+
+    if (!sectionId) {
+      return { success: false, error: "Missing sectionId" };
+    }
+
+    const updateSet: Record<string, any> = {
+      response: response ?? "",
+      updatedAt: new Date(),
+    };
+    if (moduleId) {
+      updateSet.moduleId = moduleId;
+    }
+
+    await db
+      .insert(userProgress)
+      .values({
+        userId,
+        sectionId,
+        response: response ?? "",
+        ...(moduleId ? { moduleId } : {}),
+      })
+      .onConflictDoUpdate({
+        target: [userProgress.userId, userProgress.sectionId],
+        set: updateSet,
       });
 
     return { success: true };

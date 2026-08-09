@@ -39,6 +39,7 @@ export const userProgress = sqliteTable(
     moduleId: text("module_id").references(() => modules.id, { onDelete: "cascade" }),
     started: integer("started", { mode: "boolean" }).notNull().default(false),
     completed: integer("completed", { mode: "boolean" }).notNull().default(false),
+    response: text("response"),
     updatedAt: integer("updated_at", { mode: "timestamp_ms" })
       .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
       .$onUpdate(() => new Date())
