@@ -16,7 +16,7 @@
 	}: Props = $props();
 
 	let showModal = $state(false);
-	let secondsRemaining = $state(warningCountdownSeconds);
+	let secondsRemaining = $state(0);
 
 	let idleTimer: ReturnType<typeof setTimeout> | null = null;
 	let countdownInterval: ReturnType<typeof setInterval> | null = null;

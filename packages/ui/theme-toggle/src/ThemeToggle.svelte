@@ -71,21 +71,6 @@
     --ui-border: var(--nord4);
   }
 
-  :global(html:has(#mode_dark:checked)) p,
-  :global(html:has(#mode_dark:checked)) a {
-    /* update variables */
-    background: var(--bg);
-    color: var(--fg);
-  }
-
-  a {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
   /* style of the toggle */
   .theme-toggle {
     display: flex;
@@ -134,9 +119,5 @@
   }
   :root:has(#mode_light:checked) label[for="mode_dark"] {
      display: grid;
-  }
-
-  .author-link {
-    margin-top: auto;
   }
 </style>

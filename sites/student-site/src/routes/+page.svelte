@@ -158,7 +158,6 @@
 			margin: var(--gap-1);
 			border: 1px solid var(--fg);
 
-			a,
 			p,
 			strong {
 				color: var(--fg);
