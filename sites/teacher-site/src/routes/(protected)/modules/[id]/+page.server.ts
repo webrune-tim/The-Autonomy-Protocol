@@ -28,9 +28,13 @@ export const actions: Actions = {
     const data = await request.formData();
     const title = data.get("title") as string;
     const description = data.get("description") as string;
+    const category = (data.get("category") as string) || "step";
     const order = parseInt(data.get("order") as string) || 0;
 
-    await db.update(modules).set({ title, description, order }).where(eq(modules.id, params.id));
+    await db
+      .update(modules)
+      .set({ title, description, category, order })
+      .where(eq(modules.id, params.id));
 
     return { success: true };
   },

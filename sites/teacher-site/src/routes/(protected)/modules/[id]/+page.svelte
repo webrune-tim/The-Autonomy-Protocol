@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
 	import { parseMarkdown } from '$lib/utils/markdown'
+	import { MODULE_CATEGORIES } from '$lib/constants/categories'
 	import type { PageData } from './$types'
 
 	let { data }: { data: PageData } = $props()
@@ -38,6 +39,19 @@
 							value={data.module.title}
 							required
 						/>
+					</div>
+					<div class="form-group flex-1">
+						<label for="category">Category Track</label>
+						<select id="category" name="category" required>
+							{#each MODULE_CATEGORIES as cat (cat.id)}
+								<option
+									value={cat.id}
+									selected={(data.module.category || 'step') === cat.id}
+								>
+									{cat.label} ({cat.systemTitle})
+								</option>
+							{/each}
+						</select>
 					</div>
 					<div class="form-group flex-1">
 						<label for="order">Display Order</label>
@@ -209,12 +223,19 @@
 	}
 
 	input,
+	select,
 	textarea {
 		padding: 0.75rem;
 		background: var(--surface-1);
 		border: 1px solid var(--surface-3);
 		color: var(--fg);
 		border-radius: 4px;
+		font-family: inherit;
+		font-size: 0.95rem;
+	}
+
+	select {
+		cursor: pointer;
 	}
 
 	textarea {

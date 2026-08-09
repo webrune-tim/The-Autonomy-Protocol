@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { foresight, thickMargins } from '@autonomy/actions'
 	import { Milestone, PlayCircle, Route, ShipWheel, Star } from '@lucide/svelte'
+	import { getCategoryById } from '$lib/constants/categories'
 
 	let { data } = $props()
 </script>
@@ -42,6 +43,9 @@
 								<PlayCircle size={24} />
 							</div>
 							<div class="card-text">
+								<div class="card-meta">
+									<span class="card-category">{getCategoryById(module.category || 'step').label}</span>
+								</div>
 								<span class="card-title">{module.title}</span>
 								<div class="card-track">
 									<div class="card-bar" style="width: {module.progress}%;"></div>
@@ -66,6 +70,9 @@
 								<Star size={24} />
 							</div>
 							<div class="card-text">
+								<div class="card-meta">
+									<span class="card-category">{getCategoryById(module.category || 'step').label}</span>
+								</div>
 								<span class="card-title">{module.title}</span>
 							</div>
 						</div>
@@ -192,9 +199,29 @@
 	.card-text {
 		display: flex;
 		flex-direction: column;
-		gap: 0.4rem;
+		gap: 0.35rem;
 		min-width: 0;
 		flex: 1;
+	}
+
+	.card-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.card-category {
+		font-family: monospace;
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		padding: 0.15rem 0.45rem;
+		border-radius: 4px;
+		background: rgba(0, 0, 0, 0.35);
+		border: 1px solid rgb(from var(--local-text) r g b / 0.3);
+		color: var(--local-text);
+		width: fit-content;
 	}
 
 	.card-title {

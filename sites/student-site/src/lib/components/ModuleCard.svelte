@@ -1,13 +1,16 @@
 <script lang="ts">
   import { getModuleStats } from '$stores/moduleStore.svelte';
+  import { getCategoryById } from '$lib/constants/categories';
 
   interface Props {
     moduleName?: string;
     totalSteps?: number;
     completedSteps?: number;
-    moduleId?: string | null;
+    moduleId?: string | number | null;
+    category?: string;
     description?: string;
     showProgressBar?: boolean;
+    cardColor?: string;
     href?: string;
     onclick?: () => void;
   }
@@ -17,14 +20,18 @@
     totalSteps: manualTotalSteps = 12,
     completedSteps: manualCompletedSteps = 0,
     moduleId = null,
+    category = undefined,
     description = "Initiate the sequence to synchronize network nodes. Ensure all biometric safety parameters are engaged before proceeding with the core data transfer.",
     showProgressBar = true,
+    cardColor = undefined,
     href = "#",
     onclick = undefined
   }: Props = $props();
 
+  const categoryMeta = $derived(category ? getCategoryById(category) : null);
+
   // Reactive Stats from store if moduleId is provided
-  const stats = $derived(moduleId ? getModuleStats(moduleId) : null);
+  const stats = $derived(moduleId ? getModuleStats(String(moduleId)) : null);
 
   // Total steps should preferably come from the store if the module has been initialized
   const effectiveTotalSteps = $derived(stats && stats.total > 0 ? stats.total : manualTotalSteps);
@@ -70,9 +77,17 @@
 </script>
 
 <article class="card">
-  <header class="card-header">
+  <header
+    class="card-header"
+    style={cardColor ? `--card-color: var(--brand-${cardColor}, ${cardColor});` : undefined}
+  >
     <div class="header-glare"></div>
-    <p class="subtitle">Module {moduleId}</p>
+    <div class="header-topline">
+      {#if categoryMeta}
+        <span class="category-badge">{categoryMeta.label}</span>
+      {/if}
+      <p class="subtitle">Module {moduleId}</p>
+    </div>
     <h1>{moduleName}</h1>
   </header>
 
@@ -188,15 +203,40 @@
     pointer-events: none;
   }
 
-  .card-header .subtitle {
-    font-family: monospace;
-    font-size: 1.25rem;
-    color: color-mix(in oklch, var(--card-color), oklch(0.96 0.01 290) var(--opacity));
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  .header-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
     margin: 0 0 0.5rem 0;
     z-index: 1;
+    flex-wrap: wrap;
+  }
+
+  .card-header .subtitle {
+    font-family: monospace;
+    font-size: 1.05rem;
+    color: color-mix(in oklch, var(--card-color), oklch(0.96 0.01 290) var(--opacity));
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0;
+    z-index: 1;
     transition: color 1s ease;
+  }
+
+  .category-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid color-mix(in oklch, var(--card-color), transparent 45%);
+    font-family: monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--fg);
   }
 
   .card-header h1 {

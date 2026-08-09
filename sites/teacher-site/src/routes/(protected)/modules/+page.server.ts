@@ -26,6 +26,7 @@ export const actions: Actions = {
     const data = await request.formData();
     const title = data.get("title") as string;
     const description = data.get("description") as string;
+    const category = (data.get("category") as string) || "step";
     const slug = title
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
@@ -37,6 +38,7 @@ export const actions: Actions = {
       slug,
       title,
       description,
+      category,
       cardColor: "primary",
       order: 0,
     });

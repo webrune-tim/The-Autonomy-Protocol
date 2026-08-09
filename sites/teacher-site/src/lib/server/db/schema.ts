@@ -13,6 +13,7 @@ export const modules = sqliteTable("modules", {
   slug: text("slug").notNull().unique(),
   title: text("title").notNull(),
   description: text("description").notNull(),
+  category: text("category").notNull().default("step"),
   cardColor: text("card_color").notNull().default("primary"),
   order: integer("order").notNull().default(0),
 });
