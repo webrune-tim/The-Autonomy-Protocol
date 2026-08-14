@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte'
-	import { page } from '$app/stores'
-	import { onNavigate } from '$app/navigation'
-	import type { LayoutData } from './$types'
-	import { foresight } from '@autonomy/actions'
+	import type { Snippet } from 'svelte';
+	import { page } from '$app/state';
+	import { onNavigate } from '$app/navigation';
+	import type { LayoutData } from './$types';
+	import { foresight } from '@autonomy/actions';
 
 	// Assets
-	import favicon from '$lib/assets/favicon.svg'
+	import favicon from '#lib/assets/favicon.svg'
 
 	// Styles
 	import '@autonomy/style/index.css'
@@ -14,22 +14,20 @@
 	// Shared Components
 	import { Banner } from '@autonomy/banner'
 	// import { BatteryLevel } from '@autonomy/battery-level'
-	import { Footer } from '@autonomy/footer'
-	import { Header } from '@autonomy/header'
-	import { Logo } from '@autonomy/logo'
-	import { DropNav, FooterNav } from '@autonomy/nav'
-	import { Pill } from '@autonomy/pill'
-	import { ScrollToTop } from '@autonomy/scroll-to-top'
-	import { SessionWarning } from '@autonomy/session-warning'
-	import { themeState } from '@autonomy/theme-toggle'
-	import { motionState } from '$lib/motion.svelte'
+	import { Footer } from '@autonomy/footer';
 
-	interface Props {
-		data: LayoutData
-		children: Snippet
-	}
+	import { Header } from '@autonomy/header';
+	import { Logo } from '@autonomy/logo';
+	import { DropNav, FooterNav } from '@autonomy/nav';
+	import { Pill } from '@autonomy/pill';
+	import { ScrollToTop } from '@autonomy/scroll-to-top';
+	import { SessionWarning } from '@autonomy/session-warning';
+	import { themeState } from '@autonomy/theme-toggle';
+	import { motionState } from '#lib/motion.svelte.js';
 
-	let { data, children }: Props = $props()
+	interface Props { data: LayoutData; children: Snippet }
+
+	let { data, children }: Props = $props();
 
 	// Initialize theme from server data
 	$effect(() => {
@@ -38,7 +36,7 @@
 
 	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
-		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : []),
+		...data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [],
 		{ href: '/modules', label: 'Create Module' },
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
@@ -61,9 +59,9 @@
 	])
 
 	$effect(() => {
-		const localStorageKey = `scroll-y-position-${window.location.href}`
+		const localStorageKey = `scroll-y-position-${window.location.href}`;
+		const savedPosition = localStorage.getItem(localStorageKey);
 
-		const savedPosition = localStorage.getItem(localStorageKey)
 		if (savedPosition) {
 			window.scrollTo(0, parseInt(savedPosition, 10))
 		}
@@ -80,7 +78,8 @@
 	})
 
 	onNavigate((navigation) => {
-		if (!document.startViewTransition || motionState.reduced) return
+		if (navigation.shallow) return;
+		if (!document.startViewTransition || motionState.reduced) return;
 
 		return new Promise((resolve) => {
 			// Determine if we are going "back"
@@ -124,22 +123,21 @@
 {/snippet}
 
 {#snippet headerActions()}
-	<Pill>&#945; Alpha</Pill>
+	<Pill>α Alpha</Pill>
 {/snippet}
 
 {#snippet headerNav()}
-	<DropNav links={navLinks} currentPath={$page.url.pathname} />
+	<DropNav links={navLinks} currentPath={page.url.pathname} />
 {/snippet}
 
 <div class="layout-wrapper">
 	<Header logo={headerLogo} actions={headerActions} nav={headerNav} />
 
 	<Banner bannerName="site-under-development">
+		<p>This site is still under heavy development. Content may change without notice.</p>
+
 		<p>
-			This site is still under heavy development. Content may change without notice.
-		</p>
-		<p>
-			If you encounter any issues, please report them via our
+			If you encounter any issues, please report them via our 
 			<a href="/contact" use:foresight>contact page</a> or on
 			<a
 				href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
@@ -161,9 +159,13 @@
 	<SessionWarning user={data.user} />
 
 	<Footer>
-		<FooterNav links={footerLinks} currentPath={$page.url.pathname} />
+		<FooterNav
+			links={footerLinks}
+			currentPath={page.url.pathname}
+		/>
+
 		<hr class="footer-divider" />
-		<p class="copyright">The Autonomy Protocol &copy; {new Date().getFullYear()}</p>
+		<p class="copyright">The Autonomy Protocol © {new Date().getFullYear()}</p>
 	</Footer>
 </div>
 

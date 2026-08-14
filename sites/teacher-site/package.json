@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "imports": {
+    "#lib": "./src/lib/index.js",
+    "#lib/*": "./src/lib/*"
+  },
   "scripts": {
     "dev": "vp dev",
     "build": "vp build",
@@ -53,8 +57,9 @@
     "@eslint/compat": "^2.1.0",
     "@eslint/js": "^10.0.1",
     "@libsql/client": "^0.17.4",
-    "@sveltejs/adapter-vercel": "^6.3.4",
-    "@sveltejs/kit": "^2.70.2",
+    "@sveltejs/adapter-vercel": "next",
+    "@sveltejs/kit": "next",
+    "@sveltejs/load-config": "^0.2.2",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@types/canvas-confetti": "catalog:",
     "@types/node": "^22.20.1",

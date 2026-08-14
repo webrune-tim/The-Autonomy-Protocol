@@ -1,4 +1,4 @@
-import { auth } from "$lib/server/auth";
+import { auth } from "#lib/server/auth.js";
 import type { RequestHandler } from "./$types";
 
 export const fallback: RequestHandler = (event) => {

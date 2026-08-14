@@ -5,7 +5,7 @@ import type { PageLoad } from "./$types";
 export const load: PageLoad = async ({ params }) => {
   try {
     // Vite will resolve the dynamic path relative to this file
-    const post = await import(`$lib/docs/steps/${params.slug}.md`);
+    const post = await import(`#lib/docs/steps/${params.slug}.md`);
 
     return {
       content: post.default,

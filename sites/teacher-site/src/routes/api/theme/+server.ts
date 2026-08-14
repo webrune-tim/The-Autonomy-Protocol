@@ -1,7 +1,7 @@
 import { json } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
-import { db } from "$lib/server/db";
-import { user } from "$lib/server/db/auth.schema";
+import { db } from "#lib/server/db/index.js";
+import { user } from "#lib/server/db/auth.schema.js";
 import { eq } from "drizzle-orm";
 
 export const POST: RequestHandler = async ({ request, locals }) => {

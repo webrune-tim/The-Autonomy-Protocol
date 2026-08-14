@@ -1,5 +1,5 @@
-import { db } from "$lib/server/db";
-import { modules, sections } from "$lib/server/db/schema";
+import { db } from "#lib/server/db/index.js";
+import { modules, sections } from "#lib/server/db/schema.js";
 import { error } from "@sveltejs/kit";
 import { eq, asc } from "drizzle-orm";
 import type { PageServerLoad, Actions } from "./$types";

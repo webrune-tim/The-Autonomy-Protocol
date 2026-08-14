@@ -1,13 +1,13 @@
 import { fail, redirect } from "@sveltejs/kit";
 import { eq, or, and, sql, inArray } from "drizzle-orm";
-import { db } from "$lib/server/db";
+import { db } from "#lib/server/db/index.js";
 import {
   user,
   session as sessionTable,
   document,
   documentShare,
   conversionTask,
-} from "$lib/server/db/schema";
+} from "#lib/server/db/schema.js";
 import type { PageServerLoad, Actions } from "./$types";
 
 export const load: PageServerLoad = async ({ locals, url }) => {

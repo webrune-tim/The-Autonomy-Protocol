@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { MODULE_CATEGORIES, getCategoryById } from '$lib/constants/categories';
+	import { MODULE_CATEGORIES, getCategoryById } from '#lib/constants/categories.js';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

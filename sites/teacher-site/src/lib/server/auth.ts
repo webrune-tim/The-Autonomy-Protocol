@@ -2,11 +2,19 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { sveltekitCookies } from "better-auth/svelte-kit";
 import { admin, createAccessControl } from "better-auth/plugins";
-import { env } from "$env/dynamic/private";
+
+import {
+  TEACHER_ORIGIN,
+  ORIGIN,
+  BETTER_AUTH_SECRET,
+  TEACHER_GOOGLE_CLIENT_ID,
+  TEACHER_GOOGLE_CLIENT_SECRET,
+} from "$app/env/private";
+
 import { getRequestEvent } from "$app/server";
-import { dev } from "$app/environment";
-import { db } from "$lib/server/db";
-import * as schema from "$lib/server/db/schema";
+import { dev } from "$app/env";
+import { db } from "#lib/server/db/index.js";
+import * as schema from "#lib/server/db/schema.js";
 
 const adminStatements = {
   user: [
@@ -25,42 +33,34 @@ const adminStatements = {
 
 const ac = createAccessControl(adminStatements);
 const adminRole = ac.newRole(adminStatements);
-const userRole = ac.newRole({
-  user: [],
-  session: [],
-});
-const studentRole = ac.newRole({
-  user: [],
-  session: [],
-});
+const userRole = ac.newRole({ user: [], session: [] });
+const studentRole = ac.newRole({ user: [], session: [] });
+
 const baseURL =
-  env.TEACHER_ORIGIN ||
-  env.ORIGIN ||
+  TEACHER_ORIGIN ||
+  ORIGIN ||
   (dev ? "http://localhost:8080" : "https://the-autonomy-protocol.vercel.app");
 
 const cleanBaseURL = baseURL.replace(/\/$/, "");
 
 export const auth = betterAuth({
   baseURL: cleanBaseURL,
-  secret: env.BETTER_AUTH_SECRET,
+  secret: BETTER_AUTH_SECRET,
   trustedOrigins: [
-    env.TEACHER_ORIGIN,
+    TEACHER_ORIGIN,
     "https://the-autonomy-protocol.vercel.app",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://localhost:8080",
     "http://127.0.0.1:8080",
   ].filter(Boolean) as string[],
-  database: drizzleAdapter(db, {
-    provider: "sqlite",
-    schema,
-  }),
+  database: drizzleAdapter(db, { provider: "sqlite", schema }),
   socialProviders:
-    env.TEACHER_GOOGLE_CLIENT_ID && env.TEACHER_GOOGLE_CLIENT_SECRET
+    TEACHER_GOOGLE_CLIENT_ID && TEACHER_GOOGLE_CLIENT_SECRET
       ? {
           google: {
-            clientId: env.TEACHER_GOOGLE_CLIENT_ID,
-            clientSecret: env.TEACHER_GOOGLE_CLIENT_SECRET,
+            clientId: TEACHER_GOOGLE_CLIENT_ID,
+            clientSecret: TEACHER_GOOGLE_CLIENT_SECRET,
           },
         }
       : {},

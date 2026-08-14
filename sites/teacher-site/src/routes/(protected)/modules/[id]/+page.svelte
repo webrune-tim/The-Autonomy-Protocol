@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
-	import { parseMarkdown } from '$lib/utils/markdown'
-	import { MODULE_CATEGORIES } from '$lib/constants/categories'
+	import { parseMarkdown } from '#lib/utils/markdown.js'
+	import { MODULE_CATEGORIES } from '#lib/constants/categories.js'
 	import type { PageData } from './$types'
 
 	let { data }: { data: PageData } = $props()
