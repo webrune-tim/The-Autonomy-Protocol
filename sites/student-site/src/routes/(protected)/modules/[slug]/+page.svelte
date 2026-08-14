@@ -7,7 +7,7 @@
 		saveSectionResponse
 	} from '$stores/moduleStore.svelte';
 	import { ArrowBigLeft } from '@lucide/svelte';
-	import { parseMarkdown } from '$lib/utils/markdown';
+	import { parseMarkdown } from '#lib/utils/markdown.js';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

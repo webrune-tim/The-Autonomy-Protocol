@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ModuleCard } from '$components';
 	import { initModuleState, getModuleStats } from '$stores/moduleStore.svelte';
-	import { MODULE_CATEGORIES, getCategoryById } from '$lib/constants/categories';
+	import { MODULE_CATEGORIES, getCategoryById } from '#lib/constants/categories.js';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

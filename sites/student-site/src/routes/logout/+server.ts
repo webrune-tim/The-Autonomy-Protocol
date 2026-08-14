@@ -1,7 +1,7 @@
-import { auth } from "$lib/server/auth";
+import { auth } from "#lib/server/auth.js";
 import { redirect } from "@sveltejs/kit";
-import { db } from "$lib/server/db";
-import { session as sessionTable } from "$lib/server/db/schema";
+import { db } from "#lib/server/db/index.js";
+import { session as sessionTable } from "#lib/server/db/schema.js";
 import { eq } from "drizzle-orm";
 import type { RequestHandler } from "./$types";
 

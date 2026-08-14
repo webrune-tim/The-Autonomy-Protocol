@@ -1,23 +1,25 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte'
-	import { page } from '$app/stores'
-	import type { LayoutData } from './$types'
+	import type { Snippet } from 'svelte';
+	import { page } from '$app/state';
+	import type { LayoutData } from './$types';
 
 	// Assets
-	import favicon from '$lib/assets/favicon.svg'
-	import '@autonomy/style/index.css'
+	import favicon from '#lib/assets/favicon.svg';
+
+	import '@autonomy/style/index.css';
 
 	// Shared Components
 	import { Banner } from '@autonomy/banner'
 	// import { BatteryLevel } from '@autonomy/battery-level'
-	import { Footer } from '@autonomy/footer'
-	import { Header } from '@autonomy/header'
-	import { Logo } from '@autonomy/logo'
-	import { DropNav, FooterNav } from '@autonomy/nav'
-	import { Pill } from '@autonomy/pill'
-	import { ScrollToTop } from '@autonomy/scroll-to-top'
-	import { SessionWarning } from '@autonomy/session-warning'
-	import { themeState } from '@autonomy/theme-toggle'
+	import { Footer } from '@autonomy/footer';
+
+	import { Header } from '@autonomy/header';
+	import { Logo } from '@autonomy/logo';
+	import { DropNav, FooterNav } from '@autonomy/nav';
+	import { Pill } from '@autonomy/pill';
+	import { ScrollToTop } from '@autonomy/scroll-to-top';
+	import { SessionWarning } from '@autonomy/session-warning';
+	import { themeState } from '@autonomy/theme-toggle';
 
 	// Local components
 	// import { ThemeToggle } from '$components'
@@ -37,20 +39,20 @@
 	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
 		{ href: '/road-map', label: 'Road Map' },
-		...(data.user ? [{ href: '/modules', label: 'Modules' }] : []),
-		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
-	])
+		...data.user ? [{ href: '/modules', label: 'Modules' }] : [],
+		...data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : []
+	]);
 
 	const footerLinks = $derived([
 		{ href: '/', label: 'Home' },
 		{ href: '/road-map', label: 'Road Map' },
-		...(data.user ? [{ href: '/modules', label: 'Modules' }] : [])
-	])
+		...data.user ? [{ href: '/modules', label: 'Modules' }] : []
+	]);
 
 	$effect(() => {
-		const localStorageKey = `scroll-y-position-${window.location.href}`
+		const localStorageKey = `scroll-y-position-${window.location.href}`;
+		const savedPosition = localStorage.getItem(localStorageKey);
 
-		const savedPosition = localStorage.getItem(localStorageKey)
 		if (savedPosition) {
 			window.scrollTo(0, parseInt(savedPosition, 10))
 		}
@@ -88,23 +90,21 @@
 {/snippet}
 
 {#snippet headerActions()}
-	<Pill>&#945; Alpha</Pill>
-	<!-- <ThemeToggle /> -->
+	<Pill>α Alpha</Pill><!-- <ThemeToggle /> -->
 {/snippet}
 
 {#snippet headerNav()}
-	<DropNav links={navLinks} currentPath={$page.url.pathname} />
+	<DropNav links={navLinks} currentPath={page.url.pathname} />
 {/snippet}
 
 <div class="layout-wrapper">
 	<Header logo={headerLogo} actions={headerActions} nav={headerNav} />
 
 	<Banner bannerName="site-under-development">
+		<p>This site is still under heavy development. Content may change without notice.</p>
+
 		<p>
-			This site is still under heavy development. Content may change without notice.
-		</p>
-		<p>
-			If you encounter any issues, please report them via our
+			If you encounter any issues, please report them via our 
 			<a href="/contact">contact page</a> or on
 			<a
 				href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
@@ -126,9 +126,13 @@
 	<SessionWarning user={data.user} />
 
 	<Footer>
-		<FooterNav links={footerLinks} currentPath={$page.url.pathname} />
+		<FooterNav
+			links={footerLinks}
+			currentPath={page.url.pathname}
+		/>
+
 		<hr class="footer-divider" />
-		<p class="copyright">The Autonomy Protocol &copy; {new Date().getFullYear()}</p>
+		<p class="copyright">The Autonomy Protocol © {new Date().getFullYear()}</p>
 	</Footer>
 </div>
 

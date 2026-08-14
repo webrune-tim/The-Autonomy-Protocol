@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { foresight, thickMargins } from '@autonomy/actions'
 	import { Milestone, PlayCircle, Route, ShipWheel, Star } from '@lucide/svelte'
-	import { getCategoryById } from '$lib/constants/categories'
+	import { getCategoryById } from '#lib/constants/categories.js'
 
 	let { data } = $props()
 </script>

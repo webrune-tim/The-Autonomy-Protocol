@@ -1,7 +1,8 @@
-import { redirect, type Handle } from "@sveltejs/kit";
-import { auth } from "$lib/server/auth";
-import { db } from "$lib/server/db";
-import { session as sessionTable } from "$lib/server/db/schema";
+import { redirect } from "@sveltejs/kit";
+import type { Handle } from "@sveltejs/kit/hooks";
+import { auth } from "#lib/server/auth.js";
+import { db } from "#lib/server/db/index.js";
+import { session as sessionTable } from "#lib/server/db/schema.js";
 import { eq } from "drizzle-orm";
 
 const handleBetterAuth: Handle = async ({ event, resolve }) => {

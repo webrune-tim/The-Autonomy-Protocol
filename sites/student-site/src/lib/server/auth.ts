@@ -2,11 +2,19 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { sveltekitCookies } from "better-auth/svelte-kit";
 import { admin, createAccessControl } from "better-auth/plugins";
-import { env } from "$env/dynamic/private";
+
+import {
+  STUDENT_ORIGIN,
+  ORIGIN,
+  BETTER_AUTH_SECRET,
+  STUDENT_GOOGLE_CLIENT_ID,
+  STUDENT_GOOGLE_CLIENT_SECRET,
+} from "$app/env/private";
+
 import { getRequestEvent } from "$app/server";
-import { dev } from "$app/environment";
-import { db } from "$lib/server/db";
-import * as schema from "$lib/server/db/schema";
+import { dev } from "$app/env";
+import { db } from "#lib/server/db/index.js";
+import * as schema from "#lib/server/db/schema.js";
 
 const adminStatements = {
   user: [
@@ -35,33 +43,30 @@ const studentRole = ac.newRole({
 });
 
 const baseURL =
-  env.STUDENT_ORIGIN ||
-  env.ORIGIN ||
+  STUDENT_ORIGIN ||
+  ORIGIN ||
   (dev ? "http://localhost:5173" : "https://the-autonomy-protocol.vercel.app");
 
 const cleanBaseURL = baseURL.replace(/\/$/, "");
 
 export const auth = betterAuth({
   baseURL: cleanBaseURL,
-  secret: env.BETTER_AUTH_SECRET,
+  secret: BETTER_AUTH_SECRET,
   trustedOrigins: [
-    env.STUDENT_ORIGIN,
+    STUDENT_ORIGIN,
     "https://the-autonomy-protocol.vercel.app",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://localhost:8080",
     "http://127.0.0.1:8080",
   ].filter(Boolean) as string[],
-  database: drizzleAdapter(db, {
-    provider: "sqlite",
-    schema,
-  }),
+  database: drizzleAdapter(db, { provider: "sqlite", schema }),
   socialProviders:
-    env.STUDENT_GOOGLE_CLIENT_ID && env.STUDENT_GOOGLE_CLIENT_SECRET
+    STUDENT_GOOGLE_CLIENT_ID && STUDENT_GOOGLE_CLIENT_SECRET
       ? {
           google: {
-            clientId: env.STUDENT_GOOGLE_CLIENT_ID,
-            clientSecret: env.STUDENT_GOOGLE_CLIENT_SECRET,
+            clientId: STUDENT_GOOGLE_CLIENT_ID,
+            clientSecret: STUDENT_GOOGLE_CLIENT_SECRET,
           },
         }
       : {},

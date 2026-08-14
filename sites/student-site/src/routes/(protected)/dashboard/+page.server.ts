@@ -1,8 +1,8 @@
 import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 import type { PageServerLoad } from "./$types";
-import { db } from "$lib/server/db";
-import { user, session as sessionTable } from "$lib/server/db/schema";
+import { db } from "#lib/server/db/index.js";
+import { user, session as sessionTable } from "#lib/server/db/schema.js";
 import { eq, like, or } from "drizzle-orm";
 
 export const load: PageServerLoad = async (event) => {

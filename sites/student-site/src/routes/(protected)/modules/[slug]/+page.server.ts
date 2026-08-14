@@ -1,6 +1,6 @@
 // sites/student-site/src/routes/(protected)/modules/[slug]/+page.server.ts
-import { db } from "$lib/server/db";
-import { modules, sections, userProgress } from "$lib/server/db/schema";
+import { db } from "#lib/server/db/index.js";
+import { modules, sections, userProgress } from "#lib/server/db/schema.js";
 import { error } from "@sveltejs/kit";
 import { eq, asc, and, inArray } from "drizzle-orm";
 import type { PageServerLoad, Actions } from "./$types";

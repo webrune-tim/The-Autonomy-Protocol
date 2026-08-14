@@ -1,5 +1,5 @@
-import { db } from "$lib/server/db";
-import { modules } from "$lib/server/db/schema";
+import { db } from "#lib/server/db/index.js";
+import { modules } from "#lib/server/db/schema.js";
 import { inArray, notInArray, asc } from "drizzle-orm";
 import type { PageServerLoad } from "./$types";
 

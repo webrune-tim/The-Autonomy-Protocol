@@ -1,5 +1,5 @@
 // src/lib/stores/moduleStore.svelte.ts
-import { browser } from "$app/environment";
+import { browser } from "$app/env";
 
 // Persistent State using Svelte 5 runes
 export const moduleState = $state<Record<string, Record<string, boolean>>>({});

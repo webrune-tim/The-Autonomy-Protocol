@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { base } from '$app/paths'
-	import { foresight } from '@autonomy/actions'
+	import { resolve } from '$app/paths';
+	import { foresight } from '@autonomy/actions';
 
 	let { activeTab, allLinks } = $props()
 
@@ -40,9 +40,10 @@
 	<ul class="grid-container {path}">
 		{#each links as { slug, metadata } (slug)}
 			<li>
-				<a href="{base}/resources/{path}/{slug}" use:foresight>
-					{metadata.title ?? 'Untitled Resource'}
-				</a>
+				<a
+					href="{resolve('')}/resources/{path}/{slug}"
+					use:foresight
+				>{metadata.title ?? 'Untitled Resource'}</a>
 			</li>
 		{/each}
 	</ul>

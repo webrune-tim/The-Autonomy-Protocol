@@ -1,5 +1,5 @@
-import { db } from "$lib/server/db";
-import { modules, userProgress } from "$lib/server/db/schema";
+import { db } from "#lib/server/db/index.js";
+import { modules, userProgress } from "#lib/server/db/schema.js";
 import { asc, eq } from "drizzle-orm";
 import type { PageServerLoad } from "./$types";
 

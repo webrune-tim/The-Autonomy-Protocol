@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { authClient } from '$lib/auth-client'
+	import { authClient } from '#lib/auth-client.js'
 	import { page } from '$app/state'
 
 	const redirectTo = $derived(page.url.searchParams.get('redirectTo') || '/')
