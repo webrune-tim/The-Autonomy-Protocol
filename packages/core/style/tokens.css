@@ -1,112 +1,82 @@
 /* packages/core/style/tokens.css */
 
 /* ==========================================================================
-   1. GLOBAL BASELINE (Never changes)
+   1. GLOBAL BASELINE & LAYOUT SCALES
    ========================================================================== */
 :root {
-  /* Baseline Gray Palette */
+  /* Baseline Palette Constants */
   --black-80: oklch(5% 0 0);
   --black-60: oklch(15% 0 0);
   --black-50: oklch(25% 0 0);
   --black-40: oklch(40% 0 0);
   --black-20: oklch(60% 0 0);
-  --white: oklch(95% 0 0);
+  --white: oklch(98% 0 0);
 
-  /* System States */
-  --error-bg: oklch(25.26% 0.099 26.82);
-  --error-fg: var(--white);
-  --error-border: #f35b5b;
-  --success-bg: oklch(37.7% 0.108 146.76);
-  --success-fg: var(--white);
-  --success-border: #5bf35b;
+  /* System Feedback & States */
+  --error-bg: oklch(25% 0.12 25);
+  --error-fg: #ffffff;
+  --error-border: #ef4444;
+  --success-bg: oklch(28% 0.11 145);
+  --success-fg: #ffffff;
+  --success-border: #22c55e;
+  --warning-bg: oklch(30% 0.12 75);
+  --warning-fg: #ffffff;
+  --warning-border: #f59e0b;
 
-  /* Layout Shared Tokens */
-  --gap-1: clamp(0.5rem, 1.75svw, 1rem);
-  --gap-2: clamp(1rem, 2.75svw, 2rem);
-  --gap-3: clamp(2rem, 5.5svw, 4rem);
-  --gap-4: clamp(4rem, 11svw, 8rem);
-  --border-radius: 1rem;
-  --border-width: clamp(0.25rem, 2svw, 1rem);
-  --angle-height: 5vw;
+  /* Modern Fluid Layout Tokens */
+  --gap-1: clamp(0.5rem, 1.5vw, 0.875rem);
+  --gap-2: clamp(1rem, 2.5vw, 1.75rem);
+  --gap-3: clamp(1.75rem, 4vw, 3rem);
+  --gap-4: clamp(2.5rem, 6vw, 5rem);
+
+  --border-radius: 0.75rem;
+  --border-radius-sm: 0.375rem;
+  --border-radius-lg: 1.25rem;
+  --border-width: clamp(2px, 0.3vw, 4px);
+
+  --angle-height: clamp(1.5rem, 3.5vw, 3rem);
   --angle-width: var(--gap-2);
-  --thick-margin: clamp(2rem, 5.5svw, 4.5rem);
+  --thick-margin: clamp(0.5rem, 2vw, 1.5rem);
+  --max-content-width: min(100%, 1400px);
 }
 
 /* ==========================================================================
-   2. THEME SURFACES (Dark vs. Light)
+   2. STUDENT PORTAL (DEFAULT): FUN, ENERGETIC, YOUTH CTE AESTHETIC
    ========================================================================== */
-/* Default: Dark Mode */
-/*:root {
+/* Default: Student Dark Mode */
+:root {
   color-scheme: dark;
-  --bg-surface: var(--black-80);
-  --fg-surface: var(--white);
-  --bg: var(--bg-surface);
-  --fg: var(--fg-surface);
-  --surface-1: var(--nord0);
-  --surface-2: var(--nord1);
-  --surface-3: var(--nord2);
-  --ui-border: var(--nord4);
-}
 
+  /* Surfaces & Canvases */
+  --bg: #0b0f19;
+  --bg-surface: #0b0f19;
+  --surface-1: #111827;
+  --surface-2: #1e293b;
+  --surface-3: #2d3b55;
+  --surface-4: #151d30;
+  --ui-border: #334155;
+  --ui-border-subtle: #1e293b;
 
-:root[data-theme="light"] {
-  color-scheme: light;
-  --bg-surface: var(--nord4);
-  --fg-surface: var(--nord0);
-  --bg: var(--bg-surface);
-  --fg: var(--fg-surface);
-  --surface-1: var(--nord4);
-  --surface-2: var(--nord5);
-  --surface-3: var(--nord6);
-  --ui-border: var(--nord4);
-}*/
+  /* Typography */
+  --fg: #ffffff;
+  --fg-surface: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-form: #ffffff;
 
-/* ==========================================================================
-   3. SITE ACCENTS (Student vs. Teacher)
-   ========================================================================== */
-/* Default: Base/Student */
-:root {
-  --accent-1: oklab(0.61 -0.05 -0.2);
-  --accent-2: oklab(58.75% 0.109 0.113);
-  --accent-3: oklab(0.8 -0.17 -0.03);
+  /* Fun, High-Contrast Accents */
+  --accent-1: #818cf8; /* Hyper Indigo */
+  --accent-2: #fb923c; /* Sunset Coral */
+  --accent-3: #34d399; /* Electric Mint */
 
-  --accent-1-contrast: var(--black-80);
-  --accent-2-contrast: var(--black-80);
-  --accent-3-contrast: var(--black-80);
-}
-
-/* Teacher Override */
-:root[data-site="teacher"] {
-  --accent-1: var(--nord11);
-  --accent-2: var(--nord13);
-  --accent-3: var(--nord15);
-
-  /* Note: Standardized to oklch to match your stack, adjust if lch was intentional */
-  --accent-1-contrast: oklch(from var(--nord4) calc(l + 0.1) c h);
-  --accent-2-contrast: oklch(from var(--nord0) calc(l - 0.1) c h);
-  --accent-3-contrast: oklch(from var(--nord0) calc(l - 0.1) c h);
-}
-
-/* Teacher Light Mode Overrides (The Matrix Intersection)
-   Add specific contrasts here if Teacher Light Mode needs to break the rules */
-:root[data-site="teacher"][data-theme="light"] {
-  --accent-1-contrast: var(--nord6);
-  --accent-2-contrast: var(--nord0);
-  --accent-3-contrast: var(--nord6);
-}
-
-/* ==========================================================================
-   4. THE DERIVATION ENGINE (The Math)
-   ========================================================================== */
-/* Base Engine (Assumes Dark Mode Context) */
-:root {
   --brand-primary: var(--accent-1);
   --brand-secondary: var(--accent-2);
   --brand-tertiary: var(--accent-3);
 
-  --brand-primary-contrast: var(--accent-1-contrast);
-  --brand-secondary-contrast: var(--accent-2-contrast);
-  --brand-tertiary-contrast: var(--accent-3-contrast);
+  /* Contrast Guarantees */
+  --brand-primary-contrast: #0b0f19;
+  --brand-secondary-contrast: #0b0f19;
+  --brand-tertiary-contrast: #0b0f19;
 
   --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.3) c h);
   --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l - 0.3) c h);
@@ -116,48 +86,181 @@
   --brand-secondary-light: oklch(from var(--brand-secondary) calc(l + 0.15) c h);
   --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l + 0.15) c h);
 
-  --text-primary-print: color-mix(in oklab, var(--brand-primary) 25%, var(--nord4));
-  --text-secondary-print: color-mix(in oklab, var(--brand-secondary) 25%, var(--nord4));
-  --text-tertiary-print: color-mix(in oklab, var(--brand-tertiary) 25%, var(--nord4));
+  --text-primary-print: var(--brand-primary);
+  --text-secondary-print: var(--brand-secondary);
+  --text-tertiary-print: var(--brand-tertiary);
 
-  /* Semantic Layout Contracts */
-  --text-form: var(--fg-surface);
-  --text-link: var(--text-secondary-print);
-  --text-link-hover: var(--text-primary-print);
-  --text-heading: var(--text-primary-print);
-  --text-heading-alt: var(--text-secondary-print);
+  --text-link: var(--brand-primary);
+  --text-link-hover: var(--brand-secondary);
+  --text-heading: var(--brand-primary);
+  --text-heading-alt: var(--brand-secondary);
   --border-color: var(--brand-primary);
   --border: var(--border-width) solid var(--border-color);
 }
 
-/* Light Mode Engine Overrides */
-:root[data-theme="light"] {
-  /* Legible Core Mappings for Light Surfaces */
-  --brand-primary: oklch(from var(--accent-1) calc(l - 0.12) c h);
-  --brand-secondary: oklch(from var(--accent-2) calc(l - 0.05) c h);
-  --brand-tertiary: oklch(from var(--accent-3) calc(l - 0.15) c h);
+/* Student Light Mode */
+:root[data-theme="light"],
+:root[data-site="student"][data-theme="light"] {
+  color-scheme: light;
 
-  /* High-Contrast Typographic Print Engine */
-  --text-primary-print: color-mix(in oklab, var(--brand-primary) 20%, var(--nord0));
-  --text-secondary-print: color-mix(in oklab, var(--brand-secondary) 20%, var(--nord0));
-  --text-tertiary-print: color-mix(in oklab, var(--brand-tertiary) 20%, var(--nord0));
+  /* Surfaces & Canvases */
+  --bg: #f8faff;
+  --bg-surface: #f8faff;
+  --surface-1: #ffffff;
+  --surface-2: #eff4ff;
+  --surface-3: #dbeafe;
+  --surface-4: #f1f5fd;
+  --ui-border: #c7d2fe;
+  --ui-border-subtle: #e0e7ff;
 
-  /* Light Mode Derivations */
-  --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.15) c h);
-  --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l - 0.15) c h);
-  --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l - 0.15) c h);
+  /* Typography */
+  --fg: #090d16;
+  --fg-surface: #090d16;
+  --text-secondary: #1e293b;
+  --text-muted: #475569;
+  --text-form: #090d16;
 
-  /* Wash-out bug fix */
-  --brand-primary-light: oklch(from var(--brand-primary) calc(l - 0.05) c h);
-  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l - 0.05) c h);
-  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l - 0.05) c h);
+  /* Deepened Vibrant Accents for Light Canvas */
+  --accent-1: #4f46e5; /* Electric Indigo */
+  --accent-2: #ea580c; /* Vivid Coral */
+  --accent-3: #059669; /* Jade Emerald */
+
+  --brand-primary: var(--accent-1);
+  --brand-secondary: var(--accent-2);
+  --brand-tertiary: var(--accent-3);
+
+  --brand-primary-contrast: #ffffff;
+  --brand-secondary-contrast: #ffffff;
+  --brand-tertiary-contrast: #ffffff;
+
+  --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.12) c h);
+  --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l - 0.12) c h);
+  --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l - 0.12) c h);
+
+  --brand-primary-light: oklch(from var(--brand-primary) calc(l + 0.15) c h);
+  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l + 0.15) c h);
+  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l + 0.15) c h);
+
+  --text-primary-print: var(--brand-primary);
+  --text-secondary-print: var(--brand-secondary);
+  --text-tertiary-print: var(--brand-tertiary);
+
+  --text-link: var(--brand-primary);
+  --text-link-hover: var(--brand-secondary);
+  --text-heading: var(--brand-primary);
+  --text-heading-alt: var(--brand-secondary);
+  --border-color: var(--brand-primary);
+  --border: var(--border-width) solid var(--border-color);
 }
 
 /* ==========================================================================
-   5. PROGRESSIVE CONTRAST SCRIPT UPGRADE
+   3. TEACHER PORTAL: PROFESSIONAL, COLLEGIATE ACADEMIC AESTHETIC
    ========================================================================== */
-@supports (color: oklch(from red l c h)) {
-  :root {
-    --fg-surface: oklch(from var(--bg-surface) calc((l - 0.54) * -1000) 0 0);
-  }
+/* Teacher Dark Mode */
+:root[data-site="teacher"] {
+  color-scheme: dark;
+
+  /* Deep Academic Midnight Slate */
+  --bg: #0d1117;
+  --bg-surface: #0d1117;
+  --surface-1: #161b22;
+  --surface-2: #21262d;
+  --surface-3: #30363d;
+  --surface-4: #131720;
+  --ui-border: #384252;
+  --ui-border-subtle: #21262d;
+
+  /* Collegiate Typography */
+  --fg: #f0f6fc;
+  --fg-surface: #f0f6fc;
+  --text-secondary: #c9d1d9;
+  --text-muted: #8b949e;
+  --text-form: #f0f6fc;
+
+  /* Authoritative Collegiate Accents */
+  --accent-1: #388bfd; /* Oxford Cobalt */
+  --accent-2: #3fb950; /* Executive Emerald */
+  --accent-3: #e3b341; /* Academic Amber */
+
+  --brand-primary: var(--accent-1);
+  --brand-secondary: var(--accent-2);
+  --brand-tertiary: var(--accent-3);
+
+  /* High Contrast Targets */
+  --brand-primary-contrast: #ffffff;
+  --brand-secondary-contrast: #0d1117;
+  --brand-tertiary-contrast: #0d1117;
+
+  --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.25) c h);
+  --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l - 0.25) c h);
+  --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l - 0.25) c h);
+
+  --brand-primary-light: oklch(from var(--brand-primary) calc(l + 0.12) c h);
+  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l + 0.12) c h);
+  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l + 0.12) c h);
+
+  --text-primary-print: var(--brand-primary);
+  --text-secondary-print: var(--brand-secondary);
+  --text-tertiary-print: var(--brand-tertiary);
+
+  --text-link: var(--brand-primary);
+  --text-link-hover: var(--brand-secondary);
+  --text-heading: var(--brand-primary);
+  --text-heading-alt: var(--brand-secondary);
+  --border-color: var(--brand-primary);
+  --border: var(--border-width) solid var(--border-color);
+}
+
+/* Teacher Light Mode */
+:root[data-site="teacher"][data-theme="light"] {
+  color-scheme: light;
+
+  /* Crisp Academic Parchment & White */
+  --bg: #f6f8fa;
+  --bg-surface: #f6f8fa;
+  --surface-1: #ffffff;
+  --surface-2: #f0f2f5;
+  --surface-3: #e1e4e8;
+  --surface-4: #f8f9fa;
+  --ui-border: #d0d7de;
+  --ui-border-subtle: #eaeef2;
+
+  /* Collegiate Typography */
+  --fg: #1f2328;
+  --fg-surface: #1f2328;
+  --text-secondary: #424a53;
+  --text-muted: #656d76;
+  --text-form: #1f2328;
+
+  /* Authoritative Deep Accents */
+  --accent-1: #0969da; /* Deep Royal Oxford */
+  --accent-2: #1a7f37; /* Deep Forest Emerald */
+  --accent-3: #9a6700; /* Deep Amber Bronze */
+
+  --brand-primary: var(--accent-1);
+  --brand-secondary: var(--accent-2);
+  --brand-tertiary: var(--accent-3);
+
+  --brand-primary-contrast: #ffffff;
+  --brand-secondary-contrast: #ffffff;
+  --brand-tertiary-contrast: #ffffff;
+
+  --brand-primary-dark: oklch(from var(--brand-primary) calc(l - 0.1) c h);
+  --brand-secondary-dark: oklch(from var(--brand-secondary) calc(l - 0.1) c h);
+  --brand-tertiary-dark: oklch(from var(--brand-tertiary) calc(l - 0.1) c h);
+
+  --brand-primary-light: oklch(from var(--brand-primary) calc(l + 0.12) c h);
+  --brand-secondary-light: oklch(from var(--brand-secondary) calc(l + 0.12) c h);
+  --brand-tertiary-light: oklch(from var(--brand-tertiary) calc(l + 0.12) c h);
+
+  --text-primary-print: var(--brand-primary);
+  --text-secondary-print: var(--brand-secondary);
+  --text-tertiary-print: var(--brand-tertiary);
+
+  --text-link: var(--brand-primary);
+  --text-link-hover: var(--brand-secondary);
+  --text-heading: var(--brand-primary);
+  --text-heading-alt: var(--brand-secondary);
+  --border-color: var(--brand-primary);
+  --border: var(--border-width) solid var(--border-color);
 }

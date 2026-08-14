@@ -1,123 +1,63 @@
 <script lang="ts">
-  import { Sun, Moon } from '@lucide/svelte'
-  import { Pill } from '@autonomy/pill'
+  import { Sun, Moon } from '@lucide/svelte';
+  import { themeState, type Theme } from './theme.svelte';
 
-  let isMobile = $state(false)
-  let mode = $state(localStorage.getItem('mode') ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  const isLight = $derived(themeState.value === 'light');
 
-  $effect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 699px)')
-    isMobile = mediaQuery.matches
-
-    document.documentElement.setAttribute('data-mode', mode);
-    localStorage.setItem('mode', mode);
-  })
-
-  function toggleMode(newMode: string) {
-    mode = newMode;
+  function toggle() {
+    const next: Theme = isLight ? 'dark' : 'light';
+    themeState.setTheme(next);
   }
 </script>
 
-<Pill>
-  <div class="theme-toggle">
-    <input type="radio" id="mode_dark" name="mode" value="dark" checked={mode === 'dark'} onchange={() => toggleMode('dark')}>
-    <label for="mode_dark" aria-label="Switch to dark mode">
-      Theme <Moon size={isMobile ? 20 : 14} />
-    </label>
-    <input type="radio" id="mode_light" name="mode" value="light" checked={mode === 'light'} onchange={() => toggleMode('light')}>
-    <label for="mode_light" aria-label="Switch to light mode">
-      Theme <Sun size={isMobile ? 20 : 14} />
-    </label>
-  </div>
-</Pill>
+<button
+  type="button"
+  class="theme-toggle-btn"
+  onclick={toggle}
+  aria-label={isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+  title={isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+>
+  {#if isLight}
+    <Moon size={16} strokeWidth={2.2} />
+    <span class="theme-label">Dark</span>
+  {:else}
+    <Sun size={16} strokeWidth={2.2} />
+    <span class="theme-label">Light</span>
+  {/if}
+</button>
 
 <style>
-  @media (prefers-color-scheme: dark) {
-    :global(:root) {
-      /* dark mode variables */
-      color-scheme: dark;
-      --bg-surface: var(--black-80);
-      --fg-surface: var(--white);
-      --bg: var(--bg-surface);
-      --fg: var(--fg-surface);
-      --surface-1: var(--nord0);
-      --surface-2: var(--nord1);
-      --surface-3: var(--nord2);
-      --ui-border: var(--nord4);
-    }
-  }
-  :global(:root:has(#mode_dark:checked)) {
-    /* dark mode variables */
-    color-scheme: dark;
-    --bg-surface: var(--black-80);
-    --fg-surface: var(--white);
-    --bg: var(--bg-surface);
-    --fg: var(--fg-surface);
-    --surface-1: var(--nord0);
-    --surface-2: var(--nord1);
-    --surface-3: var(--nord2);
-    --ui-border: var(--nord4);
-  }
-  :global(:root:has(#mode_light:checked)) {
-    /* light mode variables */
-    color-scheme: light;
-    --bg-surface: var(--nord4);
-    --fg-surface: var(--nord0);
-    --bg: var(--bg-surface);
-    --fg: var(--fg-surface);
-    --surface-1: var(--nord4);
-    --surface-2: var(--nord5);
-    --surface-3: var(--nord6);
-    --ui-border: var(--nord4);
-  }
-
-  /* style of the toggle */
-  .theme-toggle {
-    display: flex;
+  .theme-toggle-btn {
+    all: unset;
+    display: inline-flex;
     align-items: center;
-    width: fit-content;
-    margin-left: auto;
-  }
-
-  /* hide the input */
-  .theme-toggle input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    margin: 0;
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .theme-toggle label {
-    width: fit-content;
-    height: 20px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    place-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    background: oklch(from var(--brand-primary) l c h / 0.15);
+    border: 1px solid oklch(from var(--brand-primary) l c h / 0.4);
+    color: var(--fg);
+    font-family: var(--font-ui, sans-serif);
+    font-size: 0.82rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
   }
 
-  /* icon visibility
-   *
-   * default light with system and radio button overwrite
-   */
-  label[for="mode_light"] { display: none; }
-  label[for="mode_dark"] { display: grid; }
+  .theme-toggle-btn:hover {
+    background: oklch(from var(--brand-primary) l c h / 0.25);
+    border-color: var(--brand-primary);
+    transform: translateY(-1px);
+  }
 
-  @media (prefers-color-scheme: dark) {
-    label[for="mode_light"] { display: grid; }
-    label[for="mode_dark"] { display: none; }
+  .theme-toggle-btn:active {
+    transform: scale(0.96);
   }
-  :root:has(#mode_dark:checked) label[for="mode_light"] {
-     display: grid;
-  }
-  :root:has(#mode_dark:checked) label[for="mode_dark"] {
-     display: none;
-  }
-  :root:has(#mode_light:checked) label[for="mode_light"] {
-     display: none;
-  }
-  :root:has(#mode_light:checked) label[for="mode_dark"] {
-     display: grid;
+
+  .theme-label {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
   }
 </style>

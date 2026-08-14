@@ -9,23 +9,30 @@
 </script>
 
 <footer>
-	{@render children()}
+	<div class="footer-inner">
+		{@render children()}
+	</div>
 </footer>
 
 <style>
 	footer {
-		max-height: fit-content;
-		--color: var(--brand-primary);
+		width: 100%;
+		background: var(--surface-1);
+		border-top: 1px solid var(--ui-border);
+		color: var(--fg);
+		margin-top: auto;
+		padding-block: var(--gap-3);
+		transition: background-color 0.2s ease, border-color 0.2s ease;
+	}
+
+	.footer-inner {
+		width: 100%;
+		max-width: var(--max-content-width, 1400px);
+		margin-inline: auto;
+		padding-inline: clamp(1rem, 3vw, 2.5rem);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
-		/* Force the footer base text to high contrast */
-		color: var(--brand-primary-contrast);
-		background: var(--brand-primary-dark);
-
-		/* Padding & Typography Layout */
-		padding: var(--gap-2) var(--gap-1);
-		font-size: var(--font-size-3);
+		gap: var(--gap-2);
 	}
 </style>

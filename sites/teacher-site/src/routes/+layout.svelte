@@ -6,37 +6,38 @@
 	import { foresight } from '@autonomy/actions';
 
 	// Assets
-	import favicon from '#lib/assets/favicon.svg'
+	import favicon from '#lib/assets/favicon.svg';
 
 	// Styles
-	import '@autonomy/style/index.css'
+	import '@autonomy/style/index.css';
 
 	// Shared Components
-	import { Banner } from '@autonomy/banner'
-	// import { BatteryLevel } from '@autonomy/battery-level'
+	import { Banner } from '@autonomy/banner';
 	import { Footer } from '@autonomy/footer';
-
 	import { Header } from '@autonomy/header';
 	import { Logo } from '@autonomy/logo';
 	import { DropNav, FooterNav } from '@autonomy/nav';
 	import { Pill } from '@autonomy/pill';
 	import { ScrollToTop } from '@autonomy/scroll-to-top';
 	import { SessionWarning } from '@autonomy/session-warning';
-	import { themeState } from '@autonomy/theme-toggle';
+	import { ThemeToggle, themeState } from '@autonomy/theme-toggle';
 	import { motionState } from '#lib/motion.svelte.js';
 
-	interface Props { data: LayoutData; children: Snippet }
+	interface Props {
+		data: LayoutData;
+		children: Snippet;
+	}
 
 	let { data, children }: Props = $props();
 
 	// Initialize theme from server data
 	$effect(() => {
-		themeState.init(data.theme)
-	})
+		themeState.init(data.theme);
+	});
 
 	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
-		...data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [],
+		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : []),
 		{ href: '/modules', label: 'Create Module' },
 		{ href: '/curriculum', label: 'Curriculum' },
 		{ href: '/resources', label: 'Resources' },
@@ -45,7 +46,7 @@
 		{ href: '/join-us', label: 'Join Us' },
 		{ href: '/contact', label: 'Contact' },
 		{ href: '/donate', label: 'Donate' }
-	])
+	]);
 
 	const footerLinks = $derived([
 		{ href: '/', label: 'Home' },
@@ -56,63 +57,61 @@
 		{ href: '/road-map', label: 'Road Map' },
 		{ href: '/contact', label: 'Contact' },
 		{ href: '/donate', label: 'Donate' }
-	])
+	]);
 
 	$effect(() => {
 		const localStorageKey = `scroll-y-position-${window.location.href}`;
 		const savedPosition = localStorage.getItem(localStorageKey);
 
 		if (savedPosition) {
-			window.scrollTo(0, parseInt(savedPosition, 10))
+			window.scrollTo(0, parseInt(savedPosition, 10));
 		}
 
 		const handleScroll = () => {
-			localStorage.setItem(localStorageKey, window.scrollY.toString())
-		}
+			localStorage.setItem(localStorageKey, window.scrollY.toString());
+		};
 
-		window.addEventListener('scroll', handleScroll, { passive: true })
+		window.addEventListener('scroll', handleScroll, { passive: true });
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
-	})
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 
 	onNavigate((navigation) => {
 		if (navigation.shallow) return;
 		if (!document.startViewTransition || motionState.reduced) return;
 
 		return new Promise((resolve) => {
-			// Determine if we are going "back"
-			const isBack = navigation.type === 'popstate'
+			const isBack = navigation.type === 'popstate';
 
 			if (isBack) {
-				document.documentElement.classList.add('back-transition')
+				document.documentElement.classList.add('back-transition');
 			}
 
 			const transition = document.startViewTransition(async () => {
-				resolve()
-				await navigation.complete
-			})
+				resolve();
+				await navigation.complete;
+			});
 
-			// Clean up the class after the transition finishes
 			transition.finished.finally(() => {
-				document.documentElement.classList.remove('back-transition')
-			})
-		})
-	})
+				document.documentElement.classList.remove('back-transition');
+			});
+		});
+	});
 </script>
 
 <svelte:head>
-	<title>The Autonomy Protocol</title>
+	<title>The Autonomy Protocol | Educator Portal</title>
 	<meta
 		name="description"
-		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
+		content="Transforming campus culture through student-led internal accountability, psychological literacy, and executive functioning."
 	/>
 	<link rel="stylesheet" href="/print.css" media="print" />
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
-	<meta name="theme-color" content="#bf616a" />
+	<meta name="theme-color" content="#388bfd" />
 	<link rel="icon" href={favicon} />
-	<meta property="og:title" content="The Autonomy Protocol" />
+	<meta property="og:title" content="The Autonomy Protocol | Educator Portal" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://the-autonomy-protocol.vercel.app/" />
 	<meta property="og:image" content="og-image.png" />
@@ -124,6 +123,7 @@
 
 {#snippet headerActions()}
 	<Pill>α Alpha</Pill>
+	<ThemeToggle />
 {/snippet}
 
 {#snippet headerNav()}
@@ -133,39 +133,30 @@
 <div class="layout-wrapper">
 	<Header logo={headerLogo} actions={headerActions} nav={headerNav} />
 
-	<Banner bannerName="site-under-development">
-		<p>This site is still under heavy development. Content may change without notice.</p>
+	<div class="main-container">
+		<Banner bannerName="site-under-development">
+			<p>This educator portal is under active development. Pedagogical resources and curricula are updated continuously.</p>
+			<p>
+				If you encounter any issues, please report them via our
+				<a href="/contact" use:foresight>contact page</a> or on our
+				<a href="https://github.com/we4bune-tim/The-Autonomy-Protocol/issues" target="_blank" rel="noreferrer">
+					GitHub Issues page
+				</a>.
+			</p>
+		</Banner>
 
-		<p>
-			If you encounter any issues, please report them via our 
-			<a href="/contact" use:foresight>contact page</a> or on
-			<a
-				href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues"
-				target="_blank"
-			>
-				GitHub Issues page
-			</a>.
-		</p>
-	</Banner>
-
-	<main>
-		<!-- {#if import.meta.env.DEV}
-			<BatteryLevel />
-		{/if} -->
-		{@render children()}
-		<ScrollToTop />
-	</main>
+		<main>
+			{@render children()}
+			<ScrollToTop />
+		</main>
+	</div>
 
 	<SessionWarning user={data.user} />
 
 	<Footer>
-		<FooterNav
-			links={footerLinks}
-			currentPath={page.url.pathname}
-		/>
-
+		<FooterNav links={footerLinks} currentPath={page.url.pathname} />
 		<hr class="footer-divider" />
-		<p class="copyright">The Autonomy Protocol © {new Date().getFullYear()}</p>
+		<p class="copyright">The Autonomy Protocol © {new Date().getFullYear()} • Educator Portal</p>
 	</Footer>
 </div>
 
@@ -223,17 +214,23 @@
 	}
 
 	.layout-wrapper {
-		max-width: 1200px;
 		min-height: 100svh;
-		margin: 0 auto;
-		display: grid;
-		padding: var(--gap-2);
-		grid-template-rows: auto auto 1fr auto;
-		gap: var(--gap-2);
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background-color: var(--bg);
+	}
 
-		p {
-			font-weight: bolder;
-		}
+	.main-container {
+		width: 100%;
+		max-width: var(--max-content-width, 1400px);
+		margin-inline: auto;
+		padding-inline: clamp(1rem, 3.5vw, 2.5rem);
+		padding-block: var(--gap-2);
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap-2);
 	}
 
 	main {
@@ -246,22 +243,18 @@
 	}
 
 	:global(.footer-divider) {
-		margin-left: calc(var(--gap-1) * -1);
-		margin-right: calc(var(--gap-1) * -1);
-		width: calc(100% + (var(--gap-1) * 2));
-
-		/* Base styles */
+		width: 100%;
+		max-width: 600px;
 		border: none;
-		opacity: 0.4;
-		margin-top: var(--gap-1);
-		margin-bottom: var(--gap-1);
+		border-top: 1px solid var(--ui-border);
+		opacity: 0.5;
+		margin-block: var(--gap-1);
 	}
 
 	:global(.copyright) {
-		color: var(--nord4);
-		font-size: var(--font-size-4);
-		letter-spacing: 0.05em;
-		opacity: 0.8;
+		color: var(--text-muted);
+		font-size: var(--font-size-sm);
+		letter-spacing: 0.04em;
 		margin: 0;
 		text-align: center;
 	}

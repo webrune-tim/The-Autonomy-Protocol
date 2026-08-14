@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%sveltekit.assets%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,33 +12,12 @@
       rel="stylesheet"
     />
 
-    <style>
-      :root {
-        --nord0: #2e3440;
-        --nord4: #d8dee9;
-        --bg: var(--nord0);
-        --fg: var(--nord4);
-      }
-      :root[data-theme="light"] {
-        --bg: var(--nord4);
-        --fg: var(--nord0);
-      }
-      body {
-        background-color: var(--bg);
-        color: var(--fg);
-        margin: 0;
-        font-family: "Inter", sans-serif;
-      }
-    </style>
-
     <script>
       (function () {
         try {
-          // 1. Get the preference, default to 'system' if nothing is stored
           const theme = localStorage.getItem("theme") || "system";
           const isSystemLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 
-          // 2. Resolve the actual theme to apply
           let resolved = "dark";
           if (theme === "light") {
             resolved = "light";
@@ -46,11 +25,9 @@
             resolved = "light";
           }
 
-          // 3. Apply immediately to prevent the blinding white void
           document.documentElement.setAttribute("data-theme", resolved);
           document.documentElement.style.colorScheme = resolved;
         } catch (e) {
-          // Fallback if localStorage or mediaMatch is unavailable
           document.documentElement.setAttribute("data-theme", "dark");
         }
       })();

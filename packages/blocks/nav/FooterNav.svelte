@@ -22,7 +22,6 @@
 			<li>
 				<a
 					href={link.href}
-					class="auto-contrast"
 					class:active={currentPath === link.href}
 					aria-current={currentPath === link.href ? 'page' : undefined}
 				>
@@ -32,7 +31,7 @@
 		{/each}
 
 		<li>
-			<a href={getPortalToggle(page.url.pathname).href}>
+			<a href={getPortalToggle(page.url.pathname).href} class="portal-toggle-link">
 				{getPortalToggle(page.url.pathname).label}
 			</a>
 		</li>
@@ -48,9 +47,8 @@
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
-		/* Center prevents awkward spacing on mobile when links wrap */
 		justify-content: center;
-		gap: var(--gap-2) var(--gap-3); /* Vertical gap, horizontal gap */
+		gap: var(--gap-1) var(--gap-3);
 		padding: 0;
 		margin: 0;
 	}
@@ -65,28 +63,35 @@
 		background: inherit;
 		text-decoration: none;
 		white-space: nowrap;
-		color: var(--nord4);
-
-		/* Technical Index Aesthetic */
-		font-size: 0.8rem;
-		font-weight: bold;
+		color: var(--text-secondary);
+		font-size: 0.85rem;
+		font-weight: 600;
 		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		opacity: 0.8; /* Slightly dim inactive links */
-		transition:
-			opacity 0.2s ease,
-			color 0.2s ease;
+		letter-spacing: 0.08em;
+		padding: 0.25rem 0.5rem;
+		border-radius: var(--border-radius-sm);
+		transition: opacity 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 
 		&:hover {
-			color: var(--brand-secondary);
-			opacity: 1;
-			font-weight: bolder;
+			color: var(--brand-primary);
+			text-decoration: none;
+			background: oklch(from var(--brand-primary) l c h / 0.1);
 		}
 
 		&.active {
-			font-weight: bolder;
-			opacity: 1;
-			border-bottom: 2px solid;
+			font-weight: 700;
+			color: var(--brand-primary);
+			border-bottom: 2px solid var(--brand-primary);
 		}
+	}
+
+	.portal-toggle-link {
+		color: var(--brand-tertiary);
+		font-weight: 700;
+	}
+
+	.portal-toggle-link:hover {
+		color: var(--brand-tertiary);
+		background: oklch(from var(--brand-tertiary) l c h / 0.15);
 	}
 </style>

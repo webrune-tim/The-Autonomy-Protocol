@@ -24,10 +24,12 @@
   --font-header-serif: var(--font-mono);
 
   /* Fluid Typographic Scale */
-  --font-size-1: clamp(2rem, 5svw, 4rem);
-  --font-size-2: clamp(1.75rem, 4svw, 3.5rem);
-  --font-size-3: clamp(1.25rem, 2.5svw, 2.25rem);
-  --font-size-4: clamp(0.875rem, 2svw, 1.5rem);
+  --font-size-1: clamp(2rem, 5svw, 3.75rem);
+  --font-size-2: clamp(1.5rem, 3.5svw, 2.5rem);
+  --font-size-3: clamp(1.15rem, 2.2svw, 1.75rem);
+  --font-size-4: clamp(0.9rem, 1.6svw, 1.25rem);
+  --font-size-base: clamp(1rem, 1.2vw, 1.125rem);
+  --font-size-sm: clamp(0.8rem, 1vw, 0.9rem);
 }
 
 /* ==========================================================================
@@ -54,8 +56,11 @@
 /* --- Document-level Typography --- */
 body {
   font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--fg);
 
-  /* Fix for text flickering during transitions & optimal rendering */
+  /* Anti-aliasing optimizations */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -68,20 +73,22 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-heading);
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: var(--gap-1);
 }
 
 h1 {
-  color: var(--text-heading-alt);
   font-size: var(--font-size-1);
+  color: var(--text-heading-alt);
 }
 
 h2 {
   font-size: var(--font-size-2);
+  color: var(--text-heading);
 }
 
 h3 {
@@ -91,17 +98,18 @@ h3 {
 
 h4 {
   font-size: var(--font-size-4);
+  color: var(--brand-primary);
 }
 
-h1,
-h2,
-h3,
-p,
-strong,
-span,
-li,
-li:before {
-  color: var(--safe-contrast);
+p {
+  color: inherit;
+  margin-top: 0;
+  margin-bottom: var(--gap-1);
+}
+
+strong {
+  font-weight: 700;
+  color: inherit;
 }
 
 /* --- Code & Monospace --- */
@@ -116,10 +124,14 @@ pre {
 a {
   color: var(--text-link);
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-weight: 600;
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
 }
 
 a:hover {
+  color: var(--text-link-hover);
   text-decoration: underline;
 }
 
@@ -138,6 +150,7 @@ button {
 details > summary {
   font-weight: bold;
   font-size: var(--font-size-4);
+  cursor: pointer;
 }
 
 details strong {
@@ -146,4 +159,13 @@ details strong {
 
 .larger-text {
   font-size: var(--font-size-3);
+  line-height: 1.5;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
 }

@@ -7,7 +7,7 @@
 </script>
 
 <h1>Hi, {data.user.name}!</h1>
-<p>Your user ID is {data.user.id}.</p>
+<p>Your user ID is <code>{data.user.id}</code>.</p>
 <p>Current Role: <strong>{data.user.role}</strong></p>
 
 <div class="flex">
@@ -124,26 +124,33 @@
 		display: flex;
 		gap: 1rem;
 		margin-bottom: 2rem;
+		flex-wrap: wrap;
 	}
 
 	.search-form {
 		display: flex;
 		gap: 0.5rem;
 		margin-bottom: 1.5rem;
+		flex-wrap: wrap;
 	}
 
 	.search-input {
 		flex: 1;
-		padding: 0.75rem;
-		background: rgba(0, 0, 0, 0.2);
-		border: 1px solid var(--brand-tertiary);
+		min-width: 240px;
+		padding: 0.75rem 1rem;
+		background: var(--surface-2);
+		border: 1px solid var(--ui-border);
 		color: var(--fg);
+		border-radius: var(--border-radius-sm);
 	}
 
 	.table-wrapper {
 		width: 100%;
 		overflow-x: auto;
 		margin-top: 1rem;
+		border: 1px solid var(--ui-border);
+		border-radius: var(--border-radius-sm);
+		background: var(--surface-1);
 	}
 
 	.admin-table {
@@ -161,27 +168,31 @@
 
 	.admin-table th,
 	.admin-table td {
-		padding: 0.75rem;
+		padding: 0.75rem 1rem;
 		text-align: left;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		border-bottom: 1px solid var(--ui-border-subtle);
+		color: var(--fg);
 	}
 
 	.admin-table th {
-		color: var(--brand-tertiary);
+		color: var(--brand-primary);
+		background: var(--surface-2);
 		text-transform: uppercase;
 		font-size: 0.75rem;
 		letter-spacing: 0.05em;
+		font-weight: 700;
 	}
 
 	.role-select {
-		padding: 0.4rem;
-		background: var(--bg);
+		padding: 0.4rem 0.6rem;
+		background: var(--surface-2);
 		color: var(--fg);
-		border: 1px solid var(--brand-tertiary);
+		border: 1px solid var(--ui-border);
+		border-radius: var(--border-radius-sm);
 	}
 
 	.no-results {
-		opacity: 0.6;
+		color: var(--text-muted);
 		font-style: italic;
 	}
 
@@ -207,7 +218,7 @@
 		}
 
 		.admin-table tr {
-			border: 1px solid rgba(255, 255, 255, 0.15);
+			border: 1px solid var(--ui-border);
 			padding: 0.5rem;
 			margin-bottom: 0.75rem;
 		}
@@ -217,7 +228,7 @@
 			justify-content: space-between;
 			align-items: center;
 			gap: 1rem;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			border-bottom: 1px solid var(--ui-border-subtle);
 			padding: 0.6rem 0.5rem;
 			text-align: right;
 			word-break: break-word;
@@ -230,7 +241,7 @@
 		.admin-table td::before {
 			content: attr(data-label);
 			flex: 0 0 auto;
-			color: var(--brand-tertiary);
+			color: var(--brand-primary);
 			text-transform: uppercase;
 			font-size: 0.7rem;
 			letter-spacing: 0.05em;

@@ -81,7 +81,6 @@
     class="card-header"
     style={cardColor ? `--card-color: var(--brand-${cardColor}, ${cardColor});` : undefined}
   >
-    <div class="header-glare"></div>
     <div class="header-topline">
       {#if categoryMeta}
         <span class="category-badge">{categoryMeta.label}</span>
@@ -123,84 +122,49 @@
 </article>
 
 <style>
-  /* ---------------------------------------------------- */
-  /* Nth-Child Pattern Injecting Brand Tokens             */
-  /* ---------------------------------------------------- */
-
-  /* Pattern 1: Brand Primary */
+  /* Nth-Child Pattern Injecting Brand Tokens */
   :global(.card:nth-child(3n + 1)) {
     --card-color: var(--brand-primary);
   }
 
-  /* Pattern 2: Brand Secondary */
   :global(.card:nth-child(3n + 2)) {
     --card-color: var(--brand-secondary);
   }
 
-  /* Pattern 3: Brand Tertiary */
   :global(.card:nth-child(3n)) {
     --card-color: var(--brand-tertiary);
   }
 
-  /* ---------------------------------------------------- */
-
   .card {
-    --opacity: 65%;
-
-    font-family: var(--font-sans-2);
-
+    font-family: var(--font-body, sans-serif);
     border-radius: var(--border-radius);
-    background-color: hsl(from var(--surface-2) h s calc(l - 20));
-    border: 1px solid var(--surface-3);
-
-    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.05);
-    --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
-
-    --shadow-color-hsl: 220 20% 10%;
-
-    --shadow-base:
-      1px 1px 1.1px hsl(var(--shadow-color-hsl) / 1),
-      1.9px 1.9px 2px -1.7px hsl(var(--shadow-color-hsl) / 0.82);
-
-    box-shadow: var(--shadow-base), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    min-height: 480px;
+    background-color: var(--surface-1);
+    border: 1px solid var(--ui-border);
+    box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.15);
+    min-height: 440px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-out), border-color 0.4s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
 
   .card:hover {
-    --opacity: 85%;
-
-    transform: translateY(-6px) scale(1.02);
-
-    background-color: hsl(from var(--surface-2) h s calc(l - 15));
-
-    box-shadow:
-      var(--shadow-base),
-      0 20px 40px rgba(0,0,0,0.5),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border-color: var(--ui-border);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.25);
+    border-color: var(--card-color);
   }
 
   /* Header Styling */
   .card-header {
-    background: linear-gradient(135deg, var(--card-color) 0%, var(--surface-1) 100%);
+    background: linear-gradient(135deg, var(--card-color) 0%, oklch(from var(--card-color) calc(l - 0.2) c h) 100%);
     position: relative;
-    height: 180px;
     padding: var(--gap-2);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    min-height: 140px;
     border-bottom: 2px solid var(--card-color);
-  }
-
-  .header-glare {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%);
-    pointer-events: none;
+    color: #ffffff;
   }
 
   .header-topline {
@@ -208,20 +172,19 @@
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
-    margin: 0 0 0.5rem 0;
-    z-index: 1;
+    margin-block-end: 0.5rem;
     flex-wrap: wrap;
   }
 
   .card-header .subtitle {
-    font-family: monospace;
-    font-size: 1.05rem;
-    color: color-mix(in oklch, var(--card-color), oklch(0.96 0.01 290) var(--opacity));
+    font-family: var(--font-mono, monospace);
+    font-size: 0.85rem;
+    color: #ffffff;
+    opacity: 0.9;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
     margin: 0;
-    z-index: 1;
-    transition: color 1s ease;
   }
 
   .category-badge {
@@ -230,22 +193,24 @@
     padding: 0.2rem 0.55rem;
     border-radius: 4px;
     background: rgba(0, 0, 0, 0.45);
-    border: 1px solid color-mix(in oklch, var(--card-color), transparent 45%);
-    font-family: monospace;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: var(--font-mono, monospace);
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--fg);
+    color: #ffffff;
   }
 
   .card-header h1 {
     margin: 0;
-    font-family: var(--font-thick);
-    font-size: 2rem;
+    font-family: var(--font-display, sans-serif);
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
     text-transform: uppercase;
-    font-weight: 400;
-    z-index: 1;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
 
   /* Content Area */
@@ -255,13 +220,14 @@
     display: flex;
     flex-direction: column;
     gap: var(--gap-1);
+    background: var(--surface-1);
   }
 
   /* Progress Section */
   .progress {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .progress-labels {
@@ -271,52 +237,50 @@
   }
 
   .progress-title {
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.82rem;
+    font-weight: 700;
     color: var(--fg);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.04em;
   }
 
   .progress-numbers {
-    font-family: monospace;
-    font-size: 1rem;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.95rem;
     color: var(--card-color);
-    font-weight: bold;
+    font-weight: 700;
   }
 
   .progress-track {
     width: 100%;
-    height: 6px;
-    background-color: var(--bg-surface);
-    border-radius: 4px;
+    height: 8px;
+    background-color: var(--surface-3);
+    border-radius: 9999px;
     overflow: hidden;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
   }
 
   .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--card-color));
-    border-radius: 4px;
-    transition: width 1.2s var(--ease-out);
-    box-shadow: 0 0 10px var(--card-color-dark);
+    background: var(--card-color);
+    border-radius: 9999px;
+    transition: width 0.8s ease;
   }
 
   /* Description */
   .description {
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
-    line-height: 1.5;
-    color: var(--fg-surface);
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
+    line-height: 1.55;
+    color: var(--text-secondary);
   }
 
   .description p {
     margin: 0;
-    text-wrap: pretty;
   }
 
   /* Footer & Button */
   footer {
     margin-top: auto;
+    padding-top: var(--gap-1);
   }
 
   .action-btn-link {
@@ -327,23 +291,24 @@
 
   .action-btn {
     width: 100%;
-    padding: var(--gap-1);
-    background-color: var(--bg-surface);
-    border: 1px solid var(--card-color);
+    padding: 0.75rem 1rem;
+    background-color: var(--surface-2);
+    border: 1.5px solid var(--card-color);
     color: var(--card-color);
-    border-radius: calc(var(--border-radius) / 2);
-    font-family: monospace;
-    font-weight: bold;
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-ui, sans-serif);
+    font-size: 0.85rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.05em;
     cursor: pointer;
-    transition: all 0.3s var(--ease-out);
+    transition: all 0.2s ease;
   }
 
   .action-btn:hover {
     background-color: var(--card-color);
-    color: var(--card-color-contrast, #fff);
-    box-shadow: 0 4px 15px hsl(from var(--card-color) h s calc(l - 5) / 75%);
+    color: #ffffff;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px oklch(from var(--card-color) l c h / 0.35);
   }
 </style>

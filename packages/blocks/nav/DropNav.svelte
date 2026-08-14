@@ -1,8 +1,7 @@
 <script lang="ts">
     import { page } from '$app/state'
-    import { Menu } from '@lucide/svelte'
+    import { Menu, X } from '@lucide/svelte'
     import { fly } from 'svelte/transition'
-    import { ThemeToggle } from '@autonomy/theme-toggle'
     import { cubicOut, cubicIn } from 'svelte/easing'
     import { getPortalToggle } from './portal-toggle.svelte.ts'
 
@@ -48,20 +47,22 @@
         onclick={toggleMenu}
         aria-haspopup="menu"
         aria-expanded={isOpen}
+        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
     >
-        <Menu size={32} />
+        {#if isOpen}
+            <X size={28} />
+        {:else}
+            <Menu size={28} />
+        {/if}
     </button>
 
     {#if isOpen}
         <div
             class="dropdown-content"
-            in:fly={{ y: -10, duration: 550, easing: cubicOut }}
-            out:fly={{ y: -10, duration: 150, easing: cubicIn }}
+            in:fly={{ y: -8, duration: 250, easing: cubicOut }}
+            out:fly={{ y: -8, duration: 150, easing: cubicIn }}
         >
             <nav>
-                <section class="theme-toggle-wrapper">
-                    <ThemeToggle />
-                </section>
                 <ul>
                     {#each links as link}
                         <li>
@@ -76,7 +77,7 @@
                     {/each}
 
                     <li>
-                        <a href={getPortalToggle(page.url.pathname).href} onclick={closeMenu}>
+                        <a href={getPortalToggle(page.url.pathname).href} class="portal-link" onclick={closeMenu}>
                             {getPortalToggle(page.url.pathname).label}
                         </a>
                     </li>
@@ -89,7 +90,7 @@
                         </li>
                     {:else}
                         <li>
-                            <a href="/login" onclick={closeMenu}>Login</a>
+                            <a href="/login" class="login-link" onclick={closeMenu}>Login</a>
                         </li>
                     {/if}
                 </ul>
@@ -99,14 +100,6 @@
 </div>
 
 <style>
-    .theme-toggle-wrapper {
-        width: 100%;
-        display: flex;
-        place-content: center;
-        padding: 0.75rem 0.5rem 0.5rem;
-        border-bottom: 1px solid rgb(from var(--fg) r g b / 0.1);
-    }
-
     .dropdown-wrapper {
         position: relative;
         display: inline-flex;
@@ -120,13 +113,15 @@
         background: transparent;
         color: var(--fg);
         cursor: pointer;
-        padding: 0.25rem;
-        border-radius: var(--border-radius);
-        transition: transform 0.15 ease, background-color 0.2s ease;
+        padding: 0.35rem;
+        border-radius: var(--border-radius-sm);
+        border: 1px solid transparent;
+        transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
     }
 
     button.dropdown-toggle:hover {
-        background: rgb(from var(--fg) r g b / 0.1);
+        background: oklch(from var(--fg) l c h / 0.1);
+        border-color: var(--ui-border);
     }
 
     button.dropdown-toggle:active {
@@ -137,14 +132,14 @@
         position: absolute;
         top: calc(100% + 0.5rem);
         right: 0;
-        background: oklch(from var(--bg) l c h / 0.92);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 2px solid var(--brand-primary);
-        box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgb(from var(--brand-primary) r g b / 0.25);
+        background: oklch(from var(--surface-1) l c h / 95%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--ui-border);
+        box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.4), 0 0 0 1px oklch(from var(--brand-primary) l c h / 0.2);
         border-radius: var(--border-radius);
         width: max-content;
-        min-width: 210px;
+        min-width: 220px;
         max-height: 80dvh;
         z-index: 100;
         overflow-y: auto;
@@ -169,21 +164,33 @@
         color: var(--fg);
         font-weight: 600;
         font-size: 0.85rem;
-        letter-spacing: 0.03em;
+        letter-spacing: 0.04em;
         white-space: nowrap;
-        border-radius: var(--border-radius);
+        border-radius: var(--border-radius-sm);
         transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
     }
 
     a.active {
         color: var(--brand-primary);
-        background: rgb(from var(--brand-primary) r g b / 0.15);
+        background: oklch(from var(--brand-primary) l c h / 0.15);
         border-left: 3px solid var(--brand-primary);
+        font-weight: 700;
     }
 
     a:hover {
         color: var(--fg);
-        background: rgb(from var(--brand-secondary) r g b / 0.2);
+        background: oklch(from var(--brand-secondary) l c h / 0.15);
+    }
+
+    .portal-link {
+        color: var(--brand-tertiary);
+        border-top: 1px solid var(--ui-border);
+        margin-top: 0.25rem;
+        padding-top: 0.65rem;
+    }
+
+    .portal-link:hover {
+        background: oklch(from var(--brand-tertiary) l c h / 0.15);
     }
 
     .link-button {
@@ -196,15 +203,19 @@
         text-transform: uppercase;
         font-weight: 600;
         font-size: 0.85rem;
-        letter-spacing: 0.03em;
-        color: var(--fg);
+        letter-spacing: 0.04em;
+        color: var(--error-border);
         cursor: pointer;
-        border-radius: var(--border-radius);
+        border-radius: var(--border-radius-sm);
         transition: background-color 0.2s ease;
     }
 
     .link-button:hover {
-        color: var(--fg);
-        background: rgb(from var(--brand-secondary) r g b / 0.2);
+        background: oklch(from var(--error-border) l c h / 0.15);
+    }
+
+    .login-link {
+        color: var(--brand-primary);
+        font-weight: 700;
     }
 </style>
