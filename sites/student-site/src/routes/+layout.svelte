@@ -22,7 +22,7 @@
 	import { themeState } from '@autonomy/theme-toggle';
 
 	// Local components
-	// import { ThemeToggle } from '$components'
+	// import { ThemeToggle } from '#lib/components'
 
 	interface Props {
 		data: LayoutData

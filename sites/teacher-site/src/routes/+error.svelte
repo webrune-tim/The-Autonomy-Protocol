@@ -3,7 +3,7 @@
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { foresight } from '@autonomy/actions'
 
-	import ErrorImage from '$images/error.png'
+	import ErrorImage from '#lib/assets/images/error.png'
 </script>
 
 <RevealingImage src={ErrorImage} alt="Malfunctioning robot holding a plug" />

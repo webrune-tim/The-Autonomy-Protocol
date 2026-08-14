@@ -5,7 +5,7 @@
 		initModuleState,
 		toggleSection,
 		saveSectionResponse
-	} from '$stores/moduleStore.svelte';
+	} from '#lib/stores/moduleStore.svelte';
 	import { ArrowBigLeft } from '@lucide/svelte';
 	import { parseMarkdown } from '#lib/utils/markdown.js';
 	import type { PageData } from './$types';

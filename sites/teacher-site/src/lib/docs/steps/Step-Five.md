@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## **We voiced the truth of our choices to ourselves and a trusted member of our support network, bringing our inventory into the light to break the cycle of secrecy.**

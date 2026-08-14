@@ -4,7 +4,7 @@
 	import { foresight } from '@autonomy/actions'
 	import { Download, ShieldQuestionMark } from '@lucide/svelte'
 
-	import CurriculumImage from '$images/curriculum.png'
+	import CurriculumImage from '#lib/assets/images/curriculum.png'
 </script>
 
 <section

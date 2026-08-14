@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## **“We took direct action to repair the damage we caused, speaking face-to-face or changing our behavior, except when doing so would cause further drama, stress, or hurt to others.”**

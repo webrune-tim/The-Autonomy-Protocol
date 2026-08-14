@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getModuleStats } from '$stores/moduleStore.svelte';
+  import { getModuleStats } from '#lib/stores/moduleStore.svelte';
   import { getCategoryById } from '#lib/constants/categories.js';
 
   interface Props {

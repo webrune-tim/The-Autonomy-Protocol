@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "imports": {
-    "#lib": "./src/lib/index.js",
+    "#lib": "./src/lib/index.ts",
     "#lib/*": "./src/lib/*"
   },
   "scripts": {

@@ -23,7 +23,13 @@
   }
 
   body {
-    font-family: Inter, sans-serif !important;
+    font-family:
+      "Plus Jakarta Sans",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif !important;
     font-size: 12pt;
     line-height: 1.5;
     background-color: #fff !important;
@@ -40,15 +46,22 @@
     display: none !important;
   }
 
-  /* 3. TYPOGRAPHY (Aligning with your headings) */
+  /* 3. TYPOGRAPHY */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: Poppins, sans-serif !important;
-    text-transform: uppercase;
+    font-family:
+      "Space Grotesk",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     break-after: avoid;
@@ -73,9 +86,9 @@
     display: none !important;
   }
 
-  /* Handle your Special Elite font for Step numbers if used */
+  /* Handle Step numbers / metrics */
   .step-grid span {
-    font-family: "Special Elite", serif !important;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace !important;
     font-size: 20pt !important;
     margin-right: 10px;
   }

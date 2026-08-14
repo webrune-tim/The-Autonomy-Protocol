@@ -243,7 +243,7 @@ The teacher site deploys to Vercel via the SvelteKit adapter. Configure the foll
 
 - Runes mode forced for all files except node_modules
 - mdsvex preprocessor for `.md` and `.svx` files
-- Path aliases: `$components`, `$docs`, `$images`, `$stores`
+- Standard SvelteKit `$lib` imports: `$lib/actions`, `$lib/components`, `$lib/docs`, `$lib/assets/images`, `$lib/stores`
 
 ### TypeScript Configuration
 

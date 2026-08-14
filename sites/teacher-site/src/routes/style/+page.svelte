@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { matrixStagger, motion } from '$actions'
+	import { matrixStagger, motion } from '#lib/actions'
 
 	// State for dynamic theme engine testing
 	let currentTheme = $state('dark')
@@ -95,22 +95,21 @@
 	<h2>1. Typographic Print Engine</h2>
 	<div class="sg-grid typography-showcase">
 		<div class="sg-card layout-flow">
-			<h1>Heading 1 (Passion One)</h1>
-			<h2>Heading 2 (Passion One)</h2>
-			<h3>Heading 3 (Passion One)</h3>
-			<h4>Heading 4 (Passion One)</h4>
+			<h1>Heading 1 (Display Token)</h1>
+			<h2>Heading 2 (Display Token)</h2>
+			<h3>Heading 3 (Display Token)</h3>
+			<h4>Heading 4 (Display Token)</h4>
 		</div>
 
 		<div class="sg-card layout-flow">
 			<p class="larger-text">
-				This is larger paragraph text styled with <code>.larger-text</code> using Inter
-				or Poppins.
+				This is larger paragraph text styled with <code>.larger-text</code> rendered with the active body typeface (<code>Inter</code> in Teacher Portal / <code>Plus Jakarta Sans</code> in Student Portal).
 			</p>
 			<p>
 				This is basic body paragraph styling. It automatically leverages your
-				anti-aliasing optimizations. Inside it, you can view an <a href="#typography"
+				anti-aliasing optimizations and high-contrast dark theme tokens. Inside it, you can view an <a href="#typography"
 					>inline text hyperlink</a
-				> demonstrating automatic high-contrast print transitions.
+				> demonstrating automatic high-contrast transitions.
 			</p>
 
 			<details>

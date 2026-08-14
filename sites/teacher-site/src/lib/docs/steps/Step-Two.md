@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## As students, we all need help sometimes. There is no shame in it

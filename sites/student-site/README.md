@@ -131,7 +131,7 @@ The student site deploys to Vercel via the SvelteKit adapter. No environment var
 
 - Runes mode forced for all files except node_modules
 - mdsvex preprocessor for `.md` and `.svx` files
-- Path aliases: `$components`, `$images`, `$stores`
+- Standard SvelteKit `$lib` imports: `$lib/components`, `$lib/assets/images`, `$lib/stores`
 
 ### Testing
 

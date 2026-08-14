@@ -3,8 +3,8 @@
 	import { foresight, thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
 
-	import MissionImage from '$images/cycle.png'
-	import ShiftImage from '$images/shift-image.png'
+	import MissionImage from '#lib/assets/images/cycle.png'
+	import ShiftImage from '#lib/assets/images/shift-image.png'
 </script>
 
 <div

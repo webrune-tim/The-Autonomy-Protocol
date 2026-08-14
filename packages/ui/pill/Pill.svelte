@@ -25,6 +25,6 @@
 		border: 1px solid var(--brand-primary);
 		padding: 0.5rem;
 		font-size: 12px;
-		font-family: 'Poppins', sans-serif;
+		font-family: var(--font-ui, var(--font-sans-1));
 	}
 </style>

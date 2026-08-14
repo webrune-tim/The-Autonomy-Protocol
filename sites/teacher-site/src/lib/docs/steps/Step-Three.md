@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## We made a deliberate choice to lean on the guidance of our support network and trust the process of the protocol to help manage the things we cannot handle alone.

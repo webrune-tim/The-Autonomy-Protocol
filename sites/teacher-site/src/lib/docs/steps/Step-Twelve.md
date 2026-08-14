@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## **“Having experienced a total shift in our perspective and capability as a result of these steps, we committed to leading by example, supporting other students who are struggling, and applying these principles of self-governance to every area of our lives.”**

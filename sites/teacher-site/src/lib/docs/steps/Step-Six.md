@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## **We became entirely ready to let go of the habits and mindsets that hold us back, committing to the work of replacing them with better ones.**

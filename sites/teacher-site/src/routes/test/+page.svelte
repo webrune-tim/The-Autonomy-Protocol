@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { motion, matrixStagger } from '$actions'
+	import { motion, matrixStagger } from '#lib/actions'
 
 	let isHovered = $state(false)
 	let isFocused = $state(false)

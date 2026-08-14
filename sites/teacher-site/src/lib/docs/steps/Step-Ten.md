@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## **“We kept a daily check on our habits and choices, and when we made a mistake, we owned it immediately to keep minor slip-ups from turning into major problems.”**

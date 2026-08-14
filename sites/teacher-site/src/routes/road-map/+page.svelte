@@ -3,7 +3,7 @@
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { BrickWall, HardHat, Puzzle } from '@lucide/svelte'
 
-	import RoadMapImage from '$images/road-map.png'
+	import RoadMapImage from '#lib/assets/images/road-map.png'
 </script>
 
 <section

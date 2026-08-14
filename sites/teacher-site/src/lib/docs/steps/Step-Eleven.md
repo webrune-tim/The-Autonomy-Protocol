@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## **“We used intentional reflection and quiet focus to stay deeply connected to our personal values and long-term goals, seeking only the clarity to see the right path and the discipline to follow it.”**

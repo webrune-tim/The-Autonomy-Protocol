@@ -32,21 +32,6 @@ export default defineConfig({
           domains: [],
         },
       }),
-
-      alias: {
-        $actions: "src/lib/actions",
-        $components: "src/lib/components",
-        $docs: "src/lib/docs",
-        $images: "src/lib/assets/images",
-        $stores: "src/lib/stores",
-      },
-      // @migration-task `typescript.config` is deprecated; configure TypeScript in tsconfig.json directly
-      typescript: {
-        config: (config) => ({
-          ...config,
-          include: [...config.include, "../drizzle.config.ts"],
-        }),
-      },
     }),
   ],
   server: {

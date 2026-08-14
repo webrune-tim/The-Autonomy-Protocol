@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## **“We responsibly put our plan into action, accepting our limitations and leaning on the tools and support of the protocol to reshape our habits.”**

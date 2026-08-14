@@ -5,7 +5,7 @@
 	import { HeartPlus } from '@lucide/svelte'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
-	import ResourcesImage from '$images/resources.png'
+	import ResourcesImage from '#lib/assets/images/resources.png'
 
 	type Tab = 'steps' | 'agreements' | 'freshmen' | 'seniors'
 	let activeTab = $state<Tab>('steps')
@@ -38,16 +38,16 @@
 
 	const allLinks = {
 		steps: transformGlobToLinks(
-			import.meta.glob('$docs/steps/*.md', { eager: true })
+			import.meta.glob('/src/lib/docs/steps/*.md', { eager: true })
 		),
 		agreements: transformGlobToLinks(
-			import.meta.glob('$docs/agreements/*.md', { eager: true })
+			import.meta.glob('/src/lib/docs/agreements/*.md', { eager: true })
 		),
 		freshmen: transformGlobToLinks(
-			import.meta.glob('$docs/freshman/*.md', { eager: true })
+			import.meta.glob('/src/lib/docs/freshman/*.md', { eager: true })
 		),
 		seniors: transformGlobToLinks(
-			import.meta.glob('$docs/senior/*.md', { eager: true })
+			import.meta.glob('/src/lib/docs/senior/*.md', { eager: true })
 		)
 	}
 </script>

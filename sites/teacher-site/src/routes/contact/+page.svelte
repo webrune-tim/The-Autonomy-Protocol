@@ -186,7 +186,7 @@
 		border: none;
 		background: none;
 		color: var(--fg);
-		font-family: 'Poppins', sans-serif;
+		font-family: var(--font-sans-1);
 		font-weight: 500;
 		cursor: pointer;
 		transition: color 0.3s ease;
@@ -236,7 +236,7 @@
 		color: white;
 		border: none;
 		padding: 1rem;
-		font-family: 'Poppins', sans-serif;
+		font-family: var(--font-sans-1);
 		font-weight: bold;
 		text-transform: uppercase;
 		cursor: pointer;

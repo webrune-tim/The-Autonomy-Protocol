@@ -7,7 +7,7 @@ published: true
 ---
 
 <script>
-  import { TeacherOnly } from "$components";
+  import { TeacherOnly } from "#lib/components";
 </script>
 
 ## **“We identified the individuals and relationships our negative choices have damaged, and we developed the genuine willingness to take ownership and repair those connections.”**

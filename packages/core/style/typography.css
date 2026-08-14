@@ -1,26 +1,64 @@
-/* packages/ui/new-style/typography.css */
+/* packages/core/style/typography.css */
 
+/* ==========================================================================
+   1. GLOBAL / STUDENT TYPOGRAPHY BASELINE
+   Font Stack: Space Grotesk (Display / UI) + Plus Jakarta Sans (Body) + JetBrains Mono (Code)
+   Aesthetic: Fun, energetic, modern CTE/youth appeal with exceptional readability
+   ========================================================================== */
 :root {
-  --font-sans-1: "Poppins", sans-serif;
-  --font-sans-2: "Inter", sans-serif;
-  --font-serif: "Special Elite", system-ui;
-  --font-thick: "Passion One", sans-serif;
-  --font-header-sans-1: var(--font-sans-1);
-  --font-header-sans-2: var(--font-sans-2);
-  --font-header-serif: var(--font-serif);
+  /* Core Typographic Roles */
+  --font-display:
+    "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-ui: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Backward-Compatible Token Aliases */
+  --font-thick: var(--font-display);
+  --font-sans-1: var(--font-ui);
+  --font-sans-2: var(--font-body);
+  --font-serif: var(--font-mono);
+  --font-header-sans-1: var(--font-display);
+  --font-header-sans-2: var(--font-body);
+  --font-header-serif: var(--font-mono);
+
+  /* Fluid Typographic Scale */
   --font-size-1: clamp(2rem, 5svw, 4rem);
   --font-size-2: clamp(1.75rem, 4svw, 3.5rem);
   --font-size-3: clamp(1.25rem, 2.5svw, 2.25rem);
   --font-size-4: clamp(0.875rem, 2svw, 1.5rem);
 }
 
+/* ==========================================================================
+   2. TEACHER PORTAL TYPOGRAPHIC OVERRIDES
+   Font Stack: Plus Jakarta Sans (Display / UI) + Inter (Body) + JetBrains Mono (Code)
+   Aesthetic: Clean, collegiate, authoritative, highly structured professional environment
+   ========================================================================== */
+:root[data-site="teacher"] {
+  --font-display:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-ui: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --font-thick: var(--font-display);
+  --font-sans-1: var(--font-ui);
+  --font-sans-2: var(--font-body);
+  --font-serif: var(--font-mono);
+  --font-header-sans-1: var(--font-display);
+  --font-header-sans-2: var(--font-body);
+  --font-header-serif: var(--font-mono);
+}
+
 /* --- Document-level Typography --- */
 body {
-  font-family: var(--font-sans-2);
+  font-family: var(--font-body);
 
-  /* Fix for text flickering during transitions */
+  /* Fix for text flickering during transitions & optimal rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* --- Headings --- */
@@ -31,9 +69,10 @@ h4,
 h5,
 h6 {
   color: var(--text-heading);
-  font-family: var(--font-thick);
-  text-transform: uppercase;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 h1 {
@@ -65,6 +104,14 @@ li:before {
   color: var(--safe-contrast);
 }
 
+/* --- Code & Monospace --- */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+}
+
 /* --- Inline Text Elements --- */
 a {
   color: var(--text-link);
@@ -76,17 +123,15 @@ a:hover {
   text-decoration: underline;
 }
 
-/*strong {
-  color: var(--brand-secondary);
-}*/
-
 label {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-family: var(--font-ui);
+  font-weight: 600;
 }
 
 input,
-textarea {
+textarea,
+select,
+button {
   font-family: inherit;
 }
 
