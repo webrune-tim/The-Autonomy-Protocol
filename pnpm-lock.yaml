@@ -266,7 +266,7 @@ importers:
     devDependencies:
       '@better-auth/cli':
         specifier: ~1.4.21
-        version: 1.4.21(@better-fetch/fetch@1.1.21)(@libsql/client@0.17.4)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-call@1.1.8(zod@4.4.3))(drizzle-kit@0.31.10)(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
+        version: 1.4.21(@better-fetch/fetch@1.1.21)(@libsql/client@0.17.4)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-call@1.1.8(zod@4.4.3))(drizzle-kit@0.31.10)(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10(@types/node@22.20.1)(@vitest/browser-preview@4.1.10)(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3)))
       '@eslint/compat':
         specifier: ^2.1.0
         version: 2.1.0(eslint@10.8.1(jiti@2.7.0))
@@ -401,7 +401,7 @@ importers:
         version: link:../../packages/content/twelve-steps
       '@better-auth/infra':
         specifier: 'catalog:'
-        version: 0.2.14(deb762a3e6760a93177773b743ea56ff)
+        version: 0.2.14(68657ff8689ba09350b2d771b3000862)
       '@lucide/svelte':
         specifier: 'catalog:'
         version: 1.30.0(svelte@5.56.8(@typescript-eslint/types@8.66.0))
@@ -423,7 +423,7 @@ importers:
     devDependencies:
       '@better-auth/cli':
         specifier: ~1.4.21
-        version: 1.4.21(@better-fetch/fetch@1.1.21)(@libsql/client@0.17.4)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-call@1.1.8(zod@4.4.3))(drizzle-kit@0.31.10)(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
+        version: 1.4.21(@better-fetch/fetch@1.1.21)(@libsql/client@0.17.4)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-call@1.1.8(zod@4.4.3))(drizzle-kit@0.31.10)(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
       '@eslint/compat':
         specifier: ^2.1.0
         version: 2.1.0(eslint@10.8.1(jiti@2.7.0))
@@ -434,11 +434,14 @@ importers:
         specifier: ^0.17.4
         version: 0.17.4
       '@sveltejs/adapter-vercel':
-        specifier: ^6.3.4
-        version: 6.3.4(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))
+        specifier: next
+        version: 7.0.0-next.6(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))
       '@sveltejs/kit':
-        specifier: ^2.70.2
-        version: 2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)
+        specifier: next
+        version: 3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)
+      '@sveltejs/load-config':
+        specifier: ^0.2.2
+        version: 0.2.2
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.3.0
         version: 7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))
@@ -450,7 +453,7 @@ importers:
         version: 22.20.1
       better-auth:
         specifier: ~1.4.22
-        version: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
+        version: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
       dotenv:
         specifier: 'catalog:'
         version: 17.4.2
@@ -2073,6 +2076,11 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
 
+  '@sveltejs/adapter-vercel@7.0.0-next.6':
+    resolution: {integrity: sha512-Ebl3GmqCYKD5zz0crDYe7Ge5s3g8oNaYyIgCGftuIqmJgvg02PtM/pqBra4metf/WFTk1HR97wkh1IGNkCa+tQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^3.0.0-next.0
+
   '@sveltejs/kit@2.70.2':
     resolution: {integrity: sha512-RzRoRpuR2KXqc5yMO0akQHDZeT4AslOlznGITURsqHaVbtyYP4Wn3eE3gxj9JcDyNYO0crkxhdwFHc+2vkVm6w==}
     engines: {node: '>=18.13'}
@@ -2083,6 +2091,22 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: ^5.3.3 || ^6.0.0
       vite: ^5.0.3 || ^6.0.0 || ^7.0.0-beta.0 || ^8.0.0
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
+      typescript:
+        optional: true
+
+  '@sveltejs/kit@3.0.0-next.23':
+    resolution: {integrity: sha512-vQEp3qR99VrVlRe+jLKUAAelj75xTf/TBdY40LM0fA0JiQiy+rT8vD4GKgMG86WjOk63E3Bas15aQnYApKyfvQ==}
+    engines: {node: '>=22.17'}
+    hasBin: true
+    peerDependencies:
+      '@opentelemetry/api': ^1.0.0
+      '@sveltejs/vite-plugin-svelte': ^7.0.0
+      svelte: ^5.56.4
+      typescript: ^6.0.0
+      vite: ^8.0.12
     peerDependenciesMeta:
       '@opentelemetry/api':
         optional: true
@@ -2408,6 +2432,7 @@ packages:
   '@xmldom/xmldom@0.8.13':
     resolution: {integrity: sha512-KRYzxepc14G/CEpEGc3Yn+JKaAeT63smlDr+vjB8jRfgTBBI9wRj/nkQEO+ucV8p8I9bfKLWp37uHgFrbntPvw==}
     engines: {node: '>=10.0.0'}
+    deprecated: this version has critical issues, please update to the latest version
 
   '@yuku-codegen/binding-darwin-arm64@0.5.48':
     resolution: {integrity: sha512-yo96Oef12WzqnphInfz/eexVse3+kWgfGS5g2S3rFS3dcGn1ENW9xLFDZUP9rh+yP76DOq38wBoFi1+I9+6qBg==}
@@ -2873,6 +2898,10 @@ packages:
   cookie@0.6.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
+
+  cookie@2.0.1:
+    resolution: {integrity: sha512-yuToqVvRrj6pfDXREyQAAv8SkAEk/8GS3jQRTiUMm66TVtBYmqQeoEjL2Lmq8Rpo6271vH76InTChTitEAm65w==}
+    engines: {node: '>=22'}
 
   cosmiconfig@9.0.2:
     resolution: {integrity: sha512-gtTZxTDau1wL7Y7zifc2dd8jHSK/k6BTx/2Xp/BpdlAdnlYWFVt7qhJqgwi7637yRwRQ3qL4ZidbB4I8tA5VOg==}
@@ -4943,7 +4972,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@better-auth/cli@1.4.21(@better-fetch/fetch@1.1.21)(@libsql/client@0.17.4)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-call@1.1.8(zod@4.4.3))(drizzle-kit@0.31.10)(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)':
+  '@better-auth/cli@1.4.21(@better-fetch/fetch@1.1.21)(@libsql/client@0.17.4)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-call@1.1.8(zod@4.4.3))(drizzle-kit@0.31.10)(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10(@types/node@22.20.1)(@vitest/browser-preview@4.1.10)(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3)))':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/preset-react': 7.29.7(@babel/core@7.29.7)
@@ -4955,7 +4984,79 @@ snapshots:
       '@mrleebo/prisma-ast': 0.13.1
       '@prisma/client': 5.22.0
       '@types/pg': 8.21.0
-      better-auth: 1.4.21(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
+      better-auth: 1.4.21(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10(@types/node@22.20.1)(@vitest/browser-preview@4.1.10)(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3)))
+      better-sqlite3: 12.11.1
+      c12: 3.3.4
+      chalk: 5.6.2
+      commander: 12.1.0
+      dotenv: 17.4.2
+      drizzle-orm: 0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0)
+      open: 10.2.0
+      pg: 8.22.0
+      prettier: 3.9.6
+      prompts: 2.4.2
+      semver: 7.8.5
+      yocto-spinner: 0.2.3
+      zod: 4.4.3
+    transitivePeerDependencies:
+      - '@aws-sdk/client-rds-data'
+      - '@better-fetch/fetch'
+      - '@cloudflare/workers-types'
+      - '@electric-sql/pglite'
+      - '@libsql/client'
+      - '@libsql/client-wasm'
+      - '@lynx-js/react'
+      - '@neondatabase/serverless'
+      - '@op-engineering/op-sqlite'
+      - '@opentelemetry/api'
+      - '@planetscale/database'
+      - '@sveltejs/kit'
+      - '@tanstack/react-start'
+      - '@tanstack/solid-start'
+      - '@tidbcloud/serverless'
+      - '@types/better-sqlite3'
+      - '@types/sql.js'
+      - '@vercel/postgres'
+      - '@xata.io/client'
+      - better-call
+      - bun-types
+      - drizzle-kit
+      - expo-sqlite
+      - gel
+      - jose
+      - knex
+      - kysely
+      - magicast
+      - mongodb
+      - mysql2
+      - nanostores
+      - next
+      - pg-native
+      - postgres
+      - prisma
+      - react
+      - react-dom
+      - solid-js
+      - sql.js
+      - sqlite3
+      - supports-color
+      - svelte
+      - vitest
+      - vue
+
+  '@better-auth/cli@1.4.21(@better-fetch/fetch@1.1.21)(@libsql/client@0.17.4)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-call@1.1.8(zod@4.4.3))(drizzle-kit@0.31.10)(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)':
+    dependencies:
+      '@babel/core': 7.29.7
+      '@babel/preset-react': 7.29.7(@babel/core@7.29.7)
+      '@babel/preset-typescript': 7.29.7(@babel/core@7.29.7)
+      '@better-auth/core': 1.4.21(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
+      '@better-auth/telemetry': 1.4.21(@better-auth/core@1.4.21(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))
+      '@better-auth/utils': 0.3.0
+      '@clack/prompts': 0.11.0
+      '@mrleebo/prisma-ast': 0.13.1
+      '@prisma/client': 5.22.0
+      '@types/pg': 8.21.0
+      better-auth: 1.4.21(@prisma/client@5.22.0)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
       better-sqlite3: 12.11.1
       c12: 3.3.4
       chalk: 5.6.2
@@ -5037,23 +5138,23 @@ snapshots:
       nanostores: 1.4.2
       zod: 4.4.3
 
-  '@better-auth/infra@0.2.14(deb762a3e6760a93177773b743ea56ff)':
+  '@better-auth/infra@0.2.14(68657ff8689ba09350b2d771b3000862)':
     dependencies:
       '@better-auth/core': 1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
-      '@better-auth/sso': 1.6.26(@better-auth/core@1.4.22(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))(@better-fetch/fetch@1.1.21)(better-auth@1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10))(better-call@1.1.8(zod@4.4.3))
+      '@better-auth/sso': 1.6.26(@better-auth/core@1.4.22(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))(@better-fetch/fetch@1.1.21)(better-auth@1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10))(better-call@1.1.8(zod@4.4.3))
       '@better-auth/utils': 0.4.3
       '@better-fetch/fetch': 1.3.1
-      better-auth: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
+      better-auth: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
       better-call: 1.4.0(zod@4.4.3)
       jose: 6.2.8
       libphonenumber-js: 1.13.10
       zod: 4.4.3
 
-  '@better-auth/sso@1.6.26(@better-auth/core@1.4.22(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))(@better-fetch/fetch@1.1.21)(better-auth@1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10))(better-call@1.1.8(zod@4.4.3))':
+  '@better-auth/sso@1.6.26(@better-auth/core@1.4.22(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))(@better-fetch/fetch@1.1.21)(better-auth@1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10))(better-call@1.1.8(zod@4.4.3))':
     dependencies:
       '@better-auth/core': 1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
       '@better-fetch/fetch': 1.1.21
-      better-auth: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
+      better-auth: 1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10)
       better-call: 1.1.8(zod@4.4.3)
       fast-xml-parser: 5.10.1
       jose: 6.2.8
@@ -5908,6 +6009,15 @@ snapshots:
       - rollup
       - supports-color
 
+  '@sveltejs/adapter-vercel@7.0.0-next.6(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))':
+    dependencies:
+      '@sveltejs/kit': 3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)
+      '@vercel/nft': 1.10.2
+    transitivePeerDependencies:
+      - encoding
+      - rollup
+      - supports-color
+
   '@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)':
     dependencies:
       '@standard-schema/spec': 1.1.0
@@ -5945,6 +6055,24 @@ snapshots:
       sirv: 3.0.2
       svelte: 5.56.8(@typescript-eslint/types@8.66.0)
       vite: 8.2.1(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)
+    optionalDependencies:
+      typescript: 6.0.3
+
+  '@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)':
+    dependencies:
+      '@rolldown/pluginutils': 1.0.1
+      '@standard-schema/spec': 1.1.0
+      '@sveltejs/acorn-typescript': 1.0.12(acorn@8.18.0)
+      '@sveltejs/vite-plugin-svelte': 7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))
+      acorn: 8.18.0
+      cookie: 2.0.1
+      devalue: 5.9.0
+      esm-env: 1.2.2
+      magic-string: 1.1.0
+      mrmime: 2.0.1
+      sirv: 3.0.2
+      svelte: 5.56.8(@typescript-eslint/types@8.66.0)
+      vite: '@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3)'
     optionalDependencies:
       typescript: 6.0.3
 
@@ -6477,7 +6605,7 @@ snapshots:
 
   baseline-browser-mapping@2.11.13: {}
 
-  better-auth@1.4.21(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10):
+  better-auth@1.4.21(@prisma/client@5.22.0)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10(@types/node@22.20.1)(@vitest/browser-preview@4.1.10)(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))):
     dependencies:
       '@better-auth/core': 1.4.21(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
       '@better-auth/telemetry': 1.4.21(@better-auth/core@1.4.21(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))
@@ -6494,6 +6622,30 @@ snapshots:
     optionalDependencies:
       '@prisma/client': 5.22.0
       '@sveltejs/kit': 2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)
+      better-sqlite3: 12.11.1
+      drizzle-kit: 0.31.10
+      drizzle-orm: 0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0)
+      pg: 8.22.0
+      svelte: 5.56.8(@typescript-eslint/types@8.66.0)
+      vitest: 4.1.10(@types/node@22.20.1)(@vitest/browser-preview@4.1.10)(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))
+
+  better-auth@1.4.21(@prisma/client@5.22.0)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10):
+    dependencies:
+      '@better-auth/core': 1.4.21(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
+      '@better-auth/telemetry': 1.4.21(@better-auth/core@1.4.21(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))
+      '@better-auth/utils': 0.3.0
+      '@better-fetch/fetch': 1.1.21
+      '@noble/ciphers': 2.3.0
+      '@noble/hashes': 2.3.0
+      better-call: 1.1.8(zod@4.4.3)
+      defu: 6.1.7
+      jose: 6.2.8
+      kysely: 0.28.17
+      nanostores: 1.4.2
+      zod: 4.4.3
+    optionalDependencies:
+      '@prisma/client': 5.22.0
+      '@sveltejs/kit': 3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)
       better-sqlite3: 12.11.1
       drizzle-kit: 0.31.10
       drizzle-orm: 0.41.0(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0)
@@ -6518,6 +6670,30 @@ snapshots:
     optionalDependencies:
       '@prisma/client': 5.22.0
       '@sveltejs/kit': 2.70.2(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)
+      better-sqlite3: 12.11.1
+      drizzle-kit: 0.31.10
+      drizzle-orm: 0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0)
+      pg: 8.22.0
+      svelte: 5.56.8(@typescript-eslint/types@8.66.0)
+      vitest: 4.1.10(@types/node@22.20.1)(@vitest/browser-preview@4.1.10)(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))
+
+  better-auth@1.4.22(@prisma/client@5.22.0)(@sveltejs/kit@3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3))(better-sqlite3@12.11.1)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0))(pg@8.22.0)(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vitest@4.1.10):
+    dependencies:
+      '@better-auth/core': 1.4.22(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2)
+      '@better-auth/telemetry': 1.4.22(@better-auth/core@1.4.22(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.4.3))(jose@6.2.8)(kysely@0.28.17)(nanostores@1.4.2))
+      '@better-auth/utils': 0.3.0
+      '@better-fetch/fetch': 1.1.21
+      '@noble/ciphers': 2.3.0
+      '@noble/hashes': 2.3.0
+      better-call: 1.1.8(zod@4.4.3)
+      defu: 6.1.7
+      jose: 6.2.8
+      kysely: 0.28.17
+      nanostores: 1.4.2
+      zod: 4.4.3
+    optionalDependencies:
+      '@prisma/client': 5.22.0
+      '@sveltejs/kit': 3.0.0-next.23(@sveltejs/vite-plugin-svelte@7.3.0(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0)))(@voidzero-dev/vite-plus-core@0.2.8(@types/node@22.20.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.11)(typescript@6.0.3))(svelte@5.56.8(@typescript-eslint/types@8.66.0))(typescript@6.0.3)
       better-sqlite3: 12.11.1
       drizzle-kit: 0.31.10
       drizzle-orm: 0.45.2(@libsql/client@0.17.4)(@prisma/client@5.22.0)(@types/pg@8.21.0)(better-sqlite3@12.11.1)(kysely@0.28.17)(pg@8.22.0)
@@ -6658,6 +6834,8 @@ snapshots:
   convert-source-map@2.0.0: {}
 
   cookie@0.6.0: {}
+
+  cookie@2.0.1: {}
 
   cosmiconfig@9.0.2(typescript@6.0.3):
     dependencies:
