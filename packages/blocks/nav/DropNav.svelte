@@ -76,11 +76,11 @@
                         </li>
                     {/each}
 
-                    <li>
+                    <!-- <li>
                         <a href={getPortalToggle(page.url.pathname).href} class="portal-link" onclick={closeMenu}>
                             {getPortalToggle(page.url.pathname).label}
                         </a>
-                    </li>
+                    </li> -->
 
                     {#if page.data.user}
                         <li>

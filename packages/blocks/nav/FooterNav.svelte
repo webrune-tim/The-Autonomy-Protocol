@@ -30,11 +30,11 @@
 			</li>
 		{/each}
 
-		<li>
+		<!-- <li>
 			<a href={getPortalToggle(page.url.pathname).href} class="portal-toggle-link">
 				{getPortalToggle(page.url.pathname).label}
 			</a>
-		</li>
+		</li> -->
 	</ul>
 </nav>
 
