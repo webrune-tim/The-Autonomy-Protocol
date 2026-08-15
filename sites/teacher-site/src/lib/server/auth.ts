@@ -78,6 +78,7 @@ export const auth = betterAuth({
       roles: {
         admin: adminRole,
         superadmin: adminRole,
+        teacher: adminRole,
         user: userRole,
         student: studentRole,
       },
