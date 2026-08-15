@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@autonomy/pill": "workspace:*",
-    "@lucide/svelte": "catalog:"
+    "@lucide/svelte": "catalog:",
+    "lucide": "catalog:",
+    "morphicons": "catalog:"
   },
   "peerDependencies": {
     "svelte": "^5.0.0"

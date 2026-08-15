@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Sun, Moon } from '@lucide/svelte';
+  import { Sun, Moon } from 'lucide';
+  import { MorphIcon } from 'morphicons/svelte';
   import { themeState, type Theme } from './theme.svelte';
 
   const isLight = $derived(themeState.value === 'light');
@@ -17,13 +18,8 @@
   aria-label={isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
   title={isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
 >
-  {#if isLight}
-    <Moon size={16} strokeWidth={2.2} />
-    <span class="theme-label">Dark</span>
-  {:else}
-    <Sun size={16} strokeWidth={2.2} />
-    <span class="theme-label">Light</span>
-  {/if}
+  <MorphIcon icon={isLight ? Moon : Sun} size={16} strokeWidth={2.2} />
+  <span class="theme-label">{isLight ? 'Dark' : 'Light'}</span>
 </button>
 
 <style>
