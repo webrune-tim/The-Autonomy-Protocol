@@ -219,12 +219,6 @@ select:focus {
   h2 {
     font-size: var(--font-size-2);
   }
-  span {
-    display: inline-block;
-    margin-block: var(--gap-1);
-    font-size: var(--font-size-3);
-    color: var(--local-text);
-  }
 
   /* Text color consistency inside angled blocks */
   p,

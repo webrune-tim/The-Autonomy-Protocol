@@ -221,6 +221,8 @@
 		background: var(--local-text);
 		color: var(--color);
 		width: fit-content;
+		margin: 0;
+		display: inline-block;
 	}
 
 	.card-title {
@@ -254,7 +256,7 @@
 		align-items: center;
 		justify-content: center;
 		flex-shrink: 0;
-		padding: 0.4rem 0.85rem;
+		padding: 0.45rem 0.9rem;
 		border-radius: 6px;
 		background: var(--local-text);
 		border: 1px solid var(--local-text);
@@ -265,10 +267,21 @@
 		color: var(--color);
 		letter-spacing: 0.02em;
 
+		span {
+			color: inherit;
+			font-size: inherit;
+			margin: 0;
+			display: inline;
+		}
+
 		&.start-badge {
 			background: transparent;
 			border: 2px solid var(--local-text);
 			color: var(--local-text);
+
+			span {
+				color: inherit;
+			}
 		}
 	}
 </style>
