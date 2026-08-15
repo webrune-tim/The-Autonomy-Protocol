@@ -35,4 +35,5 @@ Evaluating personal autonomy requires assessing whether an individual maintains 
 ---
 
 ### Purpose & Next Steps
-This self-assessment helps students evaluate personal autonomy, self-governance, and voluntary control over their choices. If responses indicate that external dependencies are hindering self-mastery, *The Autonomy Protocol* provides structured framework modules to rebuild independence and personal accountability.
+
+This self-assessment helps students evaluate personal autonomy, self-governance, and voluntary control over their choices. If responses indicate that external dependencies are hindering self-mastery, _The Autonomy Protocol_ provides structured framework modules to rebuild independence and personal accountability.

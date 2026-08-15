@@ -48,6 +48,8 @@ h2.reveal-header,
 h3.reveal-header {
   display: block;
   overflow-x: clip;
+  will-change: clip-path, opacity, transform;
+  transform: translateZ(0);
 
   view-timeline-name: --revealing-header;
   view-timeline-axis: block;
@@ -81,6 +83,8 @@ img {
 }
 
 .revealing-image {
+  will-change: clip-path, opacity, transform;
+  transform: translateZ(0);
   view-timeline-name: --revealing-image;
   view-timeline-axis: block;
 

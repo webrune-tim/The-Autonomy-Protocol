@@ -153,7 +153,7 @@
 		justify-content: space-between;
 		gap: 1rem;
 		padding: 1rem 1.25rem;
-		background-color: rgb(from var(--bg) r g b / 0.18);
+		background-color: oklch(from var(--color) calc(l + 0.05) c h / 0.35);
 		border: 2px solid var(--local-text);
 		border-radius: var(--border-radius);
 		color: var(--local-text) !important;
@@ -161,7 +161,7 @@
 		transition: background-color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
 
 		&:hover {
-			background-color: rgb(from var(--bg) r g b / 0.32);
+			background-color: oklch(from var(--color) calc(l + 0.1) c h / 0.55);
 			text-decoration: none;
 			transform: translateY(-2px);
 		}
@@ -211,16 +211,15 @@
 	}
 
 	.card-category {
-		font-family: monospace;
+		font-family: var(--font-mono, monospace);
 		font-size: 0.72rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		padding: 0.15rem 0.45rem;
+		padding: 0.2rem 0.5rem;
 		border-radius: 4px;
-		background: rgba(0, 0, 0, 0.35);
-		border: 1px solid rgb(from var(--local-text) r g b / 0.3);
-		color: var(--local-text);
+		background: var(--local-text);
+		color: var(--color);
 		width: fit-content;
 	}
 
@@ -236,8 +235,9 @@
 	.card-track {
 		width: 100%;
 		max-width: 260px;
-		height: 6px;
-		background: rgba(0, 0, 0, 0.25);
+		height: 8px;
+		background: oklch(from var(--local-text) l c h / 0.2);
+		border: 1px solid oklch(from var(--local-text) l c h / 0.4);
 		border-radius: 4px;
 		overflow: hidden;
 	}
@@ -256,17 +256,19 @@
 		flex-shrink: 0;
 		padding: 0.4rem 0.85rem;
 		border-radius: 6px;
-		background: rgba(0, 0, 0, 0.28);
-		border: 1px solid rgb(from var(--local-text) r g b / 0.3);
+		background: var(--local-text);
+		border: 1px solid var(--local-text);
 		white-space: nowrap;
-		font-family: monospace;
+		font-family: var(--font-mono, monospace);
 		font-size: 0.875rem;
 		font-weight: 700;
-		color: var(--local-text);
+		color: var(--color);
 		letter-spacing: 0.02em;
 
 		&.start-badge {
-			background: rgb(from var(--local-text) r g b / 0.18);
+			background: transparent;
+			border: 2px solid var(--local-text);
+			color: var(--local-text);
 		}
 	}
 </style>

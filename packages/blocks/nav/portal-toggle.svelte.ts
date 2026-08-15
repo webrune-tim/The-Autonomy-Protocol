@@ -1,5 +1,4 @@
-// packages/blocks/nav/portal-toggle.svelte.ts
-import { browser } from "$app/environment";
+import { browser } from "$app/env";
 
 const getBaseUrls = () => {
   let teacher = "http://localhost:8080";
@@ -7,7 +6,6 @@ const getBaseUrls = () => {
 
   if (browser) {
     const hostname = window.location.hostname;
-    const port = window.location.port;
 
     if (hostname.includes("github.dev")) {
       const codespaceId = hostname.replace(/-(5173|8080)\.app\.github\.dev$/, "");
