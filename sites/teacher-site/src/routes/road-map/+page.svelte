@@ -35,9 +35,11 @@
 
 	<RevealingImage src={RoadMapImage} alt="The Road Map" />
 
-	<a class="cta" href="/resources" use:foresight>
-		<BrickWall /> See Freshman Materials
-	</a>
+	<div class="cta-center">
+		<a class="cta" href="/resources" use:foresight>
+			<BrickWall /> See Freshman Materials
+		</a>
+	</div>
 </section>
 
 <section

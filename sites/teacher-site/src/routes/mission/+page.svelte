@@ -22,8 +22,6 @@
 >
 	<h2 class="reveal-header">Our Mission</h2>
 
-	<enhanced:img src={MissionImage} alt="Our mission" />
-
 	<p>
 		<strong>Our objective is definitive:</strong> to ensure every student graduates with
 		the executive functioning skills required to navigate adult complexities independently.
@@ -33,9 +31,11 @@
 
 	<RevealingImage src={MissionImage} alt="Our mission" />
 
-	<a class="cta" href="/join-us" use:foresight>
-		<Handshake /> Join Us
-	</a>
+	<div class="cta-center">
+		<a class="cta" href="/join-us" use:foresight>
+			<Handshake /> Join Us
+		</a>
+	</div>
 </section>
 
 <section
@@ -55,9 +55,11 @@
 
 	<RevealingImage src={ShiftImage} alt="The shift" />
 
-	<a class="cta" href="/road-map" use:foresight>
-		<Eye /> View the Strategy
-	</a>
+	<div class="cta-center">
+		<a class="cta" href="/road-map" use:foresight>
+			<Eye /> View the Strategy
+		</a>
+	</div>
 </section>
 
 <section>

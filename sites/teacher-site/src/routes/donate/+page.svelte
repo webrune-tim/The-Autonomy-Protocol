@@ -31,9 +31,11 @@
 
 	<RevealingImage src={DonationImage} alt="Donate Now" />
 
-	<a class="cta" href="#how-you-can-help" use:foresight>
-		<Eye /> Browse Opportunities
-	</a>
+	<div class="cta-center">
+		<a class="cta" href="#how-you-can-help" use:foresight>
+			<Eye /> Browse Opportunities
+		</a>
+	</div>
 </section>
 
 <section

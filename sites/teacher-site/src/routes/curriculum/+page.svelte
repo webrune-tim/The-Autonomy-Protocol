@@ -23,9 +23,11 @@
 
 	<RevealingImage src={CurriculumImage} alt="Our Curriculum" />
 
-	<a class="cta" href="/resources" use:foresight>
-		<Download /> Download Lesson Guides
-	</a>
+	<div class="cta-center">
+		<a class="cta" href="/resources" use:foresight>
+			<Download /> Download Lesson Guides
+		</a>
+	</div>
 </section>
 
 <section class="angled-top-bottom-box" use:thickMargins>

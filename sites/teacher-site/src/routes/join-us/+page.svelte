@@ -25,9 +25,11 @@
 
 	<RevealingImage src={JoinUsImage} alt="Join Us!" />
 
-	<a class="cta" href="#how-you-can-help">
-		<BookImage /> Browse Opportunities
-	</a>
+	<div class="cta-center">
+		<a class="cta" href="#how-you-can-help">
+			<BookImage /> Browse Opportunities
+		</a>
+	</div>
 </section>
 
 <section

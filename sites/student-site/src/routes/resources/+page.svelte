@@ -65,9 +65,11 @@
 
 	<RevealingImage src={ResourcesImage} alt="The Recourses" />
 
-	<a class="cta" href="/contact" use:foresight>
-		<HeartPlus /> Need Custom Support?
-	</a>
+	<div class="cta-center">
+		<a class="cta" href="/contact" use:foresight>
+			<HeartPlus /> Need Custom Support?
+		</a>
+	</div>
 
 	<nav class="angled-bottom-box bottom-padding">
 		<ul class="tab-list">

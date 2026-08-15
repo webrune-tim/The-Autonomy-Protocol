@@ -139,13 +139,6 @@
 </section>
 
 <style>
-	.cta {
-		display: inline-flex !important;
-		align-items: center;
-		font-weight: bold;
-		text-decoration: none;
-	}
-
 	h3 {
 		color: var(--title-color, var(--fg));
 		margin: 0;
