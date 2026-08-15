@@ -1,8 +1,20 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import { foresight } from '@autonomy/actions';
 
-	let { activeTab, allLinks } = $props()
+	interface ResourceLink {
+		slug?: string;
+		metadata: {
+			order?: number;
+			title?: string;
+		};
+	}
+
+	interface Props {
+		activeTab: 'steps' | 'agreements' | 'freshmen' | 'seniors';
+		allLinks: Record<string, ResourceLink[]>;
+	}
+
+	let { activeTab, allLinks }: Props = $props();
 
 	// Define the text content for each tab in one place
 	const contentMap = {
@@ -36,12 +48,12 @@
 	)
 </script>
 
-{#snippet ResourceGrid(links, path)}
+{#snippet ResourceGrid(links: ResourceLink[], path: string)}
 	<ul class="grid-container {path}">
 		{#each links as { slug, metadata } (slug)}
 			<li>
 				<a
-					href="{resolve('')}/resources/{path}/{slug}"
+					href="/resources/{path}/{slug}"
 					use:foresight
 				>{metadata.title ?? 'Untitled Resource'}</a>
 			</li>

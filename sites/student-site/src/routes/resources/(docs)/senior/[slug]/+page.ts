@@ -1,18 +1,25 @@
 import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
-// 1. Use the generated PageLoad type for strict typing of 'params'
+const modules = import.meta.glob<{ default: any; metadata: Record<string, any> }>(
+  "/src/lib/docs/senior/*.md",
+);
+
 export const load: PageLoad = async ({ params }) => {
+  const loader = modules[`/src/lib/docs/senior/${params.slug}.md`];
+
+  if (!loader) {
+    throw error(404, `Resource "${params.slug}" not found.`);
+  }
+
   try {
-    // Vite will resolve the dynamic path relative to this file
-    const post = await import(`#lib/docs/steps/${params.slug}.md`);
+    const post = await loader();
 
     return {
       content: post.default,
       meta: post.metadata,
     };
   } catch (e) {
-    // 2. Fix the "unknown" type error for the console log
     const errorMessage = e instanceof Error ? e.message : String(e);
     console.error(`Failed to load markdown: ${errorMessage}`);
 
