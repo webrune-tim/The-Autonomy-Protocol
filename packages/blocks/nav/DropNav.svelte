@@ -1,9 +1,9 @@
 <script lang="ts">
     import { page } from '$app/state'
-    import { Menu, X } from '@lucide/svelte'
+    import { Menu, X } from 'lucide'
+    import { MorphIcon } from 'morphicons/svelte'
     import { fly } from 'svelte/transition'
     import { cubicOut, cubicIn } from 'svelte/easing'
-    import { getPortalToggle } from './portal-toggle.svelte.ts'
 
     interface NavLink {
         href: string
@@ -49,11 +49,7 @@
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
     >
-        {#if isOpen}
-            <X size={28} />
-        {:else}
-            <Menu size={28} />
-        {/if}
+        <MorphIcon icon={isOpen ? X : Menu} size={28} />
     </button>
 
     {#if isOpen}
@@ -75,12 +71,6 @@
                             </a>
                         </li>
                     {/each}
-
-                    <!-- <li>
-                        <a href={getPortalToggle(page.url.pathname).href} class="portal-link" onclick={closeMenu}>
-                            {getPortalToggle(page.url.pathname).label}
-                        </a>
-                    </li> -->
 
                     {#if page.data.user}
                         <li>
@@ -180,17 +170,6 @@
     a:hover {
         color: var(--fg);
         background: oklch(from var(--brand-secondary) l c h / 0.15);
-    }
-
-    .portal-link {
-        color: var(--brand-tertiary);
-        border-top: 1px solid var(--ui-border);
-        margin-top: 0.25rem;
-        padding-top: 0.65rem;
-    }
-
-    .portal-link:hover {
-        background: oklch(from var(--brand-tertiary) l c h / 0.15);
     }
 
     .link-button {

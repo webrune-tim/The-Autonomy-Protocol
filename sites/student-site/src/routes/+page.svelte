@@ -188,7 +188,7 @@
 		flex-shrink: 0;
 		color: var(--local-text);
 
-		svg {
+		:global(svg) {
 			width: 24px;
 			height: 24px;
 			flex-shrink: 0;

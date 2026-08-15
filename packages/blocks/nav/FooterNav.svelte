@@ -1,6 +1,5 @@
 <script lang="ts">
     import { page } from '$app/state'
-    import { getPortalToggle } from './portal-toggle.svelte.ts'
 
 	interface NavLink {
 		href: string
@@ -29,12 +28,6 @@
 				</a>
 			</li>
 		{/each}
-
-		<!-- <li>
-			<a href={getPortalToggle(page.url.pathname).href} class="portal-toggle-link">
-				{getPortalToggle(page.url.pathname).label}
-			</a>
-		</li> -->
 	</ul>
 </nav>
 
@@ -83,15 +76,5 @@
 			color: var(--brand-primary);
 			border-bottom: 2px solid var(--brand-primary);
 		}
-	}
-
-	.portal-toggle-link {
-		color: var(--brand-tertiary);
-		font-weight: 700;
-	}
-
-	.portal-toggle-link:hover {
-		color: var(--brand-tertiary);
-		background: oklch(from var(--brand-tertiary) l c h / 0.15);
 	}
 </style>
