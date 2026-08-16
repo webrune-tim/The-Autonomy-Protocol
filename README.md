@@ -1,234 +1,265 @@
 # The Autonomy Protocol | v0.2.0
 
-> A scalable, non-secular framework for personal accountability and social integrity, built as a modern monorepo with SvelteKit.
+> **A Collegiate-Level Framework for Internal Self-Governance, Executive Functioning, and Psychological Literacy**  
+> _Architected as a high-performance, modular SvelteKit monorepo powered by Svelte 5 Runes, Turborepo, Vite Plus, Drizzle ORM, and Better-Auth._
 
-## Overview
+---
 
-The Autonomy Protocol is a socio-emotional curriculum framework designed for high school implementation. This monorepo contains two SvelteKit applications (student and teacher portals) and shared component libraries implementing the curriculum's "Human Operating System" methodology.
+## 1. Executive Summary & Pedagogical Mission
 
-## Tech Stack
+**The Autonomy Protocol** is a non-secular, politically neutral educational curriculum engineered to transition high school students from external behavioral policing to internal self-governance. Targeted for implementation across public school **Career Technical Education (CTE)** pathways and **Advisory periods**, the protocol translates established behavioral dynamics into practical executive functioning and psychological literacy tools.
 
-- **Package Manager:** pnpm@11.0.9 with workspace support
-- **Framework:** Svelte 5 (runes mode) + SvelteKit
-- **Build Tool:** vite-plus (custom Vite wrapper)
-- **Language:** TypeScript
-- **Database:** Drizzle ORM with libsql/turso (teacher-site only)
-- **Authentication:** better-auth with Google OAuth (teacher-site only)
-- **Deployment:** Vercel
-- **Node:** >=22.12.0
+### Approved Academic Lexicon Standard
 
-## Monorepo Structure
+To maintain academic rigor, secular neutrality, and professional applicability in public school systems, traditional recovery and self-help concepts have been refactored into a standardized collegiate lexicon:
+
+| Traditional / Legacy Concept        | Approved Academic Translation                                | Operational Definition                                                                              |
+| :---------------------------------- | :----------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| **Spirituality / Higher Power**     | **Universal Principles / Objective Standard**                | Sourcing an external, objective behavioral baseline beyond individual ego or short-term impulses.   |
+| **Sin / Character Defect**          | **Cognitive Distortion / Behavioral Liability**              | Identifying maladaptive behavioral patterns and cognitive biases that compromise personal efficacy. |
+| **Apology / Forgiveness**           | **Amends Protocol / Restorative Action**                     | Concrete, action-based restitution to repair interpersonal trust and eliminate relational friction. |
+| **Social Justice / Morality**       | **Social Friction / Conflict Resolution / Ethical Baseline** | Pragmatic conflict mediation and systemic adherence to mutual integrity without partisan bias.      |
+| **Social-Emotional Learning (SEL)** | **Executive Functioning / Psychological Literacy**           | Systematic metacognitive training, emotional self-regulation, and professional resilience.          |
+
+---
+
+## 2. Core Pedagogical Frameworks
+
+The curriculum is built upon two complementary pedagogical architectures that guide students through individual regulation and interpersonal dynamics:
+
+### A. The Accountability Cycle (Internal Regulation)
+
+_Refactored from the 12-Step Architecture into four sequential operational blocks:_
 
 ```
-the-autonomy-project/
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                           THE ACCOUNTABILITY CYCLE                               │
+├───────────────────┬───────────────────┬───────────────────┬──────────────────────┤
+│ 1. ORIENTATION    │ 2. INTERNAL AUDIT │ 3. RESTORATIVE    │ 4. MAINTENANCE &     │
+│    (Steps 1–3)    │    (Steps 4–7)    │    PRACTICE       │    LEADERSHIP        │
+│                   │                   │    (Steps 8–9)    │    (Steps 10–12)     │
+├───────────────────┼───────────────────┼───────────────────┼──────────────────────┤
+│ • Limits of       │ • Objective self- │ • Mapping impact  │ • Daily cognitive    │
+│   control check   │   inventory       │   on peers/system │   inventory          │
+│ • Sourcing an     │ • Identifying     │ • Action-based    │ • Real-time conflict │
+│   objective norm  │   liabilities     │   Amends Protocol │   de-escalation      │
+│ • Commitment to   │ • Behavioral      │ • Restoring trust │ • Peer mentorship    │
+│   active alignment│   intervention    │   mechanics       │   and stewardship    │
+└───────────────────┴───────────────────┴───────────────────┴──────────────────────┘
+```
+
+### B. The Integrity Protocol (Interpersonal Dynamics)
+
+_Refactored from the Four Agreements into four baseline interaction standards:_
+
+1. **Precision of Speech:** Operating with absolute clarity, reliability, and alignment between verbal commitments and concrete execution.
+2. **Emotional Neutrality:** Decoupling personal identity from external actions, peer critiques, and environmental friction.
+3. **Inquiry-Based Reality:** Validating empirical facts and asking clarifying questions before formulating behavioral assumptions.
+4. **Baseline Fluctuation:** Continuously optimizing effort and output relative to dynamic capacity while maintaining core standards.
+
+---
+
+## 3. Technology Stack
+
+The monorepo leverages modern web standards, fine-grained reactivity, and modular package isolation:
+
+| Layer                     | Technology                   | Specification / Configuration                                                                        |
+| :------------------------ | :--------------------------- | :--------------------------------------------------------------------------------------------------- |
+| **Runtime & Language**    | Node.js + TypeScript         | `Node >=22.12.0`, `TypeScript ^6.0.3` with strict type checking                                      |
+| **Package Manager**       | `pnpm@11.22.0`               | Workspace catalogs, strict peer dependency management, and architecture filtering                    |
+| **Monorepo Engine**       | Turborepo + Vite Plus        | `turbo ^2.9.18` task pipelines with `@voidzero-dev/vite-plus-core` wrapper                           |
+| **Frontend Framework**    | Svelte 5 + SvelteKit         | Forced Svelte 5 Runes mode, `#lib/*` subpath imports, and `@sveltejs/kit`                            |
+| **Design System & CSS**   | Pure Vanilla CSS Tokens      | `@autonomy/style` (Nord color palette, fluid clamp typography, view-timeline animations)             |
+| **Database & ORM**        | Drizzle ORM + LibSQL         | `drizzle-orm ^0.45.2`, `drizzle-kit ^0.31.10`, and `@libsql/client` (Turso SQLite engine)            |
+| **Authentication & RBAC** | Better-Auth                  | `better-auth ~1.4.22` with Google OAuth provider and RBAC (`superadmin`, `admin`, `teacher`, `user`) |
+| **Content & Parsing**     | MDSveX & Marked              | Interactive `.svx`/`.md` components and markdown AST processing                                      |
+| **Motion & Iconography**  | Motion + Lucide + Morphicons | `@lucide/svelte`, `lucide`, `morphicons`, `canvas-confetti`, and `motion`                            |
+| **Deployment Target**     | Vercel                       | `@sveltejs/adapter-vercel` with automated environment pipeline                                       |
+
+---
+
+## 4. Monorepo Architecture & Directory Structure
+
+```
+the-autonomy-protocol/
 ├── sites/
-│   ├── student-site/          # Public-facing student portal
-│   └── teacher-site/          # Authenticated teacher portal with database
+│   ├── student-site/          # Public & authenticated student portal (curriculum & progress)
+│   └── teacher-site/          # Authenticated educator portal (curriculum, DB, auth, PDF parser)
 ├── packages/
-│   ├── blocks/                # Reusable UI blocks
-│   │   ├── banner/
-│   │   ├── footer/
-│   │   ├── footer-nav/
-│   │   ├── header/
-│   │   ├── hero/
-│   │   └── nav/
-│   ├── content/               # Curriculum content components
-│   │   ├── four-agreements/   # The Integrity Shield content
-│   │   └── twelve-steps/      # The Accountability Cycle content
-│   ├── core/                  # Core utilities
-│   │   ├── actions/           # Svelte actions (e.g., thickMargins)
-│   │   ├── style/             # Shared CSS (tokens, reset, functions)
-│   │   └── utils/             # Utility functions
-│   └── ui/                    # UI components
-│       ├── horizontal-scroll/
-│       ├── logo/
-│       └── pill/
-├── docs/
-│   ├── curriculum/            # Curriculum documentation
-│   └── templates/              # Lesson plan templates
-├── vite.config.ts             # Root vite-plus configuration
-├── pnpm-workspace.yaml        # Workspace configuration
-└── package.json               # Root scripts and dependencies
+│   ├── blocks/                # High-level compound UI blocks
+│   │   ├── banner/            # Contextual notification & broadcast banners
+│   │   ├── external_links/    # Categorized external resource links & foresight actions
+│   │   ├── footer/            # Canonical application footer
+│   │   ├── header/            # Application header layout block
+│   │   ├── hero/              # High-contrast hero section with CTA slots
+│   │   ├── nav/               # DropNav, Drawer Nav, FooterNav & portal switcher
+│   │   └── revealing_image/   # Scroll-driven CSS reveal animation image container
+│   ├── ui/                    # Atomic interface components & widgets
+│   │   ├── battery-level/     # Energy / capacity indicator widget
+│   │   ├── horizontal-scroll/ # Touch & pointer horizontal layout container
+│   │   ├── logo/              # Vector insignia and brand marks
+│   │   ├── pill/              # Metadata status badges and category tags
+│   │   ├── reading-time/      # Dynamic word-count & reading duration estimator
+│   │   ├── scroll-to-top/     # Floating back-to-top trigger with time-read indicator
+│   │   ├── session-warning/   # Client session expiration & re-authentication modal
+│   │   └── theme-toggle/      # Nord palette & dark/light theme state manager
+│   ├── core/                  # Shared foundations, actions, styles, and utilities
+│   │   ├── actions/           # Svelte actions (thickMargins, contrastColor, autoContrast, foresight)
+│   │   ├── style/             # Global vanilla CSS (tokens, typography, Nord palette, reset, functions)
+│   │   └── utils/             # WCAG contrast computation & text calculation utilities
+│   └── content/               # Framework pedagogical interactive components
+│       ├── four-agreements/   # The Integrity Protocol interactive module components
+│       └── twelve-steps/      # The Accountability Cycle interactive module components
+├── docs/                      # Curriculum documentation, mission statements, and templates
+│   ├── curriculum/            # Pedagogical guides and inquiry documentation
+│   └── templates/             # LESSON_PLAN_TEMPLATE.md & EXAMPLE-ASSIGNMENT.md
+├── pnpm-workspace.yaml        # Workspace catalog definitions & dependency rules
+├── turbo.json                 # Turbo pipeline tasks (build, check, test, lint, dev)
+├── vite.config.ts             # Root Vite Plus configuration
+└── package.json               # Root scripts, devDependencies, and package manager config
 ```
 
-## Quick Start
+### Workspace Packages Summary
+
+| Package Name                | Location                           | Description                                                                                     |
+| :-------------------------- | :--------------------------------- | :---------------------------------------------------------------------------------------------- |
+| `@autonomy/style`           | `packages/core/style`              | Design token system, Nord theme variables, responsive typography, and layout classes.           |
+| `@autonomy/actions`         | `packages/core/actions`            | Reusable Svelte actions: `thickMargins`, `autoContrast`, `contrastColor`, and `foresight`.      |
+| `@autonomy/utils`           | `packages/core/utils`              | Pure TypeScript mathematical and color contrast utilities.                                      |
+| `@autonomy/theme-toggle`    | `packages/ui/theme-toggle`         | Svelte 5 runes-based theme manager with persistent state and animated icon toggle.              |
+| `@autonomy/nav`             | `packages/blocks/nav`              | Complete responsive navigation suite with desktop DropNav, mobile drawer, and portal switching. |
+| `@autonomy/hero`            | `packages/blocks/hero`             | Angled container hero section supporting dark-mode contrast and high-priority CTAs.             |
+| `@autonomy/banner`          | `packages/blocks/banner`           | Global and contextual alert banners with dismissal tracking.                                    |
+| `@autonomy/footer`          | `packages/blocks/footer`           | Unified footer with dynamic copyright, quick links, and theme toggle anchors.                   |
+| `@autonomy/four-agreements` | `packages/content/four-agreements` | Interactive instructional components for The Integrity Protocol.                                |
+| `@autonomy/twelve-steps`    | `packages/content/twelve-steps`    | Interactive instructional components for The Accountability Cycle.                              |
+
+---
+
+## 5. Quick Start & Developer Guide
 
 ### Prerequisites
 
-- Node.js >=22.12.0
-- pnpm 11.0.9
-
-### Installation
+- **Node.js:** `>=22.12.0`
+- **pnpm:** `11.22.0` (Enforced via `packageManager` and Corepack)
 
 ```bash
-vp install
+# Enable corepack (if not already active)
+corepack enable
+
+# Install all workspace dependencies
+pnpm install
 ```
 
-### Development
+### Development Servers
 
-Start the student site:
+Launch individual applications or entire pipelines:
 
 ```bash
-vp run student-site#dev
+# Start Student Portal (http://localhost:5173 by default)
+pnpm dev:student-site
+
+# Start Teacher Portal (requires local .env configuration)
+pnpm dev:teacher-site
+
+# Alternatively, run via Vite Plus inside a specific workspace directory
+cd sites/teacher-site && vp dev
 ```
 
-Start the teacher site (requires environment variables):
+### Build & Verification Pipelines
+
+Run workspace-wide pipeline tasks via Turborepo:
 
 ```bash
-vp run teacher-site#dev
+# Full validation: type checking, testing, and production builds
+pnpm ready
+
+# Production build across all packages and sites
+pnpm build
+
+# Automated linting and formatting
+pnpm --filter teacher-site lint
+pnpm --filter teacher-site format
 ```
 
-### Build & Test
+---
 
-Run checks across all packages:
+## 6. Environment Variables & Database Operations
 
-```bash
-vp ready
-```
+### Environment Configuration
 
-This runs:
-
-- `vp check` - Type checking and linting
-- `vp run -r test` - Tests across workspace
-- `vp run -r build` - Build all packages
-
-## Environment Variables
-
-### Teacher Site
-
-Create `.env` in `sites/teacher-site/`:
+For local development in `sites/teacher-site/` (and authenticated student workflows in `sites/student-site/`), configure a `.env` file:
 
 ```env
-DATABASE_URL=libsql://your-database-url
-DATABASE_AUTH_TOKEN=your-auth-token
-BETTER_AUTH_SECRET=your-secret
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
+# LibSQL / Turso Database Credentials
+DATABASE_URL=libsql://your-instance.turso.io
+DATABASE_AUTH_TOKEN=your-database-auth-token
+
+# Better-Auth Authentication Secret
+BETTER_AUTH_SECRET=your-random-32-character-secret
+
+# Google OAuth Provider Credentials
+GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=your-google-oauth-client-secret
+
+# Application Origin URL
 ORIGIN=http://localhost:5173
 ```
 
-## Database Setup (Teacher Site)
+### Drizzle ORM Workflows
 
-The teacher site uses Drizzle ORM with libsql/turso:
+The schema includes modules, sections, student progress, document management, and Better-Auth identity tables.
 
 ```bash
 cd sites/teacher-site
 
-# Generate migrations
-vp exec drizzle-kit generate
+# Push schema directly to the database (development)
+pnpm db:push
 
-# Push schema
-vp exec drizzle-kit push
+# Generate SQL migration files
+pnpm db:generate
 
-# Seed database
-vp node --experimental-strip-types --env-file .env src/lib/server/db/seed.ts
+# Execute pending database migrations
+pnpm db:migrate
 
-# Open Drizzle Studio
-vp exec drizzle-kit studio
+# Seed database with initial curriculum modules and demo users
+pnpm db:seed
+
+# Complete DB setup (migrate + seed)
+pnpm db:setup
+
+# Launch interactive Drizzle Studio database browser
+pnpm db:studio
+
+# Regenerate Better-Auth schema definitions
+pnpm auth:schema
 ```
 
-## Package Scripts
+---
 
-### Root
+## 7. Curriculum Authoring & Content Contribution
 
-- `vp ready` - Check, test, and build all packages
-- `vp run student-site#dev` - Start student site dev server
-- `vp run teacher-site#dev` - Start teacher site dev server
-- `vp config` - Configure vite-plus
+All curriculum modules must adhere to the **Internal Self-Governance** pedagogical standards and the **Approved Academic Lexicon**.
 
-### Student Site
+### Contributing New Modules
 
-- `vp dev` - Start dev server
-- `vp build` - Build for production
-- `vp preview` - Preview production build
-- `svelte-kit sync && svelte-check --tsconfig ./tsconfig.json` - Run svelte-check
-- `prettier --check . && eslint .` - Run ESLint and Prettier checks
-- `prettier --write .` - Format code with Prettier
+1. **Utilize the Canonical Template:** Copy [`docs/templates/LESSON_PLAN_TEMPLATE.md`](docs/templates/LESSON_PLAN_TEMPLATE.md) for all new module drafts.
+2. **Define Observable Behavioral Outcomes:** Frame lessons around concrete behavioral shifts rather than subjective emotional states.
+3. **Draft the Practicum:** Provide high-school-ready applied learning exercises, conflict resolution scenarios, or system debugging logs.
+4. **Implement UI Components:** Connect module content to reusable components in `packages/content/`.
+5. **Adhere to Contribution Guidelines:** Refer to [`CONTRIBUTING.md`](./CONTRIBUTING.md) for pull request requirements and the community code of conduct.
 
-### Teacher Site
+---
 
-- All student site scripts, plus:
-- `vp exec drizzle-kit push` - Push schema to database
-- `vp exec drizzle-kit generate` - Generate migrations
-- `vp exec drizzle-kit migrate` - Run migrations
-- `vp exec drizzle-kit studio` - Open Drizzle Studio
-- `vp node --experimental-strip-types --env-file .env src/lib/server/db/seed.ts` - Seed database
-- `better-auth generate --config src/lib/server/auth.ts --output src/lib/server/db/auth.schema.ts --yes` - Generate better-auth schema
+## 8. Deployment & CI/CD
 
-## Workspace Configuration
+Both `student-site` and `teacher-site` are configured for automatic deployment via **Vercel** using `@sveltejs/adapter-vercel`.
 
-The monorepo uses pnpm workspaces with the following catalog dependencies (defined in `pnpm-workspace.yaml`):
+- Configure workspace root settings with Turborepo caching enabled.
+- Ensure all environment variables (`DATABASE_URL`, `DATABASE_AUTH_TOKEN`, `BETTER_AUTH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `ORIGIN`) are mapped in the Vercel dashboard.
 
-- `@lucide/svelte` ^1.14.0
-- `typescript` ^5
-- `vite` (via vite-plus)
-- `vitest` (via vite-plus)
-- `sharp` ^0.34.5 (with platform-specific variants)
+---
 
-## Key Architectural Decisions
+## 9. License
 
-### Svelte 5 Runes Mode
-
-All apps force runes mode (except in node_modules) for modern reactivity. This can be removed in Svelte 6.
-
-### Shared Components
-
-UI blocks and content components are published as workspace packages with `@autonomy/*` scope, enabling reuse across both sites.
-
-### Markdown Processing
-
-Both sites use mdsvex for processing `.md` and `.svx` files, enabling curriculum content to be authored in Markdown.
-
-### Authentication (Teacher Site)
-
-The teacher site uses better-auth with:
-
-- Google OAuth provider
-- Drizzle adapter for libsql
-- Admin plugin with role-based access control
-- SvelteKit cookies integration
-
-## Curriculum Structure
-
-The curriculum is organized into two main frameworks:
-
-### The Accountability Cycle (Internal Engine)
-
-Derived from the Generalized 12 Steps:
-
-- Radical Ownership
-- The Amends Protocol
-- Daily Inventory
-
-### The Integrity Shield (External Interface)
-
-Derived from the Four Agreements:
-
-- Precision of Speech
-- Emotional Neutrality
-- Inquiry-Based Reality
-
-Content for these frameworks is implemented as Svelte components in `packages/content/` and documented in `docs/curriculum/`.
-
-## Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on:
-
-- Philosophical alignment requirements
-- Content standards and lexicon
-- Module drafting process
-- Code of conduct
-
-When adding new curriculum content:
-
-1. Use the template in `docs/templates/LESSON_PLAN_TEMPLATE.md`
-2. Follow the "Human Operating System" terminology from `GEMINI.md`
-3. Create corresponding components in `packages/content/`
-
-## Deployment
-
-Both sites deploy to Vercel via the SvelteKit adapter. Configure environment variables in your Vercel project settings.
-
-## License
-
-See [LICENSE.md](./LICENSE.md)
+This project is licensed under the terms described in [LICENSE.md](./LICENSE.md).
