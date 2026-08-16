@@ -13,6 +13,16 @@
 
 	const categories: ResourceCategory[] = [
 		{
+			title: '12-Step & Family Support Networks',
+			links: [
+				{ name: 'Alcoholics Anonymous', url: 'https://aa.org' },
+				{ name: 'Narcotics Anonymous', url: 'https://na.org' },
+				{ name: 'Co-Dependents Anonymous (CoDA)', url: 'https://coda.org' },
+				{ name: 'Adult Children of Alcoholics & Dysfunctional Families (ACA)', url: 'https://adultchildren.org' },
+				{ name: 'Al-Anon Family Groups', url: 'https://al-anon.org' }
+			]
+		},
+		{
 			title: 'Self-Reliance & Cognitive Recovery',
 			links: [
 				{ name: 'SMART Recovery', url: 'https://smartrecovery.org' },
@@ -35,16 +45,6 @@
 				{ name: '988 Suicide & Crisis Lifeline', url: 'https://988lifeline.org' },
 				{ name: 'Veterans Crisis Line', url: 'https://veteranscrisisline.net' },
 				{ name: 'SAMHSA National Helpline', url: 'https://samhsa.gov/find-help/national-helpline' }
-			]
-		},
-		{
-			title: '12-Step & Family Support Networks',
-			links: [
-				{ name: 'Alcoholics Anonymous', url: 'https://aa.org' },
-				{ name: 'Narcotics Anonymous', url: 'https://na.org' },
-				{ name: 'Co-Dependents Anonymous (CoDA)', url: 'https://coda.org' },
-				{ name: 'Adult Children of Alcoholics & Dysfunctional Families (ACA)', url: 'https://adultchildren.org' },
-				{ name: 'Al-Anon Family Groups', url: 'https://al-anon.org' }
 			]
 		}
 	];
