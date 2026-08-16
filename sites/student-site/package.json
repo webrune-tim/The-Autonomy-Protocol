@@ -75,5 +75,5 @@
     "vite-imagetools": "^10.0.1",
     "vite-plus": "catalog:"
   },
-  "packageManager": "pnpm@11.10.0"
+  "packageManager": "pnpm@11.22.0"
 }
