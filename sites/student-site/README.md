@@ -1,149 +1,183 @@
-# Student Site
+# Student Site | The Autonomy Protocol
 
-> Public-facing student portal for The Autonomy Protocol curriculum and resources.
+> **Public & Authenticated Student Learning Portal**  
+> _SvelteKit 2 + Svelte 5 Runes application delivering interactive curriculum modules, cognitive inventory tools, progress tracking, and psychological literacy resources._
 
-> **⚠️ Status: Not yet under active development**
+---
 
-This site is currently in early development and is not actively being worked on. The teacher-site is the primary focus for curriculum implementation and resource management.
+## 1. Overview & Pedagogical Purpose
 
-## Overview
+The **Student Site** (`sites/student-site`) serves as the primary interactive interface for students participating in **The Autonomy Protocol**. It bridges theoretical executive functioning principles into daily practice through interactive module exercises, practicum responses, and progress analytics.
 
-The student site is the public-facing portal for students accessing The Autonomy Protocol curriculum. It provides a simplified interface for students to engage with the curriculum materials without authentication requirements. This SvelteKit application leverages shared component libraries from the monorepo for consistency with the teacher portal.
+Students engage with the curriculum through two core learning systems:
 
-## Tech Stack
+- **The Accountability Cycle (Internal Regulation):** Guiding self-assessment, cognitive distortion identification, and restorative action planning.
+- **The Integrity Protocol (Interpersonal Dynamics):** Practicing precision of speech, emotional neutrality, inquiry-based reality, and adaptive output.
 
-- **Framework:** Svelte 5 (runes mode) + SvelteKit
-- **Build Tool:** vite-plus (custom Vite wrapper)
-- **Language:** TypeScript
-- **Deployment:** Vercel
-- **Markdown:** mdsvex for curriculum content processing
-- **Package Manager:** pnpm
-- **Testing:** Vitest with Playwright browser mode
+---
 
-## Site Structure
+## 2. Technology Stack
+
+| Layer                  | Technology           | Specification / Role                                                 |
+| :--------------------- | :------------------- | :------------------------------------------------------------------- |
+| **Framework**          | Svelte 5 + SvelteKit | Forced Runes mode, fine-grained reactivity, `#lib/*` subpath imports |
+| **Runtime & Language** | Node.js + TypeScript | `Node >=22.12.0`, `TypeScript ^6.0.3`                                |
+| **Package Manager**    | `pnpm@11.22.0`       | Workspace integration with catalog dependency versions               |
+| **Build & Tooling**    | Vite Plus            | `@voidzero-dev/vite-plus-core` with Vite imagetools                  |
+| **Database & ORM**     | Drizzle ORM + LibSQL | `@libsql/client` (Turso engine) for module progress persistence      |
+| **Authentication**     | Better-Auth          | Google OAuth client and server session validation                    |
+| **Styling & Tokens**   | Pure Vanilla CSS     | Shared design tokens from `@autonomy/style` (Nord dark palette)      |
+| **Content Processing** | MDSveX & Marked      | Interactive `.svx`/`.md` components and markdown rendering           |
+| **Offline & PWA**      | Service Worker       | Asset caching and offline availability via `src/service-worker.ts`   |
+| **Deployment**         | Vercel               | `@sveltejs/adapter-vercel`                                           |
+
+---
+
+## 3. Site Structure & Routes
 
 ```
 sites/student-site/
 ├── src/
+│   ├── app.html                 # HTML shell with theme initialization
+│   ├── app.d.ts                 # Global SvelteKit & Better-Auth type declarations
+│   ├── env.ts                   # Type-safe dynamic environment variable schemas
+│   ├── service-worker.ts        # PWA caching & offline lifecycle
+│   ├── hooks.client.ts          # Client-side hooks & telemetry
+│   ├── hooks.server.ts          # Server session validation & authentication hooks
 │   ├── lib/
-│   │   ├── assets/              # Images and static assets
-│   │   ├── components/          # Student-specific components
-│   │   │   └── ThemeToggle.svelte
-│   │   └── stores/              # Svelte stores
-│   │       └── theme.svelte.js  # Theme preference store
-│   └── routes/                  # SvelteKit routes
-│       ├── +layout.svelte       # Root layout
-│       ├── +page.svelte         # Home page
-│       └── global.css          # Global styles
-├── svelte.config.js            # SvelteKit configuration
-└── vite.config.ts              # Vite configuration
+│   │   ├── auth-client.ts       # Better-Auth client instance
+│   │   ├── components/          # Student-specific components (ModuleCard, ThemeToggle)
+│   │   ├── constants/           # Module categories & metadata definitions
+│   │   ├── server/              # Server-side database clients & auth handlers
+│   │   │   ├── auth.ts          # Better-Auth configuration
+│   │   │   └── db/              # Drizzle ORM schemas & client instances
+│   │   ├── stores/              # Svelte 5 runes state stores (moduleStore, theme)
+│   │   └── utils/               # Markdown AST and formatting utilities
+│   └── routes/
+│       ├── +layout.svelte       # Root shell (navigation, footer, theme state)
+│       ├── +page.svelte         # Public student landing page & overview
+│       ├── about/               # Framework background & pedagogical foundations
+│       ├── login/               # Google OAuth authentication entry point
+│       ├── logout/              # Session termination endpoint
+│       ├── resources/           # Public curriculum documents & reference guides
+│       │   └── (docs)/          # Step-by-step & agreement documentation layouts
+│       ├── (protected)/         # Authenticated student workspace
+│       │   ├── +layout.server.ts# Session guard & authorization validator
+│       │   ├── dashboard/       # Student dashboard (active modules & progress overview)
+│       │   ├── modules/         # Interactive curriculum module browser
+│       │   │   └── [slug]/      # Interactive module practicum & section runner
+│       │   ├── assignments/     # Structured practicum assignments
+│       │   ├── achievements/    # Milestone badges & completion tracking
+│       │   ├── homework/        # Applied daily inventory prompts
+│       │   └── settings/        # User profile & theme preferences
+│       └── api/
+│           ├── auth/[...auth]/  # Better-Auth API route handlers
+│           └── theme/           # Server-synchronized theme preference endpoints
+├── drizzle/                     # Drizzle SQL migration artifacts
+├── drizzle.config.ts            # Drizzle ORM configuration
+├── svelte.config.js            # SvelteKit preprocessor & adapter config
+├── tsconfig.json                # TypeScript compiler configuration
+└── vite.config.ts              # Vite Plus build configuration
 ```
 
-## Quick Start
+---
+
+## 4. Key Architectural Features
+
+### Interactive Module Runner & Progress State
+
+- Module definitions and multi-section curricula stored in database tables (`modules`, `sections`).
+- Section completion and structured student responses saved in real-time to `user_progress`.
+- Svelte 5 Runes state management (`moduleStore.svelte.ts`) providing instantaneous UI updates across sections.
+
+### Unified Design System Integration
+
+The portal imports standardized UI blocks and components from the `@autonomy/*` workspace packages:
+
+| Workspace Package           | Integrated Usage                                                                     |
+| :-------------------------- | :----------------------------------------------------------------------------------- |
+| `@autonomy/style`           | Nord-themed dark palette, fluid typography, and angled container layouts.            |
+| `@autonomy/actions`         | `foresight` (link prefetching), `thickMargins`, `autoContrast`, and `contrastColor`. |
+| `@autonomy/nav`             | DropNav dropdowns, responsive mobile navigation drawer, and FooterNav.               |
+| `@autonomy/theme-toggle`    | Animated icon theme switcher with persistent local and profile storage.              |
+| `@autonomy/scroll-to-top`   | Floating back-to-top button with reading-time duration indicators.                   |
+| `@autonomy/session-warning` | Modal alert for expiring authentication tokens and re-login triggers.                |
+| `@autonomy/content/*`       | Canonical interactive components for the Four Agreements and Twelve Steps.           |
+
+---
+
+## 5. Quick Start & Development
 
 ### Prerequisites
 
-- Node.js >=22.12.0
-- pnpm 11.0.9
+- **Node.js:** `>=22.12.0`
+- **pnpm:** `11.22.0`
 
-### Installation
+### Environment Configuration
 
-From the monorepo root:
+Create a `.env` file in `sites/student-site/`:
 
-```bash
-vp install
+```env
+# Database Persistence (LibSQL / Turso)
+DATABASE_URL=libsql://your-instance.turso.io
+DATABASE_AUTH_TOKEN=your-database-auth-token
+
+# Authentication Secrets (Better-Auth)
+BETTER_AUTH_SECRET=your-random-32-character-secret
+STUDENT_GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
+STUDENT_GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+# Application Origin
+STUDENT_ORIGIN=http://localhost:5173
+ORIGIN=http://localhost:5173
 ```
 
-### Development
-
-Start the development server:
+### Execution Commands
 
 ```bash
+# Start development server from workspace root
+pnpm dev:student-site
+
+# Alternatively, run directly inside sites/student-site
+cd sites/student-site
 vp dev
+
+# Type check & validate Svelte components
+pnpm check
+
+# Lint & code format
+pnpm lint
+pnpm format
+
+# Production build
+pnpm build
 ```
 
-Or from the monorepo root:
+---
+
+## 6. Database Operations
 
 ```bash
-vp run student-site#dev
+cd sites/student-site
+
+# Push schema changes to development database
+pnpm db:push
+
+# Generate migration scripts
+pnpm db:generate
+
+# Execute migrations against remote database
+pnpm db:migrate
+
+# Launch Drizzle Studio GUI
+pnpm db:studio
+
+# Update Better-Auth schema
+pnpm auth:schema
 ```
 
-### Build
+---
 
-Build for production:
+## 7. Deployment
 
-```bash
-vp build
-```
-
-Preview production build:
-
-```bash
-vp preview
-```
-
-## Package Scripts
-
-- `vp dev` - Start development server
-- `vp build` - Build for production
-- `vp preview` - Preview production build
-- `svelte-kit sync && svelte-check --tsconfig ./tsconfig.json` - Run svelte-check
-- `prettier --check . && eslint .` - Run ESLint and Prettier checks
-- `prettier --write .` - Format code with Prettier
-
-## Key Features
-
-### Curriculum Content
-
-- Public access to curriculum materials
-- The Integrity Shield (Five Agreements) content
-- The Accountability Cycle (Twelve Steps) content
-- Simplified interface optimized for student engagement
-
-### Theme Support
-
-- Dark/light theme toggle
-- Theme preference persisted via local storage
-- Consistent theming with teacher-site
-
-## Shared Packages
-
-The student site imports shared packages from the monorepo:
-
-- `@autonomy/banner` - Banner component
-- `@autonomy/footer` - Footer component
-- `@autonomy/four-agreements` - Four Agreements content
-- `@autonomy/header` - Header component
-- `@autonomy/hero` - Hero component
-- `@autonomy/logo` - Logo component
-- `@autonomy/nav` - Navigation component
-- `@autonomy/pill` - Pill component
-- `@autonomy/style` - Shared CSS (tokens, reset, functions)
-- `@autonomy/twelve-steps` - Twelve Steps content
-
-## Deployment
-
-The student site deploys to Vercel via the SvelteKit adapter. No environment variables are required as the site is public-facing without authentication.
-
-## Development Notes
-
-### Svelte Configuration
-
-- Runes mode forced for all files except node_modules
-- mdsvex preprocessor for `.md` and `.svx` files
-- Standard SvelteKit `$lib` imports: `$lib/components`, `$lib/assets/images`, `$lib/stores`
-
-### Testing
-
-- Vitest configured with Playwright browser mode for component testing
-- Unit and component test capabilities
-
-## Future Development
-
-Planned features for when active development resumes:
-
-- Interactive curriculum modules
-- Student progress tracking
-- Gamification elements
-- Mobile-responsive design enhancements
-- Accessibility improvements
+The application is deployed via Vercel using `@sveltejs/adapter-vercel`. Ensure all environment variables listed above are properly set in your Vercel project dashboard.
