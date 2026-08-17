@@ -1,5 +1,6 @@
 # Teacher Site | The Autonomy Protocol
 
+> **Status: Alpha / Coming Soon** — See [TODO.md](file:///Users/tithos/Dev/Local%20Web/the-autonomy-protocol/sites/teacher-site/TODO.md) for active developer tasks and implementation milestones.  
 > **Authenticated Educator & Administrative Portal**  
 > _SvelteKit 2 + Svelte 5 Runes application delivering curriculum management, role-based pedagogical administration, document collaboration, and PDF-to-Markdown conversion pipelines._
 
