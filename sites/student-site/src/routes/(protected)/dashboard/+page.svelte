@@ -111,7 +111,7 @@
 		<button
 			type="button"
 			class="link-button"
-			onclick={() => goto('/teacher/modules')}
+			onclick={() => goto('/modules')}
 			style="--color: var(--brand-primary); margin-top: 1rem;"
 		>
 			Manage Modules

@@ -70,7 +70,7 @@
 			</div>
 			{#if data.user?.role && ['teacher', 'admin', 'superadmin'].includes(data.user.role)}
 				<div class="header-actions">
-					<a href="/teacher/modules" class="cta">Curriculum Management</a>
+					<a href="/modules" class="cta">Curriculum Directory</a>
 				</div>
 			{/if}
 		</div>
