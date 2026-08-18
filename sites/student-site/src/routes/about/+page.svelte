@@ -1,6 +1,13 @@
 <script lang="ts">
 	import { thickMargins } from '@autonomy/actions'
+	import { SEO } from '@autonomy/seo'
 </script>
+
+<SEO
+	title="About The Autonomy Protocol | Student Self-Governance"
+	description="Empowering the next generation with self-governance, internal accountability, and real-world executive functioning tools to bridge high school and adult life."
+	keywords="about autonomy protocol, student self-governance, teen executive functioning, high school life skills"
+/>
 
 <section class="angled-bottom-box">
 	<h1>Empowering the Next Generation of Thinkers</h1>
@@ -70,14 +77,12 @@
 </section>
 
 <section class="angled-top-box no-bottom-margin">
-	<h2 class="reveal-header">Join the Movement</h2>
+	<h2 class="reveal-header">Take Ownership of Your Future</h2>
 	<p>
-		This site is more than a resource—it's a community of students who are ready to
-		stop waiting for permission and start building their own paths. Dive into the
-		modules, engage with the framework, and take the first step toward true autonomy.
-	</p>
-	<p>
-		What specific tone are you aiming for—more of a "peer-to-peer" vibe, or a
-		professional, authoritative guide?
+		This platform is more than a resource—it's a launchpad for students ready to
+		stop waiting for external validation and start building their own trajectories.
+		Dive into the modules, apply the frameworks to real challenges, and master true
+		autonomy.
 	</p>
 </section>
+

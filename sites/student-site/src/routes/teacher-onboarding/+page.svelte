@@ -10,6 +10,7 @@
 		Sparkles,
 		UserCheck
 	} from '@lucide/svelte'
+	import { SEO } from '@autonomy/seo'
 
 	let educatorEmail = $state('')
 	let districtName = $state('')
@@ -24,13 +25,12 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Educator Onboarding & Verification | The Autonomy Protocol</title>
-	<meta
-		name="description"
-		content="Institutional verification and onboarding portal for high school educators, counselors, and CTE pathway administrators."
-	/>
-</svelte:head>
+<SEO
+	title="Educator Onboarding & Institutional Verification | The Autonomy Protocol"
+	description="Institutional verification and onboarding portal for high school educators, counselors, and CTE pathway administrators."
+	keywords="educator onboarding, teacher verification, high school advisory, CTE administrator"
+/>
+
 
 <section
 	class="angled-bottom-box"

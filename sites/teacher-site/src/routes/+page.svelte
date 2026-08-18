@@ -15,6 +15,7 @@
 		Users
 	} from '@lucide/svelte'
 	import { Pill } from '@autonomy/pill'
+	import { SEO } from '@autonomy/seo'
 
 	let notificationEmail = $state('')
 	let notificationSubmitted = $state(false)
@@ -27,13 +28,12 @@
 	}
 </script>
 
-<svelte:head>
-	<title>The Autonomy Protocol | Educator & Admin Portal (Coming Soon)</title>
-	<meta
-		name="description"
-		content="Educator & Administrative Operating Center for The Autonomy Protocol. Lesson planning, student telemetry, and PDF ingestion engine."
-	/>
-</svelte:head>
+<SEO
+	title="Educator & Admin Operating Center | The Autonomy Protocol"
+	description="Engineering pedagogical infrastructure for CTE educators, counselors, and advisory directors. Transition secondary students from external policing to internal self-governance."
+	keywords="executive functioning curriculum, secondary education, student self-governance, CTE advisory, psychological literacy, accountability cycle"
+/>
+
 
 <!-- HERO SECTION -->
 <section

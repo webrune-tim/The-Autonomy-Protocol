@@ -99,6 +99,44 @@
 			});
 		});
 	});
+
+	const canonicalOrigin = $derived.by(() => {
+		const raw = page.url?.origin;
+		if (!raw || raw.includes('localhost') || raw.includes('sveltekit-prerender')) {
+			return 'https://the-autonomy-protocol.vercel.app';
+		}
+		return raw;
+	});
+	const canonicalUrl = $derived(
+		page.url
+			? `${canonicalOrigin}${page.url.pathname}`
+			: 'https://the-autonomy-protocol.vercel.app/'
+	);
+
+	const orgJsonLd = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'EducationalOrganization',
+				'@id': 'https://the-autonomy-protocol.vercel.app/#organization',
+				name: 'The Autonomy Protocol',
+				url: 'https://the-autonomy-protocol.vercel.app',
+				logo: 'https://the-autonomy-protocol.vercel.app/icon512_rounded.png',
+				description:
+					'Foundational curriculum for executive functioning, psychological literacy, and internal self-governance in secondary education.',
+				sameAs: ['https://github.com/webrune-tim/The-Autonomy-Protocol']
+			},
+			{
+				'@type': 'WebSite',
+				'@id': 'https://the-autonomy-protocol.vercel.app/#website',
+				url: 'https://the-autonomy-protocol.vercel.app',
+				name: 'The Autonomy Protocol - Educator Portal',
+				publisher: {
+					'@id': 'https://the-autonomy-protocol.vercel.app/#organization'
+				}
+			}
+		]
+	};
 </script>
 
 <svelte:head>
@@ -107,14 +145,40 @@
 		name="description"
 		content="Transforming campus culture through student-led internal accountability, psychological literacy, and executive functioning."
 	/>
+	<link rel="canonical" href={canonicalUrl} />
 	<link rel="stylesheet" href="/print.css" media="print" />
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
 	<meta name="theme-color" content="#388bfd" />
 	<link rel="icon" href={favicon} />
-	<meta property="og:title" content="The Autonomy Protocol | Educator Portal" />
+
+	<!-- Open Graph / Social -->
+	<meta property="og:site_name" content="The Autonomy Protocol" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://the-autonomy-protocol.vercel.app/" />
-	<meta property="og:image" content="og-image.png" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="The Autonomy Protocol | Educator Portal" />
+	<meta
+		property="og:description"
+		content="Transforming campus culture through student-led internal accountability, psychological literacy, and executive functioning."
+	/>
+	<meta property="og:url" content={canonicalUrl} />
+	<meta property="og:image" content="{canonicalOrigin}/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="The Autonomy Protocol - Educator Portal" />
+
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="The Autonomy Protocol | Educator Portal" />
+	<meta
+		name="twitter:description"
+		content="Transforming campus culture through student-led internal accountability, psychological literacy, and executive functioning."
+	/>
+	<meta name="twitter:image" content="{canonicalOrigin}/og-image.png" />
+	<meta name="twitter:image:alt" content="The Autonomy Protocol - Educator Portal" />
+
+	<!-- Structured Data -->
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	{@html `<script type="application/ld+json">${JSON.stringify(orgJsonLd)}<\/script>`}
 </svelte:head>
 
 {#snippet headerLogo()}
@@ -139,7 +203,7 @@
 			<p>
 				If you encounter any issues, please report them via our
 				<a href="/contact" use:foresight>contact page</a> or on our
-				<a href="https://github.com/we4bune-tim/The-Autonomy-Protocol/issues" target="_blank" rel="noreferrer">
+				<a href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues" target="_blank" rel="noreferrer">
 					GitHub Issues page
 				</a>.
 			</p>

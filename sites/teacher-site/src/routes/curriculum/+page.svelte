@@ -3,9 +3,31 @@
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { foresight } from '@autonomy/actions'
 	import { Download, ShieldQuestionMark } from '@lucide/svelte'
+	import { SEO } from '@autonomy/seo'
 
 	import CurriculumImage from '#lib/assets/images/curriculum.png'
+
+	const curriculumJsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Course',
+		name: 'The Autonomy Protocol Curriculum',
+		description:
+			'Dual-intervention executive functioning and psychological literacy curriculum for secondary students, spanning Freshman Foundation and Senior Capstone.',
+		provider: {
+			'@type': 'EducationalOrganization',
+			name: 'The Autonomy Protocol',
+			sameAs: 'https://the-autonomy-protocol.vercel.app'
+		}
+	}
 </script>
+
+<SEO
+	title="Curriculum Framework: From Survival to Sovereignty | The Autonomy Protocol"
+	description="A dual-intervention educational framework designed to bookend secondary education. Replace external behavioral policing with proactive self-governance and accountability."
+	keywords="autonomy protocol curriculum, secondary executive functioning, high school behavioral framework, freshman advisory, senior capstone"
+	jsonLd={curriculumJsonLd}
+/>
+
 
 <section
 	class="angled-bottom-box"

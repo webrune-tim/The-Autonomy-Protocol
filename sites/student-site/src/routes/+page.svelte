@@ -38,6 +38,7 @@
 	)
 
 	// Local state for Daily Check-In Widget
+	let dailyMood = $state<number | null>(null)
 	let dailyCheckedIn = $state(false)
 	let emotionalNeutralityScore = $state(4)
 	let dailyFocusArea = $state('precision-of-speech')
@@ -45,19 +46,19 @@
 	function submitDailyCheckIn() {
 		dailyCheckedIn = true
 	}
+
+	const pageTitle = $derived(
+		activeState === 'welcome'
+			? 'Student Self-Governance & Life Skills Portal | The Autonomy Protocol'
+			: 'Student Portal & Gamified Dashboard | The Autonomy Protocol'
+	)
 </script>
 
-<svelte:head>
-	<title>
-		{activeState === 'welcome'
-			? 'Welcome to The Autonomy Protocol | Student Onboarding'
-			: 'Student Portal & Gamified Dashboard | The Autonomy Protocol'}
-	</title>
-	<meta
-		name="description"
-		content="Executive functioning, self-governance, and psychological literacy curriculum for high school advisory and CTE pathways."
-	/>
-</svelte:head>
+<SEO
+	title={pageTitle}
+	description="Stop letting drama and stress run the show. Learn actionable executive functioning, self-governance, and psychological literacy tools to master high school and beyond."
+	keywords="student life skills, self-governance for students, high school executive functioning, teen accountability, emotional regulation"
+/>
 
 <!-- STATE TOGGLE CONTROLLER (DEVELOPMENT & PREVIEW) -->
 <div class="state-switcher-container">

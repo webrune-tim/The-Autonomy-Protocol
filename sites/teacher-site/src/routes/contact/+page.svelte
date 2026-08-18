@@ -10,6 +10,8 @@
 		LifeBuoy,
 		Send
 	} from '@lucide/svelte'
+	import { SEO } from '@autonomy/seo'
+
 
 	const createInitialState = () => ({
 		name: '',
@@ -35,7 +37,14 @@
 	}
 </script>
 
+<SEO
+	title="Contact & Institutional Inquiries | The Autonomy Protocol"
+	description="Connect with The Autonomy Protocol team for curriculum integration, district pilot programs, educator inquiries, and partnerships."
+	keywords="contact autonomy protocol, educator support, institutional inquiries, school district partnership"
+/>
+
 <Toaster />
+
 
 <section
 	class="angled-bottom-box"

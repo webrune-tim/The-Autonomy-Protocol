@@ -1,3 +1,10 @@
-# allow crawling everything by default
+# Allow crawling public content by default
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /homework
+Disallow: /assignments
+Disallow: /modules
+
+Sitemap: https://the-autonomy-protocol-student.vercel.app/sitemap.xml

@@ -3,6 +3,7 @@
 	import { ExternalLinks } from '@autonomy/external_links'
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { HeartPlus } from '@lucide/svelte'
+	import { SEO } from '@autonomy/seo'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
 	import ResourcesImage from '#lib/assets/images/resources.png'
@@ -52,18 +53,24 @@
 	}
 </script>
 
+<SEO
+	title="Student Guides & Life Skills Resources | The Autonomy Protocol"
+	description="Step-by-step guides, agreements, and frameworks to navigate school pressure, conflict resolution, and self-governance."
+	keywords="student guides, teen self-regulation, accountability cycle steps, four agreements for students"
+/>
+
 <section
 	class="angled-bottom-box"
 	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
 >
 	<h1>Resources</h1>
 	<p class="description">
-		A centralized library of worksheets, frameworks, and assessment guides to
-		streamline your delivery of <strong>The Autonomy Protocol</strong> across all grade
-		levels.
+		A centralized library of guides, frameworks, and practical tools to help you
+		navigate high school dynamics and master <strong>The Autonomy Protocol</strong>.
 	</p>
 
-	<RevealingImage src={ResourcesImage} alt="The Recourses" />
+	<RevealingImage src={ResourcesImage} alt="Student Self-Governance Resources and Frameworks" />
+
 
 	<div class="cta-center">
 		<a class="cta" href="/contact" use:foresight>

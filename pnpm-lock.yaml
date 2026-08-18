@@ -119,6 +119,8 @@ importers:
 
   packages/blocks/revealing_image: {}
 
+  packages/blocks/seo: {}
+
   packages/content/four-agreements:
     dependencies:
       '@lucide/svelte':
@@ -257,6 +259,9 @@ importers:
       '@autonomy/scroll-to-top':
         specifier: workspace:*
         version: link:../../packages/ui/scroll-to-top
+      '@autonomy/seo':
+        specifier: workspace:*
+        version: link:../../packages/blocks/seo
       '@autonomy/session-warning':
         specifier: workspace:*
         version: link:../../packages/ui/session-warning
@@ -414,6 +419,9 @@ importers:
       '@autonomy/scroll-to-top':
         specifier: workspace:*
         version: link:../../packages/ui/scroll-to-top
+      '@autonomy/seo':
+        specifier: workspace:*
+        version: link:../../packages/blocks/seo
       '@autonomy/session-warning':
         specifier: workspace:*
         version: link:../../packages/ui/session-warning

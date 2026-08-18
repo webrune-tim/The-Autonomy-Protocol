@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { authClient } from '#lib/auth-client.js'
 	import { page } from '$app/state'
+	import { SEO } from '@autonomy/seo'
 
 	const redirectTo = $derived(page.url.searchParams.get('redirectTo') || '/')
 
@@ -11,6 +12,12 @@
 		})
 	}
 </script>
+
+<SEO
+	title="Student Login | The Autonomy Protocol"
+	description="Sign in to access your personalized student dashboard, active modules, and track your self-governance progress."
+/>
+
 
 <h1>Login</h1>
 

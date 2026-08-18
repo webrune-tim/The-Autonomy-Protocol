@@ -33,15 +33,19 @@
 
 	const navLinks = $derived([
 		{ href: '/', label: 'Home' },
-		{ href: '/road-map', label: 'Road Map' },
+		{ href: '/about', label: 'About' },
+		{ href: '/resources', label: 'Resources' },
 		...(data.user ? [{ href: '/modules', label: 'Modules' }] : []),
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	]);
 
 	const footerLinks = $derived([
 		{ href: '/', label: 'Home' },
-		{ href: '/road-map', label: 'Road Map' },
-		...(data.user ? [{ href: '/modules', label: 'Modules' }] : [])
+		{ href: '/about', label: 'About' },
+		{ href: '/resources', label: 'Resources' },
+		{ href: '/teacher-onboarding', label: 'Educator Onboarding' },
+		...(data.user ? [{ href: '/modules', label: 'Modules' }] : []),
+		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	]);
 
 	$effect(() => {
@@ -62,6 +66,43 @@
 			window.removeEventListener('scroll', handleScroll);
 		};
 	});
+
+	const canonicalOrigin = $derived.by(() => {
+		const raw = page.url?.origin;
+		if (!raw || raw.includes('localhost') || raw.includes('sveltekit-prerender')) {
+			return 'https://the-autonomy-protocol-student.vercel.app';
+		}
+		return raw;
+	});
+	const canonicalUrl = $derived(
+		page.url
+			? `${canonicalOrigin}${page.url.pathname}`
+			: 'https://the-autonomy-protocol-student.vercel.app/'
+	);
+
+	const studentJsonLd = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'EducationalOrganization',
+				'@id': 'https://the-autonomy-protocol.vercel.app/#organization',
+				name: 'The Autonomy Protocol',
+				url: 'https://the-autonomy-protocol.vercel.app',
+				logo: 'https://the-autonomy-protocol-student.vercel.app/icon512_rounded.png',
+				description:
+					'Executive functioning, self-governance, and psychological literacy platform for high school students.'
+			},
+			{
+				'@type': 'WebSite',
+				'@id': 'https://the-autonomy-protocol-student.vercel.app/#website',
+				url: 'https://the-autonomy-protocol-student.vercel.app',
+				name: 'The Autonomy Protocol - Student Portal',
+				publisher: {
+					'@id': 'https://the-autonomy-protocol.vercel.app/#organization'
+				}
+			}
+		]
+	};
 </script>
 
 <svelte:head>
@@ -70,14 +111,40 @@
 		name="description"
 		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
 	/>
+	<link rel="canonical" href={canonicalUrl} />
 	<link rel="stylesheet" href="/print.css" media="print" />
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
 	<meta name="theme-color" content="#818cf8" />
 	<link rel="icon" href={favicon} />
-	<meta property="og:title" content="The Autonomy Protocol | Student Portal" />
+
+	<!-- Open Graph / Social -->
+	<meta property="og:site_name" content="The Autonomy Protocol" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://the-autonomy-protocol-student.vercel.app/" />
-	<meta property="og:image" content="og-image.png" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="The Autonomy Protocol | Student Portal" />
+	<meta
+		property="og:description"
+		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
+	/>
+	<meta property="og:url" content={canonicalUrl} />
+	<meta property="og:image" content="{canonicalOrigin}/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="The Autonomy Protocol - Student Portal" />
+
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="The Autonomy Protocol | Student Portal" />
+	<meta
+		name="twitter:description"
+		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
+	/>
+	<meta name="twitter:image" content="{canonicalOrigin}/og-image.png" />
+	<meta name="twitter:image:alt" content="The Autonomy Protocol - Student Portal" />
+
+	<!-- Structured Data -->
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	{@html `<script type="application/ld+json">${JSON.stringify(studentJsonLd)}<\/script>`}
 </svelte:head>
 
 {#snippet headerLogo()}

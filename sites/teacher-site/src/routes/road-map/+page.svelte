@@ -2,9 +2,17 @@
 	import { foresight, thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { BrickWall, HardHat, Puzzle } from '@lucide/svelte'
+	import { SEO } from '@autonomy/seo'
 
 	import RoadMapImage from '#lib/assets/images/road-map.png'
 </script>
+
+<SEO
+	title="Implementation Roadmap: Dual-Intervention Framework | The Autonomy Protocol"
+	description="Examine the dual-intervention roadmap targeting freshman onboarding and senior transition to establish internal self-regulation and professional readiness."
+	keywords="autonomy protocol roadmap, freshman advisory, senior capstone, secondary transition, educational intervention"
+/>
+
 
 <section
 	class="angled-bottom-box"

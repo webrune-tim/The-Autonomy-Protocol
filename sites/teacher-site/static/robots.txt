@@ -41,8 +41,11 @@ Disallow: /
 User-agent: Amazonbot
 Disallow: /
 
-# General catch-all (optional, but good practice)
+# General search crawlers
 User-agent: *
-Disallow: /
+Allow: /
 Disallow: /api/
-Disallow: /admin/
+Disallow: /dashboard
+Disallow: /pdf-to-md
+
+Sitemap: https://the-autonomy-protocol.vercel.app/sitemap.xml

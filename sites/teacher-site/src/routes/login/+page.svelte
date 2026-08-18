@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { authClient } from '#lib/auth-client.js'
 	import { page } from '$app/state'
+	import { SEO } from '@autonomy/seo'
 
 	const redirectTo = $derived(
 		page.url.searchParams.get('redirectTo') || '/dashboard'
@@ -13,6 +14,12 @@
 		})
 	}
 </script>
+
+<SEO
+	title="Educator & Admin Login | The Autonomy Protocol"
+	description="Log in to access your educator portal, manage curriculum modules, and view student progress."
+/>
+
 
 <h1>Login</h1>
 

@@ -2,10 +2,18 @@
 	import { Eye, Handshake, Telescope } from '@lucide/svelte'
 	import { foresight, thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
+	import { SEO } from '@autonomy/seo'
 
 	import MissionImage from '#lib/assets/images/cycle.png'
 	import ShiftImage from '#lib/assets/images/shift-image.png'
 </script>
+
+<SEO
+	title="Mission & Pedagogical Philosophy | The Autonomy Protocol"
+	description="Discover our mission to empower secondary students with executive functioning, psychological literacy, and self-governance to eliminate external behavioral policing."
+	keywords="autonomy protocol mission, educational philosophy, executive functioning research, secondary education reform"
+/>
+
 
 <div
 	class="angled-bottom-box"

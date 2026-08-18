@@ -3,11 +3,19 @@
 	import { foresight, thickMargins } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { Eye } from '@lucide/svelte'
+	import { SEO } from '@autonomy/seo'
 
 	import DonationImage from '#lib/assets/images/donation.png'
 
 	let { form } = $props()
 </script>
+
+<SEO
+	title="Invest in Student Sovereignty: Support Our Mission | The Autonomy Protocol"
+	description="Support the development and public school deployment of secular executive functioning and psychological literacy curriculum."
+	keywords="support autonomy protocol, educational donation, public school curriculum funding, nonprofit education"
+/>
+
 
 <section
 	class="angled-bottom-box"

@@ -2,9 +2,17 @@
 	import { foresight, thickMargins } from '@autonomy/actions'
 	import { BookImage, Send } from '@lucide/svelte'
 	import { RevealingImage } from '@autonomy/revealing_image'
+	import { SEO } from '@autonomy/seo'
 
 	import JoinUsImage from '#lib/assets/images/join-us.png'
 </script>
+
+<SEO
+	title="Join Our Team & Contribute | The Autonomy Protocol"
+	description="Collaborate with curriculum developers, researchers, and CTE educators to build high-impact, secular executive functioning frameworks for high schools."
+	keywords="join autonomy protocol, educator contributors, curriculum development, secondary education careers"
+/>
+
 
 <section
 	class="angled-bottom-box"

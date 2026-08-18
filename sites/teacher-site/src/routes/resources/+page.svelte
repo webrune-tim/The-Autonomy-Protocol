@@ -3,6 +3,7 @@
 	import { ExternalLinks } from '@autonomy/external_links'
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { HeartPlus } from '@lucide/svelte'
+	import { SEO } from '@autonomy/seo'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
 	import ResourcesImage from '#lib/assets/images/resources.png'
@@ -52,6 +53,12 @@
 	}
 </script>
 
+<SEO
+	title="Educator Resources & Lesson Guides | The Autonomy Protocol"
+	description="Access comprehensive lesson guides, practicums, and documentation for The Accountability Cycle and The Integrity Protocol."
+	keywords="autonomy protocol resources, lesson guides, secondary teaching practicum, accountability worksheets"
+/>
+
 <section
 	class="angled-bottom-box"
 	style="--color: var(--brand-primary); --text_color: var(--brand-primary-contrast)"
@@ -63,7 +70,8 @@
 		levels.
 	</p>
 
-	<RevealingImage src={ResourcesImage} alt="The Recourses" />
+	<RevealingImage src={ResourcesImage} alt="The Autonomy Protocol Curriculum and Practicum Resources" />
+
 
 	<div class="cta-center">
 		<a class="cta" href="/contact" use:foresight>

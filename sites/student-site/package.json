@@ -36,6 +36,7 @@
     "@autonomy/reading-time": "workspace:*",
     "@autonomy/revealing_image": "workspace:*",
     "@autonomy/scroll-to-top": "workspace:*",
+    "@autonomy/seo": "workspace:*",
     "@autonomy/session-warning": "workspace:*",
     "@autonomy/style": "workspace:*",
     "@autonomy/theme-toggle": "workspace:*",
