@@ -20,6 +20,7 @@
 		Zap
 	} from '@lucide/svelte'
 	import { getCategoryById } from '#lib/constants/categories.js'
+	import { SEO } from '@autonomy/seo'
 	import type { PageData, ActionData } from './$types'
 
 	let { data, form }: { data: PageData; form: ActionData } = $props()

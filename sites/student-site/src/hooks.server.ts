@@ -1,31 +1,41 @@
 import { redirect } from "@sveltejs/kit";
 import type { Handle } from "@sveltejs/kit/hooks";
+import { building } from "$app/env";
 import { auth } from "#lib/server/auth.js";
 import { db } from "#lib/server/db/index.js";
 import { session as sessionTable } from "#lib/server/db/schema.js";
 import { eq } from "drizzle-orm";
 
 const handleBetterAuth: Handle = async ({ event, resolve }) => {
-  // Populate locals.user and locals.session for use in load functions and actions
-  const session = await auth.api.getSession({ headers: event.request.headers });
+  // Skip auth and DB checks during build/prerendering
+  if (building) return resolve(event);
 
-  if (session) {
-    // FRESHNESS CHECK: Verify the session still exists in the DB and get the latest user data
-    const activeSession = await db.query.session.findFirst({
-      where: eq(sessionTable.id, session.session.id),
-      with: {
-        user: true,
-      },
-    });
+  try {
+    // Populate locals.user and locals.session for use in load functions and actions
+    const session = await auth.api.getSession({ headers: event.request.headers });
 
-    if (activeSession) {
-      event.locals.session = activeSession;
-      event.locals.user = activeSession.user;
+    if (session) {
+      // FRESHNESS CHECK: Verify the session still exists in the DB and get the latest user data
+      const activeSession = await db.query.session.findFirst({
+        where: eq(sessionTable.id, session.session.id),
+        with: {
+          user: true,
+        },
+      });
+
+      if (activeSession) {
+        event.locals.session = activeSession;
+        event.locals.user = activeSession.user;
+      } else {
+        event.locals.session = null;
+        event.locals.user = null;
+      }
     } else {
       event.locals.session = null;
       event.locals.user = null;
     }
-  } else {
+  } catch (err) {
+    console.error("Auth session retrieval error:", err);
     event.locals.session = null;
     event.locals.user = null;
   }
@@ -34,7 +44,7 @@ const handleBetterAuth: Handle = async ({ event, resolve }) => {
   const isProtectedRoute = event.route.id?.includes("(protected)");
 
   if (isProtectedRoute && !event.locals.session) {
-    redirect(303, "/login");
+    throw redirect(303, "/login");
   }
   // --- END PROTECTION LOGIC ---
 

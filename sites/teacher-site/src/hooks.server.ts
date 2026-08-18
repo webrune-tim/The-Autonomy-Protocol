@@ -10,26 +10,32 @@ const handleBetterAuth: Handle = async ({ event, resolve }) => {
   // Skip auth and DB checks during the build/prerendering phase
   if (building) return resolve(event);
 
-  // Populate locals.user and locals.session for use in load functions and actions
-  const session = await auth.api.getSession({ headers: event.request.headers });
+  try {
+    // Populate locals.user and locals.session for use in load functions and actions
+    const session = await auth.api.getSession({ headers: event.request.headers });
 
-  if (session) {
-    // FRESHNESS CHECK: Verify the session still exists in Turso and get the latest user data
-    const activeSession = await db.query.session.findFirst({
-      where: eq(sessionTable.id, session.session.id),
-      with: {
-        user: true,
-      },
-    });
+    if (session) {
+      // FRESHNESS CHECK: Verify the session still exists in Turso and get the latest user data
+      const activeSession = await db.query.session.findFirst({
+        where: eq(sessionTable.id, session.session.id),
+        with: {
+          user: true,
+        },
+      });
 
-    if (activeSession) {
-      event.locals.session = activeSession;
-      event.locals.user = activeSession.user;
+      if (activeSession) {
+        event.locals.session = activeSession;
+        event.locals.user = activeSession.user;
+      } else {
+        event.locals.session = null;
+        event.locals.user = null;
+      }
     } else {
       event.locals.session = null;
       event.locals.user = null;
     }
-  } else {
+  } catch (err) {
+    console.error("Teacher auth session retrieval error:", err);
     event.locals.session = null;
     event.locals.user = null;
   }

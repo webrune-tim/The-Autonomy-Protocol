@@ -45,15 +45,17 @@ const studentRole = ac.newRole({
 const baseURL =
   STUDENT_ORIGIN ||
   ORIGIN ||
-  (dev ? "http://localhost:5173" : "https://the-autonomy-protocol.vercel.app");
+  (dev ? "http://localhost:5173" : "https://the-autonomy-protocol-student.vercel.app");
 
 const cleanBaseURL = baseURL.replace(/\/$/, "");
 
 export const auth = betterAuth({
   baseURL: cleanBaseURL,
-  secret: BETTER_AUTH_SECRET,
+  secret: BETTER_AUTH_SECRET || "default_auth_secret_minimum_32_characters_long_for_security",
   trustedOrigins: [
     STUDENT_ORIGIN,
+    ORIGIN,
+    "https://the-autonomy-protocol-student.vercel.app",
     "https://the-autonomy-protocol.vercel.app",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
