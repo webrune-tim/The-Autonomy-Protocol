@@ -12,7 +12,7 @@
 		id: string
 		title: string
 		content: string
-		owner_id: string
+		ownerId: string
 	}
 
 	let shareTargetEmail = $state('')

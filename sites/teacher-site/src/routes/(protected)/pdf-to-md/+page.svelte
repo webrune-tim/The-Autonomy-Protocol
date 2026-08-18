@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
+	import type { SubmitFunction } from '@sveltejs/kit'
+	import type { PageServerData, ActionData } from './$types'
 
-	let { data, form } = $props()
+	let { data, form }: { data: PageServerData; form: ActionData } = $props()
 
 	// Local reactive state for UI transitions
 	let isSubmitting = $state(false)
 	let shareTargetEmail = $state('')
 
-	function handleEnhance() {
+	const handleEnhance: SubmitFunction = () => {
 		isSubmitting = true
 		return async ({ update }) => {
 			await update()
@@ -28,7 +30,7 @@
 	<section class="ingestion-section">
 		<form
 			method="POST"
-			action="/pdf-to-md?/uploadAndConvert"
+			action="?/uploadAndConvert"
 			enctype="multipart/form-data"
 			use:enhance={handleEnhance}
 		>
@@ -107,7 +109,7 @@
 							</p>
 						</div>
 						<div class="doc-actions">
-							<form method="POST" action="/pdf-to-md?/shareDocument" use:enhance>
+							<form method="POST" action="?/shareDocument" use:enhance>
 								<input type="hidden" name="documentId" value={doc.id} />
 								<div class="share-group">
 									<input
@@ -160,7 +162,7 @@
 									<td>{user.email}</td>
 									<td>{user.role}</td>
 									<td>
-										<form method="POST" action="/pdf-to-md?/updateRole" use:enhance>
+										<form method="POST" action="?/updateRole" use:enhance>
 											<input type="hidden" name="userId" value={user.id} />
 											<select name="role" class="role-select">
 												<option value="user" selected={user.role === 'user'}
