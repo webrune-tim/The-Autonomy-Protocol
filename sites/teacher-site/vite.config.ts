@@ -24,6 +24,7 @@ export default defineConfig({
         },
       ],
       extensions: [".svelte", ".svx", ".md"],
+      inlineStyleThreshold: 20480,
       adapter: adapter({
         images: {
           sizes: [640, 828, 1200, 1920, 3840],
