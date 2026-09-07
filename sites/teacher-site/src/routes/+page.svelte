@@ -1,31 +1,31 @@
 <script lang="ts">
-	import { foresight, thickMargins } from '@autonomy/actions'
-	import {
-		BookOpen,
-		CalendarClock,
-		CheckCircle2,
-		Code2,
-		Compass,
-		FileText,
-		GraduationCap,
-		Milestone,
-		Send,
-		ShieldCheck,
-		Sparkles,
-		Users
-	} from '@lucide/svelte'
-	import { Pill } from '@autonomy/pill'
-	import { SEO } from '@autonomy/seo'
+import { foresight, thickMargins } from "@autonomy/actions";
+import {
+	BookOpen,
+	CalendarClock,
+	CheckCircle2,
+	Code2,
+	Compass,
+	FileText,
+	GraduationCap,
+	Milestone,
+	Send,
+	ShieldCheck,
+	Sparkles,
+	Users,
+} from "@lucide/svelte";
+import { Pill } from "@autonomy/pill";
+import { SEO } from "@autonomy/seo";
 
-	let notificationEmail = $state('')
-	let notificationSubmitted = $state(false)
+let notificationEmail = $state("");
+let notificationSubmitted = $state(false);
 
-	function handleNotify(e: SubmitEvent) {
-		e.preventDefault()
-		if (notificationEmail.trim()) {
-			notificationSubmitted = true
-		}
+function handleNotify(e: SubmitEvent) {
+	e.preventDefault();
+	if (notificationEmail.trim()) {
+		notificationSubmitted = true;
 	}
+}
 </script>
 
 <SEO
@@ -64,44 +64,6 @@
 		<a class="cta" href="/curriculum" use:foresight>
 			<BookOpen size={18} /> Browse Public Curriculum
 		</a>
-	</div>
-</section>
-
-<!-- DEVELOPER REMINDER / TODO CALLOUT -->
-<section
-	class="bold-border-box dev-todo-box"
-	style="--border-color: var(--brand-secondary);"
->
-	<div class="todo-badge">
-		<Code2 size={18} /> DEVELOPER REMINDER & WORKFLOW
-	</div>
-	<h3 class="section-subheading">Active Teacher Site Roadmap</h3>
-	<p class="section-text">
-		The teacher site core architecture is staged. Review pending tasks in
-		<code class="code-tag">sites/teacher-site/TODO.md</code> to continue development:
-	</p>
-	<ul class="todo-list">
-		<li>
-			<strong>Authentication:</strong> Google OAuth whitelisting for institutional
-			district domains (`@*.k12.ca.us`).
-		</li>
-		<li>
-			<strong>Ingestion Engine:</strong> PDF-to-Markdown parser for legacy syllabus
-			documents (`/pdf-to-md`).
-		</li>
-		<li>
-			<strong>Lesson Authoring:</strong> MDSveX editor with live collegiate lexicon
-			linting (`/modules/[id]`).
-		</li>
-		<li>
-			<strong>Student Telemetry:</strong> Cohort-level executive functioning and
-			Autonomy Score analytics.
-		</li>
-	</ul>
-	<div class="todo-footer">
-		<span class="todo-file-link">
-			📄 See <a href="/TODO.md">TODO.md</a> for detailed task specifications.
-		</span>
 	</div>
 </section>
 
