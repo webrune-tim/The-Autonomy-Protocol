@@ -13,7 +13,7 @@ export default defineConfig({
       },
       preprocess: [mdsvex({ extensions: [".svx", ".md"] })],
       extensions: [".svelte", ".svx", ".md"],
-      inlineStyleThreshold: 20480,
+      inlineStyleThreshold: 5120,
       adapter: adapter({
         images: {
           sizes: [640, 828, 1200, 1920, 3840],

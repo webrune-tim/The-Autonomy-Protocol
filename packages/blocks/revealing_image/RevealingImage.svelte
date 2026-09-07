@@ -2,25 +2,30 @@
 	const {
 		src,
 		alt,
-		class: className = ''
+		class: className = '',
+		width,
+		height,
+		loading = 'lazy',
+		decoding = 'async'
 	}: {
 		src: string;
 		alt: string;
-		class?: string
+		class?: string;
+		width?: number | string;
+		height?: number | string;
+		loading?: 'lazy' | 'eager';
+		decoding?: 'async' | 'sync' | 'auto';
 	} = $props()
 
 	function initRevealingImage(node: HTMLElement): void {
-		// Correct way to pass options to IntersectionObserver
 		const observer = new IntersectionObserver(([entry]) => {
-			if (!entry.isIntersecting) {
+			if (entry.isIntersecting) {
 				node.classList.add('revealing-image')
+				observer.disconnect()
 			}
-			observer.disconnect()
-		}, { rootMargin: `150px`}) // Pass options as the second argument
+		}, { rootMargin: '150px' })
 
-		setTimeout(() => {
-			if (node) observer.observe(node)
-		}, 200)
+		observer.observe(node)
 	}
 </script>
 
@@ -29,4 +34,16 @@
 	class="margin-bottom {className}"
 	{src}
 	{alt}
+	{width}
+	{height}
+	{loading}
+	{decoding}
 />
+
+<style>
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+</style>

@@ -2,7 +2,7 @@
 	import { page } from '$app/state'
 	import { foresight } from '@autonomy/actions'
 
-	const currentPath = $derived(page.url.pathname + page.url.search)
+	const currentPath = $derived(page.url.pathname)
 	const loginUrl = $derived(`/login?redirectTo=${encodeURIComponent(currentPath)}`)
 </script>
 

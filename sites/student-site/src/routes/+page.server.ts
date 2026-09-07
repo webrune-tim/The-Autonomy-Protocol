@@ -8,7 +8,24 @@ export const load: PageServerLoad = async ({ locals }) => {
   const user = locals.user;
 
   try {
-    // Fetch all modules and section counts for reference
+    if (!user) {
+      // For anonymous landing page, only fetch initial preview modules without scanning sections table
+      const previewModules = await db.query.modules.findMany({
+        orderBy: [asc(modules.order)],
+        limit: 6,
+      });
+
+      return {
+        user: null,
+        startedModules: [],
+        availableModules: previewModules || [],
+        metrics: null,
+        nextResumeSection: null,
+        badges: [],
+      };
+    }
+
+    // Fetch all modules and section counts for authenticated user progress mapping
     const allModules = await db.query.modules.findMany({
       orderBy: [asc(modules.order)],
     });
@@ -32,17 +49,6 @@ export const load: PageServerLoad = async ({ locals }) => {
       },
       {} as Record<string, number>,
     );
-
-    if (!user) {
-      return {
-        user: null,
-        startedModules: [],
-        availableModules: (allModules || []).slice(0, 6),
-        metrics: null,
-        nextResumeSection: null,
-        badges: [],
-      };
-    }
 
     const userId = user.id;
 

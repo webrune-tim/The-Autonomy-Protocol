@@ -21,17 +21,25 @@
 
     // Reactive check for visibility threshold
     $effect(() => {
+        let rafId: number | null = null;
         const handleScroll = () => {
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            // Prevent division by zero if the page isn't scrollable
-            if (scrollHeight <= 0) return;
-            
-            const scrolled = (window.scrollY / scrollHeight) * 100;
-            visible = scrolled >= threshold;
+            if (rafId !== null) return;
+            rafId = requestAnimationFrame(() => {
+                rafId = null;
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                if (scrollHeight <= 0) return;
+                
+                const scrolled = (window.scrollY / scrollHeight) * 100;
+                visible = scrolled >= threshold;
+            });
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+        handleScroll();
+        return () => {
+            if (rafId !== null) cancelAnimationFrame(rafId);
+            window.removeEventListener('scroll', handleScroll);
+        };
     });
 
     const scrollToTop = () => {

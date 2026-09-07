@@ -5,6 +5,11 @@ const modules = import.meta.glob<{ default: any; metadata: Record<string, any> }
   "/src/lib/docs/senior/*.md",
 );
 
+export const entries = () =>
+  Object.keys(modules).map((path) => ({
+    slug: path.split("/").pop()!.replace(".md", ""),
+  }));
+
 export const load: PageLoad = async ({ params }) => {
   const loader = modules[`/src/lib/docs/senior/${params.slug}.md`];
 

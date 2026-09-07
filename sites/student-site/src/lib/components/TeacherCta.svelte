@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state'
 
-	const currentPath = $derived(page.url.pathname + page.url.search)
+	const currentPath = $derived(page.url.pathname)
 	const loginUrl = $derived(`/login?redirectTo=${encodeURIComponent(currentPath)}`)
 </script>
 

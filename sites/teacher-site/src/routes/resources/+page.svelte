@@ -1,56 +1,56 @@
 <script lang="ts">
-	import { foresight, thickMargins } from '@autonomy/actions'
-	import { ExternalLinks } from '@autonomy/external_links'
-	import { RevealingImage } from '@autonomy/revealing_image'
-	import { HeartPlus } from '@lucide/svelte'
-	import { SEO } from '@autonomy/seo'
-	import ResourceSnippets from './ResourceSnippets.svelte'
+import { foresight, thickMargins } from "@autonomy/actions";
+import { ExternalLinks } from "@autonomy/external_links";
+import { RevealingImage } from "@autonomy/revealing_image";
+import { HeartPlus } from "@lucide/svelte";
+import { SEO } from "@autonomy/seo";
+import ResourceSnippets from "./ResourceSnippets.svelte";
 
-	import ResourcesImage from '#lib/assets/images/resources.png'
+import ResourcesImage from "#lib/assets/images/resources.webp";
 
-	type Tab = 'steps' | 'agreements' | 'freshmen' | 'seniors'
-	let activeTab = $state<Tab>('steps')
+type Tab = "steps" | "agreements" | "freshmen" | "seniors";
+let activeTab = $state<Tab>("steps");
 
-	const tabColors: Record<Tab, string> = {
-		steps: 'var(--brand-tertiary)',
-		agreements: 'var(--brand-secondary)',
-		freshmen: 'var(--brand-tertiary)',
-		seniors: 'var(--brand-secondary)'
-	}
-	const tabContrastColors: Record<Tab, string> = {
-		steps: 'var(--brand-tertiary-contrast)',
-		agreements: 'var(--brand-secondary-contrast)',
-		freshmen: 'var(--brand-tertiary-contrast)',
-		seniors: 'var(--brand-secondary-contrast)'
-	}
+const tabColors: Record<Tab, string> = {
+	steps: "var(--brand-tertiary)",
+	agreements: "var(--brand-secondary)",
+	freshmen: "var(--brand-tertiary)",
+	seniors: "var(--brand-secondary)",
+};
+const tabContrastColors: Record<Tab, string> = {
+	steps: "var(--brand-tertiary-contrast)",
+	agreements: "var(--brand-secondary-contrast)",
+	freshmen: "var(--brand-tertiary-contrast)",
+	seniors: "var(--brand-secondary-contrast)",
+};
 
-	interface MarkdownModule {
-		metadata: { order?: number; title?: string }
-	}
+interface MarkdownModule {
+	metadata: { order?: number; title?: string };
+}
 
-	function transformGlobToLinks(files: Record<string, any>) {
-		return Object.entries(files)
-			.map(([path, module]) => ({
-				slug: path.split('/').at(-1)?.replace('.md', ''),
-				metadata: (module as MarkdownModule).metadata
-			}))
-			.sort((a, b) => (a.metadata.order ?? 99) - (b.metadata.order ?? 99))
-	}
+function transformGlobToLinks(files: Record<string, any>) {
+	return Object.entries(files)
+		.map(([path, module]) => ({
+			slug: path.split("/").at(-1)?.replace(".md", ""),
+			metadata: (module as MarkdownModule).metadata,
+		}))
+		.sort((a, b) => (a.metadata.order ?? 99) - (b.metadata.order ?? 99));
+}
 
-	const allLinks = {
-		steps: transformGlobToLinks(
-			import.meta.glob('/src/lib/docs/steps/*.md', { eager: true })
-		),
-		agreements: transformGlobToLinks(
-			import.meta.glob('/src/lib/docs/agreements/*.md', { eager: true })
-		),
-		freshmen: transformGlobToLinks(
-			import.meta.glob('/src/lib/docs/freshman/*.md', { eager: true })
-		),
-		seniors: transformGlobToLinks(
-			import.meta.glob('/src/lib/docs/senior/*.md', { eager: true })
-		)
-	}
+const allLinks = {
+	steps: transformGlobToLinks(
+		import.meta.glob("/src/lib/docs/steps/*.md", { eager: true }),
+	),
+	agreements: transformGlobToLinks(
+		import.meta.glob("/src/lib/docs/agreements/*.md", { eager: true }),
+	),
+	freshmen: transformGlobToLinks(
+		import.meta.glob("/src/lib/docs/freshman/*.md", { eager: true }),
+	),
+	seniors: transformGlobToLinks(
+		import.meta.glob("/src/lib/docs/senior/*.md", { eager: true }),
+	),
+};
 </script>
 
 <SEO

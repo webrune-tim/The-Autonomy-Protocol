@@ -5,17 +5,27 @@ import { ForesightManager } from "js.foresight";
  * Svelte action to register an element with ForesightManager for global link prefetching.
  */
 export const foresight: Action<HTMLAnchorElement> = (node: HTMLAnchorElement) => {
-  // Ensure the node has a valid href before registering
-  if (!node.href) return;
+  const rawHref = node.getAttribute("href");
+  // Bypass internal page anchors, void links, or non-HTTP protocols
+  if (
+    !rawHref ||
+    rawHref.startsWith("#") ||
+    rawHref.startsWith("mailto:") ||
+    rawHref.startsWith("tel:")
+  ) {
+    return;
+  }
 
   // Register with ForesightManager
   ForesightManager.instance.register({
     element: node,
     callback: () => {
-      // Re-verify href exists at execution time
       if (!node.href) return;
 
-      console.log(`[Foresight] Prefetching triggered for: ${node.href}`);
+      // Avoid injecting duplicate prefetch tags
+      if (document.querySelector(`link[rel="prefetch"][href="${node.href}"]`)) {
+        return;
+      }
 
       // Inject a <link rel="prefetch"> tag into the document head
       const link = document.createElement("link");

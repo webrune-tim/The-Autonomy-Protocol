@@ -189,9 +189,9 @@ function handleNotify(e: SubmitEvent) {
 <style>
 	.teacher-hero {
 		padding-block-start: var(--gap-3);
-		padding-block-end: calc(var(--angle-height) + var(--gap-3));
+		padding-block-end: calc(var(--angle-height) + var(--gap-1));
 		padding-inline: var(--gap-3);
-		margin-block-end: var(--gap-3);
+		margin-block-end: calc(-1 * var(--angle-height) + var(--gap-1));
 	}
 
 	.pill-wrapper {
@@ -324,10 +324,10 @@ function handleNotify(e: SubmitEvent) {
 
 	/* CAPABILITIES SECTION */
 	.capabilities-section {
-		padding-block-start: calc(var(--angle-height) + var(--gap-3));
-		padding-block-end: calc(var(--angle-height) + var(--gap-3));
+		padding-block-start: calc(var(--angle-height) + var(--gap-1));
+		padding-block-end: calc(var(--angle-height) + var(--gap-1));
 		padding-inline: var(--gap-3);
-		margin-block-end: var(--gap-3);
+		margin-block-end: calc(-1 * var(--angle-height) + var(--gap-1));
 	}
 
 	.section-title {
@@ -386,7 +386,7 @@ function handleNotify(e: SubmitEvent) {
 
 	/* NOTIFICATION FORM */
 	.notify-section {
-		padding-block-start: calc(var(--angle-height) + var(--gap-3));
+		padding-block-start: calc(var(--angle-height) + var(--gap-1));
 		padding-block-end: var(--gap-3);
 		padding-inline: var(--gap-3);
 		margin-block-end: var(--gap-3);

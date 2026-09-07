@@ -4,8 +4,8 @@
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { SEO } from '@autonomy/seo'
 
-	import MissionImage from '#lib/assets/images/cycle.png'
-	import ShiftImage from '#lib/assets/images/shift-image.png'
+	import MissionImage from '#lib/assets/images/cycle.webp'
+	import ShiftImage from '#lib/assets/images/shift-image.webp'
 </script>
 
 <SEO

@@ -18,7 +18,7 @@
 	// Calculate base reading time
 	$effect(() => {
 		const target = document.querySelector(targetSelector) || document.body;
-		const text = target.innerText || '';
+		const text = (target as HTMLElement).innerText || target.textContent || '';
 		const wordCount = text.trim().split(/\s+/).length;
 		totalMinutes = Math.max(1, Math.ceil(wordCount / wordsPerMinute));
 	});
@@ -27,18 +27,26 @@
 	$effect(() => {
 		if (!dynamic) return;
 
+		let rafId: number | null = null;
 		const handleScroll = () => {
-			const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-			if (scrollHeight <= 0) return;
-			
-			// Clamp between 0 and 100 to prevent negative values on rubber-band scrolling
-			scrollPercent = Math.min(100, Math.max(0, (window.scrollY / scrollHeight) * 100));
+			if (rafId !== null) return;
+			rafId = requestAnimationFrame(() => {
+				rafId = null;
+				const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+				if (scrollHeight <= 0) return;
+				
+				// Clamp between 0 and 100 to prevent negative values on rubber-band scrolling
+				scrollPercent = Math.min(100, Math.max(0, (window.scrollY / scrollHeight) * 100));
+			});
 		};
 
 		window.addEventListener('scroll', handleScroll, { passive: true });
 		handleScroll(); 
 		
-		return () => window.removeEventListener('scroll', handleScroll);
+		return () => {
+			if (rafId !== null) cancelAnimationFrame(rafId);
+			window.removeEventListener('scroll', handleScroll);
+		};
 	});
 
 	// Derive the current value to display

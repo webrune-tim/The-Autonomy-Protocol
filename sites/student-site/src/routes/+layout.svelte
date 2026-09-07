@@ -48,25 +48,6 @@
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	]);
 
-	$effect(() => {
-		const localStorageKey = `scroll-y-position-${window.location.href}`;
-		const savedPosition = localStorage.getItem(localStorageKey);
-
-		if (savedPosition) {
-			window.scrollTo(0, parseInt(savedPosition, 10));
-		}
-
-		const handleScroll = () => {
-			localStorage.setItem(localStorageKey, window.scrollY.toString());
-		};
-
-		window.addEventListener('scroll', handleScroll, { passive: true });
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	});
-
 	const canonicalOrigin = $derived.by(() => {
 		const raw = page.url?.origin;
 		if (!raw || raw.includes('localhost') || raw.includes('sveltekit-prerender')) {

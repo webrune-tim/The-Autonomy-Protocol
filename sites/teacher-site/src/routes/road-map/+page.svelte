@@ -4,7 +4,7 @@
 	import { BrickWall, HardHat, Puzzle } from '@lucide/svelte'
 	import { SEO } from '@autonomy/seo'
 
-	import RoadMapImage from '#lib/assets/images/road-map.png'
+	import RoadMapImage from '#lib/assets/images/road-map.webp'
 </script>
 
 <SEO

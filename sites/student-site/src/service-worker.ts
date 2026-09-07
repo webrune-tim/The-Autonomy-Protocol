@@ -21,7 +21,14 @@ const sanitizePath = (path: string): string | null => {
   return path.startsWith("/") ? path : `/${path}`;
 };
 
-// Assets to precache during install
+// Assets to precache during install (exclude non-critical media to prevent initial bandwidth saturation)
+const isCriticalShellAsset = (path: string): boolean => {
+  if (path.includes("screenshot") || /\.(png|jpg|jpeg|webp|avif|gif)$/i.test(path)) {
+    return path.includes("favicon") || path.includes("icon");
+  }
+  return true;
+};
+
 const PRECACHE_ASSETS = Array.from(
   new Set(
     [
@@ -34,7 +41,9 @@ const PRECACHE_ASSETS = Array.from(
         }
       }),
       ...prerendered.map((item) => sanitizePath(item.path)),
-    ].filter((url): url is string => Boolean(url)),
+    ]
+      .filter((url): url is string => Boolean(url))
+      .filter(isCriticalShellAsset),
   ),
 );
 
@@ -119,8 +128,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // 2. Static Immutable & Manifest Assets Strategy (Cache-First)
-  if (PRECACHE_ASSETS.includes(url.pathname) || url.pathname.includes("/_app/immutable/")) {
+  // 2. Static Immutable, Media & Manifest Assets Strategy (Cache-First)
+  if (
+    PRECACHE_ASSETS.includes(url.pathname) ||
+    url.pathname.includes("/_app/immutable/") ||
+    /\.(png|jpg|jpeg|webp|avif|svg|ico)$/i.test(url.pathname)
+  ) {
     event.respondWith(handleCacheFirst(request, STATIC_CACHE_NAME));
     return;
   }

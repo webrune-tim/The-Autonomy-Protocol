@@ -18,15 +18,19 @@ export const modules = sqliteTable("modules", {
   order: integer("order").notNull().default(0),
 });
 
-export const sections = sqliteTable("sections", {
-  id: text("id").primaryKey(),
-  moduleId: text("module_id")
-    .notNull()
-    .references(() => modules.id, { onDelete: "cascade" }),
-  title: text("title").notNull(),
-  content: text("content").notNull(),
-  order: integer("order").notNull().default(0),
-});
+export const sections = sqliteTable(
+  "sections",
+  {
+    id: text("id").primaryKey(),
+    moduleId: text("module_id")
+      .notNull()
+      .references(() => modules.id, { onDelete: "cascade" }),
+    title: text("title").notNull(),
+    content: text("content").notNull(),
+    order: integer("order").notNull().default(0),
+  },
+  (table) => [index("sections_moduleId_idx").on(table.moduleId)],
+);
 
 export const userProgress = sqliteTable(
   "user_progress",
@@ -46,7 +50,10 @@ export const userProgress = sqliteTable(
       .$onUpdate(() => new Date())
       .notNull(),
   },
-  (table) => [primaryKey({ columns: [table.userId, table.sectionId] })],
+  (table) => [
+    primaryKey({ columns: [table.userId, table.sectionId] }),
+    index("user_progress_moduleId_idx").on(table.moduleId),
+  ],
 );
 
 // =========================================================================

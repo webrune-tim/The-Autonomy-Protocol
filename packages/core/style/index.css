@@ -326,9 +326,11 @@ select:focus {
   --offset-x: 0px;
 }
 
-.thick-margins {
-  margin-inline: var(--thick-margin);
-  --offset-x: var(--thick-margin);
+@media (min-width: 700px) {
+  .thick-margins {
+    margin-inline: var(--thick-margin);
+    --offset-x: var(--thick-margin);
+  }
 }
 
 .angled-bottom-box {
@@ -338,8 +340,8 @@ select:focus {
     calc(100% + var(--offset-x)) calc(100% - var(--angle-height)),
     calc(-1 * var(--offset-x)) 100%
   );
-  padding-block-end: calc(var(--angle-height) + var(--gap-2));
-  margin-block-end: calc(var(--angle-height) * -0.5 + var(--gap-2));
+  padding-block-end: calc(var(--angle-height) + var(--gap-1));
+  margin-block-end: calc(-1 * var(--angle-height) + var(--gap-1));
 }
 
 .angled-top-box {
@@ -349,7 +351,7 @@ select:focus {
     calc(100% + var(--offset-x)) 100%,
     calc(-1 * var(--offset-x)) 100%
   );
-  padding-block-start: calc(var(--angle-height) + var(--gap-2));
+  padding-block-start: calc(var(--angle-height) + var(--gap-1));
 }
 
 .angled-top-bottom-box {
@@ -365,9 +367,9 @@ select:focus {
     calc(-1 * var(--offset-x)) 100%
   );
 
-  padding-block-start: calc(var(--angle-height) + var(--gap-2));
-  padding-block-end: calc(var(--angle-height) + var(--gap-2));
-  margin-block-end: calc(var(--angle-height) * -0.5 + var(--gap-2));
+  padding-block-start: calc(var(--angle-height) + var(--gap-1));
+  padding-block-end: calc(var(--angle-height) + var(--gap-1));
+  margin-block-end: calc(-1 * var(--angle-height) + var(--gap-1));
 }
 
 .with-nothing-below {

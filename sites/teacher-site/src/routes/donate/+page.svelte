@@ -5,7 +5,7 @@
 	import { Eye } from '@lucide/svelte'
 	import { SEO } from '@autonomy/seo'
 
-	import DonationImage from '#lib/assets/images/donation.png'
+	import DonationImage from '#lib/assets/images/donation.webp'
 
 	let { form } = $props()
 </script>

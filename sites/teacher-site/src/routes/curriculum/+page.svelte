@@ -5,7 +5,7 @@
 	import { Download, ShieldQuestionMark } from '@lucide/svelte'
 	import { SEO } from '@autonomy/seo'
 
-	import CurriculumImage from '#lib/assets/images/curriculum.png'
+	import CurriculumImage from '#lib/assets/images/curriculum.webp'
 
 	const curriculumJsonLd = {
 		'@context': 'https://schema.org',

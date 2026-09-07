@@ -4,7 +4,7 @@
 	import { RevealingImage } from '@autonomy/revealing_image'
 	import { SEO } from '@autonomy/seo'
 
-	import JoinUsImage from '#lib/assets/images/join-us.png'
+	import JoinUsImage from '#lib/assets/images/join-us.webp'
 </script>
 
 <SEO

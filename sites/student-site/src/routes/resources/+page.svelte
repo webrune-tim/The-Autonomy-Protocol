@@ -6,7 +6,7 @@
 	import { SEO } from '@autonomy/seo'
 	import ResourceSnippets from './ResourceSnippets.svelte'
 
-	import ResourcesImage from '#lib/assets/images/resources.png'
+	import ResourcesImage from '#lib/assets/images/resources.webp'
 
 	type Tab = 'steps' | 'agreements' | 'freshmen' | 'seniors'
 	let activeTab = $state<Tab>('steps')
@@ -73,7 +73,7 @@
 
 
 	<div class="cta-center">
-		<a class="cta" href="/contact" use:foresight>
+		<a class="cta" href="/teacher-onboarding" use:foresight>
 			<HeartPlus /> Need Custom Support?
 		</a>
 	</div>
