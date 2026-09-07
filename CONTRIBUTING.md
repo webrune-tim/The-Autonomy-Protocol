@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to **The Autonomy Protocol**. To maintain the pedagogical integrity and professional standards required for public school implementation, we ask that all contributors adhere to the following guidelines.
 
-## 🎓 Philosophical Alignment
+## Philosophical Alignment
 
 The Autonomy Protocol is built on the principle of **Internal Self-Governance**. All contributions must avoid:
 
@@ -10,7 +10,7 @@ The Autonomy Protocol is built on the principle of **Internal Self-Governance**.
 - **Secular Rigor:** Ensure all frameworks are stripped of religious or therapeutic terminology, focusing instead on observable behavioral executive functions.
 - **Subjectivity:** Prioritize data-driven, observable learning outcomes over subjective emotional states.
 
-## 🏗 Content Standards
+## Content Standards
 
 When contributing lesson plans, practicums, or vocational paths, utilize the following structural standards:
 
@@ -30,7 +30,7 @@ To maintain consistency across our digital and physical assets, follow these for
 - **Academic Tone:** Maintain a collegiate, professional, and objective voice.
 - **Visual Clarity:** Use bulleted lists and tables to ensure information is scannable for busy administrators and educators.
 
-## 🛤 How to Contribute
+## How to Contribute
 
 ### Step 1: Claim or Open an Issue
 
@@ -53,7 +53,7 @@ Submit your contribution via a Pull Request. Every module must be reviewed by at
 - **Clarity:** Is the exercise easy for a high school freshman to execute?
 - **Utility:** Does it solve a real-world problem for a graduating senior?
 
-## 🚦 Community Code of Conduct
+## Community Code of Conduct
 
 We practice what we teach. All contributors are expected to operate under the **Integrity Protocol**:
 
