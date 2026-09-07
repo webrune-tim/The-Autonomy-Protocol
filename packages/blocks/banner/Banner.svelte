@@ -4,21 +4,25 @@
 
   let { bannerName, children } = $props();
 
-  let showBanner = $state(false);
+  let isDismissed = $state(false);
 
   onMount(() => {
-    if (localStorage.getItem(bannerName) !== "dismissed") {
-      showBanner = true;
-    }
+    try {
+      if (localStorage.getItem(bannerName) === "dismissed") {
+        isDismissed = true;
+      }
+    } catch {}
   });
 
   function dismissBanner() {
-    showBanner = false;
-    localStorage.setItem(bannerName, "dismissed");
+    isDismissed = true;
+    try {
+      localStorage.setItem(bannerName, "dismissed");
+    } catch {}
   }
 </script>
 
-{#if showBanner}
+{#if !isDismissed}
   <div class="banner">
     <button class="dismiss-button" onclick={dismissBanner} aria-label="Dismiss banner">
       <X size={20} />

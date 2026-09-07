@@ -781,7 +781,7 @@
 		font-weight: 800;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
-		opacity: 0.75;
+		color: var(--local-text);
 	}
 
 	.framework-card h3 {
@@ -792,8 +792,8 @@
 
 	.framework-sub {
 		font-size: 0.88rem;
-		opacity: 0.85;
-		font-weight: 600;
+		font-weight: 700;
+		color: var(--local-text);
 	}
 
 	.framework-steps {
@@ -910,7 +910,7 @@
 
 	.privacy-note {
 		font-size: 0.85rem;
-		color: var(--text-muted);
+		color: var(--text-secondary);
 	}
 
 	.form-success-banner {

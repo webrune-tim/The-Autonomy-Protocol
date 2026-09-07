@@ -148,8 +148,7 @@
 		<Banner bannerName="site-under-development">
 			<p>This site is under active development. Content is updated continuously.</p>
 			<p>
-				If you encounter any issues, please report them via our
-				<a href="/contact">contact page</a> or on our
+				If you encounter any issues, please report them on our
 				<a href="https://github.com/webrune-tim/The-Autonomy-Protocol/issues" target="_blank" rel="noreferrer">
 					GitHub Issues page
 				</a>.
