@@ -8,7 +8,7 @@
     "#lib/*": "./src/lib/*"
   },
   "scripts": {
-    "dev": "vp dev",
+    "dev": "vp dev --port 5174",
     "build": "vp build",
     "preview": "vp preview",
     "test": "vp test",

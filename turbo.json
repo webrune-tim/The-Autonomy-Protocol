@@ -27,6 +27,9 @@
     "lint": {
       "outputs": []
     },
+    "build-storybook": {
+      "outputs": ["storybook-static/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true

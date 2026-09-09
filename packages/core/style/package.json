@@ -7,7 +7,9 @@
     "./index.css": "./index.css",
     "./tokens.css": "./tokens.css",
     "./reset.css": "./reset.css",
-    "./functions.css": "./functions.css"
+    "./functions.css": "./functions.css",
+    "./typography.css": "./typography.css",
+    "./nord.css": "./nord.css"
   },
   "scripts": {
     "test": "node --test test/puppeteer.test.js"

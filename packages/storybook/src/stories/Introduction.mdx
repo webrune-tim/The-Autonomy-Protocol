@@ -1,0 +1,528 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Overview/Introduction" />
+
+<style>{`
+  .tap-intro {
+    font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+    color: var(--fg, #eceff4);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 0 3rem 0;
+  }
+
+  .hero-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(24, 30, 42, 0.95) 0%, rgba(14, 19, 27, 0.98) 100%);
+    border: 1px solid rgba(136, 192, 208, 0.25);
+    border-radius: 16px;
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(136, 192, 208, 0.05);
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(136, 192, 208, 0.18) 0%, rgba(208, 135, 112, 0.05) 50%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #88c0d0;
+    background: rgba(136, 192, 208, 0.1);
+    border: 1px solid rgba(136, 192, 208, 0.3);
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+  }
+
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #88c0d0;
+    box-shadow: 0 0 8px #88c0d0;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+    color: #eceff4;
+  }
+
+  .hero-title span {
+    background: linear-gradient(135deg, #88c0d0 0%, #81a1c1 50%, #d08770 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: #d8dee9;
+    max-width: 820px;
+    margin: 0 0 2rem 0;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .stat-badge {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #88c0d0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #8892b0;
+    margin-top: 0.2rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #eceff4;
+    margin: 0 0 0.35rem 0;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+    color: #8892b0;
+    margin: 0;
+  }
+
+  .layers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 600px) {
+    .layers-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .layer-card {
+    position: relative;
+    background: rgba(18, 24, 34, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .layer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.6);
+  }
+
+  .layer-card.ui { border-top: 3px solid #88c0d0; }
+  .layer-card.blocks { border-top: 3px solid #81a1c1; }
+  .layer-card.content { border-top: 3px solid #d08770; }
+  .layer-card.core { border-top: 3px solid #a3be8c; }
+
+  .layer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .layer-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+  }
+
+  .layer-card.ui .layer-tag { background: rgba(136, 192, 208, 0.12); color: #88c0d0; border: 1px solid rgba(136, 192, 208, 0.3); }
+  .layer-card.blocks .layer-tag { background: rgba(129, 161, 193, 0.12); color: #81a1c1; border: 1px solid rgba(129, 161, 193, 0.3); }
+  .layer-card.content .layer-tag { background: rgba(208, 135, 112, 0.12); color: #d08770; border: 1px solid rgba(208, 135, 112, 0.3); }
+  .layer-card.core .layer-tag { background: rgba(163, 190, 140, 0.12); color: #a3be8c; border: 1px solid rgba(163, 190, 140, 0.3); }
+
+  .layer-count {
+    font-size: 0.8rem;
+    color: #8892b0;
+    font-weight: 600;
+  }
+
+  .layer-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #eceff4;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .layer-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #8892b0;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .pill-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: auto;
+  }
+
+  .package-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: #eceff4;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .package-pill:hover {
+    background: rgba(136, 192, 208, 0.18);
+    border-color: #88c0d0;
+    color: #88c0d0;
+  }
+
+  .lexicon-card {
+    background: rgba(18, 24, 34, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+
+  .lexicon-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  .lexicon-table th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    background: rgba(0, 0, 0, 0.25);
+    color: #88c0d0;
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .lexicon-table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #d8dee9;
+    vertical-align: top;
+  }
+
+  .lexicon-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .standard-tag {
+    color: #88c0d0;
+    font-weight: 600;
+  }
+
+  .prohibited-tag {
+    color: #bf616a;
+    text-decoration: line-through;
+    opacity: 0.75;
+  }
+
+  .commands-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .command-card {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  }
+
+  .command-card .cmd-title {
+    font-size: 0.75rem;
+    color: #8892b0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+    font-family: var(--font-body, sans-serif);
+  }
+
+  .command-card code {
+    color: #a3be8c;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .command-card .cmd-desc {
+    font-size: 0.8rem;
+    color: #8892b0;
+    font-family: var(--font-body, sans-serif);
+  }
+`}</style>
+
+<div className="tap-intro">
+  <div className="hero-card">
+    <div className="eyebrow">
+      <span className="pulse-dot"></span>
+      The Autonomy Protocol &bull; Monorepo Workshop
+    </div>
+    
+    <h1 className="hero-title">
+      Curriculum Component Workshop &amp; <span>Presentation Suite</span>
+    </h1>
+
+    <p className="hero-subtitle">
+      A non-secular, politically neutral educational framework designed to transition high school students
+      from external policing to internal self-governance. This interactive Storybook environment serves as the live
+      component inventory for Career Technical Education (CTE) pathways and general advisory periods.
+    </p>
+
+    <div className="stats-row">
+      <div className="stat-badge">
+        <div className="stat-value">21</div>
+        <div className="stat-label">Isolated Packages</div>
+      </div>
+      <div className="stat-badge">
+        <div className="stat-value">4</div>
+        <div className="stat-label">Architectural Layers</div>
+      </div>
+      <div className="stat-badge">
+        <div className="stat-value">Svelte 5</div>
+        <div className="stat-label">Runes &amp; CSF Native</div>
+      </div>
+      <div className="stat-badge">
+        <div className="stat-value">AAA</div>
+        <div className="stat-label">Contrast Compliance</div>
+      </div>
+    </div>
+  </div>
+
+  <div className="section-header">
+    <h2>Architectural Layers</h2>
+    <p>Select any package to open its dedicated interactive Storybook presentation, controls, and accessibility audit.</p>
+  </div>
+
+  <div className="layers-grid">
+    <div className="layer-card ui">
+      <div>
+        <div className="layer-top">
+          <span className="layer-tag">Layer 1 &bull; UI Primitives</span>
+          <span className="layer-count">8 Packages</span>
+        </div>
+        <h3 className="layer-title">Reactive Micro-Components</h3>
+        <p className="layer-desc">
+          Discrete, accessible, and reactive interface elements providing observable feedback, telemetry,
+          and session security without cognitive friction.
+        </p>
+      </div>
+
+      <div className="pill-cluster">
+        <a className="package-pill" href="./?path=/docs/ui-batterylevel--docs">BatteryLevel</a>
+        <a className="package-pill" href="./?path=/docs/ui-horizontalscroll--docs">HorizontalScroll</a>
+        <a className="package-pill" href="./?path=/docs/ui-logo--docs">Logo</a>
+        <a className="package-pill" href="./?path=/docs/ui-pill--docs">Pill</a>
+        <a className="package-pill" href="./?path=/docs/ui-readingtime--docs">ReadingTime</a>
+        <a className="package-pill" href="./?path=/docs/ui-scrolltotop--docs">ScrollToTop</a>
+        <a className="package-pill" href="./?path=/docs/ui-sessionwarning--docs">SessionWarning</a>
+        <a className="package-pill" href="./?path=/docs/ui-themetoggle--docs">ThemeToggle</a>
+      </div>
+    </div>
+
+    <div className="layer-card blocks">
+      <div>
+        <div className="layer-top">
+          <span className="layer-tag">Layer 2 &bull; Architectural Blocks</span>
+          <span className="layer-count">8 Packages</span>
+        </div>
+        <h3 className="layer-title">Structural Layouts &amp; Shells</h3>
+        <p className="layer-desc">
+          Composable layout primitives providing persistent sticky headers, responsive drawers,
+          advisory banners, and discovery metadata.
+        </p>
+      </div>
+
+      <div className="pill-cluster">
+        <a className="package-pill" href="./?path=/docs/blocks-banner--docs">Banner</a>
+        <a className="package-pill" href="./?path=/docs/blocks-header--docs">Header</a>
+        <a className="package-pill" href="./?path=/docs/blocks-footer--docs">Footer</a>
+        <a className="package-pill" href="./?path=/docs/blocks-hero--docs">Hero</a>
+        <a className="package-pill" href="./?path=/docs/blocks-nav--docs">Nav</a>
+        <a className="package-pill" href="./?path=/docs/blocks-revealingimage--docs">RevealingImage</a>
+        <a className="package-pill" href="./?path=/docs/blocks-seo--docs">SEO</a>
+        <a className="package-pill" href="./?path=/docs/blocks-externallinks--docs">ExternalLinks</a>
+      </div>
+    </div>
+
+    <div className="layer-card content">
+      <div>
+        <div className="layer-top">
+          <span className="layer-tag">Layer 3 &bull; Pedagogical Content</span>
+          <span className="layer-count">2 Packages</span>
+        </div>
+        <h3 className="layer-title">Behavioral Frameworks</h3>
+        <p className="layer-desc">
+          Structured curricula refactoring traditional personal accountability models into objective,
+          collegiate-level self-governance and interpersonal repair.
+        </p>
+      </div>
+
+      <div className="pill-cluster">
+        <a className="package-pill" href="./?path=/docs/content-integrityshield-4-agreements--docs">FourAgreements (Integrity Shield)</a>
+        <a className="package-pill" href="./?path=/docs/content-accountabilitycycle-12-steps--docs">TwelveSteps (Accountability Cycle)</a>
+      </div>
+    </div>
+
+    <div className="layer-card core">
+      <div>
+        <div className="layer-top">
+          <span className="layer-tag">Layer 4 &bull; Core Infrastructure</span>
+          <span className="layer-count">3 Packages</span>
+        </div>
+        <h3 className="layer-title">Design Tokens &amp; Utilities</h3>
+        <p className="layer-desc">
+          Foundational CSS design tokens, APCA/WCAG mathematical contrast calculators, and predictive
+          speculative prefetch DOM actions.
+        </p>
+      </div>
+
+      <div className="pill-cluster">
+        <a className="package-pill" href="./?path=/docs/core-styletokens--docs">@autonomy/style</a>
+        <a className="package-pill" href="./?path=/docs/core-utils--docs">@autonomy/utils</a>
+        <a className="package-pill" href="./?path=/docs/core-actions--docs">@autonomy/actions</a>
+      </div>
+    </div>
+  </div>
+
+  <div className="lexicon-card">
+    <div className="section-header">
+      <h2>Curriculum Lexicon Transformation Matrix</h2>
+      <p>The Autonomy Protocol replaces therapeutic, religious, or politicized terminology with collegiate-level pedagogical infrastructure:</p>
+    </div>
+
+    <div className="table-wrapper">
+      <table className="lexicon-table">
+        <thead>
+          <tr>
+            <th>Prohibited Buzzword</th>
+            <th>Approved Pedagogical Standard</th>
+            <th>Functional Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span className="prohibited-tag">Spirituality / Higher Power</span></td>
+            <td><span className="standard-tag">Objective Standard / Collective Wisdom</span></td>
+            <td>Referencing empirical benchmarks outside individual ego.</td>
+          </tr>
+          <tr>
+            <td><span className="prohibited-tag">Sin / Character Defect</span></td>
+            <td><span className="standard-tag">Behavioral Liability / Cognitive Distortion</span></td>
+            <td>Systematic auditing of observable misalignments.</td>
+          </tr>
+          <tr>
+            <td><span className="prohibited-tag">Apology / Forgiveness</span></td>
+            <td><span className="standard-tag">Amends Protocol / Restorative Action</span></td>
+            <td>Action-based repair of trust and interpersonal equilibrium.</td>
+          </tr>
+          <tr>
+            <td><span className="prohibited-tag">Social Justice / Morality</span></td>
+            <td><span className="standard-tag">Social Friction / Ethical Baseline</span></td>
+            <td>Pragmatic resolution of interpersonal conflict in team environments.</td>
+          </tr>
+          <tr>
+            <td><span className="prohibited-tag">Social-Emotional Learning (SEL)</span></td>
+            <td><span className="standard-tag">Executive Functioning / Psychological Literacy</span></td>
+            <td>Building professional resilience and workforce readiness.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div className="section-header">
+    <h2>Monorepo CLI Quick Reference</h2>
+    <p>Run these commands from the root directory of the workspace:</p>
+  </div>
+
+  <div className="commands-box">
+    <div className="command-card">
+      <div className="cmd-title">Development Workshop</div>
+      <code>pnpm storybook</code>
+      <div className="cmd-desc">Spins up live dev server at port 6006 with instant HMR.</div>
+    </div>
+
+    <div className="command-card">
+      <div className="cmd-title">Static Production Build</div>
+      <code>pnpm build:storybook</code>
+      <div className="cmd-desc">Generates optimized static bundle in storybook-static/.</div>
+    </div>
+
+    <div className="command-card">
+      <div className="cmd-title">Package Verification</div>
+      <code>pnpm test:packages</code>
+      <div className="cmd-desc">Executes headless Puppeteer tests across all packages.</div>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,8 @@
     "build": "DEBUG=vite:* turbo build",
     "dev:teacher-site": "pnpm --filter teacher-site dev",
     "dev:student-site": "pnpm --filter student-site dev",
+    "storybook": "pnpm --filter @autonomy/storybook storybook",
+    "build:storybook": "pnpm --filter @autonomy/storybook build-storybook",
     "prepare": "vp config"
   },
   "devDependencies": {

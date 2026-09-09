@@ -1,0 +1,10 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{G as t,It as n,K as r,L as i,M as a,Tt as o,W as s,ct as c,ft as l,jt as u,lt as d,o as f,t as p,wt as m}from"./client-BbnbT_na.js";import{a as h,i as g,n as _,r as v,t as y}from"./create-runtime-stories-CetlbWg-.js";import{n as b,t as x}from"./logo-BzFRwann.js";import{n as S,t as C}from"./src-B871fbDZ.js";function w(e,n){var r=T(),o=c(r),f=c(o),p=c(f),m=e=>{var r=t(),a=d(r);i(a,()=>n.logo),s(e,r)};a(p,e=>{n.logo&&e(m)}),u(f);var h=l(f,2),g=c(h),_=e=>{var r=t(),a=d(r);i(a,()=>n.actions),s(e,r)};a(g,e=>{n.actions&&e(_)});var v=l(g,2),y=e=>{var r=t(),a=d(r);i(a,()=>n.nav),s(e,r)};a(v,e=>{n.nav&&e(y)}),u(h),u(o),u(r),s(e,r)}var T;function E(){return(E=e((()=>{n(),p(),T=r(`<header class="svelte-hzlwo0"><div class="header-inner svelte-hzlwo0"><div class="brand svelte-hzlwo0"><!></div> <div class="actions svelte-hzlwo0"><!> <!></div></div></header>`),w.__docgen={data:[{name:`logo`,visibility:`public`,keywords:[],kind:`let`,type:{kind:`function`,text:`Snippet<[]>`},static:!1,readonly:!1},{name:`actions`,visibility:`public`,keywords:[],kind:`let`,type:{kind:`function`,text:`Snippet<[]>`},static:!1,readonly:!1},{name:`nav`,visibility:`public`,keywords:[],kind:`let`,type:{kind:`function`,text:`Snippet<[]>`},static:!1,readonly:!1}],name:`Header.svelte`}})))()}function D(){return(D=e((()=>{E()})))()}function O(e,t){o(t,!1),f(),A(e,{name:`Standard Header`,children:(e,t)=>{w(e,{logo:e=>{b(e,{})},actions:e=>{S(e,{})},$$slots:{logo:!0,actions:!0}})},$$slots:{default:!0},parameters:{__svelteCsf:{rawCode:`<Header {...args}>
+  <Header>
+{#snippet logo()}
+  <Logo />
+{/snippet}
+{#snippet actions()}
+  <ThemeToggle />
+{/snippet}
+</Header>
+</Header>`}}}),m()}var k,A,j,M,N;function P(){return(P=e((()=>{n(),h(),g(),D(),x(),C(),p(),_(),k={title:`Blocks/Header`,component:w,tags:[`autodocs`]},{Story:A}=v(k),O.__docgen={data:[],name:`Header.stories.svelte`},j=y(O,k),M=[`StandardHeader`],N={...j.StandardHeader,tags:[`svelte-csf-v5`]}})))()}P();export{N as StandardHeader,M as __namedExportsOrder,k as default};

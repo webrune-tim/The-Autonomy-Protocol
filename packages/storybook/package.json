@@ -1,0 +1,51 @@
+{
+  "name": "@autonomy/storybook",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@autonomy/actions": "workspace:*",
+    "@autonomy/banner": "workspace:*",
+    "@autonomy/battery-level": "workspace:*",
+    "@autonomy/external_links": "workspace:*",
+    "@autonomy/footer": "workspace:*",
+    "@autonomy/four-agreements": "workspace:*",
+    "@autonomy/header": "workspace:*",
+    "@autonomy/hero": "workspace:*",
+    "@autonomy/horizontal-scroll": "workspace:*",
+    "@autonomy/logo": "workspace:*",
+    "@autonomy/nav": "workspace:*",
+    "@autonomy/pill": "workspace:*",
+    "@autonomy/reading-time": "workspace:*",
+    "@autonomy/revealing_image": "workspace:*",
+    "@autonomy/scroll-to-top": "workspace:*",
+    "@autonomy/seo": "workspace:*",
+    "@autonomy/session-warning": "workspace:*",
+    "@autonomy/style": "workspace:*",
+    "@autonomy/theme-toggle": "workspace:*",
+    "@autonomy/twelve-steps": "workspace:*",
+    "@autonomy/utils": "workspace:*",
+    "@lucide/svelte": "catalog:",
+    "lucide": "catalog:",
+    "morphicons": "catalog:",
+    "motion": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.0",
+    "@storybook/addon-docs": "^10.6.0",
+    "@storybook/addon-svelte-csf": "^5.1.3",
+    "@storybook/addon-vitest": "catalog:",
+    "@storybook/sveltekit": "^10.6.0",
+    "@sveltejs/kit": "catalog:",
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
+    "storybook": "^10.6.0",
+    "svelte": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  }
+}
