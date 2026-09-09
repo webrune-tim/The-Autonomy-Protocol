@@ -11,7 +11,7 @@
     "dev": "vp dev",
     "build": "vp build",
     "preview": "vp preview",
-    "test": "node --test test/puppeteer.test.js",
+    "test": "vp test",
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

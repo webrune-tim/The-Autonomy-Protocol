@@ -1,5 +1,4 @@
-import test from "node:test";
-import assert from "node:assert/strict";
+import { describe, it, expect, beforeAll, afterAll } from "vite-plus/test";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { launchBrowser, startSiteServer } from "../../../test-utils/puppeteer.js";
@@ -8,21 +7,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SITE_DIR = path.resolve(__dirname, "..");
 
-test("teacher-site: Puppeteer E2E Flow", async (t) => {
+describe("teacher-site: Puppeteer E2E Flow", () => {
   let server;
   let browser;
 
-  t.before(async () => {
+  beforeAll(async () => {
     server = await startSiteServer(SITE_DIR);
     browser = await launchBrowser();
-  });
+  }, 60000);
 
-  t.after(async () => {
+  afterAll(async () => {
     if (browser) await browser.close();
     if (server) await server.close();
   });
 
-  await t.test("navigates to educator homepage and renders core layout", async () => {
+  it("navigates to educator homepage and renders core layout", async () => {
     const page = await browser.newPage();
     const consoleErrors = [];
     page.on("pageerror", (err) => consoleErrors.push(err.message));
@@ -32,21 +31,15 @@ test("teacher-site: Puppeteer E2E Flow", async (t) => {
 
     // 2. Navigate to root
     const response = await page.goto(server.url, { waitUntil: "domcontentloaded" });
-    assert.ok(
-      response && response.status() < 400,
-      `Expected successful response status, got ${response?.status()}`,
-    );
+    expect(response && response.status() < 400).toBe(true);
 
     // 3. Verify page title
     const title = await page.title();
-    assert.ok(
-      title.includes("The Autonomy Protocol") || title.length > 0,
-      `Expected non-empty title, got "${title}"`,
-    );
+    expect(title.includes("The Autonomy Protocol") || title.length > 0).toBe(true);
 
     // 4. Verify layout structure
     const bodyText = await page.evaluate(() => document.body.innerText);
-    assert.ok(bodyText.length > 0, "Document body should contain text");
+    expect(bodyText.length).toBeGreaterThan(0);
 
     // 5. Test responsive mobile viewport
     await page.setViewport({ width: 390, height: 844 });
@@ -54,9 +47,9 @@ test("teacher-site: Puppeteer E2E Flow", async (t) => {
       const b = document.body;
       return b && window.getComputedStyle(b).display !== "none";
     });
-    assert.equal(isBodyVisible, true, "Body should remain visible in mobile viewport");
+    expect(isBodyVisible).toBe(true);
 
     await page.close();
-    assert.equal(consoleErrors.length, 0, `Unexpected page errors: ${consoleErrors.join(", ")}`);
-  });
+    expect(consoleErrors).toEqual([]);
+  }, 60000);
 });
