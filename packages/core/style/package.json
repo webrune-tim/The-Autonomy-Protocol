@@ -8,5 +8,8 @@
     "./tokens.css": "./tokens.css",
     "./reset.css": "./reset.css",
     "./functions.css": "./functions.css"
+  },
+  "scripts": {
+    "test": "node --test test/puppeteer.test.js"
   }
 }

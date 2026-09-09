@@ -6,6 +6,9 @@
   "exports": {
     ".": "./index.ts"
   },
+  "scripts": {
+    "test": "node --test test/puppeteer.test.js"
+  },
   "dependencies": {
     "@autonomy/utils": "workspace:*",
     "js.foresight": "catalog:"

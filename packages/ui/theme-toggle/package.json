@@ -11,6 +11,9 @@
       "default": "./src/index.ts"
     }
   },
+  "scripts": {
+    "test": "node --test test/puppeteer.test.js"
+  },
   "dependencies": {
     "@autonomy/pill": "workspace:*",
     "@lucide/svelte": "catalog:",

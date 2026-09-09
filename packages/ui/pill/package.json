@@ -11,6 +11,9 @@
       "default": "./index.ts"
     }
   },
+  "scripts": {
+    "test": "node --test test/puppeteer.test.js"
+  },
   "peerDependencies": {
     "svelte": "^5.0.0"
   }

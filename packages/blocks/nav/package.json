@@ -5,6 +5,9 @@
   "exports": {
     ".": "./index.ts"
   },
+  "scripts": {
+    "test": "node --test test/puppeteer.test.js"
+  },
   "dependencies": {
     "@autonomy/theme-toggle": "workspace:*",
     "@lucide/svelte": "catalog:",

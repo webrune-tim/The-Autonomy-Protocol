@@ -6,6 +6,7 @@ allowBuilds:
   "@prisma/client": true
   better-sqlite3: false
   esbuild: true
+  puppeteer: true
   "sharp": true
 
 supportedArchitectures:
@@ -17,6 +18,8 @@ supportedArchitectures:
     - x64
 
 catalog:
+  puppeteer: ^25.10.0
+  svelte: ^5.57.0
   "@better-auth/infra": ^0.2.14
   "@lucide/svelte": ^1.41.0
   lucide: ^1.31.0
