@@ -152,6 +152,9 @@ catalogs:
     motion:
       specifier: ^12.43.0
       version: 12.43.0
+    prop-for-that:
+      specifier: ^0.7.12
+      version: 0.7.12
     puppeteer:
       specifier: ^25.10.0
       version: 25.10.0
@@ -523,6 +526,9 @@ importers:
       morphicons:
         specifier: 'catalog:'
         version: 1.7.0(react@19.2.8)(svelte@5.56.9(@typescript-eslint/types@8.69.0))
+      prop-for-that:
+        specifier: 'catalog:'
+        version: 0.7.12
       svelte-french-toast:
         specifier: ^1.2.0
         version: 1.2.0(svelte@5.56.9(@typescript-eslint/types@8.69.0))
@@ -4862,6 +4868,9 @@ packages:
   prompts@2.4.2:
     resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
     engines: {node: '>= 6'}
+
+  prop-for-that@0.7.12:
+    resolution: {integrity: sha512-GKe09lG8pDH6F9znK7MaAIfpTyiyj7MYv9S7apNBv6722v4vdI0ouCPBI9ncWyyqaEzCIG1nQfpcMmsHqQyQxw==}
 
   pump@3.0.4:
     resolution: {integrity: sha512-VS7sjc6KR7e1ukRFhQSY5LM2uBWAUPiOPa/A3mkKmiMwSmRFUITt0xuj+/lesgnCv+dPIEYlkzrcyXgquIHMcA==}
@@ -9352,6 +9361,8 @@ snapshots:
     dependencies:
       kleur: 3.0.3
       sisteransi: 1.0.5
+
+  prop-for-that@0.7.12: {}
 
   pump@3.0.4:
     dependencies:

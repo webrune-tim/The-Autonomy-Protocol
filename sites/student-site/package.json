@@ -47,6 +47,7 @@
     "lucide": "catalog:",
     "marked": "catalog:",
     "morphicons": "catalog:",
+    "prop-for-that": "catalog:",
     "svelte-french-toast": "^1.2.0"
   },
   "devDependencies": {

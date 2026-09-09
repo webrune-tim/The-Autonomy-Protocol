@@ -43,8 +43,9 @@ catalog:
   marked: ^18.0.11
   "@types/marked": ^6.0.0
   morphicons: ^1.7.0
-  '@storybook/addon-vitest': ^10.6.0
+  "@storybook/addon-vitest": ^10.6.0
   vitest: ^5.0.0
+  prop-for-that: ^0.7.12
 
 catalogMode: prefer
 

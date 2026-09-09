@@ -20,6 +20,7 @@
 		Zap
 	} from '@lucide/svelte'
 	import { getCategoryById } from '#lib/constants/categories.js'
+	import { useProps } from '#lib/actions/useProps.js'
 	import { SEO } from '@autonomy/seo'
 	import type { PageData, ActionData } from './$types'
 
@@ -512,8 +513,13 @@
 			</div>
 
 			<div class="badges-grid">
-				{#each data.badges.length > 0 ? data.badges : [ { id: 'b1', title: 'Cognitive Alignment', category: 'The Accountability Cycle', description: 'Completed baseline orientation & recognized limits of control.', unlocked: true, progressText: 'Unlocked' }, { id: 'b2', title: 'Precision of Speech', category: 'The Integrity Protocol', description: 'Maintained impeccable verbal clarity and objective framing.', unlocked: true, progressText: 'Unlocked' }, { id: 'b3', title: 'The Internal Audit', category: 'The Accountability Cycle', description: 'Submitted an objective behavioral inventory without distortions.', unlocked: false, progressText: '1/4 Sections Complete' }, { id: 'b4', title: 'Amends Protocol Certified', category: 'Restorative Action', description: 'Constructed an actionable interpersonal repair protocol.', unlocked: false, progressText: '0/1 Modules Mastered' }, { id: 'b5', title: 'Inquiry Over Assumption', category: 'The Integrity Protocol', description: 'Mastered question-driven clarity in interpersonal conflict.', unlocked: false, progressText: '2/6 Sections Complete' }, { id: 'b6', title: 'CTE Capstone Readiness', category: 'Professional Resilience', description: 'Applied self-governance frameworks to vocational workflows.', unlocked: false, progressText: '0/8 Sections Complete' } ] as badge (badge.id)}
-					<div class="badge-item" class:unlocked={badge.unlocked}>
+				{#each data.badges.length > 0 ? data.badges : [ { id: 'b1', title: 'Cognitive Alignment', category: 'The Accountability Cycle', description: 'Completed baseline orientation & recognized limits of control.', unlocked: true, progressText: 'Unlocked' }, { id: 'b2', title: 'Precision of Speech', category: 'The Integrity Protocol', description: 'Maintained impeccable verbal clarity and objective framing.', unlocked: true, progressText: 'Unlocked' }, { id: 'b3', title: 'The Internal Audit', category: 'The Accountability Cycle', description: 'Submitted an objective behavioral inventory without distortions.', unlocked: false, progressText: '1/4 Sections Complete' }, { id: 'b4', title: 'Amends Protocol Certified', category: 'Restorative Action', description: 'Constructed an actionable interpersonal repair protocol.', unlocked: false, progressText: '0/1 Modules Mastered' }, { id: 'b5', title: 'Inquiry Over Assumption', category: 'The Integrity Protocol', description: 'Mastered question-driven clarity in interpersonal conflict.', unlocked: false, progressText: '2/6 Sections Complete' }, { id: 'b6', title: 'CTE Capstone Readiness', category: 'Professional Resilience', description: 'Applied self-governance frameworks to vocational workflows.', unlocked: false, progressText: '0/8 Sections Complete' } ] as badge, index (badge.id)}
+					<div
+						class="badge-item"
+						class:unlocked={badge.unlocked}
+						use:useProps={['pointer-local', 'visibility']}
+						style="--badge-index: {index};"
+					>
 						<div class="badge-icon-container">
 							{#if badge.unlocked}
 								<ShieldCheck size={28} class="badge-glyph-unlocked" />
@@ -1395,26 +1401,81 @@
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 1.25rem;
 		margin-top: 1.5rem;
+		perspective: 1600px;
 	}
 
 	.badge-item {
+		position: relative;
 		display: flex;
 		gap: 1rem;
 		padding: 1.25rem;
 		background: var(--surface-2);
 		border: 1px solid var(--ui-border);
 		border-radius: var(--border-radius);
-		opacity: 0.65;
-		transition: opacity 0.2s, border-color 0.2s;
+		overflow: hidden;
+		transform-style: preserve-3d;
+		will-change: transform, opacity;
+
+		/* Base target opacity based on lock status */
+		--base-opacity: 0.65;
+
+		/* One-way reveal via prop-for-that 'visibility' source */
+		/* --const-has-entered latches to 1 once scrolled into viewport, never resets */
+		--reveal: var(--const-has-entered, 0);
+		opacity: calc(var(--base-opacity) * var(--reveal));
+
+		/* Subtle reactive 3D tilt via prop-for-that 'pointer-local' plugin */
+		--tilt-active: var(--live-local-pointer-inside, 0);
+		--norm-x: calc((var(--live-local-pointer-x-ratio, 0.5) - 0.5) * 2);
+		--norm-y: calc((var(--live-local-pointer-y-ratio, 0.5) - 0.5) * 2);
+
+		--tilt-pitch: calc(var(--norm-y) * -4.5deg * var(--tilt-active));
+		--tilt-yaw: calc(var(--norm-x) * 4.5deg * var(--tilt-active));
+		--lift-z: calc(var(--tilt-active) * 4px);
+		--reveal-y: calc((1 - var(--reveal)) * 24px);
+
+		transform: translateY(var(--reveal-y))
+			translateZ(var(--lift-z))
+			rotateX(var(--tilt-pitch))
+			rotateY(var(--tilt-yaw));
+
+		/* Staggered entrance for one-way reveal, responsive 3D tracking during hover */
+		transition:
+			opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--badge-index, 0) * 0.08s),
+			transform calc(0.12s + (1 - var(--tilt-active)) * 0.36s) cubic-bezier(0.16, 1, 0.3, 1),
+			border-color 0.25s ease,
+			box-shadow 0.25s ease;
+		box-shadow: 0 calc(var(--tilt-active) * 6px + 2px) calc(var(--tilt-active) * 14px + 6px)
+			rgba(0, 0, 0, calc(0.25 + var(--tilt-active) * 0.15));
 	}
 
 	.badge-item.unlocked {
-		opacity: 1;
+		--base-opacity: 1;
 		border-color: var(--brand-tertiary);
 		background: oklch(from var(--brand-tertiary) calc(l - 0.3) c h / 0.2);
 	}
 
+	/* Dynamic subtle reactive sheen / glare highlight tracking local cursor */
+	.badge-item::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		border-radius: inherit;
+		background: radial-gradient(
+			360px circle at calc(var(--live-local-pointer-x-ratio, 0.5) * 100%)
+				calc(var(--live-local-pointer-y-ratio, 0.5) * 100%),
+			oklch(from var(--brand-tertiary) l c h / calc(0.12 * var(--live-local-pointer-inside, 0))),
+			transparent 65%
+		);
+		opacity: var(--live-local-pointer-inside, 0);
+		transition: opacity 0.25s ease;
+		z-index: 1;
+	}
+
 	.badge-icon-container {
+		position: relative;
+		z-index: 2;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -1423,6 +1484,8 @@
 		border-radius: 50%;
 		background: var(--surface-3);
 		flex-shrink: 0;
+		transform: translateZ(6px);
+		transition: transform 0.2s ease;
 	}
 
 	:global(.badge-glyph-unlocked) {
@@ -1434,9 +1497,24 @@
 	}
 
 	.badge-info {
+		position: relative;
+		z-index: 2;
 		display: flex;
 		flex-direction: column;
 		gap: 0.25rem;
+		transform: translateZ(3px);
+		transition: transform 0.2s ease;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.badge-item {
+			transform: none !important;
+			opacity: var(--base-opacity) !important;
+			transition: border-color 0.2s, box-shadow 0.2s !important;
+		}
+		.badge-item::after {
+			display: none;
+		}
 	}
 
 	.badge-category {
