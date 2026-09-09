@@ -12,6 +12,10 @@
     "./nord.css": "./nord.css"
   },
   "scripts": {
-    "test": "node --test test/puppeteer.test.js"
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "cssnano": "catalog:",
+    "postcss": "catalog:"
   }
 }

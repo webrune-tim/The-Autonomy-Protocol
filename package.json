@@ -18,6 +18,8 @@
   "devDependencies": {
     "@sveltejs/kit": "catalog:",
     "@types/node": "catalog:",
+    "cssnano": "catalog:",
+    "postcss": "catalog:",
     "puppeteer": "catalog:",
     "turbo": "catalog:",
     "vite": "catalog:",

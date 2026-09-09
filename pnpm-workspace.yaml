@@ -18,6 +18,8 @@ supportedArchitectures:
     - x64
 
 catalog:
+  cssnano: ^9.0.4
+  postcss: ^8.5.28
   puppeteer: ^25.10.0
   svelte: ^5.57.0
   "@better-auth/infra": ^0.2.14
@@ -56,3 +58,6 @@ peerDependencyRules:
     - vite
 overrides:
   vite: "catalog:"
+minimumReleaseAgeExclude:
+  - cssnano-preset-default@9.0.4
+  - cssnano@9.0.4
