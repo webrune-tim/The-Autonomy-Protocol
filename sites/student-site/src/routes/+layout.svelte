@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import { page } from '$app/state';
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN } from '$app/env/public';
 	import type { LayoutData } from './$types';
 
 	// Assets
@@ -96,8 +96,8 @@
 		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
 	/>
 	<link rel="canonical" href={canonicalUrl} />
-	{#if env.PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN}
-		<meta http-equiv="origin-trial" content={env.PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN} />
+	{#if PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN}
+		<meta http-equiv="origin-trial" content={PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN} />
 	{/if}
 	<link rel="stylesheet" href="/print.css" media="print" />
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />

@@ -4,7 +4,7 @@
  * with graceful progressive enhancement and lifecycle management via AbortController.
  */
 
-import { env } from '$env/dynamic/public';
+import { PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN } from '$app/env/public';
 import type {
 	ModelContextInterface,
 	RegisteredToolInfo,
@@ -15,7 +15,7 @@ class WebMcpClientManager {
 	private activeControllers: Map<string, AbortController> = new Map();
 	private fallbackTools: Map<string, WebMcpToolDefinition> = new Map();
 	private listeners: Set<(tools: RegisteredToolInfo[]) => void> = new Set();
-	private trialToken: string = env.PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN || '';
+	private trialToken: string = PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN || '';
 
 	/**
 	 * Injects an Origin Trial token into the document head
@@ -110,7 +110,7 @@ class WebMcpClientManager {
 		for (const [name, controller] of this.activeControllers.entries()) {
 			controller.abort();
 		}
-		this.activeControllers.clear;
+		this.activeControllers.clear();
 		this.fallbackTools.clear();
 		this.notifyListeners();
 	}

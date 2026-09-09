@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN } from '$app/env/public';
 	import { webMcpClient } from '#lib/webmcp/client';
 	import { simulationEngine } from '#lib/webmcp/simulationEngine.svelte';
 	import { ShieldCheck, Cpu, Key, AlertCircle, RefreshCw, Terminal } from '@lucide/svelte';
 
 	let isNative = $state(false);
-	let tokenInput = $state(env.PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN || '');
+	let tokenInput = $state(PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN || '');
 	let tokenInjected = $state(false);
 	let showTokenModal = $state(false);
 

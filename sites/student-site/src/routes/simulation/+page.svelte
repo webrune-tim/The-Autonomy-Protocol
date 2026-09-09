@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN } from '$app/env/public';
 	import { webMcpClient } from '#lib/webmcp/client';
 	import { simulationEngine } from '#lib/webmcp/simulationEngine.svelte';
 	import {
@@ -14,8 +14,8 @@
 
 	onMount(async () => {
 		// Set Origin Trial token from environment if available
-		if (env.PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN) {
-			webMcpClient.injectOriginTrial(env.PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN);
+		if (PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN) {
+			webMcpClient.injectOriginTrial(PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN);
 		}
 
 		// Register the 6 Autonomy Protocol WebMCP tools
