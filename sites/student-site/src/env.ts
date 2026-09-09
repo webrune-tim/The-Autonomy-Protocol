@@ -8,4 +8,5 @@ export const variables = defineEnvVars({
   STUDENT_GOOGLE_CLIENT_SECRET: { schema: (input) => input ?? "" },
   DATABASE_URL: { schema: (input) => input ?? "" },
   DATABASE_AUTH_TOKEN: { schema: (input) => input ?? "" },
+  PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN: { public: true, schema: (input) => input ?? "" },
 });

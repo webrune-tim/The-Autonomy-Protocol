@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import { page } from '$app/state';
+	import { PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN } from '$app/env/public';
 	import type { LayoutData } from './$types';
 
 	// Assets
@@ -35,6 +36,7 @@
 		{ href: '/', label: 'Home' },
 		{ href: '/about', label: 'About' },
 		{ href: '/resources', label: 'Resources' },
+		{ href: '/simulation', label: 'Practicum (WebMCP)' },
 		...(data.user ? [{ href: '/modules', label: 'Modules' }] : []),
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
 	]);
@@ -43,6 +45,7 @@
 		{ href: '/', label: 'Home' },
 		{ href: '/about', label: 'About' },
 		{ href: '/resources', label: 'Resources' },
+		{ href: '/simulation', label: 'Practicum (WebMCP)' },
 		{ href: '/teacher-onboarding', label: 'Educator Onboarding' },
 		...(data.user ? [{ href: '/modules', label: 'Modules' }] : []),
 		...(data.user ? [{ href: '/dashboard', label: 'Dashboard' }] : [])
@@ -93,6 +96,9 @@
 		content="Stop letting drama and stress run the show. Learn the 'Life Skills' you actually need to be your own boss."
 	/>
 	<link rel="canonical" href={canonicalUrl} />
+	{#if PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN}
+		<meta http-equiv="origin-trial" content={PUBLIC_WEBMCP_ORIGIN_TRIAL_TOKEN} />
+	{/if}
 	<link rel="stylesheet" href="/print.css" media="print" />
 	<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
 	<meta name="theme-color" content="#818cf8" />
