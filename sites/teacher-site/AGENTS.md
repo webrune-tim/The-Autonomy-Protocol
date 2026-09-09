@@ -1,31 +1,46 @@
+# Teacher Portal: AI Guidelines & Environment Contract
+
 ## Project Configuration
 
+- **Workspace Path**: `sites/teacher-site`
+- **Framework**: SvelteKit 2 / Svelte 5 (Runes)
 - **Language**: TypeScript
-- **Package Manager**: npm
-- **Add-ons**: prettier, eslint, sveltekit-adapter, mdsvex, mcp
+- **Package Manager**: `pnpm` (Monorepo standard `pnpm@12.3.4`)
+- **Add-ons / Stack**: prettier, eslint, sveltekit-adapter, mdsvex, mcp
+
+### Monorepo Command Execution
+
+When running commands from workspace root for this site, always use the filter:
+
+```bash
+# Start development server
+pnpm --filter teacher-site dev
+
+# Run unit tests
+pnpm --filter teacher-site test
+
+# Run build
+pnpm --filter teacher-site build
+```
 
 ---
 
-You are able to use the Svelte MCP server, where you have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
+## Svelte 5 & MCP Tool Integration
 
-## Available Svelte MCP Tools:
+When the Svelte MCP server is active, leverage its tools for authoritative documentation and validation:
 
-### 1. list-sections
+### 1. `list-sections`
 
-Use this FIRST to discover all available documentation sections. Returns a structured list with titles, use_cases, and paths.
-When asked about Svelte or SvelteKit topics, ALWAYS use this tool at the start of the chat to find relevant sections.
+Use to discover available documentation sections. Returns a structured list with titles, use cases, and paths. When addressing unfamiliar Svelte 5 / SvelteKit topics, query this first.
 
-### 2. get-documentation
+### 2. `get-documentation`
 
-Retrieves full documentation content for specific sections. Accepts single or multiple sections.
-After calling the list-sections tool, you MUST analyze the returned documentation sections (especially the use_cases field) and then use the get-documentation tool to fetch ALL documentation sections that are relevant for the user's task.
+Retrieves the full documentation content for specific sections identified via `list-sections`.
 
-### 3. svelte-autofixer
+### 3. `svelte-autofixer`
 
-Analyzes Svelte code and returns issues and suggestions.
-You MUST use this tool whenever writing Svelte code before sending it to the user. Keep calling it until no issues or suggestions are returned.
+Analyzes Svelte component code and returns diagnostics and suggested improvements. Use this tool when generating or refactoring Svelte 5 runes and components before concluding work.
 
-### 4. playground-link
+### 4. `playground-link`
 
-Generates a Svelte Playground link with the provided code.
-After completing the code, ask the user if they want a playground link. Only call this tool after user confirmation and NEVER if code was written to files in their project.
+Generates a Svelte Playground link. Only offer or invoke if explicitly requested by the user, and never in place of editing local project files.

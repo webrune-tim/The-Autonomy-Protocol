@@ -1,6 +1,10 @@
 ---
 name: prop-for-that-svelte
-description: Core concepts, syntax, and implementation patterns for the Prop-for-That library using Vanilla JS and Svelte 5 actions/runes.
+description: >-
+  Provides implementation patterns, API references, and syntax guides for using the
+  Prop-for-That library with Vanilla JS and Svelte 5 (runes, actions, and CSS custom properties).
+  Activate this skill when binding reactive JavaScript state (pointer position, viewport,
+  intersections, scroll-velocity) directly to CSS variables (--live-*, --const-*).
 ---
 
 # Prop for That: Pure JS & Svelte 5 Guide

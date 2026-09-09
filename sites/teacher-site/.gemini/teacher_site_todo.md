@@ -1,6 +1,6 @@
-# Gemini Todo: Teacher Site
+# Backlog & Tasks: Teacher Site
 
-> ⚠️ **CRITICAL INSTRUCTION FOR GEMINI:** Do not attempt to start code implementation, architecture drafting, or asset creation for any action item listed here automatically. You **MUST** first ask the user for clarification, detailed requirements, and additional context regarding that specific item.
+> ⚠️ **CRITICAL INSTRUCTION FOR AI AGENT (ANTIGRAVITY / GEMINI):** Do not attempt to start code implementation, architecture drafting, or asset creation for any action item listed here automatically. You **MUST** first ask the user for clarification, detailed requirements, and additional context regarding that specific item.
 
 ## 📋 Active Task Backlog
 
