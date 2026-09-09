@@ -1,14 +1,9 @@
-/// <reference types="vite-plus/test" />
 import { mdsvex } from "mdsvex";
 import adapter from "@sveltejs/adapter-vercel";
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vite"; // ⚡️ Back to clean, vanilla vite imports
 
 export default defineConfig({
-  test: {
-    testTimeout: 60000,
-    hookTimeout: 60000,
-  },
   plugins: [
     sveltekit({
       compilerOptions: {
