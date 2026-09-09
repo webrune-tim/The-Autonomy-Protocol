@@ -1,73 +1,7 @@
 # Contributing to The Autonomy Protocol
 
-<<<<<<< HEAD
-
 > **A Collaborative Invitation for Educators, Academic Researchers, College Students, and Software Engineers**  
 > _Architecting the open-source infrastructure for internal self-governance, executive functioning, and psychological literacy in modern education._
-> \=======
-> Thank you for your interest in contributing to **The Autonomy Protocol**. To maintain the pedagogical integrity and professional standards required for public school implementation, we ask that all contributors adhere to the following guidelines.
-
-## Philosophical Alignment
-
-The Autonomy Protocol is built on the principle of **Internal Self-Governance**. All contributions must avoid:
-
-- **Political Bias:** Content must remain neutral and focused on universal cognitive skills rather than specific social or political agendas.
-- **Secular Rigor:** Ensure all frameworks are stripped of religious or therapeutic terminology, focusing instead on observable behavioral executive functions.
-- **Subjectivity:** Prioritize data-driven, observable learning outcomes over subjective emotional states.
-
-## Content Standards
-
-When contributing lesson plans, practicums, or vocational paths, utilize the following structural standards:
-
-### 1. The Approved Lexicon
-
-Always utilize the "Human Operating System" terminology established in the `GEMINI.md` file.
-
-- **Refer to accountability as:** Systems Maintenance or Internal Regulation.
-- **Refer to interpersonal repair as:** The Amends Protocol or Restorative Practice.
-- **Refer to self-correction as:** Real-Time Debugging or Cognitive Inventory.
-
-### 2. Formatting & Aesthetic
-
-To maintain consistency across our digital and physical assets, follow these formatting rules:
-
-- **Dark-Theme Optimization:** Use clean Markdown with high-contrast hierarchies (Headings, Tables, Blockquotes).
-- **Academic Tone:** Maintain a collegiate, professional, and objective voice.
-- **Visual Clarity:** Use bulleted lists and tables to ensure information is scannable for busy administrators and educators.
-
-## How to Contribute
-
-### Step 1: Claim or Open an Issue
-
-Before starting work, browse the current [Kanban Boards](https://github.com/users/webrune-tim/projects/1/views/1) or Issues. If you have a new idea for a vocational path (e.g., Law, Arts, or Agriculture), open a new Issue for "System Architecture Review" first.
-
-### Step 2: Drafting Modules
-
-When drafting a new module, use the `LESSON_PLAN_TEMPLATE.md`. Every contribution must include:
-
-1.  **Objective:** What specific behavioral shift is being addressed?
-2.  **Pedagogical Logic:** Why does this specific exercise result in that shift?
-3.  **The Practicum:** A concrete, applied learning exercise for students.
-4.  **Assessment:** How will an educator measure success?
-
-### Step 3: Peer Review
-
-Submit your contribution via a Pull Request. Every module must be reviewed by at least one peer to ensure it meets our standards for:
-
-- **Neutrality:** Is it free of partisan or sectarian language?
-- **Clarity:** Is the exercise easy for a high school freshman to execute?
-- **Utility:** Does it solve a real-world problem for a graduating senior?
-
-## Community Code of Conduct
-
-We practice what we teach. All contributors are expected to operate under the **Integrity Protocol**:
-
-- **Be Impeccable With Your Word:** Follow through on your commits and maintain high standards of accuracy.
-- **Don't Take Feedback Personally:** Reviews are intended to optimize the system, not critique the individual.
-- **Don't Make Assumptions:** If a task or standard is unclear, ask for clarification immediately.
-- **Always Do Your Best:** Contribute high-quality work that honors the project's mission.
-
-> > > > > > > c265242f4273f535353e6df27135b0b7ed0fc232
 
 ---
 
@@ -197,7 +131,7 @@ the-autonomy-protocol/
 
 - **Framework:** [Svelte 5](https://svelte.dev/) with strict Runes mode (`$state`, `$derived`, `$props`, `$effect`) and [SvelteKit 2](https://kit.svelte.dev/).
 - **Language & Runtime:** [TypeScript](https://www.typescriptlang.org/) `^6.0.3` (strict mode) on [Node.js](https://nodejs.org/) `>=22.12.0`.
-- **Package Manager & Orchestration:** [pnpm](https://pnpm.io/) `11.22.0` (catalogs enforced) + [Turborepo](https://turbo.build/) `^2.9.18` + [Vite Plus](https://voidzero.dev/) core.
+- **Unified Toolchain & Package Management:** [Vite+](https://viteplus.dev/) (`vp` CLI combining Vite, Rolldown, Vitest, tsdown, Oxlint, Oxfmt, and Vite Task) with [pnpm](https://pnpm.io/) `11.22.0` catalogs and [Turborepo](https://turbo.build/) `^2.9.18`.
 - **Styling System:** Pure **Vanilla CSS Design Tokens** (`@autonomy/style`) with the Nord color palette, fluid clamp typography, container queries, and view-timeline animations. _No TailwindCSS._
 - **Data & ORM:** [Drizzle ORM](https://orm.drizzle.team/) + [LibSQL / Turso](https://turso.tech/) (distributed SQLite).
 - **Authentication & RBAC:** [Better-Auth](https://www.better-auth.com/) with Google OAuth and multi-tiered roles (`superadmin`, `admin`, `teacher`, `user`).
@@ -232,62 +166,103 @@ We welcome issues and pull requests across the following engineering areas:
 
 #### Prerequisites
 
-- **Node.js:** `>=22.12.0` (Required)
-- **pnpm:** `11.22.0`
+- **Node.js:** `>=22.12.0` (Managed automatically by Vite+ or system runtime)
+- **Vite+ (`vp` CLI):** The unified toolchain for the web behind the `vp` CLI — combining Vite, Rolldown, Vitest, tsdown, Oxlint, Oxfmt, and Vite Task, plus runtime and package-manager management.
+
+##### Install the `vp` CLI
+
+Install `vp` if it is not already on your system:
+
+- **macOS / Linux:**
+  ```bash
+  curl -fsSL https://vite.plus | bash
+  ```
+- **Windows (PowerShell):**
+  ```powershell
+  irm https://vite.plus/ps1 | iex
+  ```
+
+Then open a new terminal and verify:
 
 ```bash
-# 1. Enable Corepack and verify versions
-corepack enable
-pnpm --version
+vp help
+```
 
-# 2. Clone the repository
+> [!TIP]
+> **Vite+ Day-to-Day Commands:**
+>
+> - `vp install` — Install workspace dependencies.
+> - `vp dev` — Start the dev server in the current workspace package.
+> - `vp check` — Run formatting, linting, and type-checking together.
+> - `vp test` — Run JavaScript/TypeScript tests with Vitest.
+> - `vp build` — Build production artifacts.
+> - `vpr <script>` / `vp run <script>` — Run custom `package.json` scripts across workspaces.
+
+#### Project Setup & Dependency Installation
+
+```bash
+# 1. Clone the repository
 git clone https://github.com/webrune-tim/the-autonomy-protocol.git
 cd the-autonomy-protocol
 
-# 3. Install all monorepo dependencies
-pnpm install
+# 2. Install all monorepo dependencies
+vp install
 ```
 
 #### Running Development Servers
 
 ```bash
 # Start the Student Portal (http://localhost:5173)
-pnpm dev:student-site
+vpr dev:student-site
 
 # Start the Teacher Portal (http://localhost:5174)
-pnpm dev:teacher-site
+vpr dev:teacher-site
 
-# Or launch specific sites using Vite Plus directly:
+# Or launch specific sites using Vite+ directly from their package directory:
 cd sites/teacher-site && vp dev
 ```
 
-#### Database Setup (Teacher Site & Authenticated Features)
+#### Database Setup & Offline Development Standard
 
-Configure `sites/teacher-site/.env` (and `sites/student-site/.env` if working on auth features):
+The Autonomy Protocol supports **zero-credential offline local development**. External contributors do **not** need access to a live Turso database or cloud credentials.
 
-```env
-DATABASE_URL=libsql://your-turso-database.turso.io
-DATABASE_AUTH_TOKEN=your-turso-auth-token
-BETTER_AUTH_SECRET=your-random-32-character-secret
-GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=your-google-oauth-client-secret
-ORIGIN=http://localhost:5173
+##### 1. Offline Database Fallback (SQLite via LibSQL)
+
+Both `sites/teacher-site` and `sites/student-site` configure LibSQL to fall back to a local SQLite database file (`file:local.db`) when run locally:
+
+```bash
+# Copy non-sensitive environment templates
+cp sites/teacher-site/.env.example sites/teacher-site/.env
+cp sites/student-site/.env.example sites/student-site/.env
 ```
 
-Execute database migrations and seed baseline records:
+The preconfigured non-sensitive defaults in `.env.example`:
+
+```env
+DATABASE_URL=file:local.db
+DATABASE_AUTH_TOKEN=""
+BETTER_AUTH_SECRET="dev_secret_at_least_32_characters_long_for_local_development"
+```
+
+##### 2. Execute Local Migrations and Seeding
+
+With `file:local.db`, you can push schemas and seed sample records locally without credentials:
 
 ```bash
 cd sites/teacher-site
 
-# Push schema directly in development
-pnpm db:push
+# Push schema to local SQLite database
+vpr db:push
 
-# Or run full migration + seed pipeline
-pnpm db:setup
+# Or run the full migration + seed pipeline
+vpr db:setup
 
-# Inspect the database with Drizzle Studio GUI
-pnpm db:studio
+# Inspect local database via Drizzle Studio GUI
+vpr db:studio
 ```
+
+> [!NOTE]
+> **Optional Remote Database:** Connecting to a live Turso instance (`libsql://...`) is strictly optional for local development. External contributors are never expected to have or manage live Turso credentials.
 
 ---
 
@@ -302,12 +277,15 @@ To maintain collegiate-level software craftsmanship:
 5. **Validation Pipeline:** Always verify your changes before submitting:
 
 ```bash
+# Run format, lint, and type-checks together with Vite+
+vp check
+
 # Run type checks, linters, and full production build across the entire monorepo
-pnpm ready
+vpr ready
 
 # Run linting and formatting on individual packages
-pnpm --filter teacher-site lint
-pnpm --filter teacher-site format
+vpr --filter teacher-site lint
+vpr --filter teacher-site format
 ```
 
 ---
@@ -341,8 +319,41 @@ Whether contributing curriculum or code, follow this standardized progression:
 - Open a Pull Request referencing the related Issue (e.g., `Resolves #42`).
 - Complete the PR checklist:
   - [ ] Pedagogical submissions adhere to the **Approved Academic Lexicon** and **Observable Outcomes**.
-  - [ ] Code submissions pass `pnpm ready` (TypeScript checks, ESLint, builds).
+  - [ ] Code submissions pass `vp check` and `vpr ready` (TypeScript checks, ESLint, builds).
   - [ ] Components are responsive and dark-theme optimized.
+
+### Step 4: Automated GitHub PR Preview Process
+
+Every Pull Request submitted from a fork integrates with our automated CI/CD and preview deployment workflow:
+
+- **Automated Fork PR Previews:** Vercel automatically generates an isolated preview deployment for incoming Pull Requests from forked repositories once authorized by a repository maintainer.
+- **Environment Secret Isolation:** Upstream production and staging secrets (e.g., Turso auth tokens, Google OAuth client secrets) are **never** exposed to fork builds or preview runtimes.
+- **Personal Vercel Hobby Accounts (Optional):** External contributors can optionally deploy and test their personal forks using their own free Vercel Hobby accounts without requiring access to organizational teams or production secrets.
+
+---
+
+## 🔒 Deployment & Access Policy
+
+To safeguard production systems while maintaining an open, friction-free contributor experience, The Autonomy Protocol enforces the following security and deployment boundaries:
+
+| Policy Area                     | Standard                       | Operational Implementation                                                                                                          |
+| :------------------------------ | :----------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| **Zero External Vercel Access** | No Dashboard Access Required   | External open-source contributors do not need access to the Vercel dashboard, team membership, or production secrets.               |
+| **Fork PR Deployments**         | Authorized Isolated Previews   | Vercel automatically creates isolated preview deployments for incoming PRs from forks once authorized by a maintainer.              |
+| **Secret Isolation**            | Upstream Credentials Protected | Upstream production and staging secrets (Turso auth tokens, Google OAuth secrets) are never exposed to fork builds.                 |
+| **Local Development Standard**  | Zero-Credential Offline SQLite | All local dev and testing runs offline via LibSQL using `DATABASE_URL=file:local.db` with non-sensitive defaults in `.env.example`. |
+
+### Maintainer Configuration: Vercel Fork Protection
+
+Repository maintainers must enforce fork authorization on both projects to safeguard build compute and prevent unauthorized execution:
+
+1. In the [Vercel Dashboard](https://vercel.com/), select the target project:
+   - **Teacher Site:** `the-autonomy-protocol` (`sites/teacher-site`)
+   - **Student Site:** `the-autonomy-protocol-student` (`sites/student-site`)
+2. Navigate to **Project Settings** → **Git**.
+3. Under **Fork Protection** / **Deploy Hooks**:
+   - Enable **Require Authorization for Fork Deployments** (or _Only build Pull Requests from forked repositories with authorization_).
+4. Save the configuration. This ensures every PR from a fork requires maintainer sign-off before preview build compute is consumed.
 
 ---
 

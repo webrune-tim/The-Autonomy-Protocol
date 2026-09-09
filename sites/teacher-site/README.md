@@ -119,31 +119,38 @@ Session states are validated server-side in `src/hooks.server.ts` and `src/route
 
 - **Node.js:** `>=22.12.0`
 - **pnpm:** `11.22.0`
-- **LibSQL / Turso Database** (or local SQLite file)
-- **Google Cloud Console OAuth 2.0 Client Credentials**
+- **Database:** Local SQLite (`file:local.db`, default) or LibSQL / Turso instance (optional)
 
-### Environment Configuration
+### Environment Configuration & Offline Standard
 
-Create a `.env` file in `sites/teacher-site/`:
+The Teacher Site is configured for **zero-credential offline development** by default. External contributors do not need access to a live Turso database or Google Cloud Console credentials to run the application locally.
+
+Copy the non-sensitive environment template:
+
+```bash
+cp .env.example .env
+```
+
+The default `.env` contents use local SQLite and non-sensitive fallback secrets:
 
 ```env
-# LibSQL / Turso Database Credentials
-DATABASE_URL=libsql://your-instance.turso.io
-DATABASE_AUTH_TOKEN=your-database-auth-token
+# LibSQL Local SQLite Fallback (Zero credentials required for local dev)
+DATABASE_URL=file:local.db
+DATABASE_AUTH_TOKEN=""
 
-# Better-Auth Authentication Secret
-BETTER_AUTH_SECRET=your-random-32-character-secret
+# Server Origin (Local dev default)
+TEACHER_ORIGIN=http://localhost:5174
 
-# Google OAuth Provider Credentials
-TEACHER_GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
-TEACHER_GOOGLE_CLIENT_SECRET=your-google-client-secret
-GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=your-google-client-secret
+# Better-Auth Secret (Non-sensitive development key, minimum 32 chars)
+BETTER_AUTH_SECRET="dev_secret_at_least_32_characters_long_for_local_development"
 
-# Application Origin URL
-TEACHER_ORIGIN=http://localhost:5173
-ORIGIN=http://localhost:5173
+# Google OAuth Provider Credentials (Optional for local dev; leave empty if not testing Google Sign-In)
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
 ```
+
+> [!NOTE]
+> **Optional Remote Database:** If connecting to a live Turso instance (`libsql://...`), populate `DATABASE_AUTH_TOKEN` with your Turso database token. This is strictly optional.
 
 ### Execution Commands
 
@@ -170,12 +177,12 @@ pnpm build
 
 ## 6. Database Operations & Seeding
 
-The application uses Drizzle ORM with LibSQL. The schema models modules, sections, student progress, documents, document shares, and conversion tasks.
+The application uses Drizzle ORM with LibSQL. When running locally with `DATABASE_URL=file:local.db`, all database operations run offline against a local SQLite file without network latency or external credentials.
 
 ```bash
 cd sites/teacher-site
 
-# Push schema directly to the database (development mode)
+# Push schema directly to the local SQLite database (development mode)
 pnpm db:push
 
 # Generate SQL migration files from schema changes
@@ -184,13 +191,13 @@ pnpm db:generate
 # Execute pending database migrations
 pnpm db:migrate
 
-# Seed database with initial curriculum modules and demo accounts
+# Seed database with initial curriculum modules and demo tasks
 pnpm db:seed
 
-# Complete DB setup pipeline (migrate + seed)
+# Complete DB setup pipeline (push/migrate + seed)
 pnpm db:setup
 
-# Launch interactive Drizzle Studio database browser
+# Launch interactive Drizzle Studio database GUI browser
 pnpm db:studio
 
 # Generate Better-Auth database schema
@@ -210,9 +217,21 @@ The `(protected)/pdf-to-md` route allows educators to upload traditional PDF syl
 
 ---
 
-## 8. Deployment
+## 8. Deployment & Access Policy
 
-The teacher site deploys automatically to **Vercel** via `@sveltejs/adapter-vercel`.
+The Teacher Portal is deployed to **Vercel** via `@sveltejs/adapter-vercel`.
 
-- Configure the project root to `sites/teacher-site` (or root with workspace build filters).
-- Map all environment variables (`DATABASE_URL`, `DATABASE_AUTH_TOKEN`, `BETTER_AUTH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `ORIGIN`) in the Vercel project settings.
+### Contributor Access & Security Boundaries
+
+- **Zero External Vercel Access:** External open-source contributors do not need access to the organization Vercel dashboard, team membership, or production secrets. Contributions are built and tested locally using `file:local.db` or deployed to personal Vercel Hobby accounts.
+- **Automated Fork PR Deployments:** Vercel automatically generates isolated preview deployments for incoming Pull Requests from forked repositories once authorized by a repository maintainer.
+- **Environment Secret Isolation:** Upstream production and staging secrets (e.g., Turso database auth tokens, Google OAuth client secrets, Better-Auth keys) are **never** exposed to fork builds or preview runtimes.
+
+### Maintainer Configuration: Vercel Fork Protection
+
+To safeguard production compute and prevent unauthorized execution, project maintainers must configure fork authorization:
+
+1. Open the [Vercel Dashboard](https://vercel.com/) and select `the-autonomy-protocol` (`sites/teacher-site`).
+2. Go to **Project Settings** → **Git**.
+3. Under **Fork Protection** / **Deploy Hooks**, enable **Require Authorization for Fork Deployments**.
+4. Map production environment variables (`DATABASE_URL`, `DATABASE_AUTH_TOKEN`, `BETTER_AUTH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `TEACHER_ORIGIN`) for Production and Preview branches as appropriate.

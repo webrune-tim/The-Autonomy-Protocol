@@ -6,7 +6,6 @@ import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL is not set");
-if (!process.env.DATABASE_AUTH_TOKEN) throw new Error("DATABASE_AUTH_TOKEN is not set");
 
 export default defineConfig({
   schema: "./src/lib/server/db/schema.ts",
@@ -14,7 +13,7 @@ export default defineConfig({
   dialect: "turso",
   dbCredentials: {
     url: process.env.DATABASE_URL!,
-    authToken: process.env.DATABASE_AUTH_TOKEN!,
+    authToken: process.env.DATABASE_AUTH_TOKEN || undefined,
   },
   verbose: true,
   strict: true,

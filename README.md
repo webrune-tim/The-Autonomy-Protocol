@@ -65,16 +65,17 @@ The monorepo leverages modern web standards, fine-grained reactivity, and modula
 
 | Layer                     | Technology                   | Specification / Configuration                                                                        |
 | :------------------------ | :--------------------------- | :--------------------------------------------------------------------------------------------------- |
-| **Runtime & Language**    | Node.js + TypeScript         | `Node >=22.12.0`, `TypeScript ^6.0.3` with strict type checking                                      |
-| **Package Manager**       | `pnpm@11.22.0`               | Workspace catalogs, strict peer dependency management, and architecture filtering                    |
-| **Monorepo Engine**       | Turborepo + Vite Plus        | `turbo ^2.9.18` task pipelines with `@voidzero-dev/vite-plus-core` wrapper                           |
+| **Runtime & Language**    | Node.js + TypeScript         | `Node >=22.12.0`, `TypeScript ^6.0.3` with strict type checking (managed via Vite+)                  |
+| **Unified Toolchain**     | Vite+ (`vp` CLI)             | Combines Vite, Rolldown, Vitest, tsdown, Oxlint, Oxfmt, Vite Task, package management & runtime      |
+| **Package Manager**       | `pnpm@11.22.0`               | Workspace catalogs, strict peer dependency management, and architecture filtering (managed by `vp`)  |
+| **Monorepo Engine**       | Turborepo + Vite Task        | `turbo ^2.9.18` pipeline execution integrated with Vite+ task caching and runner                     |
 | **Frontend Framework**    | Svelte 5 + SvelteKit         | Forced Svelte 5 Runes mode, `#lib/*` subpath imports, and `@sveltejs/kit`                            |
 | **Design System & CSS**   | Pure Vanilla CSS Tokens      | `@autonomy/style` (Nord color palette, fluid clamp typography, view-timeline animations)             |
 | **Database & ORM**        | Drizzle ORM + LibSQL         | `drizzle-orm ^0.45.2`, `drizzle-kit ^0.31.10`, and `@libsql/client` (Turso SQLite engine)            |
 | **Authentication & RBAC** | Better-Auth                  | `better-auth ~1.4.22` with Google OAuth provider and RBAC (`superadmin`, `admin`, `teacher`, `user`) |
 | **Content & Parsing**     | MDSveX & Marked              | Interactive `.svx`/`.md` components and markdown AST processing                                      |
 | **Motion & Iconography**  | Motion + Lucide + Morphicons | `@lucide/svelte`, `lucide`, `morphicons`, `canvas-confetti`, and `motion`                            |
-| **Deployment Target**     | Vercel                       | `@sveltejs/adapter-vercel` with automated environment pipeline                                       |
+| **Deployment Target**     | Vercel                       | `@sveltejs/adapter-vercel` with automated preview pipeline                                           |
 
 ---
 
@@ -138,101 +139,144 @@ the-autonomy-protocol/
 
 ## 5. Quick Start & Developer Guide
 
-### Prerequisites
+### Prerequisites & Installing Vite+ (`vp`)
 
-- **Node.js:** `>=22.12.0`
-- **pnpm:** `11.22.0` (Enforced via `packageManager` and Corepack)
+The project uses [Vite+](https://viteplus.dev/) — the unified web toolchain combining Vite, Rolldown, Vitest, tsdown, Oxlint, Oxfmt, and Vite Task, plus runtime and package-manager management.
+
+Install the `vp` CLI if it is not already on your system:
+
+- **macOS / Linux:**
+  ```bash
+  curl -fsSL https://vite.plus | bash
+  ```
+- **Windows (PowerShell):**
+  ```powershell
+  irm https://vite.plus/ps1 | iex
+  ```
+
+Open a new terminal and verify:
 
 ```bash
-# Enable corepack (if not already active)
-corepack enable
+vp help
+```
+
+> [!TIP]
+> **Vite+ Day-to-Day Commands:**
+>
+> - `vp install` — Install workspace dependencies using the configured package manager.
+> - `vp dev` — Start the local development server in the current workspace.
+> - `vp check` — Run formatting, linting, and type-checks together.
+> - `vp test` — Execute Vitest unit and integration tests.
+> - `vp build` — Run production build.
+> - `vpr <script>` / `vp run <script>` — Run custom `package.json` scripts across workspaces.
+
+### Project Setup & Dependency Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/webrune-tim/the-autonomy-protocol.git
+cd the-autonomy-protocol
 
 # Install all workspace dependencies
-pnpm install
+vp install
 ```
 
 ### Development Servers
 
-Launch individual applications or entire pipelines:
+Launch individual applications or workspace targets:
 
 ```bash
 # Start Student Portal (http://localhost:5173 by default)
-pnpm dev:student-site
+vpr dev:student-site
 
-# Start Teacher Portal (requires local .env configuration)
-pnpm dev:teacher-site
+# Start Teacher Portal (http://localhost:5174)
+vpr dev:teacher-site
 
-# Alternatively, run via Vite Plus inside a specific workspace directory
+# Alternatively, run directly via Vite+ inside a specific workspace directory:
 cd sites/teacher-site && vp dev
 ```
 
 ### Build & Verification Pipelines
 
-Run workspace-wide pipeline tasks via Turborepo:
+Run workspace-wide pipeline tasks:
 
 ```bash
-# Full validation: type checking, testing, and production builds
-pnpm ready
+# Format, lint, and type check with Vite+
+vp check
+
+# Full validation: type checking, testing, and production builds across the monorepo
+vpr ready
 
 # Production build across all packages and sites
-pnpm build
+vp build
+# or run the root workspace build script:
+vpr build
 
-# Automated linting and formatting
-pnpm --filter teacher-site lint
-pnpm --filter teacher-site format
+# Automated linting and formatting on specific packages
+vpr --filter teacher-site lint
+vpr --filter teacher-site format
 ```
 
 ---
 
 ## 6. Environment Variables & Database Operations
 
-### Environment Configuration
+### Environment Configuration (Zero-Credential Offline Standard)
 
-For local development in `sites/teacher-site/` (and authenticated student workflows in `sites/student-site/`), configure a `.env` file:
+The repository provides zero-credential offline development by default via local SQLite (`file:local.db`). No live Turso or cloud credentials are required for local development.
+
+Copy the environment templates:
+
+```bash
+cp sites/teacher-site/.env.example sites/teacher-site/.env
+cp sites/student-site/.env.example sites/student-site/.env
+```
+
+The preconfigured non-sensitive defaults in `.env`:
 
 ```env
-# LibSQL / Turso Database Credentials
-DATABASE_URL=libsql://your-instance.turso.io
-DATABASE_AUTH_TOKEN=your-database-auth-token
+# LibSQL Local SQLite Fallback
+DATABASE_URL=file:local.db
+DATABASE_AUTH_TOKEN=""
 
-# Better-Auth Authentication Secret
-BETTER_AUTH_SECRET=your-random-32-character-secret
+# Better-Auth Development Secret
+BETTER_AUTH_SECRET="dev_secret_at_least_32_characters_long_for_local_development"
 
-# Google OAuth Provider Credentials
-GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=your-google-oauth-client-secret
-
-# Application Origin URL
+# Server Origin URL
+TEACHER_ORIGIN=http://localhost:5174
 ORIGIN=http://localhost:5173
 ```
 
-### Drizzle ORM Workflows
+> [!NOTE]
+> Connecting to a remote Turso database (`libsql://...`) is strictly optional for local development.
 
-The schema includes modules, sections, student progress, document management, and Better-Auth identity tables.
+### Drizzle ORM Workflows (Offline Local SQLite)
+
+With `file:local.db`, all Drizzle database tasks execute locally and offline:
 
 ```bash
 cd sites/teacher-site
 
-# Push schema directly to the database (development)
-pnpm db:push
+# Push schema directly to the local SQLite database (development)
+vpr db:push
 
-# Generate SQL migration files
-pnpm db:generate
+# Generate SQL migration files from schema changes
+vpr db:generate
 
 # Execute pending database migrations
-pnpm db:migrate
+vpr db:migrate
 
 # Seed database with initial curriculum modules and demo users
-pnpm db:seed
+vpr db:seed
 
-# Complete DB setup (migrate + seed)
-pnpm db:setup
+# Complete DB setup pipeline (push/migrate + seed)
+vpr db:setup
 
 # Launch interactive Drizzle Studio database browser
-pnpm db:studio
+vpr db:studio
 
 # Regenerate Better-Auth schema definitions
-pnpm auth:schema
+vpr auth:schema
 ```
 
 ---
@@ -253,10 +297,14 @@ All curriculum modules must adhere to the **Internal Self-Governance** pedagogic
 
 ## 8. Deployment & CI/CD
 
-Both `student-site` and `teacher-site` are configured for automatic deployment via **Vercel** using `@sveltejs/adapter-vercel`.
+Both `student-site` and `teacher-site` are configured for automated deployment via **Vercel** using `@sveltejs/adapter-vercel`.
 
-- Configure workspace root settings with Turborepo caching enabled.
-- Ensure all environment variables (`DATABASE_URL`, `DATABASE_AUTH_TOKEN`, `BETTER_AUTH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `ORIGIN`) are mapped in the Vercel dashboard.
+- **Zero External Access:** External contributors do not require Vercel organization access or production secrets.
+- **Automated Fork PR Previews:** Isolated preview deployments are automatically generated for incoming PRs from forks once authorized by a repository maintainer.
+- **Secret Isolation:** Upstream production and staging secrets are strictly isolated from fork preview builds.
+- **Maintainer Configuration:** Maintainers enable _Require Authorization for Fork Deployments_ under Project Settings → Git for both projects.
+
+For complete details, see the [Deployment & Access Policy in CONTRIBUTING.md](./CONTRIBUTING.md#deployment--access-policy).
 
 ---
 

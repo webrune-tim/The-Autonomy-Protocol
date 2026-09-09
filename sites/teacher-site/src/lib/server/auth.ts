@@ -45,7 +45,7 @@ const cleanBaseURL = baseURL.replace(/\/$/, "");
 
 export const auth = betterAuth({
   baseURL: cleanBaseURL,
-  secret: BETTER_AUTH_SECRET,
+  secret: BETTER_AUTH_SECRET || "default_auth_secret_minimum_32_characters_long_for_security",
   trustedOrigins: [
     TEACHER_ORIGIN,
     "https://the-autonomy-protocol.vercel.app",
