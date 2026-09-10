@@ -1,8 +1,7 @@
 <script>
-	import { thickMargins } from '@autonomy/actions'
+	import { thickMargins, foresight } from '@autonomy/actions'
 	import { RevealingImage } from '@autonomy/revealing_image'
-	import { foresight } from '@autonomy/actions'
-	import { Download, ShieldQuestionMark } from '@lucide/svelte'
+	import { Download, ShieldQuestionMark, Scale, FileText, MessageSquareQuote, CheckCircle2 } from '@lucide/svelte'
 	import { SEO } from '@autonomy/seo'
 
 	import CurriculumImage from '#lib/assets/images/curriculum.webp'
@@ -194,6 +193,88 @@
 	<a class="cta" href="/contact" use:foresight>
 		<ShieldQuestionMark /> Ready to Implement?
 	</a>
+</section>
+
+<section
+	class="angled-top-bottom-box"
+	use:thickMargins
+	style="--color: var(--brand-secondary, #3b4252); --text_color: var(--brand-secondary-contrast, #eceff4)"
+>
+	<h2 class="reveal-header">Advanced Practicum Track: Epistemic Autonomy & Socratic Inquiry</h2>
+
+	<span>
+		The Objective: Transitioning students from passive acceptance of institutional orthodoxy to rigorous, polite, evidence-grounded self-governance.
+	</span>
+
+	<p>
+		Framing Socratic questioning around <strong>epistemic independence</strong>—rather than partisan conflict—protects the curriculum's universal credibility while equipping students with the exact cognitive tools needed to respectfully challenge unexamined assumptions, unverified consensus, and ideological assertions in the classroom.
+	</p>
+
+	<h3 class="reveal-header">Module 1: The Anatomy of Socratic Questioning</h3>
+	<p>
+		Students deconstruct authoritative statements into constituent assumptions, implicit definitions, and logical leaps without adopting combative postures:
+	</p>
+	<ul>
+		<li>
+			<strong>Clarification Protocol:</strong> Establishing explicit definitions before engaging assertions: <em>"What precise definition of this operational term are we operating under?"</em>
+		</li>
+		<li>
+			<strong>Probing Assumptions:</strong> Uncovering unstated premises: <em>"What unstated axiom must hold true for this causal claim to remain valid?"</em>
+		</li>
+		<li>
+			<strong>Evidence & Reason Auditing:</strong> Isolating empirical record from correlation: <em>"What primary documentation establishes direct causality versus concurrent correlation?"</em>
+		</li>
+		<li>
+			<strong>Exploring Counter-Perspectives:</strong> Evaluating alternative hypotheses: <em>"What is the strongest opposing case to this conclusion, and on what empirical grounds was it rejected?"</em>
+		</li>
+		<li>
+			<strong>Downstream Consequence Mapping:</strong> Projecting systemic outcomes: <em>"If this principle is universally enacted, what are the downstream institutional effects?"</em>
+		</li>
+		<li>
+			<strong>The Rule of Falsifiability:</strong> Teaching students to evaluate assertions with: <em>"What specific empirical evidence would prove this claim wrong?"</em> Arguments that cannot be falsified represent dogma rather than empirical analysis.
+		</li>
+	</ul>
+
+	<h3 class="reveal-header">Module 2: Historical Rigor & Primary Source Forensics</h3>
+	<p>
+		When standard textbook narratives substitute modern normative frameworks for historical reality, this module shifts the burden of truth back to contemporaneous empirical records:
+	</p>
+	<ul>
+		<li>
+			<strong>The Hierarchy of Evidence:</strong> Prioritizing contemporaneous primary records (letters, legal codes, ledgers, legislative debates, foundational charters) over tertiary textbook summaries.
+		</li>
+		<li>
+			<strong>Identifying Presentism:</strong> Distinguishing historical legal and philosophical reality from retrospective judgments rendered exclusively through modern political sensibilities.
+		</li>
+		<li>
+			<strong>Comparative Historiography:</strong> Pairing standard classroom claims with original documentation (e.g., examining the actual text of Federalist No. 51, the 1215 Magna Carta, or municipal trade ledgers alongside academic interpretations).
+		</li>
+		<li>
+			<strong>Incentive & Property Analysis:</strong> Investigating economic structures, property protections, and individual liberties as consistent historical drivers often obscured by collective-action narratives.
+		</li>
+	</ul>
+
+	<h3 class="reveal-header">Module 3: Tactics for Respectful Classroom Pushback & Dialectical Composure</h3>
+	<p>
+		Challenging an authority figure effectively requires disciplined emotional neutrality. Combative refutations allow instructors to dismiss student inquiries as disruptive. Disciplined Socratic questioning compels authority figures to defend their premises:
+	</p>
+	<ul>
+		<li>
+			<strong>The "Curious Inquirer" Posture:</strong> Replacing confrontational refutations (<em>"That is biased"</em>) with targeted inquiry that redirects the burden of proof: <em>"In reviewing the 1787 convention records, the delegates explicitly articulated X. How does that reconcile with the thesis that Y was their primary motivation?"</em>
+		</li>
+		<li>
+			<strong>The Steelman Protocol:</strong> Requiring students to accurately articulate an instructor's argument with greater precision than the instructor before asking their question, eliminating bad-faith dismissals.
+		</li>
+		<li>
+			<strong>Separating Fact from Value Judgments:</strong> Training students to identify the precise pivot when an instructor transitions from teaching what occurred (empirical historical record) to prescribing how students should feel or vote (normative value judgments).
+		</li>
+	</ul>
+
+	<div class="cta-center" style="margin-top: 1.5rem;">
+		<a class="cta" href="/resources" use:foresight>
+			<FileText /> Access Socratic Syllabi & Practicum Materials
+		</a>
+	</div>
 </section>
 
 <section class="bold-border-box margin-top" style="--border-color: var(--fg)">
