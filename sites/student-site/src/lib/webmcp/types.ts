@@ -117,3 +117,44 @@ export interface CompetencyVerificationRecord {
 	verdict: 'COMPETENCY_VERIFIED' | 'ALIGNMENT_REQUIRED';
 	notes: string;
 }
+
+/**
+ * Socratic Inquiry & Epistemic Autonomy WebMCP Types
+ * Focus: Equipping students with objective inquiry frameworks, primary-source forensics, and disciplined rhetoric.
+ */
+
+export type InquiryCategory =
+	| 'clarification'
+	| 'probing-assumptions'
+	| 'probing-evidence'
+	| 'counter-perspectives'
+	| 'implications';
+
+export interface SocraticTelemetryScores {
+	posture: number; // Curiosity Posture (0-100)
+	probing: number; // Assumption Probing (0-100)
+	grounding: number; // Source Grounding (0-100)
+	efficacy: number; // Dialectical Efficacy (0-100)
+}
+
+export interface SocraticTurnTelemetry {
+	stepId: string;
+	optionId: string;
+	category: InquiryCategory;
+	text: string;
+	scores: SocraticTelemetryScores;
+	teacherResponse: string;
+	feedback: string;
+}
+
+export interface SocraticCompetencyRecord {
+	scenarioId: string;
+	studentId: string;
+	timestamp: string;
+	evaluatorSignature: string;
+	cumulativeScores: SocraticTelemetryScores;
+	grade: string;
+	verdict: 'COMPETENCY_VERIFIED' | 'ALIGNMENT_REQUIRED';
+	notes: string;
+}
+

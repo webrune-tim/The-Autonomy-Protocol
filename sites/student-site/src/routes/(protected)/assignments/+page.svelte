@@ -21,12 +21,12 @@
 		</p>
 	</header>
 
-	<!-- Featured WebMCP Practicum Card -->
+	<!-- Featured WebMCP Practicum Card 1: Accountability Cycle -->
 	<section class="featured-practicum-card">
 		<div class="practicum-content">
 			<div class="featured-tag">
 				<Zap size={14} />
-				<span>Google WebMCP Experimental Practicum</span>
+				<span>Google WebMCP Experimental Practicum 03</span>
 			</div>
 			<h2 class="practicum-title">Agentic Evaluation & Self-Paced Proof of Competency</h2>
 			<p class="practicum-desc">
@@ -41,7 +41,7 @@
 
 			<div class="card-actions">
 				<a href="/simulation" class="launch-btn">
-					<span>Launch WebMCP Simulation Lab</span>
+					<span>Launch Accountability Lab</span>
 					<ArrowRight size={16} />
 				</a>
 			</div>
@@ -67,6 +67,53 @@
 [STATE]: INTERNAL_AUDIT
 [LIABILITIES]: 3 detected
 &gt; Autonomous Proctor: VERIFIED</code></pre>
+			</div>
+		</div>
+	</section>
+
+	<!-- Featured WebMCP Practicum Card 2: Socratic Inquiry & Epistemic Autonomy -->
+	<section class="featured-practicum-card socratic-card">
+		<div class="practicum-content">
+			<div class="featured-tag socratic-tag">
+				<Zap size={14} />
+				<span>Google WebMCP Experimental Practicum 04</span>
+			</div>
+			<h2 class="practicum-title">Epistemic Autonomy & Socratic Inquiry Practicum</h2>
+			<p class="practicum-desc">
+				Master the 4 core dialectical dimensions: <strong>Curiosity Posture</strong>, <strong>Assumption Probing</strong>, <strong>Source Grounding</strong>, and <strong>Dialectical Efficacy</strong>. Deconstruct ideological classroom assertions using primary documentation, contemporaneous legal charters, and the Steelman Protocol evaluated live by WebMCP evaluator agents.
+			</p>
+
+			<div class="practicum-meta">
+				<span>Framework: <strong>The Integrity Protocol (Inquiry-Based Reality)</strong></span>
+				<span>Tools: <code>audit_socratic_inquiry</code>, <code>inspect_socratic_session</code></span>
+				<span>Certification: <strong>Epistemic Autonomy Proof of Competency</strong></span>
+			</div>
+
+			<div class="card-actions">
+				<a href="/simulation" class="launch-btn socratic-launch">
+					<span>Launch Socratic Inquiry Lab</span>
+					<ArrowRight size={16} />
+				</a>
+			</div>
+		</div>
+
+		<div class="practicum-preview">
+			<div class="terminal-mock socratic-mock">
+				<div class="mock-header">
+					<span class="dot red"></span>
+					<span class="dot yellow"></span>
+					<span class="dot green"></span>
+					<span class="mock-title">socratic-proctor.log</span>
+				</div>
+				<pre class="mock-code"><code>&gt; tools/call: audit_socratic_inquiry
+[SCENARIO]: Constitutional Foundations
+[CATEGORY]: probing-evidence (Federalist 51)
+[SCORES]:
+  - Posture: 95% (Emotional Neutrality)
+  - Probing: 92% (Premise Breakdown)
+  - Grounding: 95% (Primary Document)
+  - Efficacy: 92% (Dialectical Concession)
+&gt; Evaluator: EXEMPLARY EPISTEMIC RIGOR</code></pre>
 			</div>
 		</div>
 	</section>
@@ -203,6 +250,29 @@
 		background: #4f46e5;
 		text-decoration: none;
 		transform: translateY(-1px);
+	}
+
+	.featured-practicum-card.socratic-card {
+		border-color: rgba(56, 189, 248, 0.3);
+		background: linear-gradient(135deg, var(--surface-1, #12141a) 0%, rgba(14, 165, 233, 0.05) 100%);
+	}
+
+	.featured-tag.socratic-tag {
+		color: #38bdf8;
+		background: rgba(56, 189, 248, 0.12);
+		border-color: rgba(56, 189, 248, 0.35);
+	}
+
+	.launch-btn.socratic-launch {
+		background: #0284c7;
+	}
+
+	.launch-btn.socratic-launch:hover {
+		background: #0369a1;
+	}
+
+	.terminal-mock.socratic-mock {
+		border-color: rgba(56, 189, 248, 0.25);
 	}
 
 	.practicum-preview {

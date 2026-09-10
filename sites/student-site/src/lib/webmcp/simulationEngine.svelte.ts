@@ -10,7 +10,10 @@ import type {
 	CognitiveLiability,
 	CompetencyVerificationRecord,
 	EnvironmentalFrictionEvent,
-	TelemetryLogEntry
+	TelemetryLogEntry,
+	SocraticTelemetryScores,
+	SocraticTurnTelemetry,
+	SocraticCompetencyRecord
 } from './types';
 
 export class AutonomySimulationEngine {
@@ -19,6 +22,17 @@ export class AutonomySimulationEngine {
 	public moduleId = $state<string>('mod-cte-exec-01');
 	public moduleTitle = $state<string>('CTE Capstone: Executive Functioning & Professional Crisis Resolution');
 	public studentId = $state<string>('student-alpha-77');
+
+	// Socratic Inquiry & Epistemic Autonomy State
+	public activeSocraticScenarioId = $state<string>('fed-papers-01');
+	public socraticSessionHistory = $state<SocraticTurnTelemetry[]>([]);
+	public socraticCumulativeScores = $state<SocraticTelemetryScores>({
+		posture: 0,
+		probing: 0,
+		grounding: 0,
+		efficacy: 0
+	});
+	public socraticVerificationRecord = $state<SocraticCompetencyRecord | null>(null);
 
 	// State machine state
 	public objectiveStandardSelected = $state<string>('Universal Principles of Engineering Integrity');
@@ -297,9 +311,174 @@ export class AutonomySimulationEngine {
 			}
 		});
 
+		// Tool 7: audit_socratic_inquiry
+		await webMcpClient.registerTool({
+			name: 'audit_socratic_inquiry',
+			description: 'Audits a student inquiry turn across the 4 Socratic dimensions: Curiosity Posture, Assumption Probing, Source Grounding, and Dialectical Efficacy.',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					scenarioId: { type: 'string', description: 'Identifier of the historical or analytical scenario' },
+					category: {
+						type: 'string',
+						enum: ['clarification', 'probing-assumptions', 'probing-evidence', 'counter-perspectives', 'implications'],
+						description: 'The Socratic inquiry category utilized'
+					},
+					scores: {
+						type: 'object',
+						properties: {
+							posture: { type: 'number', description: 'Curiosity Posture (0-100)' },
+							probing: { type: 'number', description: 'Assumption Probing (0-100)' },
+							grounding: { type: 'number', description: 'Source Grounding in primary evidence (0-100)' },
+							efficacy: { type: 'number', description: 'Dialectical Efficacy (0-100)' }
+						},
+						required: ['posture', 'probing', 'grounding', 'efficacy']
+					},
+					evaluatorNotes: { type: 'string', description: 'Pedagogical feedback on dialectical rigor' }
+				},
+				required: ['scenarioId', 'category', 'scores', 'evaluatorNotes']
+			},
+			annotations: {
+				readOnlyHint: false,
+				consequentialHint: false
+			},
+			execute: async ({ scenarioId, category, scores, evaluatorNotes }) => {
+				const avg = (scores.posture + scores.probing + scores.grounding + scores.efficacy) / 4;
+				const isAligned = avg >= 70 && scores.posture >= 60;
+				this.addTelemetry(
+					'EVALUATOR_AGENT',
+					`Audited Socratic Turn [${category}]: Avg=${avg.toFixed(1)}%. Verdict=${isAligned ? 'ALIGNED' : 'REVISION_NEEDED'}. Notes: ${evaluatorNotes}`,
+					'audit_socratic_inquiry',
+					{ scenarioId, category, scores },
+					isAligned ? 'SUCCESS' : 'WARNING'
+				);
+				return {
+					status: isAligned ? 'EPISTEMIC_ALIGNMENT_CONFIRMED' : 'REFINEMENT_REQUIRED',
+					scores,
+					evaluatorNotes
+				};
+			}
+		});
+
+		// Tool 8: inspect_socratic_session
+		await webMcpClient.registerTool({
+			name: 'inspect_socratic_session',
+			description: 'Inspects the active Socratic scenario, turn history, telemetry scores, and verification record.',
+			inputSchema: {
+				type: 'object',
+				properties: {}
+			},
+			annotations: {
+				readOnlyHint: true
+			},
+			execute: async () => {
+				this.addTelemetry(
+					'EVALUATOR_AGENT',
+					'Invoked inspect_socratic_session',
+					'inspect_socratic_session',
+					{},
+					'SUCCESS'
+				);
+				return {
+					scenarioId: this.activeSocraticScenarioId,
+					turnCount: this.socraticSessionHistory.length,
+					history: this.socraticSessionHistory,
+					cumulativeScores: this.socraticCumulativeScores,
+					verificationRecord: this.socraticVerificationRecord
+				};
+			}
+		});
+
+		// Tool 9: record_socratic_proof_of_competency
+		await webMcpClient.registerTool({
+			name: 'record_socratic_proof_of_competency',
+			description: 'Issues an automated, verifiable proof of competency record for student mastery in Epistemic Autonomy and Socratic Inquiry.',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					scenarioId: { type: 'string', description: 'Scenario ID completed' },
+					scores: {
+						type: 'object',
+						properties: {
+							posture: { type: 'number' },
+							probing: { type: 'number' },
+							grounding: { type: 'number' },
+							efficacy: { type: 'number' }
+						},
+						required: ['posture', 'probing', 'grounding', 'efficacy']
+					},
+					evaluatorSignature: { type: 'string', description: 'Identifier of evaluating proctor agent' },
+					notes: { type: 'string', description: 'Final collegiate competency summary' }
+				},
+				required: ['scenarioId', 'scores', 'evaluatorSignature', 'notes']
+			},
+			annotations: {
+				readOnlyHint: false,
+				consequentialHint: true
+			},
+			execute: async ({ scenarioId, scores, evaluatorSignature, notes }) => {
+				const avg = (scores.posture + scores.probing + scores.grounding + scores.efficacy) / 4;
+				let grade = 'Combative / Unsubstantiated';
+				if (avg >= 88) grade = 'Exemplary Epistemic Rigor';
+				else if (avg >= 70) grade = 'Effective Socratic Inquirer';
+				else if (avg >= 50) grade = 'Emerging - Mind Tone & Evidence';
+
+				const record: SocraticCompetencyRecord = {
+					scenarioId,
+					studentId: this.studentId,
+					timestamp: new Date().toISOString(),
+					evaluatorSignature,
+					cumulativeScores: scores,
+					grade,
+					verdict: avg >= 75 && scores.posture >= 70 ? 'COMPETENCY_VERIFIED' : 'ALIGNMENT_REQUIRED',
+					notes
+				};
+
+				this.socraticVerificationRecord = record;
+				this.addTelemetry(
+					'EVALUATOR_AGENT',
+					`Socratic Proof of Competency Recorded. Rating: ${grade} (${avg.toFixed(1)}%). Verdict: ${record.verdict}`,
+					'record_socratic_proof_of_competency',
+					record,
+					record.verdict === 'COMPETENCY_VERIFIED' ? 'SUCCESS' : 'WARNING'
+				);
+
+				return {
+					status: 'RECORDED',
+					record
+				};
+			}
+		});
+
 		const tools = await webMcpClient.listRegisteredTools();
 		this.registeredToolsCount = tools.length;
 		this.addTelemetry('SYSTEM', `Registered ${tools.length} WebMCP tools into modelContext`, undefined, undefined, 'SUCCESS');
+	}
+
+	/**
+	 * Socratic session synchronization methods
+	 */
+	public logSocraticTurn(turn: SocraticTurnTelemetry): void {
+		this.socraticSessionHistory.push(turn);
+		this.addTelemetry(
+			'STUDENT_WORKBENCH',
+			`Socratic turn [${turn.category}]: "${turn.text.slice(0, 60)}..." (Posture: ${turn.scores.posture}%, Grounding: ${turn.scores.grounding}%)`,
+			'audit_socratic_inquiry',
+			turn,
+			turn.scores.posture >= 60 ? 'SUCCESS' : 'WARNING'
+		);
+	}
+
+	public updateSocraticCumulativeScores(scores: SocraticTelemetryScores): void {
+		this.socraticCumulativeScores = scores;
+	}
+
+	public resetSocraticSession(scenarioId: string = 'fed-papers-01'): void {
+		this.activeSocraticScenarioId = scenarioId;
+		this.socraticSessionHistory = [];
+		this.socraticCumulativeScores = { posture: 0, probing: 0, grounding: 0, efficacy: 0 };
+		this.socraticVerificationRecord = null;
+		this.addTelemetry('SYSTEM', `Socratic Inquiry session reset for scenario: ${scenarioId}`, undefined, undefined, 'SUCCESS');
 	}
 
 	/**

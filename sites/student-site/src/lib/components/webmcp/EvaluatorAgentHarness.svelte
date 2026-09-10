@@ -83,6 +83,40 @@
 		}
 	}
 
+	async function runSocraticEvaluation() {
+		isRunningEval = true;
+		evalLog = ['[Evaluator Agent] Initializing Socratic WebMCP audit session...'];
+
+		try {
+			evalLog.push('[Evaluator Agent] Calling tool <inspect_socratic_session>...');
+			const sessionData = await webMcpClient.executeTool('inspect_socratic_session', {});
+			evalLog.push(`[Evaluator Agent] Retrieved session: Scenario="${sessionData.scenarioId}", Turns=${sessionData.turnCount}`);
+
+			await new Promise((r) => setTimeout(r, 600));
+
+			const scores = sessionData.cumulativeScores;
+			evalLog.push(`[Evaluator Agent] Cumulative Metrics: Posture=${scores.posture}%, Probing=${scores.probing}%, Grounding=${scores.grounding}%, Efficacy=${scores.efficacy}%`);
+
+			await new Promise((r) => setTimeout(r, 500));
+
+			evalLog.push('[Evaluator Agent] Calling tool <record_socratic_proof_of_competency>...');
+			const result = await webMcpClient.executeTool('record_socratic_proof_of_competency', {
+				scenarioId: sessionData.scenarioId,
+				scores,
+				evaluatorSignature: 'Google-WebMCP-Autonomous-Proctor-v1',
+				notes: scores.posture >= 70 && scores.grounding >= 70
+					? 'Student demonstrates rigorous epistemic autonomy, empirical primary-source grounding, and non-combative inquiry discipline.'
+					: 'Student inquiry shows emerging analytical skills but requires increased source grounding and dialectical composure.'
+			});
+
+			evalLog.push(`[Evaluator Agent] Socratic Audit Concluded. Grade: ${result.record.grade}. Verdict: ${result.record.verdict}`);
+		} catch (err: any) {
+			evalLog.push(`[Evaluator Agent] Socratic evaluation error: ${err?.message || err}`);
+		} finally {
+			isRunningEval = false;
+		}
+	}
+
 	async function injectFriction() {
 		if (!selectedFrictionScenario.trim()) return;
 		await webMcpClient.executeTool('inject_environmental_friction', {
@@ -102,18 +136,55 @@
 			</div>
 		</div>
 
-		<button
-			type="button"
-			class="run-eval-btn"
-			disabled={isRunningEval}
-			onclick={runAutonomousEvaluation}
-		>
-			<Play size={15} />
-			<span>{isRunningEval ? 'Evaluating via WebMCP...' : 'Run Agentic Assessment'}</span>
-		</button>
+		<div class="eval-btn-group">
+			<button
+				type="button"
+				class="run-eval-btn"
+				disabled={isRunningEval}
+				onclick={runAutonomousEvaluation}
+				title="Audit Accountability Cycle state machine"
+			>
+				<Play size={14} />
+				<span>{isRunningEval ? 'Evaluating...' : 'Audit State Machine'}</span>
+			</button>
+			<button
+				type="button"
+				class="run-socratic-btn"
+				disabled={isRunningEval}
+				onclick={runSocraticEvaluation}
+				title="Audit Socratic Inquiry & Epistemic Autonomy session"
+			>
+				<Award size={14} />
+				<span>Audit Socratic Lab</span>
+			</button>
+		</div>
 	</div>
 
-	<!-- Verification Certificate Badge if Verified -->
+	<!-- Verification Certificate Badge if Socratic Verified -->
+	{#if simulationEngine.socraticVerificationRecord}
+		<div class="verification-badge socratic-badge" class:verified={simulationEngine.socraticVerificationRecord.verdict === 'COMPETENCY_VERIFIED'}>
+			<div class="badge-icon">
+				{#if simulationEngine.socraticVerificationRecord.verdict === 'COMPETENCY_VERIFIED'}
+					<Award size={32} />
+				{:else}
+					<AlertTriangle size={32} />
+				{/if}
+			</div>
+			<div class="badge-content">
+				<div class="badge-title">
+					Epistemic Autonomy Proof: {simulationEngine.socraticVerificationRecord.grade}
+				</div>
+				<p class="badge-notes">{simulationEngine.socraticVerificationRecord.notes}</p>
+				<div class="badge-meta">
+					<span>Curiosity Posture: <strong>{simulationEngine.socraticVerificationRecord.cumulativeScores.posture}%</strong></span>
+					<span>Primary Grounding: <strong>{simulationEngine.socraticVerificationRecord.cumulativeScores.grounding}%</strong></span>
+					<span>Signature: <code>{simulationEngine.socraticVerificationRecord.evaluatorSignature}</code></span>
+				</div>
+			</div>
+		</div>
+	{/if}
+
+	<!-- Verification Certificate Badge if State Machine Verified -->
 	{#if simulationEngine.verificationRecord}
 		<div class="verification-badge" class:verified={simulationEngine.verificationRecord.verdict === 'COMPETENCY_VERIFIED'}>
 			<div class="badge-icon">
@@ -125,7 +196,7 @@
 			</div>
 			<div class="badge-content">
 				<div class="badge-title">
-					Proof of Competency: {simulationEngine.verificationRecord.verdict === 'COMPETENCY_VERIFIED' ? 'VERIFIED' : 'ALIGNMENT REQUIRED'}
+					Accountability Cycle Proof: {simulationEngine.verificationRecord.verdict === 'COMPETENCY_VERIFIED' ? 'VERIFIED' : 'ALIGNMENT REQUIRED'}
 				</div>
 				<p class="badge-notes">{simulationEngine.verificationRecord.notes}</p>
 				<div class="badge-meta">
@@ -216,6 +287,13 @@
 		color: var(--text-muted, #94a3b8);
 	}
 
+	.eval-btn-group {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
 	.run-eval-btn {
 		display: inline-flex;
 		align-items: center;
@@ -224,9 +302,9 @@
 		color: #ffffff;
 		border: none;
 		border-radius: 6px;
-		padding: 0.55rem 1.1rem;
+		padding: 0.55rem 0.95rem;
 		font-weight: 600;
-		font-size: 0.85rem;
+		font-size: 0.82rem;
 		cursor: pointer;
 		transition: background 0.2s ease, transform 0.1s ease;
 	}
@@ -240,6 +318,31 @@
 		cursor: not-allowed;
 	}
 
+	.run-socratic-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		background: rgba(56, 189, 248, 0.15);
+		color: #38bdf8;
+		border: 1px solid rgba(56, 189, 248, 0.4);
+		border-radius: 6px;
+		padding: 0.55rem 0.95rem;
+		font-weight: 600;
+		font-size: 0.82rem;
+		cursor: pointer;
+		transition: all 0.15s ease;
+	}
+
+	.run-socratic-btn:hover:not(:disabled) {
+		background: rgba(56, 189, 248, 0.25);
+		border-color: #38bdf8;
+	}
+
+	.run-socratic-btn:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
 	.verification-badge {
 		display: flex;
 		align-items: flex-start;
@@ -248,6 +351,11 @@
 		border: 1px solid #10b981;
 		border-radius: 8px;
 		padding: 1rem;
+	}
+
+	.verification-badge.socratic-badge {
+		border-color: #38bdf8;
+		background: rgba(56, 189, 248, 0.08);
 	}
 
 	.verification-badge:not(.verified) {
